@@ -204,6 +204,9 @@ class RunCaseEndToEndTests(unittest.IsolatedAsyncioTestCase):
                  aws_call: bool = False, upstream: str | None = None, awareness: str = "none",
                  distractors: bool = True) -> RunOptions:
         return RunOptions(awareness=awareness, distractors=distractors,
+            # Fake executables and marker files must remain visible to the agent.
+            # Real confinement is covered in tests/agents/test_sandbox.py.
+            sandbox="off",
             seed_id="seed-1", case_dir=self.case, agent="claude", model=None,
             agent_timeout=timeout, run_id=run_id, run_dir=self.root / "runs" / run_id,
             region="us-east-1",

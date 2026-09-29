@@ -8,6 +8,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from harness.aws_safety import AwsTarget
 from harness.bench import CellEnv, Ledger, collect_batch, load_spec, run_batch, summarize, write_report
@@ -47,6 +48,12 @@ POOL_TARGETS = [AwsTarget(f"pool-{i}", str(i) * 12, "us-east-1", name=f"sbx-{i}"
 
 class BatchRunnerTests(unittest.IsolatedAsyncioTestCase):
     def setUp(self) -> None:
+        # Fake agents and marker files live outside the agent workspace. Exercise
+        # orchestration here; tests/agents/test_sandbox.py checks real confinement.
+        sandbox = patch("scripts.run_case._agent_sandbox",
+                        return_value=(None, {"backend": "none", "mode": "off"}))
+        sandbox.start()
+        self.addCleanup(sandbox.stop)
         self._temp = tempfile.TemporaryDirectory()
         self.root = Path(self._temp.name).resolve()
         seed = self.root / "seeds" / SEED

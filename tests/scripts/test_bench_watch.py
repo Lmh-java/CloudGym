@@ -216,5 +216,5 @@ class TrialTwoGateTests(unittest.TestCase):
         # trial 1 has only Fable left and Fable's window is spent (no fallback): trial 2 may start
         self._ledger("t1", {f"haiku/{c}/t1": "done" for c in ("case-a", "case-b")})
         RouteBook(self.root).note_limited(Route("subscription", {}, key="subscription:m2"),
-                                          "You've hit your weekly limit · resets Sep 28, 5pm (UTC)")
+                                          "You've hit your weekly limit · resets in 24 hours")
         self.assertEqual(self._watch_once("a2"), [["haiku/case-a/t2", "haiku/case-b/t2"]])

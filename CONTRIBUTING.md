@@ -26,6 +26,12 @@ does not need cloud credentials or provider access. Some tests start local serve
 so allow loopback sockets. Install OPA to run the oracle tests; they skip when it
 is absent. Live bubblewrap tests require Linux and working namespace support.
 
+[CI](.github/workflows/ci.yml) runs the full test suite, case oracle fixtures,
+and an offline smoke preview on pushes to `main` and updates to non-draft pull
+requests, including when a draft is marked ready for review. It uses Python 3.13
+on Linux with OPA and bubblewrap installed. Tests run with external networking
+blocked and loopback enabled for fake services; no AWS or model credentials are needed.
+
 For a focused change, run the relevant tests, for example:
 
 ```bash

@@ -5,6 +5,9 @@ CloudGym ships 102 active AWS cases in [cases/manifest.json](../cases/manifest.j
 Historical `AI` labels refer to `IA`. The included cases are self-contained;
 `seed_id` records provenance rather than requiring the original seed checkout.
 
+Read the [case in action](../README.md#case-in-action) for a concrete example, or
+follow [Add your first case](authoring-cases.md) to create and validate a variant.
+
 ## Case layout
 
 ```text
@@ -49,8 +52,6 @@ are distinct parts of the experiment record.
 
 This repository includes the runtime, evaluation harness, frozen cases, prompts,
 policies, oracle fixtures, and experiment configurations for running new experiments.
-The case-generation pipeline, historical certification outputs, historical run
-results, and figure scripts are not included.
 
 For reproducible comparisons, retain the source commit, exact configuration,
 requested and reported model IDs, CLI and infrastructure tool versions, trial

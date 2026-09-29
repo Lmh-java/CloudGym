@@ -39,6 +39,7 @@ Live runs are a separate step and incur charges. Read [Security](SECURITY.md) an
 
 ## Changing benchmark cases
 
+Start with [Add your first case](docs/authoring-cases.md) for a worked tutorial.
 Read the [case layout](docs/benchmark.md#case-layout), preserve upstream provenance,
 and update fixtures alongside changes to tasks, policies, or oracles.
 

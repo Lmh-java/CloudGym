@@ -4,6 +4,9 @@ Start with the [README quickstart](../README.md#quickstart) and complete
 [AWS setup](../infra/aws/README.md) before any live run. Commands below run from
 the repository root. Read the [security limitations](../SECURITY.md) first.
 
+For a first run, follow the [smoke-run guide](smoke-run.md), including expected
+output and how to distinguish a task failure from a broken run.
+
 ## Requirements
 
 Live runs require Linux with working `bubblewrap` (`bwrap`) namespace support,

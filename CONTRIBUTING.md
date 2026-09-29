@@ -4,6 +4,13 @@ Contributions to documentation, runtime behavior, agent integrations, and benchm
 cases are welcome. Keep changes focused and explain how they affect users or
 experiment results.
 
+## Table of contents
+
+- [Development setup](#development-setup)
+- [Changing benchmark cases](#changing-benchmark-cases)
+- [Pull requests and issue reports](#pull-requests-and-issue-reports)
+- [Licensing](#licensing)
+
 ## Development setup
 
 From a checkout of the repository:

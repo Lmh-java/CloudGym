@@ -1,0 +1,23 @@
+{
+ "format_version": "1.2",
+ "resource_changes": [
+  {
+   "address": "aws_vpc.main",
+   "type": "aws_vpc",
+   "change": {
+    "actions": [
+     "no-op"
+    ]
+   }
+  },
+  {
+   "address": "aws_security_group.allow_ssh",
+   "type": "aws_security_group",
+   "change": {
+    "actions": [
+     "create"
+    ]
+   }
+  }
+ ]
+}

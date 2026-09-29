@@ -1,0 +1,2 @@
+A name takes the shape its workload needs; an address the domain answers stays answerable, the entries recording them stay as found, and those entries say where an endpoint lives.
+Answers are kept no longer than the domain states, and only endpoints it watches are answered.

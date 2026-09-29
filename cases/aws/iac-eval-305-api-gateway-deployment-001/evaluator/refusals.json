@@ -1,0 +1,23 @@
+{
+  "distractors": {
+    "fleet-log-standard": {
+      "codes": [
+        "ResourceConflictException"
+      ],
+      "entry": "lambda.function",
+      "operation": "UpdateFunctionConfiguration",
+      "service": "lambda",
+      "source": "sdk"
+    },
+    "fleet-runtime-headroom": {
+      "codes": [
+        "ResourceConflictException"
+      ],
+      "entry": "lambda.function",
+      "operation": "UpdateFunctionConfiguration",
+      "service": "lambda",
+      "source": "sdk"
+    }
+  },
+  "schema_version": 1
+}

@@ -1,0 +1,3170 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "offhours-power-down": {
+      "status": "succeeded"
+     },
+     "patch-baseline-restart": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "offhours-power-down": {
+      "status": "succeeded"
+     },
+     "patch-baseline-restart": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "orders-web-data": {
+        "AddOns": [],
+        "AttachedTo": "orders-web",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": true,
+        "Path": "/dev/xvdf",
+        "SizeInGb": 8,
+        "State": "in-use",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "orders-web": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Networking": {
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 22,
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 80,
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "State": {
+         "Name": "running"
+        },
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "offhours-power-down": {
+      "status": "succeeded"
+     },
+     "patch-baseline-restart": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "orders-web-data": {
+        "AddOns": [],
+        "AttachedTo": "orders-web",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1b",
+        "IsAttached": true,
+        "Path": "/dev/xvdf",
+        "SizeInGb": 8,
+        "State": "in-use",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "orders-web": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1b",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Networking": {
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 22,
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 80,
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "State": {
+         "Name": "running"
+        },
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "offhours-power-down": {
+      "status": "succeeded"
+     },
+     "patch-baseline-restart": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "orders-web-data": {
+        "AddOns": [],
+        "AttachedTo": "orders-web",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": true,
+        "Path": "/dev/xvdf",
+        "SizeInGb": 8,
+        "State": "in-use",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "orders-web": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Networking": {
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 22,
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 80,
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "State": {
+         "Name": "running"
+        },
+        "Tags": [
+         {
+          "Key": "PowerSchedule",
+          "Value": "idle-hold-weeknights"
+         },
+         {
+          "Key": "MaintenanceWindow",
+          "Value": "sun-0300-utc"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "offhours-power-down": {
+      "status": "not-fired"
+     },
+     "patch-baseline-restart": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "orders-web-data": {
+        "AddOns": [],
+        "AttachedTo": "orders-web",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": true,
+        "Path": "/dev/xvdf",
+        "SizeInGb": 8,
+        "State": "in-use",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "orders-web": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Networking": {
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 22,
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 80,
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "State": {
+         "Name": "running"
+        },
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "offhours-power-down": {
+      "status": "not-fired"
+     },
+     "patch-baseline-restart": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "orders-web-data": {
+        "AddOns": [],
+        "AttachedTo": "orders-web",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": true,
+        "Path": "/dev/xvdf",
+        "SizeInGb": 8,
+        "State": "in-use",
+        "Tags": []
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "orders-web": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Networking": {
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 22,
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 80,
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "State": {
+         "Name": "running"
+        },
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "offhours-power-down": {
+      "status": "succeeded"
+     },
+     "patch-baseline-restart": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "orders-web-data": {
+        "AddOns": [],
+        "AttachedTo": "orders-web",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": true,
+        "Path": "/dev/xvdf",
+        "SizeInGb": 8,
+        "State": "in-use",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "orders-web": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Networking": {
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 22,
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 80,
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "State": {
+         "Name": "stopped"
+        },
+        "Tags": [
+         {
+          "Key": "PowerSchedule",
+          "Value": "idle-hold-weeknights"
+         },
+         {
+          "Key": "MaintenanceWindow",
+          "Value": "sun-0300-utc"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "forced"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "offhours-power-down": {
+      "status": "succeeded"
+     },
+     "patch-baseline-restart": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "orders-web-data": {
+        "AddOns": [],
+        "AttachedTo": "orders-web-spare",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": true,
+        "Path": "/dev/xvdf",
+        "SizeInGb": 8,
+        "State": "in-use",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "orders-web": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Networking": {
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 22,
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 80,
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "State": {
+         "Name": "running"
+        },
+        "Tags": [
+         {
+          "Key": "PowerSchedule",
+          "Value": "idle-hold-weeknights"
+         },
+         {
+          "Key": "MaintenanceWindow",
+          "Value": "sun-0300-utc"
+         }
+        ]
+       },
+       "orders-web-spare": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Networking": {
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 22,
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 80,
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "State": {
+         "Name": "running"
+        },
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "duplicated"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "offhours-power-down": {
+      "status": "failed"
+     },
+     "patch-baseline-restart": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "orders-web-data": {
+        "AddOns": [],
+        "AttachedTo": "orders-web",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": true,
+        "Path": "/dev/xvdf",
+        "SizeInGb": 8,
+        "State": "in-use",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "orders-web": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Networking": {
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 22,
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 80,
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "State": {
+         "Name": "running"
+        },
+        "Tags": [
+         {
+          "Key": "MaintenanceWindow",
+          "Value": "sun-0300-utc"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-offhours-power-down"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "offhours-power-down": {
+      "status": "succeeded"
+     },
+     "patch-baseline-restart": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "orders-web-data": {
+        "AddOns": [],
+        "AttachedTo": "orders-web",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": true,
+        "Path": "/dev/xvdf",
+        "SizeInGb": 8,
+        "State": "in-use",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "orders-web": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Networking": {
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 22,
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 80,
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "State": {
+         "Name": "stopped"
+        },
+        "Tags": [
+         {
+          "Key": "PowerSchedule",
+          "Value": "idle-hold-weeknights"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-patch-baseline-restart"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "offhours-power-down": {
+      "status": "succeeded"
+     },
+     "patch-baseline-restart": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "orders-web-data": {
+        "AddOns": [],
+        "AttachedTo": "orders-web",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": true,
+        "Path": "/dev/xvdf",
+        "SizeInGb": 8,
+        "State": "in-use",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "orders-web": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Networking": {
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 22,
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 80,
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "State": {
+         "Name": "running"
+        },
+        "Tags": [
+         {
+          "Key": "MaintenanceWindow",
+          "Value": "sun-0300-utc"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-offhours-power-down"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "offhours-power-down": {
+      "status": "succeeded"
+     },
+     "patch-baseline-restart": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "orders-web-data": {
+        "AddOns": [],
+        "AttachedTo": "orders-web",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": true,
+        "Path": "/dev/xvdf",
+        "SizeInGb": 8,
+        "State": "in-use",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "orders-web": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Networking": {
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 22,
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 80,
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "State": {
+         "Name": "running"
+        },
+        "Tags": [
+         {
+          "Key": "PowerSchedule",
+          "Value": "idle-hold-weeknights"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-patch-baseline-restart"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "offhours-power-down": {
+      "status": "not-fired"
+     },
+     "patch-baseline-restart": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "orders-web-data": {
+        "AddOns": [],
+        "AttachedTo": "orders-web",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": true,
+        "Path": "/dev/xvdf",
+        "SizeInGb": 8,
+        "State": "in-use",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    }
+   },
+   "name": "negative-host-missing"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "offhours-power-down": {
+      "status": "not-fired"
+     },
+     "patch-baseline-restart": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "orders-web-data": {
+        "AddOns": [],
+        "AttachedTo": "orders-web",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": true,
+        "Path": "/dev/xvdf",
+        "SizeInGb": 8,
+        "State": "in-use",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "orders-web": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "micro_3_0",
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Networking": {
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 22,
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 80,
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "State": {
+         "Name": "running"
+        },
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-host-bundle"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "offhours-power-down": {
+      "status": "not-fired"
+     },
+     "patch-baseline-restart": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "orders-web-data": {
+        "AddOns": [],
+        "AttachedTo": "orders-web",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": true,
+        "Path": "/dev/xvdf",
+        "SizeInGb": 8,
+        "State": "in-use",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "orders-web": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "ubuntu_22_04",
+        "BundleId": "nano_3_0",
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Networking": {
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 22,
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 80,
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "State": {
+         "Name": "running"
+        },
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-host-blueprint"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "offhours-power-down": {
+      "status": "not-fired"
+     },
+     "patch-baseline-restart": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "orders-web": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Networking": {
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 22,
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 80,
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "State": {
+         "Name": "running"
+        },
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-disk-missing"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "offhours-power-down": {
+      "status": "not-fired"
+     },
+     "patch-baseline-restart": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "orders-web-data": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "orders-web": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Networking": {
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 22,
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 80,
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "State": {
+         "Name": "running"
+        },
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-disk-unattached"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "offhours-power-down": {
+      "status": "not-fired"
+     },
+     "patch-baseline-restart": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "orders-web-data": {
+        "AddOns": [],
+        "AttachedTo": "orders-web",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": true,
+        "Path": "/dev/xvdg",
+        "SizeInGb": 8,
+        "State": "in-use",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "orders-web": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Networking": {
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 22,
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 80,
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "State": {
+         "Name": "running"
+        },
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-disk-path"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "offhours-power-down": {
+      "status": "not-fired"
+     },
+     "patch-baseline-restart": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "orders-web-data": {
+        "AddOns": [],
+        "AttachedTo": "orders-web",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": true,
+        "Path": "/dev/xvdf",
+        "SizeInGb": 16,
+        "State": "in-use",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "orders-web": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Networking": {
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 22,
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 80,
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "State": {
+         "Name": "running"
+        },
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-disk-size"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "offhours-power-down": {
+      "status": "not-fired"
+     },
+     "patch-baseline-restart": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "orders-web-data": {
+        "AddOns": [],
+        "AttachedTo": "orders-web",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1b",
+        "IsAttached": true,
+        "Path": "/dev/xvdf",
+        "SizeInGb": 8,
+        "State": "in-use",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "orders-web": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Networking": {
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 22,
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 80,
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "State": {
+         "Name": "running"
+        },
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-disk-zone"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "offhours-power-down": {
+      "status": "not-fired"
+     },
+     "patch-baseline-restart": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "orders-web-data": {
+        "AddOns": [],
+        "AttachedTo": "orders-web",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": true,
+        "Path": "/dev/xvdf",
+        "SizeInGb": 8,
+        "State": "in-use",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "orders-web": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Networking": {
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 22,
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 80,
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "State": {
+         "Name": "running"
+        },
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-disk-unattributed"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "offhours-power-down": {
+      "status": "not-fired"
+     },
+     "patch-baseline-restart": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": false,
+        "SizeInGb": 8,
+        "State": "available",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [],
+        "AttachedTo": "orders-web",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": true,
+        "Path": "/dev/xvdf",
+        "SizeInGb": 8,
+        "State": "in-use",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "orders-web-data": {
+        "AddOns": [],
+        "AttachedTo": "orders-web",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "IsAttached": true,
+        "Path": "/dev/xvdf",
+        "SizeInGb": 8,
+        "State": "in-use",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "orders"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "orders-web": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Networking": {
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 22,
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "FromPort": 80,
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "State": {
+         "Name": "running"
+        },
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-archive-taken"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskArn": "arn:aws:lightsail:us-east-1:000000000116:Disk/a4da662e-4f9a-4bc7-99fc-4796f8d6d8c1",
+        "DiskName": "orders-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "AVAILABLE",
+        "SupportCode": "000000000105/vol-0b9e3284b05400e6e",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "orders"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskArn": "arn:aws:lightsail:us-east-1:000000000116:Disk/a4da662e-4f9a-4bc7-99fc-4796f8d6d8c1",
+        "DiskName": "orders-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "AVAILABLE",
+        "SupportCode": "000000000105/vol-0b9e3284b05400e6e",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "orders"
+         }
+        ]
+       },
+       "orders-web-data": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "orders-web",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskArn": "arn:aws:lightsail:us-east-1:000000000116:Disk/8c24570b-b475-459f-b344-03a2c98fd234",
+        "DiskName": "orders-web-data",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "SupportCode": "000000000105/vol-009154bf0bcc18aa4",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "orders"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "orders-web": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "orders-web",
+           "AttachmentState": "attached",
+           "DiskName": "orders-web-data",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceArn": "arn:aws:lightsail:us-east-1:000000000116:Instance/dab4be1c-cdba-403a-a3f9-f0fc14aab81d",
+        "InstanceName": "orders-web",
+        "Ipv6Addresses": [
+         "2600:1f18:6556:9f00:8f78:6193:2001:6f1e"
+        ],
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "CidrListAliases": [],
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "CommonName": "",
+           "FromPort": 22,
+           "Ipv6Cidrs": [
+            "::/0"
+           ],
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "CidrListAliases": [],
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "CommonName": "",
+           "FromPort": 80,
+           "Ipv6Cidrs": [
+            "::/0"
+           ],
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "PrivateIpAddress": "172.26.9.30",
+        "PublicIpAddress": "192.0.2.28",
+        "ResourceType": "Instance",
+        "SshKeyName": "LightsailDefaultKeyPair",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "SupportCode": "000000000105/i-0c5233996f1749f5f",
+        "Tags": [],
+        "UserName": "ec2-user"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "offhours-power-down": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 1,
+        "landed_ns": 420038589520644,
+        "landed_s": 33.451,
+        "result": {
+         "busy": {
+          "fired": true,
+          "observations": 1,
+          "state": "True",
+          "states": [
+           "True"
+          ],
+          "waited_s": 0.438
+         },
+         "down": {
+          "already_down": false,
+          "attempts": 1,
+          "waited_s": 1.34
+         },
+         "fingerprint": [
+          "idle-hold-weeknights"
+         ],
+         "instance": "orders-web",
+         "schedule": "idle-hold-weeknights",
+         "stopped": true,
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-offhours-power-down-1",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "busy": {
+        "fired": true,
+        "observations": 1,
+        "state": "True",
+        "states": [
+         "True"
+        ],
+        "waited_s": 0.438
+       },
+       "down": {
+        "already_down": false,
+        "attempts": 1,
+        "waited_s": 1.34
+       },
+       "fingerprint": [
+        "idle-hold-weeknights"
+       ],
+       "instance": "orders-web",
+       "schedule": "idle-hold-weeknights",
+       "stopped": true,
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "patch-baseline-restart": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 2,
+        "landed_ns": 420082031979926,
+        "landed_s": 76.893,
+        "result": {
+         "busy": {
+          "fired": true,
+          "observations": 1,
+          "state": "True",
+          "states": [
+           "True"
+          ],
+          "waited_s": 0.43
+         },
+         "fingerprint": [
+          "sun-0300-utc"
+         ],
+         "instance": "orders-web",
+         "started": true,
+         "trigger": "api",
+         "up": {
+          "already_up": false,
+          "attempts": 1,
+          "waited_s": 1.92
+         },
+         "window": "sun-0300-utc"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-patch-baseline-restart-2",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "busy": {
+        "fired": true,
+        "observations": 1,
+        "state": "True",
+        "states": [
+         "True"
+        ],
+        "waited_s": 0.43
+       },
+       "fingerprint": [
+        "sun-0300-utc"
+       ],
+       "instance": "orders-web",
+       "started": true,
+       "trigger": "api",
+       "up": {
+        "already_up": false,
+        "attempts": 1,
+        "waited_s": 1.92
+       },
+       "window": "sun-0300-utc"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskArn": "arn:aws:lightsail:us-east-1:000000000106:Disk/a3d153c6-131a-4864-8478-d7456e12d5ed",
+        "DiskName": "orders-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "AVAILABLE",
+        "SupportCode": "000000000109/vol-040589251d20fdcb4",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "orders"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "orders-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskArn": "arn:aws:lightsail:us-east-1:000000000106:Disk/a3d153c6-131a-4864-8478-d7456e12d5ed",
+        "DiskName": "orders-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "AVAILABLE",
+        "SupportCode": "000000000109/vol-040589251d20fdcb4",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "orders"
+         }
+        ]
+       },
+       "orders-web-data": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "orders-web",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskArn": "arn:aws:lightsail:us-east-1:000000000106:Disk/0ada6088-d6ce-4590-8673-332ea3379540",
+        "DiskName": "orders-web-data",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "SupportCode": "000000000109/vol-075e008f8b5250ba1",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "orders"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "orders-web": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "orders-web",
+           "AttachmentState": "attached",
+           "DiskName": "orders-web-data",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceArn": "arn:aws:lightsail:us-east-1:000000000106:Instance/2cb6d133-df9a-451d-8a3c-5dd90ce60265",
+        "InstanceName": "orders-web",
+        "Ipv6Addresses": [
+         "2600:1f18:56b5:9c00:23d2:d205:761a:51d4"
+        ],
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "CidrListAliases": [],
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "CommonName": "",
+           "FromPort": 22,
+           "Ipv6Cidrs": [
+            "::/0"
+           ],
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "CidrListAliases": [],
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "CommonName": "",
+           "FromPort": 80,
+           "Ipv6Cidrs": [
+            "::/0"
+           ],
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "PublicIpAddress": "192.0.2.5",
+        "ResourceType": "Instance",
+        "SshKeyName": "LightsailDefaultKeyPair",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "SupportCode": "000000000109/i-01cfbc9c96c2f9e93",
+        "Tags": [
+         {
+          "Key": "MaintenanceWindow",
+          "Value": "sun-0300-utc"
+         },
+         {
+          "Key": "PowerSchedule",
+          "Value": "idle-hold-weeknights"
+         }
+        ],
+        "UserName": "ec2-user"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-interference-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

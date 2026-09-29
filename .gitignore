@@ -1,0 +1,35 @@
+# Local environments and generated files
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+build/
+dist/
+*.egg-info/
+.DS_Store
+
+# Local data, credentials, and coordinator state
+artifacts/
+tmp/
+.cloudgym/*
+!.cloudgym/aws.example.toml
+.env
+.env.*
+*.tfstate
+*.tfstate.*
+.terraform/
+*.tfvars
+
+# Local tooling and development-only data
+.claude/
+.codex/
+.agents/
+.vscode/
+third_party/
+cases/_staging/
+# Private inputs/backups left in development checkouts
+seeds/aws/.index.lock
+seeds/iac-eval-registry.sqlite.local-*
+cases/aws/*/agent/*.bak-*
+docs/aws/

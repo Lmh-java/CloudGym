@@ -1,0 +1,2 @@
+Ways in and out of a network are the account's, not a workload's: where one stands, you use it; what you did not create stays as found.
+A workload's edge answers for its own servers, over the path already reaching them; what answers in its place gives way.

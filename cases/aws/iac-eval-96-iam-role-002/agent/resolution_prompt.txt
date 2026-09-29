@@ -1,0 +1,2 @@
+A workload runs as the identity created for it, trusted that way alone and holding the permissions its request names when you finish.
+A name admits one identity: join what stands under it, leave what you did not put there as found, and mark whose workload it serves.

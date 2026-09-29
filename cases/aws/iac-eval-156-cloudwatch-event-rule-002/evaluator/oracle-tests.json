@@ -1,0 +1,5502 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "succeeded"
+     },
+     "image-event-entry-rule": {
+      "status": "succeeded"
+     },
+     "scan-run-as-identity": {
+      "status": "succeeded"
+     },
+     "scanner-invoke-pinning": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "succeeded"
+     },
+     "image-event-entry-rule": {
+      "status": "succeeded"
+     },
+     "scan-run-as-identity": {
+      "status": "succeeded"
+     },
+     "scanner-invoke-pinning": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {
+       "EC2CreateImageEvent": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent",
+        "Description": "Fires the image scanner when an image is created",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "EC2CreateImageEvent",
+        "RoleArn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "State": "ENABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "scan"
+         }
+        ]
+       },
+       "platform-ami-events": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events",
+        "Description": "ami-entry-2026-09: the one way EC2 image events enter this account",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage",
+           "CopyImage",
+           "RegisterImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "platform-ami-events",
+        "RoleArn": "arn:aws:iam::111122223333:role/image_event_delivery_role",
+        "State": "ENABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+          "Id": "billing-image-audit"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "billing_image_audit_role": {
+        "Arn": "arn:aws:iam::111122223333:role/billing_image_audit_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "billing_image_audit_role"
+       },
+       "image_event_delivery_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_event_delivery_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "events.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "What event delivery runs as in this account; no workload runs as it",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_event_delivery_role"
+       },
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "billing_image_audit": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+        "Description": "billing-ami-audit-2026-09: what the billing image audit runs",
+        "FunctionName": "billing_image_audit",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/billing_image_audit_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       },
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit|billing-ami-audit-2026-09-entry": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+        "Id": "billing-ami-audit-2026-09-entry",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events"
+       },
+       "arn:aws:lambda:us-east-1:111122223333:function:test_lambda|pinned-delivery-2026-09-1": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Id": "pinned-delivery-2026-09-1",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent"
+       }
+      }
+     }
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "succeeded"
+     },
+     "image-event-entry-rule": {
+      "status": "succeeded"
+     },
+     "scan-run-as-identity": {
+      "status": "succeeded"
+     },
+     "scanner-invoke-pinning": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {
+       "EC2CreateImageEvent": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent",
+        "Description": "Fires the image scanner when an image is created",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "EC2CreateImageEvent",
+        "State": "ENABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "scan"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:111122223333:function:test_lambda|AllowEventBridgeInvoke": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Id": "AllowEventBridgeInvoke",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent"
+       }
+      }
+     }
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "succeeded"
+     },
+     "image-event-entry-rule": {
+      "status": "succeeded"
+     },
+     "scan-run-as-identity": {
+      "status": "succeeded"
+     },
+     "scanner-invoke-pinning": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {
+       "platform-ami-events": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events",
+        "Description": "ami-entry-2026-09: the one way EC2 image events enter this account",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage",
+           "CopyImage",
+           "RegisterImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "platform-ami-events",
+        "RoleArn": "arn:aws:iam::111122223333:role/image_event_delivery_role",
+        "State": "ENABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+          "Id": "billing-image-audit"
+         },
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "image-scan"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "billing_image_audit_role": {
+        "Arn": "arn:aws:iam::111122223333:role/billing_image_audit_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "billing_image_audit_role"
+       },
+       "image_event_delivery_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_event_delivery_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "events.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "What event delivery runs as in this account; no workload runs as it",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_event_delivery_role"
+       },
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "billing_image_audit": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+        "Description": "billing-ami-audit-2026-09: what the billing image audit runs",
+        "FunctionName": "billing_image_audit",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/billing_image_audit_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       },
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit|billing-ami-audit-2026-09-entry": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+        "Id": "billing-ami-audit-2026-09-entry",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events"
+       },
+       "arn:aws:lambda:us-east-1:111122223333:function:test_lambda|pinned-delivery-2026-09-1": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Id": "pinned-delivery-2026-09-1",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events"
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "succeeded"
+     },
+     "image-event-entry-rule": {
+      "status": "succeeded"
+     },
+     "scan-run-as-identity": {
+      "status": "succeeded"
+     },
+     "scanner-invoke-pinning": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {
+       "EC2CreateImageEvent": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent",
+        "Description": "Fires the image scanner when an image is created",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "EC2CreateImageEvent",
+        "State": "DISABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "scan"
+         }
+        ]
+       },
+       "platform-ami-events": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events",
+        "Description": "ami-entry-2026-09: the one way EC2 image events enter this account",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage",
+           "CopyImage",
+           "RegisterImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "platform-ami-events",
+        "RoleArn": "arn:aws:iam::111122223333:role/image_event_delivery_role",
+        "State": "ENABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+          "Id": "billing-image-audit"
+         },
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "image-scan"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "billing_image_audit_role": {
+        "Arn": "arn:aws:iam::111122223333:role/billing_image_audit_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "billing_image_audit_role"
+       },
+       "image_event_delivery_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_event_delivery_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "events.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "What event delivery runs as in this account; no workload runs as it",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_event_delivery_role"
+       },
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "billing_image_audit": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+        "Description": "billing-ami-audit-2026-09: what the billing image audit runs",
+        "FunctionName": "billing_image_audit",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/billing_image_audit_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       },
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit|billing-ami-audit-2026-09-entry": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+        "Id": "billing-ami-audit-2026-09-entry",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events"
+       },
+       "arn:aws:lambda:us-east-1:111122223333:function:test_lambda|pinned-delivery-2026-09-1": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Id": "pinned-delivery-2026-09-1",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events"
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved-own-rule-disabled"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "not-fired"
+     },
+     "image-event-entry-rule": {
+      "status": "not-fired"
+     },
+     "scan-run-as-identity": {
+      "status": "not-fired"
+     },
+     "scanner-invoke-pinning": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {
+       "EC2CreateImageEvent": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent",
+        "Description": "Fires the image scanner when an image is created",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "EC2CreateImageEvent",
+        "State": "ENABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "scan"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:111122223333:function:test_lambda|AllowEventBridgeInvoke": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Id": "AllowEventBridgeInvoke",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent"
+       }
+      }
+     }
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "not-fired"
+     },
+     "image-event-entry-rule": {
+      "status": "not-fired"
+     },
+     "scan-run-as-identity": {
+      "status": "not-fired"
+     },
+     "scanner-invoke-pinning": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {
+       "EC2CreateImageEvent": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent",
+        "Description": "Fires the image scanner when an image is created",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "EC2CreateImageEvent",
+        "State": "DISABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "scan"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:111122223333:function:test_lambda|AllowEventBridgeInvoke": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Id": "AllowEventBridgeInvoke",
+        "Principal": "events.amazonaws.com"
+       }
+      }
+     }
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "not-fired"
+     },
+     "image-event-entry-rule": {
+      "status": "not-fired"
+     },
+     "scan-run-as-identity": {
+      "status": "not-fired"
+     },
+     "scanner-invoke-pinning": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:111122223333:function:test_lambda|AllowEventBridgeInvoke": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Id": "AllowEventBridgeInvoke",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-no-rule"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "not-fired"
+     },
+     "image-event-entry-rule": {
+      "status": "not-fired"
+     },
+     "scan-run-as-identity": {
+      "status": "not-fired"
+     },
+     "scanner-invoke-pinning": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {
+       "EC2CreateImageEvent": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent",
+        "Description": "Fires the image scanner when an image is created",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "EC2CreateImageEvent",
+        "State": "DISABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "scan"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:111122223333:function:test_lambda|AllowEventBridgeInvoke": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Id": "AllowEventBridgeInvoke",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-rule-disabled"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "not-fired"
+     },
+     "image-event-entry-rule": {
+      "status": "not-fired"
+     },
+     "scan-run-as-identity": {
+      "status": "not-fired"
+     },
+     "scanner-invoke-pinning": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {
+       "EC2CreateImageEvent": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent",
+        "Description": "Fires the image scanner when an image is created",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "state": [
+           "running"
+          ]
+         },
+         "detail-type": [
+          "EC2 Instance State-change Notification"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "EC2CreateImageEvent",
+        "State": "ENABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "scan"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:111122223333:function:test_lambda|AllowEventBridgeInvoke": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Id": "AllowEventBridgeInvoke",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-wrong-event"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "not-fired"
+     },
+     "image-event-entry-rule": {
+      "status": "not-fired"
+     },
+     "scan-run-as-identity": {
+      "status": "not-fired"
+     },
+     "scanner-invoke-pinning": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {
+       "EC2CreateImageEvent": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent",
+        "Description": "Fires the image scanner when an image is created",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "EC2CreateImageEvent",
+        "State": "ENABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+          "Id": "audit"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "billing_image_audit_role": {
+        "Arn": "arn:aws:iam::111122223333:role/billing_image_audit_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "billing_image_audit_role"
+       },
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "billing_image_audit": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+        "Description": "billing-ami-audit-2026-09: what the billing image audit runs",
+        "FunctionName": "billing_image_audit",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/billing_image_audit_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       },
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit|billing-ami-audit-2026-09-entry": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+        "Id": "billing-ami-audit-2026-09-entry",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events"
+       },
+       "arn:aws:lambda:us-east-1:111122223333:function:test_lambda|AllowEventBridgeInvoke": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Id": "AllowEventBridgeInvoke",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-target-elsewhere"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "not-fired"
+     },
+     "image-event-entry-rule": {
+      "status": "not-fired"
+     },
+     "scan-run-as-identity": {
+      "status": "not-fired"
+     },
+     "scanner-invoke-pinning": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {
+       "EC2CreateImageEvent": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent",
+        "Description": "Fires the image scanner when an image is created",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "EC2CreateImageEvent",
+        "State": "ENABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "scan"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    }
+   },
+   "name": "negative-no-grant"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "not-fired"
+     },
+     "image-event-entry-rule": {
+      "status": "not-fired"
+     },
+     "scan-run-as-identity": {
+      "status": "not-fired"
+     },
+     "scanner-invoke-pinning": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {
+       "EC2CreateImageEvent": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent",
+        "Description": "Fires the image scanner when an image is created",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "EC2CreateImageEvent",
+        "State": "ENABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "scan"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:111122223333:function:test_lambda|AllowEventBridgeInvoke": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Id": "AllowEventBridgeInvoke",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/some-other-rule"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-grant-mis-scoped"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "not-fired"
+     },
+     "image-event-entry-rule": {
+      "status": "not-fired"
+     },
+     "scan-run-as-identity": {
+      "status": "not-fired"
+     },
+     "scanner-invoke-pinning": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {
+       "EC2CreateImageEvent": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent",
+        "Description": "Fires the image scanner when an image is created",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "EC2CreateImageEvent",
+        "State": "ENABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "scan"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:111122223333:function:test_lambda|AllowS3": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Id": "AllowS3",
+        "Principal": "s3.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-grant-wrong-principal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "not-fired"
+     },
+     "image-event-entry-rule": {
+      "status": "not-fired"
+     },
+     "scan-run-as-identity": {
+      "status": "not-fired"
+     },
+     "scanner-invoke-pinning": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {
+       "EC2CreateImageEvent": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent",
+        "Description": "Fires the image scanner when an image is created",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "EC2CreateImageEvent",
+        "State": "ENABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "scan"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {},
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:111122223333:function:test_lambda|AllowEventBridgeInvoke": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Id": "AllowEventBridgeInvoke",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-scanner-gone"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "not-fired"
+     },
+     "image-event-entry-rule": {
+      "status": "failed"
+     },
+     "scan-run-as-identity": {
+      "status": "succeeded"
+     },
+     "scanner-invoke-pinning": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {
+       "EC2CreateImageEvent": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent",
+        "Description": "Fires the image scanner when an image is created",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "EC2CreateImageEvent",
+        "State": "ENABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "scan"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "image_event_delivery_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_event_delivery_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "events.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "What event delivery runs as in this account; no workload runs as it",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_event_delivery_role"
+       },
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:111122223333:function:test_lambda|pinned-delivery-2026-09-1": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Id": "pinned-delivery-2026-09-1",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-image-event-entry-rule"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "succeeded"
+     },
+     "image-event-entry-rule": {
+      "status": "succeeded"
+     },
+     "scan-run-as-identity": {
+      "status": "succeeded"
+     },
+     "scanner-invoke-pinning": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {
+       "platform-ami-events": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events",
+        "Description": "ami-entry-2026-09: the one way EC2 image events enter this account",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage",
+           "CopyImage",
+           "RegisterImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "platform-ami-events",
+        "RoleArn": "arn:aws:iam::111122223333:role/image_event_delivery_role",
+        "State": "ENABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+          "Id": "billing-image-audit"
+         },
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "image-scan"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "billing_image_audit_role": {
+        "Arn": "arn:aws:iam::111122223333:role/billing_image_audit_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "billing_image_audit_role"
+       },
+       "image_event_delivery_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_event_delivery_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "events.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "What event delivery runs as in this account; no workload runs as it",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_event_delivery_role"
+       },
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "billing_image_audit": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+        "Description": "billing-ami-audit-2026-09: what the billing image audit runs",
+        "FunctionName": "billing_image_audit",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/billing_image_audit_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       },
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit|billing-ami-audit-2026-09-entry": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+        "Id": "billing-ami-audit-2026-09-entry",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events"
+       },
+       "arn:aws:lambda:us-east-1:111122223333:function:test_lambda|AllowEventBridgeInvoke": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Id": "AllowEventBridgeInvoke",
+        "Principal": "events.amazonaws.com"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-scanner-invoke-pinning"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "failed"
+     },
+     "image-event-entry-rule": {
+      "status": "succeeded"
+     },
+     "scan-run-as-identity": {
+      "status": "succeeded"
+     },
+     "scanner-invoke-pinning": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {
+       "platform-ami-events": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events",
+        "Description": "ami-entry-2026-09: the one way EC2 image events enter this account",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage",
+           "CopyImage",
+           "RegisterImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "platform-ami-events",
+        "RoleArn": "arn:aws:iam::111122223333:role/image_event_delivery_role",
+        "State": "ENABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "image-scan"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "image_event_delivery_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_event_delivery_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "events.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "What event delivery runs as in this account; no workload runs as it",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_event_delivery_role"
+       },
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:111122223333:function:test_lambda|pinned-delivery-2026-09-1": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Id": "pinned-delivery-2026-09-1",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-billing-audit-path"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "succeeded"
+     },
+     "image-event-entry-rule": {
+      "status": "succeeded"
+     },
+     "scan-run-as-identity": {
+      "status": "failed"
+     },
+     "scanner-invoke-pinning": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {
+       "platform-ami-events": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events",
+        "Description": "ami-entry-2026-09: the one way EC2 image events enter this account",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage",
+           "CopyImage",
+           "RegisterImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "platform-ami-events",
+        "State": "ENABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+          "Id": "billing-image-audit"
+         },
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "image-scan"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "billing_image_audit_role": {
+        "Arn": "arn:aws:iam::111122223333:role/billing_image_audit_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "billing_image_audit_role"
+       },
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "billing_image_audit": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+        "Description": "billing-ami-audit-2026-09: what the billing image audit runs",
+        "FunctionName": "billing_image_audit",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/billing_image_audit_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       },
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit|billing-ami-audit-2026-09-entry": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+        "Id": "billing-ami-audit-2026-09-entry",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events"
+       },
+       "arn:aws:lambda:us-east-1:111122223333:function:test_lambda|pinned-delivery-2026-09-1": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Id": "pinned-delivery-2026-09-1",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-scan-run-as-identity"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "succeeded"
+     },
+     "image-event-entry-rule": {
+      "status": "succeeded"
+     },
+     "scan-run-as-identity": {
+      "status": "succeeded"
+     },
+     "scanner-invoke-pinning": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {
+       "EC2CreateImageEvent": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent",
+        "Description": "Fires the image scanner when an image is created",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "EC2CreateImageEvent",
+        "State": "ENABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "scan"
+         }
+        ]
+       },
+       "platform-ami-events": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events",
+        "Description": "ami-entry-2026-09: the one way EC2 image events enter this account",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage",
+           "CopyImage",
+           "RegisterImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "platform-ami-events",
+        "RoleArn": "arn:aws:iam::111122223333:role/image_event_delivery_role",
+        "State": "ENABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+          "Id": "billing-image-audit"
+         },
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "image-scan"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "billing_image_audit_role": {
+        "Arn": "arn:aws:iam::111122223333:role/billing_image_audit_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "billing_image_audit_role"
+       },
+       "image_event_delivery_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_event_delivery_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "events.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "What event delivery runs as in this account; no workload runs as it",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_event_delivery_role"
+       },
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "billing_image_audit": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+        "Description": "billing-ami-audit-2026-09: what the billing image audit runs",
+        "FunctionName": "billing_image_audit",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/billing_image_audit_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       },
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit|billing-ami-audit-2026-09-entry": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+        "Id": "billing-ami-audit-2026-09-entry",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events"
+       },
+       "arn:aws:lambda:us-east-1:111122223333:function:test_lambda|pinned-delivery-2026-09-1": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Id": "pinned-delivery-2026-09-1",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-image-event-entry-rule"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "succeeded"
+     },
+     "image-event-entry-rule": {
+      "status": "succeeded"
+     },
+     "scan-run-as-identity": {
+      "status": "succeeded"
+     },
+     "scanner-invoke-pinning": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {
+       "platform-ami-events": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events",
+        "Description": "ami-entry-2026-09: the one way EC2 image events enter this account",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage",
+           "CopyImage",
+           "RegisterImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "platform-ami-events",
+        "RoleArn": "arn:aws:iam::111122223333:role/image_event_delivery_role",
+        "State": "ENABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+          "Id": "billing-image-audit"
+         },
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "image-scan"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "billing_image_audit_role": {
+        "Arn": "arn:aws:iam::111122223333:role/billing_image_audit_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "billing_image_audit_role"
+       },
+       "image_event_delivery_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_event_delivery_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "events.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "What event delivery runs as in this account; no workload runs as it",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_event_delivery_role"
+       },
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "billing_image_audit": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+        "Description": "billing-ami-audit-2026-09: what the billing image audit runs",
+        "FunctionName": "billing_image_audit",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/billing_image_audit_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       },
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit|billing-ami-audit-2026-09-entry": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+        "Id": "billing-ami-audit-2026-09-entry",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events"
+       },
+       "arn:aws:lambda:us-east-1:111122223333:function:test_lambda|AllowEventBridgeInvoke": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Id": "AllowEventBridgeInvoke",
+        "Principal": "events.amazonaws.com"
+       },
+       "arn:aws:lambda:us-east-1:111122223333:function:test_lambda|pinned-delivery-2026-09-1": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Id": "pinned-delivery-2026-09-1",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-scanner-invoke-pinning"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "succeeded"
+     },
+     "image-event-entry-rule": {
+      "status": "succeeded"
+     },
+     "scan-run-as-identity": {
+      "status": "succeeded"
+     },
+     "scanner-invoke-pinning": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {
+       "platform-ami-events": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events",
+        "Description": "ami-entry-2026-09: the one way EC2 image events enter this account",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage",
+           "CopyImage",
+           "RegisterImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "platform-ami-events",
+        "RoleArn": "arn:aws:iam::111122223333:role/image_event_delivery_role",
+        "State": "ENABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "image-scan"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "billing_image_audit_role": {
+        "Arn": "arn:aws:iam::111122223333:role/billing_image_audit_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "billing_image_audit_role"
+       },
+       "image_event_delivery_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_event_delivery_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "events.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "What event delivery runs as in this account; no workload runs as it",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_event_delivery_role"
+       },
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "billing_image_audit": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+        "Description": "billing-ami-audit-2026-09: what the billing image audit runs",
+        "FunctionName": "billing_image_audit",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/billing_image_audit_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       },
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit|billing-ami-audit-2026-09-entry": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+        "Id": "billing-ami-audit-2026-09-entry",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events"
+       },
+       "arn:aws:lambda:us-east-1:111122223333:function:test_lambda|pinned-delivery-2026-09-1": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Id": "pinned-delivery-2026-09-1",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-billing-audit-path"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "succeeded"
+     },
+     "image-event-entry-rule": {
+      "status": "succeeded"
+     },
+     "scan-run-as-identity": {
+      "status": "succeeded"
+     },
+     "scanner-invoke-pinning": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {
+       "platform-ami-events": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events",
+        "Description": "ami-entry-2026-09: the one way EC2 image events enter this account",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage",
+           "CopyImage",
+           "RegisterImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "platform-ami-events",
+        "RoleArn": "arn:aws:iam::111122223333:role/image_event_delivery_role",
+        "State": "ENABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+          "Id": "billing-image-audit"
+         },
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "image-scan"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "billing_image_audit_role": {
+        "Arn": "arn:aws:iam::111122223333:role/billing_image_audit_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "billing_image_audit_role"
+       },
+       "image_event_delivery_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_event_delivery_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "events.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "What event delivery runs as in this account; no workload runs as it",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_event_delivery_role"
+       },
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "billing_image_audit": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+        "Description": "billing-ami-audit-2026-09: what the billing image audit runs",
+        "FunctionName": "billing_image_audit",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/billing_image_audit_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       },
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit|billing-ami-audit-2026-09-entry": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+        "Id": "billing-ami-audit-2026-09-entry",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events"
+       },
+       "arn:aws:lambda:us-east-1:111122223333:function:test_lambda|pinned-delivery-2026-09-1": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Id": "pinned-delivery-2026-09-1",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-scan-run-as-identity"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "status": "succeeded"
+     },
+     "image-event-entry-rule": {
+      "status": "succeeded"
+     },
+     "scan-run-as-identity": {
+      "status": "succeeded"
+     },
+     "scanner-invoke-pinning": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Events::Rule": {
+       "EC2CreateImageEvent": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/EC2CreateImageEvent",
+        "Description": "Fires the image scanner when an image is created",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "EC2CreateImageEvent",
+        "RoleArn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "State": "DISABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "scan"
+         }
+        ]
+       },
+       "platform-ami-events": {
+        "Arn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events",
+        "Description": "ami-entry-2026-09: the one way EC2 image events enter this account",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage",
+           "CopyImage",
+           "RegisterImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Name": "platform-ami-events",
+        "RoleArn": "arn:aws:iam::111122223333:role/image_event_delivery_role",
+        "State": "ENABLED",
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+          "Id": "billing-image-audit"
+         },
+         {
+          "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+          "Id": "image-scan"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "billing_image_audit_role": {
+        "Arn": "arn:aws:iam::111122223333:role/billing_image_audit_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "billing_image_audit_role"
+       },
+       "image_event_delivery_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_event_delivery_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "events.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "What event delivery runs as in this account; no workload runs as it",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_event_delivery_role"
+       },
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::111122223333:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "billing_image_audit": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+        "Description": "billing-ami-audit-2026-09: what the billing image audit runs",
+        "FunctionName": "billing_image_audit",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/billing_image_audit_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       },
+       "test_lambda": {
+        "Arn": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Description": "",
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::111122223333:role/image_scan_role",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      },
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit|billing-ami-audit-2026-09-entry": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:billing_image_audit",
+        "Id": "billing-ami-audit-2026-09-entry",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events"
+       },
+       "arn:aws:lambda:us-east-1:111122223333:function:test_lambda|pinned-delivery-2026-09-1": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:111122223333:function:test_lambda",
+        "Id": "pinned-delivery-2026-09-1",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:111122223333:rule/platform-ami-events"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-scan-run-as-identity-rule"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "AWSReservedSSO_SandboxAdministrator_0000000000000001": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_SandboxAdministrator_0000000000000001",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+           ],
+           "Condition": {
+            "StringEquals": {
+             "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Federated": "arn:aws:iam::000000000114:saml-provider/AWSSSO_d19a45a4a1239f62_DO_NOT_DELETE"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 43200,
+        "Path": "/aws-reserved/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000174",
+        "RoleName": "AWSReservedSSO_SandboxAdministrator_0000000000000001"
+       },
+       "AWSServiceRoleForAutoScaling": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "autoscaling.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Default Service-Linked Role enables access to AWS Services and Resources used or managed by Auto Scaling",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AutoScalingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/autoscaling.amazonaws.com/",
+        "RoleId": "AROA00000000000000208",
+        "RoleName": "AWSServiceRoleForAutoScaling"
+       },
+       "AWSServiceRoleForElasticBeanstalk": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticbeanstalk.amazonaws.com/AWSServiceRoleForElasticBeanstalk",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticbeanstalk.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticBeanstalkServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticbeanstalk.amazonaws.com/",
+        "RoleId": "AROA00000000000000211",
+        "RoleName": "AWSServiceRoleForElasticBeanstalk"
+       },
+       "AWSServiceRoleForElasticLoadBalancing": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticloadbalancing.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows ELB to call AWS services on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
+        "RoleId": "AROA00000000000000194",
+        "RoleName": "AWSServiceRoleForElasticLoadBalancing"
+       },
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000181",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000190",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000177",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000220",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000170",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000114:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000219",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::000000000114:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "lambda.amazonaws.com",
+             "events.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000230",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:000000000114:function:test_lambda",
+        "Code": {},
+        "Description": "",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/test_lambda"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::000000000114:role/image_scan_role",
+        "Runtime": "python3.12",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "SnapStartResponse": {
+         "ApplyOn": "None",
+         "OptimizationStatus": "Off"
+        },
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Events::Rule": {
+       "arn:aws:events:us-east-1:000000000114:rule/ec2-image-created-to-test-lambda": {
+        "Arn": "arn:aws:events:us-east-1:000000000114:rule/ec2-image-created-to-test-lambda",
+        "Description": "Invoke test_lambda when an EC2 AMI is created (EC2 AMI State Change)",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "State": [
+           "pending",
+           "available",
+           "failed"
+          ]
+         },
+         "detail-type": [
+          "EC2 AMI State Change"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Id": "ec2-image-created-to-test-lambda",
+        "Name": "ec2-image-created-to-test-lambda",
+        "RuleName": "ec2-image-created-to-test-lambda",
+        "State": "ENABLED",
+        "Tags": [],
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:000000000114:function:test_lambda",
+          "Id": "test-lambda"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSReservedSSO_SandboxAdministrator_0000000000000001": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_SandboxAdministrator_0000000000000001",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+           ],
+           "Condition": {
+            "StringEquals": {
+             "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Federated": "arn:aws:iam::000000000114:saml-provider/AWSSSO_d19a45a4a1239f62_DO_NOT_DELETE"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 43200,
+        "Path": "/aws-reserved/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000174",
+        "RoleName": "AWSReservedSSO_SandboxAdministrator_0000000000000001"
+       },
+       "AWSServiceRoleForAutoScaling": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "autoscaling.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Default Service-Linked Role enables access to AWS Services and Resources used or managed by Auto Scaling",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AutoScalingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/autoscaling.amazonaws.com/",
+        "RoleId": "AROA00000000000000208",
+        "RoleName": "AWSServiceRoleForAutoScaling"
+       },
+       "AWSServiceRoleForElasticBeanstalk": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticbeanstalk.amazonaws.com/AWSServiceRoleForElasticBeanstalk",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticbeanstalk.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticBeanstalkServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticbeanstalk.amazonaws.com/",
+        "RoleId": "AROA00000000000000211",
+        "RoleName": "AWSServiceRoleForElasticBeanstalk"
+       },
+       "AWSServiceRoleForElasticLoadBalancing": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticloadbalancing.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows ELB to call AWS services on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
+        "RoleId": "AROA00000000000000194",
+        "RoleName": "AWSServiceRoleForElasticLoadBalancing"
+       },
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000181",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000190",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000177",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000220",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000170",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000114:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000219",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::000000000114:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000230",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:000000000114:function:test_lambda",
+        "Code": {},
+        "Description": "",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/test_lambda"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::000000000114:role/image_scan_role",
+        "Runtime": "python3.12",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "SnapStartResponse": {
+         "ApplyOn": "None",
+         "OptimizationStatus": "Off"
+        },
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      },
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:000000000114:function:test_lambda|events-ec2-image-created": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:000000000114:function:test_lambda",
+        "Id": "events-ec2-image-created",
+        "Principal": "events.amazonaws.com",
+        "SourceAccount": "000000000114",
+        "SourceArn": "arn:aws:events:us-east-1:000000000114:rule/ec2-image-created-to-test-lambda"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "billing-audit-path": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 1,
+        "landed_ns": 264627817306165,
+        "landed_s": 16.201,
+        "result": {
+         "fingerprint": [
+          "billing_image_audit"
+         ],
+         "function": "billing_image_audit",
+         "granted": true,
+         "rule": "platform-ami-events",
+         "target": "billing-image-audit",
+         "target_added": true,
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-billing-audit-path-1",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        "billing_image_audit"
+       ],
+       "function": "billing_image_audit",
+       "granted": true,
+       "rule": "platform-ami-events",
+       "target": "billing-image-audit",
+       "target_added": true,
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "image-event-entry-rule": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 2,
+        "landed_ns": 264629287557085,
+        "landed_s": 17.672,
+        "result": {
+         "fingerprint": [
+          "platform-ami-events",
+          "ami-entry-2026-09"
+         ],
+         "put": true,
+         "rule": "platform-ami-events",
+         "rule_arn": "arn:aws:events:us-east-1:000000000106:rule/platform-ami-events",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-image-event-entry-rule-2",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        "platform-ami-events",
+        "ami-entry-2026-09"
+       ],
+       "put": true,
+       "rule": "platform-ami-events",
+       "rule_arn": "arn:aws:events:us-east-1:000000000106:rule/platform-ami-events",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "scan-run-as-identity": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 4,
+        "landed_ns": 264672592298840,
+        "landed_s": 60.976,
+        "result": {
+         "created": true,
+         "delivery_role": "image_event_delivery_role",
+         "fingerprint": [
+          "image_event_delivery_role"
+         ],
+         "narrowed": true,
+         "rules_given": [
+          "platform-ami-events"
+         ],
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-scan-run-as-identity-4",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "created": true,
+       "delivery_role": "image_event_delivery_role",
+       "fingerprint": [
+        "image_event_delivery_role"
+       ],
+       "narrowed": true,
+       "rules_given": [
+        "platform-ami-events"
+       ],
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "scanner-invoke-pinning": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 3,
+        "landed_ns": 264653165503748,
+        "landed_s": 41.55,
+        "result": {
+         "fingerprint": [
+          "pinned-delivery-2026-09"
+         ],
+         "pinned": [
+          "test_lambda|pinned-delivery-2026-09-1",
+          "billing_image_audit|pinned-delivery-2026-09-1"
+         ],
+         "reviewed": [
+          "test_lambda",
+          "billing_image_audit"
+         ],
+         "revoked": [],
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-scanner-invoke-pinning-3",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        "pinned-delivery-2026-09"
+       ],
+       "pinned": [
+        "test_lambda|pinned-delivery-2026-09-1",
+        "billing_image_audit|pinned-delivery-2026-09-1"
+       ],
+       "reviewed": [
+        "test_lambda",
+        "billing_image_audit"
+       ],
+       "revoked": [],
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Events::Rule": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForElasticLoadBalancing": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticloadbalancing.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows ELB to call AWS services on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
+        "RoleId": "AROA00000000000000123",
+        "RoleName": "AWSServiceRoleForElasticLoadBalancing"
+       },
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000104",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000122",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000099",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000101",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000127",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000106:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000106",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::000000000106:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": [
+             "events.amazonaws.com",
+             "lambda.amazonaws.com"
+            ]
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000091",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "test_lambda": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:000000000106:function:test_lambda",
+        "Code": {},
+        "Description": "",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/test_lambda"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::000000000106:role/image_scan_role",
+        "Runtime": "python3.12",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "SnapStartResponse": {
+         "ApplyOn": "None",
+         "OptimizationStatus": "Off"
+        },
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      },
+      "AWS::Lambda::Permission": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Events::Rule": {
+       "arn:aws:events:us-east-1:000000000106:rule/platform-ami-events": {
+        "Arn": "arn:aws:events:us-east-1:000000000106:rule/platform-ami-events",
+        "Description": "ami-entry-2026-09: the one way EC2 image events enter this account",
+        "EventBusName": "default",
+        "EventPattern": {
+         "detail": {
+          "eventName": [
+           "CreateImage",
+           "CopyImage",
+           "RegisterImage"
+          ],
+          "eventSource": [
+           "ec2.amazonaws.com"
+          ]
+         },
+         "detail-type": [
+          "AWS API Call via CloudTrail"
+         ],
+         "source": [
+          "aws.ec2"
+         ]
+        },
+        "Id": "platform-ami-events",
+        "Name": "platform-ami-events",
+        "RoleArn": "arn:aws:iam::000000000106:role/image_event_delivery_role",
+        "RuleName": "platform-ami-events",
+        "State": "ENABLED",
+        "Tags": [],
+        "Targets": [
+         {
+          "Arn": "arn:aws:lambda:us-east-1:000000000106:function:billing_image_audit",
+          "Id": "billing-image-audit"
+         },
+         {
+          "Arn": "arn:aws:lambda:us-east-1:000000000106:function:test_lambda",
+          "Id": "test-lambda"
+         }
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForElasticLoadBalancing": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticloadbalancing.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows ELB to call AWS services on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
+        "RoleId": "AROA00000000000000123",
+        "RoleName": "AWSServiceRoleForElasticLoadBalancing"
+       },
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000104",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000122",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000099",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000101",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000127",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000106:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000106",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "billing_image_audit_role": {
+        "Arn": "arn:aws:iam::000000000106:role/billing_image_audit_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000095",
+        "RoleName": "billing_image_audit_role"
+       },
+       "image_event_delivery_role": {
+        "Arn": "arn:aws:iam::000000000106:role/image_event_delivery_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "events.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "What event delivery runs as in this account; no workload runs as it",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000117",
+        "RoleName": "image_event_delivery_role"
+       },
+       "image_scan_role": {
+        "Arn": "arn:aws:iam::000000000106:role/image_scan_role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000091",
+        "RoleName": "image_scan_role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "billing_image_audit": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:000000000106:function:billing_image_audit",
+        "Code": {},
+        "Description": "billing-ami-audit-2026-09: what the billing image audit runs",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "billing_image_audit",
+        "Handler": "index.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/billing_image_audit"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::000000000106:role/billing_image_audit_role",
+        "Runtime": "python3.12",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "SnapStartResponse": {
+         "ApplyOn": "None",
+         "OptimizationStatus": "Off"
+        },
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       },
+       "test_lambda": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:000000000106:function:test_lambda",
+        "Code": {},
+        "Description": "",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "test_lambda",
+        "Handler": "lambda_func.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/test_lambda"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::000000000106:role/image_scan_role",
+        "Runtime": "python3.12",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "SnapStartResponse": {
+         "ApplyOn": "None",
+         "OptimizationStatus": "Off"
+        },
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      },
+      "AWS::Lambda::Permission": {
+       "arn:aws:lambda:us-east-1:000000000106:function:billing_image_audit|pinned-delivery-2026-09-1": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:000000000106:function:billing_image_audit",
+        "Id": "pinned-delivery-2026-09-1",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:000000000106:rule/platform-ami-events"
+       },
+       "arn:aws:lambda:us-east-1:000000000106:function:test_lambda|pinned-delivery-2026-09-1": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "arn:aws:lambda:us-east-1:000000000106:function:test_lambda",
+        "Id": "pinned-delivery-2026-09-1",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": "arn:aws:events:us-east-1:000000000106:rule/platform-ami-events"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-interference-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

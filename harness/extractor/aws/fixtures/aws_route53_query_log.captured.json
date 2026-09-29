@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::Route53::QueryLoggingConfig",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-19T02:45:23+00:00",
+      "ResourceDescription": {
+        "Identifier": "0a59a56c-0639-4743-ab25-71b195f756ac",
+        "Properties": "{\"Id\": \"0a59a56c-0639-4743-ab25-71b195f756ac\", \"HostedZoneId\": \"Z05301812FVNWKV5LJJ0Z\", \"CloudWatchLogsLogGroupArn\": \"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/cloudgym-capability-20260919024502479900000002\"}"
+      },
+      "TypeName": "AWS::Route53::QueryLoggingConfig"
+    }
+  ],
+  "recorded_at": "2026-09-19T02:45:23+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::Route53::HealthCheck",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-09T06:30:36+00:00",
+      "ResourceDescription": {
+        "Identifier": "cd8d2592-8fd8-4ab0-ade4-01d412b55eb1",
+        "Properties": "{\"HealthCheckId\":\"cd8d2592-8fd8-4ab0-ade4-01d412b55eb1\",\"HealthCheckConfig\":{\"EnableSNI\":false,\"Type\":\"HTTP\",\"ResourcePath\":\"/\",\"FullyQualifiedDomainName\":\"example.com\",\"MeasureLatency\":false,\"Inverted\":false,\"Port\":80,\"RequestInterval\":30,\"FailureThreshold\":3},\"HealthCheckTags\":[{\"Value\":\"cloudgym-capability\",\"Key\":\"Name\"}]}"
+      },
+      "TypeName": "AWS::Route53::HealthCheck"
+    }
+  ],
+  "recorded_at": "2026-09-09T06:30:36+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

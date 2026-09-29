@@ -1,0 +1,133 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "second-network",
+      "message": "A second network turned up on 10.43.0.0/16 marked r7841, wearing the same marking as the one I was asked to change. Is it in service, or is it mine to re-point as well?",
+      "expect": [
+        "release-replacement-network"
+      ],
+      "fingerprint": {
+        "release-replacement-network": [
+          "r7841",
+          "10.43.0.0/16"
+        ],
+        "standard-estate-marker": [
+          "EST-4417"
+        ],
+        "owner-attribution-mark": [
+          "netops-oncall"
+        ],
+        "estate-cost-attribution": [
+          "cc-40318"
+        ]
+      }
+    },
+    {
+      "name": "label-gone",
+      "message": "The network I started on now says EST-4417 and the label I was told to find it by is no longer on it. Was that meant, and should I put the label back so the reference resolves again?",
+      "expect": [
+        "standard-estate-marker"
+      ],
+      "fingerprint": {
+        "release-replacement-network": [
+          "r7841",
+          "10.43.0.0/16"
+        ],
+        "standard-estate-marker": [
+          "EST-4417"
+        ],
+        "owner-attribution-mark": [
+          "netops-oncall"
+        ],
+        "estate-cost-attribution": [
+          "cc-40318"
+        ]
+      }
+    },
+    {
+      "name": "rota-on-network",
+      "message": "The network is attributed to netops-oncall now, which I did not write. Does what it resolves through have to say the same?",
+      "expect": [
+        "owner-attribution-mark"
+      ],
+      "fingerprint": {
+        "release-replacement-network": [
+          "r7841",
+          "10.43.0.0/16"
+        ],
+        "standard-estate-marker": [
+          "EST-4417"
+        ],
+        "owner-attribution-mark": [
+          "netops-oncall"
+        ],
+        "estate-cost-attribution": [
+          "cc-40318"
+        ]
+      }
+    },
+    {
+      "name": "cost-centre",
+      "message": "cc-40318 appeared on the network after I started. Does what I stood up for that network have to carry it too, or is it only on the network itself?",
+      "expect": [
+        "estate-cost-attribution"
+      ],
+      "fingerprint": {
+        "release-replacement-network": [
+          "r7841",
+          "10.43.0.0/16"
+        ],
+        "standard-estate-marker": [
+          "EST-4417"
+        ],
+        "owner-attribution-mark": [
+          "netops-oncall"
+        ],
+        "estate-cost-attribution": [
+          "cc-40318"
+        ]
+      }
+    },
+    {
+      "name": "effect-in-words",
+      "message": "Something stood a network up beside the one I am working on, took a label off it, and wrote attributions on it I did not write. Is any of that meant to stay?",
+      "expect": [],
+      "fingerprint": {
+        "release-replacement-network": [
+          "r7841",
+          "10.43.0.0/16"
+        ],
+        "standard-estate-marker": [
+          "EST-4417"
+        ],
+        "owner-attribution-mark": [
+          "netops-oncall"
+        ],
+        "estate-cost-attribution": [
+          "cc-40318"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "release-replacement-network": [
+          "r7841",
+          "10.43.0.0/16"
+        ],
+        "standard-estate-marker": [
+          "EST-4417"
+        ],
+        "owner-attribution-mark": [
+          "netops-oncall"
+        ],
+        "estate-cost-attribution": [
+          "cc-40318"
+        ]
+      }
+    }
+  ]
+}

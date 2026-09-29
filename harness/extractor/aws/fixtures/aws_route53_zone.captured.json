@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::Route53::HostedZone",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-09T06:08:04+00:00",
+      "ResourceDescription": {
+        "Identifier": "Z0887878OBJ3URXX9L2U",
+        "Properties": "{\"HostedZoneFeatures\":{\"EnableAcceleratedRecovery\":false},\"HostedZoneConfig\":{\"Comment\":\"cloudgym extractor capability fixture\"},\"Id\":\"Z0887878OBJ3URXX9L2U\",\"NameServers\":[\"ns-464.awsdns-58.com\",\"ns-1902.awsdns-45.co.uk\",\"ns-1498.awsdns-59.org\",\"ns-1001.awsdns-61.net\"],\"Name\":\"cloudgym-capability.test.\"}"
+      },
+      "TypeName": "AWS::Route53::HostedZone"
+    }
+  ],
+  "recorded_at": "2026-09-09T06:08:05+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

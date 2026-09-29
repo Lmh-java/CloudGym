@@ -1,0 +1,32 @@
+# Pre-existing: the analytics workload's network and the one segment it runs outward-facing
+# work in.
+#
+# The VPC is on dedicated tenancy, as the workload requires, and resolves DNS, but it hands
+# out no DNS hostnames yet, and the network has no way out at all: no internet gateway exists
+# anywhere near it, nothing in it carries a default route, there is no explicit route-table
+# association — the segment rides the VPC's main table — and nothing in the network carries a
+# mark of anyone else's. The main table EC2 creates with a VPC is not declared here; it holds
+# the local route and nothing else.
+
+resource "aws_vpc" "analytics" {
+  cidr_block           = "10.60.0.0/16"
+  instance_tenancy     = "dedicated"
+  enable_dns_support   = true
+  enable_dns_hostnames = false
+
+  tags = {
+    Name     = "analytics-vpc"
+    Workload = "analytics"
+  }
+}
+
+resource "aws_subnet" "edge" {
+  vpc_id     = aws_vpc.analytics.id
+  cidr_block = "10.60.1.0/24"
+
+  tags = {
+    Name     = "analytics-edge-a"
+    Tier     = "edge"
+    Workload = "analytics"
+  }
+}

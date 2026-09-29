@@ -1,0 +1,2 @@
+A workload runs as an identity created for it; what another workload answers for, or what is staged for a later move, stays as found.
+Where a shared store or the account's baseline says how things are kept, that is what your workload inherits and writes under.

@@ -1,0 +1,2 @@
+Space already placed for your workload is where it runs; space that is not yours stays empty of it, and only a server you launched is yours.
+What you did not create stays as it is; names are the account's to set, no second made where one serves.

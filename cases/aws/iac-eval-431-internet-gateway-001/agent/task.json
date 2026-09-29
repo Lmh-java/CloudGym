@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_431_internet_gateway",
+  "utterance": "The dedicated-tenancy VPC `dgraph-vpc` (10.60.0.0/16) already exists with DNS support and DNS hostnames enabled, and today it has no path to the internet at all. Give it an internet gateway and a route table for outbound internet access — a 0.0.0.0/0 default route that leaves through that gateway. Tag each resource you create with a Name that identifies it.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "dgraph-vpc reaches the outside through one internet gateway — the one the account already keeps for that purpose, when it keeps one, with no second gateway of the agent's left standing in the account — and a route table of dgraph-vpc that did not exist before carries a 0.0.0.0/0 route leaving through that gateway; that table and the gateway each carry a Name tag identifying them, the table carries the same marks as what already stands in the network, and every other path out of that network still leaves through the same gateway"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 431
+  }
+}

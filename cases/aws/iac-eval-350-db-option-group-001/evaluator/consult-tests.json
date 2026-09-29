@@ -1,0 +1,132 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "who-holds-the-name",
+      "message": "The name I was told to raise is already taken by a group described as the checkout-api option set, at a different engine major version. Is that name available to me, or do I put these options somewhere else?",
+      "expect": [
+        "group-name-held"
+      ],
+      "fingerprint": {
+        "group-name-held": [
+          "checkout-api"
+        ],
+        "engine-group-in-service": [
+          "platform-mssql-shared"
+        ],
+        "store-layout-place": [
+          "audit/orders-team",
+          "store-layout-r7"
+        ],
+        "delivery-permission-baseline": [
+          "least-privilege-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "which-group-for-the-engine-version",
+      "message": "A group called platform-mssql-shared has turned up for this engine version. Should what I need go on it, or do I stand up one of my own beside it?",
+      "expect": [
+        "engine-group-in-service"
+      ],
+      "fingerprint": {
+        "group-name-held": [
+          "checkout-api"
+        ],
+        "engine-group-in-service": [
+          "platform-mssql-shared"
+        ],
+        "store-layout-place": [
+          "audit/orders-team",
+          "store-layout-r7"
+        ],
+        "delivery-permission-baseline": [
+          "least-privilege-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "where-under-the-store",
+      "message": "The store now records a store-layout-r7 revision naming audit/orders-team. Should what I point the audit setting at cover only that, or everything landing in the store?",
+      "expect": [
+        "store-layout-place"
+      ],
+      "fingerprint": {
+        "group-name-held": [
+          "checkout-api"
+        ],
+        "engine-group-in-service": [
+          "platform-mssql-shared"
+        ],
+        "store-layout-place": [
+          "audit/orders-team",
+          "store-layout-r7"
+        ],
+        "delivery-permission-baseline": [
+          "least-privilege-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "who-wrote-the-identity-permissions",
+      "message": "The delivery identity is marked least-privilege-2026-09 and already carries a document giving it reach over the store. Do I write my own over it, or leave it be?",
+      "expect": [
+        "delivery-permission-baseline"
+      ],
+      "fingerprint": {
+        "group-name-held": [
+          "checkout-api"
+        ],
+        "engine-group-in-service": [
+          "platform-mssql-shared"
+        ],
+        "store-layout-place": [
+          "audit/orders-team",
+          "store-layout-r7"
+        ],
+        "delivery-permission-baseline": [
+          "least-privilege-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "effects-in-words",
+      "message": "The name I was pointed at seems to belong to something else already, another group for the same engine version has appeared, the records look like they are meant to sit under a place of their own rather than at the root, and the delivery identity has permissions it did not have. Whose changes are those, and do I have to follow them?",
+      "expect": [],
+      "fingerprint": {
+        "group-name-held": [
+          "checkout-api"
+        ],
+        "engine-group-in-service": [
+          "platform-mssql-shared"
+        ],
+        "store-layout-place": [
+          "audit/orders-team",
+          "store-layout-r7"
+        ],
+        "delivery-permission-baseline": [
+          "least-privilege-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "fingerprint": {
+        "group-name-held": [
+          "checkout-api"
+        ],
+        "engine-group-in-service": [
+          "platform-mssql-shared"
+        ],
+        "store-layout-place": [
+          "audit/orders-team",
+          "store-layout-r7"
+        ],
+        "delivery-permission-baseline": [
+          "least-privilege-2026-09"
+        ]
+      }
+    }
+  ]
+}

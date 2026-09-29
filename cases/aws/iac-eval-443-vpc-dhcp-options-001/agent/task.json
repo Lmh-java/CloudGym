@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_443_vpc_dhcp_options",
+  "utterance": "Give the pike application's network its own DHCP options: a set handing out Google's public resolvers, 8.8.8.8 and 8.8.4.4, marked `pike = permissions`, with the existing VPC that carries the `Workload = pike` marking resolving through it instead of the account's default set.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "the VPC that carried the `Workload = pike` marking when the work began resolves through exactly one DHCP option set, whose domain name servers are exactly 8.8.8.8 and 8.8.4.4 and which carries the tag `pike = permissions`"
+  },
+  "notes": "which network the marking picks out, what else the option set has to carry, and what may be left standing beside it follow from the resolution policy and the account's state, not from the utterance",
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 443
+  }
+}

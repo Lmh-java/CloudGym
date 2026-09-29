@@ -1,0 +1,71 @@
+{
+ "mode": "fingerprint",
+ "asks": [
+  {
+   "name": "image-replaced",
+   "message": "My project came back running aws/codebuild/amazonlinux2-x86_64-standard:5.0 instead of what I set on it. Is that what a build here is supposed to run on?",
+   "expect": ["standard-build-image"],
+   "fingerprint": {
+    "standard-build-image": ["aws/codebuild/amazonlinux2-x86_64-standard:5.0"],
+    "pooled-build-identity": ["codebuild-shared-runner"],
+    "build-time-ceiling": ["slo-ceiling-2026q3"],
+    "chargeback-attribution": ["cc-4417-builds"]
+   }
+  },
+  {
+   "name": "service-role-repointed",
+   "message": "My project is running as codebuild-shared-runner now, not the role I made for it. Which of the two should it be?",
+   "expect": ["pooled-build-identity"],
+   "fingerprint": {
+    "standard-build-image": ["aws/codebuild/amazonlinux2-x86_64-standard:5.0"],
+    "pooled-build-identity": ["codebuild-shared-runner"],
+    "build-time-ceiling": ["slo-ceiling-2026q3"],
+    "chargeback-attribution": ["cc-4417-builds"]
+   }
+  },
+  {
+   "name": "ceiling-mark",
+   "message": "The build that was already here is marked slo-ceiling-2026q3 and it no longer runs as long as it did. Does that hold for what I build too?",
+   "expect": ["build-time-ceiling"],
+   "fingerprint": {
+    "standard-build-image": ["aws/codebuild/amazonlinux2-x86_64-standard:5.0"],
+    "pooled-build-identity": ["codebuild-shared-runner"],
+    "build-time-ceiling": ["slo-ceiling-2026q3"],
+    "chargeback-attribution": ["cc-4417-builds"]
+   }
+  },
+  {
+   "name": "chargeback-mark",
+   "message": "Everything here came back marked cc-4417-builds. Is that something my project has to carry as well?",
+   "expect": ["chargeback-attribution"],
+   "fingerprint": {
+    "standard-build-image": ["aws/codebuild/amazonlinux2-x86_64-standard:5.0"],
+    "pooled-build-identity": ["codebuild-shared-runner"],
+    "build-time-ceiling": ["slo-ceiling-2026q3"],
+    "chargeback-attribution": ["cc-4417-builds"]
+   }
+  },
+  {
+   "name": "effects-in-words",
+   "message": "Something rewrote my build settings, shortened how long a build may run and moved it onto a different identity. Should I put all of that back the way I had it?",
+   "expect": [],
+   "fingerprint": {
+    "standard-build-image": ["aws/codebuild/amazonlinux2-x86_64-standard:5.0"],
+    "pooled-build-identity": ["codebuild-shared-runner"],
+    "build-time-ceiling": ["slo-ceiling-2026q3"],
+    "chargeback-attribution": ["cc-4417-builds"]
+   }
+  },
+  {
+   "name": "generic",
+   "message": "Any conventions I should follow here?",
+   "expect": [],
+   "fingerprint": {
+    "standard-build-image": ["aws/codebuild/amazonlinux2-x86_64-standard:5.0"],
+    "pooled-build-identity": ["codebuild-shared-runner"],
+    "build-time-ceiling": ["slo-ceiling-2026q3"],
+    "chargeback-attribution": ["cc-4417-builds"]
+   }
+  }
+ ]
+}

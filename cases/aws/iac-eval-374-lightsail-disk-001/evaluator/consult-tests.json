@@ -1,0 +1,50 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "backup-set",
+      "message": "The host I am hanging these disks off now carries a record reading wed-0215-utc that I did not put there, and it went down while my attachment was being refused. Is that one to leave where it is, or is it mine to clear so my call gets through?",
+      "expect": ["backup-quiesce-hold"],
+      "fingerprint": {
+        "backup-quiesce-hold": ["wed-0215-utc"],
+        "release-cutover-start": ["train-2026.09-r4"]
+      }
+    },
+    {
+      "name": "release-train",
+      "message": "There is a record of train-2026.09-r4 on the host now, and it came back up on its own while I was waiting. Who holds it that way, and does it have to stay that way once both disks are on it?",
+      "expect": ["release-cutover-start"],
+      "fingerprint": {
+        "backup-quiesce-hold": ["wed-0215-utc"],
+        "release-cutover-start": ["train-2026.09-r4"]
+      }
+    },
+    {
+      "name": "refusal-in-words",
+      "message": "My attachment keeps coming back refused because the host is not in a state that takes a disk, and something else keeps moving its power state. Whose change is that, and am I meant to sit it out or put the host back the way I found it?",
+      "expect": [],
+      "fingerprint": {
+        "backup-quiesce-hold": ["wed-0215-utc"],
+        "release-cutover-start": ["train-2026.09-r4"]
+      }
+    },
+    {
+      "name": "both-records",
+      "message": "Two records I did not write turned up on the host while I was working: wed-0215-utc and train-2026.09-r4. Are either of them mine to clear?",
+      "expect": ["backup-quiesce-hold", "release-cutover-start"],
+      "fingerprint": {
+        "backup-quiesce-hold": ["wed-0215-utc"],
+        "release-cutover-start": ["train-2026.09-r4"]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "backup-quiesce-hold": ["wed-0215-utc"],
+        "release-cutover-start": ["train-2026.09-r4"]
+      }
+    }
+  ]
+}

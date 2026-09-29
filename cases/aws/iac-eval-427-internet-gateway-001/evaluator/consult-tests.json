@@ -1,0 +1,152 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "gateway-already-attached",
+      "message": "The network will not take the gateway I made: one called shared-egress-igw is already attached to it, tagged EgressRef PLT-4417. Is that the one my public subnets are supposed to reach the internet through?",
+      "expect": [
+        "shared-egress-gateway"
+      ],
+      "fingerprint": {
+        "shared-egress-gateway": [
+          "shared-egress-igw",
+          "PLT-4417"
+        ],
+        "consolidated-network-routing": [
+          "consolidated-on-shared",
+          "NET-7734"
+        ],
+        "single-egress-path": [
+          "one-way-out",
+          "NSE-3390"
+        ],
+        "held-tier-headroom": [
+          "reserved-for-failover",
+          "SRE-6612"
+        ]
+      }
+    },
+    {
+      "name": "segments-moved-off-my-table",
+      "message": "The subnets I bound to the table I made are on the table that was already here instead, and that table now reads consolidated-on-shared under RoutingRef NET-7734. Is that where they belong?",
+      "expect": [
+        "consolidated-network-routing"
+      ],
+      "fingerprint": {
+        "shared-egress-gateway": [
+          "shared-egress-igw",
+          "PLT-4417"
+        ],
+        "consolidated-network-routing": [
+          "consolidated-on-shared",
+          "NET-7734"
+        ],
+        "single-egress-path": [
+          "one-way-out",
+          "NSE-3390"
+        ],
+        "held-tier-headroom": [
+          "reserved-for-failover",
+          "SRE-6612"
+        ]
+      }
+    },
+    {
+      "name": "my-default-route-disappeared",
+      "message": "The default route I put on my own table is gone, and the table that was already here reads one-way-out under EgressPathRef NSE-3390. Does the way out belong only on that one?",
+      "expect": [
+        "single-egress-path"
+      ],
+      "fingerprint": {
+        "shared-egress-gateway": [
+          "shared-egress-igw",
+          "PLT-4417"
+        ],
+        "consolidated-network-routing": [
+          "consolidated-on-shared",
+          "NET-7734"
+        ],
+        "single-egress-path": [
+          "one-way-out",
+          "NSE-3390"
+        ],
+        "held-tier-headroom": [
+          "reserved-for-failover",
+          "SRE-6612"
+        ]
+      }
+    },
+    {
+      "name": "segment-set-aside",
+      "message": "One of the subnets I cut now reads reserved-for-failover under SRE-6612 and has been unbound from the routing I gave it. Should anything of mine still stand in it?",
+      "expect": [
+        "held-tier-headroom"
+      ],
+      "fingerprint": {
+        "shared-egress-gateway": [
+          "shared-egress-igw",
+          "PLT-4417"
+        ],
+        "consolidated-network-routing": [
+          "consolidated-on-shared",
+          "NET-7734"
+        ],
+        "single-egress-path": [
+          "one-way-out",
+          "NSE-3390"
+        ],
+        "held-tier-headroom": [
+          "reserved-for-failover",
+          "SRE-6612"
+        ]
+      }
+    },
+    {
+      "name": "things-keep-changing",
+      "message": "Gateways, tables and subnets I did not create keep turning up in the network I was asked to use, and some of the routing I set keeps coming undone. Should what I build carry them, or only what I made myself?",
+      "expect": [],
+      "note": "describes the effect without naming anything that was read; it reaches nobody",
+      "fingerprint": {
+        "shared-egress-gateway": [
+          "shared-egress-igw",
+          "PLT-4417"
+        ],
+        "consolidated-network-routing": [
+          "consolidated-on-shared",
+          "NET-7734"
+        ],
+        "single-egress-path": [
+          "one-way-out",
+          "NSE-3390"
+        ],
+        "held-tier-headroom": [
+          "reserved-for-failover",
+          "SRE-6612"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect_at_most": 0,
+      "fingerprint": {
+        "shared-egress-gateway": [
+          "shared-egress-igw",
+          "PLT-4417"
+        ],
+        "consolidated-network-routing": [
+          "consolidated-on-shared",
+          "NET-7734"
+        ],
+        "single-egress-path": [
+          "one-way-out",
+          "NSE-3390"
+        ],
+        "held-tier-headroom": [
+          "reserved-for-failover",
+          "SRE-6612"
+        ]
+      }
+    }
+  ]
+}

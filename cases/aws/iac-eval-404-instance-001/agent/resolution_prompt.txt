@@ -1,0 +1,2 @@
+A path you stand up carries every server of the workload it serves, and nothing another workload owns — theirs stays as found.
+A workload lands only in space no other has claimed, and uses what the account keeps for a shared purpose rather than standing up a second.

@@ -1,0 +1,24 @@
+{
+  "cloudcontrol_type": "AWS::ApiGateway::Method",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-22T18:36:13+00:00",
+      "ResourceDescription": {
+        "Identifier": "2q1cxzk2dc|mioo4m|GET",
+        "Properties": "{\"Integration\":{\"CacheNamespace\":\"mioo4m\",\"Type\":\"MOCK\",\"RequestTemplates\":{\"application/json\":\"{\\\"statusCode\\\": 200}\"},\"ResponseTransferMode\":\"BUFFERED\",\"TimeoutInMillis\":29000,\"PassthroughBehavior\":\"WHEN_NO_MATCH\"},\"ResourceId\":\"mioo4m\",\"RestApiId\":\"2q1cxzk2dc\",\"ApiKeyRequired\":false,\"AuthorizationType\":\"NONE\",\"HttpMethod\":\"GET\"}"
+      },
+      "TypeName": "AWS::ApiGateway::Method"
+    },
+    {
+      "ReadAt": "2026-09-22T18:36:14+00:00",
+      "ResourceDescription": {
+        "Identifier": "yal2r1f95i|hq2txs|GET",
+        "Properties": "{\"ResourceId\":\"hq2txs\",\"RestApiId\":\"yal2r1f95i\",\"ApiKeyRequired\":false,\"AuthorizationType\":\"NONE\",\"HttpMethod\":\"GET\"}"
+      },
+      "TypeName": "AWS::ApiGateway::Method"
+    }
+  ],
+  "recorded_at": "2026-09-22T18:36:14+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

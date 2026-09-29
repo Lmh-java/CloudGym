@@ -1,0 +1,3932 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "edge-front-door-binding": {
+      "status": "succeeded"
+     },
+     "endpoint-address-rotation": {
+      "status": "succeeded"
+     },
+     "namesake-cutover-zone": {
+      "status": "succeeded"
+     },
+     "vanity-name-aliases": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "edge-front-door-binding": {
+      "status": "succeeded"
+     },
+     "endpoint-address-rotation": {
+      "status": "succeeded"
+     },
+     "namesake-cutover-zone": {
+      "status": "succeeded"
+     },
+     "vanity-name-aliases": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       },
+       "Z0STAGEDCOPYEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "cutover-staging-2026-09: staged copy of the product domain, not delegated yet"
+        },
+        "Id": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_cutover.example53.com|Z0STAGEDCOPYEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "_cutover.example53.com.",
+        "ResourceRecords": [
+         "\"cutover-staging-2026-09\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "_endpoints.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "_endpoints.example53.com.",
+        "ResourceRecords": [
+         "\"edge-refresh-2026-09: endpoints answer the addresses published under endpoints\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "_names.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "_names.example53.com.",
+        "ResourceRecords": [
+         "\"user-facing-names-alias-the-front-door\""
+        ],
+        "TTL": "300",
+        "Type": "TXT"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|edge-default": {
+        "GeoLocation": {
+         "CountryCode": "*"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.100"
+        ],
+        "SetIdentifier": "edge-default",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "\"netops-edge-front-door\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "eu.endpoints.example53.com|Z0SEEDZONEEXAMPLE|A|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "eu.endpoints.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.112"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "example53.com|Z0STAGEDCOPYEXAMPLE|NS|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0STAGEDCOPYEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "na.endpoints.example53.com|Z0SEEDZONEEXAMPLE|A|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "na.endpoints.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.111"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "nearest.example53.com|Z0SEEDZONEEXAMPLE|A|EU Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "EU"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "nearest.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "SetIdentifier": "EU Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "nearest.example53.com|Z0SEEDZONEEXAMPLE|A|NA Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "NA"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "nearest.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "NA Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "service.example53.com|Z0SEEDZONEEXAMPLE|CNAME|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "service.example53.com.",
+        "ResourceRecords": [
+         "edge.example53.com"
+        ],
+        "TTL": "300",
+        "Type": "CNAME"
+       },
+       "www.example53.com|Z0SEEDZONEEXAMPLE|CNAME|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "www.example53.com.",
+        "ResourceRecords": [
+         "edge.example53.com"
+        ],
+        "TTL": "300",
+        "Type": "CNAME"
+       }
+      }
+     }
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "edge-front-door-binding": {
+      "status": "succeeded"
+     },
+     "endpoint-address-rotation": {
+      "status": "succeeded"
+     },
+     "namesake-cutover-zone": {
+      "status": "succeeded"
+     },
+     "vanity-name-aliases": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "service.example53.com|Z0SEEDZONEEXAMPLE|A|EU Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "EU"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "service.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "SetIdentifier": "EU Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "service.example53.com|Z0SEEDZONEEXAMPLE|A|NA Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "NA"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "service.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "NA Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "edge-front-door-binding": {
+      "status": "succeeded"
+     },
+     "endpoint-address-rotation": {
+      "status": "succeeded"
+     },
+     "namesake-cutover-zone": {
+      "status": "succeeded"
+     },
+     "vanity-name-aliases": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       },
+       "Z0STAGEDCOPYEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "cutover-staging-2026-09: staged copy of the product domain, not delegated yet"
+        },
+        "Id": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_cutover.example53.com|Z0STAGEDCOPYEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "_cutover.example53.com.",
+        "ResourceRecords": [
+         "\"cutover-staging-2026-09\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "_endpoints.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "_endpoints.example53.com.",
+        "ResourceRecords": [
+         "\"edge-refresh-2026-09: endpoints answer the addresses published under endpoints\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "_names.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "_names.example53.com.",
+        "ResourceRecords": [
+         "\"user-facing-names-alias-the-front-door\""
+        ],
+        "TTL": "300",
+        "Type": "TXT"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|EU Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "EU"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.112"
+        ],
+        "SetIdentifier": "EU Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|NA Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "NA"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.111"
+        ],
+        "SetIdentifier": "NA Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|edge-default": {
+        "GeoLocation": {
+         "CountryCode": "*"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.100"
+        ],
+        "SetIdentifier": "edge-default",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "\"netops-edge-front-door\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "eu.endpoints.example53.com|Z0SEEDZONEEXAMPLE|A|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "eu.endpoints.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.112"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "example53.com|Z0STAGEDCOPYEXAMPLE|NS|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0STAGEDCOPYEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "na.endpoints.example53.com|Z0SEEDZONEEXAMPLE|A|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "na.endpoints.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.111"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "service.example53.com|Z0SEEDZONEEXAMPLE|CNAME|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "service.example53.com.",
+        "ResourceRecords": [
+         "edge.example53.com"
+        ],
+        "TTL": "300",
+        "Type": "CNAME"
+       },
+       "www.example53.com|Z0SEEDZONEEXAMPLE|CNAME|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "www.example53.com.",
+        "ResourceRecords": [
+         "edge.example53.com"
+        ],
+        "TTL": "300",
+        "Type": "CNAME"
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "edge-front-door-binding": {
+      "status": "not-fired"
+     },
+     "endpoint-address-rotation": {
+      "status": "not-fired"
+     },
+     "namesake-cutover-zone": {
+      "status": "not-fired"
+     },
+     "vanity-name-aliases": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "service.example53.com|Z0SEEDZONEEXAMPLE|A|EU Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "EU"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "service.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "SetIdentifier": "EU Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "service.example53.com|Z0SEEDZONEEXAMPLE|A|NA Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "NA"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "service.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "NA Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "edge-front-door-binding": {
+      "status": "not-fired"
+     },
+     "endpoint-address-rotation": {
+      "status": "not-fired"
+     },
+     "namesake-cutover-zone": {
+      "status": "not-fired"
+     },
+     "vanity-name-aliases": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "service.example53.com|Z0SEEDZONEEXAMPLE|A|NA Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "NA"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "service.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "NA Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "edge-front-door-binding": {
+      "status": "not-fired"
+     },
+     "endpoint-address-rotation": {
+      "status": "not-fired"
+     },
+     "namesake-cutover-zone": {
+      "status": "not-fired"
+     },
+     "vanity-name-aliases": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "service.example53.com|Z0SEEDZONEEXAMPLE|A|EU Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "EU"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "service.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "SetIdentifier": "EU Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "service.example53.com|Z0SEEDZONEEXAMPLE|A|NA Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "NA"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "service.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.109"
+        ],
+        "SetIdentifier": "NA Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "wrong-na-address"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "edge-front-door-binding": {
+      "status": "not-fired"
+     },
+     "endpoint-address-rotation": {
+      "status": "not-fired"
+     },
+     "namesake-cutover-zone": {
+      "status": "not-fired"
+     },
+     "vanity-name-aliases": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "other.example53.com|Z0SEEDZONEEXAMPLE|A|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "other.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "TTL": "300",
+        "Type": "A"
+       },
+       "service.example53.com|Z0SEEDZONEEXAMPLE|A|NA Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "NA"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "service.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "NA Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "missing-eu-member"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "edge-front-door-binding": {
+      "status": "not-fired"
+     },
+     "endpoint-address-rotation": {
+      "status": "not-fired"
+     },
+     "namesake-cutover-zone": {
+      "status": "not-fired"
+     },
+     "vanity-name-aliases": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "eu.example53.com|Z0SEEDZONEEXAMPLE|A|EU Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "EU"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "eu.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "SetIdentifier": "EU Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "na.example53.com|Z0SEEDZONEEXAMPLE|A|NA Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "NA"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "na.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "NA Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "split-across-names"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "edge-front-door-binding": {
+      "status": "not-fired"
+     },
+     "endpoint-address-rotation": {
+      "status": "not-fired"
+     },
+     "namesake-cutover-zone": {
+      "status": "not-fired"
+     },
+     "vanity-name-aliases": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "service.example53.com|Z0SEEDZONEEXAMPLE|A|EU Endpoint": {
+        "AliasTarget": {
+         "DNSName": "eu.endpoints.example53.com.",
+         "HostedZoneId": "Z0SEEDZONEEXAMPLE"
+        },
+        "GeoLocation": {
+         "ContinentCode": "EU"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "service.example53.com.",
+        "SetIdentifier": "EU Endpoint",
+        "Type": "A"
+       },
+       "service.example53.com|Z0SEEDZONEEXAMPLE|A|NA Endpoint": {
+        "AliasTarget": {
+         "DNSName": "na.endpoints.example53.com.",
+         "HostedZoneId": "Z0SEEDZONEEXAMPLE"
+        },
+        "GeoLocation": {
+         "ContinentCode": "NA"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "service.example53.com.",
+        "SetIdentifier": "NA Endpoint",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "alias-records"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "edge-front-door-binding": {
+      "status": "not-fired"
+     },
+     "endpoint-address-rotation": {
+      "status": "not-fired"
+     },
+     "namesake-cutover-zone": {
+      "status": "not-fired"
+     },
+     "vanity-name-aliases": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "service.example53.com|Z0SEEDZONEEXAMPLE|A|EU Endpoint": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "service.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "SetIdentifier": "EU Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "service.example53.com|Z0SEEDZONEEXAMPLE|A|NA Endpoint": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "service.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "NA Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "no-location-routing"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "edge-front-door-binding": {
+      "status": "not-fired"
+     },
+     "endpoint-address-rotation": {
+      "status": "not-fired"
+     },
+     "namesake-cutover-zone": {
+      "status": "not-fired"
+     },
+     "vanity-name-aliases": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "service.example53.com|Z0SEEDZONEEXAMPLE|A|AS Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "AS"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "service.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "SetIdentifier": "AS Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "service.example53.com|Z0SEEDZONEEXAMPLE|A|NA Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "NA"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "service.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "NA Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "wrong-continent"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "edge-front-door-binding": {
+      "status": "not-fired"
+     },
+     "endpoint-address-rotation": {
+      "status": "not-fired"
+     },
+     "namesake-cutover-zone": {
+      "status": "not-fired"
+     },
+     "vanity-name-aliases": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0OTHERZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "a zone the agent made for the domain"
+        },
+        "Id": "Z0OTHERZONEEXAMPLE",
+        "Name": "example53.com."
+       },
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0OTHERZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0OTHERZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0OTHERZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0OTHERZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "www.example53.com|Z0OTHERZONEEXAMPLE|A|EU Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "EU"
+        },
+        "HostedZoneId": "Z0OTHERZONEEXAMPLE",
+        "Name": "www.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "SetIdentifier": "EU Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "www.example53.com|Z0OTHERZONEEXAMPLE|A|NA Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "NA"
+        },
+        "HostedZoneId": "Z0OTHERZONEEXAMPLE",
+        "Name": "www.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "NA Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "published-in-another-zone"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "edge-front-door-binding": {
+      "status": "failed"
+     },
+     "endpoint-address-rotation": {
+      "status": "succeeded"
+     },
+     "namesake-cutover-zone": {
+      "status": "succeeded"
+     },
+     "vanity-name-aliases": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       },
+       "Z0STAGEDCOPYEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "cutover-staging-2026-09: staged copy of the product domain, not delegated yet"
+        },
+        "Id": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_cutover.example53.com|Z0STAGEDCOPYEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "_cutover.example53.com.",
+        "ResourceRecords": [
+         "\"cutover-staging-2026-09\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "_endpoints.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "_endpoints.example53.com.",
+        "ResourceRecords": [
+         "\"edge-refresh-2026-09: endpoints answer the addresses published under endpoints\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "_names.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "_names.example53.com.",
+        "ResourceRecords": [
+         "\"user-facing-names-alias-the-front-door\""
+        ],
+        "TTL": "300",
+        "Type": "TXT"
+       },
+       "eu.endpoints.example53.com|Z0SEEDZONEEXAMPLE|A|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "eu.endpoints.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.112"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "example53.com|Z0STAGEDCOPYEXAMPLE|NS|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0STAGEDCOPYEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "na.endpoints.example53.com|Z0SEEDZONEEXAMPLE|A|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "na.endpoints.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.111"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "nearest.example53.com|Z0SEEDZONEEXAMPLE|A|EU Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "EU"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "nearest.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.112"
+        ],
+        "SetIdentifier": "EU Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "nearest.example53.com|Z0SEEDZONEEXAMPLE|A|NA Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "NA"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "nearest.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.111"
+        ],
+        "SetIdentifier": "NA Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "service.example53.com|Z0SEEDZONEEXAMPLE|CNAME|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "service.example53.com.",
+        "ResourceRecords": [
+         "edge.example53.com"
+        ],
+        "TTL": "300",
+        "Type": "CNAME"
+       },
+       "www.example53.com|Z0SEEDZONEEXAMPLE|CNAME|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "www.example53.com.",
+        "ResourceRecords": [
+         "edge.example53.com"
+        ],
+        "TTL": "300",
+        "Type": "CNAME"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-edge-front-door-binding"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "edge-front-door-binding": {
+      "status": "succeeded"
+     },
+     "endpoint-address-rotation": {
+      "status": "succeeded"
+     },
+     "namesake-cutover-zone": {
+      "status": "succeeded"
+     },
+     "vanity-name-aliases": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       },
+       "Z0STAGEDCOPYEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "cutover-staging-2026-09: staged copy of the product domain, not delegated yet"
+        },
+        "Id": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_cutover.example53.com|Z0STAGEDCOPYEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "_cutover.example53.com.",
+        "ResourceRecords": [
+         "\"cutover-staging-2026-09\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "_endpoints.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "_endpoints.example53.com.",
+        "ResourceRecords": [
+         "\"edge-refresh-2026-09: endpoints answer the addresses published under endpoints\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|EU Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "EU"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.112"
+        ],
+        "SetIdentifier": "EU Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|NA Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "NA"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.111"
+        ],
+        "SetIdentifier": "NA Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|edge-default": {
+        "GeoLocation": {
+         "CountryCode": "*"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.100"
+        ],
+        "SetIdentifier": "edge-default",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "\"netops-edge-front-door\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "eu.endpoints.example53.com|Z0SEEDZONEEXAMPLE|A|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "eu.endpoints.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.112"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "example53.com|Z0STAGEDCOPYEXAMPLE|NS|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0STAGEDCOPYEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "na.endpoints.example53.com|Z0SEEDZONEEXAMPLE|A|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "na.endpoints.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.111"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-vanity-name-aliases"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "edge-front-door-binding": {
+      "status": "succeeded"
+     },
+     "endpoint-address-rotation": {
+      "status": "succeeded"
+     },
+     "namesake-cutover-zone": {
+      "status": "failed"
+     },
+     "vanity-name-aliases": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_endpoints.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "_endpoints.example53.com.",
+        "ResourceRecords": [
+         "\"edge-refresh-2026-09: endpoints answer the addresses published under endpoints\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "_names.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "_names.example53.com.",
+        "ResourceRecords": [
+         "\"user-facing-names-alias-the-front-door\""
+        ],
+        "TTL": "300",
+        "Type": "TXT"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|EU Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "EU"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.112"
+        ],
+        "SetIdentifier": "EU Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|NA Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "NA"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.111"
+        ],
+        "SetIdentifier": "NA Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|edge-default": {
+        "GeoLocation": {
+         "CountryCode": "*"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.100"
+        ],
+        "SetIdentifier": "edge-default",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "\"netops-edge-front-door\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "eu.endpoints.example53.com|Z0SEEDZONEEXAMPLE|A|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "eu.endpoints.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.112"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "na.endpoints.example53.com|Z0SEEDZONEEXAMPLE|A|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "na.endpoints.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.111"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "service.example53.com|Z0SEEDZONEEXAMPLE|CNAME|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "service.example53.com.",
+        "ResourceRecords": [
+         "edge.example53.com"
+        ],
+        "TTL": "300",
+        "Type": "CNAME"
+       },
+       "www.example53.com|Z0SEEDZONEEXAMPLE|CNAME|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "www.example53.com.",
+        "ResourceRecords": [
+         "edge.example53.com"
+        ],
+        "TTL": "300",
+        "Type": "CNAME"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-namesake-cutover-zone"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "edge-front-door-binding": {
+      "status": "succeeded"
+     },
+     "endpoint-address-rotation": {
+      "status": "failed"
+     },
+     "namesake-cutover-zone": {
+      "status": "succeeded"
+     },
+     "vanity-name-aliases": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       },
+       "Z0STAGEDCOPYEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "cutover-staging-2026-09: staged copy of the product domain, not delegated yet"
+        },
+        "Id": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_cutover.example53.com|Z0STAGEDCOPYEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "_cutover.example53.com.",
+        "ResourceRecords": [
+         "\"cutover-staging-2026-09\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "_names.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "_names.example53.com.",
+        "ResourceRecords": [
+         "\"user-facing-names-alias-the-front-door\""
+        ],
+        "TTL": "300",
+        "Type": "TXT"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|EU Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "EU"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "SetIdentifier": "EU Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|NA Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "NA"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "NA Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|edge-default": {
+        "GeoLocation": {
+         "CountryCode": "*"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.100"
+        ],
+        "SetIdentifier": "edge-default",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "\"netops-edge-front-door\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "example53.com|Z0STAGEDCOPYEXAMPLE|NS|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0STAGEDCOPYEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "service.example53.com|Z0SEEDZONEEXAMPLE|CNAME|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "service.example53.com.",
+        "ResourceRecords": [
+         "edge.example53.com"
+        ],
+        "TTL": "300",
+        "Type": "CNAME"
+       },
+       "www.example53.com|Z0SEEDZONEEXAMPLE|CNAME|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "www.example53.com.",
+        "ResourceRecords": [
+         "edge.example53.com"
+        ],
+        "TTL": "300",
+        "Type": "CNAME"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-endpoint-address-rotation"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "edge-front-door-binding": {
+      "status": "succeeded"
+     },
+     "endpoint-address-rotation": {
+      "status": "succeeded"
+     },
+     "namesake-cutover-zone": {
+      "status": "succeeded"
+     },
+     "vanity-name-aliases": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       },
+       "Z0STAGEDCOPYEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "cutover-staging-2026-09: staged copy of the product domain, not delegated yet"
+        },
+        "Id": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_cutover.example53.com|Z0STAGEDCOPYEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "_cutover.example53.com.",
+        "ResourceRecords": [
+         "\"cutover-staging-2026-09\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "_endpoints.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "_endpoints.example53.com.",
+        "ResourceRecords": [
+         "\"edge-refresh-2026-09: endpoints answer the addresses published under endpoints\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "_names.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "_names.example53.com.",
+        "ResourceRecords": [
+         "\"user-facing-names-alias-the-front-door\""
+        ],
+        "TTL": "300",
+        "Type": "TXT"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|EU Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "EU"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.112"
+        ],
+        "SetIdentifier": "EU Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|NA Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "NA"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.111"
+        ],
+        "SetIdentifier": "NA Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "\"netops-edge-front-door\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "eu.endpoints.example53.com|Z0SEEDZONEEXAMPLE|A|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "eu.endpoints.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.112"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "example53.com|Z0STAGEDCOPYEXAMPLE|NS|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0STAGEDCOPYEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "na.endpoints.example53.com|Z0SEEDZONEEXAMPLE|A|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "na.endpoints.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.111"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "service.example53.com|Z0SEEDZONEEXAMPLE|CNAME|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "service.example53.com.",
+        "ResourceRecords": [
+         "edge.example53.com"
+        ],
+        "TTL": "300",
+        "Type": "CNAME"
+       },
+       "www.example53.com|Z0SEEDZONEEXAMPLE|CNAME|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "www.example53.com.",
+        "ResourceRecords": [
+         "edge.example53.com"
+        ],
+        "TTL": "300",
+        "Type": "CNAME"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-edge-front-door-binding"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "edge-front-door-binding": {
+      "status": "succeeded"
+     },
+     "endpoint-address-rotation": {
+      "status": "succeeded"
+     },
+     "namesake-cutover-zone": {
+      "status": "succeeded"
+     },
+     "vanity-name-aliases": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       },
+       "Z0STAGEDCOPYEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "cutover-staging-2026-09: staged copy of the product domain, not delegated yet"
+        },
+        "Id": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_cutover.example53.com|Z0STAGEDCOPYEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "_cutover.example53.com.",
+        "ResourceRecords": [
+         "\"cutover-staging-2026-09\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "_endpoints.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "_endpoints.example53.com.",
+        "ResourceRecords": [
+         "\"edge-refresh-2026-09: endpoints answer the addresses published under endpoints\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "_names.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "_names.example53.com.",
+        "ResourceRecords": [
+         "\"user-facing-names-alias-the-front-door\""
+        ],
+        "TTL": "300",
+        "Type": "TXT"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|EU Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "EU"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.112"
+        ],
+        "SetIdentifier": "EU Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|NA Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "NA"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.111"
+        ],
+        "SetIdentifier": "NA Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|edge-default": {
+        "GeoLocation": {
+         "CountryCode": "*"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.100"
+        ],
+        "SetIdentifier": "edge-default",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "\"netops-edge-front-door\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "eu.endpoints.example53.com|Z0SEEDZONEEXAMPLE|A|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "eu.endpoints.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.112"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "example53.com|Z0STAGEDCOPYEXAMPLE|NS|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0STAGEDCOPYEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "na.endpoints.example53.com|Z0SEEDZONEEXAMPLE|A|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "na.endpoints.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.111"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "service.example53.com|Z0SEEDZONEEXAMPLE|CNAME|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "service.example53.com.",
+        "ResourceRecords": [
+         "edge.example53.com"
+        ],
+        "TTL": "300",
+        "Type": "CNAME"
+       },
+       "www.example53.com|Z0SEEDZONEEXAMPLE|A|NA Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "NA"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "www.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.111"
+        ],
+        "SetIdentifier": "NA Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-vanity-name-aliases"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "edge-front-door-binding": {
+      "status": "succeeded"
+     },
+     "endpoint-address-rotation": {
+      "status": "succeeded"
+     },
+     "namesake-cutover-zone": {
+      "status": "succeeded"
+     },
+     "vanity-name-aliases": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       },
+       "Z0STAGEDCOPYEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "cutover-staging-2026-09: staged copy of the product domain, not delegated yet"
+        },
+        "Id": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_cutover.example53.com|Z0STAGEDCOPYEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "_cutover.example53.com.",
+        "ResourceRecords": [
+         "\"cutover-staging-2026-09\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "_endpoints.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "_endpoints.example53.com.",
+        "ResourceRecords": [
+         "\"edge-refresh-2026-09: endpoints answer the addresses published under endpoints\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "_names.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "_names.example53.com.",
+        "ResourceRecords": [
+         "\"user-facing-names-alias-the-front-door\""
+        ],
+        "TTL": "300",
+        "Type": "TXT"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|EU Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "EU"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.112"
+        ],
+        "SetIdentifier": "EU Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|NA Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "NA"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.111"
+        ],
+        "SetIdentifier": "NA Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|edge-default": {
+        "GeoLocation": {
+         "CountryCode": "*"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.100"
+        ],
+        "SetIdentifier": "edge-default",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "\"netops-edge-front-door\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "edge.example53.com|Z0STAGEDCOPYEXAMPLE|A|EU Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "EU"
+        },
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.112"
+        ],
+        "SetIdentifier": "EU Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0STAGEDCOPYEXAMPLE|A|NA Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "NA"
+        },
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.111"
+        ],
+        "SetIdentifier": "NA Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "eu.endpoints.example53.com|Z0SEEDZONEEXAMPLE|A|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "eu.endpoints.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.112"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "example53.com|Z0STAGEDCOPYEXAMPLE|NS|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0STAGEDCOPYEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "na.endpoints.example53.com|Z0SEEDZONEEXAMPLE|A|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "na.endpoints.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.111"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "service.example53.com|Z0SEEDZONEEXAMPLE|CNAME|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "service.example53.com.",
+        "ResourceRecords": [
+         "edge.example53.com"
+        ],
+        "TTL": "300",
+        "Type": "CNAME"
+       },
+       "www.example53.com|Z0SEEDZONEEXAMPLE|CNAME|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "www.example53.com.",
+        "ResourceRecords": [
+         "edge.example53.com"
+        ],
+        "TTL": "300",
+        "Type": "CNAME"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-namesake-cutover-zone"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "edge-front-door-binding": {
+      "status": "succeeded"
+     },
+     "endpoint-address-rotation": {
+      "status": "succeeded"
+     },
+     "namesake-cutover-zone": {
+      "status": "succeeded"
+     },
+     "vanity-name-aliases": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z0SEEDZONEEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "Id": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com."
+       },
+       "Z0STAGEDCOPYEXAMPLE": {
+        "HostedZoneConfig": {
+         "Comment": "cutover-staging-2026-09: staged copy of the product domain, not delegated yet"
+        },
+        "Id": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com."
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_cutover.example53.com|Z0STAGEDCOPYEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "_cutover.example53.com.",
+        "ResourceRecords": [
+         "\"cutover-staging-2026-09\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "_endpoints.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "_endpoints.example53.com.",
+        "ResourceRecords": [
+         "\"edge-refresh-2026-09: endpoints answer the addresses published under endpoints\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "_names.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "_names.example53.com.",
+        "ResourceRecords": [
+         "\"user-facing-names-alias-the-front-door\""
+        ],
+        "TTL": "300",
+        "Type": "TXT"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|EU Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "EU"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.112"
+        ],
+        "SetIdentifier": "EU Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|NA Endpoint": {
+        "GeoLocation": {
+         "ContinentCode": "NA"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.111"
+        ],
+        "SetIdentifier": "NA Endpoint",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|A|edge-default": {
+        "GeoLocation": {
+         "CountryCode": "*"
+        },
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.100"
+        ],
+        "SetIdentifier": "edge-default",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "edge.example53.com|Z0SEEDZONEEXAMPLE|TXT|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "edge.example53.com.",
+        "ResourceRecords": [
+         "\"netops-edge-front-door\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "eu.endpoints.example53.com|Z0SEEDZONEEXAMPLE|A|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "eu.endpoints.example53.com.",
+        "ResourceRecords": [
+         "192.0.2.112"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|NS|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0SEEDZONEEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "example53.com|Z0STAGEDCOPYEXAMPLE|NS|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org.",
+         "ns-2.awsdns-02.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0STAGEDCOPYEXAMPLE|SOA|": {
+        "HostedZoneId": "Z0STAGEDCOPYEXAMPLE",
+        "Name": "example53.com.",
+        "ResourceRecords": [
+         "ns-1.awsdns-01.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "service.example53.com|Z0SEEDZONEEXAMPLE|CNAME|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "service.example53.com.",
+        "ResourceRecords": [
+         "edge.example53.com"
+        ],
+        "TTL": "300",
+        "Type": "CNAME"
+       },
+       "www.example53.com|Z0SEEDZONEEXAMPLE|CNAME|": {
+        "HostedZoneId": "Z0SEEDZONEEXAMPLE",
+        "Name": "www.example53.com.",
+        "ResourceRecords": [
+         "edge.example53.com"
+        ],
+        "TTL": "300",
+        "Type": "CNAME"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-endpoint-address-rotation"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "edge-front-door-binding": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 2,
+        "landed_ns": 21507442829405,
+        "landed_s": 9.667,
+        "result": {
+         "fingerprint": [
+          "192.0.2.100",
+          "netops-edge-front-door"
+         ],
+         "front_door": "edge.example53.com",
+         "origin": "192.0.2.100",
+         "owner": "netops-edge-front-door",
+         "trigger": "api",
+         "zone": "Z06456663AAYPBBPQU0DY"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-edge-front-door-binding-2",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        "192.0.2.100",
+        "netops-edge-front-door"
+       ],
+       "front_door": "edge.example53.com",
+       "origin": "192.0.2.100",
+       "owner": "netops-edge-front-door",
+       "trigger": "api",
+       "zone": "Z06456663AAYPBBPQU0DY"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "endpoint-address-rotation": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 3,
+        "landed_ns": 21508365252664,
+        "landed_s": 10.589,
+        "result": {
+         "fingerprint": [
+          "192.0.2.111",
+          "192.0.2.112",
+          "edge-refresh-2026-09"
+         ],
+         "published": [
+          "na.endpoints.example53.com",
+          "eu.endpoints.example53.com"
+         ],
+         "trigger": "api",
+         "zone": "Z06456663AAYPBBPQU0DY"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-endpoint-address-rotation-3",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        "192.0.2.111",
+        "192.0.2.112",
+        "edge-refresh-2026-09"
+       ],
+       "published": [
+        "na.endpoints.example53.com",
+        "eu.endpoints.example53.com"
+       ],
+       "trigger": "api",
+       "zone": "Z06456663AAYPBBPQU0DY"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "namesake-cutover-zone": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 1,
+        "landed_ns": 21501709074922,
+        "landed_s": 3.933,
+        "result": {
+         "comment": "cutover-staging-2026-09: staged copy of the product domain, not delegated yet",
+         "created": true,
+         "fingerprint": [
+          "cutover-staging-2026-09"
+         ],
+         "staged_zone": "Z03565672MCSJY7LQ29GB",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-namesake-cutover-zone-1",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "comment": "cutover-staging-2026-09: staged copy of the product domain, not delegated yet",
+       "created": true,
+       "fingerprint": [
+        "cutover-staging-2026-09"
+       ],
+       "staged_zone": "Z03565672MCSJY7LQ29GB",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "vanity-name-aliases": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 4,
+        "landed_ns": 21529251100720,
+        "landed_s": 31.475,
+        "result": {
+         "aliased": [
+          "www.example53.com",
+          "service.example53.com"
+         ],
+         "fingerprint": [
+          "user-facing-names-alias-the-front-door",
+          "_names.example53.com"
+         ],
+         "removed": [],
+         "trigger": "api",
+         "zone": "Z06456663AAYPBBPQU0DY"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-vanity-name-aliases-4",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "aliased": [
+        "www.example53.com",
+        "service.example53.com"
+       ],
+       "fingerprint": [
+        "user-facing-names-alias-the-front-door",
+        "_names.example53.com"
+       ],
+       "removed": [],
+       "trigger": "api",
+       "zone": "Z06456663AAYPBBPQU0DY"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z06456663AAYPBBPQU0DY": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z06456663AAYPBBPQU0DY",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1503.awsdns-59.org",
+         "ns-367.awsdns-45.com",
+         "ns-941.awsdns-53.net",
+         "ns-1748.awsdns-26.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z06456663AAYPBBPQU0DY|NS|": {
+        "HostedZoneId": "Z06456663AAYPBBPQU0DY",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1503.awsdns-59.org.",
+         "ns-367.awsdns-45.com.",
+         "ns-941.awsdns-53.net.",
+         "ns-1748.awsdns-26.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z06456663AAYPBBPQU0DY|SOA|": {
+        "HostedZoneId": "Z06456663AAYPBBPQU0DY",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1503.awsdns-59.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z03565672MCSJY7LQ29GB": {
+        "HostedZoneConfig": {
+         "Comment": "cutover-staging-2026-09: staged copy of the product domain, not delegated yet"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z03565672MCSJY7LQ29GB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-2030.awsdns-61.co.uk",
+         "ns-668.awsdns-19.net",
+         "ns-467.awsdns-58.com",
+         "ns-1448.awsdns-53.org"
+        ]
+       },
+       "Z06456663AAYPBBPQU0DY": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z06456663AAYPBBPQU0DY",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1503.awsdns-59.org",
+         "ns-367.awsdns-45.com",
+         "ns-941.awsdns-53.net",
+         "ns-1748.awsdns-26.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_cutover.example53.com|Z03565672MCSJY7LQ29GB|TXT|": {
+        "HostedZoneId": "Z03565672MCSJY7LQ29GB",
+        "Name": "_cutover.example53.com",
+        "ResourceRecords": [
+         "\"cutover-staging-2026-09\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "_endpoints.example53.com|Z06456663AAYPBBPQU0DY|TXT|": {
+        "HostedZoneId": "Z06456663AAYPBBPQU0DY",
+        "Name": "_endpoints.example53.com",
+        "ResourceRecords": [
+         "\"edge-refresh-2026-09: endpoints answer the addresses published under endpoints\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "_names.example53.com|Z06456663AAYPBBPQU0DY|TXT|": {
+        "HostedZoneId": "Z06456663AAYPBBPQU0DY",
+        "Name": "_names.example53.com",
+        "ResourceRecords": [
+         "\"user-facing-names-alias-the-front-door\""
+        ],
+        "TTL": "300",
+        "Type": "TXT"
+       },
+       "edge.example53.com|Z06456663AAYPBBPQU0DY|A|edge-default": {
+        "GeoLocation": {
+         "CountryCode": "*"
+        },
+        "HostedZoneId": "Z06456663AAYPBBPQU0DY",
+        "Name": "edge.example53.com",
+        "ResourceRecords": [
+         "192.0.2.100"
+        ],
+        "SetIdentifier": "edge-default",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "edge.example53.com|Z06456663AAYPBBPQU0DY|A|edge-eu": {
+        "GeoLocation": {
+         "ContinentCode": "EU"
+        },
+        "HostedZoneId": "Z06456663AAYPBBPQU0DY",
+        "Name": "edge.example53.com",
+        "ResourceRecords": [
+         "192.0.2.112"
+        ],
+        "SetIdentifier": "edge-eu",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "edge.example53.com|Z06456663AAYPBBPQU0DY|A|edge-na": {
+        "GeoLocation": {
+         "ContinentCode": "NA"
+        },
+        "HostedZoneId": "Z06456663AAYPBBPQU0DY",
+        "Name": "edge.example53.com",
+        "ResourceRecords": [
+         "192.0.2.111"
+        ],
+        "SetIdentifier": "edge-na",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "edge.example53.com|Z06456663AAYPBBPQU0DY|TXT|": {
+        "HostedZoneId": "Z06456663AAYPBBPQU0DY",
+        "Name": "edge.example53.com",
+        "ResourceRecords": [
+         "\"netops-edge-front-door\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "eu.endpoints.example53.com|Z06456663AAYPBBPQU0DY|A|": {
+        "HostedZoneId": "Z06456663AAYPBBPQU0DY",
+        "Name": "eu.endpoints.example53.com",
+        "ResourceRecords": [
+         "192.0.2.112"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "example53.com|Z03565672MCSJY7LQ29GB|NS|": {
+        "HostedZoneId": "Z03565672MCSJY7LQ29GB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-2030.awsdns-61.co.uk.",
+         "ns-668.awsdns-19.net.",
+         "ns-467.awsdns-58.com.",
+         "ns-1448.awsdns-53.org."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z03565672MCSJY7LQ29GB|SOA|": {
+        "HostedZoneId": "Z03565672MCSJY7LQ29GB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-2030.awsdns-61.co.uk. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "example53.com|Z06456663AAYPBBPQU0DY|NS|": {
+        "HostedZoneId": "Z06456663AAYPBBPQU0DY",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1503.awsdns-59.org.",
+         "ns-367.awsdns-45.com.",
+         "ns-941.awsdns-53.net.",
+         "ns-1748.awsdns-26.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z06456663AAYPBBPQU0DY|SOA|": {
+        "HostedZoneId": "Z06456663AAYPBBPQU0DY",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1503.awsdns-59.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "na.endpoints.example53.com|Z06456663AAYPBBPQU0DY|A|": {
+        "HostedZoneId": "Z06456663AAYPBBPQU0DY",
+        "Name": "na.endpoints.example53.com",
+        "ResourceRecords": [
+         "192.0.2.111"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "service.example53.com|Z06456663AAYPBBPQU0DY|CNAME|": {
+        "HostedZoneId": "Z06456663AAYPBBPQU0DY",
+        "Name": "service.example53.com",
+        "ResourceRecords": [
+         "edge.example53.com"
+        ],
+        "TTL": "300",
+        "Type": "CNAME"
+       },
+       "www.example53.com|Z06456663AAYPBBPQU0DY|CNAME|": {
+        "HostedZoneId": "Z06456663AAYPBBPQU0DY",
+        "Name": "www.example53.com",
+        "ResourceRecords": [
+         "edge.example53.com"
+        ],
+        "TTL": "300",
+        "Type": "CNAME"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-interference-pass"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z078600616OB7IULCCWML": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z078600616OB7IULCCWML",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1052.awsdns-03.org",
+         "ns-1627.awsdns-11.co.uk",
+         "ns-871.awsdns-44.net",
+         "ns-259.awsdns-32.com"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z078600616OB7IULCCWML|NS|": {
+        "HostedZoneId": "Z078600616OB7IULCCWML",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1052.awsdns-03.org.",
+         "ns-1627.awsdns-11.co.uk.",
+         "ns-871.awsdns-44.net.",
+         "ns-259.awsdns-32.com."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z078600616OB7IULCCWML|SOA|": {
+        "HostedZoneId": "Z078600616OB7IULCCWML",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1052.awsdns-03.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z078600616OB7IULCCWML": {
+        "HostedZoneConfig": {
+         "Comment": "public DNS for the product domain"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z078600616OB7IULCCWML",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1052.awsdns-03.org",
+         "ns-1627.awsdns-11.co.uk",
+         "ns-871.awsdns-44.net",
+         "ns-259.awsdns-32.com"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z078600616OB7IULCCWML|NS|": {
+        "HostedZoneId": "Z078600616OB7IULCCWML",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1052.awsdns-03.org.",
+         "ns-1627.awsdns-11.co.uk.",
+         "ns-871.awsdns-44.net.",
+         "ns-259.awsdns-32.com."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z078600616OB7IULCCWML|SOA|": {
+        "HostedZoneId": "Z078600616OB7IULCCWML",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1052.awsdns-03.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "www.example53.com|Z078600616OB7IULCCWML|A|eu": {
+        "GeoLocation": {
+         "ContinentCode": "EU"
+        },
+        "HostedZoneId": "Z078600616OB7IULCCWML",
+        "Name": "www.example53.com",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "SetIdentifier": "eu",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "www.example53.com|Z078600616OB7IULCCWML|A|na": {
+        "GeoLocation": {
+         "ContinentCode": "NA"
+        },
+        "HostedZoneId": "Z078600616OB7IULCCWML",
+        "Name": "www.example53.com",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "na",
+        "TTL": "300",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

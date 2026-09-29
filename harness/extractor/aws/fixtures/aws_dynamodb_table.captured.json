@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::DynamoDB::Table",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-01T07:01:21+00:00",
+      "ResourceDescription": {
+        "Identifier": "cloudgym-capability-table",
+        "Properties": "{\"SSESpecification\":{\"SSEEnabled\":false},\"TableName\":\"cloudgym-capability-table\",\"AttributeDefinitions\":[{\"AttributeType\":\"S\",\"AttributeName\":\"pk\"}],\"ContributorInsightsSpecification\":{\"Enabled\":false},\"BillingMode\":\"PAY_PER_REQUEST\",\"PointInTimeRecoverySpecification\":{\"PointInTimeRecoveryEnabled\":false},\"KeySchema\":[{\"KeyType\":\"HASH\",\"AttributeName\":\"pk\"}],\"WarmThroughput\":{\"ReadUnitsPerSecond\":12000,\"WriteUnitsPerSecond\":4000},\"Arn\":\"arn:aws:dynamodb:us-east-1:123456789012:table/cloudgym-capability-table\",\"DeletionProtectionEnabled\":false,\"Tags\":[],\"TimeToLiveSpecification\":{\"Enabled\":false}}"
+      },
+      "TypeName": "AWS::DynamoDB::Table"
+    }
+  ],
+  "recorded_at": "2026-09-01T07:01:22+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

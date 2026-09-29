@@ -1,0 +1,5609 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "backup-quiesce-hold": {
+      "status": "succeeded"
+     },
+     "release-cutover-start": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "backup-quiesce-hold": {
+      "status": "succeeded"
+     },
+     "release-cutover-start": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdg",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          },
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-2",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdg",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [],
+        "UserName": "ec2-user"
+       }
+      }
+     }
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "backup-quiesce-hold": {
+      "status": "succeeded"
+     },
+     "release-cutover-start": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdg",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          },
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-2",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdg",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [],
+        "UserName": "ec2-user"
+       }
+      }
+     }
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "backup-quiesce-hold": {
+      "status": "succeeded"
+     },
+     "release-cutover-start": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdg",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          },
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-2",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdg",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [
+         {
+          "Key": "BackupSet",
+          "Value": "wed-0215-utc"
+         },
+         {
+          "Key": "ReleaseTrain",
+          "Value": "train-2026.09-r4"
+         }
+        ],
+        "UserName": "ec2-user"
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdg",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          },
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-2",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdg",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [],
+        "UserName": "ec2-user"
+       }
+      }
+     }
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "backup-quiesce-hold": {
+      "status": "not-fired"
+     },
+     "release-cutover-start": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [],
+        "UserName": "ec2-user"
+       }
+      }
+     }
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "backup-quiesce-hold": {
+      "status": "succeeded"
+     },
+     "release-cutover-start": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdg",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          },
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-2",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdg",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 80,
+         "Name": "stopped"
+        },
+        "Tags": [
+         {
+          "Key": "ReleaseTrain",
+          "Value": "train-2026.09-r4"
+         }
+        ],
+        "UserName": "ec2-user"
+       }
+      }
+     }
+    }
+   },
+   "name": "forced"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "backup-quiesce-hold": {
+      "status": "succeeded"
+     },
+     "release-cutover-start": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdg",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          },
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-2",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdg",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [
+         {
+          "Key": "BackupSet",
+          "Value": "wed-0215-utc"
+         },
+         {
+          "Key": "ReleaseTrain",
+          "Value": "train-2026.09-r4"
+         }
+        ],
+        "UserName": "ec2-user"
+       },
+       "billing-worker-2": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker-2",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [],
+        "UserName": "ec2-user"
+       }
+      }
+     }
+    }
+   },
+   "name": "duplicated"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "backup-quiesce-hold": {
+      "status": "failed"
+     },
+     "release-cutover-start": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdg",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          },
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-2",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdg",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [
+         {
+          "Key": "ReleaseTrain",
+          "Value": "train-2026.09-r4"
+         }
+        ],
+        "UserName": "ec2-user"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-backup-quiesce-hold"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "backup-quiesce-hold": {
+      "status": "succeeded"
+     },
+     "release-cutover-start": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdg",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          },
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-2",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdg",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [
+         {
+          "Key": "BackupSet",
+          "Value": "wed-0215-utc"
+         }
+        ],
+        "UserName": "ec2-user"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-release-cutover-start"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "backup-quiesce-hold": {
+      "status": "succeeded"
+     },
+     "release-cutover-start": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdg",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          },
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-2",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdg",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [
+         {
+          "Key": "ReleaseTrain",
+          "Value": "train-2026.09-r4"
+         }
+        ],
+        "UserName": "ec2-user"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-backup-quiesce-hold"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "backup-quiesce-hold": {
+      "status": "succeeded"
+     },
+     "release-cutover-start": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdg",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          },
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-2",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdg",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [
+         {
+          "Key": "BackupSet",
+          "Value": "wed-0215-utc"
+         }
+        ],
+        "UserName": "ec2-user"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-release-cutover-start"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "backup-quiesce-hold": {
+      "status": "not-fired"
+     },
+     "release-cutover-start": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdg",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    }
+   },
+   "name": "negative-host-missing"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdg",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "micro_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          },
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-2",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdg",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [],
+        "UserName": "ec2-user"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-host-bundle"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdg",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "ubuntu_22_04",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          },
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-2",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdg",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [],
+        "UserName": "ec2-user"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-host-blueprint"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdg",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1b",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          },
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-2",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdg",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [],
+        "UserName": "ec2-user"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-host-zone"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [],
+        "UserName": "ec2-user"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-disk-missing"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [],
+        "UserName": "ec2-user"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-disk-unattached"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdh",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          },
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-2",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdg",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [],
+        "UserName": "ec2-user"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-disk-path"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdg",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          },
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-2",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdg",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [],
+        "UserName": "ec2-user"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-disk-size"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1b",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdg",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          },
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-2",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdg",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [],
+        "UserName": "ec2-user"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-disk-zone"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": []
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdg",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          },
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-2",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdg",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [],
+        "UserName": "ec2-user"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-disk-unattributed"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdg",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "reporting"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          },
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-2",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdg",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [],
+        "UserName": "ec2-user"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-disk-wrong-service"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdg",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdh",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          },
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-2",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdg",
+           "SizeInGb": "8"
+          },
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-ledger-archive",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdh",
+           "SizeInGb": "16"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [],
+        "UserName": "ec2-user"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-archive-taken"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-spare",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdg",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "billing"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-spare": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-spare",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [],
+        "UserName": "ec2-user"
+       },
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceName": "billing-worker",
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": []
+        },
+        "PrivateIpAddress": "172.26.11.60",
+        "ResourceType": "Instance",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "Tags": [],
+        "UserName": "ec2-user"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-second-host-takes-one"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskArn": "arn:aws:lightsail:us-east-1:000000000114:Disk/227c4c16-c467-42e7-9bf4-7072b98b311b",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "SupportCode": "000000000112/vol-05fa38cd3d9eebbd0",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "billing"
+         },
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskArn": "arn:aws:lightsail:us-east-1:000000000114:Disk/50127350-eddf-4873-a904-8a32025061b2",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "SupportCode": "000000000112/vol-00b183ac278beda28",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "billing"
+         },
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         }
+        ]
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskArn": "arn:aws:lightsail:us-east-1:000000000114:Disk/55174709-d7b8-4e62-ac79-e811b4d79310",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdg",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "SupportCode": "000000000112/vol-0b96e22b6a3da0673",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "billing"
+         },
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskArn": "arn:aws:lightsail:us-east-1:000000000114:Disk/227c4c16-c467-42e7-9bf4-7072b98b311b",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "SupportCode": "000000000112/vol-05fa38cd3d9eebbd0",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "billing"
+         },
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          },
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-2",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdg",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceArn": "arn:aws:lightsail:us-east-1:000000000114:Instance/f4965ca6-ddce-41b6-9b45-e1c1d3c21f11",
+        "InstanceName": "billing-worker",
+        "Ipv6Addresses": [
+         "2600:1f18:6897:e000:f102:aa0a:b5fa:2551"
+        ],
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "CidrListAliases": [],
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "CommonName": "",
+           "FromPort": 22,
+           "Ipv6Cidrs": [
+            "::/0"
+           ],
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "CidrListAliases": [],
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "CommonName": "",
+           "FromPort": 80,
+           "Ipv6Cidrs": [
+            "::/0"
+           ],
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "PrivateIpAddress": "172.26.8.112",
+        "PublicIpAddress": "192.0.2.8",
+        "ResourceType": "Instance",
+        "SshKeyName": "LightsailDefaultKeyPair",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "SupportCode": "000000000112/i-0b856be5c32c98c1f",
+        "Tags": [],
+        "UserName": "ec2-user"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "backup-quiesce-hold": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 1,
+        "landed_ns": 425274560143119,
+        "landed_s": 47.296,
+        "result": {
+         "backup_set": "wed-0215-utc",
+         "busy": {
+          "fired": true,
+          "observations": 1,
+          "state": "True",
+          "states": [
+           "True"
+          ],
+          "waited_s": 0.411
+         },
+         "down": {
+          "already_down": false,
+          "attempts": 1,
+          "waited_s": 1.256
+         },
+         "fingerprint": [
+          "wed-0215-utc"
+         ],
+         "instance": "billing-worker",
+         "stopped": true,
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-backup-quiesce-hold-1",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "backup_set": "wed-0215-utc",
+       "busy": {
+        "fired": true,
+        "observations": 1,
+        "state": "True",
+        "states": [
+         "True"
+        ],
+        "waited_s": 0.411
+       },
+       "down": {
+        "already_down": false,
+        "attempts": 1,
+        "waited_s": 1.256
+       },
+       "fingerprint": [
+        "wed-0215-utc"
+       ],
+       "instance": "billing-worker",
+       "stopped": true,
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "release-cutover-start": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 2,
+        "landed_ns": 425315204608293,
+        "landed_s": 87.94,
+        "result": {
+         "busy": {
+          "fired": true,
+          "observations": 1,
+          "state": "True",
+          "states": [
+           "True"
+          ],
+          "waited_s": 0.416
+         },
+         "fingerprint": [
+          "train-2026.09-r4"
+         ],
+         "instance": "billing-worker",
+         "started": true,
+         "train": "train-2026.09-r4",
+         "trigger": "api",
+         "up": {
+          "already_up": false,
+          "attempts": 1,
+          "waited_s": 1.854
+         }
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-release-cutover-start-2",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "busy": {
+        "fired": true,
+        "observations": 1,
+        "state": "True",
+        "states": [
+         "True"
+        ],
+        "waited_s": 0.416
+       },
+       "fingerprint": [
+        "train-2026.09-r4"
+       ],
+       "instance": "billing-worker",
+       "started": true,
+       "train": "train-2026.09-r4",
+       "trigger": "api",
+       "up": {
+        "already_up": false,
+        "attempts": 1,
+        "waited_s": 1.854
+       }
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskArn": "arn:aws:lightsail:us-east-1:000000000106:Disk/35197fbd-d250-4a72-ae1a-771d525214b1",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "SupportCode": "000000000109/vol-09a033eeba3f2ab7c",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "billing"
+         },
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Lightsail::Disk": {
+       "billing-extracts-1": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskArn": "arn:aws:lightsail:us-east-1:000000000106:Disk/c6575000-08a9-4acc-91e3-f467e4b40af9",
+        "DiskName": "billing-extracts-1",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdf",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "SupportCode": "000000000109/vol-08e515214e293886e",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "billing"
+         },
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         }
+        ]
+       },
+       "billing-extracts-2": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "billing-worker",
+        "AttachmentState": "attached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskArn": "arn:aws:lightsail:us-east-1:000000000106:Disk/bcd7dff2-eacf-46da-ace3-ad87f4a0cd95",
+        "DiskName": "billing-extracts-2",
+        "Iops": 100,
+        "IsAttached": true,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "/dev/xvdg",
+        "ResourceType": "DISK",
+        "SizeInGb": 8,
+        "State": "IN_USE",
+        "SupportCode": "000000000109/vol-04c50d6b063fe63d0",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "billing"
+         },
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         }
+        ]
+       },
+       "billing-ledger-archive": {
+        "AddOns": [
+         {
+          "AddOnType": "AutoSnapshot",
+          "Status": "Disabled"
+         }
+        ],
+        "AttachedTo": "",
+        "AttachmentState": "detached",
+        "AvailabilityZone": "us-east-1a",
+        "DiskArn": "arn:aws:lightsail:us-east-1:000000000106:Disk/35197fbd-d250-4a72-ae1a-771d525214b1",
+        "DiskName": "billing-ledger-archive",
+        "Iops": 100,
+        "IsAttached": false,
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Path": "",
+        "ResourceType": "DISK",
+        "SizeInGb": 16,
+        "State": "AVAILABLE",
+        "SupportCode": "000000000109/vol-09a033eeba3f2ab7c",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "billing"
+         },
+         {
+          "Key": "Owner",
+          "Value": "billing-team"
+         }
+        ]
+       }
+      },
+      "AWS::Lightsail::Instance": {
+       "billing-worker": {
+        "AddOns": [],
+        "AvailabilityZone": "us-east-1a",
+        "BlueprintId": "amazon_linux_2023",
+        "BundleId": "nano_3_0",
+        "Hardware": {
+         "CpuCount": 2,
+         "Disks": [
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-1",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdf",
+           "SizeInGb": "8"
+          },
+          {
+           "AttachedTo": "billing-worker",
+           "AttachmentState": "attached",
+           "DiskName": "billing-extracts-2",
+           "IOPS": 100,
+           "IsSystemDisk": false,
+           "Path": "/dev/xvdg",
+           "SizeInGb": "8"
+          }
+         ],
+         "RamSizeInGb": 1
+        },
+        "InstanceArn": "arn:aws:lightsail:us-east-1:000000000106:Instance/cca771c9-9ed9-478a-84d0-5215c539d3ec",
+        "InstanceName": "billing-worker",
+        "Ipv6Addresses": [
+         "2600:1f18:56b5:9c00:973f:2c30:21b2:f5ac"
+        ],
+        "IsStaticIp": false,
+        "KeyPairName": "LightsailDefaultKeyPair",
+        "Location": {
+         "AvailabilityZone": "us-east-1a",
+         "RegionName": "us-east-1"
+        },
+        "Networking": {
+         "MonthlyTransfer": {
+          "GbPerMonthAllocated": "1024"
+         },
+         "Ports": [
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "CidrListAliases": [],
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "CommonName": "",
+           "FromPort": 22,
+           "Ipv6Cidrs": [
+            "::/0"
+           ],
+           "Protocol": "tcp",
+           "ToPort": 22
+          },
+          {
+           "AccessDirection": "inbound",
+           "AccessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+           "AccessType": "public",
+           "CidrListAliases": [],
+           "Cidrs": [
+            "0.0.0.0/0"
+           ],
+           "CommonName": "",
+           "FromPort": 80,
+           "Ipv6Cidrs": [
+            "::/0"
+           ],
+           "Protocol": "tcp",
+           "ToPort": 80
+          }
+         ]
+        },
+        "PrivateIpAddress": "172.26.15.31",
+        "PublicIpAddress": "192.0.2.1",
+        "ResourceType": "Instance",
+        "SshKeyName": "LightsailDefaultKeyPair",
+        "State": {
+         "Code": 16,
+         "Name": "running"
+        },
+        "SupportCode": "000000000109/i-04174603b413af5c4",
+        "Tags": [
+         {
+          "Key": "BackupSet",
+          "Value": "wed-0215-utc"
+         },
+         {
+          "Key": "ReleaseTrain",
+          "Value": "train-2026.09-r4"
+         }
+        ],
+        "UserName": "ec2-user"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-interference-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

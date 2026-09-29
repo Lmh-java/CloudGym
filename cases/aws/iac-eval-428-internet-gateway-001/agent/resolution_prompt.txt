@@ -1,0 +1,2 @@
+Where a network already provides a way out and a table that uses it, workloads attach to those instead of building their own, and take only address space no one else holds.
+Anything you add to a network carries that network's attribution and never hands out reachability by itself.

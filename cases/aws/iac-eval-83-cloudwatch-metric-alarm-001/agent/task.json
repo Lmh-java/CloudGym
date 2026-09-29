@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_83_cloudwatch_metric_alarm",
+  "utterance": "The orders API runs on an EC2 fleet in this account. Configure a health check with Route 53 that uses a CloudWatch metric alarm called \"foobar\" on that fleet's CPU. Set the metric_name to \"CPUUtilization\", namespace to \"AWS/EC2\", statistic to \"Average\", period to \"120\", and comparison_operator to \"GreaterThanOrEqualToThreshold\"; choose an evaluation_periods and a threshold yourself. If the health check doesn't have enough info about the alarm, the status should be \"Healthy\". All resources should be provisioned in \"us-east-1\".",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "the account holds exactly one Route 53 health check of type CLOUDWATCH_METRIC whose alarm sits in us-east-1 and whose reading on insufficient data is Healthy, and the alarm that check is bound to is the orders API fleet's own CPU measurement — Average CPUUtilization in AWS/EC2 over 120-second periods with GreaterThanOrEqualToThreshold, carrying an evaluation periods count and a threshold — attributed to the orders API the way the account's existing alarms and checks are attributed"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 83
+  }
+}

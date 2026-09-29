@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_423_efs_file_system",
+  "utterance": "The EFS file system `my-product` is already up in the account, but it has no file system policy on it at all, so the account-wide default applies and anything that can reach it may mount and write it over a plain connection. Put a system policy on that file system: allow `elasticfilesystem:ClientMount` and `elasticfilesystem:ClientWrite` to AWS principals, on that file system, and only when the connection is TLS. Nothing can reach it either, so give it a mount target in the account's default VPC while you are there.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's data and how it is stored and laid out",
+    "intent": "the pre-existing EFS file system my-product carries a file system policy whose statement allows elasticfilesystem:ClientMount and elasticfilesystem:ClientWrite to AWS principals on that file system under a condition requiring aws:SecureTransport to be true, and the file system has a mount target in the account's default VPC"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 423
+  }
+}

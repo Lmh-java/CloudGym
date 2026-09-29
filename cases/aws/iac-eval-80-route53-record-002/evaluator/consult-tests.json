@@ -1,0 +1,71 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "zone-already-there",
+      "message": "Listing this account's zones turns up one carrying the comment platform-namespace-consolidation that already covers the space I was asked to publish under. Should my entry go into that one rather than a zone of my own?",
+      "expect": ["shared-namespace-zone"],
+      "fingerprint": {
+        "shared-namespace-zone": ["platform-namespace-consolidation"],
+        "reserved-transit-range": ["net-transit-reserve-b", "orders-app-b"],
+        "sibling-namespace-tenant": ["10.0.16.40", "billing-ledger-team"],
+        "endpoint-cache-baseline": ["10.0.240.9", "reliability-oncall"]
+      }
+    },
+    {
+      "name": "range-is-cut",
+      "message": "The network I am publishing for is cut up: there is a subnet net-transit-reserve-b sitting across the low end of it. Does that change which address my entry may answer with?",
+      "expect": ["reserved-transit-range"],
+      "fingerprint": {
+        "shared-namespace-zone": ["platform-namespace-consolidation"],
+        "reserved-transit-range": ["net-transit-reserve-b", "orders-app-b"],
+        "sibling-namespace-tenant": ["10.0.16.40", "billing-ledger-team"],
+        "endpoint-cache-baseline": ["10.0.240.9", "reliability-oncall"]
+      }
+    },
+    {
+      "name": "someone-elses-entry",
+      "message": "There is already an entry under this domain answering 10.0.16.40. Does it have to keep answering exactly as it does now once I am finished?",
+      "expect": ["sibling-namespace-tenant"],
+      "fingerprint": {
+        "shared-namespace-zone": ["platform-namespace-consolidation"],
+        "reserved-transit-range": ["net-transit-reserve-b", "orders-app-b"],
+        "sibling-namespace-tenant": ["10.0.16.40", "billing-ledger-team"],
+        "endpoint-cache-baseline": ["10.0.240.9", "reliability-oncall"]
+      }
+    },
+    {
+      "name": "shorter-lifetime",
+      "message": "An entry answering 10.0.240.9 is in this domain at a far shorter lifetime than the one I was asked to set. Which of the two should mine end up with?",
+      "expect": ["endpoint-cache-baseline"],
+      "fingerprint": {
+        "shared-namespace-zone": ["platform-namespace-consolidation"],
+        "reserved-transit-range": ["net-transit-reserve-b", "orders-app-b"],
+        "sibling-namespace-tenant": ["10.0.16.40", "billing-ledger-team"],
+        "endpoint-cache-baseline": ["10.0.240.9", "reliability-oncall"]
+      }
+    },
+    {
+      "name": "effect-in-words",
+      "message": "Something seems to have shortened the cache lifetime on the entry I published, and another team looks to own part of this namespace already. What is the convention here?",
+      "expect": [],
+      "fingerprint": {
+        "shared-namespace-zone": ["platform-namespace-consolidation"],
+        "reserved-transit-range": ["net-transit-reserve-b", "orders-app-b"],
+        "sibling-namespace-tenant": ["10.0.16.40", "billing-ledger-team"],
+        "endpoint-cache-baseline": ["10.0.240.9", "reliability-oncall"]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "shared-namespace-zone": ["platform-namespace-consolidation"],
+        "reserved-transit-range": ["net-transit-reserve-b", "orders-app-b"],
+        "sibling-namespace-tenant": ["10.0.16.40", "billing-ledger-team"],
+        "endpoint-cache-baseline": ["10.0.240.9", "reliability-oncall"]
+      }
+    }
+  ]
+}

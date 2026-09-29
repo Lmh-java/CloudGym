@@ -1,0 +1,92 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyEverythingExceptPilotServices",
+      "Effect": "Deny",
+      "NotAction": [
+        "account:Get*", "organizations:Describe*", "organizations:List*",
+        "iam:*", "identitystore:*", "sso:*", "sso-directory:*", "sts:*",
+        "cloudformation:*",
+        "ec2:*", "s3:*", "lambda:*", "events:*",
+        "codebuild:*", "dynamodb:*", "sqs:*", "states:*",
+        "route53:*", "backup:*", "backup-storage:*",
+        "sns:*", "cloudwatch:*", "logs:*",
+        "rds:*", "elasticloadbalancing:*", "elasticbeanstalk:*", "autoscaling:*",
+        "apigateway:*", "firehose:*", "glacier:*",
+        "elasticfilesystem:*", "lightsail:*", "kinesisanalytics:*", "lex:*",
+        "kms:DescribeKey", "kms:List*", "kms:CreateGrant", "kms:RetireGrant",
+        "kms:GenerateDataKey*", "kms:Decrypt", "kms:Encrypt",
+        "tag:Get*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CostAndDangerGuardrails",
+      "Effect": "Deny",
+      "Action": [
+        "codebuild:StartBuild", "codebuild:StartBuildBatch", "codebuild:RetryBuild*",
+        "ec2:CreateFleet", "ec2:RequestSpot*", "ec2:*Reserved*",
+        "ec2:*CapacityReservation*", "ec2:AllocateHosts", "ec2:PurchaseHostReservation",
+        "dynamodb:PurchaseReservedCapacityOfferings",
+        "route53domains:*",
+        "cloudformation:CreateResource", "cloudformation:UpdateResource",
+        "cloudformation:DeleteResource", "cloudformation:CancelResourceRequest",
+        "rds:CreateDBProxy", "rds:PurchaseReservedDBInstancesOffering",
+        "rds:CreateBlueGreenDeployment",
+        "elasticfilesystem:CreateReplicationConfiguration",
+        "lightsail:CreateLoadBalancer*", "lightsail:CreateRelationalDatabase*",
+        "lightsail:CreateContainerService*", "lightsail:CreateDistribution",
+        "lightsail:CreateDomain*", "lightsail:AllocateStaticIp"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "OnlyCheapInstanceTypes",
+      "Effect": "Deny",
+      "Action": "ec2:RunInstances",
+      "Resource": "arn:aws:ec2:*:*:instance/*",
+      "Condition": {
+        "StringNotEquals": {
+          "ec2:InstanceType": ["t3.micro", "t3.small", "t2.micro"]
+        }
+      }
+    },
+    {
+      "Sid": "OnlyCheapDatabaseClasses",
+      "Effect": "Deny",
+      "Action": ["rds:CreateDBInstance", "rds:CreateDBInstanceReadReplica", "rds:ModifyDBInstance"],
+      "Resource": "*",
+      "Condition": {
+        "StringNotEqualsIfExists": {
+          "rds:DatabaseClass": ["db.t3.micro", "db.t4g.micro", "db.t3.small", "db.t4g.small"]
+        }
+      }
+    },
+    {
+      "Sid": "NoMultiAzDatabases",
+      "Effect": "Deny",
+      "Action": ["rds:CreateDBInstance", "rds:ModifyDBInstance"],
+      "Resource": "*",
+      "Condition": {
+        "Bool": { "rds:MultiAz": "true" }
+      }
+    },
+    {
+      "Sid": "RestrictPilotCloudApisToUsEast1",
+      "Effect": "Deny",
+      "Action": [
+        "ec2:*", "cloudformation:*", "s3:*", "lambda:*", "events:*",
+        "codebuild:*", "dynamodb:*", "sqs:*", "states:*",
+        "backup:*", "sns:*", "cloudwatch:*", "logs:*",
+        "rds:*", "elasticloadbalancing:*", "elasticbeanstalk:*", "autoscaling:*",
+        "apigateway:*", "firehose:*", "glacier:*",
+        "elasticfilesystem:*", "lightsail:*", "kinesisanalytics:*", "lex:*", "kms:*"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringNotEquals": { "aws:RequestedRegion": "us-east-1" }
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_38_codebuild_project",
+  "utterance": "Create an AWS CodeBuild project named `orders-api-build` for the orders-api service, with an example IAM role of its own and secondary sources: it builds the service's GitHub repository `https://github.com/orders-platform/orders-api.git`, and pulls the shared build tooling at `https://github.com/orders-platform/build-tooling.git` as a secondary source.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "a CodeBuild project named orders-api-build that was absent at the start builds the orders-api service's GitHub repository as its primary source, carries a GITHUB secondary source that pulls the account's shared build tooling, and runs as an IAM role created for it and trusted by codebuild.amazonaws.com"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 38
+  }
+}

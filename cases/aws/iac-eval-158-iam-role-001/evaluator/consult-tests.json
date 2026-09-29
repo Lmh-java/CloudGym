@@ -1,0 +1,126 @@
+{
+ "mode": "fingerprint",
+ "asks": [
+  {
+   "name": "grant-appeared",
+   "message": "The identity my function runs as came back carrying platform-lambda-logging, which I never attached. Is that where a workload's log permissions come from here, and does the grant I wrote for mine stay on it?",
+   "fingerprint": {
+    "account-execution-grant": [
+     "platform-lambda-logging"
+    ],
+    "execution-identity-successor": [
+     "iam_for_lambda_2026"
+    ],
+    "namesake-workload-claim": [
+     "billing-api"
+    ],
+    "runtime-baseline": [
+     "nodejs24.x"
+    ]
+   },
+   "expect": [
+    "account-execution-grant"
+   ]
+  },
+  {
+   "name": "identity-rolled-forward",
+   "message": "My function reads as running under iam_for_lambda_2026 now, not the identity my request names. Which of the two should it be running as when I finish, and what happens to the other one?",
+   "fingerprint": {
+    "account-execution-grant": [
+     "platform-lambda-logging"
+    ],
+    "execution-identity-successor": [
+     "iam_for_lambda_2026"
+    ],
+    "namesake-workload-claim": [
+     "billing-api"
+    ],
+    "runtime-baseline": [
+     "nodejs24.x"
+    ]
+   },
+   "expect": [
+    "execution-identity-successor"
+   ]
+  },
+  {
+   "name": "runtime-moved",
+   "message": "The function came back on nodejs24.x; it was on the version I had set when I started. Which of the two should it be running when I finish?",
+   "fingerprint": {
+    "account-execution-grant": [
+     "platform-lambda-logging"
+    ],
+    "execution-identity-successor": [
+     "iam_for_lambda_2026"
+    ],
+    "namesake-workload-claim": [
+     "billing-api"
+    ],
+    "runtime-baseline": [
+     "nodejs24.x"
+    ]
+   },
+   "expect": [
+    "runtime-baseline"
+   ]
+  },
+  {
+   "name": "name-already-standing",
+   "message": "Something is already standing under the name I was asked to use, and it says billing-api on itself. Is that one mine to take over, and does what it says stay on it?",
+   "fingerprint": {
+    "account-execution-grant": [
+     "platform-lambda-logging"
+    ],
+    "execution-identity-successor": [
+     "iam_for_lambda_2026"
+    ],
+    "namesake-workload-claim": [
+     "billing-api"
+    ],
+    "runtime-baseline": [
+     "nodejs24.x"
+    ]
+   },
+   "expect": [
+    "namesake-workload-claim"
+   ]
+  },
+  {
+   "name": "effect-in-words",
+   "message": "Things moved under me while I was working: the function runs as something else, it is on a different version than I left it, and permissions I did not attach turned up on the identity it runs as. Is that expected here?",
+   "fingerprint": {
+    "account-execution-grant": [
+     "platform-lambda-logging"
+    ],
+    "execution-identity-successor": [
+     "iam_for_lambda_2026"
+    ],
+    "namesake-workload-claim": [
+     "billing-api"
+    ],
+    "runtime-baseline": [
+     "nodejs24.x"
+    ]
+   },
+   "expect": []
+  },
+  {
+   "name": "generic",
+   "message": "Before I start: are there conventions for Lambda functions in this account I should follow?",
+   "fingerprint": {
+    "account-execution-grant": [
+     "platform-lambda-logging"
+    ],
+    "execution-identity-successor": [
+     "iam_for_lambda_2026"
+    ],
+    "namesake-workload-claim": [
+     "billing-api"
+    ],
+    "runtime-baseline": [
+     "nodejs24.x"
+    ]
+   }
+  }
+ ]
+}

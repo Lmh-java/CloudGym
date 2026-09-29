@@ -1,0 +1,2 @@
+Data goes in the store the account keeps in service for the workload; never a second store beside one already there.
+What a shared store takes sits in the place laid out for the workload and carries what its catalogue asks; what it holds stays as found.

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_456_network_acl",
+  "utterance": "Stand up an AWS VPC with the CIDR block 10.0.0.0/16, and give that VPC a network ACL of its own — not the default one a VPC is born with — that allows TCP ingress from 10.3.0.0/18 on port 80 and TCP egress to 10.3.0.0/18 on port 443.",
+  "main": {
+    "role": "network-engineer",
+    "responsibility": "owns routing and connectivity between network segments",
+    "intent": "a VPC with CIDR block 10.0.0.0/16 exists, and one network ACL other than that VPC's default one — the ACL the account already keeps for that network's traffic rules, when it keeps one — is attached to it and carries an allow for inbound TCP port 80 from 10.3.0.0/18 and an allow for outbound TCP port 443 to 10.3.0.0/18, each of them in force: no entry ahead of either one closes the path it opens, except where a boundary already in force on that ACL closes part of it"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 456
+  }
+}

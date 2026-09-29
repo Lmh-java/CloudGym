@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_429_internet_gateway",
+  "utterance": "In the existing VPC `payments-vpc` (10.40.0.0/16), create multiple public subnets — at least two, each with its own CIDR inside that range and each in a different availability zone — and associate them with a route table configured for internet access through an internet gateway attached to `payments-vpc`. Today that VPC carries only the payments core tier and has no path to the internet at all. Give every resource you create a Name tag that identifies it.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "payments-vpc carries at least two subnets that did not exist before, in distinct availability zones, each with its own CIDR inside 10.40.0.0/16 and a Name tag; all of them are associated with one and the same route table — the table the account already keeps for that network's outward-facing routing, when it keeps one — whose 0.0.0.0/0 route leaves through an internet gateway attached to payments-vpc, the gateway the account already keeps for that purpose when it keeps one, and that is the network's only way out; no segment a rollout is holding back at an earlier stage carries any part of that public tier, and such a segment keeps the marks it is held under"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 429
+  }
+}

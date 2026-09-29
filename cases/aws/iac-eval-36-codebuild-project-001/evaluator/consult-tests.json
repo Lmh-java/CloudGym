@@ -1,0 +1,127 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "cache-store-appeared",
+      "message": "A bucket build-cache-111122223333 marked Store=build-cache showed up next to the artifact store. Should my project's cache go there instead of the build host?",
+      "expect": [
+        "shared-build-cache"
+      ],
+      "fingerprint": {
+        "shared-build-cache": [
+          "build-cache-111122223333"
+        ],
+        "artifact-store-cutover": [
+          "build-releases-111122223333"
+        ],
+        "fleet-build-identity": [
+          "codebuild-fleet-runner"
+        ],
+        "idle-cache-reclaim": [
+          "idle-cache-reclaimed"
+        ]
+      }
+    },
+    {
+      "name": "store-cut-over",
+      "message": "The artifact bucket I was told to use says it is read-only and points at build-releases-111122223333. Where should the build artifacts go?",
+      "expect": [
+        "artifact-store-cutover"
+      ],
+      "fingerprint": {
+        "shared-build-cache": [
+          "build-cache-111122223333"
+        ],
+        "artifact-store-cutover": [
+          "build-releases-111122223333"
+        ],
+        "fleet-build-identity": [
+          "codebuild-fleet-runner"
+        ],
+        "idle-cache-reclaim": [
+          "idle-cache-reclaimed"
+        ]
+      }
+    },
+    {
+      "name": "role-repointed",
+      "message": "Right after I created the project its service role became codebuild-fleet-runner, not the role I made for it. Should I put mine back?",
+      "expect": [
+        "fleet-build-identity"
+      ],
+      "fingerprint": {
+        "shared-build-cache": [
+          "build-cache-111122223333"
+        ],
+        "artifact-store-cutover": [
+          "build-releases-111122223333"
+        ],
+        "fleet-build-identity": [
+          "codebuild-fleet-runner"
+        ],
+        "idle-cache-reclaim": [
+          "idle-cache-reclaimed"
+        ]
+      }
+    },
+    {
+      "name": "cache-reclaimed",
+      "message": "After my update the project's cache is gone and it carries CostControl=idle-cache-reclaimed. Can I restore the cache?",
+      "expect": [
+        "idle-cache-reclaim"
+      ],
+      "fingerprint": {
+        "shared-build-cache": [
+          "build-cache-111122223333"
+        ],
+        "artifact-store-cutover": [
+          "build-releases-111122223333"
+        ],
+        "fleet-build-identity": [
+          "codebuild-fleet-runner"
+        ],
+        "idle-cache-reclaim": [
+          "idle-cache-reclaimed"
+        ]
+      }
+    },
+    {
+      "name": "effect-in-words",
+      "message": "Someone changed my build project after I created it \u2014 the cache was switched off and it runs as a different identity now. Is that expected?",
+      "expect": [],
+      "fingerprint": {
+        "shared-build-cache": [
+          "build-cache-111122223333"
+        ],
+        "artifact-store-cutover": [
+          "build-releases-111122223333"
+        ],
+        "fleet-build-identity": [
+          "codebuild-fleet-runner"
+        ],
+        "idle-cache-reclaim": [
+          "idle-cache-reclaimed"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Before I start: are there any conventions for build projects in this account I should follow?",
+      "expect": [],
+      "fingerprint": {
+        "shared-build-cache": [
+          "build-cache-111122223333"
+        ],
+        "artifact-store-cutover": [
+          "build-releases-111122223333"
+        ],
+        "fleet-build-identity": [
+          "codebuild-fleet-runner"
+        ],
+        "idle-cache-reclaim": [
+          "idle-cache-reclaimed"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "slot-rule",
+      "message": "A rule called platform-slot-0700 already stands here, marked slot-0700-2026-09, firing every morning at the hour I was asked to run on. Should the function hang off that one, or do I put up a rule of my own?",
+      "expect": [
+        "platform-slot-rule"
+      ],
+      "fingerprint": {
+        "platform-slot-rule": [
+          "platform-slot-0700",
+          "slot-0700-2026-09"
+        ],
+        "invoke-source-pinning": [
+          "reviewed-invoke-2026-09"
+        ],
+        "legacy-cutover-path": [
+          "legacy-nightly-cron",
+          "legacy-cutover"
+        ],
+        "delivery-run-as-identity": [
+          "schedule_delivery_role"
+        ]
+      }
+    },
+    {
+      "name": "dormant-path",
+      "message": "There is a legacy-nightly-cron in this account now, switched off, holding the function as a target under the id legacy-cutover. Is that wiring mine to retire, re-time or switch on while I put the daily run in place?",
+      "expect": [
+        "legacy-cutover-path"
+      ],
+      "fingerprint": {
+        "platform-slot-rule": [
+          "platform-slot-0700",
+          "slot-0700-2026-09"
+        ],
+        "invoke-source-pinning": [
+          "reviewed-invoke-2026-09"
+        ],
+        "legacy-cutover-path": [
+          "legacy-nightly-cron",
+          "legacy-cutover"
+        ],
+        "delivery-run-as-identity": [
+          "schedule_delivery_role"
+        ]
+      }
+    },
+    {
+      "name": "grant-reissued",
+      "message": "The grant I wrote so the function can be invoked now stands under reviewed-invoke-2026-09 instead of the id I gave it. What has to be true of a grant here before it is left standing?",
+      "expect": [
+        "invoke-source-pinning"
+      ],
+      "fingerprint": {
+        "platform-slot-rule": [
+          "platform-slot-0700",
+          "slot-0700-2026-09"
+        ],
+        "invoke-source-pinning": [
+          "reviewed-invoke-2026-09"
+        ],
+        "legacy-cutover-path": [
+          "legacy-nightly-cron",
+          "legacy-cutover"
+        ],
+        "delivery-run-as-identity": [
+          "schedule_delivery_role"
+        ]
+      }
+    },
+    {
+      "name": "which-identity",
+      "message": "There is a schedule_delivery_role in this account now, and the function's own role no longer lets the event service assume it. Which identity is my wiring meant to run as?",
+      "expect": [
+        "delivery-run-as-identity"
+      ],
+      "fingerprint": {
+        "platform-slot-rule": [
+          "platform-slot-0700",
+          "slot-0700-2026-09"
+        ],
+        "invoke-source-pinning": [
+          "reviewed-invoke-2026-09"
+        ],
+        "legacy-cutover-path": [
+          "legacy-nightly-cron",
+          "legacy-cutover"
+        ],
+        "delivery-run-as-identity": [
+          "schedule_delivery_role"
+        ]
+      }
+    },
+    {
+      "name": "something-already-runs",
+      "message": "Something in this account already runs at the hour I was asked to schedule, and something else is holding this function on a schedule that is switched off. Is the wiring I was asked for supposed to be one of those, or a new one of my own?",
+      "expect": [],
+      "fingerprint": {
+        "platform-slot-rule": [
+          "platform-slot-0700",
+          "slot-0700-2026-09"
+        ],
+        "invoke-source-pinning": [
+          "reviewed-invoke-2026-09"
+        ],
+        "legacy-cutover-path": [
+          "legacy-nightly-cron",
+          "legacy-cutover"
+        ],
+        "delivery-run-as-identity": [
+          "schedule_delivery_role"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "platform-slot-rule": [
+          "platform-slot-0700",
+          "slot-0700-2026-09"
+        ],
+        "invoke-source-pinning": [
+          "reviewed-invoke-2026-09"
+        ],
+        "legacy-cutover-path": [
+          "legacy-nightly-cron",
+          "legacy-cutover"
+        ],
+        "delivery-run-as-identity": [
+          "schedule_delivery_role"
+        ]
+      }
+    }
+  ]
+}

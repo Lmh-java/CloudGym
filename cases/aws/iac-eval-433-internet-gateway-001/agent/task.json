@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_433_internet_gateway",
+  "utterance": "Stand up a new network for this workload: a VPC with a CIDR block of 10.0.0.0/16 that hands out DNS hostnames, and a way out to the internet for it — an internet gateway attached to that VPC, and a route table in the VPC whose default route (0.0.0.0/0) leaves through that gateway. Give every resource you create a Name tag that identifies it: the VPC's is `vpc` and the gateway's is `ig`.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "a VPC with CIDR 10.0.0.0/16 that hands out DNS hostnames and carries the Name tag vpc exists, and it reaches the outside: a table of that VPC carries a 0.0.0.0/0 route through an internet gateway attached to it, that gateway carrying the Name tag ig and that table carrying a Name tag of its own; the table is the one the account already keeps that network's outward routing on when it keeps one, and then it is the only table of that network carrying a way out; the gateway is not one another network is already reaching the outside through, and a network that has taken a gateway up for itself still reaches the outside through it"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 433
+  }
+}

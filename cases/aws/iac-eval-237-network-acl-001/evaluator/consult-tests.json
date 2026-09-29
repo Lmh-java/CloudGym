@@ -1,0 +1,151 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "segment-held-by-another-control",
+      "message": "The subnet I just carved out is associated with a network ACL I did not create, tagged Control=egress-guard-r4. Do my traffic rules belong on that one, or should the segment sit on the one I cut for it?",
+      "expect": [
+        "vpc-egress-guard"
+      ],
+      "fingerprint": {
+        "vpc-egress-guard": [
+          "egress-guard-r4",
+          "vpc-egress-guard"
+        ],
+        "segment-entry-baseline": [
+          "segment-deny-b9"
+        ],
+        "sibling-segment-claim": [
+          "billing-edge-q7",
+          "billing-edge-acl"
+        ],
+        "workload-attribution": [
+          "UNALLOCATED-4417",
+          "unassigned",
+          "fin-sweep-4417"
+        ]
+      }
+    },
+    {
+      "name": "rule-numbers-already-taken",
+      "message": "Rule 100 inbound and 200 outbound on that ACL are already held by denies, and the ACL is tagged Baseline=segment-deny-b9. Do those keep their numbers, or may I write mine there?",
+      "expect": [
+        "segment-entry-baseline"
+      ],
+      "fingerprint": {
+        "vpc-egress-guard": [
+          "egress-guard-r4",
+          "vpc-egress-guard"
+        ],
+        "segment-entry-baseline": [
+          "segment-deny-b9"
+        ],
+        "sibling-segment-claim": [
+          "billing-edge-q7",
+          "billing-edge-acl"
+        ],
+        "workload-attribution": [
+          "UNALLOCATED-4417",
+          "unassigned",
+          "fin-sweep-4417"
+        ]
+      }
+    },
+    {
+      "name": "who-took-the-segment",
+      "message": "My segment's association now points at billing-edge-acl, tagged App=billing-edge-q7. Is that where it is meant to stay?",
+      "expect": [
+        "sibling-segment-claim"
+      ],
+      "fingerprint": {
+        "vpc-egress-guard": [
+          "egress-guard-r4",
+          "vpc-egress-guard"
+        ],
+        "segment-entry-baseline": [
+          "segment-deny-b9"
+        ],
+        "sibling-segment-claim": [
+          "billing-edge-q7",
+          "billing-edge-acl"
+        ],
+        "workload-attribution": [
+          "UNALLOCATED-4417",
+          "unassigned",
+          "fin-sweep-4417"
+        ]
+      }
+    },
+    {
+      "name": "placeholder-owner-on-my-segment",
+      "message": "My new subnet came back carrying CostCenter=UNALLOCATED-4417. Which owner and cost centre should it carry instead?",
+      "expect": [
+        "workload-attribution"
+      ],
+      "fingerprint": {
+        "vpc-egress-guard": [
+          "egress-guard-r4",
+          "vpc-egress-guard"
+        ],
+        "segment-entry-baseline": [
+          "segment-deny-b9"
+        ],
+        "sibling-segment-claim": [
+          "billing-edge-q7",
+          "billing-edge-acl"
+        ],
+        "workload-attribution": [
+          "UNALLOCATED-4417",
+          "unassigned",
+          "fin-sweep-4417"
+        ]
+      }
+    },
+    {
+      "name": "effect-in-words",
+      "message": "Something keeps moving my new segment onto a different network ACL and taking the low rule numbers on it. Which of those should I leave in place?",
+      "expect": [],
+      "fingerprint": {
+        "vpc-egress-guard": [
+          "egress-guard-r4",
+          "vpc-egress-guard"
+        ],
+        "segment-entry-baseline": [
+          "segment-deny-b9"
+        ],
+        "sibling-segment-claim": [
+          "billing-edge-q7",
+          "billing-edge-acl"
+        ],
+        "workload-attribution": [
+          "UNALLOCATED-4417",
+          "unassigned",
+          "fin-sweep-4417"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "vpc-egress-guard": [
+          "egress-guard-r4",
+          "vpc-egress-guard"
+        ],
+        "segment-entry-baseline": [
+          "segment-deny-b9"
+        ],
+        "sibling-segment-claim": [
+          "billing-edge-q7",
+          "billing-edge-acl"
+        ],
+        "workload-attribution": [
+          "UNALLOCATED-4417",
+          "unassigned",
+          "fin-sweep-4417"
+        ]
+      }
+    }
+  ]
+}

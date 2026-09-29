@@ -1,0 +1,23 @@
+{
+  "distractors": {
+    "backup-quiesce-hold": {
+      "codes": [
+        "OperationFailureException"
+      ],
+      "entry": "lightsail.instance",
+      "operation": "AttachDisk",
+      "service": "lightsail",
+      "source": "manual"
+    },
+    "release-cutover-start": {
+      "codes": [
+        "OperationFailureException"
+      ],
+      "entry": "lightsail.instance",
+      "operation": "AttachDisk",
+      "service": "lightsail",
+      "source": "manual"
+    }
+  },
+  "schema_version": 1
+}

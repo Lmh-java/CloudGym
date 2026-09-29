@@ -1,0 +1,5543 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "status": "succeeded"
+     },
+     "issued-identity-trust-scope": {
+      "status": "succeeded"
+     },
+     "pooled-identity-claimed": {
+      "status": "succeeded"
+     },
+     "registry-issued-identity": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "status": "succeeded"
+     },
+     "issued-identity-trust-scope": {
+      "status": "succeeded"
+     },
+     "pooled-identity-claimed": {
+      "status": "succeeded"
+     },
+     "registry-issued-identity": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           },
+           "Sid": "IssuedIdentityTrust"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/identity-baseline-lambda-exec"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-callback"
+         },
+         {
+          "Key": "TrustScope",
+          "Value": "account-use-only"
+         }
+        ]
+       },
+       "lambda-exec-pool-2": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-2",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           },
+           "Sid": "IssuedIdentityTrust"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity, issued on demand",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/identity-baseline-lambda-exec"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL2",
+        "RoleName": "lambda-exec-pool-2",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "lambda_function_name"
+         },
+         {
+          "Key": "TrustScope",
+          "Value": "account-use-only"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "lambda_function_name",
+        "Handler": "index.test",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-2",
+        "Runtime": "nodejs22.x",
+        "Timeout": 3
+       },
+       "payments-callback-dispatch": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:payments-callback-dispatch",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "payments-callback-dispatch",
+        "Handler": "dispatch.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/payments-callback-dispatch"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "status": "succeeded"
+     },
+     "issued-identity-trust-scope": {
+      "status": "succeeded"
+     },
+     "pooled-identity-claimed": {
+      "status": "succeeded"
+     },
+     "registry-issued-identity": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAIAM_FOR_LAMBDA",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "awaiting-registration"
+         }
+        ]
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           },
+           "Sid": "IssuedIdentityTrust"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/identity-baseline-lambda-exec"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-callback"
+         },
+         {
+          "Key": "TrustScope",
+          "Value": "account-use-only"
+         }
+        ]
+       },
+       "lambda-exec-pool-2": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-2",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           },
+           "Sid": "IssuedIdentityTrust"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity, issued on demand",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/identity-baseline-lambda-exec"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL2",
+        "RoleName": "lambda-exec-pool-2",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         },
+         {
+          "Key": "TrustScope",
+          "Value": "account-use-only"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "lambda_function_name",
+        "Handler": "index.test",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs22.x",
+        "Timeout": 3
+       },
+       "payments-callback-dispatch": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:payments-callback-dispatch",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "payments-callback-dispatch",
+        "Handler": "dispatch.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/payments-callback-dispatch"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "status": "succeeded"
+     },
+     "issued-identity-trust-scope": {
+      "status": "succeeded"
+     },
+     "pooled-identity-claimed": {
+      "status": "succeeded"
+     },
+     "registry-issued-identity": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAIAM_FOR_LAMBDA",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "lambda_function_name"
+         }
+        ]
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           },
+           "Sid": "IssuedIdentityTrust"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/identity-baseline-lambda-exec"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-callback"
+         },
+         {
+          "Key": "TrustScope",
+          "Value": "account-use-only"
+         }
+        ]
+       },
+       "lambda-exec-pool-2": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-2",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           },
+           "Sid": "IssuedIdentityTrust"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity, issued on demand",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/identity-baseline-lambda-exec"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL2",
+        "RoleName": "lambda-exec-pool-2",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         },
+         {
+          "Key": "TrustScope",
+          "Value": "account-use-only"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "lambda_function_name",
+        "Handler": "index.test",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs22.x",
+        "Timeout": 3
+       },
+       "payments-callback-dispatch": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:payments-callback-dispatch",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "payments-callback-dispatch",
+        "Handler": "dispatch.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/payments-callback-dispatch"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "status": "not-fired"
+     },
+     "issued-identity-trust-scope": {
+      "status": "not-fired"
+     },
+     "pooled-identity-claimed": {
+      "status": "not-fired"
+     },
+     "registry-issued-identity": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "lambda_function_name"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "lambda_function_name",
+        "Handler": "index.test",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "Runtime": "nodejs22.x",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "status": "not-fired"
+     },
+     "issued-identity-trust-scope": {
+      "status": "not-fired"
+     },
+     "pooled-identity-claimed": {
+      "status": "not-fired"
+     },
+     "registry-issued-identity": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAIAM_FOR_LAMBDA",
+        "RoleName": "iam_for_lambda"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "lambda_function_name",
+        "Handler": "index.test",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs22.x",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "status": "succeeded"
+     },
+     "issued-identity-trust-scope": {
+      "status": "succeeded"
+     },
+     "pooled-identity-claimed": {
+      "status": "succeeded"
+     },
+     "registry-issued-identity": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           },
+           "Sid": "IssuedIdentityTrust"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/identity-baseline-lambda-exec"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "lambda_function_name"
+         },
+         {
+          "Key": "TrustScope",
+          "Value": "account-use-only"
+         }
+        ]
+       },
+       "lambda-exec-pool-2": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-2",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           },
+           "Sid": "IssuedIdentityTrust"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity, issued on demand",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/identity-baseline-lambda-exec"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL2",
+        "RoleName": "lambda-exec-pool-2",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "lambda_function_name"
+         },
+         {
+          "Key": "TrustScope",
+          "Value": "account-use-only"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "lambda_function_name",
+        "Handler": "index.test",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-2",
+        "Runtime": "nodejs22.x",
+        "Timeout": 3
+       },
+       "payments-callback-dispatch": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:payments-callback-dispatch",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "payments-callback-dispatch",
+        "Handler": "dispatch.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/payments-callback-dispatch"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-pooled-identity-claimed"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "status": "succeeded"
+     },
+     "issued-identity-trust-scope": {
+      "status": "succeeded"
+     },
+     "pooled-identity-claimed": {
+      "status": "succeeded"
+     },
+     "registry-issued-identity": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           },
+           "Sid": "IssuedIdentityTrust"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/identity-baseline-lambda-exec"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAIAM_FOR_LAMBDA",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "lambda_function_name"
+         },
+         {
+          "Key": "TrustScope",
+          "Value": "account-use-only"
+         }
+        ]
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           },
+           "Sid": "IssuedIdentityTrust"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/identity-baseline-lambda-exec"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-callback"
+         },
+         {
+          "Key": "TrustScope",
+          "Value": "account-use-only"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "lambda_function_name",
+        "Handler": "index.test",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs22.x",
+        "Timeout": 3
+       },
+       "payments-callback-dispatch": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:payments-callback-dispatch",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "payments-callback-dispatch",
+        "Handler": "dispatch.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/payments-callback-dispatch"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-registry-issued-identity"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "status": "succeeded"
+     },
+     "issued-identity-trust-scope": {
+      "status": "succeeded"
+     },
+     "pooled-identity-claimed": {
+      "status": "succeeded"
+     },
+     "registry-issued-identity": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           },
+           "Sid": "IssuedIdentityTrust"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/identity-baseline-lambda-exec"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-callback"
+         },
+         {
+          "Key": "TrustScope",
+          "Value": "account-use-only"
+         }
+        ]
+       },
+       "lambda-exec-pool-2": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-2",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           },
+           "Sid": "IssuedIdentityTrust"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity, issued on demand",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/identity-baseline-lambda-exec",
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL2",
+        "RoleName": "lambda-exec-pool-2",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "lambda_function_name"
+         },
+         {
+          "Key": "TrustScope",
+          "Value": "account-use-only"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "lambda_function_name",
+        "Handler": "index.test",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-2",
+        "Runtime": "nodejs22.x",
+        "Timeout": 3
+       },
+       "payments-callback-dispatch": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:payments-callback-dispatch",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "payments-callback-dispatch",
+        "Handler": "dispatch.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/payments-callback-dispatch"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-identity-baseline-permissions"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "status": "succeeded"
+     },
+     "issued-identity-trust-scope": {
+      "status": "succeeded"
+     },
+     "pooled-identity-claimed": {
+      "status": "succeeded"
+     },
+     "registry-issued-identity": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           },
+           "Sid": "IssuedIdentityTrust"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/identity-baseline-lambda-exec"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-callback"
+         },
+         {
+          "Key": "TrustScope",
+          "Value": "account-use-only"
+         }
+        ]
+       },
+       "lambda-exec-pool-2": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-2",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity, issued on demand",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/identity-baseline-lambda-exec"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL2",
+        "RoleName": "lambda-exec-pool-2",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "lambda_function_name"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "lambda_function_name",
+        "Handler": "index.test",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-2",
+        "Runtime": "nodejs22.x",
+        "Timeout": 3
+       },
+       "payments-callback-dispatch": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:payments-callback-dispatch",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "payments-callback-dispatch",
+        "Handler": "dispatch.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/payments-callback-dispatch"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-issued-identity-trust-scope"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "status": "not-fired"
+     },
+     "issued-identity-trust-scope": {
+      "status": "not-fired"
+     },
+     "pooled-identity-claimed": {
+      "status": "failed"
+     },
+     "registry-issued-identity": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "lambda_function_name"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "lambda_function_name",
+        "Handler": "index.test",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "Runtime": "nodejs22.x",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-pooled-identity-claimed"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "status": "not-fired"
+     },
+     "issued-identity-trust-scope": {
+      "status": "not-fired"
+     },
+     "pooled-identity-claimed": {
+      "status": "not-fired"
+     },
+     "registry-issued-identity": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "lambda_function_name"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "lambda_function_name",
+        "Handler": "index.test",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "Runtime": "nodejs22.x",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-registry-issued-identity"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "status": "failed"
+     },
+     "issued-identity-trust-scope": {
+      "status": "not-fired"
+     },
+     "pooled-identity-claimed": {
+      "status": "not-fired"
+     },
+     "registry-issued-identity": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "lambda_function_name"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "lambda_function_name",
+        "Handler": "index.test",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "Runtime": "nodejs22.x",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-identity-baseline-permissions"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "status": "not-fired"
+     },
+     "issued-identity-trust-scope": {
+      "status": "failed"
+     },
+     "pooled-identity-claimed": {
+      "status": "not-fired"
+     },
+     "registry-issued-identity": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "lambda_function_name"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "lambda_function_name",
+        "Handler": "index.test",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "Runtime": "nodejs22.x",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-issued-identity-trust-scope"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "status": "succeeded"
+     },
+     "issued-identity-trust-scope": {
+      "status": "succeeded"
+     },
+     "pooled-identity-claimed": {
+      "status": "succeeded"
+     },
+     "registry-issued-identity": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           },
+           "Sid": "IssuedIdentityTrust"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/identity-baseline-lambda-exec"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-callback"
+         },
+         {
+          "Key": "TrustScope",
+          "Value": "account-use-only"
+         }
+        ]
+       },
+       "lambda-exec-pool-2": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-2",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           },
+           "Sid": "IssuedIdentityTrust"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity, issued on demand",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/identity-baseline-lambda-exec"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL2",
+        "RoleName": "lambda-exec-pool-2",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         },
+         {
+          "Key": "TrustScope",
+          "Value": "account-use-only"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "lambda_function_name",
+        "Handler": "index.test",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "Runtime": "nodejs22.x",
+        "Timeout": 3
+       },
+       "payments-callback-dispatch": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:payments-callback-dispatch",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "payments-callback-dispatch",
+        "Handler": "dispatch.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/payments-callback-dispatch"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "identity-shared-by-two-workloads"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "status": "not-fired"
+     },
+     "issued-identity-trust-scope": {
+      "status": "not-fired"
+     },
+     "pooled-identity-claimed": {
+      "status": "not-fired"
+     },
+     "registry-issued-identity": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "lambda_function_name"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    }
+   },
+   "name": "nc-function-missing"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "status": "not-fired"
+     },
+     "issued-identity-trust-scope": {
+      "status": "not-fired"
+     },
+     "pooled-identity-claimed": {
+      "status": "not-fired"
+     },
+     "registry-issued-identity": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "lambda_function_name"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "lambda_function_name",
+        "Handler": "index.test",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "nc-wrong-runtime"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "status": "not-fired"
+     },
+     "issued-identity-trust-scope": {
+      "status": "not-fired"
+     },
+     "pooled-identity-claimed": {
+      "status": "not-fired"
+     },
+     "registry-issued-identity": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "lambda_function_name"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "lambda_function_name",
+        "Handler": "index.test",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Image",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "Runtime": "nodejs22.x",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "nc-container-package"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "status": "not-fired"
+     },
+     "issued-identity-trust-scope": {
+      "status": "not-fired"
+     },
+     "pooled-identity-claimed": {
+      "status": "not-fired"
+     },
+     "registry-issued-identity": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "lambda_function_name"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda-function-name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda-function-name",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "lambda-function-name",
+        "Handler": "index.test",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda-function-name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "Runtime": "nodejs22.x",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "nc-wrong-function-name"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "status": "not-fired"
+     },
+     "issued-identity-trust-scope": {
+      "status": "not-fired"
+     },
+     "pooled-identity-claimed": {
+      "status": "not-fired"
+     },
+     "registry-issued-identity": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "ec2.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "lambda_function_name"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "lambda_function_name",
+        "Handler": "index.test",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "Runtime": "nodejs22.x",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "nc-identity-not-assumable"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "status": "not-fired"
+     },
+     "issued-identity-trust-scope": {
+      "status": "not-fired"
+     },
+     "pooled-identity-claimed": {
+      "status": "not-fired"
+     },
+     "registry-issued-identity": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "lambda_function_name"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "lambda_function_name",
+        "Handler": "index.test",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "Runtime": "nodejs22.x",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "nc-identity-without-permissions"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "status": "not-fired"
+     },
+     "issued-identity-trust-scope": {
+      "status": "not-fired"
+     },
+     "pooled-identity-claimed": {
+      "status": "not-fired"
+     },
+     "registry-issued-identity": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAIAM_FOR_LAMBDA",
+        "RoleName": "iam_for_lambda"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "lambda_function_name",
+        "Handler": "index.test",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs22.x",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "nc-unmarked-identity"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "status": "not-fired"
+     },
+     "issued-identity-trust-scope": {
+      "status": "not-fired"
+     },
+     "pooled-identity-claimed": {
+      "status": "not-fired"
+     },
+     "registry-issued-identity": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000023",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROALAMBDAEXECPOOL1",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "lambda_function_name"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "lambda_function_name",
+        "Handler": "index.test",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "Runtime": "nodejs22.x",
+        "Timeout": 3
+       },
+       "reporting-nightly": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:reporting-nightly",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FunctionName": "reporting-nightly",
+        "Handler": "report.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/reporting-nightly"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/lambda-exec-pool-1",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "nc-identity-shared"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSReservedSSO_SandboxAdministrator_0000000000000001": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_SandboxAdministrator_0000000000000001",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+           ],
+           "Condition": {
+            "StringEquals": {
+             "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Federated": "arn:aws:iam::000000000114:saml-provider/AWSSSO_d19a45a4a1239f62_DO_NOT_DELETE"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 43200,
+        "Path": "/aws-reserved/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000174",
+        "RoleName": "AWSReservedSSO_SandboxAdministrator_0000000000000001"
+       },
+       "AWSServiceRoleForAutoScaling": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "autoscaling.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Default Service-Linked Role enables access to AWS Services and Resources used or managed by Auto Scaling",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AutoScalingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/autoscaling.amazonaws.com/",
+        "RoleId": "AROA00000000000000208",
+        "RoleName": "AWSServiceRoleForAutoScaling"
+       },
+       "AWSServiceRoleForElasticBeanstalk": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticbeanstalk.amazonaws.com/AWSServiceRoleForElasticBeanstalk",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticbeanstalk.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticBeanstalkServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticbeanstalk.amazonaws.com/",
+        "RoleId": "AROA00000000000000211",
+        "RoleName": "AWSServiceRoleForElasticBeanstalk"
+       },
+       "AWSServiceRoleForElasticLoadBalancing": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticloadbalancing.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows ELB to call AWS services on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
+        "RoleId": "AROA00000000000000194",
+        "RoleName": "AWSServiceRoleForElasticLoadBalancing"
+       },
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000181",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000190",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000177",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000220",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000170",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000114:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000219",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::000000000114:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000193",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         },
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSReservedSSO_SandboxAdministrator_0000000000000001": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_SandboxAdministrator_0000000000000001",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+           ],
+           "Condition": {
+            "StringEquals": {
+             "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Federated": "arn:aws:iam::000000000114:saml-provider/AWSSSO_d19a45a4a1239f62_DO_NOT_DELETE"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 43200,
+        "Path": "/aws-reserved/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000174",
+        "RoleName": "AWSReservedSSO_SandboxAdministrator_0000000000000001"
+       },
+       "AWSServiceRoleForAutoScaling": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "autoscaling.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Default Service-Linked Role enables access to AWS Services and Resources used or managed by Auto Scaling",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AutoScalingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/autoscaling.amazonaws.com/",
+        "RoleId": "AROA00000000000000208",
+        "RoleName": "AWSServiceRoleForAutoScaling"
+       },
+       "AWSServiceRoleForElasticBeanstalk": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticbeanstalk.amazonaws.com/AWSServiceRoleForElasticBeanstalk",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticbeanstalk.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticBeanstalkServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticbeanstalk.amazonaws.com/",
+        "RoleId": "AROA00000000000000211",
+        "RoleName": "AWSServiceRoleForElasticBeanstalk"
+       },
+       "AWSServiceRoleForElasticLoadBalancing": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticloadbalancing.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows ELB to call AWS services on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
+        "RoleId": "AROA00000000000000194",
+        "RoleName": "AWSServiceRoleForElasticLoadBalancing"
+       },
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000181",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000190",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000177",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000220",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000170",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000114:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000219",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::000000000114:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000193",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "lambda_function_name"
+         },
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:000000000114:function:lambda_function_name",
+        "Code": {},
+        "Description": "Runs lambda.js",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "lambda_function_name",
+        "Handler": "lambda.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::000000000114:role/lambda-exec-pool-1",
+        "Runtime": "nodejs22.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "SnapStartResponse": {
+         "ApplyOn": "None",
+         "OptimizationStatus": "Off"
+        },
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "lambda_function_name"
+         },
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         }
+        ],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "identity-baseline-permissions": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 2,
+        "landed_ns": 274940924715859,
+        "landed_s": 9.977,
+        "result": {
+         "baseline": "identity-baseline-lambda-exec",
+         "baselined": [
+          "lambda-exec-pool-1"
+         ],
+         "detached": [],
+         "fingerprint": [
+          "identity-baseline-lambda-exec"
+         ],
+         "policy_created": false,
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-identity-baseline-permissions-2",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "baseline": "identity-baseline-lambda-exec",
+       "baselined": [
+        "lambda-exec-pool-1"
+       ],
+       "detached": [],
+       "fingerprint": [
+        "identity-baseline-lambda-exec"
+       ],
+       "policy_created": false,
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "issued-identity-trust-scope": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 4,
+        "landed_ns": 274947939702009,
+        "landed_s": 16.992,
+        "result": {
+         "fingerprint": [
+          "account-use-only"
+         ],
+         "scope": "account-use-only",
+         "scoped": [
+          "lambda-exec-pool-1",
+          "lambda-exec-pool-2"
+         ],
+         "statement": "IssuedIdentityTrust",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-issued-identity-trust-scope-4",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        "account-use-only"
+       ],
+       "scope": "account-use-only",
+       "scoped": [
+        "lambda-exec-pool-1",
+        "lambda-exec-pool-2"
+       ],
+       "statement": "IssuedIdentityTrust",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "pooled-identity-claimed": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 1,
+        "landed_ns": 274936260759335,
+        "landed_s": 5.313,
+        "result": {
+         "fingerprint": [
+          "payments-callback"
+         ],
+         "function": "payments-callback-dispatch",
+         "function_created": true,
+         "holder": "payments-callback",
+         "identity": "lambda-exec-pool-1",
+         "marking": "identity-platform",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-pooled-identity-claimed-1",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        "payments-callback"
+       ],
+       "function": "payments-callback-dispatch",
+       "function_created": true,
+       "holder": "payments-callback",
+       "identity": "lambda-exec-pool-1",
+       "marking": "identity-platform",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "registry-issued-identity": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 3,
+        "landed_ns": 274945176952119,
+        "landed_s": 14.229,
+        "result": {
+         "fingerprint": [
+          "lambda-exec-pool-2",
+          "issued on demand"
+         ],
+         "inherited_policies": [
+          "arn:aws:iam::000000000106:policy/identity-baseline-lambda-exec"
+         ],
+         "issued_identity": "lambda-exec-pool-2",
+         "newly_issued": true,
+         "stamped": [],
+         "trigger": "snapshot"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-registry-issued-identity-3",
+        "trigger_kind": "snapshot"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        "lambda-exec-pool-2",
+        "issued on demand"
+       ],
+       "inherited_policies": [
+        "arn:aws:iam::000000000106:policy/identity-baseline-lambda-exec"
+       ],
+       "issued_identity": "lambda-exec-pool-2",
+       "newly_issued": true,
+       "stamped": [],
+       "trigger": "snapshot"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForElasticLoadBalancing": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticloadbalancing.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows ELB to call AWS services on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
+        "RoleId": "AROA00000000000000123",
+        "RoleName": "AWSServiceRoleForElasticLoadBalancing"
+       },
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000104",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000122",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000099",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000101",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000127",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000106:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000106",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::000000000106:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000105",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "unassigned"
+         },
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForElasticLoadBalancing": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticloadbalancing.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows ELB to call AWS services on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
+        "RoleId": "AROA00000000000000123",
+        "RoleName": "AWSServiceRoleForElasticLoadBalancing"
+       },
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000104",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000122",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000099",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000101",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000106:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000127",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000106:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000106",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "lambda-exec-pool-1": {
+        "Arn": "arn:aws:iam::000000000106:role/lambda-exec-pool-1",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000106"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           },
+           "Sid": "IssuedIdentityTrust"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::000000000106:policy/identity-baseline-lambda-exec"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000105",
+        "RoleName": "lambda-exec-pool-1",
+        "Tags": [
+         {
+          "Key": "TrustScope",
+          "Value": "account-use-only"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-callback"
+         },
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         }
+        ]
+       },
+       "lambda-exec-pool-2": {
+        "Arn": "arn:aws:iam::000000000106:role/lambda-exec-pool-2",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000106"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           },
+           "Sid": "IssuedIdentityTrust"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Pooled Lambda execution identity, issued on demand",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::000000000106:policy/identity-baseline-lambda-exec"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000115",
+        "RoleName": "lambda-exec-pool-2",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "lambda_function_name"
+         },
+         {
+          "Key": "TrustScope",
+          "Value": "account-use-only"
+         },
+         {
+          "Key": "ManagedBy",
+          "Value": "identity-platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:000000000106:function:lambda_function_name",
+        "Code": {},
+        "Description": "Runs lambda.js",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "lambda_function_name",
+        "Handler": "lambda.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::000000000106:role/lambda-exec-pool-2",
+        "Runtime": "nodejs22.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "SnapStartResponse": {
+         "ApplyOn": "None",
+         "OptimizationStatus": "Off"
+        },
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       },
+       "payments-callback-dispatch": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:000000000106:function:payments-callback-dispatch",
+        "Code": {},
+        "Description": "payments-callback dispatcher",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "payments-callback-dispatch",
+        "Handler": "dispatch.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/payments-callback-dispatch"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::000000000106:role/lambda-exec-pool-1",
+        "Runtime": "python3.12",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "SnapStartResponse": {
+         "ApplyOn": "None",
+         "OptimizationStatus": "Off"
+        },
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-interference-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

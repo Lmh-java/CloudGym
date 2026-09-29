@@ -1,0 +1,7310 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "data-plane-reservation": {
+      "status": "succeeded"
+     },
+     "quarantined-source-hold": {
+      "status": "succeeded"
+     },
+     "shared-edge-acl": {
+      "status": "succeeded"
+     },
+     "unallocated-egress-boundary": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "data-plane-reservation": {
+      "status": "succeeded"
+     },
+     "quarantined-source-hold": {
+      "status": "succeeded"
+     },
+     "shared-edge-acl": {
+      "status": "succeeded"
+     },
+     "unallocated-egress-boundary": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "acl-0a1b2c3d4e5f60002": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "acl-0a1b2c3d4e5f60004": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": false,
+          "PortRange": {
+           "From": 80,
+           "To": 80
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": true,
+          "PortRange": {
+           "From": 443,
+           "To": 443
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 200
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": false,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "data-plane-reservation": {
+      "status": "succeeded"
+     },
+     "quarantined-source-hold": {
+      "status": "succeeded"
+     },
+     "shared-edge-acl": {
+      "status": "succeeded"
+     },
+     "unallocated-egress-boundary": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "acl-0a1b2c3d4e5f60002": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "acl-0a1b2c3d4e5f60004": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": false,
+          "PortRange": {
+           "From": 80,
+           "To": 80
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 120
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": true,
+          "PortRange": {
+           "From": 443,
+           "To": 443
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 220
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": false,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "data-plane-reservation": {
+      "status": "succeeded"
+     },
+     "quarantined-source-hold": {
+      "status": "succeeded"
+     },
+     "shared-edge-acl": {
+      "status": "succeeded"
+     },
+     "unallocated-egress-boundary": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "acl-0a1b2c3d4e5f60002": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "acl-0a1b2c3d4e5f60003": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "10.3.4.0/22",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 150
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": false,
+          "PortRange": {
+           "From": 80,
+           "To": 80
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 160
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "10.3.128.0/19",
+          "Egress": true,
+          "PortRange": {
+           "From": 5432,
+           "To": 5432
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 200
+         },
+         {
+          "CidrBlock": "10.3.32.0/19",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 300
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": true,
+          "PortRange": {
+           "From": 443,
+           "To": 443
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 310
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "app-edge-acl"
+         },
+         {
+          "Key": "EdgePolicy",
+          "Value": "account-edge-baseline"
+         },
+         {
+          "Key": "ExposureHold",
+          "Value": "sanctioned-sources-only"
+         },
+         {
+          "Key": "ReservedSlot",
+          "Value": "data-plane-hold"
+         },
+         {
+          "Key": "EgressBoundary",
+          "Value": "unallocated-space-closed"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "acl-0a1b2c3d4e5f60002": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "acl-0a1b2c3d4e5f60004": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": false,
+          "PortRange": {
+           "From": 80,
+           "To": 80
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": true,
+          "PortRange": {
+           "From": 443,
+           "To": 443
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 200
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": false,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "data-plane-reservation": {
+      "status": "not-fired"
+     },
+     "quarantined-source-hold": {
+      "status": "not-fired"
+     },
+     "shared-edge-acl": {
+      "status": "not-fired"
+     },
+     "unallocated-egress-boundary": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "acl-0a1b2c3d4e5f60002": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "acl-0a1b2c3d4e5f60004": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": false,
+          "PortRange": {
+           "From": 80,
+           "To": 80
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 200
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": false,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "data-plane-reservation": {
+      "status": "not-fired"
+     },
+     "quarantined-source-hold": {
+      "status": "not-fired"
+     },
+     "shared-edge-acl": {
+      "status": "not-fired"
+     },
+     "unallocated-egress-boundary": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "no-application-network"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "data-plane-reservation": {
+      "status": "not-fired"
+     },
+     "quarantined-source-hold": {
+      "status": "not-fired"
+     },
+     "shared-edge-acl": {
+      "status": "not-fired"
+     },
+     "unallocated-egress-boundary": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "acl-0a1b2c3d4e5f60002": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": false,
+          "PortRange": {
+           "From": 80,
+           "To": 80
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 110
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": true,
+          "PortRange": {
+           "From": 443,
+           "To": 443
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 210
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "rules-on-the-default-acl"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "data-plane-reservation": {
+      "status": "not-fired"
+     },
+     "quarantined-source-hold": {
+      "status": "not-fired"
+     },
+     "shared-edge-acl": {
+      "status": "not-fired"
+     },
+     "unallocated-egress-boundary": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "acl-0a1b2c3d4e5f60002": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "acl-0a1b2c3d4e5f60004": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": true,
+          "PortRange": {
+           "From": 443,
+           "To": 443
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 200
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": false,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "no-inbound-allowance"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "data-plane-reservation": {
+      "status": "not-fired"
+     },
+     "quarantined-source-hold": {
+      "status": "not-fired"
+     },
+     "shared-edge-acl": {
+      "status": "not-fired"
+     },
+     "unallocated-egress-boundary": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "acl-0a1b2c3d4e5f60002": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "acl-0a1b2c3d4e5f60004": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": false,
+          "PortRange": {
+           "From": 80,
+           "To": 80
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": true,
+          "PortRange": {
+           "From": 80,
+           "To": 80
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 200
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": false,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "outbound-allowance-on-the-wrong-port"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "data-plane-reservation": {
+      "status": "not-fired"
+     },
+     "quarantined-source-hold": {
+      "status": "not-fired"
+     },
+     "shared-edge-acl": {
+      "status": "not-fired"
+     },
+     "unallocated-egress-boundary": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "acl-0a1b2c3d4e5f60002": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "acl-0a1b2c3d4e5f60004": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "10.4.0.0/18",
+          "Egress": false,
+          "PortRange": {
+           "From": 80,
+           "To": 80
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": true,
+          "PortRange": {
+           "From": 443,
+           "To": 443
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 200
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": false,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "inbound-allowance-from-the-wrong-space"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "data-plane-reservation": {
+      "status": "not-fired"
+     },
+     "quarantined-source-hold": {
+      "status": "not-fired"
+     },
+     "shared-edge-acl": {
+      "status": "not-fired"
+     },
+     "unallocated-egress-boundary": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "acl-0a1b2c3d4e5f60002": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "acl-0a1b2c3d4e5f60004": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "10.3.0.0/16",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 90
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": false,
+          "PortRange": {
+           "From": 80,
+           "To": 80
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": true,
+          "PortRange": {
+           "From": 443,
+           "To": 443
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 200
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": false,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "inbound-allowance-shadowed"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "data-plane-reservation": {
+      "status": "not-fired"
+     },
+     "quarantined-source-hold": {
+      "status": "not-fired"
+     },
+     "shared-edge-acl": {
+      "status": "not-fired"
+     },
+     "unallocated-egress-boundary": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "acl-0a1b2c3d4e5f60002": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "acl-0a1b2c3d4e5f60004": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": false,
+          "PortRange": {
+           "From": 80,
+           "To": 80
+          },
+          "Protocol": "17",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": true,
+          "PortRange": {
+           "From": 443,
+           "To": 443
+          },
+          "Protocol": "17",
+          "RuleAction": "allow",
+          "RuleNumber": 200
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": false,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "allowances-not-tcp"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "data-plane-reservation": {
+      "status": "not-fired"
+     },
+     "quarantined-source-hold": {
+      "status": "not-fired"
+     },
+     "shared-edge-acl": {
+      "status": "failed"
+     },
+     "unallocated-egress-boundary": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "acl-0a1b2c3d4e5f60002": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "acl-0a1b2c3d4e5f60004": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": false,
+          "PortRange": {
+           "From": 80,
+           "To": 80
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": true,
+          "PortRange": {
+           "From": 443,
+           "To": 443
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 200
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": false,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-shared-edge-acl"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "data-plane-reservation": {
+      "status": "not-fired"
+     },
+     "quarantined-source-hold": {
+      "status": "failed"
+     },
+     "shared-edge-acl": {
+      "status": "not-fired"
+     },
+     "unallocated-egress-boundary": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "acl-0a1b2c3d4e5f60002": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "acl-0a1b2c3d4e5f60004": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": false,
+          "PortRange": {
+           "From": 80,
+           "To": 80
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": true,
+          "PortRange": {
+           "From": 443,
+           "To": 443
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 200
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": false,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-quarantined-source-hold"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "data-plane-reservation": {
+      "status": "failed"
+     },
+     "quarantined-source-hold": {
+      "status": "not-fired"
+     },
+     "shared-edge-acl": {
+      "status": "not-fired"
+     },
+     "unallocated-egress-boundary": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "acl-0a1b2c3d4e5f60002": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "acl-0a1b2c3d4e5f60004": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": false,
+          "PortRange": {
+           "From": 80,
+           "To": 80
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": true,
+          "PortRange": {
+           "From": 443,
+           "To": 443
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 200
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": false,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-data-plane-reservation"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "data-plane-reservation": {
+      "status": "not-fired"
+     },
+     "quarantined-source-hold": {
+      "status": "not-fired"
+     },
+     "shared-edge-acl": {
+      "status": "not-fired"
+     },
+     "unallocated-egress-boundary": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "acl-0a1b2c3d4e5f60002": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "acl-0a1b2c3d4e5f60004": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": false,
+          "PortRange": {
+           "From": 80,
+           "To": 80
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": true,
+          "PortRange": {
+           "From": 443,
+           "To": 443
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 200
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": false,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-unallocated-egress-boundary"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "data-plane-reservation": {
+      "status": "succeeded"
+     },
+     "quarantined-source-hold": {
+      "status": "succeeded"
+     },
+     "shared-edge-acl": {
+      "status": "succeeded"
+     },
+     "unallocated-egress-boundary": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "acl-0a1b2c3d4e5f60002": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "acl-0a1b2c3d4e5f60003": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "10.3.4.0/22",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 150
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "10.3.128.0/19",
+          "Egress": true,
+          "PortRange": {
+           "From": 5432,
+           "To": 5432
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 200
+         },
+         {
+          "CidrBlock": "10.3.32.0/19",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 300
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "app-edge-acl"
+         },
+         {
+          "Key": "EdgePolicy",
+          "Value": "account-edge-baseline"
+         },
+         {
+          "Key": "ExposureHold",
+          "Value": "sanctioned-sources-only"
+         },
+         {
+          "Key": "ReservedSlot",
+          "Value": "data-plane-hold"
+         },
+         {
+          "Key": "EgressBoundary",
+          "Value": "unallocated-space-closed"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "acl-0a1b2c3d4e5f60004": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "10.3.4.0/22",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 150
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": false,
+          "PortRange": {
+           "From": 80,
+           "To": 80
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 160
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "10.3.128.0/19",
+          "Egress": true,
+          "PortRange": {
+           "From": 5432,
+           "To": 5432
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 200
+         },
+         {
+          "CidrBlock": "10.3.32.0/19",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 300
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": true,
+          "PortRange": {
+           "From": 443,
+           "To": 443
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 310
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": false,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-shared-edge-acl"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "data-plane-reservation": {
+      "status": "succeeded"
+     },
+     "quarantined-source-hold": {
+      "status": "succeeded"
+     },
+     "shared-edge-acl": {
+      "status": "succeeded"
+     },
+     "unallocated-egress-boundary": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "acl-0a1b2c3d4e5f60002": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "acl-0a1b2c3d4e5f60003": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": false,
+          "PortRange": {
+           "From": 80,
+           "To": 80
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 160
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "10.3.128.0/19",
+          "Egress": true,
+          "PortRange": {
+           "From": 5432,
+           "To": 5432
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 200
+         },
+         {
+          "CidrBlock": "10.3.32.0/19",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 300
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": true,
+          "PortRange": {
+           "From": 443,
+           "To": 443
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 310
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "app-edge-acl"
+         },
+         {
+          "Key": "EdgePolicy",
+          "Value": "account-edge-baseline"
+         },
+         {
+          "Key": "ExposureHold",
+          "Value": "sanctioned-sources-only"
+         },
+         {
+          "Key": "ReservedSlot",
+          "Value": "data-plane-hold"
+         },
+         {
+          "Key": "EgressBoundary",
+          "Value": "unallocated-space-closed"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-quarantined-source-hold"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "data-plane-reservation": {
+      "status": "succeeded"
+     },
+     "quarantined-source-hold": {
+      "status": "succeeded"
+     },
+     "shared-edge-acl": {
+      "status": "succeeded"
+     },
+     "unallocated-egress-boundary": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "acl-0a1b2c3d4e5f60002": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "acl-0a1b2c3d4e5f60003": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "10.3.4.0/22",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 150
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": false,
+          "PortRange": {
+           "From": 80,
+           "To": 80
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 160
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "10.3.32.0/19",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 300
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": true,
+          "PortRange": {
+           "From": 443,
+           "To": 443
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 310
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "app-edge-acl"
+         },
+         {
+          "Key": "EdgePolicy",
+          "Value": "account-edge-baseline"
+         },
+         {
+          "Key": "ExposureHold",
+          "Value": "sanctioned-sources-only"
+         },
+         {
+          "Key": "ReservedSlot",
+          "Value": "data-plane-hold"
+         },
+         {
+          "Key": "EgressBoundary",
+          "Value": "unallocated-space-closed"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-data-plane-reservation"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "data-plane-reservation": {
+      "status": "succeeded"
+     },
+     "quarantined-source-hold": {
+      "status": "succeeded"
+     },
+     "shared-edge-acl": {
+      "status": "succeeded"
+     },
+     "unallocated-egress-boundary": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a1b2c3d4e5f60001": {
+        "Associations": [
+         {
+          "SubnetId": "subnet-0a1b2c3d4e5f60001"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "acl-0a1b2c3d4e5f60002": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "acl-0a1b2c3d4e5f60003": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "10.3.4.0/22",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 150
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": false,
+          "PortRange": {
+           "From": 80,
+           "To": 80
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 160
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "10.3.128.0/19",
+          "Egress": true,
+          "PortRange": {
+           "From": 5432,
+           "To": 5432
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 200
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": true,
+          "PortRange": {
+           "From": 443,
+           "To": 443
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 210
+         },
+         {
+          "CidrBlock": "10.3.32.0/19",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 300
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "app-edge-acl"
+         },
+         {
+          "Key": "EdgePolicy",
+          "Value": "account-edge-baseline"
+         },
+         {
+          "Key": "ExposureHold",
+          "Value": "sanctioned-sources-only"
+         },
+         {
+          "Key": "ReservedSlot",
+          "Value": "data-plane-hold"
+         },
+         {
+          "Key": "EgressBoundary",
+          "Value": "unallocated-space-closed"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/20",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "InstanceTenancy": "default",
+        "Tags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-unallocated-egress-boundary"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-03b68ed1267d9b422": {
+        "Associations": [
+         {
+          "NetworkAclAssociationId": "aclassoc-04115bc60a3b01752",
+          "NetworkAclId": "acl-03b68ed1267d9b422",
+          "SubnetId": "subnet-07262896043a4159d"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "NetworkAclId": "acl-03b68ed1267d9b422",
+        "OwnerId": "000000000114",
+        "Tags": [],
+        "VpcId": "vpc-0e5905b5b902aa19e"
+       },
+       "acl-05d0715cadb83df0d": {
+        "Associations": [
+         {
+          "NetworkAclAssociationId": "aclassoc-061f8d19756b8a2d2",
+          "NetworkAclId": "acl-05d0715cadb83df0d",
+          "SubnetId": "subnet-04af5d32278a452c4"
+         },
+         {
+          "NetworkAclAssociationId": "aclassoc-0617363acc93d8c52",
+          "NetworkAclId": "acl-05d0715cadb83df0d",
+          "SubnetId": "subnet-07f63c7132ee566a7"
+         },
+         {
+          "NetworkAclAssociationId": "aclassoc-05f2ad49d83695978",
+          "NetworkAclId": "acl-05d0715cadb83df0d",
+          "SubnetId": "subnet-04959cc6acffa847d"
+         },
+         {
+          "NetworkAclAssociationId": "aclassoc-0162306fe5d6d56fc",
+          "NetworkAclId": "acl-05d0715cadb83df0d",
+          "SubnetId": "subnet-08f67a9fec5557b6e"
+         },
+         {
+          "NetworkAclAssociationId": "aclassoc-062a9d3192be9b435",
+          "NetworkAclId": "acl-05d0715cadb83df0d",
+          "SubnetId": "subnet-068edb6906c2e5f0b"
+         },
+         {
+          "NetworkAclAssociationId": "aclassoc-0dccf04815760b33f",
+          "NetworkAclId": "acl-05d0715cadb83df0d",
+          "SubnetId": "subnet-050cb01ec6f7c4dcf"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "NetworkAclId": "acl-05d0715cadb83df0d",
+        "OwnerId": "000000000114",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-04959cc6acffa847d": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1a",
+        "AvailabilityZoneId": "use1-az1",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.0.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-05f2ad49d83695978",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-04959cc6acffa847d",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       },
+       "subnet-04af5d32278a452c4": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1d",
+        "AvailabilityZoneId": "use1-az6",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.32.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-061f8d19756b8a2d2",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-04af5d32278a452c4",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       },
+       "subnet-050cb01ec6f7c4dcf": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1c",
+        "AvailabilityZoneId": "use1-az4",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.16.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-0dccf04815760b33f",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-050cb01ec6f7c4dcf",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       },
+       "subnet-068edb6906c2e5f0b": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1b",
+        "AvailabilityZoneId": "use1-az2",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.80.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-062a9d3192be9b435",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-068edb6906c2e5f0b",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       },
+       "subnet-07262896043a4159d": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1b",
+        "AvailabilityZoneId": "use1-az2",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "10.3.0.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": false,
+        "NetworkAclAssociationId": "aclassoc-04115bc60a3b01752",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-07262896043a4159d",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0e5905b5b902aa19e"
+       },
+       "subnet-07f63c7132ee566a7": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1f",
+        "AvailabilityZoneId": "use1-az5",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.64.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-0617363acc93d8c52",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-07f63c7132ee566a7",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       },
+       "subnet-08f67a9fec5557b6e": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1e",
+        "AvailabilityZoneId": "use1-az3",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.48.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-0162306fe5d6d56fc",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-08f67a9fec5557b6e",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-02fd49a0b823aeab0"
+        ],
+        "DefaultNetworkAcl": "acl-05d0715cadb83df0d",
+        "DefaultSecurityGroup": "sg-03f1011b0114a0a21",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       },
+       "vpc-0e5905b5b902aa19e": {
+        "CidrBlock": "10.3.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-06584c15ab88867c3"
+        ],
+        "DefaultNetworkAcl": "acl-03b68ed1267d9b422",
+        "DefaultSecurityGroup": "sg-0e912144cd905b316",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         }
+        ],
+        "VpcId": "vpc-0e5905b5b902aa19e"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-01c233f97edffc2ea": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": true,
+          "PortRange": {
+           "From": 443,
+           "To": 443
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": false,
+          "PortRange": {
+           "From": 80,
+           "To": 80
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": false,
+        "NetworkAclId": "acl-01c233f97edffc2ea",
+        "OwnerId": "000000000114",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "cloudgym-acl"
+         }
+        ],
+        "VpcId": "vpc-0407775ce46a8f8c1"
+       },
+       "acl-03b68ed1267d9b422": {
+        "Associations": [
+         {
+          "NetworkAclAssociationId": "aclassoc-04115bc60a3b01752",
+          "NetworkAclId": "acl-03b68ed1267d9b422",
+          "SubnetId": "subnet-07262896043a4159d"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "NetworkAclId": "acl-03b68ed1267d9b422",
+        "OwnerId": "000000000114",
+        "Tags": [],
+        "VpcId": "vpc-0e5905b5b902aa19e"
+       },
+       "acl-05d0715cadb83df0d": {
+        "Associations": [
+         {
+          "NetworkAclAssociationId": "aclassoc-061f8d19756b8a2d2",
+          "NetworkAclId": "acl-05d0715cadb83df0d",
+          "SubnetId": "subnet-04af5d32278a452c4"
+         },
+         {
+          "NetworkAclAssociationId": "aclassoc-0617363acc93d8c52",
+          "NetworkAclId": "acl-05d0715cadb83df0d",
+          "SubnetId": "subnet-07f63c7132ee566a7"
+         },
+         {
+          "NetworkAclAssociationId": "aclassoc-05f2ad49d83695978",
+          "NetworkAclId": "acl-05d0715cadb83df0d",
+          "SubnetId": "subnet-04959cc6acffa847d"
+         },
+         {
+          "NetworkAclAssociationId": "aclassoc-0162306fe5d6d56fc",
+          "NetworkAclId": "acl-05d0715cadb83df0d",
+          "SubnetId": "subnet-08f67a9fec5557b6e"
+         },
+         {
+          "NetworkAclAssociationId": "aclassoc-062a9d3192be9b435",
+          "NetworkAclId": "acl-05d0715cadb83df0d",
+          "SubnetId": "subnet-068edb6906c2e5f0b"
+         },
+         {
+          "NetworkAclAssociationId": "aclassoc-0dccf04815760b33f",
+          "NetworkAclId": "acl-05d0715cadb83df0d",
+          "SubnetId": "subnet-050cb01ec6f7c4dcf"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "NetworkAclId": "acl-05d0715cadb83df0d",
+        "OwnerId": "000000000114",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       },
+       "acl-0cf642f93f16e6a42": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "NetworkAclId": "acl-0cf642f93f16e6a42",
+        "OwnerId": "000000000114",
+        "Tags": [],
+        "VpcId": "vpc-0407775ce46a8f8c1"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-04959cc6acffa847d": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1a",
+        "AvailabilityZoneId": "use1-az1",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.0.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-05f2ad49d83695978",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-04959cc6acffa847d",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       },
+       "subnet-04af5d32278a452c4": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1d",
+        "AvailabilityZoneId": "use1-az6",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.32.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-061f8d19756b8a2d2",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-04af5d32278a452c4",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       },
+       "subnet-050cb01ec6f7c4dcf": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1c",
+        "AvailabilityZoneId": "use1-az4",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.16.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-0dccf04815760b33f",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-050cb01ec6f7c4dcf",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       },
+       "subnet-068edb6906c2e5f0b": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1b",
+        "AvailabilityZoneId": "use1-az2",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.80.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-062a9d3192be9b435",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-068edb6906c2e5f0b",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       },
+       "subnet-07262896043a4159d": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1b",
+        "AvailabilityZoneId": "use1-az2",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "10.3.0.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": false,
+        "NetworkAclAssociationId": "aclassoc-04115bc60a3b01752",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-07262896043a4159d",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "VpcId": "vpc-0e5905b5b902aa19e"
+       },
+       "subnet-07f63c7132ee566a7": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1f",
+        "AvailabilityZoneId": "use1-az5",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.64.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-0617363acc93d8c52",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-07f63c7132ee566a7",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       },
+       "subnet-08f67a9fec5557b6e": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1e",
+        "AvailabilityZoneId": "use1-az3",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.48.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-0162306fe5d6d56fc",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-08f67a9fec5557b6e",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0407775ce46a8f8c1": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0db3696287f2500ad"
+        ],
+        "DefaultNetworkAcl": "acl-0cf642f93f16e6a42",
+        "DefaultSecurityGroup": "sg-071b28acdb0220828",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "cloudgym-vpc"
+         }
+        ],
+        "VpcId": "vpc-0407775ce46a8f8c1"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-02fd49a0b823aeab0"
+        ],
+        "DefaultNetworkAcl": "acl-05d0715cadb83df0d",
+        "DefaultSecurityGroup": "sg-03f1011b0114a0a21",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       },
+       "vpc-0e5905b5b902aa19e": {
+        "CidrBlock": "10.3.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-06584c15ab88867c3"
+        ],
+        "DefaultNetworkAcl": "acl-03b68ed1267d9b422",
+        "DefaultSecurityGroup": "sg-0e912144cd905b316",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         }
+        ],
+        "VpcId": "vpc-0e5905b5b902aa19e"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "data-plane-reservation": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 3,
+        "landed_ns": 397622642640666,
+        "landed_s": 64.712,
+        "result": {
+         "changed": [
+          "acl-00c1b9e9fb52d07eb",
+          "acl-0fe30ebe800672a2b"
+         ],
+         "fingerprint": [
+          "data-plane-hold",
+          "10.3.128.0/19"
+         ],
+         "reserved_on": [
+          "acl-00c1b9e9fb52d07eb",
+          "acl-0fe30ebe800672a2b"
+         ],
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-data-plane-reservation-3",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "changed": [
+        "acl-00c1b9e9fb52d07eb",
+        "acl-0fe30ebe800672a2b"
+       ],
+       "fingerprint": [
+        "data-plane-hold",
+        "10.3.128.0/19"
+       ],
+       "reserved_on": [
+        "acl-00c1b9e9fb52d07eb",
+        "acl-0fe30ebe800672a2b"
+       ],
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "quarantined-source-hold": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 2,
+        "landed_ns": 397616174564136,
+        "landed_s": 58.244,
+        "result": {
+         "changed": [
+          "acl-00c1b9e9fb52d07eb",
+          "acl-0fe30ebe800672a2b"
+         ],
+         "fingerprint": [
+          "sanctioned-sources-only",
+          "10.3.4.0/22"
+         ],
+         "held": [
+          "acl-00c1b9e9fb52d07eb",
+          "acl-0fe30ebe800672a2b"
+         ],
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-quarantined-source-hold-2",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "changed": [
+        "acl-00c1b9e9fb52d07eb",
+        "acl-0fe30ebe800672a2b"
+       ],
+       "fingerprint": [
+        "sanctioned-sources-only",
+        "10.3.4.0/22"
+       ],
+       "held": [
+        "acl-00c1b9e9fb52d07eb",
+        "acl-0fe30ebe800672a2b"
+       ],
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "shared-edge-acl": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 1,
+        "landed_ns": 397601505874352,
+        "landed_s": 43.576,
+        "result": {
+         "changed": [
+          "acl-0fe30ebe800672a2b"
+         ],
+         "fingerprint": [
+          "account-edge-baseline",
+          "app-edge-acl"
+         ],
+         "kept": "acl-0fe30ebe800672a2b",
+         "trigger": "snapshot"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-shared-edge-acl-1",
+        "trigger_kind": "snapshot"
+       }
+      ],
+      "result": {
+       "changed": [
+        "acl-0fe30ebe800672a2b"
+       ],
+       "fingerprint": [
+        "account-edge-baseline",
+        "app-edge-acl"
+       ],
+       "kept": "acl-0fe30ebe800672a2b",
+       "trigger": "snapshot"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "unallocated-egress-boundary": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 4,
+        "landed_ns": 397629843459459,
+        "landed_s": 71.913,
+        "result": {
+         "bounded": [
+          "acl-00c1b9e9fb52d07eb",
+          "acl-0fe30ebe800672a2b"
+         ],
+         "changed": [
+          "acl-00c1b9e9fb52d07eb",
+          "acl-0fe30ebe800672a2b"
+         ],
+         "fingerprint": [
+          "unallocated-space-closed",
+          "10.3.32.0/19"
+         ],
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-unallocated-egress-boundary-4",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "bounded": [
+        "acl-00c1b9e9fb52d07eb",
+        "acl-0fe30ebe800672a2b"
+       ],
+       "changed": [
+        "acl-00c1b9e9fb52d07eb",
+        "acl-0fe30ebe800672a2b"
+       ],
+       "fingerprint": [
+        "unallocated-space-closed",
+        "10.3.32.0/19"
+       ],
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a13e93dc3e1029f1": {
+        "Associations": [
+         {
+          "NetworkAclAssociationId": "aclassoc-01f4465aa51dafd14",
+          "NetworkAclId": "acl-0a13e93dc3e1029f1",
+          "SubnetId": "subnet-0b76680f3cc442a39"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "NetworkAclId": "acl-0a13e93dc3e1029f1",
+        "OwnerId": "000000000116",
+        "Tags": [],
+        "VpcId": "vpc-03832bee2afc76154"
+       },
+       "acl-0b8b300c12856323f": {
+        "Associations": [
+         {
+          "NetworkAclAssociationId": "aclassoc-01c42fb2f3b3483b8",
+          "NetworkAclId": "acl-0b8b300c12856323f",
+          "SubnetId": "subnet-0e7d8f7cfd2425e2e"
+         },
+         {
+          "NetworkAclAssociationId": "aclassoc-0779b0044e66ab4f6",
+          "NetworkAclId": "acl-0b8b300c12856323f",
+          "SubnetId": "subnet-0ae16f770861b3636"
+         },
+         {
+          "NetworkAclAssociationId": "aclassoc-00ea03c11ca8402a2",
+          "NetworkAclId": "acl-0b8b300c12856323f",
+          "SubnetId": "subnet-022d07de07f7b755e"
+         },
+         {
+          "NetworkAclAssociationId": "aclassoc-0f58be32cfce47125",
+          "NetworkAclId": "acl-0b8b300c12856323f",
+          "SubnetId": "subnet-04e30b72b112d0089"
+         },
+         {
+          "NetworkAclAssociationId": "aclassoc-0f9ba1f26a76165b9",
+          "NetworkAclId": "acl-0b8b300c12856323f",
+          "SubnetId": "subnet-02d6ff57c717e0f26"
+         },
+         {
+          "NetworkAclAssociationId": "aclassoc-0786b26e5e1e503d9",
+          "NetworkAclId": "acl-0b8b300c12856323f",
+          "SubnetId": "subnet-03b2ede2e27dd2904"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "NetworkAclId": "acl-0b8b300c12856323f",
+        "OwnerId": "000000000116",
+        "Tags": [],
+        "VpcId": "vpc-01b57c22dbd771972"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-022d07de07f7b755e": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1f",
+        "AvailabilityZoneId": "use1-az5",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.64.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-00ea03c11ca8402a2",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-022d07de07f7b755e",
+        "Tags": [],
+        "VpcId": "vpc-01b57c22dbd771972"
+       },
+       "subnet-02d6ff57c717e0f26": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1c",
+        "AvailabilityZoneId": "use1-az4",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.16.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-0f9ba1f26a76165b9",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-02d6ff57c717e0f26",
+        "Tags": [],
+        "VpcId": "vpc-01b57c22dbd771972"
+       },
+       "subnet-03b2ede2e27dd2904": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1a",
+        "AvailabilityZoneId": "use1-az1",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.0.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-0786b26e5e1e503d9",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-03b2ede2e27dd2904",
+        "Tags": [],
+        "VpcId": "vpc-01b57c22dbd771972"
+       },
+       "subnet-04e30b72b112d0089": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1d",
+        "AvailabilityZoneId": "use1-az6",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.32.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-0f58be32cfce47125",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-04e30b72b112d0089",
+        "Tags": [],
+        "VpcId": "vpc-01b57c22dbd771972"
+       },
+       "subnet-0ae16f770861b3636": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1b",
+        "AvailabilityZoneId": "use1-az2",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.80.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-0779b0044e66ab4f6",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-0ae16f770861b3636",
+        "Tags": [],
+        "VpcId": "vpc-01b57c22dbd771972"
+       },
+       "subnet-0b76680f3cc442a39": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1d",
+        "AvailabilityZoneId": "use1-az6",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "10.3.0.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": false,
+        "NetworkAclAssociationId": "aclassoc-01f4465aa51dafd14",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-0b76680f3cc442a39",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         }
+        ],
+        "VpcId": "vpc-03832bee2afc76154"
+       },
+       "subnet-0e7d8f7cfd2425e2e": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1e",
+        "AvailabilityZoneId": "use1-az3",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.48.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-01c42fb2f3b3483b8",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-0e7d8f7cfd2425e2e",
+        "Tags": [],
+        "VpcId": "vpc-01b57c22dbd771972"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-01b57c22dbd771972": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-03b6138e287b96ee1"
+        ],
+        "DefaultNetworkAcl": "acl-0b8b300c12856323f",
+        "DefaultSecurityGroup": "sg-04068f603d77a1e0c",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-01b57c22dbd771972"
+       },
+       "vpc-03832bee2afc76154": {
+        "CidrBlock": "10.3.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-02ef2ce0abf1b519f"
+        ],
+        "DefaultNetworkAcl": "acl-0a13e93dc3e1029f1",
+        "DefaultSecurityGroup": "sg-0a172f5df04fe3fe5",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         }
+        ],
+        "VpcId": "vpc-03832bee2afc76154"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EC2::NetworkAcl": {
+       "acl-0a13e93dc3e1029f1": {
+        "Associations": [
+         {
+          "NetworkAclAssociationId": "aclassoc-01f4465aa51dafd14",
+          "NetworkAclId": "acl-0a13e93dc3e1029f1",
+          "SubnetId": "subnet-0b76680f3cc442a39"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "NetworkAclId": "acl-0a13e93dc3e1029f1",
+        "OwnerId": "000000000116",
+        "Tags": [],
+        "VpcId": "vpc-03832bee2afc76154"
+       },
+       "acl-0aa5aa01d789deba5": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "NetworkAclId": "acl-0aa5aa01d789deba5",
+        "OwnerId": "000000000116",
+        "Tags": [],
+        "VpcId": "vpc-0c6d86ab8a6d9e8b0"
+       },
+       "acl-0b8b300c12856323f": {
+        "Associations": [
+         {
+          "NetworkAclAssociationId": "aclassoc-01c42fb2f3b3483b8",
+          "NetworkAclId": "acl-0b8b300c12856323f",
+          "SubnetId": "subnet-0e7d8f7cfd2425e2e"
+         },
+         {
+          "NetworkAclAssociationId": "aclassoc-0779b0044e66ab4f6",
+          "NetworkAclId": "acl-0b8b300c12856323f",
+          "SubnetId": "subnet-0ae16f770861b3636"
+         },
+         {
+          "NetworkAclAssociationId": "aclassoc-00ea03c11ca8402a2",
+          "NetworkAclId": "acl-0b8b300c12856323f",
+          "SubnetId": "subnet-022d07de07f7b755e"
+         },
+         {
+          "NetworkAclAssociationId": "aclassoc-0f58be32cfce47125",
+          "NetworkAclId": "acl-0b8b300c12856323f",
+          "SubnetId": "subnet-04e30b72b112d0089"
+         },
+         {
+          "NetworkAclAssociationId": "aclassoc-0f9ba1f26a76165b9",
+          "NetworkAclId": "acl-0b8b300c12856323f",
+          "SubnetId": "subnet-02d6ff57c717e0f26"
+         },
+         {
+          "NetworkAclAssociationId": "aclassoc-0786b26e5e1e503d9",
+          "NetworkAclId": "acl-0b8b300c12856323f",
+          "SubnetId": "subnet-03b2ede2e27dd2904"
+         }
+        ],
+        "Entries": [
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "allow",
+          "RuleNumber": 100
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": true,
+        "NetworkAclId": "acl-0b8b300c12856323f",
+        "OwnerId": "000000000116",
+        "Tags": [],
+        "VpcId": "vpc-01b57c22dbd771972"
+       },
+       "acl-0fe30ebe800672a2b": {
+        "Associations": [],
+        "Entries": [
+         {
+          "CidrBlock": "10.3.128.0/19",
+          "Egress": true,
+          "PortRange": {
+           "From": 5432,
+           "To": 5432
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 200
+         },
+         {
+          "CidrBlock": "10.3.32.0/19",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 300
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": true,
+          "PortRange": {
+           "From": 443,
+           "To": 443
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 310
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": true,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         },
+         {
+          "CidrBlock": "10.3.4.0/22",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 150
+         },
+         {
+          "CidrBlock": "10.3.0.0/18",
+          "Egress": false,
+          "PortRange": {
+           "From": 80,
+           "To": 80
+          },
+          "Protocol": "6",
+          "RuleAction": "allow",
+          "RuleNumber": 160
+         },
+         {
+          "CidrBlock": "0.0.0.0/0",
+          "Egress": false,
+          "Protocol": "-1",
+          "RuleAction": "deny",
+          "RuleNumber": 32767
+         }
+        ],
+        "IsDefault": false,
+        "NetworkAclId": "acl-0fe30ebe800672a2b",
+        "OwnerId": "000000000116",
+        "Tags": [
+         {
+          "Key": "ReservedSlot",
+          "Value": "data-plane-hold"
+         },
+         {
+          "Key": "EdgePolicy",
+          "Value": "account-edge-baseline"
+         },
+         {
+          "Key": "ExposureHold",
+          "Value": "sanctioned-sources-only"
+         },
+         {
+          "Key": "Name",
+          "Value": "app-edge-acl"
+         },
+         {
+          "Key": "EgressBoundary",
+          "Value": "unallocated-space-closed"
+         }
+        ],
+        "VpcId": "vpc-0c6d86ab8a6d9e8b0"
+       }
+      },
+      "AWS::EC2::Subnet": {
+       "subnet-022d07de07f7b755e": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1f",
+        "AvailabilityZoneId": "use1-az5",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.64.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-00ea03c11ca8402a2",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-022d07de07f7b755e",
+        "Tags": [],
+        "VpcId": "vpc-01b57c22dbd771972"
+       },
+       "subnet-02d6ff57c717e0f26": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1c",
+        "AvailabilityZoneId": "use1-az4",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.16.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-0f9ba1f26a76165b9",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-02d6ff57c717e0f26",
+        "Tags": [],
+        "VpcId": "vpc-01b57c22dbd771972"
+       },
+       "subnet-03b2ede2e27dd2904": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1a",
+        "AvailabilityZoneId": "use1-az1",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.0.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-0786b26e5e1e503d9",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-03b2ede2e27dd2904",
+        "Tags": [],
+        "VpcId": "vpc-01b57c22dbd771972"
+       },
+       "subnet-04e30b72b112d0089": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1d",
+        "AvailabilityZoneId": "use1-az6",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.32.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-0f58be32cfce47125",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-04e30b72b112d0089",
+        "Tags": [],
+        "VpcId": "vpc-01b57c22dbd771972"
+       },
+       "subnet-0ae16f770861b3636": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1b",
+        "AvailabilityZoneId": "use1-az2",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.80.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-0779b0044e66ab4f6",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-0ae16f770861b3636",
+        "Tags": [],
+        "VpcId": "vpc-01b57c22dbd771972"
+       },
+       "subnet-0b76680f3cc442a39": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1d",
+        "AvailabilityZoneId": "use1-az6",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "10.3.0.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": false,
+        "NetworkAclAssociationId": "aclassoc-01f4465aa51dafd14",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-0b76680f3cc442a39",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Name",
+          "Value": "partner-gateway"
+         }
+        ],
+        "VpcId": "vpc-03832bee2afc76154"
+       },
+       "subnet-0e7d8f7cfd2425e2e": {
+        "AssignIpv6AddressOnCreation": false,
+        "AvailabilityZone": "us-east-1e",
+        "AvailabilityZoneId": "use1-az3",
+        "BlockPublicAccessStates": {
+         "InternetGatewayBlockMode": "off"
+        },
+        "CidrBlock": "172.31.48.0/20",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "MapPublicIpOnLaunch": true,
+        "NetworkAclAssociationId": "aclassoc-01c42fb2f3b3483b8",
+        "PrivateDnsNameOptionsOnLaunch": {
+         "EnableResourceNameDnsAAAARecord": false,
+         "EnableResourceNameDnsARecord": false,
+         "HostnameType": "ip-name"
+        },
+        "SubnetId": "subnet-0e7d8f7cfd2425e2e",
+        "Tags": [],
+        "VpcId": "vpc-01b57c22dbd771972"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-01b57c22dbd771972": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-03b6138e287b96ee1"
+        ],
+        "DefaultNetworkAcl": "acl-0b8b300c12856323f",
+        "DefaultSecurityGroup": "sg-04068f603d77a1e0c",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-01b57c22dbd771972"
+       },
+       "vpc-03832bee2afc76154": {
+        "CidrBlock": "10.3.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-02ef2ce0abf1b519f"
+        ],
+        "DefaultNetworkAcl": "acl-0a13e93dc3e1029f1",
+        "DefaultSecurityGroup": "sg-0a172f5df04fe3fe5",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Name",
+          "Value": "shared-services"
+         }
+        ],
+        "VpcId": "vpc-03832bee2afc76154"
+       },
+       "vpc-0c6d86ab8a6d9e8b0": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0732d5395842f90d7"
+        ],
+        "DefaultNetworkAcl": "acl-0aa5aa01d789deba5",
+        "DefaultSecurityGroup": "sg-0b4fde4c1fb8aee2d",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "cloudgym-vpc"
+         }
+        ],
+        "VpcId": "vpc-0c6d86ab8a6d9e8b0"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-interference-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::RDS::DBSnapshot",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-22T18:24:35+00:00",
+      "ResourceDescription": {
+        "Identifier": "cloudgym-capability-20260922181802717400000001-snap",
+        "Properties": "{\"DBSnapshotIdentifier\": \"cloudgym-capability-20260922181802717400000001-snap\", \"DBInstanceIdentifier\": \"cloudgym-capability-20260922181802717400000001\", \"SnapshotCreateTime\": \"2026-09-22T18:23:13.889000+00:00\", \"Engine\": \"postgres\", \"AllocatedStorage\": 20, \"Status\": \"available\", \"Port\": 5432, \"AvailabilityZone\": \"us-east-1f\", \"VpcId\": \"vpc-01309df1d8a9a18d9\", \"InstanceCreateTime\": \"2026-09-22T18:21:36.121000+00:00\", \"MasterUsername\": \"cloudgym\", \"EngineVersion\": \"16.13\", \"LicenseModel\": \"postgresql-license\", \"SnapshotType\": \"manual\", \"StorageThroughput\": 0, \"OptionGroupName\": \"default:postgres-16\", \"PercentProgress\": 100, \"StorageType\": \"gp2\", \"Encrypted\": false, \"BackupRetentionPeriod\": 0, \"PreferredBackupWindow\": \"03:19-03:49\", \"DBSnapshotArn\": \"arn:aws:rds:us-east-1:123456789012:snapshot:cloudgym-capability-20260922181802717400000001-snap\", \"IAMDatabaseAuthenticationEnabled\": false, \"DbiResourceId\": \"db-BVYSL7H4PGKRKYG3UJ5SONRWGU\", \"TagList\": [], \"SnapshotTarget\": \"region\", \"OriginalSnapshotCreateTime\": \"2026-09-22T18:23:13.889000+00:00\", \"MultiTenant\": false, \"DedicatedLogVolume\": false}"
+      },
+      "TypeName": "AWS::RDS::DBSnapshot"
+    }
+  ],
+  "recorded_at": "2026-09-22T18:24:35+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

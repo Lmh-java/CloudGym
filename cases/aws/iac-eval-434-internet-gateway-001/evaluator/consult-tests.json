@@ -1,0 +1,71 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "transit-network",
+      "message": "A network called net-transit-segment turned up holding the range I was about to take. Is that space settled, or is it still free for me?",
+      "expect": ["transit-range-claim"],
+      "fingerprint": {
+        "transit-range-claim": ["net-transit-segment"],
+        "shared-network-extension": ["allocation:platform-extension", "10.2.0.0/16"],
+        "analytics-segment-reservation": ["allocation:analytics-segment", "10.3.0.0/16"],
+        "orders-lab-slice": ["allocation:orders-lab", "10.4.0.0/16"]
+      }
+    },
+    {
+      "name": "shared-second-range",
+      "message": "The shared network now carries a second range under allocation:platform-extension. Is that space spoken for, or may I put my own network on it?",
+      "expect": ["shared-network-extension"],
+      "fingerprint": {
+        "transit-range-claim": ["net-transit-segment"],
+        "shared-network-extension": ["allocation:platform-extension", "10.2.0.0/16"],
+        "analytics-segment-reservation": ["allocation:analytics-segment", "10.3.0.0/16"],
+        "orders-lab-slice": ["allocation:orders-lab", "10.4.0.0/16"]
+      }
+    },
+    {
+      "name": "empty-reservation",
+      "message": "There is an allocation:analytics-segment entry naming 10.3.0.0/16, but nothing is built in that space. Does it count as taken?",
+      "expect": ["analytics-segment-reservation"],
+      "fingerprint": {
+        "transit-range-claim": ["net-transit-segment"],
+        "shared-network-extension": ["allocation:platform-extension", "10.2.0.0/16"],
+        "analytics-segment-reservation": ["allocation:analytics-segment", "10.3.0.0/16"],
+        "orders-lab-slice": ["allocation:orders-lab", "10.4.0.0/16"]
+      }
+    },
+    {
+      "name": "lab-slice",
+      "message": "10.4.0.0/16 is recorded against allocation:orders-lab. Can I have that space, or does it stay where it is?",
+      "expect": ["orders-lab-slice"],
+      "fingerprint": {
+        "transit-range-claim": ["net-transit-segment"],
+        "shared-network-extension": ["allocation:platform-extension", "10.2.0.0/16"],
+        "analytics-segment-reservation": ["allocation:analytics-segment", "10.3.0.0/16"],
+        "orders-lab-slice": ["allocation:orders-lab", "10.4.0.0/16"]
+      }
+    },
+    {
+      "name": "space-moved",
+      "message": "Some of the address space I was looking at seems to have been claimed since I started. How should I choose the range for a new network?",
+      "expect": [],
+      "fingerprint": {
+        "transit-range-claim": ["net-transit-segment"],
+        "shared-network-extension": ["allocation:platform-extension", "10.2.0.0/16"],
+        "analytics-segment-reservation": ["allocation:analytics-segment", "10.3.0.0/16"],
+        "orders-lab-slice": ["allocation:orders-lab", "10.4.0.0/16"]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "transit-range-claim": ["net-transit-segment"],
+        "shared-network-extension": ["allocation:platform-extension", "10.2.0.0/16"],
+        "analytics-segment-reservation": ["allocation:analytics-segment", "10.3.0.0/16"],
+        "orders-lab-slice": ["allocation:orders-lab", "10.4.0.0/16"]
+      }
+    }
+  ]
+}

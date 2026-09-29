@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_0_cloudwatch_log_group",
+  "utterance": "The account already hosts the public Route 53 zone `example53.com` for the storefront, but none of its DNS queries are being recorded. Turn query logging on for that zone: give it its own new CloudWatch log group named `/aws/route53/example53.com` and have the zone deliver its query logs there. Route 53 can only write into a log group the account lets it write into, so the account's CloudWatch Logs resource policy named `route53-query-logging-policy` also has to let the Route 53 service create log streams and put log events in that log group.",
+  "main": {
+    "role": "network-engineer",
+    "responsibility": "owns naming and record ownership under the account's domains",
+    "intent": "the pre-existing public hosted zone example53.com carries a query logging configuration that delivers its DNS query logs into a CloudWatch log group named /aws/route53/example53.com that the account did not hold at the start, and the account holds a CloudWatch Logs resource policy named route53-query-logging-policy whose document lets the Route 53 service create log streams and put log events in that log group"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 0
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_315_cloudwatch_event_rule",
+  "utterance": "The existing AWS Lambda function `cron-lambda-function` has to run every day at 07:00 UTC. Wire that up with AWS EventBridge: the function is a target of the EventBridge rule this account runs for its daily 07:00 UTC slot, and the function's resource policy lets `events.amazonaws.com` invoke it (`lambda:InvokeFunction`) from that rule and no wider. Add any necessary services.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's schedules and event wiring",
+    "intent": "exactly one enabled EventBridge schedule rule in the account fires every day at 07:00 UTC with the pre-existing Lambda function cron-lambda-function among its targets — the schedule this account runs for that daily slot — and the function's resource policy lets events.amazonaws.com invoke it, scoped to that rule, so the daily invocation path is complete at the end",
+    "resource_types": [
+      "aws_lambda_function",
+      "aws_iam_role",
+      "aws_cloudwatch_event_rule",
+      "aws_cloudwatch_event_target",
+      "aws_lambda_permission"
+    ]
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 315
+  }
+}

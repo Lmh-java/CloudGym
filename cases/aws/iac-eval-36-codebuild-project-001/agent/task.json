@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_36_codebuild_project",
+  "utterance": "Create an AWS CodeBuild project with an example IAM role, an example GITHUB source, artifacts stored in the existing S3 bucket whose name starts with `build-artifacts-`, and a cache.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "a new CodeBuild project builds from a GITHUB source, has a cache configured, writes its build artifacts (type S3, not NO_ARTIFACTS) into the pre-existing build-artifacts- bucket, and runs as a new IAM role that trusts codebuild.amazonaws.com"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 36
+  }
+}

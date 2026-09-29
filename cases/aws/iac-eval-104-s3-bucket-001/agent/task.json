@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_104_s3_bucket",
+  "utterance": "The orders application already keeps its export store in this account: the S3 bucket whose name starts with `orders-exports`. Partner uploads now need a store of their own. Create a new S3 bucket whose name starts with `orders-intake-`, and define an S3 bucket policy on it that denies all S3 actions on that bucket's objects for requests coming from the address 203.0.113.42. The policy document must carry a version, an identifier and that deny statement.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's data and how it is stored and laid out",
+    "intent": "a new S3 bucket whose name starts with `orders-intake-` stands beside the pre-existing `orders-exports` store, and the policy document on that intake bucket — carrying a policy version and an identifier — denies every S3 action on the bucket's objects for requests from the address 203.0.113.42"
+  },
+  "notes": "the intake bucket also carries the account's attribution record; that follows from the resolution policy, not from the utterance",
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 104
+  }
+}

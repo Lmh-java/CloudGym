@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_446_vpc",
+  "utterance": "Customise the DHCP settings of the existing `windomain-vpc` network (192.168.0.0/16): it needs to hand out the domain name `windomain.local`, a combination of our own resolver and Google's (192.168.56.102 and 8.8.8.8), and a NetBIOS name server at 192.168.56.102.",
+  "notes": "which option set the network ends on, what else that set has to hand out, and which other networks resolve through it follow from the resolution policy and the account's state, not from the utterance",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "the `windomain-vpc` network present at the start resolves through a single DHCP option set whose domain name is windomain.local, whose domain name servers are exactly 192.168.56.102 and 8.8.8.8, and whose NetBIOS name server is 192.168.56.102"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 446
+  }
+}

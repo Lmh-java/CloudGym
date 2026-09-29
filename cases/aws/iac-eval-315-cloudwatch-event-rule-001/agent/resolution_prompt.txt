@@ -1,0 +1,2 @@
+A workload rides the schedule this account already runs for its slot, joining the one in service rather than standing up a second.
+What another workload answers for, or what is kept only to fall back to, stays as found: its name, its settings, its grants.

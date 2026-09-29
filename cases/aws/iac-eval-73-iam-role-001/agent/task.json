@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_73_iam_role",
+  "utterance": "The clickstream pipeline's Kinesis Analytics application `clickstream-analytics` is already up in this account, but it was stood up on the shared `analytics-bootstrap-role` and has nowhere of its own to log. Give it an identity and somewhere to keep its things: a role named `clickstream-analytics-role` that the Kinesis Analytics service may assume, a CloudWatch log group named `/aws/kinesis-analytics/clickstream-analytics` that keeps 30 days of logs, and a new S3 bucket whose name starts with `clickstream-analytics-artifacts-` for the application's code package and snapshots. That role has to end up holding a customer managed policy named `clickstream-analytics-access` that lets it write log events into that log group and read and write objects in that bucket, and the application itself has to end up running as that role instead of the shared one. Leave `analytics-bootstrap-role` standing — other workloads are stood up on it. When you are done, report the application's configuration as it then stands.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "a role named clickstream-analytics-role stands, assumable by kinesisanalytics.amazonaws.com and holding a customer managed policy named clickstream-analytics-access that allows writing log events into the CloudWatch log group /aws/kinesis-analytics/clickstream-analytics and reading and writing objects in an S3 bucket whose name starts with clickstream-analytics-artifacts-; that log group stands with a 30-day retention and exactly one such bucket was created; the pre-existing application clickstream-analytics still stands, still on runtime environment FLINK-1_20, and runs as clickstream-analytics-role; and the shared role analytics-bootstrap-role is still there",
+    "note": "the log stream and the application's cloudwatch_logging_options block that the row's intent names are left out: a log stream has no Cloud Control type and an application's logging option is a Cloud Control resource of its own, so neither is observable, and the witness keeps the log group instead. The grant and the retention are the witness's corrections to the row's reference, which builds its role with a trust policy and nothing else."
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 73
+  }
+}

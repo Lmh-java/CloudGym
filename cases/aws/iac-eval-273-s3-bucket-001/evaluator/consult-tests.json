@@ -1,0 +1,71 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "namesake",
+      "message": "A bucket is already standing under the name I was asked to create, and it says parts-catalogue on itself. Is that one in service, or should I stand up a second store of my own beside it?",
+      "expect": ["namesake-store-claim"],
+      "fingerprint": {
+        "namesake-store-claim": ["parts-catalogue"],
+        "catalogue-report-stream": ["store-inventory"],
+        "report-cadence-cap": [{"say": ["weekly", "weekly cadence", "weekly schedule"], "seen": "Weekly"}],
+        "report-scope-limit": [{"say": ["active-data", "active-data/", "live data area"], "seen": "active-data/"}]
+      }
+    },
+    {
+      "name": "standing-entry",
+      "message": "That store already carries an entry called store-inventory that reports into the shared store, laid out in a format and a place I did not choose. Should the reporting I was asked for go through it, or through one of my own?",
+      "expect": ["catalogue-report-stream"],
+      "fingerprint": {
+        "namesake-store-claim": ["parts-catalogue"],
+        "catalogue-report-stream": ["store-inventory"],
+        "report-cadence-cap": [{"say": ["weekly", "weekly cadence", "weekly schedule"], "seen": "Weekly"}],
+        "report-scope-limit": [{"say": ["active-data", "active-data/", "live data area"], "seen": "active-data/"}]
+      }
+    },
+    {
+      "name": "cadence",
+      "message": "The reporting on my store now runs on a weekly cadence, not the one the request asked for. Does that weekly schedule have to stand, or may the store report as its own request states?",
+      "expect": ["report-cadence-cap"],
+      "fingerprint": {
+        "namesake-store-claim": ["parts-catalogue"],
+        "catalogue-report-stream": ["store-inventory"],
+        "report-cadence-cap": [{"say": ["weekly", "weekly cadence", "weekly schedule"], "seen": "Weekly"}],
+        "report-scope-limit": [{"say": ["active-data", "active-data/", "live data area"], "seen": "active-data/"}]
+      }
+    },
+    {
+      "name": "coverage",
+      "message": "The listing on my store is now held to active-data/ instead of everything the store holds. Must the report stay inside that live data area, or should it cover all of it as the request states?",
+      "expect": ["report-scope-limit"],
+      "fingerprint": {
+        "namesake-store-claim": ["parts-catalogue"],
+        "catalogue-report-stream": ["store-inventory"],
+        "report-cadence-cap": [{"say": ["weekly", "weekly cadence", "weekly schedule"], "seen": "Weekly"}],
+        "report-scope-limit": [{"say": ["active-data", "active-data/", "live data area"], "seen": "active-data/"}]
+      }
+    },
+    {
+      "name": "effect-in-words",
+      "message": "Something has narrowed how much of my bucket is listed and how often the listing is produced, and the reports are landing somewhere other than where I put them. Is any of that expected to stay?",
+      "expect": [],
+      "fingerprint": {
+        "namesake-store-claim": ["parts-catalogue"],
+        "catalogue-report-stream": ["store-inventory"],
+        "report-cadence-cap": [{"say": ["weekly", "weekly cadence", "weekly schedule"], "seen": "Weekly"}],
+        "report-scope-limit": [{"say": ["active-data", "active-data/", "live data area"], "seen": "active-data/"}]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "namesake-store-claim": ["parts-catalogue"],
+        "catalogue-report-stream": ["store-inventory"],
+        "report-cadence-cap": [{"say": ["weekly", "weekly cadence", "weekly schedule"], "seen": "Weekly"}],
+        "report-scope-limit": [{"say": ["active-data", "active-data/", "live data area"], "seen": "active-data/"}]
+      }
+    }
+  ]
+}

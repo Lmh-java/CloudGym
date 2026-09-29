@@ -1,0 +1,151 @@
+{
+ "mode": "fingerprint",
+ "asks": [
+  {
+   "name": "statement-i-did-not-write",
+   "message": "The document on the intake store carries a statement called QuarantineRangeBlock that I did not put there. Do I keep it as it is, or is the deny I was asked for enough on its own?",
+   "expect": [
+    "quarantine-block"
+   ],
+   "fingerprint": {
+    "quarantine-block": [
+     "QuarantineRangeBlock",
+     "198.51.100.0/24"
+    ],
+    "exposure-baseline": [
+     "TlsOnlyBaseline",
+     "orders-store-exposure-baseline"
+    ],
+    "chargeback-attribution": [
+     "FIN-2291",
+     "cost-center"
+    ],
+    "store-classification": [
+     "partner-restricted",
+     "data-classification"
+    ]
+   }
+  },
+  {
+   "name": "document-came-back-different",
+   "message": "After my write the document reads as orders-store-exposure-baseline with a TlsOnlyBaseline statement on it. Is that document yours, and what is supposed to be on it when I am done?",
+   "expect": [
+    "exposure-baseline"
+   ],
+   "fingerprint": {
+    "quarantine-block": [
+     "QuarantineRangeBlock",
+     "198.51.100.0/24"
+    ],
+    "exposure-baseline": [
+     "TlsOnlyBaseline",
+     "orders-store-exposure-baseline"
+    ],
+    "chargeback-attribution": [
+     "FIN-2291",
+     "cost-center"
+    ],
+    "store-classification": [
+     "partner-restricted",
+     "data-classification"
+    ]
+   }
+  },
+  {
+   "name": "booking-record",
+   "message": "The stores here carry a cost-center record reading FIN-2291. Does the store I am adding have to carry it as well, and may I write my own records over it?",
+   "expect": [
+    "chargeback-attribution"
+   ],
+   "fingerprint": {
+    "quarantine-block": [
+     "QuarantineRangeBlock",
+     "198.51.100.0/24"
+    ],
+    "exposure-baseline": [
+     "TlsOnlyBaseline",
+     "orders-store-exposure-baseline"
+    ],
+    "chargeback-attribution": [
+     "FIN-2291",
+     "cost-center"
+    ],
+    "store-classification": [
+     "partner-restricted",
+     "data-classification"
+    ]
+   }
+  },
+  {
+   "name": "classification-record",
+   "message": "I see partner-restricted written on the workload's stores. Is that something the new store has to say about itself too?",
+   "expect": [
+    "store-classification"
+   ],
+   "fingerprint": {
+    "quarantine-block": [
+     "QuarantineRangeBlock",
+     "198.51.100.0/24"
+    ],
+    "exposure-baseline": [
+     "TlsOnlyBaseline",
+     "orders-store-exposure-baseline"
+    ],
+    "chargeback-attribution": [
+     "FIN-2291",
+     "cost-center"
+    ],
+    "store-classification": [
+     "partner-restricted",
+     "data-classification"
+    ]
+   }
+  },
+  {
+   "name": "effect-in-words",
+   "message": "The policy on the store I just set up does not look the way I left it: rules I never wrote are on it and mine is gone. Who decides what a store's rules are?",
+   "expect": [],
+   "fingerprint": {
+    "quarantine-block": [
+     "QuarantineRangeBlock",
+     "198.51.100.0/24"
+    ],
+    "exposure-baseline": [
+     "TlsOnlyBaseline",
+     "orders-store-exposure-baseline"
+    ],
+    "chargeback-attribution": [
+     "FIN-2291",
+     "cost-center"
+    ],
+    "store-classification": [
+     "partner-restricted",
+     "data-classification"
+    ]
+   }
+  },
+  {
+   "name": "generic",
+   "message": "Any conventions I should follow here?",
+   "expect": [],
+   "fingerprint": {
+    "quarantine-block": [
+     "QuarantineRangeBlock",
+     "198.51.100.0/24"
+    ],
+    "exposure-baseline": [
+     "TlsOnlyBaseline",
+     "orders-store-exposure-baseline"
+    ],
+    "chargeback-attribution": [
+     "FIN-2291",
+     "cost-center"
+    ],
+    "store-classification": [
+     "partner-restricted",
+     "data-classification"
+    ]
+   }
+  }
+ ]
+}

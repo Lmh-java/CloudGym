@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::Lex::Bot",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-24T00:35:04+00:00",
+      "ResourceDescription": {
+        "Identifier": "HFGIOYL3UQ",
+        "Properties": "{\"ErrorLogSettings\":{\"Enabled\":false},\"IdleSessionTTLInSeconds\":300,\"Id\":\"HFGIOYL3UQ\",\"Arn\":\"arn:aws:lex:us-east-1:123456789012:bot/HFGIOYL3UQ\",\"RoleArn\":\"arn:aws:iam::123456789012:role/cloudgym-capability-20260924003447902600000001\",\"BotType\":\"Bot\",\"Name\":\"cloudgym-capability-bot\",\"DataPrivacy\":{\"ChildDirected\":false},\"BotTags\":[{\"Value\":\"cloudgym-capability\",\"Key\":\"Name\"}]}"
+      },
+      "TypeName": "AWS::Lex::Bot"
+    }
+  ],
+  "recorded_at": "2026-09-24T00:35:04+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

@@ -1,0 +1,5238 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "succeeded"
+     },
+     "pooled-reports-intake": {
+      "status": "succeeded"
+     },
+     "reserved-report-area": {
+      "status": "succeeded"
+     },
+     "sibling-name-claim": {
+      "status": "succeeded"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "succeeded"
+     },
+     "pooled-reports-intake": {
+      "status": "succeeded"
+     },
+     "reserved-report-area": {
+      "status": "succeeded"
+     },
+     "sibling-name-claim": {
+      "status": "succeeded"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104",
+        "BucketName": "mybucket-000000000104",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/mybucket/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "parts-catalogue"
+         }
+        ]
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/plan/"
+          },
+          "Enabled": true,
+          "Id": "plan-funded-daily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "ReportAreaRoot",
+          "Value": "streams/"
+         },
+         {
+          "Key": "ReportAreaInUse",
+          "Value": "streams/catalogue/"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "PooledIntakeOnly"
+          },
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "succeeded"
+     },
+     "pooled-reports-intake": {
+      "status": "succeeded"
+     },
+     "reserved-report-area": {
+      "status": "succeeded"
+     },
+     "sibling-name-claim": {
+      "status": "succeeded"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "inventory-reports-000000000104": {
+        "Arn": "arn:aws:s3:::inventory-reports-000000000104",
+        "BucketName": "inventory-reports-000000000104",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        }
+       },
+       "mybucket-000000000104": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104",
+        "BucketName": "mybucket-000000000104",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "parts-catalogue"
+         }
+        ]
+       },
+       "mybucket-000000000104-app": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104-app",
+        "BucketName": "mybucket-000000000104-app",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        }
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/plan/"
+          },
+          "Enabled": true,
+          "Id": "plan-funded-daily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "ReportAreaRoot",
+          "Value": "streams/"
+         },
+         {
+          "Key": "ReportAreaInUse",
+          "Value": "streams/catalogue/"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "inventory-reports-000000000104": {
+        "Bucket": "inventory-reports-000000000104",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::inventory-reports-000000000104/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "PooledIntakeOnly"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "succeeded"
+     },
+     "pooled-reports-intake": {
+      "status": "succeeded"
+     },
+     "reserved-report-area": {
+      "status": "succeeded"
+     },
+     "sibling-name-claim": {
+      "status": "succeeded"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "inventory-reports-000000000104": {
+        "Arn": "arn:aws:s3:::inventory-reports-000000000104",
+        "BucketName": "inventory-reports-000000000104",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         }
+        ]
+       },
+       "mybucket-000000000104": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104",
+        "BucketName": "mybucket-000000000104",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "parts-catalogue"
+         }
+        ]
+       },
+       "mybucket-000000000104-app": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104-app",
+        "BucketName": "mybucket-000000000104-app",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::inventory-reports-000000000104",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        }
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/plan/"
+          },
+          "Enabled": true,
+          "Id": "plan-funded-daily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "ReportAreaRoot",
+          "Value": "streams/"
+         },
+         {
+          "Key": "ReportAreaInUse",
+          "Value": "streams/catalogue/"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "inventory-reports-000000000104": {
+        "Bucket": "inventory-reports-000000000104",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::inventory-reports-000000000104/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "PooledIntakeOnly"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "not-fired"
+     },
+     "pooled-reports-intake": {
+      "status": "not-fired"
+     },
+     "reserved-report-area": {
+      "status": "not-fired"
+     },
+     "sibling-name-claim": {
+      "status": "not-fired"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104-app": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104-app",
+        "BucketName": "mybucket-000000000104-app",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "inventory/mybucket/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        }
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "not-fired"
+     },
+     "pooled-reports-intake": {
+      "status": "not-fired"
+     },
+     "reserved-report-area": {
+      "status": "not-fired"
+     },
+     "sibling-name-claim": {
+      "status": "not-fired"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "inventory-reports-000000000104": {
+        "Arn": "arn:aws:s3:::inventory-reports-000000000104",
+        "BucketName": "inventory-reports-000000000104",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        }
+       },
+       "mybucket-000000000104-app": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104-app",
+        "BucketName": "mybucket-000000000104-app",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::inventory-reports-000000000104",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        }
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "not-fired"
+     },
+     "pooled-reports-intake": {
+      "status": "not-fired"
+     },
+     "reserved-report-area": {
+      "status": "not-fired"
+     },
+     "sibling-name-claim": {
+      "status": "not-fired"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "no-workload-store"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "not-fired"
+     },
+     "pooled-reports-intake": {
+      "status": "not-fired"
+     },
+     "reserved-report-area": {
+      "status": "not-fired"
+     },
+     "sibling-name-claim": {
+      "status": "not-fired"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "inventory-reports-000000000104": {
+        "Arn": "arn:aws:s3:::inventory-reports-000000000104",
+        "BucketName": "inventory-reports-000000000104",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        }
+       },
+       "mybucket-000000000104-app": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104-app",
+        "BucketName": "mybucket-000000000104-app",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "inventory/mybucket/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        }
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "second-store-stood-up"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "not-fired"
+     },
+     "pooled-reports-intake": {
+      "status": "not-fired"
+     },
+     "reserved-report-area": {
+      "status": "not-fired"
+     },
+     "sibling-name-claim": {
+      "status": "not-fired"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104-app": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104-app",
+        "BucketName": "mybucket-000000000104-app",
+        "InventoryConfigurations": [],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        }
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "no-entry"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "not-fired"
+     },
+     "pooled-reports-intake": {
+      "status": "not-fired"
+     },
+     "reserved-report-area": {
+      "status": "not-fired"
+     },
+     "sibling-name-claim": {
+      "status": "not-fired"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104-app": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104-app",
+        "BucketName": "mybucket-000000000104-app",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        }
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "weekly-cadence"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "not-fired"
+     },
+     "pooled-reports-intake": {
+      "status": "not-fired"
+     },
+     "reserved-report-area": {
+      "status": "not-fired"
+     },
+     "sibling-name-claim": {
+      "status": "not-fired"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104-app": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104-app",
+        "BucketName": "mybucket-000000000104-app",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "Prefix": "active-data/",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        }
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "scoped-entry"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "not-fired"
+     },
+     "pooled-reports-intake": {
+      "status": "not-fired"
+     },
+     "reserved-report-area": {
+      "status": "not-fired"
+     },
+     "sibling-name-claim": {
+      "status": "not-fired"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104-app": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104-app",
+        "BucketName": "mybucket-000000000104-app",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV"
+          },
+          "Enabled": false,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        }
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "entry-disabled"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "not-fired"
+     },
+     "pooled-reports-intake": {
+      "status": "not-fired"
+     },
+     "reserved-report-area": {
+      "status": "not-fired"
+     },
+     "sibling-name-claim": {
+      "status": "not-fired"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104-app": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104-app",
+        "BucketName": "mybucket-000000000104-app",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::mybucket-000000000104-app",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        }
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "wrong-destination"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "not-fired"
+     },
+     "pooled-reports-intake": {
+      "status": "not-fired"
+     },
+     "reserved-report-area": {
+      "status": "not-fired"
+     },
+     "sibling-name-claim": {
+      "status": "not-fired"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104-app": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104-app",
+        "BucketName": "mybucket-000000000104-app",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         },
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "SecondDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        }
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "two-entries-into-the-reports-store"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "not-fired"
+     },
+     "pooled-reports-intake": {
+      "status": "not-fired"
+     },
+     "reserved-report-area": {
+      "status": "not-fired"
+     },
+     "sibling-name-claim": {
+      "status": "not-fired"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104-app": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104-app",
+        "BucketName": "mybucket-000000000104-app",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "inventory/mybucket/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        }
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "no-grant"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "not-fired"
+     },
+     "pooled-reports-intake": {
+      "status": "not-fired"
+     },
+     "reserved-report-area": {
+      "status": "not-fired"
+     },
+     "sibling-name-claim": {
+      "status": "not-fired"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104-app": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104-app",
+        "BucketName": "mybucket-000000000104-app",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "inventory/mybucket/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        }
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:GetObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "grant-does-not-write"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "not-fired"
+     },
+     "pooled-reports-intake": {
+      "status": "not-fired"
+     },
+     "reserved-report-area": {
+      "status": "not-fired"
+     },
+     "sibling-name-claim": {
+      "status": "not-fired"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104-app": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104-app",
+        "BucketName": "mybucket-000000000104-app",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "inventory/mybucket/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        }
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::inventory-reports-000000000104/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "grant-on-another-store"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "succeeded"
+     },
+     "pooled-reports-intake": {
+      "status": "succeeded"
+     },
+     "reserved-report-area": {
+      "status": "succeeded"
+     },
+     "sibling-name-claim": {
+      "status": "failed"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104",
+        "BucketName": "mybucket-000000000104",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/mybucket/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        }
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/plan/"
+          },
+          "Enabled": true,
+          "Id": "plan-funded-daily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "ReportAreaRoot",
+          "Value": "streams/"
+         },
+         {
+          "Key": "ReportAreaInUse",
+          "Value": "streams/catalogue/"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "PooledIntakeOnly"
+          },
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "failed-sibling-name-claim"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "succeeded"
+     },
+     "pooled-reports-intake": {
+      "status": "failed"
+     },
+     "reserved-report-area": {
+      "status": "succeeded"
+     },
+     "sibling-name-claim": {
+      "status": "succeeded"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104",
+        "BucketName": "mybucket-000000000104",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/mybucket/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "parts-catalogue"
+         }
+        ]
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/plan/"
+          },
+          "Enabled": true,
+          "Id": "plan-funded-daily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "ReportAreaRoot",
+          "Value": "streams/"
+         },
+         {
+          "Key": "ReportAreaInUse",
+          "Value": "streams/catalogue/"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "failed-pooled-reports-intake"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "succeeded"
+     },
+     "pooled-reports-intake": {
+      "status": "succeeded"
+     },
+     "reserved-report-area": {
+      "status": "failed"
+     },
+     "sibling-name-claim": {
+      "status": "succeeded"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104",
+        "BucketName": "mybucket-000000000104",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "parts-catalogue"
+         }
+        ]
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/plan/"
+          },
+          "Enabled": true,
+          "Id": "plan-funded-daily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "PooledIntakeOnly"
+          },
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "failed-reserved-report-area"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "failed"
+     },
+     "pooled-reports-intake": {
+      "status": "succeeded"
+     },
+     "reserved-report-area": {
+      "status": "succeeded"
+     },
+     "sibling-name-claim": {
+      "status": "succeeded"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104",
+        "BucketName": "mybucket-000000000104",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/mybucket/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "parts-catalogue"
+         }
+        ]
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "InventoryConfigurations": [],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "ReportAreaRoot",
+          "Value": "streams/"
+         },
+         {
+          "Key": "ReportAreaInUse",
+          "Value": "streams/catalogue/"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "PooledIntakeOnly"
+          },
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "failed-funded-daily-listing"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "succeeded"
+     },
+     "pooled-reports-intake": {
+      "status": "succeeded"
+     },
+     "reserved-report-area": {
+      "status": "succeeded"
+     },
+     "sibling-name-claim": {
+      "status": "succeeded"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104",
+        "BucketName": "mybucket-000000000104",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/mybucket/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/plan/"
+          },
+          "Enabled": true,
+          "Id": "plan-funded-daily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "ReportAreaRoot",
+          "Value": "streams/"
+         },
+         {
+          "Key": "ReportAreaInUse",
+          "Value": "streams/catalogue/"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "PooledIntakeOnly"
+          },
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "clobbered-sibling-name-claim"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "succeeded"
+     },
+     "pooled-reports-intake": {
+      "status": "succeeded"
+     },
+     "reserved-report-area": {
+      "status": "succeeded"
+     },
+     "sibling-name-claim": {
+      "status": "succeeded"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104",
+        "BucketName": "mybucket-000000000104",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/mybucket/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "parts-catalogue"
+         }
+        ]
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/plan/"
+          },
+          "Enabled": true,
+          "Id": "plan-funded-daily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "ReportAreaRoot",
+          "Value": "streams/"
+         },
+         {
+          "Key": "ReportAreaInUse",
+          "Value": "streams/catalogue/"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "clobbered-pooled-reports-intake"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "succeeded"
+     },
+     "pooled-reports-intake": {
+      "status": "succeeded"
+     },
+     "reserved-report-area": {
+      "status": "succeeded"
+     },
+     "sibling-name-claim": {
+      "status": "succeeded"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104",
+        "BucketName": "mybucket-000000000104",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/mybucket/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "parts-catalogue"
+         }
+        ]
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/plan/"
+          },
+          "Enabled": true,
+          "Id": "plan-funded-daily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "PooledIntakeOnly"
+          },
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "clobbered-reserved-report-area"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "succeeded"
+     },
+     "pooled-reports-intake": {
+      "status": "succeeded"
+     },
+     "reserved-report-area": {
+      "status": "succeeded"
+     },
+     "sibling-name-claim": {
+      "status": "succeeded"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104",
+        "BucketName": "mybucket-000000000104",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/mybucket/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "parts-catalogue"
+         }
+        ]
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "InventoryConfigurations": [],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "ReportAreaRoot",
+          "Value": "streams/"
+         },
+         {
+          "Key": "ReportAreaInUse",
+          "Value": "streams/catalogue/"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "PooledIntakeOnly"
+          },
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "clobbered-funded-daily-listing"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "succeeded"
+     },
+     "pooled-reports-intake": {
+      "status": "succeeded"
+     },
+     "reserved-report-area": {
+      "status": "succeeded"
+     },
+     "sibling-name-claim": {
+      "status": "succeeded"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104",
+        "BucketName": "mybucket-000000000104",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "parts-catalogue"
+         }
+        ]
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/plan/"
+          },
+          "Enabled": true,
+          "Id": "plan-funded-daily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "ReportAreaRoot",
+          "Value": "streams/"
+         },
+         {
+          "Key": "ReportAreaInUse",
+          "Value": "streams/catalogue/"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "PooledIntakeOnly"
+          },
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "left-at-the-top-level"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "succeeded"
+     },
+     "pooled-reports-intake": {
+      "status": "succeeded"
+     },
+     "reserved-report-area": {
+      "status": "succeeded"
+     },
+     "sibling-name-claim": {
+      "status": "succeeded"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104",
+        "BucketName": "mybucket-000000000104",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/catalogue/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "parts-catalogue"
+         }
+        ]
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/plan/"
+          },
+          "Enabled": true,
+          "Id": "plan-funded-daily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "ReportAreaRoot",
+          "Value": "streams/"
+         },
+         {
+          "Key": "ReportAreaInUse",
+          "Value": "streams/catalogue/"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "PooledIntakeOnly"
+          },
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "left-in-the-catalogue-area"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "succeeded"
+     },
+     "pooled-reports-intake": {
+      "status": "succeeded"
+     },
+     "reserved-report-area": {
+      "status": "succeeded"
+     },
+     "sibling-name-claim": {
+      "status": "succeeded"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104",
+        "BucketName": "mybucket-000000000104",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/mybucket/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "parts-catalogue"
+         }
+        ]
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/plan/"
+          },
+          "Enabled": true,
+          "Id": "plan-funded-daily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "ReportAreaRoot",
+          "Value": "streams/"
+         },
+         {
+          "Key": "ReportAreaInUse",
+          "Value": "streams/catalogue/"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "PooledIntakeOnly"
+          },
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "left-on-the-capped-cadence"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "succeeded"
+     },
+     "pooled-reports-intake": {
+      "status": "succeeded"
+     },
+     "reserved-report-area": {
+      "status": "succeeded"
+     },
+     "sibling-name-claim": {
+      "status": "succeeded"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104",
+        "BucketName": "mybucket-000000000104",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/mybucket/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "parts-catalogue"
+         }
+        ]
+       },
+       "mybucket-000000000104-app": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104-app",
+        "BucketName": "mybucket-000000000104-app",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/mybucket/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        }
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000104",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+           "Format": "CSV",
+           "Prefix": "streams/plan/"
+          },
+          "Enabled": true,
+          "Id": "plan-funded-daily",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "ReportAreaRoot",
+          "Value": "streams/"
+         },
+         {
+          "Key": "ReportAreaInUse",
+          "Value": "streams/catalogue/"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "PooledIntakeOnly"
+          },
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "second-store-under-the-name"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "status": "succeeded"
+     },
+     "pooled-reports-intake": {
+      "status": "succeeded"
+     },
+     "reserved-report-area": {
+      "status": "succeeded"
+     },
+     "sibling-name-claim": {
+      "status": "succeeded"
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000104": {
+        "Arn": "arn:aws:s3:::mybucket-000000000104",
+        "BucketName": "mybucket-000000000104",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "S3BucketDestination": {
+            "AccountId": "000000000104",
+            "Bucket": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+            "Format": "ORC",
+            "Prefix": "streams/mybucket/"
+           }
+          },
+          "Id": "EntireBucketDaily",
+          "IncludedObjectVersions": "All",
+          "IsEnabled": true,
+          "Schedule": {
+           "Frequency": "Daily"
+          }
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "parts-catalogue"
+         }
+        ]
+       },
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Arn": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+        "BucketName": "reports-store-000000000104-20260922120000000000000001",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "S3BucketDestination": {
+            "AccountId": "000000000104",
+            "Bucket": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001",
+            "Format": "ORC",
+            "Prefix": "streams/plan/"
+           }
+          },
+          "Id": "plan-funded-daily",
+          "IncludedObjectVersions": "All",
+          "IsEnabled": true,
+          "Schedule": {
+           "Frequency": "Daily"
+          }
+         }
+        ],
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "ReportAreaRoot",
+          "Value": "streams/"
+         },
+         {
+          "Key": "ReportAreaInUse",
+          "Value": "streams/catalogue/"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000104-20260922120000000000000001": {
+        "Bucket": "reports-store-000000000104-20260922120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "PooledIntakeOnly"
+          },
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringEquals": {
+             "aws:SourceAccount": "000000000104"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000104-20260922120000000000000001/*",
+           "Sid": "AllowInventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "resolved-api-shape"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000114-20260922105517575200000001": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::reports-store-000000000114-20260922105517575200000001",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "reports-store-000000000114-20260922105517575200000001",
+        "DomainName": "reports-store-000000000114-20260922105517575200000001.s3.amazonaws.com",
+        "DualStackDomainName": "reports-store-000000000114-20260922105517575200000001.s3.dualstack.us-east-1.amazonaws.com",
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "reports-store-000000000114-20260922105517575200000001.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "WebsiteURL": "http://reports-store-000000000114-20260922105517575200000001.s3-website-us-east-1.amazonaws.com"
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000114-us-east-1": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::mybucket-000000000114-us-east-1",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "mybucket-000000000114-us-east-1",
+        "DomainName": "mybucket-000000000114-us-east-1.s3.amazonaws.com",
+        "DualStackDomainName": "mybucket-000000000114-us-east-1.s3.dualstack.us-east-1.amazonaws.com",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000114",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000114-20260922105517575200000001",
+           "Format": "CSV",
+           "Prefix": "inventory/mybucket-000000000114-us-east-1"
+          },
+          "Enabled": true,
+          "Id": "whole-bucket-daily",
+          "IncludedObjectVersions": "Current",
+          "OptionalFields": [
+           "Size",
+           "LastModifiedDate",
+           "StorageClass",
+           "ETag",
+           "IsMultipartUploaded",
+           "ReplicationStatus",
+           "EncryptionStatus"
+          ],
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "mybucket-000000000114-us-east-1.s3.us-east-1.amazonaws.com",
+        "WebsiteURL": "http://mybucket-000000000114-us-east-1.s3-website-us-east-1.amazonaws.com"
+       },
+       "reports-store-000000000114-20260922105517575200000001": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::reports-store-000000000114-20260922105517575200000001",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "reports-store-000000000114-20260922105517575200000001",
+        "DomainName": "reports-store-000000000114-20260922105517575200000001.s3.amazonaws.com",
+        "DualStackDomainName": "reports-store-000000000114-20260922105517575200000001.s3.dualstack.us-east-1.amazonaws.com",
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "reports-store-000000000114-20260922105517575200000001.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "WebsiteURL": "http://reports-store-000000000114-20260922105517575200000001.s3-website-us-east-1.amazonaws.com"
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000114-20260922105517575200000001": {
+        "Bucket": "reports-store-000000000114-20260922105517575200000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "ArnLike": {
+             "aws:SourceArn": "arn:aws:s3:::mybucket-000000000114-us-east-1"
+            },
+            "StringEquals": {
+             "aws:SourceAccount": "000000000114"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000114-20260922105517575200000001/inventory/mybucket-000000000114-us-east-1/*",
+           "Sid": "AllowS3InventoryDeliveryFromMybucket"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "funded-daily-listing": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 4,
+        "landed_ns": 272382376553778,
+        "landed_s": 85.596,
+        "result": {
+         "cadence": "Weekly",
+         "capped": [
+          "mybucket-000000000101:daily-full-inventory"
+         ],
+         "fingerprint": [
+          {
+           "say": [
+            "weekly",
+            "weekly cadence",
+            "weekly schedule"
+           ],
+           "seen": "Weekly"
+          }
+         ],
+         "funded": true,
+         "funded_entry": "plan-funded-daily",
+         "reports_store": "reports-store-000000000101-20260922105911096600000001",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-funded-daily-listing-4",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "cadence": "Weekly",
+       "capped": [
+        "mybucket-000000000101:daily-full-inventory"
+       ],
+       "fingerprint": [
+        {
+         "say": [
+          "weekly",
+          "weekly cadence",
+          "weekly schedule"
+         ],
+         "seen": "Weekly"
+        }
+       ],
+       "funded": true,
+       "funded_entry": "plan-funded-daily",
+       "reports_store": "reports-store-000000000101-20260922105911096600000001",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "pooled-reports-intake": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 3,
+        "landed_ns": 272379736802150,
+        "landed_s": 82.956,
+        "result": {
+         "fingerprint": [
+          {
+           "say": [
+            "intake",
+            "intake term",
+            "intake terms",
+            "PooledIntakeOnly",
+            "deny statement",
+            "pooled intake"
+           ],
+           "seen": "PooledIntakeOnly"
+          }
+         ],
+         "intake": "PooledIntakeOnly",
+         "pooled_store": "reports-store-000000000101-20260922105911096600000001",
+         "repointed": [],
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-pooled-reports-intake-3",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        {
+         "say": [
+          "intake",
+          "intake term",
+          "intake terms",
+          "PooledIntakeOnly",
+          "deny statement",
+          "pooled intake"
+         ],
+         "seen": "PooledIntakeOnly"
+        }
+       ],
+       "intake": "PooledIntakeOnly",
+       "pooled_store": "reports-store-000000000101-20260922105911096600000001",
+       "repointed": [],
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "reserved-report-area": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 2,
+        "landed_ns": 272319155753425,
+        "landed_s": 22.375,
+        "result": {
+         "area_in_use": "streams/catalogue/",
+         "fingerprint": [
+          {
+           "say": [
+            "streams/catalogue",
+            "catalogue area",
+            "area in use",
+            "reserved area",
+            "streams"
+           ],
+           "seen": "streams/catalogue/"
+          }
+         ],
+         "layout_root": "streams/",
+         "recorded": true,
+         "reports_store": "reports-store-000000000101-20260922105911096600000001",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-reserved-report-area-2",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "area_in_use": "streams/catalogue/",
+       "fingerprint": [
+        {
+         "say": [
+          "streams/catalogue",
+          "catalogue area",
+          "area in use",
+          "reserved area",
+          "streams"
+         ],
+         "seen": "streams/catalogue/"
+        }
+       ],
+       "layout_root": "streams/",
+       "recorded": true,
+       "reports_store": "reports-store-000000000101-20260922105911096600000001",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "sibling-name-claim": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 1,
+        "landed_ns": 272307505465645,
+        "landed_s": 10.725,
+        "result": {
+         "created": true,
+         "fingerprint": [
+          "parts-catalogue"
+         ],
+         "marking": "parts-catalogue",
+         "store": "mybucket-000000000101",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-sibling-name-claim-1",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "created": true,
+       "fingerprint": [
+        "parts-catalogue"
+       ],
+       "marking": "parts-catalogue",
+       "store": "mybucket-000000000101",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "reports-store-000000000101-20260922105911096600000001": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::reports-store-000000000101-20260922105911096600000001",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "reports-store-000000000101-20260922105911096600000001",
+        "DomainName": "reports-store-000000000101-20260922105911096600000001.s3.amazonaws.com",
+        "DualStackDomainName": "reports-store-000000000101-20260922105911096600000001.s3.dualstack.us-east-1.amazonaws.com",
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "reports-store-000000000101-20260922105911096600000001.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "WebsiteURL": "http://reports-store-000000000101-20260922105911096600000001.s3-website-us-east-1.amazonaws.com"
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "mybucket-000000000101": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::mybucket-000000000101",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "mybucket-000000000101",
+        "DomainName": "mybucket-000000000101.s3.amazonaws.com",
+        "DualStackDomainName": "mybucket-000000000101.s3.dualstack.us-east-1.amazonaws.com",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000101",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000101-20260922105911096600000001",
+           "Format": "CSV",
+           "Prefix": "streams/mybucket-000000000101"
+          },
+          "Enabled": true,
+          "Id": "daily-full-inventory",
+          "IncludedObjectVersions": "Current",
+          "OptionalFields": [
+           "Size",
+           "LastModifiedDate",
+           "StorageClass",
+           "ETag",
+           "IsMultipartUploaded",
+           "ReplicationStatus",
+           "EncryptionStatus"
+          ],
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "mybucket-000000000101.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "parts-catalogue"
+         }
+        ],
+        "WebsiteURL": "http://mybucket-000000000101.s3-website-us-east-1.amazonaws.com"
+       },
+       "reports-store-000000000101-20260922105911096600000001": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::reports-store-000000000101-20260922105911096600000001",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "reports-store-000000000101-20260922105911096600000001",
+        "DomainName": "reports-store-000000000101-20260922105911096600000001.s3.amazonaws.com",
+        "DualStackDomainName": "reports-store-000000000101-20260922105911096600000001.s3.dualstack.us-east-1.amazonaws.com",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000101",
+           "BucketArn": "arn:aws:s3:::reports-store-000000000101-20260922105911096600000001",
+           "Format": "CSV",
+           "Prefix": "streams/plan/"
+          },
+          "Enabled": true,
+          "Id": "plan-funded-daily",
+          "IncludedObjectVersions": "Current",
+          "OptionalFields": [],
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "reports-store-000000000101-20260922105911096600000001.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "ReportAreaInUse",
+          "Value": "streams/catalogue/"
+         },
+         {
+          "Key": "ReportAreaRoot",
+          "Value": "streams/"
+         }
+        ],
+        "WebsiteURL": "http://reports-store-000000000101-20260922105911096600000001.s3-website-us-east-1.amazonaws.com"
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "reports-store-000000000101-20260922105911096600000001": {
+        "Bucket": "reports-store-000000000101-20260922105911096600000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "ArnEquals": {
+             "aws:SourceArn": "arn:aws:s3:::mybucket-000000000101"
+            },
+            "StringEquals": {
+             "aws:SourceAccount": "000000000101"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000101-20260922105911096600000001/streams/mybucket-000000000101/*",
+           "Sid": "AllowS3InventoryDeliveryForMybucket"
+          },
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:SourceAccount": "000000000101"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::reports-store-000000000101-20260922105911096600000001/*",
+           "Sid": "PooledIntakeOnly"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-interference-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

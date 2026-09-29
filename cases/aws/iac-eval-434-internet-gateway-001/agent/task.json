@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_434_internet_gateway",
+  "utterance": "The shared `platform-vpc` is the only network this account has cut so far. The storefront web tier needs one of its own: create a VPC with a CIDR block and DNS hostnames enabled, and an internet gateway attached to it. Name-tag the VPC `vpc` and the gateway `ig`.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "the storefront web tier has a VPC of its own, tagged Name=vpc, with DNS hostnames enabled and a CIDR block that no other network in the account holds or has reserved, and an internet gateway tagged Name=ig attached to that VPC"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 434
+  }
+}

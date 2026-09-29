@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_163_dynamodb_table",
+  "utterance": "We are putting the orders service behind DynamoDB global tables, so its data has to be in the stream format cross-region replication needs. Create a DynamoDB table named `orders-events-global` with `myAttribute` (string) as its hash key, PAY_PER_REQUEST billing, and DynamoDB Streams enabled carrying both the new and the old image of every item. The orders service's existing data has to be ready too: every DynamoDB table that belongs to the orders service must have its stream on in that same new-and-old-images format. Also give the existing `orders-service` role read and write access to the new table. Finish by reporting every DynamoDB table in the account with the stream format it ended up with.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's data and how it is stored and laid out",
+    "intent": "a DynamoDB table named orders-events-global exists on PAY_PER_REQUEST billing with a string hash key myAttribute and a NEW_AND_OLD_IMAGES stream; every DynamoDB table that belongs to the orders service carries a NEW_AND_OLD_IMAGES stream as well; and the orders-service role holds a policy granting read and write access to orders-events-global"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 163
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "cloudcontrol_type": "AWS::ApiGateway::Resource",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-22T18:33:27+00:00",
+      "ResourceDescription": {
+        "Identifier": "jrf3d8chb9|bmbjf5aue8",
+        "Properties": "{\"ResourceId\":\"bmbjf5aue8\",\"RestApiId\":\"jrf3d8chb9\"}"
+      },
+      "TypeName": "AWS::ApiGateway::Resource"
+    },
+    {
+      "ReadAt": "2026-09-22T18:33:27+00:00",
+      "ResourceDescription": {
+        "Identifier": "jrf3d8chb9|xprfb7",
+        "Properties": "{\"ParentId\":\"bmbjf5aue8\",\"PathPart\":\"capability\",\"ResourceId\":\"xprfb7\",\"RestApiId\":\"jrf3d8chb9\"}"
+      },
+      "TypeName": "AWS::ApiGateway::Resource"
+    }
+  ],
+  "recorded_at": "2026-09-22T18:33:27+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

@@ -1,0 +1,2 @@
+A segment is governed by the control the network keeps for its segments, never by one a workload cut for itself; what you did not write on one stays as found.
+What a workload creates carries the attribution of what it sits in.

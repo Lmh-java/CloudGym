@@ -1,0 +1,2 @@
+Access restrictions on a store are cumulative: one already guarding it is still in force and no narrower when you finish, and so is the one you were asked for.
+Every store carries the records the account's stores carry, and the records already on it stay on it.

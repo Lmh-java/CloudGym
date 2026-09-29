@@ -1,0 +1,14 @@
+# One active IAM case and one trial; uses the model configured in your Claude CLI.
+batch: smoke
+defaults:
+  agent: claude
+  timeout: 600
+  poll_interval: 10
+  trials: 1
+  distractors: true
+  awareness: consult
+  modality: hybrid
+cases:
+  - ../cases/aws/iac-eval-149-iam-role-001
+arms:
+  - name: smoke-consult

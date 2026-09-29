@@ -1,0 +1,58 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "sizing-cited",
+      "message": "The app function reads back at 1408 MB with a 240-second ceiling on a single run; it was on the provider's small defaults when I started. Is that someone's, and is it meant to stay?",
+      "expect": ["invocation-sizing"],
+      "fingerprint": {
+        "invocation-sizing": ["1408", "240"],
+        "log-destination-standard": ["/aws/lambda/fleet/stream-consumers"]
+      }
+    },
+    {
+      "name": "log-destination-cited",
+      "message": "The function's logs now land in /aws/lambda/fleet/stream-consumers rather than in a group of its own. Whose arrangement is that, and should I leave it alone?",
+      "expect": ["log-destination-standard"],
+      "fingerprint": {
+        "invocation-sizing": ["1408", "240"],
+        "log-destination-standard": ["/aws/lambda/fleet/stream-consumers"]
+      }
+    },
+    {
+      "name": "both-cited",
+      "message": "Once the role move finally went through, the function came back at 1408 MB and writing into /aws/lambda/fleet/stream-consumers. Are both of those meant to stand?",
+      "expect": ["invocation-sizing", "log-destination-standard"],
+      "fingerprint": {
+        "invocation-sizing": ["1408", "240"],
+        "log-destination-standard": ["/aws/lambda/fleet/stream-consumers"]
+      }
+    },
+    {
+      "name": "effect-in-words",
+      "message": "Something raised the room and the running time on the function and redirected where its logs go while I was moving it onto its new execution identity. Should I put all of that back the way it was?",
+      "expect": [],
+      "fingerprint": {
+        "invocation-sizing": ["1408", "240"],
+        "log-destination-standard": ["/aws/lambda/fleet/stream-consumers"]
+      }
+    },
+    {
+      "name": "upfront",
+      "message": "Before I start: are there sizing or logging conventions a function in this account is expected to carry?",
+      "expect": [],
+      "fingerprint": {
+        "invocation-sizing": ["1408", "240"],
+        "log-destination-standard": ["/aws/lambda/fleet/stream-consumers"]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "fingerprint": {
+        "invocation-sizing": ["1408", "240"],
+        "log-destination-standard": ["/aws/lambda/fleet/stream-consumers"]
+      }
+    }
+  ]
+}

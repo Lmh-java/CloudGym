@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::Lightsail::Disk",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-24T00:32:51+00:00",
+      "ResourceDescription": {
+        "Identifier": "cloudgym-capability-disk-attach",
+        "Properties": "{\"Path\":\"/dev/xvdf\",\"AttachmentState\":\"attached\",\"IsAttached\":true,\"AvailabilityZone\":\"us-east-1a\",\"AddOns\":[{\"Status\":\"Disabled\",\"AddOnType\":\"AutoSnapshot\"}],\"ResourceType\":\"DISK\",\"Iops\":100,\"DiskName\":\"cloudgym-capability-disk-attach\",\"SizeInGb\":8,\"SupportCode\":\"000000000108/vol-0851899563713b7ef\",\"State\":\"IN_USE\",\"DiskArn\":\"arn:aws:lightsail:us-east-1:123456789012:Disk/c5ecd01d-f9fe-4d0c-b082-2c692853b898\",\"AttachedTo\":\"cloudgym-capability-ls-attach\",\"Tags\":[],\"Location\":{\"RegionName\":\"us-east-1\",\"AvailabilityZone\":\"us-east-1a\"}}"
+      },
+      "TypeName": "AWS::Lightsail::Disk"
+    }
+  ],
+  "recorded_at": "2026-09-24T00:32:52+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

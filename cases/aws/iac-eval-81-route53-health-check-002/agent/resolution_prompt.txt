@@ -1,0 +1,2 @@
+A name is answered where the account hands that part of its domain to; what sits above carries only the handover.
+An answer follows what the account already publishes: the endpoint it is gated on, the health already judged for it, and where it already falls back.

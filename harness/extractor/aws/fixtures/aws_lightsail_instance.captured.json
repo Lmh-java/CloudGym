@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::Lightsail::Instance",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-24T00:29:57+00:00",
+      "ResourceDescription": {
+        "Identifier": "cloudgym-capability-ls",
+        "Properties": "{\"SshKeyName\":\"LightsailDefaultKeyPair\",\"KeyPairName\":\"LightsailDefaultKeyPair\",\"IsStaticIp\":false,\"PrivateIpAddress\":\"172.26.12.248\",\"UserName\":\"ec2-user\",\"BlueprintId\":\"amazon_linux_2023\",\"Networking\":{\"Ports\":[{\"FromPort\":22,\"AccessDirection\":\"inbound\",\"CidrListAliases\":[],\"ToPort\":22,\"Ipv6Cidrs\":[\"::/0\"],\"AccessFrom\":\"Anywhere (0.0.0.0/0 and ::/0)\",\"Protocol\":\"tcp\",\"AccessType\":\"public\",\"Cidrs\":[\"0.0.0.0/0\"],\"CommonName\":\"\"},{\"FromPort\":80,\"AccessDirection\":\"inbound\",\"CidrListAliases\":[],\"ToPort\":80,\"Ipv6Cidrs\":[\"::/0\"],\"AccessFrom\":\"Anywhere (0.0.0.0/0 and ::/0)\",\"Protocol\":\"tcp\",\"AccessType\":\"public\",\"Cidrs\":[\"0.0.0.0/0\"],\"CommonName\":\"\"}],\"MonthlyTransfer\":{\"GbPerMonthAllocated\":\"1024\"}},\"AvailabilityZone\":\"us-east-1a\",\"AddOns\":[],\"ResourceType\":\"Instance\",\"Ipv6Addresses\":[\"2600:1f18:3237:ad00:8436:c27f:9956:3cf4\"],\"PublicIpAddress\":\"192.0.2.14\",\"InstanceName\":\"cloudgym-capability-ls\",\"BundleId\":\"nano_3_0\",\"SupportCode\":\"000000000108/i-08dec97e420072b97\",\"State\":{\"Code\":16,\"Name\":\"running\"},\"InstanceArn\":\"arn:aws:lightsail:us-east-1:123456789012:Instance/c46d1964-bf80-439f-a5e1-9a45d969eec5\",\"Hardware\":{\"CpuCount\":2,\"RamSizeInGb\":1,\"Disks\":[]},\"Tags\":[{\"Value\":\"cloudgym-capability\",\"Key\":\"Name\"}],\"Location\":{\"RegionName\":\"us-east-1\",\"AvailabilityZone\":\"us-east-1a\"}}"
+      },
+      "TypeName": "AWS::Lightsail::Instance"
+    }
+  ],
+  "recorded_at": "2026-09-24T00:29:57+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::ElasticBeanstalk::Environment",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-09T18:46:33+00:00",
+      "ResourceDescription": {
+        "Identifier": "cloudgym-capability-env",
+        "Properties": "{\"PlatformArn\":\"arn:aws:elasticbeanstalk:us-east-1::platform/Python 3.12 running on 64bit Amazon Linux 2023/4.13.7\",\"ApplicationName\":\"cloudgym-capability-env-app\",\"EnvironmentName\":\"cloudgym-capability-env\",\"Tier\":{\"Type\":\"Standard\",\"Version\":\"1.0\",\"Name\":\"WebServer\"},\"SolutionStackName\":\"64bit Amazon Linux 2023 v4.13.7 running Python 3.12\",\"EndpointURL\":\"192.0.2.31\",\"CNAMEPrefix\":\"cloudgym-capability-env\",\"Tags\":[]}"
+      },
+      "TypeName": "AWS::ElasticBeanstalk::Environment"
+    }
+  ],
+  "recorded_at": "2026-09-09T18:46:39+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

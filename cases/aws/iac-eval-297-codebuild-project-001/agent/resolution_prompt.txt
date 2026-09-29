@@ -1,0 +1,2 @@
+Output goes to the store the account keeps in service when you finish; one kept for a single workload is not it.
+Where the account keeps an identity for the build, it runs as that one when you finish; what you did not create stays as found.

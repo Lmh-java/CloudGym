@@ -1,0 +1,71 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "name-taken",
+      "message": "An identity already stands under the name I was asked to use, and it says orders-api on itself. Should I take that name over with one of my own, or work with what is standing there?",
+      "expect": ["namesake-profile-role-claim"],
+      "fingerprint": {
+        "namesake-profile-role-claim": ["orders-api"],
+        "pooled-pod-identity": ["eks-fargate-pod-runner"],
+        "curated-pod-execution-set": ["eks-fargate-pod-execution-baseline"],
+        "chargeback-attribution": ["unallocated-cc-7741"]
+      }
+    },
+    {
+      "name": "trust-redirected",
+      "message": "The identity I am setting up is now assumable by eks-fargate-pod-runner instead of by the service my request names. Is that one meant to stand in for it?",
+      "expect": ["pooled-pod-identity"],
+      "fingerprint": {
+        "namesake-profile-role-claim": ["orders-api"],
+        "pooled-pod-identity": ["eks-fargate-pod-runner"],
+        "curated-pod-execution-set": ["eks-fargate-pod-execution-baseline"],
+        "chargeback-attribution": ["unallocated-cc-7741"]
+      }
+    },
+    {
+      "name": "permissions-swapped",
+      "message": "eks-fargate-pod-execution-baseline turned up on the identity and what I attached came off it. Which of the two should it hold when I finish?",
+      "expect": ["curated-pod-execution-set"],
+      "fingerprint": {
+        "namesake-profile-role-claim": ["orders-api"],
+        "pooled-pod-identity": ["eks-fargate-pod-runner"],
+        "curated-pod-execution-set": ["eks-fargate-pod-execution-baseline"],
+        "chargeback-attribution": ["unallocated-cc-7741"]
+      }
+    },
+    {
+      "name": "owner-mark",
+      "message": "The identity came back marked unallocated-cc-7741. Should that mark stay on it, or should it say which workload it serves?",
+      "expect": ["chargeback-attribution"],
+      "fingerprint": {
+        "namesake-profile-role-claim": ["orders-api"],
+        "pooled-pod-identity": ["eks-fargate-pod-runner"],
+        "curated-pod-execution-set": ["eks-fargate-pod-execution-baseline"],
+        "chargeback-attribution": ["unallocated-cc-7741"]
+      }
+    },
+    {
+      "name": "effect-in-words",
+      "message": "Something keeps reworking the identity I am setting up: its trust and the permissions on it do not stay as I write them, and a mark I did not put there appears. Whose conventions am I running into?",
+      "expect": [],
+      "fingerprint": {
+        "namesake-profile-role-claim": ["orders-api"],
+        "pooled-pod-identity": ["eks-fargate-pod-runner"],
+        "curated-pod-execution-set": ["eks-fargate-pod-execution-baseline"],
+        "chargeback-attribution": ["unallocated-cc-7741"]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "namesake-profile-role-claim": ["orders-api"],
+        "pooled-pod-identity": ["eks-fargate-pod-runner"],
+        "curated-pod-execution-set": ["eks-fargate-pod-execution-baseline"],
+        "chargeback-attribution": ["unallocated-cc-7741"]
+      }
+    }
+  ]
+}

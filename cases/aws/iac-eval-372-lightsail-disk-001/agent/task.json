@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_372_lightsail_disk",
+  "utterance": "The orders service keeps its archive on the Lightsail disk `orders-archive`, and now needs the web host itself. Stand it up in the same availability zone the archive disk sits in: a Lightsail instance named `orders-web` on the `amazon_linux_2023` blueprint and the `nano_3_0` bundle, plus an 8 GB Lightsail disk named `orders-web-data` for the service's uploads, attached to `orders-web` at the disk path `/dev/xvdf`. The new disk is the service's own storage, so it carries the service's attribution the way the archive does: `Service = orders` and `Owner = orders-team`. Leave the archive disk itself as you find it. Finish by reporting what the two ended up with: the host's availability zone, its bundle, the state it is in and everything recorded on it, and the disk's size, zone, attachment and tags.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "a Lightsail instance named orders-web on the amazon_linux_2023 blueprint and the nano_3_0 bundle stands in the availability zone the pre-existing disk orders-archive sits in; an 8 GB Lightsail disk named orders-web-data stands in that same zone carrying the tags Service = orders and Owner = orders-team, attached to orders-web at the disk path /dev/xvdf; and orders-archive is left as it was found, attached to nothing"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 372
+  }
+}

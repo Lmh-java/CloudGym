@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_237_network_acl",
+  "utterance": "Our VPC `app-vpc` (10.0.0.0/16) already exists, with the shared segment 10.0.0.0/24 carved out of it. Carve out a subnet for 10.0.1.0/24 and control both its ingress and its egress traffic with a network ACL associated with that subnet, so that the ACL governing the subnet allows inbound TCP port 80 from 10.3.0.0/18 and outbound TCP port 443 to 10.3.0.0/18.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "the pre-existing VPC 10.0.0.0/16 has a subnet for 10.0.1.0/24, and the network ACL that subnet is associated with allows inbound TCP 80 from 10.3.0.0/18 and outbound TCP 443 to 10.3.0.0/18"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 237
+  }
+}

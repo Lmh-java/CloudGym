@@ -1,0 +1,2 @@
+A workload rides the schedule already running at its hour, or takes a new one under a free name; what it did not create stays as found, down to what rides on it.
+A workload is wired through the copy marked as taking the traffic, never one marked superseded.

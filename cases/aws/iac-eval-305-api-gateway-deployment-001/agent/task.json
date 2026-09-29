@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_305_api_gateway_deployment",
+  "utterance": "The cat-as-a-service backend is already deployed: the Lambda function `caas_cat` serves the cat pictures in this account's `cat-image…` S3 bucket and the cat names in the `cat_names` DynamoDB table. Two things are missing. First, the function is still on `caas_cat_legacy_role`, which grants it nothing: it has to end up on the execution role `lambda_api_gateway_role`, and that role needs an inline policy allowing `s3:GetObject` and `s3:PutObject` on the objects in the cat-picture bucket and `dynamodb:PutItem` on that table. Second, there is no HTTP front door: create a REST API Gateway named `caas` with a resource under its root whose path part is `cat`, carrying a `GET` and a `PUT` method, both with authorization `NONE`, each one an `AWS_PROXY` integration onto `caas_cat` whose integration HTTP method matches the method it serves; API Gateway must be allowed to call the function; and the API must be deployed to a stage named `dev`. Finish by reporting the API's id and what `caas_cat` ended up configured with.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "the function caas_cat has lambda_api_gateway_role as its execution role, and that role carries an inline policy granting s3:GetObject and s3:PutObject on the objects of the account's cat-image bucket and dynamodb:PutItem on the cat_names table; a REST API named caas carries a resource with path part cat under its root, with GET and PUT methods on it whose authorization is NONE and whose integrations are AWS_PROXY onto caas_cat with matching integration HTTP methods; caas_cat's resource policy holds a lambda:InvokeFunction statement for the principal apigateway.amazonaws.com scoped to that API; and the API is released to a stage named dev"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 305
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::Backup::BackupSelection",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-24T00:18:46+00:00",
+      "ResourceDescription": {
+        "Identifier": "bd99a63d-5b83-4c72-9ebf-088697bd47e5_f21f4dde-076d-42b8-9265-1cdd90899885",
+        "Properties": "{\"BackupSelection\":{\"ListOfTags\":[{\"ConditionValue\":\"never-matches\",\"ConditionKey\":\"cloudgym-backup\",\"ConditionType\":\"STRINGEQUALS\"}],\"NotResources\":[],\"SelectionName\":\"cloudgym-capability-selection\",\"IamRoleArn\":\"arn:aws:iam::123456789012:role/cloudgym-capability-20260924001819003900000001\",\"Resources\":[],\"Conditions\":{\"StringEquals\":[],\"StringNotLike\":[],\"StringLike\":[],\"StringNotEquals\":[]}},\"BackupPlanId\":\"f21f4dde-076d-42b8-9265-1cdd90899885\",\"Id\":\"bd99a63d-5b83-4c72-9ebf-088697bd47e5_f21f4dde-076d-42b8-9265-1cdd90899885\",\"SelectionId\":\"bd99a63d-5b83-4c72-9ebf-088697bd47e5\"}"
+      },
+      "TypeName": "AWS::Backup::BackupSelection"
+    }
+  ],
+  "recorded_at": "2026-09-24T00:18:49+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

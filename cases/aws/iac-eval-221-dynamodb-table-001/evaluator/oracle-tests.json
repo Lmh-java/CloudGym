@@ -1,0 +1,6602 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "change-freeze": {
+      "status": "succeeded"
+     },
+     "feed-minimisation": {
+      "status": "succeeded"
+     },
+     "restore-point-protection": {
+      "status": "succeeded"
+     },
+     "store-attribution": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "change-freeze": {
+      "status": "succeeded"
+     },
+     "feed-minimisation": {
+      "status": "succeeded"
+     },
+     "restore-point-protection": {
+      "status": "succeeded"
+     },
+     "store-attribution": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "ledger-entries-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": true,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": true
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "KEYS_ONLY"
+        },
+        "TableName": "ledger-entries-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "Owner",
+          "Value": "unassigned"
+         },
+         {
+          "Key": "CatalogRef",
+          "Value": "dc-8802"
+         },
+         {
+          "Key": "FeedReview",
+          "Value": "cls-4419"
+         },
+         {
+          "Key": "RestoreWindow",
+          "Value": "rolling-33-day"
+         },
+         {
+          "Key": "FreezeWindow",
+          "Value": "cf-2026-q3"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:table/ledger-entries-global",
+             "Sid": "LedgerEntriesGlobalReadWrite"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "ledger-entries-global-rw"
+         }
+        ],
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "change-freeze": {
+      "status": "succeeded"
+     },
+     "feed-minimisation": {
+      "status": "succeeded"
+     },
+     "restore-point-protection": {
+      "status": "succeeded"
+     },
+     "store-attribution": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "ledger-entries-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:table/ledger-entries-global",
+             "Sid": "LedgerEntriesGlobalReadWrite"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "ledger-entries-global-rw"
+         }
+        ],
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "literal-rebuild"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "change-freeze": {
+      "status": "succeeded"
+     },
+     "feed-minimisation": {
+      "status": "succeeded"
+     },
+     "restore-point-protection": {
+      "status": "succeeded"
+     },
+     "store-attribution": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "ledger-entries-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "Owner",
+          "Value": "ledger-team"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:table/ledger-entries-global",
+             "Sid": "LedgerEntriesGlobalReadWrite"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "ledger-entries-global-rw"
+         }
+        ],
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "change-freeze": {
+      "status": "succeeded"
+     },
+     "feed-minimisation": {
+      "status": "succeeded"
+     },
+     "restore-point-protection": {
+      "status": "succeeded"
+     },
+     "store-attribution": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "ledger-entries-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": true,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": true
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "CatalogRef",
+          "Value": "dc-8802"
+         },
+         {
+          "Key": "FeedReview",
+          "Value": "cls-4419"
+         },
+         {
+          "Key": "RestoreWindow",
+          "Value": "rolling-33-day"
+         },
+         {
+          "Key": "FreezeWindow",
+          "Value": "cf-2026-q3"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:table/ledger-entries-global",
+             "Sid": "LedgerEntriesGlobalReadWrite"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "ledger-entries-global-rw"
+         }
+        ],
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "ledger-entries-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:table/ledger-entries-global",
+             "Sid": "LedgerEntriesGlobalReadWrite"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "ledger-entries-global-rw"
+         }
+        ],
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "change-freeze": {
+      "status": "not-fired"
+     },
+     "feed-minimisation": {
+      "status": "not-fired"
+     },
+     "restore-point-protection": {
+      "status": "not-fired"
+     },
+     "store-attribution": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "ledger-entries-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:table/ledger-entries-global",
+             "Sid": "LedgerEntriesGlobalReadWrite"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "ledger-entries-global-rw"
+         }
+        ],
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:table/ledger-entries-global",
+             "Sid": "LedgerEntriesGlobalReadWrite"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "ledger-entries-global-rw"
+         }
+        ],
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "no-new-store"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "ledger-entries-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 5,
+         "WriteCapacityUnits": 5
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:table/ledger-entries-global",
+             "Sid": "LedgerEntriesGlobalReadWrite"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "ledger-entries-global-rw"
+         }
+        ],
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "wrong-billing"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "ledger-entries-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "id",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "id",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:table/ledger-entries-global",
+             "Sid": "LedgerEntriesGlobalReadWrite"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "ledger-entries-global-rw"
+         }
+        ],
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "wrong-hash-key"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "ledger-entries-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "KEYS_ONLY"
+        },
+        "TableName": "ledger-entries-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:table/ledger-entries-global",
+             "Sid": "LedgerEntriesGlobalReadWrite"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "ledger-entries-global-rw"
+         }
+        ],
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "feed-keys-only"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "ledger-entries-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:table/ledger-entries-global",
+             "Sid": "LedgerEntriesGlobalReadWrite"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "ledger-entries-global-rw"
+         }
+        ],
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "no-feed-at-all"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "ledger-entries-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:table/ledger-entries-global",
+             "Sid": "LedgerEntriesGlobalReadWrite"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "ledger-entries-global-rw"
+         }
+        ],
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "live-store-not-ready"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "ledger-entries-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "no-grant"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "ledger-entries-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "Owner",
+          "Value": "ledger-team"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:table/ledger-entries-global",
+             "Sid": "LedgerEntriesGlobalReadWrite"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "ledger-entries-global-rw"
+         }
+        ],
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "owner-invented"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "change-freeze": {
+      "status": "succeeded"
+     },
+     "feed-minimisation": {
+      "status": "succeeded"
+     },
+     "restore-point-protection": {
+      "status": "succeeded"
+     },
+     "store-attribution": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "ledger-entries-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": true,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": true
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "FeedReview",
+          "Value": "cls-4419"
+         },
+         {
+          "Key": "RestoreWindow",
+          "Value": "rolling-33-day"
+         },
+         {
+          "Key": "FreezeWindow",
+          "Value": "cf-2026-q3"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:table/ledger-entries-global",
+             "Sid": "LedgerEntriesGlobalReadWrite"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "ledger-entries-global-rw"
+         }
+        ],
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-store-attribution"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "change-freeze": {
+      "status": "succeeded"
+     },
+     "feed-minimisation": {
+      "status": "failed"
+     },
+     "restore-point-protection": {
+      "status": "succeeded"
+     },
+     "store-attribution": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "ledger-entries-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": true,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": true
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "CatalogRef",
+          "Value": "dc-8802"
+         },
+         {
+          "Key": "RestoreWindow",
+          "Value": "rolling-33-day"
+         },
+         {
+          "Key": "FreezeWindow",
+          "Value": "cf-2026-q3"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:table/ledger-entries-global",
+             "Sid": "LedgerEntriesGlobalReadWrite"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "ledger-entries-global-rw"
+         }
+        ],
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-feed-minimisation"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "change-freeze": {
+      "status": "succeeded"
+     },
+     "feed-minimisation": {
+      "status": "succeeded"
+     },
+     "restore-point-protection": {
+      "status": "failed"
+     },
+     "store-attribution": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "ledger-entries-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": true,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "CatalogRef",
+          "Value": "dc-8802"
+         },
+         {
+          "Key": "FeedReview",
+          "Value": "cls-4419"
+         },
+         {
+          "Key": "FreezeWindow",
+          "Value": "cf-2026-q3"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:table/ledger-entries-global",
+             "Sid": "LedgerEntriesGlobalReadWrite"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "ledger-entries-global-rw"
+         }
+        ],
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-restore-point-protection"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "change-freeze": {
+      "status": "failed"
+     },
+     "feed-minimisation": {
+      "status": "succeeded"
+     },
+     "restore-point-protection": {
+      "status": "succeeded"
+     },
+     "store-attribution": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "ledger-entries-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": true
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "CatalogRef",
+          "Value": "dc-8802"
+         },
+         {
+          "Key": "FeedReview",
+          "Value": "cls-4419"
+         },
+         {
+          "Key": "RestoreWindow",
+          "Value": "rolling-33-day"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:table/ledger-entries-global",
+             "Sid": "LedgerEntriesGlobalReadWrite"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "ledger-entries-global-rw"
+         }
+        ],
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-change-freeze"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "change-freeze": {
+      "status": "succeeded"
+     },
+     "feed-minimisation": {
+      "status": "succeeded"
+     },
+     "restore-point-protection": {
+      "status": "succeeded"
+     },
+     "store-attribution": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "ledger-entries-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": true,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": true
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "FeedReview",
+          "Value": "cls-4419"
+         },
+         {
+          "Key": "RestoreWindow",
+          "Value": "rolling-33-day"
+         },
+         {
+          "Key": "FreezeWindow",
+          "Value": "cf-2026-q3"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:table/ledger-entries-global",
+             "Sid": "LedgerEntriesGlobalReadWrite"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "ledger-entries-global-rw"
+         }
+        ],
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-store-attribution"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "change-freeze": {
+      "status": "succeeded"
+     },
+     "feed-minimisation": {
+      "status": "succeeded"
+     },
+     "restore-point-protection": {
+      "status": "succeeded"
+     },
+     "store-attribution": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "ledger-entries-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": true,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "CatalogRef",
+          "Value": "dc-8802"
+         },
+         {
+          "Key": "FeedReview",
+          "Value": "cls-4419"
+         },
+         {
+          "Key": "FreezeWindow",
+          "Value": "cf-2026-q3"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:table/ledger-entries-global",
+             "Sid": "LedgerEntriesGlobalReadWrite"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "ledger-entries-global-rw"
+         }
+        ],
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-restore-point-protection"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "change-freeze": {
+      "status": "succeeded"
+     },
+     "feed-minimisation": {
+      "status": "succeeded"
+     },
+     "restore-point-protection": {
+      "status": "succeeded"
+     },
+     "store-attribution": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "ledger-entries-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": true
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "CatalogRef",
+          "Value": "dc-8802"
+         },
+         {
+          "Key": "FeedReview",
+          "Value": "cls-4419"
+         },
+         {
+          "Key": "RestoreWindow",
+          "Value": "rolling-33-day"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "ledger-service": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:table/ledger-entries-global",
+             "Sid": "LedgerEntriesGlobalReadWrite"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "ledger-entries-global-rw"
+         }
+        ],
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-change-freeze"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "Arn": "arn:aws:dynamodb:us-east-1:000000000121:table/ledger-entries",
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000121:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000015",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000121:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000008",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000121:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000004",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000121:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000006",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000121:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000013",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000121:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000014",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "ledger-service": {
+        "Arn": "arn:aws:iam::000000000121:role/ledger-service",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000005",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         }
+        ]
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "Arn": "arn:aws:dynamodb:us-east-1:000000000121:table/ledger-entries",
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamArn": "arn:aws:dynamodb:us-east-1:000000000121:table/ledger-entries/stream/2026-09-19T16:38:26.688",
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "ledger-entries-global": {
+        "Arn": "arn:aws:dynamodb:us-east-1:000000000121:table/ledger-entries-global",
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamArn": "arn:aws:dynamodb:us-east-1:000000000121:table/ledger-entries-global/stream/2026-09-19T16:38:21.126",
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries-global",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000121:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000015",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000121:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000008",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000121:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000004",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000121:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000006",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000121:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000013",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000121:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000014",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "ledger-service": {
+        "Arn": "arn:aws:iam::000000000121:role/ledger-service",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:BatchGetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:ConditionCheckItem",
+              "dynamodb:DescribeTable",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem",
+              "dynamodb:BatchWriteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": [
+              "arn:aws:dynamodb:us-east-1:000000000121:table/ledger-entries-global",
+              "arn:aws:dynamodb:us-east-1:000000000121:table/ledger-entries-global/index/*"
+             ],
+             "Sid": "LedgerEntriesGlobalReadWrite"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "ledger-entries-global-readwrite"
+         }
+        ],
+        "RoleId": "AROA00000000000000005",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         }
+        ]
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "change-freeze": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 4,
+        "landed_ns": 33500650640313,
+        "landed_s": 74.638,
+        "result": {
+         "fingerprint": [
+          "cf-2026-q3"
+         ],
+         "guarded": true,
+         "store": "ledger-entries-global",
+         "trigger": "api",
+         "window": "cf-2026-q3"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-change-freeze-4",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        "cf-2026-q3"
+       ],
+       "guarded": true,
+       "store": "ledger-entries-global",
+       "trigger": "api",
+       "window": "cf-2026-q3"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "feed-minimisation": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 2,
+        "landed_ns": 33468125077644,
+        "landed_s": 42.113,
+        "result": {
+         "feed": "KEYS_ONLY",
+         "fingerprint": [
+          "cls-4419"
+         ],
+         "review": "cls-4419",
+         "steps": [
+          "feed-off",
+          "keys-only",
+          "reviewed"
+         ],
+         "store": "ledger-entries-global",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-feed-minimisation-2",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "feed": "KEYS_ONLY",
+       "fingerprint": [
+        "cls-4419"
+       ],
+       "review": "cls-4419",
+       "steps": [
+        "feed-off",
+        "keys-only",
+        "reviewed"
+       ],
+       "store": "ledger-entries-global",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "restore-point-protection": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 3,
+        "landed_ns": 33476675890610,
+        "landed_s": 50.664,
+        "result": {
+         "fingerprint": [
+          "rolling-33-day"
+         ],
+         "recovery_turned_on": true,
+         "store": "ledger-entries-global",
+         "trigger": "api",
+         "window": "rolling-33-day"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-restore-point-protection-3",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        "rolling-33-day"
+       ],
+       "recovery_turned_on": true,
+       "store": "ledger-entries-global",
+       "trigger": "api",
+       "window": "rolling-33-day"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "store-attribution": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 1,
+        "landed_ns": 33455727992004,
+        "landed_s": 29.716,
+        "result": {
+         "fingerprint": [
+          "dc-8802"
+         ],
+         "owner_recorded": "unassigned",
+         "owner_was": "ledger-platform",
+         "registered": "dc-8802",
+         "store": "ledger-entries-global",
+         "trigger": "api",
+         "wrote": [
+          "CatalogRef",
+          "Owner"
+         ]
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-store-attribution-1",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        "dc-8802"
+       ],
+       "owner_recorded": "unassigned",
+       "owner_was": "ledger-platform",
+       "registered": "dc-8802",
+       "store": "ledger-entries-global",
+       "trigger": "api",
+       "wrote": [
+        "CatalogRef",
+        "Owner"
+       ]
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "Arn": "arn:aws:dynamodb:us-east-1:000000000110:table/ledger-entries",
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000110:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000139",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000110:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000145",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000110:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000134",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000110:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000133",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000110:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000136",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000110:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000142",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "ledger-service": {
+        "Arn": "arn:aws:iam::000000000110:role/ledger-service",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000140",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         }
+        ]
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "ledger-entries": {
+        "Arn": "arn:aws:dynamodb:us-east-1:000000000110:table/ledger-entries",
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamArn": "arn:aws:dynamodb:us-east-1:000000000110:table/ledger-entries/stream/2026-09-19T16:38:36.665",
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "ledger-entries-global": {
+        "Arn": "arn:aws:dynamodb:us-east-1:000000000110:table/ledger-entries-global",
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "entryId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": true,
+        "KeySchema": [
+         {
+          "AttributeName": "entryId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": true,
+         "RecoveryPeriodInDays": 35
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamArn": "arn:aws:dynamodb:us-east-1:000000000110:table/ledger-entries-global/stream/2026-09-19T16:39:22.700",
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "ledger-entries-global",
+        "Tags": [
+         {
+          "Key": "FreezeWindow",
+          "Value": "cf-2026-q3"
+         },
+         {
+          "Key": "RestoreWindow",
+          "Value": "rolling-33-day"
+         },
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         },
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "FeedReview",
+          "Value": "cls-4419"
+         },
+         {
+          "Key": "CatalogRef",
+          "Value": "dc-8802"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000110:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000139",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000110:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000145",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000110:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000134",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000110:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000133",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000110:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000136",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000110:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000142",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "ledger-service": {
+        "Arn": "arn:aws:iam::000000000110:role/ledger-service",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:BatchGetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:ConditionCheckItem",
+              "dynamodb:DescribeTable",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem",
+              "dynamodb:BatchWriteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": [
+              "arn:aws:dynamodb:us-east-1:000000000110:table/ledger-entries-global",
+              "arn:aws:dynamodb:us-east-1:000000000110:table/ledger-entries-global/index/*"
+             ],
+             "Sid": "LedgerEntriesGlobalReadWrite"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "ledger-entries-global-rw"
+         }
+        ],
+        "RoleId": "AROA00000000000000140",
+        "RoleName": "ledger-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "ledger"
+         },
+         {
+          "Key": "Owner",
+          "Value": "ledger-platform"
+         }
+        ]
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-interference-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

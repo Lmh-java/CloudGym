@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_166_dynamodb_table",
+  "utterance": "The delivery service prices its shipments from the `delivery-rate-card` DynamoDB table, which is still standing at the throughput it was prototyped on and holds no rates yet. Raise the store to read capacity 10 and write capacity 10, keeping it on provisioned throughput and keyed on `RateKey`. Then seed it with the service's three rate rows — `standard` (base_cents 499, per_km_cents 12, max_kg 20, sla_hours 72), `express` (base_cents 999, per_km_cents 18, max_kg 15, sla_hours 24) and `overnight` (base_cents 1899, per_km_cents 25, max_kg 10, sla_hours 12) — with `RateKey` stored as a string and every other attribute stored as a DynamoDB number. Finish by reporting what the store ended up with: its billing mode and capacity, the indexes on it, and the rate rows it now holds.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's data and how it is stored and laid out",
+    "intent": "the DynamoDB table delivery-rate-card stands on PROVISIONED billing at read capacity 10 and write capacity 10, still keyed on the string attribute RateKey, and holds the three rate items standard, express and overnight, each carrying base_cents, per_km_cents, max_kg and sla_hours as DynamoDB numbers with the values the task gives (499/12/20/72, 999/18/15/24 and 1899/25/10/12 respectively)"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 166
+  }
+}

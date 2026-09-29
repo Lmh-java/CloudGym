@@ -1,0 +1,2 @@
+A workload runs as an identity created for it, under a name nothing else in the account already answers to.
+The settings and limits the builds already in place run within hold for whatever you build; what you did not create stays as found.

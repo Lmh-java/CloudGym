@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_153_dynamodb_table",
+  "utterance": "The app function `lambda_app_function` is already deployed, but it still runs as the bootstrap identity it was stood up with and there is no store for it to read from. Create a DynamoDB table named `example_table` with `id` (string) as its hash key at read capacity 10 and write capacity 10, with its stream on carrying both the new and the old image of every changed item. Create an execution role named `iam_for_lambda` that Lambda can assume, give it the DynamoDB stream read actions on that table's stream and log writing through a customer managed policy named `lambda-dynamodb-policy`, and move the function onto that role. Then create a Lambda event source mapping that has that table's stream as its event source and the function as its target, starting from the latest records. Finish by reporting the event source mapping you created and the function's configuration as it then stands.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "the DynamoDB table example_table exists with the string attribute id as its hash key, PROVISIONED at read capacity 10 and write capacity 10, and a stream enabled with view type NEW_AND_OLD_IMAGES; a role named iam_for_lambda that Lambda can assume carries an attached customer managed policy named lambda-dynamodb-policy allowing dynamodb GetRecords, GetShardIterator, DescribeStream and ListStreams on that table's stream along with log writing; the pre-existing Lambda function lambda_app_function runs as the iam_for_lambda role; and an enabled Lambda event source mapping has that table's stream as its event source, that function as its target and starting position LATEST"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 153
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::Lambda::Function",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-01T02:48:07+00:00",
+      "ResourceDescription": {
+        "Identifier": "cloudgym-capability-check",
+        "Properties": "{\"MemorySize\":128,\"Description\":\"\",\"TracingConfig\":{\"Mode\":\"PassThrough\"},\"Timeout\":3,\"RuntimeManagementConfig\":{\"UpdateRuntimeOn\":\"Auto\"},\"Handler\":\"handler.handler\",\"SnapStartResponse\":{\"OptimizationStatus\":\"Off\",\"ApplyOn\":\"None\"},\"Code\":{},\"Role\":\"arn:aws:iam::123456789012:role/cloudgym-capability-20260901024724895300000001\",\"FileSystemConfigs\":[],\"FunctionName\":\"cloudgym-capability-check\",\"Runtime\":\"python3.12\",\"PackageType\":\"Zip\",\"LoggingConfig\":{\"LogFormat\":\"Text\",\"LogGroup\":\"/aws/lambda/cloudgym-capability-check\"},\"RecursiveLoop\":\"Terminate\",\"Arn\":\"arn:aws:lambda:us-east-1:123456789012:function:cloudgym-capability-check\",\"EphemeralStorage\":{\"Size\":512},\"Architectures\":[\"x86_64\"]}"
+      },
+      "TypeName": "AWS::Lambda::Function"
+    }
+  ],
+  "recorded_at": "2026-09-01T02:48:09+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

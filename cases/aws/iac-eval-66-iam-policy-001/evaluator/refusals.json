@@ -1,0 +1,25 @@
+{
+  "distractors": {
+    "backup-batch-headroom": {
+      "codes": [
+        "ConcurrentModificationException",
+        "ResourceInUseException"
+      ],
+      "entry": "firehose.delivery-stream",
+      "operation": "UpdateDestination",
+      "service": "firehose",
+      "source": "manual"
+    },
+    "delivery-retry-baseline": {
+      "codes": [
+        "ConcurrentModificationException",
+        "ResourceInUseException"
+      ],
+      "entry": "firehose.delivery-stream",
+      "operation": "UpdateDestination",
+      "service": "firehose",
+      "source": "manual"
+    }
+  },
+  "schema_version": 1
+}

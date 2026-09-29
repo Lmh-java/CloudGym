@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::EC2::KeyPair",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-09T06:05:17+00:00",
+      "ResourceDescription": {
+        "Identifier": "cloudgym-capability-20260909060504835500000001",
+        "Properties": "{\"KeyName\":\"cloudgym-capability-20260909060504835500000001\",\"KeyType\":\"ed25519\",\"KeyPairId\":\"key-0570d2eaea652080f\",\"KeyFingerprint\":\"zmDljNjNiJ6Oxit0kL4sMZiDEAX3bbRV6LkMjWfJrKs=\",\"PublicKeyMaterial\":\"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDB3SyDPnHBRLmt+wBzhVNGGOOUGoPJP82xcVyN7+nNi cloudgym-capability-20260909060504835500000001\\n\",\"Tags\":[]}"
+      },
+      "TypeName": "AWS::EC2::KeyPair"
+    }
+  ],
+  "recorded_at": "2026-09-09T06:05:17+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

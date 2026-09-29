@@ -1,0 +1,2 @@
+A workload runs as the identity created for it, and what it was asked for holds on what it creates.
+The account's settings, limits and markings hold for whatever you build, as the workloads already in place show; what you did not create stays as found.

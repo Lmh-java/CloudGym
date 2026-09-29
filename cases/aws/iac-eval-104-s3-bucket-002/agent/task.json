@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_104_s3_bucket",
+  "utterance": "The orders application's partner uploads need a store in this account. Create an S3 bucket whose name starts with `orders-intake-` to keep them, and define an S3 bucket policy that denies all S3 actions on the partner uploads for requests coming from the address 203.0.113.42. The policy document must carry a version, an identifier and that deny statement.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's data and how it is stored and laid out",
+    "intent": "the orders application's partner uploads are kept in exactly one store in this account, and the policy document on that store — carrying a policy version and an identifier — denies every S3 action on those uploads for requests coming from the address 203.0.113.42"
+  },
+  "notes": "which store keeps the partner uploads, how much of that store the refusal covers, and how the refused address is stated follow from the resolution policy and the account's state, not from the utterance",
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 104
+  }
+}

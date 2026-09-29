@@ -1,0 +1,71 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "designation-moved",
+      "message": "A role named lambda-exec-2026 turned up and the execution identity I read first is now marked as replaced. Is the new one what my function should run as?",
+      "fingerprint": {
+        "exec-identity-rollforward": ["lambda-exec-2026"],
+        "sibling-exec-namesake": ["lambda-exec-reports"],
+        "log-grant-baseline": ["lambda-log-writer"],
+        "pooled-runtime-identity": ["lambda-exec-pool"]
+      },
+      "expect": ["exec-identity-rollforward"]
+    },
+    {
+      "name": "namesake-identity",
+      "message": "There is a lambda-exec-reports in the account trusted for Lambda as well, with a grant of its own. Is that one of the account's own execution identities?",
+      "fingerprint": {
+        "exec-identity-rollforward": ["lambda-exec-2026"],
+        "sibling-exec-namesake": ["lambda-exec-reports"],
+        "log-grant-baseline": ["lambda-log-writer"],
+        "pooled-runtime-identity": ["lambda-exec-pool"]
+      },
+      "expect": ["sibling-exec-namesake"]
+    },
+    {
+      "name": "grant-swapped",
+      "message": "The identity I granted on carries lambda-log-writer now and what I attached is off it again. Which should it be carrying?",
+      "fingerprint": {
+        "exec-identity-rollforward": ["lambda-exec-2026"],
+        "sibling-exec-namesake": ["lambda-exec-reports"],
+        "log-grant-baseline": ["lambda-log-writer"],
+        "pooled-runtime-identity": ["lambda-exec-pool"]
+      },
+      "expect": ["log-grant-baseline"]
+    },
+    {
+      "name": "function-moved",
+      "message": "My function is running as lambda-exec-pool now, not as what I set it to. Should I put it back?",
+      "fingerprint": {
+        "exec-identity-rollforward": ["lambda-exec-2026"],
+        "sibling-exec-namesake": ["lambda-exec-reports"],
+        "log-grant-baseline": ["lambda-log-writer"],
+        "pooled-runtime-identity": ["lambda-exec-pool"]
+      },
+      "expect": ["pooled-runtime-identity"]
+    },
+    {
+      "name": "effect-in-words",
+      "message": "Things moved under me after I created the function: it runs as something else now, the identity I was reading from is marked differently and the grant I attached is gone. Is that expected?",
+      "fingerprint": {
+        "exec-identity-rollforward": ["lambda-exec-2026"],
+        "sibling-exec-namesake": ["lambda-exec-reports"],
+        "log-grant-baseline": ["lambda-log-writer"],
+        "pooled-runtime-identity": ["lambda-exec-pool"]
+      },
+      "expect": []
+    },
+    {
+      "name": "generic",
+      "message": "Before I start: are there conventions for Lambda execution identities in this account I should follow?",
+      "fingerprint": {
+        "exec-identity-rollforward": ["lambda-exec-2026"],
+        "sibling-exec-namesake": ["lambda-exec-reports"],
+        "log-grant-baseline": ["lambda-log-writer"],
+        "pooled-runtime-identity": ["lambda-exec-pool"]
+      },
+      "expect": []
+    }
+  ]
+}

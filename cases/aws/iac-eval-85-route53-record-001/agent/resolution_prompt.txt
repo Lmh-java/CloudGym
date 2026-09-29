@@ -1,0 +1,2 @@
+Publish into what the domain serves: the entry already answering, never a newer twin or a name that only points at one, and nowhere else; what you did not publish stays as found.
+An endpoint answers the address the domain publishes for it, not the one a request quotes.

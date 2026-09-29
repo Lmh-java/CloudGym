@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::EC2::SubnetRouteTableAssociation",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-01T06:50:02+00:00",
+      "ResourceDescription": {
+        "Identifier": "rtbassoc-04dd987d58ffc4a74",
+        "Properties": "{\"RouteTableId\":\"rtb-08c9a4c08829d6c09\",\"Id\":\"rtbassoc-04dd987d58ffc4a74\",\"SubnetId\":\"subnet-0839e80341cead67b\"}"
+      },
+      "TypeName": "AWS::EC2::SubnetRouteTableAssociation"
+    }
+  ],
+  "recorded_at": "2026-09-01T06:50:07+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

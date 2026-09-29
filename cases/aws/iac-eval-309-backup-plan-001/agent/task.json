@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_309_backup_plan",
+  "utterance": "The analytics team's `analyst-desktop` EC2 instance was provisioned a size larger than the team ever used, and it has never been backed up. Bring it down to a `t2.micro` — the team logs in over SSH with the `analyst-desktop` key pair, so it has to stay the machine that key opens — and put it on AWS Backup: a backup vault named `analyst-desktop-backup-vault`; a backup plan named `analyst-desktop-backup-plan` with a rule `analyst-desktop-daily` that stores into that vault on the schedule `cron(0 0 * * ? *)` and deletes each restore point after 7 days, and an advanced backup setting that turns `WindowsVSS` on for resource type `EC2`; a role named `analyst-desktop-backup-role` that AWS Backup can assume and that carries the AWS managed policy `AWSBackupServiceRolePolicyForBackup`; and a selection named `analyst-desktop-backup` on that plan that assigns the `analyst-desktop` instance through that role. The desk is in daily use, so the machine has to be up and running again when you finish. Close by reporting what the desktop ended up with: its instance type, whether it is running, and the tags on it.",
+  "main": {
+    "role": "backup-administrator",
+    "responsibility": "owns backup and recovery: what is versioned, kept and restorable",
+    "intent": "the EC2 instance tagged Name=analyst-desktop that stood at S0 still stands, still opens to the analyst-desktop key pair, runs as a t2.micro and is up when the agent finishes; a backup vault named analyst-desktop-backup-vault exists; a backup plan named analyst-desktop-backup-plan carries a rule named analyst-desktop-daily that targets that vault on the schedule cron(0 0 * * ? *) with a lifecycle that deletes each restore point after 7 days, and an advanced backup setting enabling WindowsVSS for resource type EC2; a backup selection named analyst-desktop-backup on that plan assigns that same instance's ARN through an IAM role named analyst-desktop-backup-role that backup.amazonaws.com can assume and that holds the managed policy AWSBackupServiceRolePolicyForBackup; and no second EC2 instance stands in the account in its place"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 309
+  }
+}

@@ -1,0 +1,2 @@
+A workload runs the way this account currently runs its workloads, and as the identity and entry point its own request states.
+Where the account holds what a request would stand up, the request joins it rather than replacing it; what you did not write stays as found.

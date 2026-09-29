@@ -1,0 +1,4195 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "chargeback-attribution": {
+      "status": "succeeded"
+     },
+     "curated-pod-execution-set": {
+      "status": "succeeded"
+     },
+     "namesake-profile-role-claim": {
+      "status": "succeeded"
+     },
+     "pooled-pod-identity": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "chargeback-attribution": {
+      "status": "succeeded"
+     },
+     "curated-pod-execution-set": {
+      "status": "succeeded"
+     },
+     "namesake-profile-role-claim": {
+      "status": "succeeded"
+     },
+     "pooled-pod-identity": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-fargate-pod-runner": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "pooled pod execution identity for this account's pods",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::111122223333:policy/eks-fargate-pod-execution-baseline"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-pod-runner",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       },
+       "eks-fargate-profile-example": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::111122223333:role/eks-fargate-pod-runner"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "orders-api: the name this workload holds in the account's naming space",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::111122223333:policy/eks-fargate-pod-execution-baseline"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-profile-example",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "unallocated-cc-7741"
+         }
+        ]
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "chargeback-attribution": {
+      "status": "succeeded"
+     },
+     "curated-pod-execution-set": {
+      "status": "succeeded"
+     },
+     "namesake-profile-role-claim": {
+      "status": "succeeded"
+     },
+     "pooled-pod-identity": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-fargate-profile-example": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-profile-example",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "fargate-profile-app"
+         }
+        ]
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "chargeback-attribution": {
+      "status": "succeeded"
+     },
+     "curated-pod-execution-set": {
+      "status": "succeeded"
+     },
+     "namesake-profile-role-claim": {
+      "status": "succeeded"
+     },
+     "pooled-pod-identity": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-fargate-pod-runner": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "pooled pod execution identity for this account's pods",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::111122223333:policy/eks-fargate-pod-execution-baseline"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-pod-runner",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       },
+       "eks-fargate-profile-example": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "orders-api: the name this workload holds in the account's naming space",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy",
+         "arn:aws:iam::111122223333:policy/eks-fargate-pod-execution-baseline"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-profile-example",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "fargate-profile-app"
+         }
+        ]
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-fargate-profile-example": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "chargeback-attribution": {
+      "status": "not-fired"
+     },
+     "curated-pod-execution-set": {
+      "status": "not-fired"
+     },
+     "namesake-profile-role-claim": {
+      "status": "not-fired"
+     },
+     "pooled-pod-identity": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-fargate-profile-example": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "eks-fargate-profile-example-pod-execution": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "pod execution identity",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-profile-example-pod-execution"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "chargeback-attribution": {
+      "status": "not-fired"
+     },
+     "curated-pod-execution-set": {
+      "status": "not-fired"
+     },
+     "namesake-profile-role-claim": {
+      "status": "not-fired"
+     },
+     "pooled-pod-identity": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-fargate-profile": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-profile"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "neg-role-under-another-name"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "chargeback-attribution": {
+      "status": "not-fired"
+     },
+     "curated-pod-execution-set": {
+      "status": "not-fired"
+     },
+     "namesake-profile-role-claim": {
+      "status": "not-fired"
+     },
+     "pooled-pod-identity": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-fargate-profile-example": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "neg-trusted-by-the-wrong-service"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "chargeback-attribution": {
+      "status": "not-fired"
+     },
+     "curated-pod-execution-set": {
+      "status": "not-fired"
+     },
+     "namesake-profile-role-claim": {
+      "status": "not-fired"
+     },
+     "pooled-pod-identity": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-fargate-profile-example": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Deny",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "neg-trust-denies-the-pod-service"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "chargeback-attribution": {
+      "status": "not-fired"
+     },
+     "curated-pod-execution-set": {
+      "status": "not-fired"
+     },
+     "namesake-profile-role-claim": {
+      "status": "not-fired"
+     },
+     "pooled-pod-identity": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-fargate-profile-example": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "fargate profile role",
+        "ManagedPolicyArns": [],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-profile-example",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "fargate-profile-app"
+         }
+        ]
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "neg-no-permissions-attached"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "chargeback-attribution": {
+      "status": "not-fired"
+     },
+     "curated-pod-execution-set": {
+      "status": "not-fired"
+     },
+     "namesake-profile-role-claim": {
+      "status": "not-fired"
+     },
+     "pooled-pod-identity": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-fargate-profile-example": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "neg-another-managed-policy"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "chargeback-attribution": {
+      "status": "not-fired"
+     },
+     "curated-pod-execution-set": {
+      "status": "not-fired"
+     },
+     "namesake-profile-role-claim": {
+      "status": "not-fired"
+     },
+     "pooled-pod-identity": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-fargate-profile-example": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy",
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "neg-permissions-on-another-identity"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "chargeback-attribution": {
+      "status": "not-fired"
+     },
+     "curated-pod-execution-set": {
+      "status": "not-fired"
+     },
+     "namesake-profile-role-claim": {
+      "status": "not-fired"
+     },
+     "pooled-pod-identity": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-fargate-profile-example": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "orders-api: the name this workload holds in the account's naming space",
+        "ManagedPolicyArns": [],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-profile-example",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-fargate-profile-example": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "orders-api: the name this workload holds in the account's naming space",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-profile-example",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "neg-identity-stood-there-already"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "chargeback-attribution": {
+      "status": "succeeded"
+     },
+     "curated-pod-execution-set": {
+      "status": "succeeded"
+     },
+     "namesake-profile-role-claim": {
+      "status": "succeeded"
+     },
+     "pooled-pod-identity": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-fargate-pod-runner": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "pooled pod execution identity for this account's pods",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::111122223333:policy/eks-fargate-pod-execution-baseline"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-pod-runner",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       },
+       "eks-fargate-profile-example": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy",
+         "arn:aws:iam::111122223333:policy/eks-fargate-pod-execution-baseline"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-profile-example",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "fargate-profile-app"
+         }
+        ]
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-namesake-profile-role-claim"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "chargeback-attribution": {
+      "status": "succeeded"
+     },
+     "curated-pod-execution-set": {
+      "status": "succeeded"
+     },
+     "namesake-profile-role-claim": {
+      "status": "succeeded"
+     },
+     "pooled-pod-identity": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-fargate-profile-example": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "orders-api: the name this workload holds in the account's naming space",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy",
+         "arn:aws:iam::111122223333:policy/eks-fargate-pod-execution-baseline"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-profile-example",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "fargate-profile-app"
+         }
+        ]
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-pooled-pod-identity"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "chargeback-attribution": {
+      "status": "succeeded"
+     },
+     "curated-pod-execution-set": {
+      "status": "succeeded"
+     },
+     "namesake-profile-role-claim": {
+      "status": "succeeded"
+     },
+     "pooled-pod-identity": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-fargate-pod-runner": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "pooled pod execution identity for this account's pods",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::111122223333:policy/eks-fargate-pod-execution-baseline"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-pod-runner",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       },
+       "eks-fargate-profile-example": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "orders-api: the name this workload holds in the account's naming space",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-profile-example",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "fargate-profile-app"
+         }
+        ]
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-curated-pod-execution-set"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "chargeback-attribution": {
+      "status": "succeeded"
+     },
+     "curated-pod-execution-set": {
+      "status": "succeeded"
+     },
+     "namesake-profile-role-claim": {
+      "status": "succeeded"
+     },
+     "pooled-pod-identity": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-fargate-pod-runner": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "pooled pod execution identity for this account's pods",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::111122223333:policy/eks-fargate-pod-execution-baseline"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-pod-runner",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       },
+       "eks-fargate-profile-example": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "orders-api: the name this workload holds in the account's naming space",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy",
+         "arn:aws:iam::111122223333:policy/eks-fargate-pod-execution-baseline"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-profile-example",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "unallocated-cc-7741"
+         }
+        ]
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-chargeback-attribution"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "chargeback-attribution": {
+      "status": "succeeded"
+     },
+     "curated-pod-execution-set": {
+      "status": "succeeded"
+     },
+     "namesake-profile-role-claim": {
+      "status": "failed"
+     },
+     "pooled-pod-identity": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-fargate-pod-runner": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "pooled pod execution identity for this account's pods",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::111122223333:policy/eks-fargate-pod-execution-baseline"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-pod-runner",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       },
+       "eks-fargate-profile-example": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy",
+         "arn:aws:iam::111122223333:policy/eks-fargate-pod-execution-baseline"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-profile-example",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "fargate-profile-app"
+         }
+        ]
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-namesake-profile-role-claim"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "chargeback-attribution": {
+      "status": "succeeded"
+     },
+     "curated-pod-execution-set": {
+      "status": "succeeded"
+     },
+     "namesake-profile-role-claim": {
+      "status": "succeeded"
+     },
+     "pooled-pod-identity": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-fargate-profile-example": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "orders-api: the name this workload holds in the account's naming space",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy",
+         "arn:aws:iam::111122223333:policy/eks-fargate-pod-execution-baseline"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-profile-example",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "fargate-profile-app"
+         }
+        ]
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-pooled-pod-identity"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "chargeback-attribution": {
+      "status": "succeeded"
+     },
+     "curated-pod-execution-set": {
+      "status": "failed"
+     },
+     "namesake-profile-role-claim": {
+      "status": "succeeded"
+     },
+     "pooled-pod-identity": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-fargate-pod-runner": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "pooled pod execution identity for this account's pods",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::111122223333:policy/eks-fargate-pod-execution-baseline"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-pod-runner",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       },
+       "eks-fargate-profile-example": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "orders-api: the name this workload holds in the account's naming space",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-profile-example",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "fargate-profile-app"
+         }
+        ]
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-curated-pod-execution-set"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "chargeback-attribution": {
+      "status": "failed"
+     },
+     "curated-pod-execution-set": {
+      "status": "succeeded"
+     },
+     "namesake-profile-role-claim": {
+      "status": "succeeded"
+     },
+     "pooled-pod-identity": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "eks-fargate-pod-runner": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "pooled pod execution identity for this account's pods",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::111122223333:policy/eks-fargate-pod-execution-baseline"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-pod-runner",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       },
+       "eks-fargate-profile-example": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "orders-api: the name this workload holds in the account's naming space",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy",
+         "arn:aws:iam::111122223333:policy/eks-fargate-pod-execution-baseline"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "eks-platform-cluster-role": {
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-chargeback-attribution"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSReservedSSO_SandboxAdministrator_0000000000000001": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_SandboxAdministrator_0000000000000001",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+           ],
+           "Condition": {
+            "StringEquals": {
+             "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Federated": "arn:aws:iam::000000000114:saml-provider/AWSSSO_d19a45a4a1239f62_DO_NOT_DELETE"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 43200,
+        "Path": "/aws-reserved/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000174",
+        "RoleName": "AWSReservedSSO_SandboxAdministrator_0000000000000001"
+       },
+       "AWSServiceRoleForAutoScaling": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "autoscaling.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Default Service-Linked Role enables access to AWS Services and Resources used or managed by Auto Scaling",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AutoScalingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/autoscaling.amazonaws.com/",
+        "RoleId": "AROA00000000000000208",
+        "RoleName": "AWSServiceRoleForAutoScaling"
+       },
+       "AWSServiceRoleForElasticBeanstalk": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticbeanstalk.amazonaws.com/AWSServiceRoleForElasticBeanstalk",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticbeanstalk.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticBeanstalkServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticbeanstalk.amazonaws.com/",
+        "RoleId": "AROA00000000000000211",
+        "RoleName": "AWSServiceRoleForElasticBeanstalk"
+       },
+       "AWSServiceRoleForElasticLoadBalancing": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticloadbalancing.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows ELB to call AWS services on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
+        "RoleId": "AROA00000000000000194",
+        "RoleName": "AWSServiceRoleForElasticLoadBalancing"
+       },
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000181",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000190",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000177",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000220",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000170",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000114:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000219",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "eks-platform-cluster-role": {
+        "Arn": "arn:aws:iam::000000000114:role/eks-platform-cluster-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000188",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSReservedSSO_SandboxAdministrator_0000000000000001": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_SandboxAdministrator_0000000000000001",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+           ],
+           "Condition": {
+            "StringEquals": {
+             "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Federated": "arn:aws:iam::000000000114:saml-provider/AWSSSO_d19a45a4a1239f62_DO_NOT_DELETE"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 43200,
+        "Path": "/aws-reserved/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000174",
+        "RoleName": "AWSReservedSSO_SandboxAdministrator_0000000000000001"
+       },
+       "AWSServiceRoleForAutoScaling": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "autoscaling.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Default Service-Linked Role enables access to AWS Services and Resources used or managed by Auto Scaling",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AutoScalingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/autoscaling.amazonaws.com/",
+        "RoleId": "AROA00000000000000208",
+        "RoleName": "AWSServiceRoleForAutoScaling"
+       },
+       "AWSServiceRoleForElasticBeanstalk": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticbeanstalk.amazonaws.com/AWSServiceRoleForElasticBeanstalk",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticbeanstalk.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticBeanstalkServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticbeanstalk.amazonaws.com/",
+        "RoleId": "AROA00000000000000211",
+        "RoleName": "AWSServiceRoleForElasticBeanstalk"
+       },
+       "AWSServiceRoleForElasticLoadBalancing": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticloadbalancing.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows ELB to call AWS services on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
+        "RoleId": "AROA00000000000000194",
+        "RoleName": "AWSServiceRoleForElasticLoadBalancing"
+       },
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000181",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000190",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000177",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000220",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000170",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000114:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000219",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "eks-fargate-profile-example": {
+        "Arn": "arn:aws:iam::000000000114:role/eks-fargate-profile-example",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "pod execution identity for EKS Fargate profiles",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000185",
+        "RoleName": "eks-fargate-profile-example",
+        "Tags": [
+         {
+          "Key": "Component",
+          "Value": "eks-fargate-pods"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       },
+       "eks-platform-cluster-role": {
+        "Arn": "arn:aws:iam::000000000114:role/eks-platform-cluster-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "control plane identity of the account's EKS platform",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000188",
+        "RoleName": "eks-platform-cluster-role",
+        "Tags": [
+         {
+          "Key": "Component",
+          "Value": "eks-control-plane"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

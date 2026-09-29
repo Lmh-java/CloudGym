@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_400_instance",
+  "utterance": "`inspection-vpc` (10.70.0.0/16) is the inspection workload's network, and `10.70.1.0/24` and `10.70.2.0/24` are its appliance-tier subnets — the space anything inspecting the workload's traffic sits in. Nothing in the network is load-balanced yet: it holds no load balancer, no target group and no instance of any kind. Stand up the front of the inspection fleet: launch one t2.micro appliance into `10.70.1.0/24`, put a Gateway Load Balancer across both appliance-tier subnets in front of it, and give that load balancer a listener whose only default action forwards to an instance-type target group in `inspection-vpc` on GENEVE port 6081 carrying that appliance registered on port 6081.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "inspection-vpc runs one new t2.micro appliance of the agent's own, standing in the segment the account marks as the place the workload's appliances land; the workload's inspected traffic goes through one gateway load balancer spanning exactly the segments of inspection-vpc that are the workload's appliance tier and in service when the work ends — the front the account already keeps for that traffic, when it keeps one — carrying a listener whose single default action forwards to an instance-type GENEVE:6081 target group in inspection-vpc, the group the account already keeps for that purpose when it keeps one, whose registered targets on port 6081 are exactly that appliance"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 400
+  }
+}

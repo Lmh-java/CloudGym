@@ -1,0 +1,515 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "case": "iac-eval-0-cloudwatch-log-group-002",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-104-s3-bucket-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-104-s3-bucket-002",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-117-s3-bucket-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-117-s3-bucket-002",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-127-instance-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-130-efs-file-system-001",
+      "status": "active",
+      "category": "EC"
+    },
+    {
+      "case": "iac-eval-149-iam-role-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-152-dynamodb-table-001",
+      "status": "active",
+      "category": "EC"
+    },
+    {
+      "case": "iac-eval-153-dynamodb-table-001",
+      "status": "active",
+      "category": "EC"
+    },
+    {
+      "case": "iac-eval-155-cloudwatch-event-rule-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-156-cloudwatch-event-rule-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-156-cloudwatch-event-rule-002",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-157-iam-role-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-157-iam-role-002",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-158-iam-role-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-163-dynamodb-table-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-165-dynamodb-table-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-165-dynamodb-table-002",
+      "status": "active",
+      "category": "EC"
+    },
+    {
+      "case": "iac-eval-166-dynamodb-table-001",
+      "status": "active",
+      "category": "EC"
+    },
+    {
+      "case": "iac-eval-185-iam-role-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-188-instance-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-191-efs-file-system-001",
+      "status": "active",
+      "category": "EC"
+    },
+    {
+      "case": "iac-eval-221-dynamodb-table-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-222-dynamodb-table-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-223-dynamodb-table-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-225-dynamodb-table-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-237-network-acl-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-240-instance-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-273-s3-bucket-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-273-s3-bucket-002",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-274-s3-bucket-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-294-codebuild-project-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-295-codebuild-project-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-296-codebuild-project-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-297-codebuild-project-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-298-codebuild-project-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-300-codebuild-project-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-301-codebuild-project-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-302-api-gateway-deployment-001",
+      "status": "active",
+      "category": "EC"
+    },
+    {
+      "case": "iac-eval-303-api-gateway-deployment-001",
+      "status": "active",
+      "category": "EC"
+    },
+    {
+      "case": "iac-eval-305-api-gateway-deployment-001",
+      "status": "active",
+      "category": "EC"
+    },
+    {
+      "case": "iac-eval-306-backup-plan-001",
+      "status": "active",
+      "category": "EC"
+    },
+    {
+      "case": "iac-eval-309-backup-plan-001",
+      "status": "active",
+      "category": "EC"
+    },
+    {
+      "case": "iac-eval-310-cloudwatch-event-rule-001",
+      "status": "active",
+      "category": "EC"
+    },
+    {
+      "case": "iac-eval-312-cloudwatch-event-rule-002",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-313-cloudwatch-event-rule-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-314-cloudwatch-event-rule-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-315-cloudwatch-event-rule-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-33-codebuild-project-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-35-codebuild-project-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-350-db-option-group-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-351-db-option-group-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-352-db-option-group-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-36-codebuild-project-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-37-codebuild-project-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-372-lightsail-disk-001",
+      "status": "active",
+      "category": "EC"
+    },
+    {
+      "case": "iac-eval-374-lightsail-disk-001",
+      "status": "active",
+      "category": "EC"
+    },
+    {
+      "case": "iac-eval-38-codebuild-project-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-388-instance-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-389-instance-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-39-codebuild-project-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-391-instance-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-394-instance-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-395-instance-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-4-db-instance-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-40-codebuild-project-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-400-instance-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-401-instance-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-404-instance-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-405-instance-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-423-efs-file-system-001",
+      "status": "active",
+      "category": "EC"
+    },
+    {
+      "case": "iac-eval-427-internet-gateway-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-428-internet-gateway-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-429-internet-gateway-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-430-internet-gateway-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-431-internet-gateway-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-432-internet-gateway-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-433-internet-gateway-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-434-internet-gateway-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-442-vpc-dhcp-options-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-443-vpc-dhcp-options-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-445-vpc-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-446-vpc-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-447-vpc-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-455-default-network-acl-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-456-network-acl-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-457-network-acl-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-5-db-instance-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-66-iam-policy-001",
+      "status": "active",
+      "category": "EC"
+    },
+    {
+      "case": "iac-eval-70-iam-role-001",
+      "status": "active",
+      "category": "EC"
+    },
+    {
+      "case": "iac-eval-73-iam-role-001",
+      "status": "active",
+      "category": "EC"
+    },
+    {
+      "case": "iac-eval-80-route53-record-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-80-route53-record-002",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-81-route53-health-check-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-81-route53-health-check-002",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-82-route53-health-check-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-83-cloudwatch-metric-alarm-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-84-route53-record-001",
+      "status": "active",
+      "category": "SC"
+    },
+    {
+      "case": "iac-eval-85-route53-record-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-96-iam-role-001",
+      "status": "active",
+      "category": "IA"
+    },
+    {
+      "case": "iac-eval-96-iam-role-002",
+      "status": "active",
+      "category": "SC"
+    }
+  ]
+}

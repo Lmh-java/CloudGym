@@ -1,0 +1,2 @@
+The stores a workload owns are the ones it owns when you finish, not the ones it owned when you started.
+A store belongs to the workload recorded as its owner, whatever its name reads like; what you were not asked to change stays as you found it.

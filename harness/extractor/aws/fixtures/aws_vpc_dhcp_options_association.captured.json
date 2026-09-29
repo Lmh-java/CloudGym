@@ -1,0 +1,24 @@
+{
+  "cloudcontrol_type": "AWS::EC2::VPCDHCPOptionsAssociation",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-22T18:03:31+00:00",
+      "ResourceDescription": {
+        "Identifier": "dopt-049607de5955ac275|vpc-00e00f39ff62034a4",
+        "Properties": "{\"DhcpOptionsId\": \"dopt-049607de5955ac275\", \"VpcId\": \"vpc-00e00f39ff62034a4\"}"
+      },
+      "TypeName": "AWS::EC2::VPCDHCPOptionsAssociation"
+    },
+    {
+      "ReadAt": "2026-09-22T18:03:31+00:00",
+      "ResourceDescription": {
+        "Identifier": "dopt-087adb6d51d17d072|vpc-0dec7ebf6f69d1ccf",
+        "Properties": "{\"DhcpOptionsId\": \"dopt-087adb6d51d17d072\", \"VpcId\": \"vpc-0dec7ebf6f69d1ccf\"}"
+      },
+      "TypeName": "AWS::EC2::VPCDHCPOptionsAssociation"
+    }
+  ],
+  "recorded_at": "2026-09-22T18:03:31+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

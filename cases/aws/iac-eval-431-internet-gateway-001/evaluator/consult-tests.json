@@ -1,0 +1,71 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "kept-gateway",
+      "message": "There is a gateway here called acct-edge-igw, marked PLT-5310, that I did not put there. Should this network's way out leave through that one instead of one I stand up myself?",
+      "expect": ["kept-edge-gateway"],
+      "fingerprint": {
+        "kept-edge-gateway": ["acct-edge-igw", "PLT-5310"],
+        "sibling-default-path": ["checkout-web", "SIB-6605"],
+        "edge-attribution": ["FIN-8821"],
+        "controlled-egress": ["NSE-4471"]
+      }
+    },
+    {
+      "name": "default-path",
+      "message": "The table everything here rides by default came back marked checkout-web under SIB-6605 and already sends 0.0.0.0/0 somewhere. Is that path mine to re-aim or remove while I add my own?",
+      "expect": ["sibling-default-path"],
+      "fingerprint": {
+        "kept-edge-gateway": ["acct-edge-igw", "PLT-5310"],
+        "sibling-default-path": ["checkout-web", "SIB-6605"],
+        "edge-attribution": ["FIN-8821"],
+        "controlled-egress": ["NSE-4471"]
+      }
+    },
+    {
+      "name": "chargeback-mark",
+      "message": "Everything I read back in this network carries FIN-8821 alongside its cost centre. Does the table I am standing up have to carry the same?",
+      "expect": ["edge-attribution"],
+      "fingerprint": {
+        "kept-edge-gateway": ["acct-edge-igw", "PLT-5310"],
+        "sibling-default-path": ["checkout-web", "SIB-6605"],
+        "edge-attribution": ["FIN-8821"],
+        "controlled-egress": ["NSE-4471"]
+      }
+    },
+    {
+      "name": "control-mark",
+      "message": "The network itself and the gateway it leaves through both came back carrying NSE-4471. Does what I add have to say the same thing about itself?",
+      "expect": ["controlled-egress"],
+      "fingerprint": {
+        "kept-edge-gateway": ["acct-edge-igw", "PLT-5310"],
+        "sibling-default-path": ["checkout-web", "SIB-6605"],
+        "edge-attribution": ["FIN-8821"],
+        "controlled-egress": ["NSE-4471"]
+      }
+    },
+    {
+      "name": "paraphrase",
+      "message": "While I was working, a gateway I did not create got attached to this network and a route to everywhere appeared on the table it rides by default. Whose conventions govern that?",
+      "expect": [],
+      "fingerprint": {
+        "kept-edge-gateway": ["acct-edge-igw", "PLT-5310"],
+        "sibling-default-path": ["checkout-web", "SIB-6605"],
+        "edge-attribution": ["FIN-8821"],
+        "controlled-egress": ["NSE-4471"]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "kept-edge-gateway": ["acct-edge-igw", "PLT-5310"],
+        "sibling-default-path": ["checkout-web", "SIB-6605"],
+        "edge-attribution": ["FIN-8821"],
+        "controlled-egress": ["NSE-4471"]
+      }
+    }
+  ]
+}

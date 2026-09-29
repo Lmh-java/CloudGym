@@ -1,0 +1,77 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "floor-record",
+      "message": "The file system I am putting this lifecycle configuration on has picked up a record reading burst-off-f2 that I did not write, and what it reserves changed under me while my call was being refused. Is that one to leave as it is, or is it mine to take off so my call goes through?",
+      "expect": [
+        "reserved-throughput-floor"
+      ],
+      "fingerprint": {
+        "reserved-throughput-floor": [
+          "burst-off-f2"
+        ],
+        "segment-capacity-raise": [
+          "dataplat-seg-9k"
+        ]
+      }
+    },
+    {
+      "name": "segment-record",
+      "message": "There is now a dataplat-seg-9k record on the file system, and it went busy again right as I re-issued my call. Who holds it that way, and does it have to stay that way once the transition is on?",
+      "expect": [
+        "segment-capacity-raise"
+      ],
+      "fingerprint": {
+        "reserved-throughput-floor": [
+          "burst-off-f2"
+        ],
+        "segment-capacity-raise": [
+          "dataplat-seg-9k"
+        ]
+      }
+    },
+    {
+      "name": "refusal-in-words",
+      "message": "My lifecycle call keeps coming back refused because the file system is not in a state that takes one, and something else keeps changing what it reserves. Whose change is that, and am I meant to sit it out or put the file system back on the throughput I found it on?",
+      "expect": [],
+      "fingerprint": {
+        "reserved-throughput-floor": [
+          "burst-off-f2"
+        ],
+        "segment-capacity-raise": [
+          "dataplat-seg-9k"
+        ]
+      }
+    },
+    {
+      "name": "both-records",
+      "message": "Two records I did not write turned up on the file system while I was working: burst-off-f2 and dataplat-seg-9k. Are either of them mine to clear before I finish?",
+      "expect": [
+        "reserved-throughput-floor",
+        "segment-capacity-raise"
+      ],
+      "fingerprint": {
+        "reserved-throughput-floor": [
+          "burst-off-f2"
+        ],
+        "segment-capacity-raise": [
+          "dataplat-seg-9k"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "reserved-throughput-floor": [
+          "burst-off-f2"
+        ],
+        "segment-capacity-raise": [
+          "dataplat-seg-9k"
+        ]
+      }
+    }
+  ]
+}

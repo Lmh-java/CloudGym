@@ -1,0 +1,152 @@
+{
+ "mode": "fingerprint",
+ "asks": [
+  {
+   "name": "gateway-already-attached",
+   "message": "The network will not take the gateway I made: one called shared-edge-igw is already attached to it, tagged EgressRef PLT-2208. Is that the one my public subnets are supposed to reach the internet through?",
+   "expect": [
+    "shared-edge-gateway"
+   ],
+   "fingerprint": {
+    "kept-edge-table": [
+     "edge-kept",
+     "NET-5521"
+    ],
+    "shared-edge-gateway": [
+     "shared-edge-igw",
+     "PLT-2208"
+    ],
+    "one-way-out": [
+     "single-path",
+     "NSE-4471"
+    ],
+    "staged-rollout-hold": [
+     "staged-hold",
+     "REL-3390"
+    ]
+   }
+  },
+  {
+   "name": "segments-moved-off-my-table",
+   "message": "The subnets I bound to the table I stood up are on the table that was already here instead, and that table now reads edge-kept under RoutingRef NET-5521. Is that where they belong?",
+   "expect": [
+    "kept-edge-table"
+   ],
+   "fingerprint": {
+    "kept-edge-table": [
+     "edge-kept",
+     "NET-5521"
+    ],
+    "shared-edge-gateway": [
+     "shared-edge-igw",
+     "PLT-2208"
+    ],
+    "one-way-out": [
+     "single-path",
+     "NSE-4471"
+    ],
+    "staged-rollout-hold": [
+     "staged-hold",
+     "REL-3390"
+    ]
+   }
+  },
+  {
+   "name": "my-default-route-disappeared",
+   "message": "The default route I put on my own table is gone, and the table that was already here reads single-path under EgressPathRef NSE-4471. Does the way out belong only on that one?",
+   "expect": [
+    "one-way-out"
+   ],
+   "fingerprint": {
+    "kept-edge-table": [
+     "edge-kept",
+     "NET-5521"
+    ],
+    "shared-edge-gateway": [
+     "shared-edge-igw",
+     "PLT-2208"
+    ],
+    "one-way-out": [
+     "single-path",
+     "NSE-4471"
+    ],
+    "staged-rollout-hold": [
+     "staged-hold",
+     "REL-3390"
+    ]
+   }
+  },
+  {
+   "name": "segment-held-at-a-stage",
+   "message": "One of the subnets I cut now reads staged-hold under RolloutRef REL-3390 and has been bound to a table that goes nowhere. Should any part of my public tier stand in it?",
+   "expect": [
+    "staged-rollout-hold"
+   ],
+   "fingerprint": {
+    "kept-edge-table": [
+     "edge-kept",
+     "NET-5521"
+    ],
+    "shared-edge-gateway": [
+     "shared-edge-igw",
+     "PLT-2208"
+    ],
+    "one-way-out": [
+     "single-path",
+     "NSE-4471"
+    ],
+    "staged-rollout-hold": [
+     "staged-hold",
+     "REL-3390"
+    ]
+   }
+  },
+  {
+   "name": "things-keep-changing",
+   "message": "Gateways, tables and subnets I did not create keep turning up in the network I was asked to use, and some of the routing I set keeps coming undone. Should what I build carry them, or only what I made myself?",
+   "expect": [],
+   "note": "describes the effect without naming anything that was read; it reaches nobody",
+   "fingerprint": {
+    "kept-edge-table": [
+     "edge-kept",
+     "NET-5521"
+    ],
+    "shared-edge-gateway": [
+     "shared-edge-igw",
+     "PLT-2208"
+    ],
+    "one-way-out": [
+     "single-path",
+     "NSE-4471"
+    ],
+    "staged-rollout-hold": [
+     "staged-hold",
+     "REL-3390"
+    ]
+   }
+  },
+  {
+   "name": "generic",
+   "message": "Any conventions I should follow here?",
+   "expect_at_most": 0,
+   "fingerprint": {
+    "kept-edge-table": [
+     "edge-kept",
+     "NET-5521"
+    ],
+    "shared-edge-gateway": [
+     "shared-edge-igw",
+     "PLT-2208"
+    ],
+    "one-way-out": [
+     "single-path",
+     "NSE-4471"
+    ],
+    "staged-rollout-hold": [
+     "staged-hold",
+     "REL-3390"
+    ]
+   }
+  }
+ ]
+}

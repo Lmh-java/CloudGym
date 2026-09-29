@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::EC2::EIP",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-23T23:12:46+00:00",
+      "ResourceDescription": {
+        "Identifier": "192.0.2.19|eipalloc-0f0f40e1cbdd12987",
+        "Properties": "{\"PublicIp\":\"192.0.2.19\",\"AllocationId\":\"eipalloc-0f0f40e1cbdd12987\",\"PublicIpv4Pool\":\"amazon\",\"Domain\":\"vpc\",\"Tags\":[{\"Value\":\"cloudgym-capability\",\"Key\":\"Name\"}],\"NetworkBorderGroup\":\"us-east-1\"}"
+      },
+      "TypeName": "AWS::EC2::EIP"
+    }
+  ],
+  "recorded_at": "2026-09-23T23:12:46+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

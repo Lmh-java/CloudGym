@@ -1,0 +1,2 @@
+Ingress belongs to the account: a workload reuses the segment, the group and the entry point already provided for reaching it instead of standing up its own.
+What a workload creates carries its surroundings' attribution, and what it did not write stays as found.

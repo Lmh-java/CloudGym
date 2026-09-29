@@ -1,0 +1,151 @@
+{
+ "mode": "fingerprint",
+ "asks": [
+  {
+   "name": "which-zone-answers",
+   "message": "Listing this account's hosted zones comes back with a second one, Z051883933QNMDR4HANDO, and its comment says it is a namespace handed over to its own zone. Is that where the failover pair belongs, rather than in the zone I was pointed at?",
+   "expect": [
+    "app-namespace-handover"
+   ],
+   "fingerprint": {
+    "app-namespace-handover": [
+     "Z051883933QNMDR4HANDO",
+     "namespace handed over to its own zone"
+    ],
+    "endpoint-health-rollup": [
+     "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10",
+     "endpoint-health-rollup-1758294113847293100"
+    ],
+    "stage-standby-path": [
+     "standby-stack",
+     "203.0.113.40",
+     "standby.app.example53.com"
+    ],
+    "active-side-readdress": [
+     "198.51.100.11"
+    ]
+   }
+  },
+  {
+   "name": "watch-stands-under-something",
+   "message": "The account's checks include b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10, raised under endpoint-health-rollup-1758294113847293100, and the watch I just raised is listed as one of its children. Should the record be gated on that one instead of on mine?",
+   "expect": [
+    "endpoint-health-rollup"
+   ],
+   "fingerprint": {
+    "app-namespace-handover": [
+     "Z051883933QNMDR4HANDO",
+     "namespace handed over to its own zone"
+    ],
+    "endpoint-health-rollup": [
+     "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10",
+     "endpoint-health-rollup-1758294113847293100"
+    ],
+    "stage-standby-path": [
+     "standby-stack",
+     "203.0.113.40",
+     "standby.app.example53.com"
+    ],
+    "active-side-readdress": [
+     "198.51.100.11"
+    ]
+   }
+  },
+  {
+   "name": "fallback-already-published",
+   "message": "The zone already answers standby.app.example53.com with 203.0.113.40, and an answer for the application name stands under the set identifier standby-stack, neither of which I published. Is that what the passive side is meant to be?",
+   "expect": [
+    "stage-standby-path"
+   ],
+   "fingerprint": {
+    "app-namespace-handover": [
+     "Z051883933QNMDR4HANDO",
+     "namespace handed over to its own zone"
+    ],
+    "endpoint-health-rollup": [
+     "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10",
+     "endpoint-health-rollup-1758294113847293100"
+    ],
+    "stage-standby-path": [
+     "standby-stack",
+     "203.0.113.40",
+     "standby.app.example53.com"
+    ],
+    "active-side-readdress": [
+     "198.51.100.11"
+    ]
+   }
+  },
+  {
+   "name": "active-end-stands-elsewhere",
+   "message": "The endpoint I was told to watch answers 198.51.100.11, which is not the address I was given for it. Which of the two should the active side of the pair answer?",
+   "expect": [
+    "active-side-readdress"
+   ],
+   "fingerprint": {
+    "app-namespace-handover": [
+     "Z051883933QNMDR4HANDO",
+     "namespace handed over to its own zone"
+    ],
+    "endpoint-health-rollup": [
+     "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10",
+     "endpoint-health-rollup-1758294113847293100"
+    ],
+    "stage-standby-path": [
+     "standby-stack",
+     "203.0.113.40",
+     "standby.app.example53.com"
+    ],
+    "active-side-readdress": [
+     "198.51.100.11"
+    ]
+   }
+  },
+  {
+   "name": "something-moved-under-me",
+   "message": "Something has changed about where the application's names are answered and about what watches its active endpoint. Whose conventions apply to the failover pair?",
+   "expect": [],
+   "fingerprint": {
+    "app-namespace-handover": [
+     "Z051883933QNMDR4HANDO",
+     "namespace handed over to its own zone"
+    ],
+    "endpoint-health-rollup": [
+     "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10",
+     "endpoint-health-rollup-1758294113847293100"
+    ],
+    "stage-standby-path": [
+     "standby-stack",
+     "203.0.113.40",
+     "standby.app.example53.com"
+    ],
+    "active-side-readdress": [
+     "198.51.100.11"
+    ]
+   }
+  },
+  {
+   "name": "generic",
+   "message": "Any conventions I should follow here?",
+   "expect": [],
+   "fingerprint": {
+    "app-namespace-handover": [
+     "Z051883933QNMDR4HANDO",
+     "namespace handed over to its own zone"
+    ],
+    "endpoint-health-rollup": [
+     "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10",
+     "endpoint-health-rollup-1758294113847293100"
+    ],
+    "stage-standby-path": [
+     "standby-stack",
+     "203.0.113.40",
+     "standby.app.example53.com"
+    ],
+    "active-side-readdress": [
+     "198.51.100.11"
+    ]
+   }
+  }
+ ]
+}

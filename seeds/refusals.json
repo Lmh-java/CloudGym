@@ -1,0 +1,1424 @@
+{
+  "botocore": "1.43.62",
+  "entries": [
+    {
+      "aliases": [],
+      "citation": "",
+      "codes": {
+        "InvalidDBInstanceStateFault": "InvalidDBInstanceState"
+      },
+      "evidence": [],
+      "id": "rds.db-instance",
+      "notes": "modifying / backing-up / rebooting refuse modification, snapshot and read-replica creation; the SCP denies Multi-AZ, so the in-flight change is a class or storage change, a reboot or a manual snapshot",
+      "observe": [
+        {
+          "absent_error": null,
+          "delay_s": 30,
+          "identifier_param": "DBInstanceIdentifier",
+          "max_attempts": 60,
+          "operation": "DescribeDBInstances",
+          "path": "DBInstances[].DBInstanceStatus",
+          "settled": "available",
+          "source": "sdk",
+          "terminal": [
+            "deleted",
+            "deleting",
+            "failed",
+            "incompatible-restore",
+            "incompatible-parameters"
+          ],
+          "waiter": "DBInstanceAvailable"
+        }
+      ],
+      "refusals": {
+        "InvalidDBInstanceStateFault": [
+          "AddRoleToDBInstance",
+          "AddTagsToResource",
+          "ApplyPendingMaintenanceAction",
+          "CreateBlueGreenDeployment",
+          "CreateDBCluster",
+          "CreateDBClusterEndpoint",
+          "CreateDBInstanceReadReplica",
+          "CreateDBSnapshot",
+          "CreateTenantDatabase",
+          "DeleteDBInstance",
+          "DeleteTenantDatabase",
+          "DescribeValidDBInstanceModifications",
+          "FailoverDBCluster",
+          "ModifyActivityStream",
+          "ModifyDBCluster",
+          "ModifyDBClusterEndpoint",
+          "ModifyDBInstance",
+          "ModifyGlobalCluster",
+          "ModifyTenantDatabase",
+          "PromoteReadReplica",
+          "RebootDBCluster",
+          "RebootDBInstance",
+          "RegisterDBProxyTargets",
+          "RemoveRoleFromDBInstance",
+          "RemoveTagsFromResource",
+          "RestoreDBClusterFromSnapshot",
+          "RestoreDBInstanceToPointInTime",
+          "StartActivityStream",
+          "StartDBCluster",
+          "StartDBInstance",
+          "StartDBInstanceAutomatedBackupsReplication",
+          "StopActivityStream",
+          "StopDBCluster",
+          "StopDBInstance",
+          "StopDBInstanceAutomatedBackupsReplication",
+          "SwitchoverReadReplica"
+        ]
+      },
+      "resource": "AWS::RDS::DBInstance",
+      "service": "rds",
+      "settle": "rds.db-instance",
+      "source": "sdk",
+      "window_s": null
+    },
+    {
+      "aliases": [],
+      "citation": "",
+      "codes": {
+        "InvalidDBClusterStateFault": "InvalidDBClusterStateFault"
+      },
+      "evidence": [],
+      "id": "rds.db-cluster",
+      "notes": "Aurora; no adapter yet (aws_rds_cluster is billable), listed for completeness",
+      "observe": [
+        {
+          "absent_error": null,
+          "delay_s": 30,
+          "identifier_param": "DBClusterIdentifier",
+          "max_attempts": 60,
+          "operation": "DescribeDBClusters",
+          "path": "DBClusters[].Status",
+          "settled": "available",
+          "source": "sdk",
+          "terminal": [
+            "deleted",
+            "deleting",
+            "failed",
+            "incompatible-restore",
+            "incompatible-parameters"
+          ],
+          "waiter": "DBClusterAvailable"
+        }
+      ],
+      "refusals": {
+        "InvalidDBClusterStateFault": [
+          "AddRoleToDBCluster",
+          "AddTagsToResource",
+          "ApplyPendingMaintenanceAction",
+          "BacktrackDBCluster",
+          "CopyDBClusterSnapshot",
+          "CreateBlueGreenDeployment",
+          "CreateDBCluster",
+          "CreateDBClusterEndpoint",
+          "CreateDBClusterSnapshot",
+          "CreateDBInstance",
+          "CreateDBInstanceReadReplica",
+          "CreateDBShardGroup",
+          "CreateGlobalCluster",
+          "DeleteDBCluster",
+          "DeleteDBClusterEndpoint",
+          "DeleteDBInstance",
+          "DeleteDBShardGroup",
+          "FailoverDBCluster",
+          "FailoverGlobalCluster",
+          "ModifyCurrentDBClusterCapacity",
+          "ModifyDBCluster",
+          "ModifyDBClusterEndpoint",
+          "ModifyDBInstance",
+          "ModifyDBShardGroup",
+          "ModifyGlobalCluster",
+          "PromoteReadReplicaDBCluster",
+          "RebootDBCluster",
+          "RegisterDBProxyTargets",
+          "RemoveFromGlobalCluster",
+          "RemoveRoleFromDBCluster",
+          "RemoveTagsFromResource",
+          "RestoreDBClusterFromS3",
+          "RestoreDBClusterToPointInTime",
+          "StartActivityStream",
+          "StartDBCluster",
+          "StartDBInstance",
+          "StopActivityStream",
+          "StopDBCluster",
+          "StopDBInstance",
+          "SwitchoverGlobalCluster"
+        ]
+      },
+      "resource": "AWS::RDS::DBCluster",
+      "service": "rds",
+      "settle": "rds.db-cluster",
+      "source": "sdk",
+      "window_s": null
+    },
+    {
+      "aliases": [],
+      "citation": "",
+      "codes": {
+        "LimitExceededException": "LimitExceededException",
+        "ResourceInUseException": "ResourceInUseException"
+      },
+      "evidence": [
+        {
+          "case": "refusal-probe",
+          "change": "another principal switching encryption to the AWS-managed KMS key",
+          "date": "2026-09-24",
+          "note": "an SSE switch does not hold the table in UPDATING against a stream change",
+          "operation": "UpdateTable",
+          "refused": false,
+          "waited_s": 0.1
+        },
+        {
+          "case": "refusal-probe",
+          "change": "another principal enabling point-in-time recovery",
+          "date": "2026-09-24",
+          "operation": "UpdateTable",
+          "refused": false,
+          "waited_s": 0.0
+        },
+        {
+          "case": "iac-eval-165-dynamodb-table-002",
+          "change": "another principal's global secondary index build",
+          "code": "ResourceInUseException",
+          "date": "2026-09-22",
+          "operation": "UpdateTable",
+          "refused": true,
+          "waited_s": 514
+        },
+        {
+          "case": "iac-eval-165-dynamodb-table-002",
+          "change": "another principal's global secondary index build",
+          "date": "2026-09-22",
+          "note": "declared in the SDK, but the call succeeded 0.3 s into the build with the table UPDATING",
+          "operation": "UpdateTimeToLive",
+          "refused": false
+        },
+        {
+          "case": "ec-cycles-ab-v1",
+          "change": "an index backfilling with the table already ACTIVE again",
+          "date": "2026-09-23",
+          "note": "the window is TableStatus UPDATING only, 30-75 s after the index create; the backfill runs ~8 min more with the table ACTIVE and a throughput UpdateTable then goes through (agents that polled until the index read ACTIVE waited ~500 s for nothing)",
+          "operation": "UpdateTable",
+          "refused": false
+        },
+        {
+          "case": "ec-cycles-ab-v1",
+          "change": "a throughput step on another owner's index (index UPDATING, table ACTIVE)",
+          "date": "2026-09-23",
+          "note": "k3 variant firing 2: busy by the index read, the held UpdateTable was released and succeeded",
+          "operation": "UpdateTable",
+          "refused": false
+        }
+      ],
+      "id": "dynamodb.table",
+      "notes": "UPDATING (an index being built) refuses a second UpdateTable; only one index change per table at a time; a table being deleted refuses recreation under its name. The SDK waiter reads TableStatus only, which returns to ACTIVE while an index is still backfilling (pilot iac-eval-165-dynamodb-table-002, 2026-09-22), so a manual observation counts the indexes not yet ACTIVE; that read marks busy for a second index operation (LimitExceededException), NOT for a throughput UpdateTable, which is refused only while TableStatus is UPDATING (ec-cycles-ab-v1, 2026-09-23)",
+      "observe": [
+        {
+          "absent_error": "ResourceNotFoundException",
+          "delay_s": 20,
+          "identifier_param": "TableName",
+          "max_attempts": 25,
+          "operation": "DescribeTable",
+          "path": "Table.TableStatus",
+          "settled": "ACTIVE",
+          "source": "sdk",
+          "terminal": [],
+          "waiter": "TableExists"
+        },
+        {
+          "absent_error": "ResourceNotFoundException",
+          "delay_s": null,
+          "identifier_param": "TableName",
+          "max_attempts": null,
+          "operation": "DescribeTable",
+          "path": "length(Table.GlobalSecondaryIndexes[?IndexStatus!='ACTIVE'] || `[]`)",
+          "settled": "0",
+          "source": "manual",
+          "terminal": [],
+          "waiter": null
+        }
+      ],
+      "refusals": {
+        "LimitExceededException": [
+          "CreateBackup",
+          "CreateGlobalTable",
+          "CreateTable",
+          "DeleteBackup",
+          "DeleteResourcePolicy",
+          "DeleteTable",
+          "DescribeExport",
+          "DisableKinesisStreamingDestination",
+          "EnableKinesisStreamingDestination",
+          "ExportTableToPointInTime",
+          "ImportTable",
+          "ListExports",
+          "ListImports",
+          "PutResourcePolicy",
+          "RestoreTableFromBackup",
+          "RestoreTableToPointInTime",
+          "TagResource",
+          "UntagResource",
+          "UpdateGlobalTableSettings",
+          "UpdateKinesisStreamingDestination",
+          "UpdateTable",
+          "UpdateTableReplicaAutoScaling",
+          "UpdateTimeToLive"
+        ],
+        "ResourceInUseException": [
+          "CreateTable",
+          "DeleteResourcePolicy",
+          "DeleteTable",
+          "DisableKinesisStreamingDestination",
+          "EnableKinesisStreamingDestination",
+          "ImportTable",
+          "PutResourcePolicy",
+          "TagResource",
+          "UntagResource",
+          "UpdateGlobalTableSettings",
+          "UpdateKinesisStreamingDestination",
+          "UpdateTable",
+          "UpdateTableReplicaAutoScaling",
+          "UpdateTimeToLive"
+        ]
+      },
+      "resource": "AWS::DynamoDB::Table",
+      "service": "dynamodb",
+      "settle": "dynamodb.table",
+      "source": "sdk",
+      "window_s": null
+    },
+    {
+      "aliases": [],
+      "citation": "",
+      "codes": {
+        "ResourceConflictException": "ResourceConflictException"
+      },
+      "evidence": [],
+      "id": "lambda.function",
+      "notes": "State Pending (a VPC-attached function being created) and LastUpdateStatus InProgress refuse configuration and code updates",
+      "observe": [
+        {
+          "absent_error": null,
+          "delay_s": 5,
+          "identifier_param": "FunctionName",
+          "max_attempts": 60,
+          "operation": "GetFunctionConfiguration",
+          "path": "State",
+          "settled": "Active",
+          "source": "sdk",
+          "terminal": [
+            "Failed"
+          ],
+          "waiter": "FunctionActive"
+        },
+        {
+          "absent_error": null,
+          "delay_s": 5,
+          "identifier_param": "FunctionName",
+          "max_attempts": 60,
+          "operation": "GetFunctionConfiguration",
+          "path": "LastUpdateStatus",
+          "settled": "Successful",
+          "source": "sdk",
+          "terminal": [
+            "Failed"
+          ],
+          "waiter": "FunctionUpdated"
+        }
+      ],
+      "refusals": {
+        "ResourceConflictException": [
+          "AddLayerVersionPermission",
+          "AddPermission",
+          "CreateAlias",
+          "CreateCapacityProvider",
+          "CreateEventSourceMapping",
+          "CreateFunction",
+          "CreateFunctionUrlConfig",
+          "DeleteAlias",
+          "DeleteCapacityProvider",
+          "DeleteCodeSigningConfig",
+          "DeleteEventSourceMapping",
+          "DeleteFunction",
+          "DeleteFunctionCodeSigningConfig",
+          "DeleteFunctionConcurrency",
+          "DeleteFunctionEventInvokeConfig",
+          "DeleteFunctionUrlConfig",
+          "DeleteProvisionedConcurrencyConfig",
+          "Invoke",
+          "InvokeAsync",
+          "InvokeWithResponseStream",
+          "PublishVersion",
+          "PutFunctionCodeSigningConfig",
+          "PutFunctionConcurrency",
+          "PutFunctionEventInvokeConfig",
+          "PutFunctionRecursionConfig",
+          "PutFunctionScalingConfig",
+          "PutProvisionedConcurrencyConfig",
+          "PutRuntimeManagementConfig",
+          "TagResource",
+          "UntagResource",
+          "UpdateAlias",
+          "UpdateCapacityProvider",
+          "UpdateEventSourceMapping",
+          "UpdateFunctionCode",
+          "UpdateFunctionConfiguration",
+          "UpdateFunctionEventInvokeConfig",
+          "UpdateFunctionUrlConfig"
+        ]
+      },
+      "resource": "AWS::Lambda::Function",
+      "service": "lambda",
+      "settle": "lambda.function",
+      "source": "sdk",
+      "window_s": null
+    },
+    {
+      "aliases": [
+        "Throttling"
+      ],
+      "citation": "",
+      "codes": {
+        "PriorRequestNotComplete": "PriorRequestNotComplete"
+      },
+      "evidence": [
+        {
+          "case": "iac-eval-84-route53-record-002",
+          "change": "another principal's change batch PENDING (propagating) in the same hosted zone",
+          "date": "2026-09-22",
+          "note": "two batches observed PENDING, the agent's held change released into each and accepted; Route 53 refuses only while a request is still being accepted (milliseconds), not while an accepted batch propagates",
+          "operation": "ChangeResourceRecordSets",
+          "refused": false
+        }
+      ],
+      "id": "route53.change",
+      "notes": "a change batch PENDING on a record set refuses the next change to it; the observing read takes the change id the first ChangeResourceRecordSets returned. Alias: Route 53 also answers with Throttling 'The request was rejected because Route 53 was still processing a prior request' (seen in consult-0-ctl-v1, 2026-09-19); match that code with that message",
+      "observe": [
+        {
+          "absent_error": null,
+          "delay_s": 30,
+          "identifier_param": "Id",
+          "max_attempts": 60,
+          "operation": "GetChange",
+          "path": "ChangeInfo.Status",
+          "settled": "INSYNC",
+          "source": "sdk",
+          "terminal": [],
+          "waiter": "ResourceRecordSetsChanged"
+        }
+      ],
+      "refusals": {
+        "PriorRequestNotComplete": [
+          "AssociateVPCWithHostedZone",
+          "ChangeResourceRecordSets",
+          "ChangeTagsForResource",
+          "DeleteHostedZone",
+          "DeleteTrafficPolicyInstance",
+          "ListTagsForResource",
+          "ListTagsForResources",
+          "UpdateHostedZoneComment",
+          "UpdateHostedZoneFeatures",
+          "UpdateTrafficPolicyInstance"
+        ]
+      },
+      "resource": "AWS::Route53::RecordSet",
+      "service": "route53",
+      "settle": null,
+      "source": "sdk",
+      "window_s": null
+    },
+    {
+      "aliases": [],
+      "citation": "",
+      "codes": {
+        "OperationNotPermittedException": "OperationNotPermitted",
+        "ResourceInUseException": "ResourceInUse"
+      },
+      "evidence": [
+        {
+          "case": "refusal-probe",
+          "change": "the network load balancer provisioning",
+          "date": "2026-09-24",
+          "operation": "ModifyLoadBalancerAttributes",
+          "refused": false,
+          "waited_s": 0.1
+        },
+        {
+          "case": "refusal-probe",
+          "change": "the network load balancer provisioning",
+          "date": "2026-09-24",
+          "operation": "SetSubnets",
+          "refused": false,
+          "waited_s": 0.3
+        },
+        {
+          "case": "refusal-probe",
+          "change": "the network load balancer provisioning",
+          "date": "2026-09-24",
+          "note": "provisioning refuses none of the three; the family has no confirmed EC window",
+          "operation": "CreateListener",
+          "refused": false,
+          "waited_s": 0.1
+        }
+      ],
+      "id": "elbv2.load-balancer",
+      "notes": "provisioning; the identifier param is a list (LoadBalancerArns)",
+      "observe": [
+        {
+          "absent_error": "LoadBalancerNotFound",
+          "delay_s": 15,
+          "identifier_param": "LoadBalancerArns",
+          "max_attempts": 40,
+          "operation": "DescribeLoadBalancers",
+          "path": "LoadBalancers[].State.Code",
+          "settled": "active",
+          "source": "sdk",
+          "terminal": [],
+          "waiter": "LoadBalancerAvailable"
+        }
+      ],
+      "refusals": {
+        "OperationNotPermittedException": [
+          "CreateLoadBalancer",
+          "DeleteLoadBalancer",
+          "DeleteRule",
+          "ModifyCapacityReservation",
+          "ModifyRule",
+          "RemoveListenerCertificates",
+          "SetRulePriorities"
+        ],
+        "ResourceInUseException": [
+          "CreateLoadBalancer",
+          "DeleteListener",
+          "DeleteLoadBalancer",
+          "DeleteTargetGroup"
+        ]
+      },
+      "resource": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+      "service": "elbv2",
+      "settle": null,
+      "source": "sdk",
+      "window_s": null
+    },
+    {
+      "aliases": [],
+      "citation": "",
+      "codes": {
+        "OperationInProgressException": "OperationInProgressFailure"
+      },
+      "evidence": [],
+      "id": "elasticbeanstalk.environment",
+      "notes": "Updating refuses a second update; slow family (rule 5); the identifier param is a list",
+      "observe": [
+        {
+          "absent_error": null,
+          "delay_s": 20,
+          "identifier_param": "EnvironmentNames",
+          "max_attempts": 20,
+          "operation": "DescribeEnvironments",
+          "path": "Environments[].Status",
+          "settled": "Ready",
+          "source": "sdk",
+          "terminal": [],
+          "waiter": "EnvironmentUpdated"
+        }
+      ],
+      "refusals": {
+        "OperationInProgressException": [
+          "DeleteApplication",
+          "DeleteApplicationVersion",
+          "DeleteConfigurationTemplate",
+          "DeletePlatformVersion",
+          "UpdateTagsForResource"
+        ]
+      },
+      "resource": "AWS::ElasticBeanstalk::Environment",
+      "service": "elasticbeanstalk",
+      "settle": "elasticbeanstalk.environment",
+      "source": "sdk",
+      "window_s": null
+    },
+    {
+      "aliases": [],
+      "citation": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_StartDeliveryStreamEncryption.html",
+      "codes": {
+        "ConcurrentModificationException": "ConcurrentModificationException",
+        "ResourceInUseException": "ResourceInUseException"
+      },
+      "evidence": [],
+      "id": "firehose.delivery-stream",
+      "notes": "the errors are in the SDK; Firehose ships no waiters, so the observing reads are manual. A stream is busy while CREATING, and an ACTIVE stream while its server-side encryption is ENABLING or DISABLING (Start/StopDeliveryStreamEncryption); ConcurrentModificationException is UpdateDestination's stale CurrentDeliveryStreamVersionId after another principal's update",
+      "observe": [
+        {
+          "absent_error": "ResourceNotFoundException",
+          "delay_s": null,
+          "identifier_param": "DeliveryStreamName",
+          "max_attempts": null,
+          "operation": "DescribeDeliveryStream",
+          "path": "DeliveryStreamDescription.DeliveryStreamStatus",
+          "settled": "ACTIVE",
+          "source": "manual",
+          "terminal": [
+            "CREATING_FAILED",
+            "DELETING_FAILED"
+          ],
+          "waiter": null
+        },
+        {
+          "absent_error": "ResourceNotFoundException",
+          "delay_s": null,
+          "identifier_param": "DeliveryStreamName",
+          "max_attempts": null,
+          "operation": "DescribeDeliveryStream",
+          "path": "contains(`[\"ENABLING\", \"DISABLING\"]`, DeliveryStreamDescription.DeliveryStreamEncryptionConfiguration.Status || 'NONE')",
+          "settled": "False",
+          "source": "manual",
+          "terminal": [],
+          "waiter": null
+        }
+      ],
+      "refusals": {
+        "ConcurrentModificationException": [
+          "UpdateDestination"
+        ],
+        "ResourceInUseException": [
+          "CreateDeliveryStream",
+          "DeleteDeliveryStream",
+          "StartDeliveryStreamEncryption",
+          "StopDeliveryStreamEncryption",
+          "TagDeliveryStream",
+          "UntagDeliveryStream",
+          "UpdateDestination"
+        ]
+      },
+      "resource": "AWS::KinesisFirehose::DeliveryStream",
+      "service": "firehose",
+      "settle": "firehose.delivery-stream",
+      "source": "manual",
+      "window_s": null
+    },
+    {
+      "aliases": [],
+      "citation": "https://docs.aws.amazon.com/lambda/latest/api/API_UpdateEventSourceMapping.html",
+      "codes": {
+        "ResourceInUseException": "ResourceInUseException"
+      },
+      "evidence": [
+        {
+          "case": "refusal-probe",
+          "change": "the mapping just created (Creating)",
+          "date": "2026-09-24",
+          "operation": "UpdateEventSourceMapping",
+          "refused": false,
+          "waited_s": 0.4
+        },
+        {
+          "case": "refusal-probe",
+          "change": "another principal's batch-size update (Updating)",
+          "date": "2026-09-24",
+          "operation": "UpdateEventSourceMapping",
+          "refused": false,
+          "waited_s": 0.3
+        },
+        {
+          "case": "refusal-probe",
+          "change": "another principal disabling the mapping (Disabling)",
+          "date": "2026-09-24",
+          "operation": "UpdateEventSourceMapping",
+          "refused": false,
+          "waited_s": 0.4
+        },
+        {
+          "case": "refusal-probe",
+          "change": "another principal re-enabling the mapping (Enabling)",
+          "date": "2026-09-24",
+          "note": "declared in the SDK, but no mapping transition refused a concurrent update or delete; no EC window",
+          "operation": "DeleteEventSourceMapping",
+          "refused": false,
+          "waited_s": 0.3
+        }
+      ],
+      "id": "lambda.event-source-mapping",
+      "notes": "a mapping refuses Update/DeleteEventSourceMapping while it moves (Creating, Enabling, Disabling, Updating, Deleting); Lambda ships no mapping waiter, so the read is manual",
+      "observe": [
+        {
+          "absent_error": "ResourceNotFoundException",
+          "delay_s": null,
+          "identifier_param": "UUID",
+          "max_attempts": null,
+          "operation": "GetEventSourceMapping",
+          "path": "contains(`[\"Creating\", \"Enabling\", \"Disabling\", \"Updating\", \"Deleting\"]`, State)",
+          "settled": "False",
+          "source": "manual",
+          "terminal": [],
+          "waiter": null
+        }
+      ],
+      "refusals": {
+        "ResourceInUseException": [
+          "DeleteEventSourceMapping",
+          "UpdateEventSourceMapping"
+        ]
+      },
+      "resource": "AWS::Lambda::EventSourceMapping",
+      "service": "lambda",
+      "settle": null,
+      "source": "manual",
+      "window_s": null
+    },
+    {
+      "aliases": [],
+      "citation": "https://docs.aws.amazon.com/efs/latest/ug/API_FileSystemDescription.html",
+      "codes": {
+        "IncorrectFileSystemLifeCycleState": "IncorrectFileSystemLifeCycleState"
+      },
+      "evidence": [
+        {
+          "case": "refusal-probe",
+          "change": "another principal switching throughput to elastic (updating)",
+          "code": "IncorrectFileSystemLifeCycleState",
+          "date": "2026-09-24",
+          "operation": "PutLifecycleConfiguration",
+          "refused": true,
+          "waited_s": 3.2
+        },
+        {
+          "case": "refusal-probe",
+          "change": "the file system being created (creating)",
+          "code": "IncorrectFileSystemLifeCycleState",
+          "date": "2026-09-24",
+          "note": "confirmed, but the window is seconds: a thin EC case, like the Lambda configuration update",
+          "operation": "PutFileSystemPolicy",
+          "refused": true,
+          "waited_s": 6.2
+        }
+      ],
+      "id": "efs.file-system",
+      "notes": "a file system refuses lifecycle, policy, backup-policy and throughput changes unless available (creating, updating, deleting); EFS ships no waiters",
+      "observe": [
+        {
+          "absent_error": "FileSystemNotFound",
+          "delay_s": null,
+          "identifier_param": "FileSystemId",
+          "max_attempts": null,
+          "operation": "DescribeFileSystems",
+          "path": "FileSystems[0].LifeCycleState",
+          "settled": "available",
+          "source": "manual",
+          "terminal": [
+            "error"
+          ],
+          "waiter": null
+        }
+      ],
+      "refusals": {
+        "IncorrectFileSystemLifeCycleState": [
+          "CreateAccessPoint",
+          "CreateMountTarget",
+          "CreateReplicationConfiguration",
+          "DeleteFileSystemPolicy",
+          "PutBackupPolicy",
+          "PutFileSystemPolicy",
+          "PutLifecycleConfiguration",
+          "UpdateFileSystem",
+          "UpdateFileSystemProtection"
+        ]
+      },
+      "resource": "AWS::EFS::FileSystem",
+      "service": "efs",
+      "settle": "efs.file-system",
+      "source": "manual",
+      "window_s": null
+    },
+    {
+      "aliases": [],
+      "citation": "https://docs.aws.amazon.com/efs/latest/ug/API_MountTargetDescription.html",
+      "codes": {
+        "IncorrectMountTargetState": "IncorrectMountTargetState"
+      },
+      "evidence": [
+        {
+          "case": "refusal-probe",
+          "change": "the mount target being created (creating)",
+          "date": "2026-09-24",
+          "operation": "ModifyMountTargetSecurityGroups",
+          "refused": false,
+          "waited_s": 0.6
+        },
+        {
+          "case": "refusal-probe",
+          "change": "another principal's security-group change",
+          "date": "2026-09-24",
+          "note": "declared in the SDK; security-group changes on a creating or updating mount target went through",
+          "operation": "ModifyMountTargetSecurityGroups",
+          "refused": false,
+          "waited_s": 0.6
+        }
+      ],
+      "id": "efs.mount-target",
+      "notes": "a mount target refuses security-group changes unless available (creating, updating, deleting)",
+      "observe": [
+        {
+          "absent_error": "MountTargetNotFound",
+          "delay_s": null,
+          "identifier_param": "MountTargetId",
+          "max_attempts": null,
+          "operation": "DescribeMountTargets",
+          "path": "MountTargets[0].LifeCycleState",
+          "settled": "available",
+          "source": "manual",
+          "terminal": [
+            "error"
+          ],
+          "waiter": null
+        }
+      ],
+      "refusals": {
+        "IncorrectMountTargetState": [
+          "DescribeMountTargetSecurityGroups",
+          "ModifyMountTargetSecurityGroups"
+        ]
+      },
+      "resource": "AWS::EFS::MountTarget",
+      "service": "efs",
+      "settle": null,
+      "source": "manual",
+      "window_s": null
+    },
+    {
+      "aliases": [],
+      "citation": "https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html",
+      "codes": {
+        "OperationNotPermitted": "OperationNotPermitted"
+      },
+      "evidence": [
+        {
+          "case": "refusal-probe",
+          "change": "the connection pending acceptance by the peer VPC's owner",
+          "code": "OperationNotPermitted",
+          "date": "2026-09-24",
+          "note": "refused until the peer accepts (accepted at 20 s in the probe); the window is as long as the accepter takes. A first run without DNS hostnames on both VPCs failed permanently with the same code: the case must enable them",
+          "operation": "ModifyVpcPeeringConnectionOptions",
+          "refused": true,
+          "waited_s": 25.6
+        },
+        {
+          "case": "refusal-probe",
+          "change": "the connection pending acceptance by the peer VPC's owner",
+          "date": "2026-09-24",
+          "note": "a route to a pending connection is accepted",
+          "operation": "CreateRoute",
+          "refused": false,
+          "waited_s": 0.2
+        }
+      ],
+      "id": "ec2.vpc-peering",
+      "notes": "a connection pending acceptance (or provisioning) is not active; EC2's model declares no errors, so the refused operations and code come from the probe's evidence",
+      "observe": [
+        {
+          "absent_error": "InvalidVpcPeeringConnectionID.NotFound",
+          "delay_s": null,
+          "identifier_param": "VpcPeeringConnectionIds",
+          "max_attempts": null,
+          "operation": "DescribeVpcPeeringConnections",
+          "path": "VpcPeeringConnections[0].Status.Code",
+          "settled": "active",
+          "source": "manual",
+          "terminal": [
+            "rejected",
+            "failed",
+            "expired",
+            "deleted"
+          ],
+          "waiter": null
+        }
+      ],
+      "refusals": {
+        "OperationNotPermitted": [
+          "ModifyVpcPeeringConnectionOptions"
+        ]
+      },
+      "resource": "AWS::EC2::VPCPeeringConnection",
+      "service": "ec2",
+      "settle": null,
+      "source": "manual",
+      "window_s": null
+    },
+    {
+      "aliases": [],
+      "citation": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_InstanceState.html",
+      "codes": {
+        "OperationFailureException": "OperationFailureException"
+      },
+      "evidence": [
+        {
+          "case": "refusal-probe",
+          "change": "another principal stopping the instance (stopping)",
+          "code": "OperationFailureException",
+          "date": "2026-09-24",
+          "operation": "AttachDisk",
+          "refused": true,
+          "waited_s": 40.5
+        },
+        {
+          "case": "refusal-probe",
+          "change": "another principal starting the instance (pending)",
+          "code": "OperationFailureException",
+          "date": "2026-09-24",
+          "operation": "StopInstance",
+          "refused": true,
+          "waited_s": 9.3
+        }
+      ],
+      "id": "lightsail.instance",
+      "notes": "an instance in transition (pending, stopping, starting, rebooting) refuses stop/start, disk attach and snapshots; Lightsail declares its two generic errors on 120-160 operations, far too broad, so refused pairs come from probe evidence only",
+      "observe": [
+        {
+          "absent_error": "NotFoundException",
+          "delay_s": null,
+          "identifier_param": "instanceName",
+          "max_attempts": null,
+          "operation": "GetInstance",
+          "path": "contains(`[\"pending\", \"stopping\", \"starting\", \"rebooting\"]`, instance.state.name)",
+          "settled": "False",
+          "source": "manual",
+          "terminal": [],
+          "waiter": null
+        }
+      ],
+      "refusals": {
+        "OperationFailureException": [
+          "AttachDisk",
+          "StopInstance",
+          "StartInstance"
+        ]
+      },
+      "resource": "AWS::Lightsail::Instance",
+      "service": "lightsail",
+      "settle": null,
+      "source": "manual",
+      "window_s": null
+    },
+    {
+      "aliases": [],
+      "citation": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Disk.html",
+      "codes": {},
+      "evidence": [
+        {
+          "case": "refusal-probe",
+          "change": "another principal detaching the disk (detaching)",
+          "date": "2026-09-24",
+          "operation": "AttachDisk",
+          "refused": false,
+          "waited_s": 1.2
+        }
+      ],
+      "id": "lightsail.disk",
+      "notes": "a disk attaching or detaching (or pending) refuses attach/detach; pairs from probe evidence",
+      "observe": [
+        {
+          "absent_error": "NotFoundException",
+          "delay_s": null,
+          "identifier_param": "diskName",
+          "max_attempts": null,
+          "operation": "GetDisk",
+          "path": "contains(`[\"attaching\", \"detaching\"]`, disk.attachmentState || 'none')",
+          "settled": "False",
+          "source": "manual",
+          "terminal": [],
+          "waiter": null
+        }
+      ],
+      "refusals": {},
+      "resource": "AWS::Lightsail::Disk",
+      "service": "lightsail",
+      "settle": null,
+      "source": "manual",
+      "window_s": null
+    },
+    {
+      "aliases": [],
+      "citation": "https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_UpdateApplication.html",
+      "codes": {
+        "ConcurrentModificationException": "ConcurrentModificationException",
+        "ResourceInUseException": "ResourceInUseException"
+      },
+      "evidence": [
+        {
+          "case": "refusal-probe",
+          "change": "another principal's configuration update on a READY application (UPDATING)",
+          "date": "2026-09-24",
+          "note": "an update of a non-running application applies at once; ResourceInUseException needs a running one",
+          "operation": "UpdateApplication",
+          "refused": false,
+          "waited_s": 0.2
+        },
+        {
+          "case": "refusal-probe",
+          "change": "another principal's update applied after the agent read CurrentApplicationVersionId",
+          "code": "ConcurrentModificationException",
+          "date": "2026-09-24",
+          "note": "optimistic concurrency: refused until the agent re-reads the version id (never succeeded with the stale id), the same shape as Firehose's destination version",
+          "operation": "UpdateApplication",
+          "refused": true
+        }
+      ],
+      "id": "kinesisanalyticsv2.application",
+      "notes": "an application refuses updates while STARTING, STOPPING, UPDATING, AUTOSCALING or ROLLING_BACK (ResourceInUseException); an update carrying a stale CurrentApplicationVersionId after another principal's update fails with ConcurrentModificationException. No waiters",
+      "observe": [
+        {
+          "absent_error": "ResourceNotFoundException",
+          "delay_s": null,
+          "identifier_param": "ApplicationName",
+          "max_attempts": null,
+          "operation": "DescribeApplication",
+          "path": "contains(`[\"STARTING\", \"STOPPING\", \"UPDATING\", \"AUTOSCALING\", \"ROLLING_BACK\", \"FORCE_STOPPING\", \"DELETING\", \"MAINTENANCE\"]`, ApplicationDetail.ApplicationStatus)",
+          "settled": "False",
+          "source": "manual",
+          "terminal": [],
+          "waiter": null
+        }
+      ],
+      "refusals": {
+        "ConcurrentModificationException": [
+          "AddApplicationCloudWatchLoggingOption",
+          "AddApplicationInput",
+          "AddApplicationInputProcessingConfiguration",
+          "AddApplicationOutput",
+          "AddApplicationReferenceDataSource",
+          "AddApplicationVpcConfiguration",
+          "CreateApplication",
+          "DeleteApplication",
+          "DeleteApplicationCloudWatchLoggingOption",
+          "DeleteApplicationInputProcessingConfiguration",
+          "DeleteApplicationOutput",
+          "DeleteApplicationReferenceDataSource",
+          "DeleteApplicationSnapshot",
+          "DeleteApplicationVpcConfiguration",
+          "ListTagsForResource",
+          "RollbackApplication",
+          "StopApplication",
+          "TagResource",
+          "UntagResource",
+          "UpdateApplication",
+          "UpdateApplicationMaintenanceConfiguration"
+        ],
+        "ResourceInUseException": [
+          "AddApplicationCloudWatchLoggingOption",
+          "AddApplicationInput",
+          "AddApplicationInputProcessingConfiguration",
+          "AddApplicationOutput",
+          "AddApplicationReferenceDataSource",
+          "AddApplicationVpcConfiguration",
+          "CreateApplication",
+          "CreateApplicationPresignedUrl",
+          "CreateApplicationSnapshot",
+          "DeleteApplication",
+          "DeleteApplicationCloudWatchLoggingOption",
+          "DeleteApplicationInputProcessingConfiguration",
+          "DeleteApplicationOutput",
+          "DeleteApplicationReferenceDataSource",
+          "DeleteApplicationSnapshot",
+          "DeleteApplicationVpcConfiguration",
+          "RollbackApplication",
+          "StartApplication",
+          "StopApplication",
+          "TagResource",
+          "UntagResource",
+          "UpdateApplication",
+          "UpdateApplicationMaintenanceConfiguration"
+        ]
+      },
+      "resource": "AWS::KinesisAnalyticsV2::Application",
+      "service": "kinesisanalyticsv2",
+      "settle": "kinesisanalyticsv2.application",
+      "source": "manual",
+      "window_s": null
+    },
+    {
+      "aliases": [],
+      "citation": "",
+      "codes": {
+        "ConflictException": "ConflictException",
+        "PreconditionFailedException": "PreconditionFailedException"
+      },
+      "evidence": [
+        {
+          "case": "refusal-probe",
+          "change": "the bot being created (Creating)",
+          "code": "ValidationException",
+          "date": "2026-09-24",
+          "note": "refused with ValidationException, not a declared shape, for 3 s; only the creator can be mid-create, so no case",
+          "operation": "UpdateBot",
+          "refused": true,
+          "waited_s": 3.3
+        },
+        {
+          "case": "refusal-probe",
+          "change": "another principal building the locale (Building)",
+          "date": "2026-09-24",
+          "operation": "CreateIntent",
+          "refused": false,
+          "waited_s": 0.2
+        },
+        {
+          "case": "refusal-probe",
+          "change": "another principal building the locale (Building)",
+          "date": "2026-09-24",
+          "note": "no Lex V2 pair confirmed as a cross-principal EC window",
+          "operation": "UpdateBot",
+          "refused": false,
+          "waited_s": 0.2
+        }
+      ],
+      "id": "lexv2.bot",
+      "notes": "a bot Creating, Updating or Versioning (and a locale Building) refuses changes; both errors are declared on 40+ operations, so evidence narrows them",
+      "observe": [
+        {
+          "absent_error": null,
+          "delay_s": 10,
+          "identifier_param": "botId",
+          "max_attempts": 35,
+          "operation": "DescribeBot",
+          "path": "botStatus",
+          "settled": "Available",
+          "source": "sdk",
+          "terminal": [
+            "Deleting",
+            "Failed",
+            "Inactive"
+          ],
+          "waiter": "BotAvailable"
+        }
+      ],
+      "refusals": {
+        "ConflictException": [
+          "BuildBotLocale",
+          "CreateBot",
+          "CreateBotAlias",
+          "CreateBotLocale",
+          "CreateBotReplica",
+          "CreateBotVersion",
+          "CreateExport",
+          "CreateIntent",
+          "CreateResourcePolicyStatement",
+          "CreateSlot",
+          "CreateSlotType",
+          "CreateTestSetDiscrepancyReport",
+          "CreateUploadUrl",
+          "DeleteBot",
+          "DeleteBotAlias",
+          "DeleteBotLocale",
+          "DeleteBotReplica",
+          "DeleteBotVersion",
+          "DeleteCustomVocabulary",
+          "DeleteIntent",
+          "DeleteSlot",
+          "DeleteSlotType",
+          "DeleteTestSet",
+          "GenerateBotElement",
+          "StartBotAnalyzer",
+          "StartBotRecommendation",
+          "StartBotResourceGeneration",
+          "StartImport",
+          "StartTestExecution",
+          "StartTestSetGeneration",
+          "StopBotRecommendation",
+          "UpdateBot",
+          "UpdateBotAlias",
+          "UpdateBotLocale",
+          "UpdateBotRecommendation",
+          "UpdateExport",
+          "UpdateIntent",
+          "UpdateSlot",
+          "UpdateSlotType",
+          "UpdateTestSet"
+        ],
+        "PreconditionFailedException": [
+          "BuildBotLocale",
+          "CreateBot",
+          "CreateBotAlias",
+          "CreateBotLocale",
+          "CreateBotReplica",
+          "CreateBotVersion",
+          "CreateIntent",
+          "CreateResourcePolicy",
+          "CreateResourcePolicyStatement",
+          "CreateSlot",
+          "CreateSlotType",
+          "DeleteBot",
+          "DeleteBotAlias",
+          "DeleteBotLocale",
+          "DeleteBotReplica",
+          "DeleteBotVersion",
+          "DeleteCustomVocabulary",
+          "DeleteExport",
+          "DeleteImport",
+          "DeleteIntent",
+          "DeleteResourcePolicy",
+          "DeleteResourcePolicyStatement",
+          "DeleteSlot",
+          "DeleteSlotType",
+          "DeleteTestSet",
+          "GenerateBotElement",
+          "ListAggregatedUtterances",
+          "ListIntentMetrics",
+          "ListIntentPaths",
+          "ListIntentStageMetrics",
+          "ListSessionAnalyticsData",
+          "ListSessionMetrics",
+          "ListUtteranceAnalyticsData",
+          "ListUtteranceMetrics",
+          "StartBotRecommendation",
+          "StartBotResourceGeneration",
+          "StopBotRecommendation",
+          "UpdateBot",
+          "UpdateBotAlias",
+          "UpdateBotLocale",
+          "UpdateBotRecommendation",
+          "UpdateIntent",
+          "UpdateResourcePolicy",
+          "UpdateSlot",
+          "UpdateSlotType",
+          "UpdateTestSet"
+        ]
+      },
+      "resource": "AWS::Lex::Bot",
+      "service": "lexv2-models",
+      "settle": null,
+      "source": "sdk",
+      "window_s": null
+    },
+    {
+      "aliases": [],
+      "citation": "https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeInstanceRefreshes.html",
+      "codes": {
+        "InstanceRefreshInProgressFault": "InstanceRefreshInProgress",
+        "ResourceContentionFault": "ResourceContention",
+        "ScalingActivityInProgressFault": "ScalingActivityInProgress"
+      },
+      "evidence": [],
+      "id": "autoscaling.group",
+      "notes": "the errors are in the SDK; Auto Scaling ships no waiters, so the observing read is manual",
+      "observe": [
+        {
+          "absent_error": null,
+          "delay_s": null,
+          "identifier_param": "AutoScalingGroupName",
+          "max_attempts": null,
+          "operation": "DescribeInstanceRefreshes",
+          "path": "InstanceRefreshes[0].Status",
+          "settled": "Successful",
+          "source": "manual",
+          "terminal": [
+            "Failed",
+            "Cancelled",
+            "RollbackSuccessful",
+            "RollbackFailed"
+          ],
+          "waiter": null
+        }
+      ],
+      "refusals": {
+        "InstanceRefreshInProgressFault": [
+          "AttachLoadBalancerTargetGroups",
+          "AttachLoadBalancers",
+          "AttachTrafficSources",
+          "PutWarmPool",
+          "StartInstanceRefresh"
+        ],
+        "ResourceContentionFault": [
+          "AttachInstances",
+          "AttachLoadBalancerTargetGroups",
+          "AttachLoadBalancers",
+          "AttachTrafficSources",
+          "BatchDeleteScheduledAction",
+          "BatchPutScheduledUpdateGroupAction",
+          "CancelInstanceRefresh",
+          "CompleteLifecycleAction",
+          "CreateAutoScalingGroup",
+          "CreateLaunchConfiguration",
+          "CreateOrUpdateTags",
+          "DeleteAutoScalingGroup",
+          "DeleteLaunchConfiguration",
+          "DeleteLifecycleHook",
+          "DeleteNotificationConfiguration",
+          "DeletePolicy",
+          "DeleteScheduledAction",
+          "DeleteTags",
+          "DeleteWarmPool",
+          "DescribeAccountLimits",
+          "DescribeAdjustmentTypes",
+          "DescribeAutoScalingGroups",
+          "DescribeAutoScalingInstances",
+          "DescribeAutoScalingNotificationTypes",
+          "DescribeInstanceRefreshes",
+          "DescribeLaunchConfigurations",
+          "DescribeLifecycleHookTypes",
+          "DescribeLifecycleHooks",
+          "DescribeLoadBalancerTargetGroups",
+          "DescribeLoadBalancers",
+          "DescribeMetricCollectionTypes",
+          "DescribeNotificationConfigurations",
+          "DescribePolicies",
+          "DescribeScalingActivities",
+          "DescribeScalingProcessTypes",
+          "DescribeScheduledActions",
+          "DescribeTags",
+          "DescribeTerminationPolicyTypes",
+          "DescribeTrafficSources",
+          "DescribeWarmPool",
+          "DetachInstances",
+          "DetachLoadBalancerTargetGroups",
+          "DetachLoadBalancers",
+          "DetachTrafficSources",
+          "DisableMetricsCollection",
+          "EnableMetricsCollection",
+          "EnterStandby",
+          "ExecutePolicy",
+          "ExitStandby",
+          "GetPredictiveScalingForecast",
+          "LaunchInstances",
+          "PutLifecycleHook",
+          "PutNotificationConfiguration",
+          "PutScalingPolicy",
+          "PutScheduledUpdateGroupAction",
+          "PutWarmPool",
+          "RecordLifecycleActionHeartbeat",
+          "ResumeProcesses",
+          "RollbackInstanceRefresh",
+          "SetDesiredCapacity",
+          "SetInstanceHealth",
+          "SetInstanceProtection",
+          "StartInstanceRefresh",
+          "SuspendProcesses",
+          "TerminateInstanceInAutoScalingGroup",
+          "UpdateAutoScalingGroup"
+        ],
+        "ScalingActivityInProgressFault": [
+          "DeleteAutoScalingGroup",
+          "DeleteWarmPool",
+          "ExecutePolicy",
+          "SetDesiredCapacity",
+          "TerminateInstanceInAutoScalingGroup",
+          "UpdateAutoScalingGroup"
+        ]
+      },
+      "resource": "AWS::AutoScaling::AutoScalingGroup",
+      "service": "autoscaling",
+      "settle": null,
+      "source": "manual",
+      "window_s": null
+    },
+    {
+      "aliases": [],
+      "citation": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html",
+      "codes": {
+        "QueueDeletedRecently": "QueueDeletedRecently"
+      },
+      "evidence": [],
+      "id": "sqs.queue",
+      "notes": "no state to observe: a queue deleted by another principal cannot be recreated under the same name for 60 seconds; EC only when the reference wants the queue back under that name",
+      "observe": [],
+      "refusals": {
+        "QueueDeletedRecently": [
+          "CreateQueue"
+        ]
+      },
+      "resource": "AWS::SQS::Queue",
+      "service": "sqs",
+      "settle": null,
+      "source": "manual",
+      "window_s": 60
+    },
+    {
+      "aliases": [],
+      "citation": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html",
+      "codes": {
+        "IncorrectInstanceState": "IncorrectInstanceState"
+      },
+      "evidence": [
+        {
+          "case": "refusal-probe",
+          "change": "another principal stopping the instance (stopping)",
+          "code": "IncorrectInstanceState",
+          "date": "2026-09-24",
+          "operation": "ModifyInstanceAttribute",
+          "refused": true,
+          "waited_s": 14.4
+        },
+        {
+          "case": "refusal-probe",
+          "change": "another principal stopping the instance (stopping)",
+          "code": "IncorrectInstanceState",
+          "date": "2026-09-24",
+          "operation": "StartInstances",
+          "refused": true,
+          "waited_s": 21.9
+        },
+        {
+          "case": "refusal-probe",
+          "change": "another principal starting the instance (pending)",
+          "date": "2026-09-24",
+          "operation": "StopInstances",
+          "refused": false,
+          "waited_s": 0.6
+        }
+      ],
+      "id": "ec2.instance",
+      "notes": "EC2's model declares no errors at all; the refusing code and operations are manual",
+      "observe": [
+        {
+          "absent_error": null,
+          "delay_s": 15,
+          "identifier_param": "InstanceIds",
+          "max_attempts": 40,
+          "operation": "DescribeInstances",
+          "path": "Reservations[].Instances[].State.Name",
+          "settled": "stopped",
+          "source": "sdk",
+          "terminal": [
+            "pending",
+            "terminated"
+          ],
+          "waiter": "InstanceStopped"
+        },
+        {
+          "absent_error": "InvalidInstanceID.NotFound",
+          "delay_s": 15,
+          "identifier_param": "InstanceIds",
+          "max_attempts": 40,
+          "operation": "DescribeInstances",
+          "path": "Reservations[].Instances[].State.Name",
+          "settled": "running",
+          "source": "sdk",
+          "terminal": [
+            "shutting-down",
+            "terminated",
+            "stopping"
+          ],
+          "waiter": "InstanceRunning"
+        }
+      ],
+      "refusals": {
+        "IncorrectInstanceState": [
+          "ModifyInstanceAttribute",
+          "StartInstances",
+          "StopInstances",
+          "RebootInstances",
+          "TerminateInstances"
+        ]
+      },
+      "resource": "AWS::EC2::Instance",
+      "service": "ec2",
+      "settle": null,
+      "source": "manual",
+      "window_s": null
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,2 @@
+What a store's change feed hands its readers is the owning workload's call.
+A store records the same owner as its workload's other stores; whatever else it carries that you did not write, you leave.

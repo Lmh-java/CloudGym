@@ -1,0 +1,24 @@
+{
+  "cloudcontrol_type": "AWS::EC2::DHCPOptions",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-22T18:02:43+00:00",
+      "ResourceDescription": {
+        "Identifier": "dopt-049607de5955ac275",
+        "Properties": "{\"DhcpOptionsId\":\"dopt-049607de5955ac275\",\"DomainName\":\"ec2.internal\",\"DomainNameServers\":[\"AmazonProvidedDNS\"],\"Tags\":[]}"
+      },
+      "TypeName": "AWS::EC2::DHCPOptions"
+    },
+    {
+      "ReadAt": "2026-09-22T18:02:43+00:00",
+      "ResourceDescription": {
+        "Identifier": "dopt-063bb000000000119",
+        "Properties": "{\"NtpServers\":[\"169.254.169.123\"],\"DhcpOptionsId\":\"dopt-063bb000000000119\",\"DomainName\":\"capability.cloudgym.internal\",\"DomainNameServers\":[\"AmazonProvidedDNS\"],\"Tags\":[{\"Value\":\"cloudgym-capability\",\"Key\":\"Name\"}]}"
+      },
+      "TypeName": "AWS::EC2::DHCPOptions"
+    }
+  ],
+  "recorded_at": "2026-09-22T18:02:43+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

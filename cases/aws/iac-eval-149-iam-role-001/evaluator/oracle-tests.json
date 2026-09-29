@@ -1,0 +1,4184 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "namesake-function-claim": {
+      "status": "succeeded"
+     },
+     "pooled-execution-identity": {
+      "status": "succeeded"
+     },
+     "release-entrypoint": {
+      "status": "succeeded"
+     },
+     "runtime-baseline": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "namesake-function-claim": {
+      "status": "succeeded"
+     },
+     "pooled-execution-identity": {
+      "status": "succeeded"
+     },
+     "release-entrypoint": {
+      "status": "succeeded"
+     },
+     "runtime-baseline": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       },
+       "lambda-pool-runner": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-pool-runner",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE7174",
+        "RoleName": "lambda-pool-runner"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "Code": {},
+        "Description": "orders-api: the name this workload holds in the account's naming space",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "lambda_function_name",
+        "Handler": "index.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::123456789012:role/lambda-pool-runner",
+        "Runtime": "nodejs24.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "Tags": [],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "namesake-function-claim": {
+      "status": "succeeded"
+     },
+     "pooled-execution-identity": {
+      "status": "succeeded"
+     },
+     "release-entrypoint": {
+      "status": "succeeded"
+     },
+     "runtime-baseline": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       },
+       "lambda-pool-runner": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-pool-runner",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE7174",
+        "RoleName": "lambda-pool-runner"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "Code": {},
+        "Description": "",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "lambda_function_name",
+        "Handler": "lambda.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "Tags": [],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "namesake-function-claim": {
+      "status": "succeeded"
+     },
+     "pooled-execution-identity": {
+      "status": "succeeded"
+     },
+     "release-entrypoint": {
+      "status": "succeeded"
+     },
+     "runtime-baseline": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       },
+       "lambda-pool-runner": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-pool-runner",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE7174",
+        "RoleName": "lambda-pool-runner"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "Code": {},
+        "Description": "orders-api: the name this workload holds in the account's naming space",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "lambda_function_name",
+        "Handler": "lambda.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs24.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "Tags": [],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "Code": {},
+        "Description": "",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "lambda_function_name",
+        "Handler": "lambda.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs22.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "Tags": [],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "namesake-function-claim": {
+      "status": "not-fired"
+     },
+     "pooled-execution-identity": {
+      "status": "not-fired"
+     },
+     "release-entrypoint": {
+      "status": "not-fired"
+     },
+     "runtime-baseline": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "Code": {},
+        "Description": "",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "lambda_function_name",
+        "Handler": "lambda",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs22.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "Tags": [],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "Code": {},
+        "Description": "",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "lambda_function_name",
+        "Handler": "index.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs22.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "Tags": [],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "control-entered-elsewhere"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "Code": {},
+        "Description": "",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "lambda_function_name",
+        "Handler": "lambda.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "python3.12",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "Tags": [],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "control-not-nodejs"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "Code": {},
+        "Description": "",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "lambda_function_name",
+        "Handler": "lambda.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::123456789012:role/app-runner-role",
+        "Runtime": "nodejs22.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "Tags": [],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "control-foreign-identity"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "Code": {},
+        "Description": "",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "lambda_function_name",
+        "Handler": "lambda.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Image",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs22.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "Tags": [],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "control-image-package"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "orders-api-processor": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-api-processor",
+        "Code": {},
+        "Description": "",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "orders-api-processor",
+        "Handler": "lambda.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/orders-api-processor"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs22.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "Tags": [],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "control-other-name"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    }
+   },
+   "name": "control-no-function"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "Code": {},
+        "Description": "",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "lambda_function_name",
+        "Handler": "stub.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs22.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "Tags": [],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "control-entered-at-stub"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "Code": {},
+        "Description": "",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "lambda_function_name",
+        "Handler": "lambda",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs22.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "Tags": [],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "control-handler-file-only"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "Code": {},
+        "Description": "",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "lambda_function_name",
+        "Handler": "lambda.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::123456789012:role/lambda_function_name-role",
+        "Runtime": "nodejs22.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "Tags": [],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "control-identity-of-its-own"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "namesake-function-claim": {
+      "status": "failed"
+     },
+     "pooled-execution-identity": {
+      "status": "succeeded"
+     },
+     "release-entrypoint": {
+      "status": "succeeded"
+     },
+     "runtime-baseline": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       },
+       "lambda-pool-runner": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-pool-runner",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE7174",
+        "RoleName": "lambda-pool-runner"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "Code": {},
+        "Description": "",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "lambda_function_name",
+        "Handler": "lambda.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs24.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "Tags": [],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-namesake-function-claim"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "namesake-function-claim": {
+      "status": "succeeded"
+     },
+     "pooled-execution-identity": {
+      "status": "succeeded"
+     },
+     "release-entrypoint": {
+      "status": "succeeded"
+     },
+     "runtime-baseline": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       },
+       "lambda-pool-runner": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-pool-runner",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE7174",
+        "RoleName": "lambda-pool-runner"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "Code": {},
+        "Description": "orders-api: the name this workload holds in the account's naming space",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "lambda_function_name",
+        "Handler": "lambda.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs22.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "Tags": [],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-runtime-baseline"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "namesake-function-claim": {
+      "status": "succeeded"
+     },
+     "pooled-execution-identity": {
+      "status": "succeeded"
+     },
+     "release-entrypoint": {
+      "status": "failed"
+     },
+     "runtime-baseline": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       },
+       "lambda-pool-runner": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-pool-runner",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE7174",
+        "RoleName": "lambda-pool-runner"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "Code": {},
+        "Description": "orders-api: the name this workload holds in the account's naming space",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "lambda_function_name",
+        "Handler": "lambda.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs24.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "Tags": [],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-release-entrypoint"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "namesake-function-claim": {
+      "status": "succeeded"
+     },
+     "pooled-execution-identity": {
+      "status": "failed"
+     },
+     "release-entrypoint": {
+      "status": "succeeded"
+     },
+     "runtime-baseline": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "Code": {},
+        "Description": "orders-api: the name this workload holds in the account's naming space",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "lambda_function_name",
+        "Handler": "lambda.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs24.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "Tags": [],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-pooled-execution-identity"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "namesake-function-claim": {
+      "status": "succeeded"
+     },
+     "pooled-execution-identity": {
+      "status": "succeeded"
+     },
+     "release-entrypoint": {
+      "status": "succeeded"
+     },
+     "runtime-baseline": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       },
+       "lambda-pool-runner": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-pool-runner",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE7174",
+        "RoleName": "lambda-pool-runner"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "Code": {},
+        "Description": "orders-api: the name this workload holds in the account's naming space",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "lambda_function_name",
+        "Handler": "lambda.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs22.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "Tags": [],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-runtime-baseline"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "namesake-function-claim": {
+      "status": "succeeded"
+     },
+     "pooled-execution-identity": {
+      "status": "succeeded"
+     },
+     "release-entrypoint": {
+      "status": "succeeded"
+     },
+     "runtime-baseline": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       },
+       "lambda-pool-runner": {
+        "Arn": "arn:aws:iam::123456789012:role/lambda-pool-runner",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE7174",
+        "RoleName": "lambda-pool-runner"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "Code": {},
+        "Description": "",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "lambda_function_name",
+        "Handler": "lambda.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs24.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "Tags": [],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-namesake-function-claim"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "namesake-function-claim": {
+      "status": "succeeded"
+     },
+     "pooled-execution-identity": {
+      "status": "succeeded"
+     },
+     "release-entrypoint": {
+      "status": "succeeded"
+     },
+     "runtime-baseline": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE5153",
+        "RoleName": "iam_for_lambda"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:lambda_function_name",
+        "Code": {},
+        "Description": "orders-api: the name this workload holds in the account's naming space",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "lambda_function_name",
+        "Handler": "lambda.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs24.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "Tags": [],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-pooled-execution-identity"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSReservedSSO_SandboxAdministrator_0000000000000001": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_SandboxAdministrator_0000000000000001",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+           ],
+           "Condition": {
+            "StringEquals": {
+             "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Federated": "arn:aws:iam::000000000114:saml-provider/AWSSSO_d19a45a4a1239f62_DO_NOT_DELETE"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 43200,
+        "Path": "/aws-reserved/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000174",
+        "RoleName": "AWSReservedSSO_SandboxAdministrator_0000000000000001"
+       },
+       "AWSServiceRoleForAutoScaling": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "autoscaling.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Default Service-Linked Role enables access to AWS Services and Resources used or managed by Auto Scaling",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AutoScalingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/autoscaling.amazonaws.com/",
+        "RoleId": "AROA00000000000000208",
+        "RoleName": "AWSServiceRoleForAutoScaling"
+       },
+       "AWSServiceRoleForElasticBeanstalk": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticbeanstalk.amazonaws.com/AWSServiceRoleForElasticBeanstalk",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticbeanstalk.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticBeanstalkServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticbeanstalk.amazonaws.com/",
+        "RoleId": "AROA00000000000000211",
+        "RoleName": "AWSServiceRoleForElasticBeanstalk"
+       },
+       "AWSServiceRoleForElasticLoadBalancing": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticloadbalancing.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows ELB to call AWS services on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
+        "RoleId": "AROA00000000000000194",
+        "RoleName": "AWSServiceRoleForElasticLoadBalancing"
+       },
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000181",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000190",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000177",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000220",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000170",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000114:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000219",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::000000000114:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000216",
+        "RoleName": "iam_for_lambda"
+       }
+      },
+      "AWS::Lambda::Function": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSReservedSSO_SandboxAdministrator_0000000000000001": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_SandboxAdministrator_0000000000000001",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+           ],
+           "Condition": {
+            "StringEquals": {
+             "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Federated": "arn:aws:iam::000000000114:saml-provider/AWSSSO_d19a45a4a1239f62_DO_NOT_DELETE"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 43200,
+        "Path": "/aws-reserved/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000174",
+        "RoleName": "AWSReservedSSO_SandboxAdministrator_0000000000000001"
+       },
+       "AWSServiceRoleForAutoScaling": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "autoscaling.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Default Service-Linked Role enables access to AWS Services and Resources used or managed by Auto Scaling",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AutoScalingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/autoscaling.amazonaws.com/",
+        "RoleId": "AROA00000000000000208",
+        "RoleName": "AWSServiceRoleForAutoScaling"
+       },
+       "AWSServiceRoleForElasticBeanstalk": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticbeanstalk.amazonaws.com/AWSServiceRoleForElasticBeanstalk",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticbeanstalk.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticBeanstalkServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticbeanstalk.amazonaws.com/",
+        "RoleId": "AROA00000000000000211",
+        "RoleName": "AWSServiceRoleForElasticBeanstalk"
+       },
+       "AWSServiceRoleForElasticLoadBalancing": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticloadbalancing.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows ELB to call AWS services on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
+        "RoleId": "AROA00000000000000194",
+        "RoleName": "AWSServiceRoleForElasticLoadBalancing"
+       },
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000181",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000190",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000177",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000220",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000170",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000114:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000219",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::000000000114:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000216",
+        "RoleName": "iam_for_lambda"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:000000000114:function:lambda_function_name",
+        "Code": {},
+        "Description": "",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "lambda_function_name",
+        "Handler": "lambda.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::000000000114:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "SnapStartResponse": {
+         "ApplyOn": "None",
+         "OptimizationStatus": "Off"
+        },
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "namesake-function-claim": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 1,
+        "landed_ns": 26649925651886,
+        "landed_s": 55.383,
+        "result": {
+         "created": true,
+         "fingerprint": [
+          "orders-api"
+         ],
+         "function": "lambda_function_name",
+         "marked": false,
+         "trigger": "api",
+         "workload": "orders-api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-namesake-function-claim-1",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "created": true,
+       "fingerprint": [
+        "orders-api"
+       ],
+       "function": "lambda_function_name",
+       "marked": false,
+       "trigger": "api",
+       "workload": "orders-api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "pooled-execution-identity": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 4,
+        "landed_ns": 26729487334716,
+        "landed_s": 134.945,
+        "result": {
+         "fingerprint": [
+          "lambda-pool-runner"
+         ],
+         "moved": [
+          "lambda_function_name"
+         ],
+         "pool": "lambda-pool-runner",
+         "trigger": "snapshot"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-pooled-execution-identity-4",
+        "trigger_kind": "snapshot"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        "lambda-pool-runner"
+       ],
+       "moved": [
+        "lambda_function_name"
+       ],
+       "pool": "lambda-pool-runner",
+       "trigger": "snapshot"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "release-entrypoint": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 2,
+        "landed_ns": 26696965918772,
+        "landed_s": 102.423,
+        "result": {
+         "fingerprint": [
+          "index.handler"
+         ],
+         "handler": "index.handler",
+         "rolled_out": [
+          "lambda_function_name"
+         ],
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-release-entrypoint-2",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        "index.handler"
+       ],
+       "handler": "index.handler",
+       "rolled_out": [
+        "lambda_function_name"
+       ],
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "runtime-baseline": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 3,
+        "landed_ns": 26706224283708,
+        "landed_s": 111.682,
+        "result": {
+         "baseline": "nodejs24.x",
+         "fingerprint": [
+          "nodejs24.x"
+         ],
+         "moved": [
+          "lambda_function_name:nodejs22.x"
+         ],
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-runtime-baseline-3",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "baseline": "nodejs24.x",
+       "fingerprint": [
+        "nodejs24.x"
+       ],
+       "moved": [
+        "lambda_function_name:nodejs22.x"
+       ],
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000154",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000163",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000159",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000156",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000166",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000115:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000146",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::000000000115:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000167",
+        "RoleName": "iam_for_lambda"
+       }
+      },
+      "AWS::Lambda::Function": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000154",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000163",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000159",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000156",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000166",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000115:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000146",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::000000000115:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000167",
+        "RoleName": "iam_for_lambda"
+       },
+       "lambda-pool-runner": {
+        "Arn": "arn:aws:iam::000000000115:role/lambda-pool-runner",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "pooled execution identity for this account's Lambda functions",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000157",
+        "RoleName": "lambda-pool-runner"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "lambda_function_name": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:000000000115:function:lambda_function_name",
+        "Code": {},
+        "Description": "orders-api: the name this workload holds in the account's naming space",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "lambda_function_name",
+        "Handler": "lambda.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/lambda_function_name"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::000000000115:role/iam_for_lambda",
+        "Runtime": "nodejs24.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "SnapStartResponse": {
+         "ApplyOn": "None",
+         "OptimizationStatus": "Off"
+        },
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-interference-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

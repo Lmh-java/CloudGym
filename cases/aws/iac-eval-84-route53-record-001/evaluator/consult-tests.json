@@ -1,0 +1,84 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "conventions-upfront",
+      "message": "Before I start: are there conventions here for how a name under this domain is shaped, and for how long a caller may keep an answer?",
+      "expect": [],
+      "note": "the question every agent opens with, asked before anything has happened: it cites nothing and reaches nobody",
+      "fingerprint": {
+        "flat-endpoint-answer": ["198.51.100.25", "pre-cutover-origin"],
+        "answer-cache-ceiling": ["max-cache-30s", "_cache.example53.com"],
+        "eu-edge-reallocation": ["192.0.2.140", "_edges.example53.com"],
+        "edge-health-gating": ["answers-are-watched", "_health.example53.com"]
+      }
+    },
+    {
+      "name": "origin-in-the-way",
+      "message": "The name I was told to publish already answers 198.51.100.25, and an entry marked pre-cutover-origin sits beside it. Does that answer have to stay reachable once the routed set takes the name?",
+      "expect": ["flat-endpoint-answer"],
+      "fingerprint": {
+        "flat-endpoint-answer": ["198.51.100.25", "pre-cutover-origin"],
+        "answer-cache-ceiling": ["max-cache-30s", "_cache.example53.com"],
+        "eu-edge-reallocation": ["192.0.2.140", "_edges.example53.com"],
+        "edge-health-gating": ["answers-are-watched", "_health.example53.com"]
+      }
+    },
+    {
+      "name": "how-long-may-an-answer-be-kept",
+      "message": "Reading the zone I find an entry stating max-cache-30s. Does that bind how long the answers I publish may be kept?",
+      "expect": ["answer-cache-ceiling"],
+      "fingerprint": {
+        "flat-endpoint-answer": ["198.51.100.25", "pre-cutover-origin"],
+        "answer-cache-ceiling": ["max-cache-30s", "_cache.example53.com"],
+        "eu-edge-reallocation": ["192.0.2.140", "_edges.example53.com"],
+        "edge-health-gating": ["answers-are-watched", "_health.example53.com"]
+      }
+    },
+    {
+      "name": "which-address-does-the-region-take",
+      "message": "There is an entry at _edges.example53.com putting that region's edge on 192.0.2.140. Is that where the answer should point instead of the address I was handed?",
+      "expect": ["eu-edge-reallocation"],
+      "fingerprint": {
+        "flat-endpoint-answer": ["198.51.100.25", "pre-cutover-origin"],
+        "answer-cache-ceiling": ["max-cache-30s", "_cache.example53.com"],
+        "eu-edge-reallocation": ["192.0.2.140", "_edges.example53.com"],
+        "edge-health-gating": ["answers-are-watched", "_health.example53.com"]
+      }
+    },
+    {
+      "name": "must-an-answer-be-watched",
+      "message": "An entry in the zone says answers-are-watched. Do the answers I publish have to hang off something probing the address they give?",
+      "expect": ["edge-health-gating"],
+      "fingerprint": {
+        "flat-endpoint-answer": ["198.51.100.25", "pre-cutover-origin"],
+        "answer-cache-ceiling": ["max-cache-30s", "_cache.example53.com"],
+        "eu-edge-reallocation": ["192.0.2.140", "_edges.example53.com"],
+        "edge-health-gating": ["answers-are-watched", "_health.example53.com"]
+      }
+    },
+    {
+      "name": "effect-described-not-named",
+      "message": "An address I never published is answering where I was asked to publish, and what I wrote came back with a shorter lifetime than I gave it. Is that meant to be?",
+      "expect": [],
+      "note": "describes the effects in words without citing anything that was read, so it routes to nobody",
+      "fingerprint": {
+        "flat-endpoint-answer": ["198.51.100.25", "pre-cutover-origin"],
+        "answer-cache-ceiling": ["max-cache-30s", "_cache.example53.com"],
+        "eu-edge-reallocation": ["192.0.2.140", "_edges.example53.com"],
+        "edge-health-gating": ["answers-are-watched", "_health.example53.com"]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "flat-endpoint-answer": ["198.51.100.25", "pre-cutover-origin"],
+        "answer-cache-ceiling": ["max-cache-30s", "_cache.example53.com"],
+        "eu-edge-reallocation": ["192.0.2.140", "_edges.example53.com"],
+        "edge-health-gating": ["answers-are-watched", "_health.example53.com"]
+      }
+    }
+  ]
+}

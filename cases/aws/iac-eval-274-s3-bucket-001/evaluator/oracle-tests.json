@@ -1,0 +1,4179 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "closing-reports-store": {
+      "status": "succeeded"
+     },
+     "object-catalogue-standard": {
+      "status": "succeeded"
+     },
+     "rolled-out-export-store": {
+      "status": "succeeded"
+     },
+     "shared-reports-layout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "closing-reports-store": {
+      "status": "succeeded"
+     },
+     "object-catalogue-standard": {
+      "status": "succeeded"
+     },
+     "rolled-out-export-store": {
+      "status": "succeeded"
+     },
+     "shared-reports-layout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-001": {
+        "Arn": "arn:aws:s3:::store-123456789012-001",
+        "BucketName": "store-123456789012-001",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-002",
+           "Format": "CSV",
+           "Prefix": "reports/orders-team/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketWeekly",
+          "IncludedObjectVersions": "Current",
+          "OptionalFields": [
+           "ObjectOwner",
+           "EncryptionStatus"
+          ],
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Release",
+          "Value": "release-2026-11-r41"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         }
+        ]
+       },
+       "store-123456789012-002": {
+        "Arn": "arn:aws:s3:::store-123456789012-002",
+        "BucketName": "store-123456789012-002",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         },
+         {
+          "Key": "Layout",
+          "Value": "reports/:owner/"
+         }
+        ]
+       },
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         },
+         {
+          "Key": "Layout",
+          "Value": "reports/:owner/"
+         },
+         {
+          "Key": "Closing",
+          "Value": "closing-2026-11-30"
+         },
+         {
+          "Key": "Successor",
+          "Value": "store-123456789012-002"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "store-123456789012-002": {
+        "Bucket": "store-123456789012-002",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Effect": "Deny",
+           "NotResource": "arn:aws:s3:::store-123456789012-002/reports/*",
+           "Principal": "*",
+           "Sid": "shared-reports-layout-2026-11"
+          },
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "ArnLike": {
+             "aws:SourceArn": "arn:aws:s3:::store-123456789012-001"
+            },
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::store-123456789012-002/reports/*",
+           "Sid": "InventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       },
+       "store-123456789012-20261101120000000000000001": {
+        "Bucket": "store-123456789012-20261101120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Effect": "Deny",
+           "NotResource": "arn:aws:s3:::store-123456789012-20261101120000000000000001/reports/*",
+           "Principal": "*",
+           "Sid": "shared-reports-layout-2026-11"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "closing-reports-store": {
+      "status": "succeeded"
+     },
+     "object-catalogue-standard": {
+      "status": "succeeded"
+     },
+     "rolled-out-export-store": {
+      "status": "succeeded"
+     },
+     "shared-reports-layout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-001": {
+        "Arn": "arn:aws:s3:::store-123456789012-001",
+        "BucketName": "store-123456789012-001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Release",
+          "Value": "release-2026-11-r41"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         }
+        ]
+       },
+       "store-123456789012-002": {
+        "Arn": "arn:aws:s3:::store-123456789012-002",
+        "BucketName": "store-123456789012-002",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         },
+         {
+          "Key": "Layout",
+          "Value": "reports/:owner/"
+         }
+        ]
+       },
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         },
+         {
+          "Key": "Layout",
+          "Value": "reports/:owner/"
+         },
+         {
+          "Key": "Closing",
+          "Value": "closing-2026-11-30"
+         },
+         {
+          "Key": "Successor",
+          "Value": "store-123456789012-002"
+         }
+        ]
+       },
+       "store-123456789012-20261101130000000000000002": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101130000000000000002",
+        "BucketName": "store-123456789012-20261101130000000000000002",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketWeekly",
+          "IncludedObjectVersions": "Current",
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "store-123456789012-002": {
+        "Bucket": "store-123456789012-002",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Effect": "Deny",
+           "NotResource": "arn:aws:s3:::store-123456789012-002/reports/*",
+           "Principal": "*",
+           "Sid": "shared-reports-layout-2026-11"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       },
+       "store-123456789012-20261101120000000000000001": {
+        "Bucket": "store-123456789012-20261101120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "ArnLike": {
+             "aws:SourceArn": "arn:aws:s3:::store-123456789012-20261101130000000000000002"
+            },
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::store-123456789012-20261101120000000000000001/*",
+           "Sid": "InventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "closing-reports-store": {
+      "status": "succeeded"
+     },
+     "object-catalogue-standard": {
+      "status": "succeeded"
+     },
+     "rolled-out-export-store": {
+      "status": "succeeded"
+     },
+     "shared-reports-layout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-001": {
+        "Arn": "arn:aws:s3:::store-123456789012-001",
+        "BucketName": "store-123456789012-001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Release",
+          "Value": "release-2026-11-r41"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         }
+        ]
+       },
+       "store-123456789012-002": {
+        "Arn": "arn:aws:s3:::store-123456789012-002",
+        "BucketName": "store-123456789012-002",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         },
+         {
+          "Key": "Layout",
+          "Value": "reports/:owner/"
+         }
+        ]
+       },
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         },
+         {
+          "Key": "Layout",
+          "Value": "reports/:owner/"
+         },
+         {
+          "Key": "Closing",
+          "Value": "closing-2026-11-30"
+         },
+         {
+          "Key": "Successor",
+          "Value": "store-123456789012-002"
+         }
+        ]
+       },
+       "store-123456789012-20261101130000000000000002": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101130000000000000002",
+        "BucketName": "store-123456789012-20261101130000000000000002",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketWeekly",
+          "IncludedObjectVersions": "Current",
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "store-123456789012-002": {
+        "Bucket": "store-123456789012-002",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Effect": "Deny",
+           "NotResource": "arn:aws:s3:::store-123456789012-002/reports/*",
+           "Principal": "*",
+           "Sid": "shared-reports-layout-2026-11"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       },
+       "store-123456789012-20261101120000000000000001": {
+        "Bucket": "store-123456789012-20261101120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Effect": "Deny",
+           "NotResource": "arn:aws:s3:::store-123456789012-20261101120000000000000001/reports/*",
+           "Principal": "*",
+           "Sid": "shared-reports-layout-2026-11"
+          },
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "ArnLike": {
+             "aws:SourceArn": "arn:aws:s3:::store-123456789012-20261101130000000000000002"
+            },
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::store-123456789012-20261101120000000000000001/*",
+           "Sid": "InventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       },
+       "store-123456789012-20261101130000000000000002": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101130000000000000002",
+        "BucketName": "store-123456789012-20261101130000000000000002",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketWeekly",
+          "IncludedObjectVersions": "Current",
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "store-123456789012-20261101120000000000000001": {
+        "Bucket": "store-123456789012-20261101120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "ArnLike": {
+             "aws:SourceArn": "arn:aws:s3:::store-123456789012-20261101130000000000000002"
+            },
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::store-123456789012-20261101120000000000000001/*",
+           "Sid": "InventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "closing-reports-store": {
+      "status": "not-fired"
+     },
+     "object-catalogue-standard": {
+      "status": "not-fired"
+     },
+     "rolled-out-export-store": {
+      "status": "not-fired"
+     },
+     "shared-reports-layout": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       },
+       "store-123456789012-20261101130000000000000002": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101130000000000000002",
+        "BucketName": "store-123456789012-20261101130000000000000002",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketWeekly",
+          "IncludedObjectVersions": "Current",
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "closing-reports-store": {
+      "status": "succeeded"
+     },
+     "object-catalogue-standard": {
+      "status": "succeeded"
+     },
+     "rolled-out-export-store": {
+      "status": "succeeded"
+     },
+     "shared-reports-layout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-001": {
+        "Arn": "arn:aws:s3:::store-123456789012-001",
+        "BucketName": "store-123456789012-001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Release",
+          "Value": "release-2026-11-r41"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         }
+        ]
+       },
+       "store-123456789012-002": {
+        "Arn": "arn:aws:s3:::store-123456789012-002",
+        "BucketName": "store-123456789012-002",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         },
+         {
+          "Key": "Layout",
+          "Value": "reports/:owner/"
+         }
+        ]
+       },
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         },
+         {
+          "Key": "Layout",
+          "Value": "reports/:owner/"
+         },
+         {
+          "Key": "Closing",
+          "Value": "closing-2026-11-30"
+         },
+         {
+          "Key": "Successor",
+          "Value": "store-123456789012-002"
+         }
+        ]
+       },
+       "store-123456789012-20261101130000000000000002": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101130000000000000002",
+        "BucketName": "store-123456789012-20261101130000000000000002",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-002",
+           "Format": "CSV",
+           "Prefix": "reports/orders-team/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketWeekly",
+          "IncludedObjectVersions": "Current",
+          "OptionalFields": [
+           "ObjectOwner",
+           "EncryptionStatus"
+          ],
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "store-123456789012-002": {
+        "Bucket": "store-123456789012-002",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Effect": "Deny",
+           "NotResource": "arn:aws:s3:::store-123456789012-002/reports/*",
+           "Principal": "*",
+           "Sid": "shared-reports-layout-2026-11"
+          },
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "ArnLike": {
+             "aws:SourceArn": "arn:aws:s3:::store-123456789012-20261101130000000000000002"
+            },
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::store-123456789012-002/reports/*",
+           "Sid": "InventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       },
+       "store-123456789012-20261101120000000000000001": {
+        "Bucket": "store-123456789012-20261101120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Effect": "Deny",
+           "NotResource": "arn:aws:s3:::store-123456789012-20261101120000000000000001/reports/*",
+           "Principal": "*",
+           "Sid": "shared-reports-layout-2026-11"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "clobbered-rolled-out-export-store"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "closing-reports-store": {
+      "status": "succeeded"
+     },
+     "object-catalogue-standard": {
+      "status": "succeeded"
+     },
+     "rolled-out-export-store": {
+      "status": "succeeded"
+     },
+     "shared-reports-layout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-001": {
+        "Arn": "arn:aws:s3:::store-123456789012-001",
+        "BucketName": "store-123456789012-001",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+           "Format": "CSV",
+           "Prefix": "reports/orders-team/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketWeekly",
+          "IncludedObjectVersions": "Current",
+          "OptionalFields": [
+           "ObjectOwner",
+           "EncryptionStatus"
+          ],
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Release",
+          "Value": "release-2026-11-r41"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         }
+        ]
+       },
+       "store-123456789012-002": {
+        "Arn": "arn:aws:s3:::store-123456789012-002",
+        "BucketName": "store-123456789012-002",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         },
+         {
+          "Key": "Layout",
+          "Value": "reports/:owner/"
+         }
+        ]
+       },
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         },
+         {
+          "Key": "Layout",
+          "Value": "reports/:owner/"
+         },
+         {
+          "Key": "Closing",
+          "Value": "closing-2026-11-30"
+         },
+         {
+          "Key": "Successor",
+          "Value": "store-123456789012-002"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "store-123456789012-002": {
+        "Bucket": "store-123456789012-002",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Effect": "Deny",
+           "NotResource": "arn:aws:s3:::store-123456789012-002/reports/*",
+           "Principal": "*",
+           "Sid": "shared-reports-layout-2026-11"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       },
+       "store-123456789012-20261101120000000000000001": {
+        "Bucket": "store-123456789012-20261101120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Effect": "Deny",
+           "NotResource": "arn:aws:s3:::store-123456789012-20261101120000000000000001/reports/*",
+           "Principal": "*",
+           "Sid": "shared-reports-layout-2026-11"
+          },
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "ArnLike": {
+             "aws:SourceArn": "arn:aws:s3:::store-123456789012-001"
+            },
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::store-123456789012-20261101120000000000000001/reports/*",
+           "Sid": "InventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "clobbered-closing-reports-store"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "closing-reports-store": {
+      "status": "succeeded"
+     },
+     "object-catalogue-standard": {
+      "status": "succeeded"
+     },
+     "rolled-out-export-store": {
+      "status": "succeeded"
+     },
+     "shared-reports-layout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-001": {
+        "Arn": "arn:aws:s3:::store-123456789012-001",
+        "BucketName": "store-123456789012-001",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-002",
+           "Format": "CSV",
+           "Prefix": "reports/orders-team/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketWeekly",
+          "IncludedObjectVersions": "Current",
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Release",
+          "Value": "release-2026-11-r41"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         }
+        ]
+       },
+       "store-123456789012-002": {
+        "Arn": "arn:aws:s3:::store-123456789012-002",
+        "BucketName": "store-123456789012-002",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         },
+         {
+          "Key": "Layout",
+          "Value": "reports/:owner/"
+         }
+        ]
+       },
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         },
+         {
+          "Key": "Layout",
+          "Value": "reports/:owner/"
+         },
+         {
+          "Key": "Closing",
+          "Value": "closing-2026-11-30"
+         },
+         {
+          "Key": "Successor",
+          "Value": "store-123456789012-002"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "store-123456789012-002": {
+        "Bucket": "store-123456789012-002",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Effect": "Deny",
+           "NotResource": "arn:aws:s3:::store-123456789012-002/reports/*",
+           "Principal": "*",
+           "Sid": "shared-reports-layout-2026-11"
+          },
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "ArnLike": {
+             "aws:SourceArn": "arn:aws:s3:::store-123456789012-001"
+            },
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::store-123456789012-002/reports/*",
+           "Sid": "InventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       },
+       "store-123456789012-20261101120000000000000001": {
+        "Bucket": "store-123456789012-20261101120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Effect": "Deny",
+           "NotResource": "arn:aws:s3:::store-123456789012-20261101120000000000000001/reports/*",
+           "Principal": "*",
+           "Sid": "shared-reports-layout-2026-11"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "clobbered-object-catalogue-standard"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "closing-reports-store": {
+      "status": "succeeded"
+     },
+     "object-catalogue-standard": {
+      "status": "succeeded"
+     },
+     "rolled-out-export-store": {
+      "status": "succeeded"
+     },
+     "shared-reports-layout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-001": {
+        "Arn": "arn:aws:s3:::store-123456789012-001",
+        "BucketName": "store-123456789012-001",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-002",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketWeekly",
+          "IncludedObjectVersions": "Current",
+          "OptionalFields": [
+           "ObjectOwner",
+           "EncryptionStatus"
+          ],
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Release",
+          "Value": "release-2026-11-r41"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         }
+        ]
+       },
+       "store-123456789012-002": {
+        "Arn": "arn:aws:s3:::store-123456789012-002",
+        "BucketName": "store-123456789012-002",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         },
+         {
+          "Key": "Layout",
+          "Value": "reports/:owner/"
+         }
+        ]
+       },
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         },
+         {
+          "Key": "Layout",
+          "Value": "reports/:owner/"
+         },
+         {
+          "Key": "Closing",
+          "Value": "closing-2026-11-30"
+         },
+         {
+          "Key": "Successor",
+          "Value": "store-123456789012-002"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "store-123456789012-002": {
+        "Bucket": "store-123456789012-002",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "ArnLike": {
+             "aws:SourceArn": "arn:aws:s3:::store-123456789012-001"
+            },
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::store-123456789012-002/*",
+           "Sid": "InventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       },
+       "store-123456789012-20261101120000000000000001": {
+        "Bucket": "store-123456789012-20261101120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Effect": "Deny",
+           "NotResource": "arn:aws:s3:::store-123456789012-20261101120000000000000001/reports/*",
+           "Principal": "*",
+           "Sid": "shared-reports-layout-2026-11"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "clobbered-shared-reports-layout"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "closing-reports-store": {
+      "status": "succeeded"
+     },
+     "object-catalogue-standard": {
+      "status": "succeeded"
+     },
+     "rolled-out-export-store": {
+      "status": "failed"
+     },
+     "shared-reports-layout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-002": {
+        "Arn": "arn:aws:s3:::store-123456789012-002",
+        "BucketName": "store-123456789012-002",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         },
+         {
+          "Key": "Layout",
+          "Value": "reports/:owner/"
+         }
+        ]
+       },
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         },
+         {
+          "Key": "Layout",
+          "Value": "reports/:owner/"
+         },
+         {
+          "Key": "Closing",
+          "Value": "closing-2026-11-30"
+         },
+         {
+          "Key": "Successor",
+          "Value": "store-123456789012-002"
+         }
+        ]
+       },
+       "store-123456789012-20261101130000000000000002": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101130000000000000002",
+        "BucketName": "store-123456789012-20261101130000000000000002",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-002",
+           "Format": "CSV",
+           "Prefix": "reports/orders-team/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketWeekly",
+          "IncludedObjectVersions": "Current",
+          "OptionalFields": [
+           "ObjectOwner",
+           "EncryptionStatus"
+          ],
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "store-123456789012-002": {
+        "Bucket": "store-123456789012-002",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Effect": "Deny",
+           "NotResource": "arn:aws:s3:::store-123456789012-002/reports/*",
+           "Principal": "*",
+           "Sid": "shared-reports-layout-2026-11"
+          },
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "ArnLike": {
+             "aws:SourceArn": "arn:aws:s3:::store-123456789012-20261101130000000000000002"
+            },
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::store-123456789012-002/reports/*",
+           "Sid": "InventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       },
+       "store-123456789012-20261101120000000000000001": {
+        "Bucket": "store-123456789012-20261101120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Effect": "Deny",
+           "NotResource": "arn:aws:s3:::store-123456789012-20261101120000000000000001/reports/*",
+           "Principal": "*",
+           "Sid": "shared-reports-layout-2026-11"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "failed-rolled-out-export-store"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "closing-reports-store": {
+      "status": "failed"
+     },
+     "object-catalogue-standard": {
+      "status": "succeeded"
+     },
+     "rolled-out-export-store": {
+      "status": "succeeded"
+     },
+     "shared-reports-layout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-001": {
+        "Arn": "arn:aws:s3:::store-123456789012-001",
+        "BucketName": "store-123456789012-001",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+           "Format": "CSV",
+           "Prefix": "reports/orders-team/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketWeekly",
+          "IncludedObjectVersions": "Current",
+          "OptionalFields": [
+           "ObjectOwner",
+           "EncryptionStatus"
+          ],
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Release",
+          "Value": "release-2026-11-r41"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         }
+        ]
+       },
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         },
+         {
+          "Key": "Layout",
+          "Value": "reports/:owner/"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "store-123456789012-20261101120000000000000001": {
+        "Bucket": "store-123456789012-20261101120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Effect": "Deny",
+           "NotResource": "arn:aws:s3:::store-123456789012-20261101120000000000000001/reports/*",
+           "Principal": "*",
+           "Sid": "shared-reports-layout-2026-11"
+          },
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "ArnLike": {
+             "aws:SourceArn": "arn:aws:s3:::store-123456789012-001"
+            },
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::store-123456789012-20261101120000000000000001/reports/*",
+           "Sid": "InventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "failed-closing-reports-store"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "closing-reports-store": {
+      "status": "succeeded"
+     },
+     "object-catalogue-standard": {
+      "status": "failed"
+     },
+     "rolled-out-export-store": {
+      "status": "succeeded"
+     },
+     "shared-reports-layout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-001": {
+        "Arn": "arn:aws:s3:::store-123456789012-001",
+        "BucketName": "store-123456789012-001",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-002",
+           "Format": "CSV",
+           "Prefix": "reports/orders-team/"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketWeekly",
+          "IncludedObjectVersions": "Current",
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Release",
+          "Value": "release-2026-11-r41"
+         }
+        ]
+       },
+       "store-123456789012-002": {
+        "Arn": "arn:aws:s3:::store-123456789012-002",
+        "BucketName": "store-123456789012-002",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         },
+         {
+          "Key": "Layout",
+          "Value": "reports/:owner/"
+         }
+        ]
+       },
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         },
+         {
+          "Key": "Layout",
+          "Value": "reports/:owner/"
+         },
+         {
+          "Key": "Closing",
+          "Value": "closing-2026-11-30"
+         },
+         {
+          "Key": "Successor",
+          "Value": "store-123456789012-002"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "store-123456789012-002": {
+        "Bucket": "store-123456789012-002",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Effect": "Deny",
+           "NotResource": "arn:aws:s3:::store-123456789012-002/reports/*",
+           "Principal": "*",
+           "Sid": "shared-reports-layout-2026-11"
+          },
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "ArnLike": {
+             "aws:SourceArn": "arn:aws:s3:::store-123456789012-001"
+            },
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::store-123456789012-002/reports/*",
+           "Sid": "InventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       },
+       "store-123456789012-20261101120000000000000001": {
+        "Bucket": "store-123456789012-20261101120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Effect": "Deny",
+           "NotResource": "arn:aws:s3:::store-123456789012-20261101120000000000000001/reports/*",
+           "Principal": "*",
+           "Sid": "shared-reports-layout-2026-11"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "failed-object-catalogue-standard"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "closing-reports-store": {
+      "status": "succeeded"
+     },
+     "object-catalogue-standard": {
+      "status": "succeeded"
+     },
+     "rolled-out-export-store": {
+      "status": "succeeded"
+     },
+     "shared-reports-layout": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-001": {
+        "Arn": "arn:aws:s3:::store-123456789012-001",
+        "BucketName": "store-123456789012-001",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-002",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketWeekly",
+          "IncludedObjectVersions": "Current",
+          "OptionalFields": [
+           "ObjectOwner",
+           "EncryptionStatus"
+          ],
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Release",
+          "Value": "release-2026-11-r41"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         }
+        ]
+       },
+       "store-123456789012-002": {
+        "Arn": "arn:aws:s3:::store-123456789012-002",
+        "BucketName": "store-123456789012-002",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         },
+         {
+          "Key": "Layout",
+          "Value": "reports/:owner/"
+         }
+        ]
+       },
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         },
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         },
+         {
+          "Key": "Layout",
+          "Value": "reports/:owner/"
+         },
+         {
+          "Key": "Closing",
+          "Value": "closing-2026-11-30"
+         },
+         {
+          "Key": "Successor",
+          "Value": "store-123456789012-002"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "store-123456789012-002": {
+        "Bucket": "store-123456789012-002",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "ArnLike": {
+             "aws:SourceArn": "arn:aws:s3:::store-123456789012-001"
+            },
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::store-123456789012-002/*",
+           "Sid": "InventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "failed-shared-reports-layout"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       },
+       "store-123456789012-20261101130000000000000002": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101130000000000000002",
+        "BucketName": "store-123456789012-20261101130000000000000002",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketWeekly",
+          "IncludedObjectVersions": "Current",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "store-123456789012-20261101120000000000000001": {
+        "Bucket": "store-123456789012-20261101120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "ArnLike": {
+             "aws:SourceArn": "arn:aws:s3:::store-123456789012-20261101130000000000000002"
+            },
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::store-123456789012-20261101120000000000000001/*",
+           "Sid": "InventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "daily-not-weekly"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       },
+       "store-123456789012-20261101130000000000000002": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101130000000000000002",
+        "BucketName": "store-123456789012-20261101130000000000000002",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketWeekly",
+          "IncludedObjectVersions": "All",
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "store-123456789012-20261101120000000000000001": {
+        "Bucket": "store-123456789012-20261101120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "ArnLike": {
+             "aws:SourceArn": "arn:aws:s3:::store-123456789012-20261101130000000000000002"
+            },
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::store-123456789012-20261101120000000000000001/*",
+           "Sid": "InventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "all-object-versions"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       },
+       "store-123456789012-20261101130000000000000002": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101130000000000000002",
+        "BucketName": "store-123456789012-20261101130000000000000002",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+           "Format": "ORC"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketWeekly",
+          "IncludedObjectVersions": "Current",
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "store-123456789012-20261101120000000000000001": {
+        "Bucket": "store-123456789012-20261101120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "ArnLike": {
+             "aws:SourceArn": "arn:aws:s3:::store-123456789012-20261101130000000000000002"
+            },
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::store-123456789012-20261101120000000000000001/*",
+           "Sid": "InventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "orc-not-csv"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       },
+       "store-123456789012-20261101130000000000000002": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101130000000000000002",
+        "BucketName": "store-123456789012-20261101130000000000000002",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+           "Format": "CSV"
+          },
+          "Enabled": false,
+          "Id": "EntireBucketWeekly",
+          "IncludedObjectVersions": "Current",
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "store-123456789012-20261101120000000000000001": {
+        "Bucket": "store-123456789012-20261101120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "ArnLike": {
+             "aws:SourceArn": "arn:aws:s3:::store-123456789012-20261101130000000000000002"
+            },
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::store-123456789012-20261101120000000000000001/*",
+           "Sid": "InventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "configuration-disabled"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       },
+       "store-123456789012-20261101130000000000000002": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101130000000000000002",
+        "BucketName": "store-123456789012-20261101130000000000000002",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketWeekly",
+          "IncludedObjectVersions": "Current",
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "no-delivery-grant"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       },
+       "store-123456789012-20261101130000000000000002": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101130000000000000002",
+        "BucketName": "store-123456789012-20261101130000000000000002",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketWeekly",
+          "IncludedObjectVersions": "Current",
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "store-123456789012-20261101120000000000000001": {
+        "Bucket": "store-123456789012-20261101120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "logging.s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::store-123456789012-20261101120000000000000001/*",
+           "Sid": "InventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "grant-not-for-the-delivery-service"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       },
+       "store-123456789012-20261101130000000000000002": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101130000000000000002",
+        "BucketName": "store-123456789012-20261101130000000000000002",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketWeekly",
+          "IncludedObjectVersions": "Current",
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "store-123456789012-20261101120000000000000001": {
+        "Bucket": "store-123456789012-20261101120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+           "Sid": "InventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "grant-on-the-bucket-not-its-objects"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       },
+       "store-123456789012-20261101130000000000000002": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101130000000000000002",
+        "BucketName": "store-123456789012-20261101130000000000000002",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-20261101140000000000000003",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketWeekly",
+          "IncludedObjectVersions": "Current",
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "store-123456789012-20261101140000000000000003": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101140000000000000003",
+        "BucketName": "store-123456789012-20261101140000000000000003",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "store-123456789012-20261101140000000000000003": {
+        "Bucket": "store-123456789012-20261101140000000000000003",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "ArnLike": {
+             "aws:SourceArn": "arn:aws:s3:::store-123456789012-20261101130000000000000002"
+            },
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::store-123456789012-20261101140000000000000003/*",
+           "Sid": "InventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "delivered-to-a-store-of-its-own"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketWeekly",
+          "IncludedObjectVersions": "Current",
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "store-123456789012-20261101120000000000000001": {
+        "Bucket": "store-123456789012-20261101120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "ArnLike": {
+             "aws:SourceArn": "arn:aws:s3:::store-123456789012-20261101120000000000000001"
+            },
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::store-123456789012-20261101120000000000000001/*",
+           "Sid": "InventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "reported-on-the-reports-store"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-123456789012-20261101120000000000000001": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+        "BucketName": "store-123456789012-20261101120000000000000001",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ]
+       },
+       "store-123456789012-20261101130000000000000002": {
+        "Arn": "arn:aws:s3:::store-123456789012-20261101130000000000000002",
+        "BucketName": "store-123456789012-20261101130000000000000002",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "EntireBucketWeekly",
+          "IncludedObjectVersions": "Current",
+          "ScheduleFrequency": "Weekly"
+         },
+         {
+          "Destination": {
+           "BucketAccountId": "123456789012",
+           "BucketArn": "arn:aws:s3:::store-123456789012-20261101120000000000000001",
+           "Format": "CSV"
+          },
+          "Enabled": true,
+          "Id": "FirstAttempt",
+          "IncludedObjectVersions": "Current",
+          "ScheduleFrequency": "Daily"
+         }
+        ],
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "store-123456789012-20261101120000000000000001": {
+        "Bucket": "store-123456789012-20261101120000000000000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "ArnLike": {
+             "aws:SourceArn": "arn:aws:s3:::store-123456789012-20261101130000000000000002"
+            },
+            "StringEquals": {
+             "aws:SourceAccount": "123456789012"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::store-123456789012-20261101120000000000000001/*",
+           "Sid": "InventoryReportDelivery"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "second-configuration-left-behind"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-000000000110-20260919185646440900000001": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::store-000000000110-20260919185646440900000001",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "store-000000000110-20260919185646440900000001",
+        "DomainName": "store-000000000110-20260919185646440900000001.s3.amazonaws.com",
+        "DualStackDomainName": "store-000000000110-20260919185646440900000001.s3.dualstack.us-east-1.amazonaws.com",
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "store-000000000110-20260919185646440900000001.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ],
+        "WebsiteURL": "http://store-000000000110-20260919185646440900000001.s3-website-us-east-1.amazonaws.com"
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "orders-team-exports-000000000110": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::orders-team-exports-000000000110",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "orders-team-exports-000000000110",
+        "DomainName": "orders-team-exports-000000000110.s3.amazonaws.com",
+        "DualStackDomainName": "orders-team-exports-000000000110.s3.dualstack.us-east-1.amazonaws.com",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000110",
+           "BucketArn": "arn:aws:s3:::store-000000000110-20260919185646440900000001",
+           "Format": "CSV",
+           "Prefix": "orders-team"
+          },
+          "Enabled": true,
+          "Id": "orders-team-exports-weekly",
+          "IncludedObjectVersions": "Current",
+          "OptionalFields": [
+           "Size",
+           "LastModifiedDate",
+           "StorageClass"
+          ],
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "orders-team-exports-000000000110.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "orders-team-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ],
+        "WebsiteURL": "http://orders-team-exports-000000000110.s3-website-us-east-1.amazonaws.com"
+       },
+       "store-000000000110-20260919185646440900000001": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::store-000000000110-20260919185646440900000001",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "store-000000000110-20260919185646440900000001",
+        "DomainName": "store-000000000110-20260919185646440900000001.s3.amazonaws.com",
+        "DualStackDomainName": "store-000000000110-20260919185646440900000001.s3.dualstack.us-east-1.amazonaws.com",
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "store-000000000110-20260919185646440900000001.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ],
+        "WebsiteURL": "http://store-000000000110-20260919185646440900000001.s3-website-us-east-1.amazonaws.com"
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "store-000000000110-20260919185646440900000001": {
+        "Bucket": "store-000000000110-20260919185646440900000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "ArnLike": {
+             "aws:SourceArn": "arn:aws:s3:::orders-team-exports-000000000110"
+            },
+            "StringEquals": {
+             "aws:SourceAccount": "000000000110"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::store-000000000110-20260919185646440900000001/orders-team/*",
+           "Sid": "AllowS3InventoryDeliveryOrdersTeam"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "closing-reports-store": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 2,
+        "landed_ns": 42354488170190,
+        "landed_s": 10.825,
+        "result": {
+         "closing": "store-000000000116-20260919190637951900000001",
+         "created": true,
+         "fingerprint": [
+          "closing-2026-11-30"
+         ],
+         "granted": false,
+         "marked": true,
+         "successor": "store-000000000116-002",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-closing-reports-store-2",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "closing": "store-000000000116-20260919190637951900000001",
+       "created": true,
+       "fingerprint": [
+        "closing-2026-11-30"
+       ],
+       "granted": false,
+       "marked": true,
+       "successor": "store-000000000116-002",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "object-catalogue-standard": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 4,
+        "landed_ns": 42361605546638,
+        "landed_s": 17.943,
+        "result": {
+         "catalogue": "object-catalogue-2026-11",
+         "fields": "ObjectOwner+EncryptionStatus",
+         "fingerprint": [
+          "object-catalogue-2026-11",
+          "ObjectOwner+EncryptionStatus"
+         ],
+         "recorded": [
+          "store-000000000116-001",
+          "store-000000000116-002",
+          "store-000000000116-20260919190637951900000001"
+         ],
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-object-catalogue-standard-4",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "catalogue": "object-catalogue-2026-11",
+       "fields": "ObjectOwner+EncryptionStatus",
+       "fingerprint": [
+        "object-catalogue-2026-11",
+        "ObjectOwner+EncryptionStatus"
+       ],
+       "recorded": [
+        "store-000000000116-001",
+        "store-000000000116-002",
+        "store-000000000116-20260919190637951900000001"
+       ],
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "rolled-out-export-store": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 1,
+        "landed_ns": 42347776443882,
+        "landed_s": 4.114,
+        "result": {
+         "created": true,
+         "fingerprint": [
+          "store-000000000116-001"
+         ],
+         "release": "release-2026-11-r41",
+         "store": "store-000000000116-001",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-rolled-out-export-store-1",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "created": true,
+       "fingerprint": [
+        "store-000000000116-001"
+       ],
+       "release": "release-2026-11-r41",
+       "store": "store-000000000116-001",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "shared-reports-layout": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 3,
+        "landed_ns": 42358551670096,
+        "landed_s": 14.889,
+        "result": {
+         "entry": "shared-reports-layout-2026-11",
+         "fingerprint": [
+          "shared-reports-layout-2026-11"
+         ],
+         "held": [
+          "store-000000000116-002",
+          "store-000000000116-20260919190637951900000001"
+         ],
+         "place": "reports/",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-shared-reports-layout-3",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "entry": "shared-reports-layout-2026-11",
+       "fingerprint": [
+        "shared-reports-layout-2026-11"
+       ],
+       "held": [
+        "store-000000000116-002",
+        "store-000000000116-20260919190637951900000001"
+       ],
+       "place": "reports/",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-000000000116-20260919190637951900000001": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::store-000000000116-20260919190637951900000001",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "store-000000000116-20260919190637951900000001",
+        "DomainName": "store-000000000116-20260919190637951900000001.s3.amazonaws.com",
+        "DualStackDomainName": "store-000000000116-20260919190637951900000001.s3.dualstack.us-east-1.amazonaws.com",
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "store-000000000116-20260919190637951900000001.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         }
+        ],
+        "WebsiteURL": "http://store-000000000116-20260919190637951900000001.s3-website-us-east-1.amazonaws.com"
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "store-000000000116-001": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::store-000000000116-001",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "store-000000000116-001",
+        "DomainName": "store-000000000116-001.s3.amazonaws.com",
+        "DualStackDomainName": "store-000000000116-001.s3.dualstack.us-east-1.amazonaws.com",
+        "InventoryConfigurations": [
+         {
+          "Destination": {
+           "BucketAccountId": "000000000116",
+           "BucketArn": "arn:aws:s3:::store-000000000116-002",
+           "Format": "CSV",
+           "Prefix": "reports/orders-team"
+          },
+          "Enabled": true,
+          "Id": "orders-team-exports-weekly-csv",
+          "IncludedObjectVersions": "Current",
+          "OptionalFields": [
+           "ObjectOwner",
+           "EncryptionStatus"
+          ],
+          "ScheduleFrequency": "Weekly"
+         }
+        ],
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "store-000000000116-001.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-exports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Release",
+          "Value": "release-2026-11-r41"
+         }
+        ],
+        "WebsiteURL": "http://store-000000000116-001.s3-website-us-east-1.amazonaws.com"
+       },
+       "store-000000000116-002": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::store-000000000116-002",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "store-000000000116-002",
+        "DomainName": "store-000000000116-002.s3.amazonaws.com",
+        "DualStackDomainName": "store-000000000116-002.s3.dualstack.us-east-1.amazonaws.com",
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "store-000000000116-002.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         },
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         },
+         {
+          "Key": "Layout",
+          "Value": "reports/:owner/"
+         }
+        ],
+        "WebsiteURL": "http://store-000000000116-002.s3-website-us-east-1.amazonaws.com"
+       },
+       "store-000000000116-20260919190637951900000001": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::store-000000000116-20260919190637951900000001",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "store-000000000116-20260919190637951900000001",
+        "DomainName": "store-000000000116-20260919190637951900000001.s3.amazonaws.com",
+        "DualStackDomainName": "store-000000000116-20260919190637951900000001.s3.dualstack.us-east-1.amazonaws.com",
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "store-000000000116-20260919190637951900000001.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Catalogue",
+          "Value": "object-catalogue-2026-11"
+         },
+         {
+          "Key": "Successor",
+          "Value": "store-000000000116-002"
+         },
+         {
+          "Key": "Owner",
+          "Value": "storage-platform"
+         },
+         {
+          "Key": "Layout",
+          "Value": "reports/:owner/"
+         },
+         {
+          "Key": "CatalogueFields",
+          "Value": "ObjectOwner+EncryptionStatus"
+         },
+         {
+          "Key": "Store",
+          "Value": "inventory-reports"
+         },
+         {
+          "Key": "Closing",
+          "Value": "closing-2026-11-30"
+         }
+        ],
+        "WebsiteURL": "http://store-000000000116-20260919190637951900000001.s3-website-us-east-1.amazonaws.com"
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "store-000000000116-002": {
+        "Bucket": "store-000000000116-002",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Effect": "Deny",
+           "NotResource": "arn:aws:s3:::store-000000000116-002/reports/*",
+           "Principal": "*",
+           "Sid": "shared-reports-layout-2026-11"
+          },
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "ArnLike": {
+             "aws:SourceArn": "arn:aws:s3:::store-000000000116-001"
+            },
+            "StringEquals": {
+             "aws:SourceAccount": "000000000116"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::store-000000000116-002/reports/orders-team/*",
+           "Sid": "AllowInventoryDeliveryOrdersTeam"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       },
+       "store-000000000116-20260919190637951900000001": {
+        "Bucket": "store-000000000116-20260919190637951900000001",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Effect": "Deny",
+           "NotResource": "arn:aws:s3:::store-000000000116-20260919190637951900000001/reports/*",
+           "Principal": "*",
+           "Sid": "shared-reports-layout-2026-11"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-interference-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

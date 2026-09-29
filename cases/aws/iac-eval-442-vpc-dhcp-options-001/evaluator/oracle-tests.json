@@ -1,0 +1,3704 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "charged-public-resolution": {
+      "status": "succeeded"
+     },
+     "pooled-resolver-set": {
+      "status": "succeeded"
+     },
+     "recorded-search-domain": {
+      "status": "succeeded"
+     },
+     "reserved-resolver-headroom": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "charged-public-resolution": {
+      "status": "succeeded"
+     },
+     "pooled-resolver-set": {
+      "status": "succeeded"
+     },
+     "recorded-search-domain": {
+      "status": "succeeded"
+     },
+     "reserved-resolver-headroom": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0a1b2c3d4e5f44901": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44901",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "NtpServers": [
+         "169.254.169.123"
+        ],
+        "Tags": [
+         {
+          "Key": "Resolver",
+          "Value": "shared-egress"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       },
+       "dopt-0a1b2c3d4e5f44902": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44902",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": [
+         {
+          "Key": "Reserved",
+          "Value": "resolver-standby"
+         },
+         {
+          "Key": "Owner",
+          "Value": "reliability-team"
+         }
+        ]
+       },
+       "dopt-0a1b2c3d4e5f44903": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44903",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "Tags": [
+         {
+          "Key": "pike",
+          "Value": "permissions"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "SearchDomain",
+          "Value": "corp.internal"
+         },
+         {
+          "Key": "DomainOwner",
+          "Value": "network-team"
+         },
+         {
+          "Key": "ResolverAllowance",
+          "Value": "in-vpc-only"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "charged-public-resolution": {
+      "status": "succeeded"
+     },
+     "pooled-resolver-set": {
+      "status": "succeeded"
+     },
+     "recorded-search-domain": {
+      "status": "succeeded"
+     },
+     "reserved-resolver-headroom": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0a1b2c3d4e5f44901": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44901",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "NtpServers": [
+         "169.254.169.123"
+        ],
+        "Tags": [
+         {
+          "Key": "Resolver",
+          "Value": "shared-egress"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       },
+       "dopt-0a1b2c3d4e5f44902": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44902",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": [
+         {
+          "Key": "Reserved",
+          "Value": "resolver-standby"
+         },
+         {
+          "Key": "Owner",
+          "Value": "reliability-team"
+         }
+        ]
+       },
+       "dopt-0a1b2c3d4e5f44903": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44903",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "Tags": [
+         {
+          "Key": "pike",
+          "Value": "permissions"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "SearchDomain",
+          "Value": "corp.internal"
+         },
+         {
+          "Key": "DomainOwner",
+          "Value": "network-team"
+         },
+         {
+          "Key": "ResolverAllowance",
+          "Value": "in-vpc-only"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       },
+       "dopt-0a1b2c3d4e5f44903|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44903",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       }
+      }
+     }
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "charged-public-resolution": {
+      "status": "succeeded"
+     },
+     "pooled-resolver-set": {
+      "status": "succeeded"
+     },
+     "recorded-search-domain": {
+      "status": "succeeded"
+     },
+     "reserved-resolver-headroom": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0a1b2c3d4e5f44901": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44901",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "NtpServers": [
+         "169.254.169.123"
+        ],
+        "Tags": [
+         {
+          "Key": "Resolver",
+          "Value": "shared-egress"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "pike",
+          "Value": "permissions"
+         }
+        ]
+       },
+       "dopt-0a1b2c3d4e5f44902": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44902",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": [
+         {
+          "Key": "Reserved",
+          "Value": "resolver-standby"
+         },
+         {
+          "Key": "Owner",
+          "Value": "reliability-team"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "SearchDomain",
+          "Value": "corp.internal"
+         },
+         {
+          "Key": "DomainOwner",
+          "Value": "network-team"
+         },
+         {
+          "Key": "ResolverAllowance",
+          "Value": "in-vpc-only"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       },
+       "dopt-0a1b2c3d4e5f44901|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44901",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0a1b2c3d4e5f44903": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44903",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "Tags": [
+         {
+          "Key": "pike",
+          "Value": "permissions"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       },
+       "dopt-0a1b2c3d4e5f44903|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44903",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       }
+      }
+     }
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "charged-public-resolution": {
+      "status": "not-fired"
+     },
+     "pooled-resolver-set": {
+      "status": "not-fired"
+     },
+     "recorded-search-domain": {
+      "status": "not-fired"
+     },
+     "reserved-resolver-headroom": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0a1b2c3d4e5f44903": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44903",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       },
+       "dopt-0a1b2c3d4e5f44903|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44903",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       }
+      }
+     }
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "charged-public-resolution": {
+      "status": "succeeded"
+     },
+     "pooled-resolver-set": {
+      "status": "failed"
+     },
+     "recorded-search-domain": {
+      "status": "succeeded"
+     },
+     "reserved-resolver-headroom": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0a1b2c3d4e5f44902": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44902",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": [
+         {
+          "Key": "Reserved",
+          "Value": "resolver-standby"
+         },
+         {
+          "Key": "Owner",
+          "Value": "reliability-team"
+         }
+        ]
+       },
+       "dopt-0a1b2c3d4e5f44903": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44903",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "Tags": [
+         {
+          "Key": "pike",
+          "Value": "permissions"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "SearchDomain",
+          "Value": "corp.internal"
+         },
+         {
+          "Key": "DomainOwner",
+          "Value": "network-team"
+         },
+         {
+          "Key": "ResolverAllowance",
+          "Value": "in-vpc-only"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       },
+       "dopt-0a1b2c3d4e5f44903|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44903",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-pooled-resolver-set"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "charged-public-resolution": {
+      "status": "succeeded"
+     },
+     "pooled-resolver-set": {
+      "status": "succeeded"
+     },
+     "recorded-search-domain": {
+      "status": "failed"
+     },
+     "reserved-resolver-headroom": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0a1b2c3d4e5f44901": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44901",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "NtpServers": [
+         "169.254.169.123"
+        ],
+        "Tags": [
+         {
+          "Key": "Resolver",
+          "Value": "shared-egress"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "pike",
+          "Value": "permissions"
+         }
+        ]
+       },
+       "dopt-0a1b2c3d4e5f44902": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44902",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": [
+         {
+          "Key": "Reserved",
+          "Value": "resolver-standby"
+         },
+         {
+          "Key": "Owner",
+          "Value": "reliability-team"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "ResolverAllowance",
+          "Value": "in-vpc-only"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       },
+       "dopt-0a1b2c3d4e5f44901|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44901",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-recorded-search-domain"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "charged-public-resolution": {
+      "status": "succeeded"
+     },
+     "pooled-resolver-set": {
+      "status": "succeeded"
+     },
+     "recorded-search-domain": {
+      "status": "succeeded"
+     },
+     "reserved-resolver-headroom": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0a1b2c3d4e5f44901": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44901",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "NtpServers": [
+         "169.254.169.123"
+        ],
+        "Tags": [
+         {
+          "Key": "Resolver",
+          "Value": "shared-egress"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "pike",
+          "Value": "permissions"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "SearchDomain",
+          "Value": "corp.internal"
+         },
+         {
+          "Key": "DomainOwner",
+          "Value": "network-team"
+         },
+         {
+          "Key": "ResolverAllowance",
+          "Value": "in-vpc-only"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       },
+       "dopt-0a1b2c3d4e5f44901|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44901",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-reserved-resolver-headroom"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "charged-public-resolution": {
+      "status": "failed"
+     },
+     "pooled-resolver-set": {
+      "status": "succeeded"
+     },
+     "recorded-search-domain": {
+      "status": "succeeded"
+     },
+     "reserved-resolver-headroom": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0a1b2c3d4e5f44901": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44901",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "NtpServers": [
+         "169.254.169.123"
+        ],
+        "Tags": [
+         {
+          "Key": "Resolver",
+          "Value": "shared-egress"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "pike",
+          "Value": "permissions"
+         }
+        ]
+       },
+       "dopt-0a1b2c3d4e5f44902": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44902",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": [
+         {
+          "Key": "Reserved",
+          "Value": "resolver-standby"
+         },
+         {
+          "Key": "Owner",
+          "Value": "reliability-team"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "SearchDomain",
+          "Value": "corp.internal"
+         },
+         {
+          "Key": "DomainOwner",
+          "Value": "network-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       },
+       "dopt-0a1b2c3d4e5f44901|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44901",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-charged-public-resolution"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0a1b2c3d4e5f44903": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44903",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "Tags": [
+         {
+          "Key": "pike",
+          "Value": "permissions"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    }
+   },
+   "name": "no-association"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0a1b2c3d4e5f44903": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44903",
+        "DomainNameServers": [
+         "8.8.8.8"
+        ],
+        "Tags": [
+         {
+          "Key": "pike",
+          "Value": "permissions"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       },
+       "dopt-0a1b2c3d4e5f44903|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44903",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       }
+      }
+     }
+    }
+   },
+   "name": "wrong-resolvers"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0a1b2c3d4e5f44903": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44903",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4",
+         "1.1.1.1"
+        ],
+        "Tags": [
+         {
+          "Key": "pike",
+          "Value": "permissions"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       },
+       "dopt-0a1b2c3d4e5f44903|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44903",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       }
+      }
+     }
+    }
+   },
+   "name": "extra-resolver"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0a1b2c3d4e5f44903": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44903",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-resolver"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       },
+       "dopt-0a1b2c3d4e5f44903|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44903",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       }
+      }
+     }
+    }
+   },
+   "name": "untagged-set"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0a1b2c3d4e5f44903": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44903",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "Tags": [
+         {
+          "Key": "pike",
+          "Value": "readonly"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       },
+       "dopt-0a1b2c3d4e5f44903|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44903",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       }
+      }
+     }
+    }
+   },
+   "name": "wrong-mark-value"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0a1b2c3d4e5f44903": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44903",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "Tags": [
+         {
+          "Key": "pike",
+          "Value": "permissions"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44903|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44903",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    }
+   },
+   "name": "other-network"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "charged-public-resolution": {
+      "status": "succeeded"
+     },
+     "pooled-resolver-set": {
+      "status": "succeeded"
+     },
+     "recorded-search-domain": {
+      "status": "succeeded"
+     },
+     "reserved-resolver-headroom": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0a1b2c3d4e5f44901": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44901",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "NtpServers": [
+         "169.254.169.123"
+        ],
+        "Tags": [
+         {
+          "Key": "Resolver",
+          "Value": "shared-egress"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       },
+       "dopt-0a1b2c3d4e5f44902": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44902",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": [
+         {
+          "Key": "Reserved",
+          "Value": "resolver-standby"
+         },
+         {
+          "Key": "Owner",
+          "Value": "reliability-team"
+         }
+        ]
+       },
+       "dopt-0a1b2c3d4e5f44903": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44903",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "Tags": [
+         {
+          "Key": "pike",
+          "Value": "permissions"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "SearchDomain",
+          "Value": "corp.internal"
+         },
+         {
+          "Key": "DomainOwner",
+          "Value": "network-team"
+         },
+         {
+          "Key": "ResolverAllowance",
+          "Value": "in-vpc-only"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       },
+       "dopt-0a1b2c3d4e5f44903|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44903",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-pool"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "charged-public-resolution": {
+      "status": "succeeded"
+     },
+     "pooled-resolver-set": {
+      "status": "succeeded"
+     },
+     "recorded-search-domain": {
+      "status": "succeeded"
+     },
+     "reserved-resolver-headroom": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0a1b2c3d4e5f44901": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44901",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "NtpServers": [
+         "169.254.169.123"
+        ],
+        "Tags": [
+         {
+          "Key": "Resolver",
+          "Value": "shared-egress"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "pike",
+          "Value": "permissions"
+         }
+        ]
+       },
+       "dopt-0a1b2c3d4e5f44902": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44902",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": [
+         {
+          "Key": "Reserved",
+          "Value": "resolver-standby"
+         },
+         {
+          "Key": "Owner",
+          "Value": "reliability-team"
+         }
+        ]
+       },
+       "dopt-0a1b2c3d4e5f44903": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44903",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "Tags": [
+         {
+          "Key": "pike",
+          "Value": "permissions"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "SearchDomain",
+          "Value": "corp.internal"
+         },
+         {
+          "Key": "DomainOwner",
+          "Value": "network-team"
+         },
+         {
+          "Key": "ResolverAllowance",
+          "Value": "in-vpc-only"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       },
+       "dopt-0a1b2c3d4e5f44901|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44901",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-headroom"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "charged-public-resolution": {
+      "status": "succeeded"
+     },
+     "pooled-resolver-set": {
+      "status": "succeeded"
+     },
+     "recorded-search-domain": {
+      "status": "succeeded"
+     },
+     "reserved-resolver-headroom": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0a1b2c3d4e5f44901": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44901",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "NtpServers": [
+         "169.254.169.123"
+        ],
+        "Tags": [
+         {
+          "Key": "Resolver",
+          "Value": "shared-egress"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "pike",
+          "Value": "permissions"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "SearchDomain",
+          "Value": "corp.internal"
+         },
+         {
+          "Key": "DomainOwner",
+          "Value": "network-team"
+         },
+         {
+          "Key": "ResolverAllowance",
+          "Value": "in-vpc-only"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       },
+       "dopt-0a1b2c3d4e5f44901|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44901",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-held-slot"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "charged-public-resolution": {
+      "status": "succeeded"
+     },
+     "pooled-resolver-set": {
+      "status": "succeeded"
+     },
+     "recorded-search-domain": {
+      "status": "succeeded"
+     },
+     "reserved-resolver-headroom": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0a1b2c3d4e5f44901": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44901",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "NtpServers": [
+         "169.254.169.123"
+        ],
+        "Tags": [
+         {
+          "Key": "Resolver",
+          "Value": "shared-egress"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "pike",
+          "Value": "permissions"
+         }
+        ]
+       },
+       "dopt-0a1b2c3d4e5f44902": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44902",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": [
+         {
+          "Key": "Reserved",
+          "Value": "resolver-standby"
+         },
+         {
+          "Key": "Owner",
+          "Value": "reliability-team"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "ResolverAllowance",
+          "Value": "in-vpc-only"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       },
+       "dopt-0a1b2c3d4e5f44901|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44901",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-record"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "charged-public-resolution": {
+      "status": "succeeded"
+     },
+     "pooled-resolver-set": {
+      "status": "succeeded"
+     },
+     "recorded-search-domain": {
+      "status": "succeeded"
+     },
+     "reserved-resolver-headroom": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0a1b2c3d4e5f44900": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "DomainName": "us-east-1.compute.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0a1b2c3d4e5f44901": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44901",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "NtpServers": [
+         "169.254.169.123"
+        ],
+        "Tags": [
+         {
+          "Key": "Resolver",
+          "Value": "shared-egress"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "pike",
+          "Value": "permissions"
+         }
+        ]
+       },
+       "dopt-0a1b2c3d4e5f44902": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44902",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": [
+         {
+          "Key": "Reserved",
+          "Value": "resolver-standby"
+         },
+         {
+          "Key": "Owner",
+          "Value": "reliability-team"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f44001": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "SearchDomain",
+          "Value": "corp.internal"
+         },
+         {
+          "Key": "DomainOwner",
+          "Value": "network-team"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       },
+       "vpc-0a1b2c3d4e5f44002": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0a1b2c3d4e5f44900|vpc-0a1b2c3d4e5f44002": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44900",
+        "VpcId": "vpc-0a1b2c3d4e5f44002"
+       },
+       "dopt-0a1b2c3d4e5f44901|vpc-0a1b2c3d4e5f44001": {
+        "DhcpOptionsId": "dopt-0a1b2c3d4e5f44901",
+        "VpcId": "vpc-0a1b2c3d4e5f44001"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-allowance"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-00c01c4b884ad693b": {
+        "DhcpOptionsId": "dopt-00c01c4b884ad693b",
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0adcf62fe617a787a": {
+        "CidrBlock": "10.60.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0d1db2c2b422a101a"
+        ],
+        "DefaultNetworkAcl": "acl-0a6220b3d7025b197",
+        "DefaultSecurityGroup": "sg-08b929b7344c11628",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0adcf62fe617a787a"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-02fd49a0b823aeab0"
+        ],
+        "DefaultNetworkAcl": "acl-05d0715cadb83df0d",
+        "DefaultSecurityGroup": "sg-03f1011b0114a0a21",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-00c01c4b884ad693b|vpc-0adcf62fe617a787a": {
+        "DhcpOptionsId": "dopt-00c01c4b884ad693b",
+        "VpcId": "vpc-0adcf62fe617a787a"
+       },
+       "dopt-00c01c4b884ad693b|vpc-0cb1ecab670b248b1": {
+        "DhcpOptionsId": "dopt-00c01c4b884ad693b",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-00c01c4b884ad693b": {
+        "DhcpOptionsId": "dopt-00c01c4b884ad693b",
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-05cc33f9d75cb5e95": {
+        "DhcpOptionsId": "dopt-05cc33f9d75cb5e95",
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "pike",
+          "Value": "permissions"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0adcf62fe617a787a": {
+        "CidrBlock": "10.60.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0d1db2c2b422a101a"
+        ],
+        "DefaultNetworkAcl": "acl-0a6220b3d7025b197",
+        "DefaultSecurityGroup": "sg-08b929b7344c11628",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "VpcId": "vpc-0adcf62fe617a787a"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-02fd49a0b823aeab0"
+        ],
+        "DefaultNetworkAcl": "acl-05d0715cadb83df0d",
+        "DefaultSecurityGroup": "sg-03f1011b0114a0a21",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-00c01c4b884ad693b|vpc-0cb1ecab670b248b1": {
+        "DhcpOptionsId": "dopt-00c01c4b884ad693b",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       },
+       "dopt-05cc33f9d75cb5e95|vpc-0adcf62fe617a787a": {
+        "DhcpOptionsId": "dopt-05cc33f9d75cb5e95",
+        "VpcId": "vpc-0adcf62fe617a787a"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "charged-public-resolution": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 4,
+        "landed_ns": 343013304271717,
+        "landed_s": 52.042,
+        "result": {
+         "fingerprint": [
+          "in-vpc-only"
+         ],
+         "marked": [
+          "vpc-0137e7b6093cf4c05"
+         ],
+         "moved": [
+          "vpc-0137e7b6093cf4c05"
+         ],
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-charged-public-resolution-4",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        "in-vpc-only"
+       ],
+       "marked": [
+        "vpc-0137e7b6093cf4c05"
+       ],
+       "moved": [
+        "vpc-0137e7b6093cf4c05"
+       ],
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "pooled-resolver-set": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 1,
+        "landed_ns": 342966288048362,
+        "landed_s": 5.025,
+        "result": {
+         "created": true,
+         "fingerprint": [
+          "shared-egress",
+          "169.254.169.123"
+         ],
+         "pooled": "dopt-0c132e128961632ef",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-pooled-resolver-set-1",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "created": true,
+       "fingerprint": [
+        "shared-egress",
+        "169.254.169.123"
+       ],
+       "pooled": "dopt-0c132e128961632ef",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "recorded-search-domain": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 2,
+        "landed_ns": 342967662418793,
+        "landed_s": 6.4,
+        "result": {
+         "fingerprint": [
+          "corp.internal"
+         ],
+         "name": "corp.internal",
+         "recorded": [
+          "vpc-0137e7b6093cf4c05"
+         ],
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-recorded-search-domain-2",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        "corp.internal"
+       ],
+       "name": "corp.internal",
+       "recorded": [
+        "vpc-0137e7b6093cf4c05"
+       ],
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "reserved-resolver-headroom": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 3,
+        "landed_ns": 343009897753176,
+        "landed_s": 48.635,
+        "result": {
+         "created": true,
+         "fingerprint": [
+          "resolver-standby"
+         ],
+         "standby": "dopt-01b341e1c6573e0da",
+         "trigger": "snapshot"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-reserved-resolver-headroom-3",
+        "trigger_kind": "snapshot"
+       }
+      ],
+      "result": {
+       "created": true,
+       "fingerprint": [
+        "resolver-standby"
+       ],
+       "standby": "dopt-01b341e1c6573e0da",
+       "trigger": "snapshot"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0b6e28f847f805fe6": {
+        "DhcpOptionsId": "dopt-0b6e28f847f805fe6",
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-05d276019791adf58"
+        ],
+        "DefaultNetworkAcl": "acl-00ba7169f0091172d",
+        "DefaultSecurityGroup": "sg-0423679f7138a41c0",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0137e7b6093cf4c05": {
+        "CidrBlock": "10.60.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0081036b5d2b0fe76"
+        ],
+        "DefaultNetworkAcl": "acl-0d95ceb6f1e051e48",
+        "DefaultSecurityGroup": "sg-0b7866a8169f3261d",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         }
+        ],
+        "VpcId": "vpc-0137e7b6093cf4c05"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0b6e28f847f805fe6|vpc-0104445597b1b13c4": {
+        "DhcpOptionsId": "dopt-0b6e28f847f805fe6",
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "dopt-0b6e28f847f805fe6|vpc-0137e7b6093cf4c05": {
+        "DhcpOptionsId": "dopt-0b6e28f847f805fe6",
+        "VpcId": "vpc-0137e7b6093cf4c05"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-01b341e1c6573e0da": {
+        "DhcpOptionsId": "dopt-01b341e1c6573e0da",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "reliability-team"
+         },
+         {
+          "Key": "Reserved",
+          "Value": "resolver-standby"
+         }
+        ]
+       },
+       "dopt-0b6e28f847f805fe6": {
+        "DhcpOptionsId": "dopt-0b6e28f847f805fe6",
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0c132e128961632ef": {
+        "DhcpOptionsId": "dopt-0c132e128961632ef",
+        "DomainName": "corp.internal",
+        "DomainNameServers": [
+         "8.8.8.8",
+         "8.8.4.4"
+        ],
+        "NtpServers": [
+         "169.254.169.123"
+        ],
+        "Tags": [
+         {
+          "Key": "pike",
+          "Value": "permissions"
+         },
+         {
+          "Key": "Resolver",
+          "Value": "shared-egress"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-05d276019791adf58"
+        ],
+        "DefaultNetworkAcl": "acl-00ba7169f0091172d",
+        "DefaultSecurityGroup": "sg-0423679f7138a41c0",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0137e7b6093cf4c05": {
+        "CidrBlock": "10.60.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0081036b5d2b0fe76"
+        ],
+        "DefaultNetworkAcl": "acl-0d95ceb6f1e051e48",
+        "DefaultSecurityGroup": "sg-0b7866a8169f3261d",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "Name",
+          "Value": "orders-app"
+         },
+         {
+          "Key": "DomainOwner",
+          "Value": "network-team"
+         },
+         {
+          "Key": "ResolverAllowance",
+          "Value": "in-vpc-only"
+         },
+         {
+          "Key": "SearchDomain",
+          "Value": "corp.internal"
+         }
+        ],
+        "VpcId": "vpc-0137e7b6093cf4c05"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0b6e28f847f805fe6|vpc-0104445597b1b13c4": {
+        "DhcpOptionsId": "dopt-0b6e28f847f805fe6",
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "dopt-0c132e128961632ef|vpc-0137e7b6093cf4c05": {
+        "DhcpOptionsId": "dopt-0c132e128961632ef",
+        "VpcId": "vpc-0137e7b6093cf4c05"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-interference-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

@@ -1,0 +1,21 @@
+# Copy this file to aws.local.toml and fill in the sandbox target.
+# aws.local.toml is gitignored and contains no credentials.
+[aws]
+profile = "cloudgym-sandbox"
+account_id = "000000000000"
+region = "us-east-1"
+role_name = "SandboxAdministrator"      # Identity Center permission set (access = "sso")
+
+# Optional: a pool of extra sandbox accounts so batches and certification run cells
+# in parallel (one account per lease). `uv run sandbox-pool add` creates accounts with
+# organizations:CreateAccount into `ou_id` (the sandbox SCP is inherited) and appends
+# them below; each is reached by assuming `access_role` from `management_profile`.
+# [aws.pool]
+# management_profile = "cloudgym-mgmt"          # SSO profile into the management account
+# ou_id = "ou-xxxx-xxxxxxxx"                       # the OU the sandbox SCP is attached to
+# email_template = "you+cw-sbx-{n:02d}@example.org" # root email per account (plus-addressing)
+# access_role = "OrganizationAccountAccessRole"
+#
+# [[aws.pool.accounts]]                            # written by `sandbox-pool add`
+# profile = "cloudgym-pool-01"
+# account_id = "000000000001"

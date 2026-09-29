@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_158_iam_role",
+  "utterance": "Create an AWS Lambda function named `lambda_function_name` to run the file `lambda.js`: package that file as the function's zip archive, set the handler to `lambda.test` and the runtime to `nodejs22.x`. The execution role `iam_for_lambda` already exists in this account and the function runs as that role; the identity it runs as also needs the permissions a Lambda function uses to write its logs.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's runtime settings and how its code executes",
+    "intent": "a Lambda function named lambda_function_name that did not exist at the start is deployed from a zip archive built from lambda.js, is entered at the handler lambda.test the request names, runs on the Node.js this account keeps its functions on as that stands when the work is finished, and runs as the execution identity the account keeps in service for its Lambda workloads, which carries the log-writing grant the account provides for them rather than one written to duplicate it"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 158
+  }
+}

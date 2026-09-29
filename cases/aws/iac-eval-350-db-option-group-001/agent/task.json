@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_350_db_option_group",
+  "utterance": "This account already keeps an S3 store in service for the `orders-team` database audit records, and an IAM role in service for delivering them. Define an AWS RDS option group named `option-group-pike` with major engine version 11, using the `sqlserver-ee` engine, carrying a `TDE` option and a `SQLSERVER_AUDIT` option whose IAM_ROLE_ARN and S3_BUCKET_ARN settings name that identity and that store.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "the account holds exactly one option group of its own for the sqlserver-ee engine at major engine version 11.00 — raised as option-group-pike while that name is the workload's to take, otherwise the group the account already keeps in service for that engine version — and that group carries a TDE option and a SQLSERVER_AUDIT option whose IAM_ROLE_ARN setting names the identity the account keeps in service for delivering the orders-team database audit records and whose S3_BUCKET_ARN setting names the store it keeps those records in",
+    "diff": "the option group for sqlserver-ee 11.00 (SQLSERVER_AUDIT with IAM_ROLE_ARN and S3_BUCKET_ARN settings, TDE), plus the write permission the delivery role needs on the store; the store and the role themselves already exist"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 350
+  }
+}

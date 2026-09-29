@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_395_instance",
+  "utterance": "The `ledger-vpc` VPC (10.40.0.0/16) carries the ledger service's front subnets, and nothing in it is load-balanced yet. Launch a t2.micro EC2 instance in each of the ledger service's front subnets to serve ledger traffic, and put an internal network load balancer across those same subnets in front of the ledger service: give the load balancer a TCP listener on port 80 whose default action forwards to a new instance-type target group on TCP port 80 in `ledger-vpc`, and register the ledger service's serving instances in that target group on port 80, so that when you finish the group's registered targets on port 80 are exactly those instances.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "ledger-vpc runs one new t2.micro instance in each of the ledger service's own front subnets and an internal network load balancer standing across exactly those subnets, carrying a TCP listener on port 80 whose single default action forwards to a new instance-type target group on TCP port 80 in ledger-vpc; that target group's registered targets on port 80 are exactly the ledger service's instances that are taking traffic in that same final state"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 395
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_388_instance",
+  "utterance": "The `checkout-vpc` VPC (10.30.0.0/16) carries the checkout service's front subnet `checkout-front-a`, and nothing in it is load-balanced yet. Launch a t2.micro EC2 instance in `checkout-front-a` to serve checkout traffic, and put an internal network load balancer in that subnet in front of the checkout service: give the load balancer a TCP listener on port 80 whose default action forwards to a new instance-type target group on TCP port 80 in `checkout-vpc`, and register the checkout service's serving instances in that target group on port 80.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "checkout-vpc runs a new t2.micro instance in checkout-front-a and an internal network load balancer in that same subnet, carrying a TCP listener on port 80 whose single default action forwards to a new instance-type target group on TCP port 80 in checkout-vpc; that target group's registered targets on port 80 are exactly the checkout service's instances that are taking traffic in that same final state"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 388
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "allocated-segment",
+      "message": "One of the public subnets in this network now carries an allocation of analytics-ingest. Does that change where I may place things?",
+      "expect": ["reserved-edge-segment"],
+      "fingerprint": {
+        "reserved-edge-segment": ["analytics-ingest"],
+        "storefront-shared-entry": ["storefront-shared-entry", "sg-0a1b2c3d4e5f64001"],
+        "cutover-legacy-origin": ["storefront-origin-r7", "i-0a1b2c3d4e5f62002"],
+        "catalog-front-share": ["catalog-api-1", "i-0a1b2c3d4e5f62003"]
+      }
+    },
+    {
+      "name": "shared-entry-group",
+      "message": "There is a group called storefront-shared-entry standing here that I did not create. Should what I stand up carry it instead of one of mine?",
+      "expect": ["storefront-shared-entry"],
+      "fingerprint": {
+        "reserved-edge-segment": ["analytics-ingest"],
+        "storefront-shared-entry": ["storefront-shared-entry", "sg-0a1b2c3d4e5f64001"],
+        "cutover-legacy-origin": ["storefront-origin-r7", "i-0a1b2c3d4e5f62002"],
+        "catalog-front-share": ["catalog-api-1", "i-0a1b2c3d4e5f62003"]
+      }
+    },
+    {
+      "name": "in-flight-server",
+      "message": "A server named storefront-origin-r7 is running here and I did not bring it up. Does it belong behind what I am standing up?",
+      "expect": ["cutover-legacy-origin"],
+      "fingerprint": {
+        "reserved-edge-segment": ["analytics-ingest"],
+        "storefront-shared-entry": ["storefront-shared-entry", "sg-0a1b2c3d4e5f64001"],
+        "cutover-legacy-origin": ["storefront-origin-r7", "i-0a1b2c3d4e5f62002"],
+        "catalog-front-share": ["catalog-api-1", "i-0a1b2c3d4e5f62003"]
+      }
+    },
+    {
+      "name": "unexpected-registration",
+      "message": "catalog-api-1 turned up registered in what I built and I never put it there. Should it stay?",
+      "expect": ["catalog-front-share"],
+      "fingerprint": {
+        "reserved-edge-segment": ["analytics-ingest"],
+        "storefront-shared-entry": ["storefront-shared-entry", "sg-0a1b2c3d4e5f64001"],
+        "cutover-legacy-origin": ["storefront-origin-r7", "i-0a1b2c3d4e5f62002"],
+        "catalog-front-share": ["catalog-api-1", "i-0a1b2c3d4e5f62003"]
+      }
+    },
+    {
+      "name": "placement-in-words",
+      "message": "Some of the space in this network looks spoken for by somebody else, and something I did not bring up is running in it. How is placement decided here?",
+      "expect": [],
+      "fingerprint": {
+        "reserved-edge-segment": ["analytics-ingest"],
+        "storefront-shared-entry": ["storefront-shared-entry", "sg-0a1b2c3d4e5f64001"],
+        "cutover-legacy-origin": ["storefront-origin-r7", "i-0a1b2c3d4e5f62002"],
+        "catalog-front-share": ["catalog-api-1", "i-0a1b2c3d4e5f62003"]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "reserved-edge-segment": ["analytics-ingest"],
+        "storefront-shared-entry": ["storefront-shared-entry", "sg-0a1b2c3d4e5f64001"],
+        "cutover-legacy-origin": ["storefront-origin-r7", "i-0a1b2c3d4e5f62002"],
+        "catalog-front-share": ["catalog-api-1", "i-0a1b2c3d4e5f62003"]
+      }
+    }
+  ]
+}

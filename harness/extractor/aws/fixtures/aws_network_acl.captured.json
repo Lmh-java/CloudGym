@@ -1,0 +1,32 @@
+{
+  "cloudcontrol_type": "AWS::EC2::NetworkAcl",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-23T20:39:37+00:00",
+      "ResourceDescription": {
+        "Identifier": "acl-03c066fe6add98d6a",
+        "Properties": "{\"Associations\": [], \"Entries\": [{\"CidrBlock\": \"0.0.0.0/0\", \"Egress\": true, \"Protocol\": \"-1\", \"RuleAction\": \"allow\", \"RuleNumber\": 100}, {\"CidrBlock\": \"0.0.0.0/0\", \"Egress\": true, \"Protocol\": \"-1\", \"RuleAction\": \"deny\", \"RuleNumber\": 32767}, {\"CidrBlock\": \"0.0.0.0/0\", \"Egress\": false, \"Protocol\": \"-1\", \"RuleAction\": \"allow\", \"RuleNumber\": 100}, {\"CidrBlock\": \"0.0.0.0/0\", \"Egress\": false, \"Protocol\": \"-1\", \"RuleAction\": \"deny\", \"RuleNumber\": 32767}], \"IsDefault\": true, \"NetworkAclId\": \"acl-03c066fe6add98d6a\", \"Tags\": [], \"VpcId\": \"vpc-07641919e5f317d5c\", \"OwnerId\": \"123456789012\"}"
+      },
+      "TypeName": "AWS::EC2::NetworkAcl"
+    },
+    {
+      "ReadAt": "2026-09-23T20:39:37+00:00",
+      "ResourceDescription": {
+        "Identifier": "acl-05d0715cadb83df0d",
+        "Properties": "{\"Associations\": [{\"NetworkAclAssociationId\": \"aclassoc-061f8d19756b8a2d2\", \"NetworkAclId\": \"acl-05d0715cadb83df0d\", \"SubnetId\": \"subnet-04af5d32278a452c4\"}, {\"NetworkAclAssociationId\": \"aclassoc-0617363acc93d8c52\", \"NetworkAclId\": \"acl-05d0715cadb83df0d\", \"SubnetId\": \"subnet-07f63c7132ee566a7\"}, {\"NetworkAclAssociationId\": \"aclassoc-05f2ad49d83695978\", \"NetworkAclId\": \"acl-05d0715cadb83df0d\", \"SubnetId\": \"subnet-04959cc6acffa847d\"}, {\"NetworkAclAssociationId\": \"aclassoc-0162306fe5d6d56fc\", \"NetworkAclId\": \"acl-05d0715cadb83df0d\", \"SubnetId\": \"subnet-08f67a9fec5557b6e\"}, {\"NetworkAclAssociationId\": \"aclassoc-062a9d3192be9b435\", \"NetworkAclId\": \"acl-05d0715cadb83df0d\", \"SubnetId\": \"subnet-068edb6906c2e5f0b\"}, {\"NetworkAclAssociationId\": \"aclassoc-0dccf04815760b33f\", \"NetworkAclId\": \"acl-05d0715cadb83df0d\", \"SubnetId\": \"subnet-050cb01ec6f7c4dcf\"}], \"Entries\": [{\"CidrBlock\": \"0.0.0.0/0\", \"Egress\": true, \"Protocol\": \"-1\", \"RuleAction\": \"allow\", \"RuleNumber\": 100}, {\"CidrBlock\": \"0.0.0.0/0\", \"Egress\": true, \"Protocol\": \"-1\", \"RuleAction\": \"deny\", \"RuleNumber\": 32767}, {\"CidrBlock\": \"0.0.0.0/0\", \"Egress\": false, \"Protocol\": \"-1\", \"RuleAction\": \"allow\", \"RuleNumber\": 100}, {\"CidrBlock\": \"0.0.0.0/0\", \"Egress\": false, \"Protocol\": \"-1\", \"RuleAction\": \"deny\", \"RuleNumber\": 32767}], \"IsDefault\": true, \"NetworkAclId\": \"acl-05d0715cadb83df0d\", \"Tags\": [], \"VpcId\": \"vpc-0cb1ecab670b248b1\", \"OwnerId\": \"123456789012\"}"
+      },
+      "TypeName": "AWS::EC2::NetworkAcl"
+    },
+    {
+      "ReadAt": "2026-09-23T20:39:37+00:00",
+      "ResourceDescription": {
+        "Identifier": "acl-08a4b169d190a5c17",
+        "Properties": "{\"Associations\": [{\"NetworkAclAssociationId\": \"aclassoc-03e53c2c203e4e374\", \"NetworkAclId\": \"acl-08a4b169d190a5c17\", \"SubnetId\": \"subnet-0562df13b4ce3dc6a\"}], \"Entries\": [{\"CidrBlock\": \"0.0.0.0/0\", \"Egress\": true, \"Protocol\": \"-1\", \"RuleAction\": \"allow\", \"RuleNumber\": 100}, {\"CidrBlock\": \"0.0.0.0/0\", \"Egress\": true, \"Protocol\": \"-1\", \"RuleAction\": \"deny\", \"RuleNumber\": 32767}, {\"CidrBlock\": \"10.0.0.0/8\", \"Egress\": false, \"PortRange\": {\"From\": 443, \"To\": 443}, \"Protocol\": \"6\", \"RuleAction\": \"allow\", \"RuleNumber\": 100}, {\"CidrBlock\": \"0.0.0.0/0\", \"Egress\": false, \"Protocol\": \"-1\", \"RuleAction\": \"deny\", \"RuleNumber\": 32767}], \"IsDefault\": false, \"NetworkAclId\": \"acl-08a4b169d190a5c17\", \"Tags\": [{\"Key\": \"Name\", \"Value\": \"cloudgym-capability\"}], \"VpcId\": \"vpc-07641919e5f317d5c\", \"OwnerId\": \"123456789012\"}"
+      },
+      "TypeName": "AWS::EC2::NetworkAcl"
+    }
+  ],
+  "recorded_at": "2026-09-23T20:39:40+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

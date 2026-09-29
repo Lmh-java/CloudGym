@@ -1,0 +1,5264 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "entrypoint-baseline": {
+      "status": "succeeded"
+     },
+     "legacy-worker-precutover": {
+      "status": "succeeded"
+     },
+     "sibling-namesake-worker": {
+      "status": "succeeded"
+     },
+     "workload-worker-rollout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "entrypoint-baseline": {
+      "status": "succeeded"
+     },
+     "legacy-worker-precutover": {
+      "status": "succeeded"
+     },
+     "sibling-namesake-worker": {
+      "status": "succeeded"
+     },
+     "workload-worker-rollout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "orders-lambda-worker": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-lambda-worker",
+        "FunctionName": "orders-lambda-worker",
+        "Handler": "index.main",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "Timeout": 3
+       },
+       "orders-worker-2026": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-worker-2026",
+        "FunctionName": "orders-worker-2026",
+        "Handler": "index.main",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs20.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Rollout",
+          "Value": "live"
+         }
+        ],
+        "Timeout": 3
+       },
+       "orders-worker-v1": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-worker-v1",
+        "FunctionName": "orders-worker-v1",
+        "Handler": "index.v1",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs20.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Migration",
+          "Value": "under-way"
+         },
+         {
+          "Key": "Cutover",
+          "Value": "pending"
+         }
+        ],
+        "Timeout": 3
+       },
+       "reports-lambda-worker": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:reports-lambda-worker",
+        "FunctionName": "reports-lambda-worker",
+        "Handler": "index.report",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs20.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "reports"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Owner",
+          "Value": "reports-api"
+         }
+        ],
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "entrypoint-baseline": {
+      "status": "succeeded"
+     },
+     "legacy-worker-precutover": {
+      "status": "succeeded"
+     },
+     "sibling-namesake-worker": {
+      "status": "succeeded"
+     },
+     "workload-worker-rollout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "orders-lambda-worker": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-lambda-worker",
+        "FunctionName": "orders-lambda-worker",
+        "Handler": "index.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "Timeout": 3
+       },
+       "orders-worker-2026": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-worker-2026",
+        "FunctionName": "orders-worker-2026",
+        "Handler": "index.main",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs20.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Rollout",
+          "Value": "live"
+         }
+        ],
+        "Timeout": 3
+       },
+       "orders-worker-v1": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-worker-v1",
+        "FunctionName": "orders-worker-v1",
+        "Handler": "index.v1",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs20.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Migration",
+          "Value": "under-way"
+         },
+         {
+          "Key": "Cutover",
+          "Value": "pending"
+         }
+        ],
+        "Timeout": 3
+       },
+       "reports-lambda-worker": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:reports-lambda-worker",
+        "FunctionName": "reports-lambda-worker",
+        "Handler": "index.report",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs20.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "reports"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Owner",
+          "Value": "reports-api"
+         }
+        ],
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "entrypoint-baseline": {
+      "status": "succeeded"
+     },
+     "legacy-worker-precutover": {
+      "status": "succeeded"
+     },
+     "sibling-namesake-worker": {
+      "status": "succeeded"
+     },
+     "workload-worker-rollout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "orders-worker-2026": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-worker-2026",
+        "FunctionName": "orders-worker-2026",
+        "Handler": "index.main",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Rollout",
+          "Value": "live"
+         }
+        ],
+        "Timeout": 3
+       },
+       "orders-worker-v1": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-worker-v1",
+        "FunctionName": "orders-worker-v1",
+        "Handler": "index.v1",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs20.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Migration",
+          "Value": "under-way"
+         },
+         {
+          "Key": "Cutover",
+          "Value": "pending"
+         }
+        ],
+        "Timeout": 3
+       },
+       "reports-lambda-worker": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:reports-lambda-worker",
+        "FunctionName": "reports-lambda-worker",
+        "Handler": "index.report",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs20.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "reports"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Owner",
+          "Value": "reports-api"
+         }
+        ],
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "entrypoint-baseline": {
+      "status": "not-fired"
+     },
+     "legacy-worker-precutover": {
+      "status": "not-fired"
+     },
+     "sibling-namesake-worker": {
+      "status": "not-fired"
+     },
+     "workload-worker-rollout": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "orders-lambda-worker": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-lambda-worker",
+        "FunctionName": "orders-lambda-worker",
+        "Handler": "index.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "entrypoint-baseline": {
+      "status": "not-fired"
+     },
+     "legacy-worker-precutover": {
+      "status": "not-fired"
+     },
+     "sibling-namesake-worker": {
+      "status": "not-fired"
+     },
+     "workload-worker-rollout": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/lambda-cloudwatch-logging"
+        ],
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "orders": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders",
+        "FunctionName": "orders",
+        "Handler": "index.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "control-own-grant"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "entrypoint-baseline": {
+      "status": "not-fired"
+     },
+     "legacy-worker-precutover": {
+      "status": "not-fired"
+     },
+     "sibling-namesake-worker": {
+      "status": "not-fired"
+     },
+     "workload-worker-rollout": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "orders-lambda-worker": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-lambda-worker",
+        "FunctionName": "orders-lambda-worker",
+        "Handler": "lambda.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "entrypoint-baseline": {
+      "status": "succeeded"
+     },
+     "legacy-worker-precutover": {
+      "status": "succeeded"
+     },
+     "sibling-namesake-worker": {
+      "status": "succeeded"
+     },
+     "workload-worker-rollout": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "orders-lambda-worker": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-lambda-worker",
+        "FunctionName": "orders-lambda-worker",
+        "Handler": "index.main",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "Timeout": 3
+       },
+       "orders-worker-v1": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-worker-v1",
+        "FunctionName": "orders-worker-v1",
+        "Handler": "index.v1",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs20.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Migration",
+          "Value": "under-way"
+         },
+         {
+          "Key": "Cutover",
+          "Value": "pending"
+         }
+        ],
+        "Timeout": 3
+       },
+       "reports-lambda-worker": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:reports-lambda-worker",
+        "FunctionName": "reports-lambda-worker",
+        "Handler": "index.report",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs20.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "reports"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Owner",
+          "Value": "reports-api"
+         }
+        ],
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-workload-worker-rollout"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "entrypoint-baseline": {
+      "status": "succeeded"
+     },
+     "legacy-worker-precutover": {
+      "status": "succeeded"
+     },
+     "sibling-namesake-worker": {
+      "status": "failed"
+     },
+     "workload-worker-rollout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "orders-worker-2026": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-worker-2026",
+        "FunctionName": "orders-worker-2026",
+        "Handler": "index.main",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Rollout",
+          "Value": "live"
+         }
+        ],
+        "Timeout": 3
+       },
+       "orders-worker-v1": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-worker-v1",
+        "FunctionName": "orders-worker-v1",
+        "Handler": "index.v1",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs20.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Migration",
+          "Value": "under-way"
+         },
+         {
+          "Key": "Cutover",
+          "Value": "pending"
+         }
+        ],
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-sibling-namesake-worker"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "entrypoint-baseline": {
+      "status": "succeeded"
+     },
+     "legacy-worker-precutover": {
+      "status": "failed"
+     },
+     "sibling-namesake-worker": {
+      "status": "succeeded"
+     },
+     "workload-worker-rollout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "orders-worker-2026": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-worker-2026",
+        "FunctionName": "orders-worker-2026",
+        "Handler": "index.main",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Rollout",
+          "Value": "live"
+         }
+        ],
+        "Timeout": 3
+       },
+       "reports-lambda-worker": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:reports-lambda-worker",
+        "FunctionName": "reports-lambda-worker",
+        "Handler": "index.report",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs20.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "reports"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Owner",
+          "Value": "reports-api"
+         }
+        ],
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-legacy-worker-precutover"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "entrypoint-baseline": {
+      "status": "failed"
+     },
+     "legacy-worker-precutover": {
+      "status": "succeeded"
+     },
+     "sibling-namesake-worker": {
+      "status": "succeeded"
+     },
+     "workload-worker-rollout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "orders-worker-2026": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-worker-2026",
+        "FunctionName": "orders-worker-2026",
+        "Handler": "index.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Rollout",
+          "Value": "live"
+         }
+        ],
+        "Timeout": 3
+       },
+       "orders-worker-v1": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-worker-v1",
+        "FunctionName": "orders-worker-v1",
+        "Handler": "index.v1",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs20.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Migration",
+          "Value": "under-way"
+         },
+         {
+          "Key": "Cutover",
+          "Value": "pending"
+         }
+        ],
+        "Timeout": 3
+       },
+       "reports-lambda-worker": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:reports-lambda-worker",
+        "FunctionName": "reports-lambda-worker",
+        "Handler": "index.report",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs20.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "reports"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Owner",
+          "Value": "reports-api"
+         }
+        ],
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-entrypoint-baseline"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "entrypoint-baseline": {
+      "status": "succeeded"
+     },
+     "legacy-worker-precutover": {
+      "status": "succeeded"
+     },
+     "sibling-namesake-worker": {
+      "status": "succeeded"
+     },
+     "workload-worker-rollout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "orders-lambda-worker": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-lambda-worker",
+        "FunctionName": "orders-lambda-worker",
+        "Handler": "index.main",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "Timeout": 3
+       },
+       "orders-worker-v1": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-worker-v1",
+        "FunctionName": "orders-worker-v1",
+        "Handler": "index.v1",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs20.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Migration",
+          "Value": "under-way"
+         },
+         {
+          "Key": "Cutover",
+          "Value": "pending"
+         }
+        ],
+        "Timeout": 3
+       },
+       "reports-lambda-worker": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:reports-lambda-worker",
+        "FunctionName": "reports-lambda-worker",
+        "Handler": "index.report",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs20.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "reports"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Owner",
+          "Value": "reports-api"
+         }
+        ],
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-workload-worker-rollout"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "entrypoint-baseline": {
+      "status": "succeeded"
+     },
+     "legacy-worker-precutover": {
+      "status": "succeeded"
+     },
+     "sibling-namesake-worker": {
+      "status": "succeeded"
+     },
+     "workload-worker-rollout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "orders-worker-2026": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-worker-2026",
+        "FunctionName": "orders-worker-2026",
+        "Handler": "index.main",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Rollout",
+          "Value": "live"
+         }
+        ],
+        "Timeout": 3
+       },
+       "orders-worker-v1": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-worker-v1",
+        "FunctionName": "orders-worker-v1",
+        "Handler": "index.v1",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs20.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Migration",
+          "Value": "under-way"
+         },
+         {
+          "Key": "Cutover",
+          "Value": "pending"
+         }
+        ],
+        "Timeout": 3
+       },
+       "reports-lambda-worker": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:reports-lambda-worker",
+        "FunctionName": "reports-lambda-worker",
+        "Handler": "index.main",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "reports"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Owner",
+          "Value": "reports-api"
+         }
+        ],
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-sibling-namesake-worker"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "entrypoint-baseline": {
+      "status": "succeeded"
+     },
+     "legacy-worker-precutover": {
+      "status": "succeeded"
+     },
+     "sibling-namesake-worker": {
+      "status": "succeeded"
+     },
+     "workload-worker-rollout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "orders-worker-2026": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-worker-2026",
+        "FunctionName": "orders-worker-2026",
+        "Handler": "index.main",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Rollout",
+          "Value": "live"
+         }
+        ],
+        "Timeout": 3
+       },
+       "orders-worker-v1": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-worker-v1",
+        "FunctionName": "orders-worker-v1",
+        "Handler": "index.v1",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Migration",
+          "Value": "under-way"
+         },
+         {
+          "Key": "Cutover",
+          "Value": "pending"
+         }
+        ],
+        "Timeout": 3
+       },
+       "reports-lambda-worker": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:reports-lambda-worker",
+        "FunctionName": "reports-lambda-worker",
+        "Handler": "index.report",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs20.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "reports"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Owner",
+          "Value": "reports-api"
+         }
+        ],
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-legacy-worker-precutover"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "entrypoint-baseline": {
+      "status": "succeeded"
+     },
+     "legacy-worker-precutover": {
+      "status": "succeeded"
+     },
+     "sibling-namesake-worker": {
+      "status": "succeeded"
+     },
+     "workload-worker-rollout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "orders-worker-2026": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-worker-2026",
+        "FunctionName": "orders-worker-2026",
+        "Handler": "index.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Rollout",
+          "Value": "live"
+         }
+        ],
+        "Timeout": 3
+       },
+       "orders-worker-v1": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-worker-v1",
+        "FunctionName": "orders-worker-v1",
+        "Handler": "index.v1",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs20.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Migration",
+          "Value": "under-way"
+         },
+         {
+          "Key": "Cutover",
+          "Value": "pending"
+         }
+        ],
+        "Timeout": 3
+       },
+       "reports-lambda-worker": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:reports-lambda-worker",
+        "FunctionName": "reports-lambda-worker",
+        "Handler": "index.report",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs20.x",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "reports"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Owner",
+          "Value": "reports-api"
+         }
+        ],
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-entrypoint-baseline"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "entrypoint-baseline": {
+      "status": "not-fired"
+     },
+     "legacy-worker-precutover": {
+      "status": "not-fired"
+     },
+     "sibling-namesake-worker": {
+      "status": "not-fired"
+     },
+     "workload-worker-rollout": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "nc-no-worker"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "entrypoint-baseline": {
+      "status": "not-fired"
+     },
+     "legacy-worker-precutover": {
+      "status": "not-fired"
+     },
+     "sibling-namesake-worker": {
+      "status": "not-fired"
+     },
+     "workload-worker-rollout": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "orders-lambda-worker": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-lambda-worker",
+        "FunctionName": "orders-lambda-worker",
+        "Handler": "index.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "Timeout": 3
+       },
+       "orders-lambda-worker-tmp": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-lambda-worker-tmp",
+        "FunctionName": "orders-lambda-worker-tmp",
+        "Handler": "index.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "nc-two-workers"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "entrypoint-baseline": {
+      "status": "not-fired"
+     },
+     "legacy-worker-precutover": {
+      "status": "not-fired"
+     },
+     "sibling-namesake-worker": {
+      "status": "not-fired"
+     },
+     "workload-worker-rollout": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "orders-lambda-worker": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-lambda-worker",
+        "FunctionName": "orders-lambda-worker",
+        "Handler": "index.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "python3.12",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "nc-wrong-runtime"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "entrypoint-baseline": {
+      "status": "not-fired"
+     },
+     "legacy-worker-precutover": {
+      "status": "not-fired"
+     },
+     "sibling-namesake-worker": {
+      "status": "not-fired"
+     },
+     "workload-worker-rollout": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "orders-lambda-worker": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-lambda-worker",
+        "FunctionName": "orders-lambda-worker",
+        "Handler": "lambda.test",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "nc-entered-at-source"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "entrypoint-baseline": {
+      "status": "not-fired"
+     },
+     "legacy-worker-precutover": {
+      "status": "not-fired"
+     },
+     "sibling-namesake-worker": {
+      "status": "not-fired"
+     },
+     "workload-worker-rollout": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       },
+       "orders-worker-role": {
+        "Arn": "arn:aws:iam::123456789012:role/orders-worker-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "Path": "/",
+        "RoleName": "orders-worker-role"
+       }
+      },
+      "AWS::Lambda::Function": {
+       "orders-lambda-worker": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-lambda-worker",
+        "FunctionName": "orders-lambda-worker",
+        "Handler": "index.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/orders-worker-role",
+        "Runtime": "nodejs18.x",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "nc-own-identity"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "entrypoint-baseline": {
+      "status": "not-fired"
+     },
+     "legacy-worker-precutover": {
+      "status": "not-fired"
+     },
+     "sibling-namesake-worker": {
+      "status": "not-fired"
+     },
+     "workload-worker-rollout": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "orders-lambda-worker": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-lambda-worker",
+        "FunctionName": "orders-lambda-worker",
+        "Handler": "index.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "nc-no-log-grant"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "entrypoint-baseline": {
+      "status": "not-fired"
+     },
+     "legacy-worker-precutover": {
+      "status": "not-fired"
+     },
+     "sibling-namesake-worker": {
+      "status": "not-fired"
+     },
+     "workload-worker-rollout": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::123456789012:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "Path": "/",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "Path": "/",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "orders-lambda-worker": {
+        "Arn": "arn:aws:lambda:us-east-1:123456789012:function:orders-lambda-worker",
+        "FunctionName": "orders-lambda-worker",
+        "Handler": "index.handler",
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "Role": "arn:aws:iam::123456789012:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "Timeout": 3
+       }
+      }
+     }
+    }
+   },
+   "name": "nc-identity-not-trusted"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSReservedSSO_SandboxAdministrator_0000000000000001": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_SandboxAdministrator_0000000000000001",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+           ],
+           "Condition": {
+            "StringEquals": {
+             "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Federated": "arn:aws:iam::000000000114:saml-provider/AWSSSO_d19a45a4a1239f62_DO_NOT_DELETE"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 43200,
+        "Path": "/aws-reserved/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000174",
+        "RoleName": "AWSReservedSSO_SandboxAdministrator_0000000000000001"
+       },
+       "AWSServiceRoleForAutoScaling": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "autoscaling.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Default Service-Linked Role enables access to AWS Services and Resources used or managed by Auto Scaling",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AutoScalingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/autoscaling.amazonaws.com/",
+        "RoleId": "AROA00000000000000208",
+        "RoleName": "AWSServiceRoleForAutoScaling"
+       },
+       "AWSServiceRoleForElasticBeanstalk": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticbeanstalk.amazonaws.com/AWSServiceRoleForElasticBeanstalk",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticbeanstalk.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticBeanstalkServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticbeanstalk.amazonaws.com/",
+        "RoleId": "AROA00000000000000211",
+        "RoleName": "AWSServiceRoleForElasticBeanstalk"
+       },
+       "AWSServiceRoleForElasticLoadBalancing": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticloadbalancing.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows ELB to call AWS services on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
+        "RoleId": "AROA00000000000000194",
+        "RoleName": "AWSServiceRoleForElasticLoadBalancing"
+       },
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000181",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000190",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000177",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000220",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000170",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000114:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000219",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::000000000114:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000195",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSReservedSSO_SandboxAdministrator_0000000000000001": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_SandboxAdministrator_0000000000000001",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+           ],
+           "Condition": {
+            "StringEquals": {
+             "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Federated": "arn:aws:iam::000000000114:saml-provider/AWSSSO_d19a45a4a1239f62_DO_NOT_DELETE"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 43200,
+        "Path": "/aws-reserved/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000174",
+        "RoleName": "AWSReservedSSO_SandboxAdministrator_0000000000000001"
+       },
+       "AWSServiceRoleForAutoScaling": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "autoscaling.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Default Service-Linked Role enables access to AWS Services and Resources used or managed by Auto Scaling",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AutoScalingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/autoscaling.amazonaws.com/",
+        "RoleId": "AROA00000000000000208",
+        "RoleName": "AWSServiceRoleForAutoScaling"
+       },
+       "AWSServiceRoleForElasticBeanstalk": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticbeanstalk.amazonaws.com/AWSServiceRoleForElasticBeanstalk",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticbeanstalk.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticBeanstalkServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticbeanstalk.amazonaws.com/",
+        "RoleId": "AROA00000000000000211",
+        "RoleName": "AWSServiceRoleForElasticBeanstalk"
+       },
+       "AWSServiceRoleForElasticLoadBalancing": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticloadbalancing.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows ELB to call AWS services on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
+        "RoleId": "AROA00000000000000194",
+        "RoleName": "AWSServiceRoleForElasticLoadBalancing"
+       },
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000181",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000190",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000177",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000220",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000170",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000114:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000219",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::000000000114:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000195",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Scope",
+          "Value": "account"
+         },
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "orders": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:000000000114:function:orders",
+        "Code": {},
+        "Description": "",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "orders",
+        "Handler": "index.handler",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/orders"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::000000000114:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "SnapStartResponse": {
+         "ApplyOn": "None",
+         "OptimizationStatus": "Off"
+        },
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "entrypoint-baseline": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 4,
+        "landed_ns": 32084754677496,
+        "landed_s": 111.689,
+        "result": {
+         "entered": [
+          "orders-worker-2026"
+         ],
+         "entry_point": "index.main",
+         "fingerprint": [
+          "index.main"
+         ],
+         "trigger": "snapshot"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-entrypoint-baseline-4",
+        "trigger_kind": "snapshot"
+       }
+      ],
+      "result": {
+       "entered": [
+        "orders-worker-2026"
+       ],
+       "entry_point": "index.main",
+       "fingerprint": [
+        "index.main"
+       ],
+       "trigger": "snapshot"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "legacy-worker-precutover": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 2,
+        "landed_ns": 31987039580845,
+        "landed_s": 13.974,
+        "result": {
+         "fingerprint": [
+          "orders-worker-v1"
+         ],
+         "identity": "iam_for_lambda",
+         "kept": true,
+         "trigger": "api",
+         "worker": "orders-worker-v1"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-legacy-worker-precutover-2",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        "orders-worker-v1"
+       ],
+       "identity": "iam_for_lambda",
+       "kept": true,
+       "trigger": "api",
+       "worker": "orders-worker-v1"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "sibling-namesake-worker": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 3,
+        "landed_ns": 32018203309971,
+        "landed_s": 45.137,
+        "result": {
+         "fingerprint": [
+          "reports-lambda-worker"
+         ],
+         "identity": "iam_for_lambda",
+         "kept": true,
+         "trigger": "api",
+         "worker": "reports-lambda-worker"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-sibling-namesake-worker-3",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        "reports-lambda-worker"
+       ],
+       "identity": "iam_for_lambda",
+       "kept": true,
+       "trigger": "api",
+       "worker": "reports-lambda-worker"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "workload-worker-rollout": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 1,
+        "landed_ns": 31978888177454,
+        "landed_s": 5.822,
+        "result": {
+         "fingerprint": [
+          "orders-worker-2026"
+         ],
+         "identity": "iam_for_lambda",
+         "rolled_out": true,
+         "trigger": "api",
+         "worker": "orders-worker-2026"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-workload-worker-rollout-1",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        "orders-worker-2026"
+       ],
+       "identity": "iam_for_lambda",
+       "rolled_out": true,
+       "trigger": "api",
+       "worker": "orders-worker-2026"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000154",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000163",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000159",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000156",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000166",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000115:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000146",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::000000000115:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000162",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000154",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000163",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000159",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000156",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000166",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000115:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000146",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "iam_for_lambda": {
+        "Arn": "arn:aws:iam::000000000115:role/iam_for_lambda",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the execution identity this account's Lambda workers run as",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::000000000115:policy/lambda-log-writer"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000162",
+        "RoleName": "iam_for_lambda",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "lambda-execution"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Scope",
+          "Value": "account"
+         }
+        ]
+       }
+      },
+      "AWS::Lambda::Function": {
+       "orders-worker-2026": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:000000000115:function:orders-worker-2026",
+        "Code": {},
+        "Description": "the orders workload's Lambda worker",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "orders-worker-2026",
+        "Handler": "index.main",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/orders-worker-2026"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::000000000115:role/iam_for_lambda",
+        "Runtime": "nodejs18.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "SnapStartResponse": {
+         "ApplyOn": "None",
+         "OptimizationStatus": "Off"
+        },
+        "Tags": [
+         {
+          "Key": "Rollout",
+          "Value": "live"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         }
+        ],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       },
+       "orders-worker-v1": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:000000000115:function:orders-worker-v1",
+        "Code": {},
+        "Description": "the orders workload's Lambda worker, being moved off",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "orders-worker-v1",
+        "Handler": "index.v1",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/orders-worker-v1"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::000000000115:role/iam_for_lambda",
+        "Runtime": "nodejs20.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "SnapStartResponse": {
+         "ApplyOn": "None",
+         "OptimizationStatus": "Off"
+        },
+        "Tags": [
+         {
+          "Key": "Migration",
+          "Value": "under-way"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders"
+         },
+         {
+          "Key": "Cutover",
+          "Value": "pending"
+         }
+        ],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       },
+       "reports-lambda-worker": {
+        "Architectures": [
+         "x86_64"
+        ],
+        "Arn": "arn:aws:lambda:us-east-1:000000000115:function:reports-lambda-worker",
+        "Code": {},
+        "Description": "the reports application's own Lambda worker",
+        "EphemeralStorage": {
+         "Size": 512
+        },
+        "FileSystemConfigs": [],
+        "FunctionName": "reports-lambda-worker",
+        "Handler": "index.report",
+        "LoggingConfig": {
+         "LogFormat": "Text",
+         "LogGroup": "/aws/lambda/reports-lambda-worker"
+        },
+        "MemorySize": 128,
+        "PackageType": "Zip",
+        "RecursiveLoop": "Terminate",
+        "Role": "arn:aws:iam::000000000115:role/iam_for_lambda",
+        "Runtime": "nodejs20.x",
+        "RuntimeManagementConfig": {
+         "UpdateRuntimeOn": "Auto"
+        },
+        "SnapStartResponse": {
+         "ApplyOn": "None",
+         "OptimizationStatus": "Off"
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "reports-api"
+         },
+         {
+          "Key": "Workload",
+          "Value": "reports"
+         },
+         {
+          "Key": "Component",
+          "Value": "lambda-worker"
+         }
+        ],
+        "Timeout": 3,
+        "TracingConfig": {
+         "Mode": "PassThrough"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-interference-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_33_codebuild_project",
+  "utterance": "create a Basic AWS codebuild project resource with example iam role and an example GITHUB source. This account already keeps an example build project of its own: build the same GITHUB source that example builds rather than inventing a repository, and give the new project an IAM role of its own.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "a CodeBuild project that did not exist at the start builds from a source of type GITHUB whose location is the location the project the account currently designates as its example build project builds, and runs as an IAM role that did not exist at the start, was created for this project and is trusted by codebuild.amazonaws.com"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 33
+  }
+}

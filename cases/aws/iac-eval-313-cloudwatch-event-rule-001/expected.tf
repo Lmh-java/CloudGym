@@ -1,0 +1,74 @@
+# IaC-Eval reference output for row 313 (provider/terraform blocks dropped; the archive
+# source inlined; the pre-existing role and function carry the workload's `App = cron` tag
+# exactly as in initial.tf). Never applied: it is the witness of the task carried out with
+# nobody else acting on the account — the rule the prompt asks for, named `cron`, firing the
+# pre-existing function daily at 07:00 UTC.
+
+resource "aws_cloudwatch_event_rule" "cron" {
+  name                = "cron"
+  schedule_expression = "cron(0 7 * * ? *)"
+  state               = "ENABLED"
+
+  role_arn = aws_iam_role.cron.arn
+}
+
+resource "aws_cloudwatch_event_target" "cron" {
+  rule = aws_cloudwatch_event_rule.cron.name
+  arn  = aws_lambda_function.cron.arn
+}
+
+data "archive_file" "lambda-func" {
+  type        = "zip"
+  output_path = "${path.module}/lambda_func.zip"
+  source {
+    filename = "lambda_func.py"
+    content  = "def handler(event, context):\n    return {\"ok\": True}\n"
+  }
+}
+
+resource "aws_lambda_function" "cron" {
+  function_name    = "cron-lambda-function"
+  role             = aws_iam_role.cron.arn
+  filename         = data.archive_file.lambda-func.output_path
+  source_code_hash = data.archive_file.lambda-func.output_base64sha256
+  handler          = "lambda_func.handler"
+  runtime          = "python3.12"
+
+  tags = {
+    App = "cron"
+  }
+}
+
+resource "aws_lambda_permission" "cron" {
+  function_name = aws_lambda_function.cron.function_name
+  action        = "lambda:InvokeFunction"
+  principal     = "events.amazonaws.com"
+  source_arn    = aws_cloudwatch_event_rule.cron.arn
+}
+
+data "aws_iam_policy_document" "cron_assume_role" {
+  statement {
+    actions = ["sts:AssumeRole"]
+    principals {
+      type = "Service"
+      identifiers = [
+        "lambda.amazonaws.com",
+        "events.amazonaws.com"
+      ]
+    }
+  }
+}
+
+resource "aws_iam_role" "cron" {
+  name               = "cron_assume_role"
+  assume_role_policy = data.aws_iam_policy_document.cron_assume_role.json
+
+  tags = {
+    App = "cron"
+  }
+}
+
+resource "aws_iam_role_policy_attachment" "cron" {
+  role       = aws_iam_role.cron.name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+}

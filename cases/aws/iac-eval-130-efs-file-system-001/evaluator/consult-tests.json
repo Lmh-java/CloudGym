@@ -1,0 +1,77 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "allocation-record",
+      "message": "The file system I am putting this lifecycle configuration on has picked up a record reading scratch-pool-g4 that I did not write, and what it reserves changed under me while my call was being refused. Is that one to leave as it is, or is it mine to take off so my call goes through?",
+      "expect": [
+        "reserved-capacity-placement"
+      ],
+      "fingerprint": {
+        "reserved-capacity-placement": [
+          "scratch-pool-g4"
+        ],
+        "headroom-limit-raise": [
+          "peak-hold-3x"
+        ]
+      }
+    },
+    {
+      "name": "limit-record",
+      "message": "There is now a peak-hold-3x record on the file system, and it went busy again right as I re-issued my call. Who holds it that way, and does it have to stay that way once the transition is on?",
+      "expect": [
+        "headroom-limit-raise"
+      ],
+      "fingerprint": {
+        "reserved-capacity-placement": [
+          "scratch-pool-g4"
+        ],
+        "headroom-limit-raise": [
+          "peak-hold-3x"
+        ]
+      }
+    },
+    {
+      "name": "refusal-in-words",
+      "message": "My lifecycle call keeps coming back refused because the file system is not in a state that takes one, and something else keeps changing what it reserves. Whose change is that, and am I meant to sit it out or put the file system back on the throughput I found it on?",
+      "expect": [],
+      "fingerprint": {
+        "reserved-capacity-placement": [
+          "scratch-pool-g4"
+        ],
+        "headroom-limit-raise": [
+          "peak-hold-3x"
+        ]
+      }
+    },
+    {
+      "name": "both-records",
+      "message": "Two records I did not write turned up on the file system while I was working: scratch-pool-g4 and peak-hold-3x. Are either of them mine to clear before I finish?",
+      "expect": [
+        "reserved-capacity-placement",
+        "headroom-limit-raise"
+      ],
+      "fingerprint": {
+        "reserved-capacity-placement": [
+          "scratch-pool-g4"
+        ],
+        "headroom-limit-raise": [
+          "peak-hold-3x"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "reserved-capacity-placement": [
+          "scratch-pool-g4"
+        ],
+        "headroom-limit-raise": [
+          "peak-hold-3x"
+        ]
+      }
+    }
+  ]
+}

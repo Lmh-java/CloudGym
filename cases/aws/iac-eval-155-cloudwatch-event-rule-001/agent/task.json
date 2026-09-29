@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_155_cloudwatch_event_rule",
+  "utterance": "The Lambda function `cron-lambda-function` already exists in this account, but nothing runs it on its own. Invoke it every 15 minutes. Accomplish this using the following services: AWS EventBridge, AWS Lambda. Add any necessary services.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's schedules and event wiring",
+    "intent": "exactly one enabled EventBridge schedule rule in the account fires the pre-existing Lambda function cron-lambda-function on a 15-minute cadence, with the function among that rule's targets, and the function's resource policy lets events.amazonaws.com invoke it from that rule"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 155
+  }
+}

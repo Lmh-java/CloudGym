@@ -1,0 +1,32 @@
+{
+  "cloudcontrol_type": "AWS::EC2::SecurityGroup",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-01T02:39:03+00:00",
+      "ResourceDescription": {
+        "Identifier": "sg-03f1011b0114a0a21",
+        "Properties": "{\"GroupDescription\":\"default VPC security group\",\"GroupName\":\"default\",\"VpcId\":\"vpc-0cb1ecab670b248b1\",\"Id\":\"sg-03f1011b0114a0a21\",\"SecurityGroupIngress\":[{\"FromPort\":-1,\"ToPort\":-1,\"SourceSecurityGroupOwnerId\":\"123456789012\",\"IpProtocol\":\"-1\",\"SourceSecurityGroupId\":\"sg-03f1011b0114a0a21\"}],\"SecurityGroupEgress\":[{\"CidrIp\":\"0.0.0.0/0\",\"FromPort\":-1,\"ToPort\":-1,\"IpProtocol\":\"-1\"}],\"GroupId\":\"sg-03f1011b0114a0a21\"}"
+      },
+      "TypeName": "AWS::EC2::SecurityGroup"
+    },
+    {
+      "ReadAt": "2026-09-01T02:39:04+00:00",
+      "ResourceDescription": {
+        "Identifier": "sg-096c60a65d3e34238",
+        "Properties": "{\"GroupDescription\":\"cloudgym extractor capability fixture\",\"GroupName\":\"cloudgym-capability-20260901023843790500000001\",\"VpcId\":\"vpc-0743b13c294c8cfeb\",\"Id\":\"sg-096c60a65d3e34238\",\"GroupId\":\"sg-096c60a65d3e34238\"}"
+      },
+      "TypeName": "AWS::EC2::SecurityGroup"
+    },
+    {
+      "ReadAt": "2026-09-01T02:39:04+00:00",
+      "ResourceDescription": {
+        "Identifier": "sg-0fdf86ffec509e901",
+        "Properties": "{\"GroupDescription\":\"default VPC security group\",\"GroupName\":\"default\",\"VpcId\":\"vpc-0743b13c294c8cfeb\",\"Id\":\"sg-0fdf86ffec509e901\",\"SecurityGroupIngress\":[{\"FromPort\":-1,\"ToPort\":-1,\"SourceSecurityGroupOwnerId\":\"123456789012\",\"IpProtocol\":\"-1\",\"SourceSecurityGroupId\":\"sg-0fdf86ffec509e901\"}],\"SecurityGroupEgress\":[{\"CidrIp\":\"0.0.0.0/0\",\"FromPort\":-1,\"ToPort\":-1,\"IpProtocol\":\"-1\"}],\"GroupId\":\"sg-0fdf86ffec509e901\"}"
+      },
+      "TypeName": "AWS::EC2::SecurityGroup"
+    }
+  ],
+  "recorded_at": "2026-09-01T02:39:08+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

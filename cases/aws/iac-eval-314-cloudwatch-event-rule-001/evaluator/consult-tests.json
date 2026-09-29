@@ -1,0 +1,176 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "conventions-upfront",
+      "message": "Before I start: are there conventions here for when a scheduled job may fire, and for what a schedule has to say about itself?",
+      "expect": [],
+      "note": "the question every agent opens with, asked before anything has happened: it cites nothing and reaches nobody",
+      "fingerprint": {
+        "maintenance-hold-window": [
+          "nightly-maintenance-hold",
+          "hold-window-0645-0725"
+        ],
+        "schedule-attribution": [
+          "schedule-attribution-audit",
+          "attribution-required"
+        ],
+        "delivery-attempt-baseline": [
+          "delivery-baseline-check",
+          "delivery-baseline-1-900"
+        ],
+        "confined-invoke-grant": [
+          "invoke-confinement-sweep",
+          "same-account-invokers-only"
+        ]
+      }
+    },
+    {
+      "name": "why-was-my-schedule-switched-off",
+      "message": "The schedule I just created came back switched off, and listing the rules I find one called nightly-maintenance-hold. Does that mean my daily job cannot go off at the hour I was given?",
+      "expect": [
+        "maintenance-hold-window"
+      ],
+      "fingerprint": {
+        "maintenance-hold-window": [
+          "nightly-maintenance-hold",
+          "hold-window-0645-0725"
+        ],
+        "schedule-attribution": [
+          "schedule-attribution-audit",
+          "attribution-required"
+        ],
+        "delivery-attempt-baseline": [
+          "delivery-baseline-check",
+          "delivery-baseline-1-900"
+        ],
+        "confined-invoke-grant": [
+          "invoke-confinement-sweep",
+          "same-account-invokers-only"
+        ]
+      }
+    },
+    {
+      "name": "what-must-a-schedule-say",
+      "message": "There is a rule here named schedule-attribution-audit. Does what I put on my own schedule have to say something before it is left running?",
+      "expect": [
+        "schedule-attribution"
+      ],
+      "fingerprint": {
+        "maintenance-hold-window": [
+          "nightly-maintenance-hold",
+          "hold-window-0645-0725"
+        ],
+        "schedule-attribution": [
+          "schedule-attribution-audit",
+          "attribution-required"
+        ],
+        "delivery-attempt-baseline": [
+          "delivery-baseline-check",
+          "delivery-baseline-1-900"
+        ],
+        "confined-invoke-grant": [
+          "invoke-confinement-sweep",
+          "same-account-invokers-only"
+        ]
+      }
+    },
+    {
+      "name": "does-the-baseline-bind-my-delivery",
+      "message": "A rule named delivery-baseline-check states delivery-baseline-1-900. Does that bind how the delivery to my function is attempted?",
+      "expect": [
+        "delivery-attempt-baseline"
+      ],
+      "fingerprint": {
+        "maintenance-hold-window": [
+          "nightly-maintenance-hold",
+          "hold-window-0645-0725"
+        ],
+        "schedule-attribution": [
+          "schedule-attribution-audit",
+          "attribution-required"
+        ],
+        "delivery-attempt-baseline": [
+          "delivery-baseline-check",
+          "delivery-baseline-1-900"
+        ],
+        "confined-invoke-grant": [
+          "invoke-confinement-sweep",
+          "same-account-invokers-only"
+        ]
+      }
+    },
+    {
+      "name": "my-invoke-statement-is-gone",
+      "message": "The statement I added so the schedule may invoke the function is no longer on it, and the only thing I can find about it is invoke-confinement-sweep. How does a grant have to be written here to stand?",
+      "expect": [
+        "confined-invoke-grant"
+      ],
+      "fingerprint": {
+        "maintenance-hold-window": [
+          "nightly-maintenance-hold",
+          "hold-window-0645-0725"
+        ],
+        "schedule-attribution": [
+          "schedule-attribution-audit",
+          "attribution-required"
+        ],
+        "delivery-attempt-baseline": [
+          "delivery-baseline-check",
+          "delivery-baseline-1-900"
+        ],
+        "confined-invoke-grant": [
+          "invoke-confinement-sweep",
+          "same-account-invokers-only"
+        ]
+      }
+    },
+    {
+      "name": "effect-described-not-named",
+      "message": "Something turned my schedule off and something removed the permission I wrote, and the delivery settings I left alone came back changed. Is that meant to be?",
+      "expect": [],
+      "note": "describes the effects in words without citing anything that was read, so it routes to nobody",
+      "fingerprint": {
+        "maintenance-hold-window": [
+          "nightly-maintenance-hold",
+          "hold-window-0645-0725"
+        ],
+        "schedule-attribution": [
+          "schedule-attribution-audit",
+          "attribution-required"
+        ],
+        "delivery-attempt-baseline": [
+          "delivery-baseline-check",
+          "delivery-baseline-1-900"
+        ],
+        "confined-invoke-grant": [
+          "invoke-confinement-sweep",
+          "same-account-invokers-only"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "maintenance-hold-window": [
+          "nightly-maintenance-hold",
+          "hold-window-0645-0725"
+        ],
+        "schedule-attribution": [
+          "schedule-attribution-audit",
+          "attribution-required"
+        ],
+        "delivery-attempt-baseline": [
+          "delivery-baseline-check",
+          "delivery-baseline-1-900"
+        ],
+        "confined-invoke-grant": [
+          "invoke-confinement-sweep",
+          "same-account-invokers-only"
+        ]
+      }
+    }
+  ]
+}

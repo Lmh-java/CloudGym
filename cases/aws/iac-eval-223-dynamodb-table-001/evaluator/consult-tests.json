@@ -1,0 +1,127 @@
+{
+ "mode": "fingerprint",
+ "asks": [
+  {
+   "name": "store-appeared-beside-the-stream",
+   "message": "A table orders-app-order-events-dlq that I did not create has turned up next to the stream I am working on, and it is recorded as this service's. Does the recovery requirement I was given cover it, or only the stores that were there when I started?",
+   "expect": [
+    "events-dlq-store"
+   ],
+   "fingerprint": {
+    "events-dlq-store": [
+     "orders-app-order-events-dlq"
+    ],
+    "payments-ledger-store": [
+     "orders-app-payments-ledger"
+    ],
+    "cold-archive-store": [
+     "cold-store-order-history"
+    ],
+    "order-records-cutover": [
+     "orders-app-order-records"
+    ]
+   }
+  },
+  {
+   "name": "ledger-in-the-same-name-space",
+   "message": "There is a table orders-app-payments-ledger sitting in the same family of names as the stores I was asked about, but what it records as its owner is not this service. Is it mine to change, and does the requirement reach it?",
+   "expect": [
+    "payments-ledger-store"
+   ],
+   "fingerprint": {
+    "events-dlq-store": [
+     "orders-app-order-events-dlq"
+    ],
+    "payments-ledger-store": [
+     "orders-app-payments-ledger"
+    ],
+    "cold-archive-store": [
+     "cold-store-order-history"
+    ],
+    "order-records-cutover": [
+     "orders-app-order-records"
+    ]
+   }
+  },
+  {
+   "name": "archive-outside-the-name-space",
+   "message": "A table cold-store-order-history is recorded as belonging to this service even though its name sits nowhere near the application's own. Should I treat it as one of the service's stores?",
+   "expect": [
+    "cold-archive-store"
+   ],
+   "fingerprint": {
+    "events-dlq-store": [
+     "orders-app-order-events-dlq"
+    ],
+    "payments-ledger-store": [
+     "orders-app-payments-ledger"
+    ],
+    "cold-archive-store": [
+     "cold-store-order-history"
+    ],
+    "order-records-cutover": [
+     "orders-app-order-records"
+    ]
+   }
+  },
+  {
+   "name": "store-that-arrived-on-my-last-listing",
+   "message": "My last listing came back with orders-app-order-records, which was not there before, and the store I read at the start now reads as retired rather than as this service's. Which of them do I treat as the service's, and do I put the old record back?",
+   "expect": [
+    "order-records-cutover"
+   ],
+   "fingerprint": {
+    "events-dlq-store": [
+     "orders-app-order-events-dlq"
+    ],
+    "payments-ledger-store": [
+     "orders-app-payments-ledger"
+    ],
+    "cold-archive-store": [
+     "cold-store-order-history"
+    ],
+    "order-records-cutover": [
+     "orders-app-order-records"
+    ]
+   }
+  },
+  {
+   "name": "tables-i-did-not-make",
+   "message": "Several tables I did not create have appeared while I was working, some of them recorded as this service's and some not, and one of the records I read earlier has changed. How far does a requirement over a service's stores reach?",
+   "expect": [],
+   "fingerprint": {
+    "events-dlq-store": [
+     "orders-app-order-events-dlq"
+    ],
+    "payments-ledger-store": [
+     "orders-app-payments-ledger"
+    ],
+    "cold-archive-store": [
+     "cold-store-order-history"
+    ],
+    "order-records-cutover": [
+     "orders-app-order-records"
+    ]
+   }
+  },
+  {
+   "name": "generic",
+   "message": "Any conventions I should follow here?",
+   "expect": [],
+   "fingerprint": {
+    "events-dlq-store": [
+     "orders-app-order-events-dlq"
+    ],
+    "payments-ledger-store": [
+     "orders-app-payments-ledger"
+    ],
+    "cold-archive-store": [
+     "cold-store-order-history"
+    ],
+    "order-records-cutover": [
+     "orders-app-order-records"
+    ]
+   }
+  }
+ ]
+}

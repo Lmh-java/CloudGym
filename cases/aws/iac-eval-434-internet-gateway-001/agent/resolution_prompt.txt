@@ -1,0 +1,2 @@
+Address space is allocated once: what a network already holds stays its own, and a network you add holds only space no other holds.
+A range recorded as reserved binds like one already built; records you did not write stay as you found them.

@@ -1,0 +1,71 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "two-stores-for-reports",
+      "message": "Two stores here are marked as kept for inventory reports, and one of them says closing-2026-11-30. Which of them is the one that takes the weekly report?",
+      "expect": ["closing-reports-store"],
+      "fingerprint": {
+        "rolled-out-export-store": ["store-123456789012-001"],
+        "closing-reports-store": ["closing-2026-11-30"],
+        "object-catalogue-standard": ["object-catalogue-2026-11", "ObjectOwner+EncryptionStatus"],
+        "shared-reports-layout": ["shared-reports-layout-2026-11"]
+      }
+    },
+    {
+      "name": "store-already-standing",
+      "message": "There is already a store called store-123456789012-001 in this account, marked for the exports I was asked about. Is that the store the report should be about, or do I stand up my own?",
+      "expect": ["rolled-out-export-store"],
+      "fingerprint": {
+        "rolled-out-export-store": ["store-123456789012-001"],
+        "closing-reports-store": ["closing-2026-11-30"],
+        "object-catalogue-standard": ["object-catalogue-2026-11", "ObjectOwner+EncryptionStatus"],
+        "shared-reports-layout": ["shared-reports-layout-2026-11"]
+      }
+    },
+    {
+      "name": "entry-in-the-shared-policy",
+      "message": "The reports store's policy carries an entry shared-reports-layout-2026-11 that refuses writes outside one place. Do I leave it as it is, and where under the store should the report be delivered?",
+      "expect": ["shared-reports-layout"],
+      "fingerprint": {
+        "rolled-out-export-store": ["store-123456789012-001"],
+        "closing-reports-store": ["closing-2026-11-30"],
+        "object-catalogue-standard": ["object-catalogue-2026-11", "ObjectOwner+EncryptionStatus"],
+        "shared-reports-layout": ["shared-reports-layout-2026-11"]
+      }
+    },
+    {
+      "name": "catalogue-on-the-stores",
+      "message": "The stores are marked object-catalogue-2026-11 with ObjectOwner+EncryptionStatus. Does that change what the report I am configuring has to contain?",
+      "expect": ["object-catalogue-standard"],
+      "fingerprint": {
+        "rolled-out-export-store": ["store-123456789012-001"],
+        "closing-reports-store": ["closing-2026-11-30"],
+        "object-catalogue-standard": ["object-catalogue-2026-11", "ObjectOwner+EncryptionStatus"],
+        "shared-reports-layout": ["shared-reports-layout-2026-11"]
+      }
+    },
+    {
+      "name": "something-restricts-writes",
+      "message": "Something seems to refuse writes outside one place in the shared store, and one of the stores looks like it is on its way out of service. Which one takes the delivery, and where under it?",
+      "expect": [],
+      "fingerprint": {
+        "rolled-out-export-store": ["store-123456789012-001"],
+        "closing-reports-store": ["closing-2026-11-30"],
+        "object-catalogue-standard": ["object-catalogue-2026-11", "ObjectOwner+EncryptionStatus"],
+        "shared-reports-layout": ["shared-reports-layout-2026-11"]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "rolled-out-export-store": ["store-123456789012-001"],
+        "closing-reports-store": ["closing-2026-11-30"],
+        "object-catalogue-standard": ["object-catalogue-2026-11", "ObjectOwner+EncryptionStatus"],
+        "shared-reports-layout": ["shared-reports-layout-2026-11"]
+      }
+    }
+  ]
+}

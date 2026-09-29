@@ -1,0 +1,3758 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "invoice-lookup-index": {
+      "status": "succeeded"
+     },
+     "platform-catalog-index": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     }
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "invoice-lookup-index": {
+      "status": "succeeded"
+     },
+     "platform-catalog-index": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 10,
+         "WriteCapacityUnits": 10
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"express\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "express"
+         },
+         "base_cents": {
+          "N": "999"
+         },
+         "max_kg": {
+          "N": "15"
+         },
+         "per_km_cents": {
+          "N": "18"
+         },
+         "sla_hours": {
+          "N": "24"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"overnight\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "overnight"
+         },
+         "base_cents": {
+          "N": "1899"
+         },
+         "max_kg": {
+          "N": "10"
+         },
+         "per_km_cents": {
+          "N": "25"
+         },
+         "sla_hours": {
+          "N": "12"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"standard\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "standard"
+         },
+         "base_cents": {
+          "N": "499"
+         },
+         "max_kg": {
+          "N": "20"
+         },
+         "per_km_cents": {
+          "N": "12"
+         },
+         "sla_hours": {
+          "N": "72"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       }
+      }
+     }
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "invoice-lookup-index": {
+      "status": "succeeded"
+     },
+     "platform-catalog-index": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         },
+         {
+          "AttributeName": "OwnerTeam",
+          "AttributeType": "S"
+         },
+         {
+          "AttributeName": "RateClass",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "GlobalSecondaryIndexes": [
+         {
+          "IndexName": "PlatformCatalogIndex",
+          "KeySchema": [
+           {
+            "AttributeName": "OwnerTeam",
+            "KeyType": "HASH"
+           }
+          ],
+          "Projection": {
+           "ProjectionType": "KEYS_ONLY"
+          },
+          "ProvisionedThroughput": {
+           "ReadCapacityUnits": 5,
+           "WriteCapacityUnits": 5
+          }
+         },
+         {
+          "IndexName": "InvoiceLookupIndex",
+          "KeySchema": [
+           {
+            "AttributeName": "RateClass",
+            "KeyType": "HASH"
+           }
+          ],
+          "Projection": {
+           "ProjectionType": "KEYS_ONLY"
+          },
+          "ProvisionedThroughput": {
+           "ReadCapacityUnits": 5,
+           "WriteCapacityUnits": 5
+          }
+         }
+        ],
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"express\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "express"
+         },
+         "base_cents": {
+          "N": "999"
+         },
+         "max_kg": {
+          "N": "15"
+         },
+         "per_km_cents": {
+          "N": "18"
+         },
+         "sla_hours": {
+          "N": "24"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"overnight\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "overnight"
+         },
+         "base_cents": {
+          "N": "1899"
+         },
+         "max_kg": {
+          "N": "10"
+         },
+         "per_km_cents": {
+          "N": "25"
+         },
+         "sla_hours": {
+          "N": "12"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"standard\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "standard"
+         },
+         "base_cents": {
+          "N": "499"
+         },
+         "max_kg": {
+          "N": "20"
+         },
+         "per_km_cents": {
+          "N": "12"
+         },
+         "sla_hours": {
+          "N": "72"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       }
+      }
+     }
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "invoice-lookup-index": {
+      "status": "succeeded"
+     },
+     "platform-catalog-index": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         },
+         {
+          "AttributeName": "OwnerTeam",
+          "AttributeType": "S"
+         },
+         {
+          "AttributeName": "RateClass",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "GlobalSecondaryIndexes": [
+         {
+          "IndexName": "PlatformCatalogIndex",
+          "KeySchema": [
+           {
+            "AttributeName": "OwnerTeam",
+            "KeyType": "HASH"
+           }
+          ],
+          "Projection": {
+           "ProjectionType": "KEYS_ONLY"
+          },
+          "ProvisionedThroughput": {
+           "ReadCapacityUnits": 5,
+           "WriteCapacityUnits": 5
+          }
+         },
+         {
+          "IndexName": "InvoiceLookupIndex",
+          "KeySchema": [
+           {
+            "AttributeName": "RateClass",
+            "KeyType": "HASH"
+           }
+          ],
+          "Projection": {
+           "ProjectionType": "KEYS_ONLY"
+          },
+          "ProvisionedThroughput": {
+           "ReadCapacityUnits": 5,
+           "WriteCapacityUnits": 5
+          }
+         }
+        ],
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 10,
+         "WriteCapacityUnits": 10
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"express\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "express"
+         },
+         "base_cents": {
+          "N": "999"
+         },
+         "max_kg": {
+          "N": "15"
+         },
+         "per_km_cents": {
+          "N": "18"
+         },
+         "sla_hours": {
+          "N": "24"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"overnight\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "overnight"
+         },
+         "base_cents": {
+          "N": "1899"
+         },
+         "max_kg": {
+          "N": "10"
+         },
+         "per_km_cents": {
+          "N": "25"
+         },
+         "sla_hours": {
+          "N": "12"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"standard\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "standard"
+         },
+         "base_cents": {
+          "N": "499"
+         },
+         "max_kg": {
+          "N": "20"
+         },
+         "per_km_cents": {
+          "N": "12"
+         },
+         "sla_hours": {
+          "N": "72"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "invoice-lookup-index": {
+      "status": "not-fired"
+     },
+     "platform-catalog-index": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 10,
+         "WriteCapacityUnits": 10
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"express\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "express"
+         },
+         "base_cents": {
+          "N": "999"
+         },
+         "max_kg": {
+          "N": "15"
+         },
+         "per_km_cents": {
+          "N": "18"
+         },
+         "sla_hours": {
+          "N": "24"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"overnight\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "overnight"
+         },
+         "base_cents": {
+          "N": "1899"
+         },
+         "max_kg": {
+          "N": "10"
+         },
+         "per_km_cents": {
+          "N": "25"
+         },
+         "sla_hours": {
+          "N": "12"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"standard\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "standard"
+         },
+         "base_cents": {
+          "N": "499"
+         },
+         "max_kg": {
+          "N": "20"
+         },
+         "per_km_cents": {
+          "N": "12"
+         },
+         "sla_hours": {
+          "N": "72"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       }
+      }
+     }
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "invoice-lookup-index": {
+      "status": "not-fired"
+     },
+     "platform-catalog-index": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 10,
+         "WriteCapacityUnits": 10
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     }
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "invoice-lookup-index": {
+      "status": "succeeded"
+     },
+     "platform-catalog-index": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         },
+         {
+          "AttributeName": "RateClass",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "GlobalSecondaryIndexes": [
+         {
+          "IndexName": "InvoiceLookupIndex",
+          "KeySchema": [
+           {
+            "AttributeName": "RateClass",
+            "KeyType": "HASH"
+           }
+          ],
+          "Projection": {
+           "ProjectionType": "KEYS_ONLY"
+          },
+          "ProvisionedThroughput": {
+           "ReadCapacityUnits": 5,
+           "WriteCapacityUnits": 5
+          }
+         }
+        ],
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 10,
+         "WriteCapacityUnits": 10
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"express\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "express"
+         },
+         "base_cents": {
+          "N": "999"
+         },
+         "max_kg": {
+          "N": "15"
+         },
+         "per_km_cents": {
+          "N": "18"
+         },
+         "sla_hours": {
+          "N": "24"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"overnight\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "overnight"
+         },
+         "base_cents": {
+          "N": "1899"
+         },
+         "max_kg": {
+          "N": "10"
+         },
+         "per_km_cents": {
+          "N": "25"
+         },
+         "sla_hours": {
+          "N": "12"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"standard\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "standard"
+         },
+         "base_cents": {
+          "N": "499"
+         },
+         "max_kg": {
+          "N": "20"
+         },
+         "per_km_cents": {
+          "N": "12"
+         },
+         "sla_hours": {
+          "N": "72"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       }
+      }
+     }
+    }
+   },
+   "name": "forced"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "invoice-lookup-index": {
+      "status": "succeeded"
+     },
+     "platform-catalog-index": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         },
+         {
+          "AttributeName": "OwnerTeam",
+          "AttributeType": "S"
+         },
+         {
+          "AttributeName": "RateClass",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "GlobalSecondaryIndexes": [
+         {
+          "IndexName": "PlatformCatalogIndex",
+          "KeySchema": [
+           {
+            "AttributeName": "OwnerTeam",
+            "KeyType": "HASH"
+           }
+          ],
+          "Projection": {
+           "ProjectionType": "KEYS_ONLY"
+          },
+          "ProvisionedThroughput": {
+           "ReadCapacityUnits": 5,
+           "WriteCapacityUnits": 5
+          }
+         },
+         {
+          "IndexName": "InvoiceLookupIndex",
+          "KeySchema": [
+           {
+            "AttributeName": "RateClass",
+            "KeyType": "HASH"
+           }
+          ],
+          "Projection": {
+           "ProjectionType": "KEYS_ONLY"
+          },
+          "ProvisionedThroughput": {
+           "ReadCapacityUnits": 5,
+           "WriteCapacityUnits": 5
+          }
+         }
+        ],
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       },
+       "delivery-rate-card-v2": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 10,
+         "WriteCapacityUnits": 10
+        },
+        "TableName": "delivery-rate-card-v2",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {
+       "delivery-rate-card-v2|{\"RateKey\":{\"S\":\"express\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "express"
+         },
+         "base_cents": {
+          "N": "999"
+         },
+         "max_kg": {
+          "N": "15"
+         },
+         "per_km_cents": {
+          "N": "18"
+         },
+         "sla_hours": {
+          "N": "24"
+         }
+        },
+        "TableName": "delivery-rate-card-v2"
+       },
+       "delivery-rate-card-v2|{\"RateKey\":{\"S\":\"overnight\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "overnight"
+         },
+         "base_cents": {
+          "N": "1899"
+         },
+         "max_kg": {
+          "N": "10"
+         },
+         "per_km_cents": {
+          "N": "25"
+         },
+         "sla_hours": {
+          "N": "12"
+         }
+        },
+        "TableName": "delivery-rate-card-v2"
+       },
+       "delivery-rate-card-v2|{\"RateKey\":{\"S\":\"standard\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "standard"
+         },
+         "base_cents": {
+          "N": "499"
+         },
+         "max_kg": {
+          "N": "20"
+         },
+         "per_km_cents": {
+          "N": "12"
+         },
+         "sla_hours": {
+          "N": "72"
+         }
+        },
+        "TableName": "delivery-rate-card-v2"
+       }
+      }
+     }
+    }
+   },
+   "name": "duplicated"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "invoice-lookup-index": {
+      "status": "succeeded"
+     },
+     "platform-catalog-index": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         },
+         {
+          "AttributeName": "RateClass",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "GlobalSecondaryIndexes": [
+         {
+          "IndexName": "InvoiceLookupIndex",
+          "KeySchema": [
+           {
+            "AttributeName": "RateClass",
+            "KeyType": "HASH"
+           }
+          ],
+          "Projection": {
+           "ProjectionType": "KEYS_ONLY"
+          },
+          "ProvisionedThroughput": {
+           "ReadCapacityUnits": 5,
+           "WriteCapacityUnits": 5
+          }
+         }
+        ],
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 10,
+         "WriteCapacityUnits": 10
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"express\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "express"
+         },
+         "base_cents": {
+          "N": "999"
+         },
+         "max_kg": {
+          "N": "15"
+         },
+         "per_km_cents": {
+          "N": "18"
+         },
+         "sla_hours": {
+          "N": "24"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"overnight\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "overnight"
+         },
+         "base_cents": {
+          "N": "1899"
+         },
+         "max_kg": {
+          "N": "10"
+         },
+         "per_km_cents": {
+          "N": "25"
+         },
+         "sla_hours": {
+          "N": "12"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"standard\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "standard"
+         },
+         "base_cents": {
+          "N": "499"
+         },
+         "max_kg": {
+          "N": "20"
+         },
+         "per_km_cents": {
+          "N": "12"
+         },
+         "sla_hours": {
+          "N": "72"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-platform-catalog-index"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "invoice-lookup-index": {
+      "status": "failed"
+     },
+     "platform-catalog-index": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         },
+         {
+          "AttributeName": "OwnerTeam",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "GlobalSecondaryIndexes": [
+         {
+          "IndexName": "PlatformCatalogIndex",
+          "KeySchema": [
+           {
+            "AttributeName": "OwnerTeam",
+            "KeyType": "HASH"
+           }
+          ],
+          "Projection": {
+           "ProjectionType": "KEYS_ONLY"
+          },
+          "ProvisionedThroughput": {
+           "ReadCapacityUnits": 5,
+           "WriteCapacityUnits": 5
+          }
+         }
+        ],
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 10,
+         "WriteCapacityUnits": 10
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"express\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "express"
+         },
+         "base_cents": {
+          "N": "999"
+         },
+         "max_kg": {
+          "N": "15"
+         },
+         "per_km_cents": {
+          "N": "18"
+         },
+         "sla_hours": {
+          "N": "24"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"overnight\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "overnight"
+         },
+         "base_cents": {
+          "N": "1899"
+         },
+         "max_kg": {
+          "N": "10"
+         },
+         "per_km_cents": {
+          "N": "25"
+         },
+         "sla_hours": {
+          "N": "12"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"standard\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "standard"
+         },
+         "base_cents": {
+          "N": "499"
+         },
+         "max_kg": {
+          "N": "20"
+         },
+         "per_km_cents": {
+          "N": "12"
+         },
+         "sla_hours": {
+          "N": "72"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-invoice-lookup-index"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "invoice-lookup-index": {
+      "status": "succeeded"
+     },
+     "platform-catalog-index": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         },
+         {
+          "AttributeName": "RateClass",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "GlobalSecondaryIndexes": [
+         {
+          "IndexName": "InvoiceLookupIndex",
+          "KeySchema": [
+           {
+            "AttributeName": "RateClass",
+            "KeyType": "HASH"
+           }
+          ],
+          "Projection": {
+           "ProjectionType": "KEYS_ONLY"
+          },
+          "ProvisionedThroughput": {
+           "ReadCapacityUnits": 5,
+           "WriteCapacityUnits": 5
+          }
+         }
+        ],
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 10,
+         "WriteCapacityUnits": 10
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"express\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "express"
+         },
+         "base_cents": {
+          "N": "999"
+         },
+         "max_kg": {
+          "N": "15"
+         },
+         "per_km_cents": {
+          "N": "18"
+         },
+         "sla_hours": {
+          "N": "24"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"overnight\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "overnight"
+         },
+         "base_cents": {
+          "N": "1899"
+         },
+         "max_kg": {
+          "N": "10"
+         },
+         "per_km_cents": {
+          "N": "25"
+         },
+         "sla_hours": {
+          "N": "12"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"standard\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "standard"
+         },
+         "base_cents": {
+          "N": "499"
+         },
+         "max_kg": {
+          "N": "20"
+         },
+         "per_km_cents": {
+          "N": "12"
+         },
+         "sla_hours": {
+          "N": "72"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-platform-catalog-index"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "invoice-lookup-index": {
+      "status": "succeeded"
+     },
+     "platform-catalog-index": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         },
+         {
+          "AttributeName": "OwnerTeam",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "GlobalSecondaryIndexes": [
+         {
+          "IndexName": "PlatformCatalogIndex",
+          "KeySchema": [
+           {
+            "AttributeName": "OwnerTeam",
+            "KeyType": "HASH"
+           }
+          ],
+          "Projection": {
+           "ProjectionType": "KEYS_ONLY"
+          },
+          "ProvisionedThroughput": {
+           "ReadCapacityUnits": 5,
+           "WriteCapacityUnits": 5
+          }
+         }
+        ],
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 10,
+         "WriteCapacityUnits": 10
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"express\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "express"
+         },
+         "base_cents": {
+          "N": "999"
+         },
+         "max_kg": {
+          "N": "15"
+         },
+         "per_km_cents": {
+          "N": "18"
+         },
+         "sla_hours": {
+          "N": "24"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"overnight\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "overnight"
+         },
+         "base_cents": {
+          "N": "1899"
+         },
+         "max_kg": {
+          "N": "10"
+         },
+         "per_km_cents": {
+          "N": "25"
+         },
+         "sla_hours": {
+          "N": "12"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"standard\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "standard"
+         },
+         "base_cents": {
+          "N": "499"
+         },
+         "max_kg": {
+          "N": "20"
+         },
+         "per_km_cents": {
+          "N": "12"
+         },
+         "sla_hours": {
+          "N": "72"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-invoice-lookup-index"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "invoice-lookup-index": {
+      "status": "not-fired"
+     },
+     "platform-catalog-index": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 5,
+         "WriteCapacityUnits": 10
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"express\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "express"
+         },
+         "base_cents": {
+          "N": "999"
+         },
+         "max_kg": {
+          "N": "15"
+         },
+         "per_km_cents": {
+          "N": "18"
+         },
+         "sla_hours": {
+          "N": "24"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"overnight\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "overnight"
+         },
+         "base_cents": {
+          "N": "1899"
+         },
+         "max_kg": {
+          "N": "10"
+         },
+         "per_km_cents": {
+          "N": "25"
+         },
+         "sla_hours": {
+          "N": "12"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"standard\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "standard"
+         },
+         "base_cents": {
+          "N": "499"
+         },
+         "max_kg": {
+          "N": "20"
+         },
+         "per_km_cents": {
+          "N": "12"
+         },
+         "sla_hours": {
+          "N": "72"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       }
+      }
+     }
+    }
+   },
+   "name": "neg-read-capacity"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "invoice-lookup-index": {
+      "status": "not-fired"
+     },
+     "platform-catalog-index": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 10,
+         "WriteCapacityUnits": 4
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"express\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "express"
+         },
+         "base_cents": {
+          "N": "999"
+         },
+         "max_kg": {
+          "N": "15"
+         },
+         "per_km_cents": {
+          "N": "18"
+         },
+         "sla_hours": {
+          "N": "24"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"overnight\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "overnight"
+         },
+         "base_cents": {
+          "N": "1899"
+         },
+         "max_kg": {
+          "N": "10"
+         },
+         "per_km_cents": {
+          "N": "25"
+         },
+         "sla_hours": {
+          "N": "12"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"standard\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "standard"
+         },
+         "base_cents": {
+          "N": "499"
+         },
+         "max_kg": {
+          "N": "20"
+         },
+         "per_km_cents": {
+          "N": "12"
+         },
+         "sla_hours": {
+          "N": "72"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       }
+      }
+     }
+    }
+   },
+   "name": "neg-write-capacity"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "invoice-lookup-index": {
+      "status": "not-fired"
+     },
+     "platform-catalog-index": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"express\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "express"
+         },
+         "base_cents": {
+          "N": "999"
+         },
+         "max_kg": {
+          "N": "15"
+         },
+         "per_km_cents": {
+          "N": "18"
+         },
+         "sla_hours": {
+          "N": "24"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"overnight\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "overnight"
+         },
+         "base_cents": {
+          "N": "1899"
+         },
+         "max_kg": {
+          "N": "10"
+         },
+         "per_km_cents": {
+          "N": "25"
+         },
+         "sla_hours": {
+          "N": "12"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"standard\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "standard"
+         },
+         "base_cents": {
+          "N": "499"
+         },
+         "max_kg": {
+          "N": "20"
+         },
+         "per_km_cents": {
+          "N": "12"
+         },
+         "sla_hours": {
+          "N": "72"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       }
+      }
+     }
+    }
+   },
+   "name": "neg-on-demand"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "invoice-lookup-index": {
+      "status": "not-fired"
+     },
+     "platform-catalog-index": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 10,
+         "WriteCapacityUnits": 10
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"express\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "express"
+         },
+         "base_cents": {
+          "N": "999"
+         },
+         "max_kg": {
+          "N": "15"
+         },
+         "per_km_cents": {
+          "N": "18"
+         },
+         "sla_hours": {
+          "N": "24"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"standard\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "standard"
+         },
+         "base_cents": {
+          "N": "499"
+         },
+         "max_kg": {
+          "N": "20"
+         },
+         "per_km_cents": {
+          "N": "12"
+         },
+         "sla_hours": {
+          "N": "72"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       }
+      }
+     }
+    }
+   },
+   "name": "neg-missing-row"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "invoice-lookup-index": {
+      "status": "not-fired"
+     },
+     "platform-catalog-index": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 10,
+         "WriteCapacityUnits": 10
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"express\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "express"
+         },
+         "base_cents": {
+          "N": "999"
+         },
+         "max_kg": {
+          "N": "15"
+         },
+         "per_km_cents": {
+          "N": "18"
+         },
+         "sla_hours": {
+          "N": "24"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"overnight\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "overnight"
+         },
+         "base_cents": {
+          "N": "1899"
+         },
+         "max_kg": {
+          "N": "10"
+         },
+         "per_km_cents": {
+          "N": "25"
+         },
+         "sla_hours": {
+          "N": "24"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"standard\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "standard"
+         },
+         "base_cents": {
+          "N": "499"
+         },
+         "max_kg": {
+          "N": "20"
+         },
+         "per_km_cents": {
+          "N": "12"
+         },
+         "sla_hours": {
+          "N": "72"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       }
+      }
+     }
+    }
+   },
+   "name": "neg-wrong-value"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "invoice-lookup-index": {
+      "status": "not-fired"
+     },
+     "platform-catalog-index": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 10,
+         "WriteCapacityUnits": 10
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"express\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "express"
+         },
+         "base_cents": {
+          "S": "999"
+         },
+         "max_kg": {
+          "N": "15"
+         },
+         "per_km_cents": {
+          "N": "18"
+         },
+         "sla_hours": {
+          "N": "24"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"overnight\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "overnight"
+         },
+         "base_cents": {
+          "N": "1899"
+         },
+         "max_kg": {
+          "N": "10"
+         },
+         "per_km_cents": {
+          "N": "25"
+         },
+         "sla_hours": {
+          "N": "12"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"standard\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "standard"
+         },
+         "base_cents": {
+          "N": "499"
+         },
+         "max_kg": {
+          "N": "20"
+         },
+         "per_km_cents": {
+          "N": "12"
+         },
+         "sla_hours": {
+          "N": "72"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       }
+      }
+     }
+    }
+   },
+   "name": "neg-string-attribute"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "invoice-lookup-index": {
+      "status": "not-fired"
+     },
+     "platform-catalog-index": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "rate_key",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "rate_key",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 10,
+         "WriteCapacityUnits": 10
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"express\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "express"
+         },
+         "base_cents": {
+          "N": "999"
+         },
+         "max_kg": {
+          "N": "15"
+         },
+         "per_km_cents": {
+          "N": "18"
+         },
+         "sla_hours": {
+          "N": "24"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"overnight\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "overnight"
+         },
+         "base_cents": {
+          "N": "1899"
+         },
+         "max_kg": {
+          "N": "10"
+         },
+         "per_km_cents": {
+          "N": "25"
+         },
+         "sla_hours": {
+          "N": "12"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"standard\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "standard"
+         },
+         "base_cents": {
+          "N": "499"
+         },
+         "max_kg": {
+          "N": "20"
+         },
+         "per_km_cents": {
+          "N": "12"
+         },
+         "sla_hours": {
+          "N": "72"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       }
+      }
+     }
+    }
+   },
+   "name": "neg-rekeyed-store"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "invoice-lookup-index": {
+      "status": "not-fired"
+     },
+     "platform-catalog-index": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 10,
+         "WriteCapacityUnits": 10
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       },
+       "delivery-rate-card-copy": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 10,
+         "WriteCapacityUnits": 10
+        },
+        "TableName": "delivery-rate-card-copy",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ]
+       }
+      },
+      "AWS::DynamoDB::TableItem": {
+       "delivery-rate-card-copy|{\"RateKey\":{\"S\":\"express\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "express"
+         },
+         "base_cents": {
+          "N": "999"
+         },
+         "max_kg": {
+          "N": "15"
+         },
+         "per_km_cents": {
+          "N": "18"
+         },
+         "sla_hours": {
+          "N": "24"
+         }
+        },
+        "TableName": "delivery-rate-card-copy"
+       },
+       "delivery-rate-card-copy|{\"RateKey\":{\"S\":\"overnight\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "overnight"
+         },
+         "base_cents": {
+          "N": "1899"
+         },
+         "max_kg": {
+          "N": "10"
+         },
+         "per_km_cents": {
+          "N": "25"
+         },
+         "sla_hours": {
+          "N": "12"
+         }
+        },
+        "TableName": "delivery-rate-card-copy"
+       },
+       "delivery-rate-card-copy|{\"RateKey\":{\"S\":\"standard\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "standard"
+         },
+         "base_cents": {
+          "N": "499"
+         },
+         "max_kg": {
+          "N": "20"
+         },
+         "per_km_cents": {
+          "N": "12"
+         },
+         "sla_hours": {
+          "N": "72"
+         }
+        },
+        "TableName": "delivery-rate-card-copy"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"express\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "express"
+         },
+         "base_cents": {
+          "N": "999"
+         },
+         "max_kg": {
+          "N": "15"
+         },
+         "per_km_cents": {
+          "N": "18"
+         },
+         "sla_hours": {
+          "N": "24"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"overnight\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "overnight"
+         },
+         "base_cents": {
+          "N": "1899"
+         },
+         "max_kg": {
+          "N": "10"
+         },
+         "per_km_cents": {
+          "N": "25"
+         },
+         "sla_hours": {
+          "N": "12"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"standard\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "standard"
+         },
+         "base_cents": {
+          "N": "499"
+         },
+         "max_kg": {
+          "N": "20"
+         },
+         "per_km_cents": {
+          "N": "12"
+         },
+         "sla_hours": {
+          "N": "72"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       }
+      }
+     }
+    }
+   },
+   "name": "neg-rows-also-elsewhere"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "Arn": "arn:aws:dynamodb:us-east-1:000000000114:table/delivery-rate-card",
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 2,
+         "WriteUnitsPerSecond": 2
+        }
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "Arn": "arn:aws:dynamodb:us-east-1:000000000114:table/delivery-rate-card",
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 10,
+         "WriteCapacityUnits": 10
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 10,
+         "WriteUnitsPerSecond": 10
+        }
+       }
+      },
+      "AWS::DynamoDB::TableItem": {
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"express\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "express"
+         },
+         "base_cents": {
+          "N": "999"
+         },
+         "max_kg": {
+          "N": "15"
+         },
+         "per_km_cents": {
+          "N": "18"
+         },
+         "sla_hours": {
+          "N": "24"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"overnight\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "overnight"
+         },
+         "base_cents": {
+          "N": "1899"
+         },
+         "max_kg": {
+          "N": "10"
+         },
+         "per_km_cents": {
+          "N": "25"
+         },
+         "sla_hours": {
+          "N": "12"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"standard\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "standard"
+         },
+         "base_cents": {
+          "N": "499"
+         },
+         "max_kg": {
+          "N": "20"
+         },
+         "per_km_cents": {
+          "N": "12"
+         },
+         "sla_hours": {
+          "N": "72"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "invoice-lookup-index": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 2,
+        "landed_ns": 411293674339823,
+        "landed_s": 529.364,
+        "result": {
+         "busy": {
+          "fired": true,
+          "observations": 1,
+          "state": "UPDATING",
+          "states": [
+           "UPDATING",
+           "1"
+          ],
+          "waited_s": 0.068
+         },
+         "created": true,
+         "fingerprint": [
+          "InvoiceLookupIndex"
+         ],
+         "index": "InvoiceLookupIndex",
+         "queued": {
+          "attempts": 1,
+          "waited_s": 0.064
+         },
+         "store": "delivery-rate-card",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-invoice-lookup-index-2",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "busy": {
+        "fired": true,
+        "observations": 1,
+        "state": "UPDATING",
+        "states": [
+         "UPDATING",
+         "1"
+        ],
+        "waited_s": 0.068
+       },
+       "created": true,
+       "fingerprint": [
+        "InvoiceLookupIndex"
+       ],
+       "index": "InvoiceLookupIndex",
+       "queued": {
+        "attempts": 1,
+        "waited_s": 0.064
+       },
+       "store": "delivery-rate-card",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "platform-catalog-index": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 1,
+        "landed_ns": 410775897381903,
+        "landed_s": 11.587,
+        "result": {
+         "busy": {
+          "fired": true,
+          "observations": 1,
+          "state": "UPDATING",
+          "states": [
+           "UPDATING",
+           "1"
+          ],
+          "waited_s": 0.058
+         },
+         "created": true,
+         "fingerprint": [
+          "PlatformCatalogIndex"
+         ],
+         "index": "PlatformCatalogIndex",
+         "queued": {
+          "attempts": 1,
+          "waited_s": 0.088
+         },
+         "store": "delivery-rate-card",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-platform-catalog-index-1",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "busy": {
+        "fired": true,
+        "observations": 1,
+        "state": "UPDATING",
+        "states": [
+         "UPDATING",
+         "1"
+        ],
+        "waited_s": 0.058
+       },
+       "created": true,
+       "fingerprint": [
+        "PlatformCatalogIndex"
+       ],
+       "index": "PlatformCatalogIndex",
+       "queued": {
+        "attempts": 1,
+        "waited_s": 0.088
+       },
+       "store": "delivery-rate-card",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "Arn": "arn:aws:dynamodb:us-east-1:000000000106:table/delivery-rate-card",
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 2,
+         "WriteCapacityUnits": 2
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 2,
+         "WriteUnitsPerSecond": 2
+        }
+       }
+      },
+      "AWS::DynamoDB::TableItem": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "delivery-rate-card": {
+        "Arn": "arn:aws:dynamodb:us-east-1:000000000106:table/delivery-rate-card",
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "OwnerTeam",
+          "AttributeType": "S"
+         },
+         {
+          "AttributeName": "RateClass",
+          "AttributeType": "S"
+         },
+         {
+          "AttributeName": "RateKey",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "GlobalSecondaryIndexes": [
+         {
+          "ContributorInsightsSpecification": {
+           "Enabled": false
+          },
+          "IndexName": "PlatformCatalogIndex",
+          "KeySchema": [
+           {
+            "AttributeName": "OwnerTeam",
+            "KeyType": "HASH"
+           }
+          ],
+          "Projection": {
+           "NonKeyAttributes": [],
+           "ProjectionType": "KEYS_ONLY"
+          },
+          "ProvisionedThroughput": {
+           "ReadCapacityUnits": 5,
+           "WriteCapacityUnits": 5
+          },
+          "WarmThroughput": {
+           "ReadUnitsPerSecond": 5,
+           "WriteUnitsPerSecond": 5
+          }
+         },
+         {
+          "ContributorInsightsSpecification": {
+           "Enabled": false
+          },
+          "IndexName": "InvoiceLookupIndex",
+          "KeySchema": [
+           {
+            "AttributeName": "RateClass",
+            "KeyType": "HASH"
+           }
+          ],
+          "Projection": {
+           "NonKeyAttributes": [],
+           "ProjectionType": "KEYS_ONLY"
+          },
+          "ProvisionedThroughput": {
+           "ReadCapacityUnits": 5,
+           "WriteCapacityUnits": 5
+          },
+          "WarmThroughput": {
+           "ReadUnitsPerSecond": 5,
+           "WriteUnitsPerSecond": 5
+          }
+         }
+        ],
+        "KeySchema": [
+         {
+          "AttributeName": "RateKey",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 10,
+         "WriteCapacityUnits": 10
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "delivery-rate-card",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "delivery"
+         },
+         {
+          "Key": "Owner",
+          "Value": "delivery-team"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 10,
+         "WriteUnitsPerSecond": 10
+        }
+       }
+      },
+      "AWS::DynamoDB::TableItem": {
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"express\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "express"
+         },
+         "base_cents": {
+          "N": "999"
+         },
+         "max_kg": {
+          "N": "15"
+         },
+         "per_km_cents": {
+          "N": "18"
+         },
+         "sla_hours": {
+          "N": "24"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"overnight\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "overnight"
+         },
+         "base_cents": {
+          "N": "1899"
+         },
+         "max_kg": {
+          "N": "10"
+         },
+         "per_km_cents": {
+          "N": "25"
+         },
+         "sla_hours": {
+          "N": "12"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       },
+       "delivery-rate-card|{\"RateKey\":{\"S\":\"standard\"}}": {
+        "Item": {
+         "RateKey": {
+          "S": "standard"
+         },
+         "base_cents": {
+          "N": "499"
+         },
+         "max_kg": {
+          "N": "20"
+         },
+         "per_km_cents": {
+          "N": "12"
+         },
+         "sla_hours": {
+          "N": "72"
+         }
+        },
+        "TableName": "delivery-rate-card"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-interference-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

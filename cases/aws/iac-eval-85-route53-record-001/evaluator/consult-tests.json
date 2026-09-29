@@ -1,0 +1,71 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "front-door-answering",
+      "message": "Something under this domain now answers 192.0.2.100 for every location its set does not name, with netops-edge-front-door standing beside it. Should what I publish join that entry, or stand on a name of its own?",
+      "expect": ["edge-front-door-binding"],
+      "fingerprint": {
+        "edge-front-door-binding": ["192.0.2.100", "netops-edge-front-door"],
+        "vanity-name-aliases": ["user-facing-names-alias-the-front-door", "_names.example53.com"],
+        "namesake-cutover-zone": ["cutover-staging-2026-09"],
+        "endpoint-address-rotation": ["192.0.2.111", "192.0.2.112", "edge-refresh-2026-09"]
+      }
+    },
+    {
+      "name": "alias-convention",
+      "message": "_names.example53.com states user-facing-names-alias-the-front-door. Does that mean the names people type must never carry an answer of their own?",
+      "expect": ["vanity-name-aliases"],
+      "fingerprint": {
+        "edge-front-door-binding": ["192.0.2.100", "netops-edge-front-door"],
+        "vanity-name-aliases": ["user-facing-names-alias-the-front-door", "_names.example53.com"],
+        "namesake-cutover-zone": ["cutover-staging-2026-09"],
+        "endpoint-address-rotation": ["192.0.2.111", "192.0.2.112", "edge-refresh-2026-09"]
+      }
+    },
+    {
+      "name": "two-zones-one-domain",
+      "message": "Two hosted zones carry this domain and one of them comments cutover-staging-2026-09. Which of the two is the one I should be publishing into?",
+      "expect": ["namesake-cutover-zone"],
+      "fingerprint": {
+        "edge-front-door-binding": ["192.0.2.100", "netops-edge-front-door"],
+        "vanity-name-aliases": ["user-facing-names-alias-the-front-door", "_names.example53.com"],
+        "namesake-cutover-zone": ["cutover-staging-2026-09"],
+        "endpoint-address-rotation": ["192.0.2.111", "192.0.2.112", "edge-refresh-2026-09"]
+      }
+    },
+    {
+      "name": "which-addresses",
+      "message": "The domain publishes 192.0.2.111 and 192.0.2.112 for its endpoints under an edge-refresh-2026-09 entry, while the addresses I was handed are different ones. Which of them should the endpoints answer?",
+      "expect": ["endpoint-address-rotation"],
+      "fingerprint": {
+        "edge-front-door-binding": ["192.0.2.100", "netops-edge-front-door"],
+        "vanity-name-aliases": ["user-facing-names-alias-the-front-door", "_names.example53.com"],
+        "namesake-cutover-zone": ["cutover-staging-2026-09"],
+        "endpoint-address-rotation": ["192.0.2.111", "192.0.2.112", "edge-refresh-2026-09"]
+      }
+    },
+    {
+      "name": "names-repointed",
+      "message": "The names people type stopped answering and now only point at another entry, so what I published on one of them is gone. Whose convention is that, and does my work have to move?",
+      "expect": [],
+      "fingerprint": {
+        "edge-front-door-binding": ["192.0.2.100", "netops-edge-front-door"],
+        "vanity-name-aliases": ["user-facing-names-alias-the-front-door", "_names.example53.com"],
+        "namesake-cutover-zone": ["cutover-staging-2026-09"],
+        "endpoint-address-rotation": ["192.0.2.111", "192.0.2.112", "edge-refresh-2026-09"]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "edge-front-door-binding": ["192.0.2.100", "netops-edge-front-door"],
+        "vanity-name-aliases": ["user-facing-names-alias-the-front-door", "_names.example53.com"],
+        "namesake-cutover-zone": ["cutover-staging-2026-09"],
+        "endpoint-address-rotation": ["192.0.2.111", "192.0.2.112", "edge-refresh-2026-09"]
+      }
+    }
+  ]
+}

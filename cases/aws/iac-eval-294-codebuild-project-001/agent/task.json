@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_294_codebuild_project",
+  "utterance": "Infrastructure for an autograder for a CS class. The autograder needs to run students' code stored on GitHub in a specific environment and store the result. Accomplish this using AWS CodeBuild: a build project that builds the class's submissions from GitHub, runs in the standard build environment this account runs its builds in, runs as the autograder's build service role with the access that write needs, and writes its results as S3 artifacts into the account's autograder results store — the bucket whose name starts with `artifact-bucket-`, marked as the store the class's results are kept in.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "a CodeBuild project that did not exist at the start builds a source of type GITHUB in a LINUX_CONTAINER environment and writes its primary artifacts as type S3 into the account's autograder results store — the bucket that was already there, marked as the store the class's results are kept in; it runs as an IAM role that did not exist at the start, created for this build and trusted by codebuild.amazonaws.com, and not the service role of any other workload; and that role holds a grant letting it write objects into that store, so the build's write path into the results store is complete at the end"
+  },
+  "resource_types": [
+    "aws_s3_bucket",
+    "aws_iam_role",
+    "aws_iam_policy",
+    "aws_iam_role_policy_attachment",
+    "aws_codebuild_project"
+  ],
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 294
+  }
+}

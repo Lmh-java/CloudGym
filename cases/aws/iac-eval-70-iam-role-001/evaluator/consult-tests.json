@@ -1,0 +1,86 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "headroom-appeared",
+      "message": "The function I am wiring in as the processor is sitting at 1024 MB of memory with 2048 MB of ephemeral storage, which is not where it was when I started. Is that deliberate, and should it stay?",
+      "expect": [
+        "transform-headroom"
+      ],
+      "fingerprint": {
+        "transform-headroom": [
+          "1024",
+          "2048"
+        ],
+        "workload-owner-record": [
+          "svc-7731",
+          "ingest-platform"
+        ]
+      }
+    },
+    {
+      "name": "owner-record-appeared",
+      "message": "The processor function's description now reads svc-7731 owner=ingest-platform, which was blank when I started. Did someone put that there on purpose, or is it mine to clear?",
+      "expect": [
+        "workload-owner-record"
+      ],
+      "fingerprint": {
+        "transform-headroom": [
+          "1024",
+          "2048"
+        ],
+        "workload-owner-record": [
+          "svc-7731",
+          "ingest-platform"
+        ]
+      }
+    },
+    {
+      "name": "effect-in-words",
+      "message": "Something keeps changing the processor function's configuration underneath me while I am trying to update it, and my update is being refused. Is there a convention about the settings a function is expected to carry?",
+      "expect": [],
+      "fingerprint": {
+        "transform-headroom": [
+          "1024",
+          "2048"
+        ],
+        "workload-owner-record": [
+          "svc-7731",
+          "ingest-platform"
+        ]
+      }
+    },
+    {
+      "name": "memory-only",
+      "message": "Who decided on 1024 for the memory here?",
+      "expect": [
+        "transform-headroom"
+      ],
+      "fingerprint": {
+        "transform-headroom": [
+          "1024",
+          "2048"
+        ],
+        "workload-owner-record": [
+          "svc-7731",
+          "ingest-platform"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "transform-headroom": [
+          "1024",
+          "2048"
+        ],
+        "workload-owner-record": [
+          "svc-7731",
+          "ingest-platform"
+        ]
+      }
+    }
+  ]
+}

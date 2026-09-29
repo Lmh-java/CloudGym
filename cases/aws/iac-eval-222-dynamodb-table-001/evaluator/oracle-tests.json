@@ -1,0 +1,6321 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "succeeded"
+     },
+     "cold-tier-move": {
+      "status": "succeeded"
+     },
+     "cost-allocation-record": {
+      "status": "succeeded"
+     },
+     "stale-event-expiry": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "succeeded"
+     },
+     "cold-tier-move": {
+      "status": "succeeded"
+     },
+     "cost-allocation-record": {
+      "status": "succeeded"
+     },
+     "stale-event-expiry": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableClass": "STANDARD_INFREQUENT_ACCESS",
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "cardholder-data"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "AttributeName": "expiresAt",
+         "Enabled": true
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:111122223333:table/checkout-events-global"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "checkout-events-global-access"
+         }
+        ],
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "succeeded"
+     },
+     "cold-tier-move": {
+      "status": "succeeded"
+     },
+     "cost-allocation-record": {
+      "status": "succeeded"
+     },
+     "stale-event-expiry": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableClass": "STANDARD_INFREQUENT_ACCESS",
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "cardholder-data"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "AttributeName": "expiresAt",
+         "Enabled": true
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "id",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "id",
+          "KeyType": "HASH"
+         }
+        ],
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "checkout-events-global",
+        "Tags": [],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:111122223333:table/checkout-events-global"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "checkout-events-global-access"
+         }
+        ],
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "succeeded"
+     },
+     "cold-tier-move": {
+      "status": "succeeded"
+     },
+     "cost-allocation-record": {
+      "status": "succeeded"
+     },
+     "stale-event-expiry": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableClass": "STANDARD_INFREQUENT_ACCESS",
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "cardholder-data"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "AttributeName": "expiresAt",
+         "Enabled": true
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableClass": "STANDARD_INFREQUENT_ACCESS",
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "cardholder-data"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "AttributeName": "expiresAt",
+         "Enabled": true
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:111122223333:table/checkout-events-global"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "checkout-events-global-access"
+         }
+        ],
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "not-fired"
+     },
+     "cold-tier-move": {
+      "status": "not-fired"
+     },
+     "cost-allocation-record": {
+      "status": "not-fired"
+     },
+     "stale-event-expiry": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:111122223333:table/checkout-events-global"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "checkout-events-global-access"
+         }
+        ],
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "not-fired"
+     },
+     "cold-tier-move": {
+      "status": "not-fired"
+     },
+     "cost-allocation-record": {
+      "status": "not-fired"
+     },
+     "stale-event-expiry": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::111122223333:policy/checkout-events-global-access": {
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "dynamodb:GetItem",
+            "dynamodb:Query",
+            "dynamodb:PutItem",
+            "dynamodb:UpdateItem"
+           ],
+           "Effect": "Allow",
+           "Resource": "arn:aws:dynamodb:us-east-1:111122223333:table/checkout-events-global"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Roles": [
+         "checkout-service"
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "ManagedPolicyArns": [
+         "arn:aws:iam::111122223333:policy/checkout-events-global-access"
+        ],
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "succeeded"
+     },
+     "cold-tier-move": {
+      "status": "succeeded"
+     },
+     "cost-allocation-record": {
+      "status": "succeeded"
+     },
+     "stale-event-expiry": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableClass": "STANDARD_INFREQUENT_ACCESS",
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "cardholder-data"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "AttributeName": "expiresAt",
+         "Enabled": true
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableClass": "STANDARD_INFREQUENT_ACCESS",
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "cardholder-data"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "AttributeName": "expiresAt",
+         "Enabled": true
+        }
+       }
+      },
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::111122223333:policy/checkout-events-global-access": {
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "dynamodb:GetItem",
+            "dynamodb:Query",
+            "dynamodb:PutItem",
+            "dynamodb:UpdateItem"
+           ],
+           "Effect": "Allow",
+           "Resource": "arn:aws:dynamodb:us-east-1:111122223333:table/checkout-events-global"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Roles": [
+         "checkout-service"
+        ]
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "ManagedPolicyArns": [
+         "arn:aws:iam::111122223333:policy/checkout-events-global-access"
+        ],
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved-managed-grant"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "not-fired"
+     },
+     "cold-tier-move": {
+      "status": "not-fired"
+     },
+     "cost-allocation-record": {
+      "status": "not-fired"
+     },
+     "stale-event-expiry": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "broken-no-store"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "not-fired"
+     },
+     "cold-tier-move": {
+      "status": "not-fired"
+     },
+     "cost-allocation-record": {
+      "status": "not-fired"
+     },
+     "stale-event-expiry": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:111122223333:table/checkout-events-global"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "checkout-events-global-access"
+         }
+        ],
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "broken-no-stream"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "not-fired"
+     },
+     "cold-tier-move": {
+      "status": "not-fired"
+     },
+     "cost-allocation-record": {
+      "status": "not-fired"
+     },
+     "stale-event-expiry": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "id",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "id",
+          "KeyType": "HASH"
+         }
+        ],
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:111122223333:table/checkout-events-global"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "checkout-events-global-access"
+         }
+        ],
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "broken-wrong-key"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "not-fired"
+     },
+     "cold-tier-move": {
+      "status": "not-fired"
+     },
+     "cost-allocation-record": {
+      "status": "not-fired"
+     },
+     "stale-event-expiry": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "N"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:111122223333:table/checkout-events-global"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "checkout-events-global-access"
+         }
+        ],
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "broken-key-type"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "not-fired"
+     },
+     "cold-tier-move": {
+      "status": "not-fired"
+     },
+     "cost-allocation-record": {
+      "status": "not-fired"
+     },
+     "stale-event-expiry": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PROVISIONED",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "ProvisionedThroughput": {
+         "ReadCapacityUnits": 5,
+         "WriteCapacityUnits": 5
+        },
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:111122223333:table/checkout-events-global"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "checkout-events-global-access"
+         }
+        ],
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "broken-provisioned"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "not-fired"
+     },
+     "cold-tier-move": {
+      "status": "not-fired"
+     },
+     "cost-allocation-record": {
+      "status": "not-fired"
+     },
+     "stale-event-expiry": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:111122223333:table/checkout-events-global"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "checkout-events-global-access"
+         }
+        ],
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "broken-records"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "not-fired"
+     },
+     "cold-tier-move": {
+      "status": "not-fired"
+     },
+     "cost-allocation-record": {
+      "status": "not-fired"
+     },
+     "stale-event-expiry": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableClass": "STANDARD_INFREQUENT_ACCESS",
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:111122223333:table/checkout-events-global"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "checkout-events-global-access"
+         }
+        ],
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "broken-class"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "not-fired"
+     },
+     "cold-tier-move": {
+      "status": "not-fired"
+     },
+     "cost-allocation-record": {
+      "status": "not-fired"
+     },
+     "stale-event-expiry": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "AttributeName": "expiresAt",
+         "Enabled": true
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:111122223333:table/checkout-events-global"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "checkout-events-global-access"
+         }
+        ],
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "broken-expiry"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "not-fired"
+     },
+     "cold-tier-move": {
+      "status": "not-fired"
+     },
+     "cost-allocation-record": {
+      "status": "not-fired"
+     },
+     "stale-event-expiry": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "broken-no-grant"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "not-fired"
+     },
+     "cold-tier-move": {
+      "status": "not-fired"
+     },
+     "cost-allocation-record": {
+      "status": "not-fired"
+     },
+     "stale-event-expiry": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:111122223333:table/checkout-events"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "checkout-events-global-access"
+         }
+        ],
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "broken-grant-elsewhere"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "succeeded"
+     },
+     "cold-tier-move": {
+      "status": "succeeded"
+     },
+     "cost-allocation-record": {
+      "status": "succeeded"
+     },
+     "stale-event-expiry": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "cardholder-data"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "AttributeName": "expiresAt",
+         "Enabled": true
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "cardholder-data"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "AttributeName": "expiresAt",
+         "Enabled": true
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:111122223333:table/checkout-events-global"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "checkout-events-global-access"
+         }
+        ],
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-cold-tier-move"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "succeeded"
+     },
+     "cold-tier-move": {
+      "status": "succeeded"
+     },
+     "cost-allocation-record": {
+      "status": "succeeded"
+     },
+     "stale-event-expiry": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableClass": "STANDARD_INFREQUENT_ACCESS",
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "cardholder-data"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "AttributeName": "expiresAt",
+         "Enabled": true
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableClass": "STANDARD_INFREQUENT_ACCESS",
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "cardholder-data"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:111122223333:table/checkout-events-global"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "checkout-events-global-access"
+         }
+        ],
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-stale-event-expiry"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "succeeded"
+     },
+     "cold-tier-move": {
+      "status": "succeeded"
+     },
+     "cost-allocation-record": {
+      "status": "succeeded"
+     },
+     "stale-event-expiry": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableClass": "STANDARD_INFREQUENT_ACCESS",
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "cardholder-data"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "AttributeName": "expiresAt",
+         "Enabled": true
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableClass": "STANDARD_INFREQUENT_ACCESS",
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "AttributeName": "expiresAt",
+         "Enabled": true
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:111122223333:table/checkout-events-global"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "checkout-events-global-access"
+         }
+        ],
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-classification-restamp"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "succeeded"
+     },
+     "cold-tier-move": {
+      "status": "succeeded"
+     },
+     "cost-allocation-record": {
+      "status": "succeeded"
+     },
+     "stale-event-expiry": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableClass": "STANDARD_INFREQUENT_ACCESS",
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "cardholder-data"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "AttributeName": "expiresAt",
+         "Enabled": true
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableClass": "STANDARD_INFREQUENT_ACCESS",
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "cardholder-data"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "AttributeName": "expiresAt",
+         "Enabled": true
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:111122223333:table/checkout-events-global"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "checkout-events-global-access"
+         }
+        ],
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-cost-allocation-record"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "succeeded"
+     },
+     "cold-tier-move": {
+      "status": "succeeded"
+     },
+     "cost-allocation-record": {
+      "status": "succeeded"
+     },
+     "stale-event-expiry": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:111122223333:table/checkout-events-global"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "checkout-events-global-access"
+         }
+        ],
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "source-reverted"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "succeeded"
+     },
+     "cold-tier-move": {
+      "status": "failed"
+     },
+     "cost-allocation-record": {
+      "status": "succeeded"
+     },
+     "stale-event-expiry": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "cardholder-data"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "AttributeName": "expiresAt",
+         "Enabled": true
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "cardholder-data"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "AttributeName": "expiresAt",
+         "Enabled": true
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:111122223333:table/checkout-events-global"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "checkout-events-global-access"
+         }
+        ],
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-cold-tier-move"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "succeeded"
+     },
+     "cold-tier-move": {
+      "status": "succeeded"
+     },
+     "cost-allocation-record": {
+      "status": "succeeded"
+     },
+     "stale-event-expiry": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableClass": "STANDARD_INFREQUENT_ACCESS",
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "cardholder-data"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableClass": "STANDARD_INFREQUENT_ACCESS",
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "cardholder-data"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:111122223333:table/checkout-events-global"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "checkout-events-global-access"
+         }
+        ],
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-stale-event-expiry"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "failed"
+     },
+     "cold-tier-move": {
+      "status": "succeeded"
+     },
+     "cost-allocation-record": {
+      "status": "succeeded"
+     },
+     "stale-event-expiry": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableClass": "STANDARD_INFREQUENT_ACCESS",
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "AttributeName": "expiresAt",
+         "Enabled": true
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableClass": "STANDARD_INFREQUENT_ACCESS",
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "AttributeName": "expiresAt",
+         "Enabled": true
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:111122223333:table/checkout-events-global"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "checkout-events-global-access"
+         }
+        ],
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-classification-restamp"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "status": "succeeded"
+     },
+     "cold-tier-move": {
+      "status": "succeeded"
+     },
+     "cost-allocation-record": {
+      "status": "failed"
+     },
+     "stale-event-expiry": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "TableClass": "STANDARD_INFREQUENT_ACCESS",
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "cardholder-data"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "AttributeName": "expiresAt",
+         "Enabled": true
+        }
+       },
+       "checkout-events-global": {
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableClass": "STANDARD_INFREQUENT_ACCESS",
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         },
+         {
+          "Key": "Classification",
+          "Value": "cardholder-data"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "AttributeName": "expiresAt",
+         "Enabled": true
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "checkout-service": {
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:111122223333:table/checkout-events-global"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "checkout-events-global-access"
+         }
+        ],
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-cost-allocation-record"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "Arn": "arn:aws:dynamodb:us-east-1:000000000115:table/checkout-events",
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         },
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::000000000115:policy/eks-fargate-pod-execution": {
+        "AttachmentCount": 0,
+        "CreateDate": "Optional[2026-09-19T13:40:00Z]",
+        "DefaultVersionId": "v1",
+        "Description": "the account's own pod execution policy for Fargate profile roles",
+        "Groups": [],
+        "IsAttachable": true,
+        "ManagedPolicyName": "eks-fargate-pod-execution",
+        "Path": "/",
+        "PermissionsBoundaryUsageCount": 0,
+        "PolicyArn": "arn:aws:iam::000000000115:policy/eks-fargate-pod-execution",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "ecr:GetAuthorizationToken",
+            "ecr:BatchCheckLayerAvailability",
+            "ecr:GetDownloadUrlForLayer",
+            "ecr:BatchGetImage"
+           ],
+           "Effect": "Allow",
+           "Resource": "*",
+           "Sid": "PodImagePull"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "PolicyId": "ANPAY6CILC4FIERQM5Y5Z",
+        "Roles": [],
+        "UpdateDate": "Optional[2026-09-19T13:40:00Z]",
+        "Users": []
+       },
+       "arn:aws:iam::000000000115:policy/lambda-log-writer": {
+        "AttachmentCount": 0,
+        "CreateDate": "Optional[2026-09-19T14:59:32Z]",
+        "DefaultVersionId": "v1",
+        "Description": "the account's log-writing grant for Lambda execution identities",
+        "Groups": [],
+        "IsAttachable": true,
+        "ManagedPolicyName": "lambda-log-writer",
+        "Path": "/",
+        "PermissionsBoundaryUsageCount": 0,
+        "PolicyArn": "arn:aws:iam::000000000115:policy/lambda-log-writer",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogGroup",
+            "logs:CreateLogStream",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": "*",
+           "Sid": "LambdaLogWriting"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "PolicyId": "ANPAY6CILC4FNLY7FXEX7",
+        "Roles": [],
+        "UpdateDate": "Optional[2026-09-19T14:59:32Z]",
+        "Users": []
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000154",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000163",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000159",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000156",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000166",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000115:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000146",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "checkout-service": {
+        "Arn": "arn:aws:iam::000000000115:role/checkout-service",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000147",
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         }
+        ]
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "Arn": "arn:aws:dynamodb:us-east-1:000000000115:table/checkout-events",
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         },
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "checkout-events-global": {
+        "Arn": "arn:aws:dynamodb:us-east-1:000000000115:table/checkout-events-global",
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamArn": "arn:aws:dynamodb:us-east-1:000000000115:table/checkout-events-global/stream/2026-09-19T16:41:16.245",
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableClass": "STANDARD",
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         },
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::000000000115:policy/eks-fargate-pod-execution": {
+        "AttachmentCount": 0,
+        "CreateDate": "Optional[2026-09-19T13:40:00Z]",
+        "DefaultVersionId": "v1",
+        "Description": "the account's own pod execution policy for Fargate profile roles",
+        "Groups": [],
+        "IsAttachable": true,
+        "ManagedPolicyName": "eks-fargate-pod-execution",
+        "Path": "/",
+        "PermissionsBoundaryUsageCount": 0,
+        "PolicyArn": "arn:aws:iam::000000000115:policy/eks-fargate-pod-execution",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "ecr:GetAuthorizationToken",
+            "ecr:BatchCheckLayerAvailability",
+            "ecr:GetDownloadUrlForLayer",
+            "ecr:BatchGetImage"
+           ],
+           "Effect": "Allow",
+           "Resource": "*",
+           "Sid": "PodImagePull"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "PolicyId": "ANPAY6CILC4FIERQM5Y5Z",
+        "Roles": [],
+        "UpdateDate": "Optional[2026-09-19T13:40:00Z]",
+        "Users": []
+       },
+       "arn:aws:iam::000000000115:policy/lambda-log-writer": {
+        "AttachmentCount": 0,
+        "CreateDate": "Optional[2026-09-19T14:59:32Z]",
+        "DefaultVersionId": "v1",
+        "Description": "the account's log-writing grant for Lambda execution identities",
+        "Groups": [],
+        "IsAttachable": true,
+        "ManagedPolicyName": "lambda-log-writer",
+        "Path": "/",
+        "PermissionsBoundaryUsageCount": 0,
+        "PolicyArn": "arn:aws:iam::000000000115:policy/lambda-log-writer",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogGroup",
+            "logs:CreateLogStream",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": "*",
+           "Sid": "LambdaLogWriting"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "PolicyId": "ANPAY6CILC4FNLY7FXEX7",
+        "Roles": [],
+        "UpdateDate": "Optional[2026-09-19T14:59:32Z]",
+        "Users": []
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000154",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000163",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000159",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000156",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000166",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000115:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000146",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "checkout-service": {
+        "Arn": "arn:aws:iam::000000000115:role/checkout-service",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:BatchGetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:ConditionCheckItem",
+              "dynamodb:DescribeTable",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem",
+              "dynamodb:BatchWriteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": [
+              "arn:aws:dynamodb:us-east-1:000000000115:table/checkout-events-global",
+              "arn:aws:dynamodb:us-east-1:000000000115:table/checkout-events-global/index/*"
+             ],
+             "Sid": "CheckoutEventsGlobalReadWrite"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "checkout-events-global-rw"
+         }
+        ],
+        "RoleId": "AROA00000000000000147",
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         }
+        ]
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "classification-restamp": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 2,
+        "landed_ns": 39035725336904,
+        "landed_s": 50.989,
+        "result": {
+         "classified": "cardholder-data",
+         "fingerprint": [
+          "cardholder-data"
+         ],
+         "store": "checkout-events",
+         "trigger": "api",
+         "was": "internal"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-classification-restamp-2",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "classified": "cardholder-data",
+       "fingerprint": [
+        "cardholder-data"
+       ],
+       "store": "checkout-events",
+       "trigger": "api",
+       "was": "internal"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "cold-tier-move": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 1,
+        "landed_ns": 39028070732653,
+        "landed_s": 43.334,
+        "result": {
+         "fingerprint": [
+          "STANDARD_INFREQUENT_ACCESS"
+         ],
+         "moved": true,
+         "store": "checkout-events",
+         "table_class": "STANDARD_INFREQUENT_ACCESS",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-cold-tier-move-1",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        "STANDARD_INFREQUENT_ACCESS"
+       ],
+       "moved": true,
+       "store": "checkout-events",
+       "table_class": "STANDARD_INFREQUENT_ACCESS",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "cost-allocation-record": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 3,
+        "landed_ns": 39045459274614,
+        "landed_s": 60.723,
+        "result": {
+         "allocated_to": "CHK-4471",
+         "fingerprint": [
+          "CHK-4471"
+         ],
+         "identity": "checkout-service",
+         "store": "checkout-events",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-cost-allocation-record-3",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "allocated_to": "CHK-4471",
+       "fingerprint": [
+        "CHK-4471"
+       ],
+       "identity": "checkout-service",
+       "store": "checkout-events",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "stale-event-expiry": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 4,
+        "landed_ns": 39069210360712,
+        "landed_s": 84.474,
+        "result": {
+         "expires_on": "expiresAt",
+         "fingerprint": [
+          "expiresAt"
+         ],
+         "set": true,
+         "store": "checkout-events",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-stale-event-expiry-4",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "expires_on": "expiresAt",
+       "fingerprint": [
+        "expiresAt"
+       ],
+       "set": true,
+       "store": "checkout-events",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "Arn": "arn:aws:dynamodb:us-east-1:000000000115:table/checkout-events",
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Classification",
+          "Value": "internal"
+         },
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "Enabled": false
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::000000000115:policy/eks-fargate-pod-execution": {
+        "AttachmentCount": 0,
+        "CreateDate": "Optional[2026-09-19T13:40:00Z]",
+        "DefaultVersionId": "v1",
+        "Description": "the account's own pod execution policy for Fargate profile roles",
+        "Groups": [],
+        "IsAttachable": true,
+        "ManagedPolicyName": "eks-fargate-pod-execution",
+        "Path": "/",
+        "PermissionsBoundaryUsageCount": 0,
+        "PolicyArn": "arn:aws:iam::000000000115:policy/eks-fargate-pod-execution",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "ecr:GetAuthorizationToken",
+            "ecr:BatchCheckLayerAvailability",
+            "ecr:GetDownloadUrlForLayer",
+            "ecr:BatchGetImage"
+           ],
+           "Effect": "Allow",
+           "Resource": "*",
+           "Sid": "PodImagePull"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "PolicyId": "ANPAY6CILC4FIERQM5Y5Z",
+        "Roles": [],
+        "UpdateDate": "Optional[2026-09-19T13:40:00Z]",
+        "Users": []
+       },
+       "arn:aws:iam::000000000115:policy/lambda-log-writer": {
+        "AttachmentCount": 0,
+        "CreateDate": "Optional[2026-09-19T14:59:32Z]",
+        "DefaultVersionId": "v1",
+        "Description": "the account's log-writing grant for Lambda execution identities",
+        "Groups": [],
+        "IsAttachable": true,
+        "ManagedPolicyName": "lambda-log-writer",
+        "Path": "/",
+        "PermissionsBoundaryUsageCount": 0,
+        "PolicyArn": "arn:aws:iam::000000000115:policy/lambda-log-writer",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogGroup",
+            "logs:CreateLogStream",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": "*",
+           "Sid": "LambdaLogWriting"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "PolicyId": "ANPAY6CILC4FNLY7FXEX7",
+        "Roles": [],
+        "UpdateDate": "Optional[2026-09-19T14:59:32Z]",
+        "Users": []
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000154",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000163",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000159",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000156",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000166",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000115:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000146",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "checkout-service": {
+        "Arn": "arn:aws:iam::000000000115:role/checkout-service",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000148",
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         }
+        ]
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::DynamoDB::Table": {
+       "checkout-events": {
+        "Arn": "arn:aws:dynamodb:us-east-1:000000000115:table/checkout-events",
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "TableClass": "STANDARD_INFREQUENT_ACCESS",
+        "TableName": "checkout-events",
+        "Tags": [
+         {
+          "Key": "Classification",
+          "Value": "cardholder-data"
+         },
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "AttributeName": "expiresAt",
+         "Enabled": true
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       },
+       "checkout-events-global": {
+        "Arn": "arn:aws:dynamodb:us-east-1:000000000115:table/checkout-events-global",
+        "AttributeDefinitions": [
+         {
+          "AttributeName": "eventId",
+          "AttributeType": "S"
+         }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "ContributorInsightsSpecification": {
+         "Enabled": false
+        },
+        "DeletionProtectionEnabled": false,
+        "KeySchema": [
+         {
+          "AttributeName": "eventId",
+          "KeyType": "HASH"
+         }
+        ],
+        "PointInTimeRecoverySpecification": {
+         "PointInTimeRecoveryEnabled": false
+        },
+        "SSESpecification": {
+         "SSEEnabled": false
+        },
+        "StreamArn": "arn:aws:dynamodb:us-east-1:000000000115:table/checkout-events-global/stream/2026-09-19T18:11:26.149",
+        "StreamSpecification": {
+         "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "TableClass": "STANDARD_INFREQUENT_ACCESS",
+        "TableName": "checkout-events-global",
+        "Tags": [
+         {
+          "Key": "Classification",
+          "Value": "cardholder-data"
+         },
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         },
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         },
+         {
+          "Key": "Store",
+          "Value": "events"
+         }
+        ],
+        "TimeToLiveSpecification": {
+         "AttributeName": "expiresAt",
+         "Enabled": true
+        },
+        "WarmThroughput": {
+         "ReadUnitsPerSecond": 12000,
+         "WriteUnitsPerSecond": 4000
+        }
+       }
+      },
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::000000000115:policy/eks-fargate-pod-execution": {
+        "AttachmentCount": 0,
+        "CreateDate": "Optional[2026-09-19T13:40:00Z]",
+        "DefaultVersionId": "v1",
+        "Description": "the account's own pod execution policy for Fargate profile roles",
+        "Groups": [],
+        "IsAttachable": true,
+        "ManagedPolicyName": "eks-fargate-pod-execution",
+        "Path": "/",
+        "PermissionsBoundaryUsageCount": 0,
+        "PolicyArn": "arn:aws:iam::000000000115:policy/eks-fargate-pod-execution",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "ecr:GetAuthorizationToken",
+            "ecr:BatchCheckLayerAvailability",
+            "ecr:GetDownloadUrlForLayer",
+            "ecr:BatchGetImage"
+           ],
+           "Effect": "Allow",
+           "Resource": "*",
+           "Sid": "PodImagePull"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "PolicyId": "ANPAY6CILC4FIERQM5Y5Z",
+        "Roles": [],
+        "UpdateDate": "Optional[2026-09-19T13:40:00Z]",
+        "Users": []
+       },
+       "arn:aws:iam::000000000115:policy/lambda-log-writer": {
+        "AttachmentCount": 0,
+        "CreateDate": "Optional[2026-09-19T14:59:32Z]",
+        "DefaultVersionId": "v1",
+        "Description": "the account's log-writing grant for Lambda execution identities",
+        "Groups": [],
+        "IsAttachable": true,
+        "ManagedPolicyName": "lambda-log-writer",
+        "Path": "/",
+        "PermissionsBoundaryUsageCount": 0,
+        "PolicyArn": "arn:aws:iam::000000000115:policy/lambda-log-writer",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogGroup",
+            "logs:CreateLogStream",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": "*",
+           "Sid": "LambdaLogWriting"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "PolicyId": "ANPAY6CILC4FNLY7FXEX7",
+        "Roles": [],
+        "UpdateDate": "Optional[2026-09-19T14:59:32Z]",
+        "Users": []
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000154",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000163",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000159",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000156",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000115:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000166",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000115:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000146",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "checkout-service": {
+        "Arn": "arn:aws:iam::000000000115:role/checkout-service",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "Policies": [
+         {
+          "PolicyDocument": {
+           "Statement": [
+            {
+             "Action": [
+              "dynamodb:DescribeTable",
+              "dynamodb:GetItem",
+              "dynamodb:BatchGetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:ConditionCheckItem",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem",
+              "dynamodb:BatchWriteItem"
+             ],
+             "Effect": "Allow",
+             "Resource": [
+              "arn:aws:dynamodb:us-east-1:000000000115:table/checkout-events-global",
+              "arn:aws:dynamodb:us-east-1:000000000115:table/checkout-events-global/index/*"
+             ],
+             "Sid": "CheckoutEventsGlobalReadWrite"
+            },
+            {
+             "Action": [
+              "dynamodb:DescribeStream",
+              "dynamodb:GetRecords",
+              "dynamodb:GetShardIterator",
+              "dynamodb:ListStreams"
+             ],
+             "Effect": "Allow",
+             "Resource": "arn:aws:dynamodb:us-east-1:000000000115:table/checkout-events-global/stream/*",
+             "Sid": "CheckoutEventsGlobalStreamRead"
+            }
+           ],
+           "Version": "2012-10-17"
+          },
+          "PolicyName": "checkout-events-global-rw"
+         }
+        ],
+        "RoleId": "AROA00000000000000148",
+        "RoleName": "checkout-service",
+        "Tags": [
+         {
+          "Key": "CostCenter",
+          "Value": "CHK-4471"
+         },
+         {
+          "Key": "Owner",
+          "Value": "checkout-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "checkout"
+         }
+        ]
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-interference-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

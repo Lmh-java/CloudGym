@@ -1,0 +1,2 @@
+Names join the zone the account already runs for them, not a new one, and answer only from the range allocated to the workload.
+What you did not write still answers as it did; where the account already sets a value you would set, the one you find stays.

@@ -1,0 +1,150 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "which-store",
+      "message": "The store I was pointed at now carries evidence-supersession-2026-09, and a sqlaudit-111122223333-regulated store carries the same mark. Which of the two should this workload's evidence be booked to?",
+      "expect": [
+        "evidence-store-supersession"
+      ],
+      "fingerprint": {
+        "evidence-store-supersession": [
+          "evidence-supersession-2026-09",
+          "sqlaudit-111122223333-regulated"
+        ],
+        "evidence-place-assignment": [
+          "sqlserver-audit/payments",
+          "evidence-layout-2026-09"
+        ],
+        "audit-writer-split": [
+          "sqlserver-audit-writer-payments",
+          "writer-split-2026-09"
+        ],
+        "sibling-evidence-store": [
+          "sqlaudit-111122223333-ledger",
+          "ledger-evidence-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "where-under-the-store",
+      "message": "The store now records an evidence-layout-2026-09 revision naming sqlserver-audit/payments. Should what I point the audit setting at cover only that, or everything landing in the store?",
+      "expect": [
+        "evidence-place-assignment"
+      ],
+      "fingerprint": {
+        "evidence-store-supersession": [
+          "evidence-supersession-2026-09",
+          "sqlaudit-111122223333-regulated"
+        ],
+        "evidence-place-assignment": [
+          "sqlserver-audit/payments",
+          "evidence-layout-2026-09"
+        ],
+        "audit-writer-split": [
+          "sqlserver-audit-writer-payments",
+          "writer-split-2026-09"
+        ],
+        "sibling-evidence-store": [
+          "sqlaudit-111122223333-ledger",
+          "ledger-evidence-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "which-identity",
+      "message": "A sqlserver-audit-writer-payments identity marked writer-split-2026-09 has appeared beside the one I was pointed at. Which of them should the audit option name?",
+      "expect": [
+        "audit-writer-split"
+      ],
+      "fingerprint": {
+        "evidence-store-supersession": [
+          "evidence-supersession-2026-09",
+          "sqlaudit-111122223333-regulated"
+        ],
+        "evidence-place-assignment": [
+          "sqlserver-audit/payments",
+          "evidence-layout-2026-09"
+        ],
+        "audit-writer-split": [
+          "sqlserver-audit-writer-payments",
+          "writer-split-2026-09"
+        ],
+        "sibling-evidence-store": [
+          "sqlaudit-111122223333-ledger",
+          "ledger-evidence-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "whose-store",
+      "message": "There is also a sqlaudit-111122223333-ledger store, held under ledger-evidence-2026-09, carrying the same evidence marking as the one I was pointed at. Is that one this workload's?",
+      "expect": [
+        "sibling-evidence-store"
+      ],
+      "fingerprint": {
+        "evidence-store-supersession": [
+          "evidence-supersession-2026-09",
+          "sqlaudit-111122223333-regulated"
+        ],
+        "evidence-place-assignment": [
+          "sqlserver-audit/payments",
+          "evidence-layout-2026-09"
+        ],
+        "audit-writer-split": [
+          "sqlserver-audit-writer-payments",
+          "writer-split-2026-09"
+        ],
+        "sibling-evidence-store": [
+          "sqlaudit-111122223333-ledger",
+          "ledger-evidence-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "effects-in-words",
+      "message": "The store I was pointed at looks like it has been set aside in favour of another one, the evidence seems to belong under a place of its own rather than at the root, and the identity that writes it is not the only one any more. Whose changes are those, and do I have to follow them?",
+      "expect": [],
+      "fingerprint": {
+        "evidence-store-supersession": [
+          "evidence-supersession-2026-09",
+          "sqlaudit-111122223333-regulated"
+        ],
+        "evidence-place-assignment": [
+          "sqlserver-audit/payments",
+          "evidence-layout-2026-09"
+        ],
+        "audit-writer-split": [
+          "sqlserver-audit-writer-payments",
+          "writer-split-2026-09"
+        ],
+        "sibling-evidence-store": [
+          "sqlaudit-111122223333-ledger",
+          "ledger-evidence-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "fingerprint": {
+        "evidence-store-supersession": [
+          "evidence-supersession-2026-09",
+          "sqlaudit-111122223333-regulated"
+        ],
+        "evidence-place-assignment": [
+          "sqlserver-audit/payments",
+          "evidence-layout-2026-09"
+        ],
+        "audit-writer-split": [
+          "sqlserver-audit-writer-payments",
+          "writer-split-2026-09"
+        ],
+        "sibling-evidence-store": [
+          "sqlaudit-111122223333-ledger",
+          "ledger-evidence-2026-09"
+        ]
+      }
+    }
+  ]
+}

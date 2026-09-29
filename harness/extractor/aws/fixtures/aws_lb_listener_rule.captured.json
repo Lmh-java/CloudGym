@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::ElasticLoadBalancingV2::ListenerRule",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-09T07:29:24+00:00",
+      "ResourceDescription": {
+        "Identifier": "arn:aws:elasticloadbalancing:us-east-1:123456789012:listener-rule/app/cwcap-20260909072553079500000003/8ae3a6b3d403ca4c/e58c79e1979d5044/84da60570d073454",
+        "Properties": "{\"IsDefault\":false,\"Actions\":[{\"Order\":1,\"TargetGroupArn\":\"arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/cwcap-20260909072549341100000002/c69400dc33da66ce\",\"Type\":\"forward\",\"ForwardConfig\":{\"TargetGroupStickinessConfig\":{\"Enabled\":false},\"TargetGroups\":[{\"TargetGroupArn\":\"arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/cwcap-20260909072549341100000002/c69400dc33da66ce\",\"Weight\":1}]}}],\"Priority\":10,\"RuleArn\":\"arn:aws:elasticloadbalancing:us-east-1:123456789012:listener-rule/app/cwcap-20260909072553079500000003/8ae3a6b3d403ca4c/e58c79e1979d5044/84da60570d073454\",\"Transforms\":[],\"Conditions\":[{\"Field\":\"path-pattern\",\"Values\":[\"/cloudgym/*\"],\"PathPatternConfig\":{\"Values\":[\"/cloudgym/*\"]}}]}"
+      },
+      "TypeName": "AWS::ElasticLoadBalancingV2::ListenerRule"
+    }
+  ],
+  "recorded_at": "2026-09-09T07:29:24+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

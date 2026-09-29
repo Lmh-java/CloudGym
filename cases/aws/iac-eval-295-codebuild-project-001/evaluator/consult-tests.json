@@ -1,0 +1,127 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "two-stores-answer-the-same-description",
+      "message": "I see grader-results-archive-123456789012 sitting beside the store the department has been writing graded results into, and both carry the same department markings. Which of the two is the one a new build should write into?",
+      "expect": [
+        "results-store-archive"
+      ],
+      "fingerprint": {
+        "results-store-archive": [
+          "grader-results-archive-123456789012"
+        ],
+        "grader-environment-standard": [
+          "cs230-autograder"
+        ],
+        "submissions-org-cutover": [
+          "cs-dept-courses"
+        ],
+        "class-identity-provisioning": [
+          "grader-identity-cs110"
+        ]
+      }
+    },
+    {
+      "name": "second-autograder-in-the-account",
+      "message": "There is now a cs230-autograder in the account beside the older one, and the two are marked differently and run on different images. Which of them should a new build's environment match?",
+      "expect": [
+        "grader-environment-standard"
+      ],
+      "fingerprint": {
+        "results-store-archive": [
+          "grader-results-archive-123456789012"
+        ],
+        "grader-environment-standard": [
+          "cs230-autograder"
+        ],
+        "submissions-org-cutover": [
+          "cs-dept-courses"
+        ],
+        "class-identity-provisioning": [
+          "grader-identity-cs110"
+        ]
+      }
+    },
+    {
+      "name": "sources-moved-organisation",
+      "message": "The department's builds read back pointing at cs-dept-courses rather than where they pointed when I started. Which side should a new build take the class's code from?",
+      "expect": [
+        "submissions-org-cutover"
+      ],
+      "fingerprint": {
+        "results-store-archive": [
+          "grader-results-archive-123456789012"
+        ],
+        "grader-environment-standard": [
+          "cs230-autograder"
+        ],
+        "submissions-org-cutover": [
+          "cs-dept-courses"
+        ],
+        "class-identity-provisioning": [
+          "grader-identity-cs110"
+        ]
+      }
+    },
+    {
+      "name": "identity-already-there",
+      "message": "A role grader-identity-cs110 is already in the account with grants on it. Should the build run as that one, or as one I stand up myself?",
+      "expect": [
+        "class-identity-provisioning"
+      ],
+      "fingerprint": {
+        "results-store-archive": [
+          "grader-results-archive-123456789012"
+        ],
+        "grader-environment-standard": [
+          "cs230-autograder"
+        ],
+        "submissions-org-cutover": [
+          "cs-dept-courses"
+        ],
+        "class-identity-provisioning": [
+          "grader-identity-cs110"
+        ]
+      }
+    },
+    {
+      "name": "effect-in-words",
+      "message": "Some of what I read earlier appears to have been superseded while I was working, and more than one thing now answers to the same description. Is there a rule for which one is meant?",
+      "expect": [],
+      "fingerprint": {
+        "results-store-archive": [
+          "grader-results-archive-123456789012"
+        ],
+        "grader-environment-standard": [
+          "cs230-autograder"
+        ],
+        "submissions-org-cutover": [
+          "cs-dept-courses"
+        ],
+        "class-identity-provisioning": [
+          "grader-identity-cs110"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "results-store-archive": [
+          "grader-results-archive-123456789012"
+        ],
+        "grader-environment-standard": [
+          "cs230-autograder"
+        ],
+        "submissions-org-cutover": [
+          "cs-dept-courses"
+        ],
+        "class-identity-provisioning": [
+          "grader-identity-cs110"
+        ]
+      }
+    }
+  ]
+}

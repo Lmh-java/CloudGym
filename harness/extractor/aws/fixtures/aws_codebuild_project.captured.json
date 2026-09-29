@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::CodeBuild::Project",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-01T07:06:35+00:00",
+      "ResourceDescription": {
+        "Identifier": "cloudgym-capability-codebuild",
+        "Properties": "{\"name\": \"cloudgym-capability-codebuild\", \"arn\": \"arn:aws:codebuild:us-east-1:123456789012:project/cloudgym-capability-codebuild\", \"source\": {\"type\": \"NO_SOURCE\", \"gitCloneDepth\": 0, \"buildspec\": \"version: 0.2\\nphases:\\n  build:\\n    commands:\\n      - echo ok\\n\", \"insecureSsl\": false}, \"artifacts\": {\"type\": \"NO_ARTIFACTS\", \"overrideArtifactName\": false}, \"cache\": {\"type\": \"NO_CACHE\"}, \"environment\": {\"type\": \"LINUX_CONTAINER\", \"image\": \"aws/codebuild/standard:7.0\", \"computeType\": \"BUILD_GENERAL1_SMALL\", \"environmentVariables\": [], \"privilegedMode\": false, \"imagePullCredentialsType\": \"CODEBUILD\"}, \"serviceRole\": \"arn:aws:iam::123456789012:role/cloudgym-capability-20260901070607594100000001\", \"timeoutInMinutes\": 60, \"queuedTimeoutInMinutes\": 480, \"encryptionKey\": \"arn:aws:kms:us-east-1:123456789012:alias/aws/s3\", \"tags\": [], \"created\": \"2026-09-01T15:06:19.974000+08:00\", \"lastModified\": \"2026-09-01T15:06:19.974000+08:00\", \"badge\": {\"badgeEnabled\": false}, \"logsConfig\": {\"cloudWatchLogs\": {\"status\": \"ENABLED\"}, \"s3Logs\": {\"status\": \"DISABLED\", \"encryptionDisabled\": false}}, \"projectVisibility\": \"PRIVATE\"}"
+      },
+      "TypeName": "AWS::CodeBuild::Project"
+    }
+  ],
+  "recorded_at": "2026-09-01T07:06:41+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

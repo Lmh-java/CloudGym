@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_85_route53_record",
+  "utterance": "The account already serves our product domain from a Route 53 zone for `example53.com`; only the answers under it are missing. Configure a routing policy that utilizes a user's location to route visitors to the nearest endpoint of that zone: visitors from North America (continent `NA`) must be answered with 192.0.2.101 and visitors from Europe (continent `EU`) with 192.0.2.102. Publish it on the zone's public service hostname, as plain address answers rather than alias records.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "in the Route 53 hosted zone the account already serves example53.com from, one public service hostname under that domain carries a geolocation record set of non-alias A records whose North America (NA) continent member answers 192.0.2.101 and whose Europe (EU) continent member answers 192.0.2.102"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 85
+  }
+}

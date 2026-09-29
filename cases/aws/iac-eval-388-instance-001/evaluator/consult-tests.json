@@ -1,0 +1,84 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "front-conventions-upfront",
+      "message": "Before I put anything behind a load balancer here: is there a convention for which servers a workload's front is expected to carry, and which it must leave alone?",
+      "expect": [],
+      "fingerprint": {
+        "release-canary-server": ["checkout-web-r42", "taking-traffic"],
+        "sibling-relay-server": ["checkout-relay-1", "returns-api"],
+        "cutover-holdback-server": ["checkout-api-legacy", "pre-cutover"],
+        "namesake-front-segment": ["10.30.9.0/24", "net-staging"]
+      },
+      "note": "asked before anything has happened: it cites nothing and reaches nobody"
+    },
+    {
+      "name": "version-taking-traffic",
+      "message": "A server checkout-web-r42 came up in the segment I am working in, marked taking-traffic, and I did not launch it. Does it belong behind the front I am building?",
+      "expect": ["release-canary-server"],
+      "fingerprint": {
+        "release-canary-server": ["checkout-web-r42", "taking-traffic"],
+        "sibling-relay-server": ["checkout-relay-1", "returns-api"],
+        "cutover-holdback-server": ["checkout-api-legacy", "pre-cutover"],
+        "namesake-front-segment": ["10.30.9.0/24", "net-staging"]
+      }
+    },
+    {
+      "name": "lookalike-server",
+      "message": "There is a server called checkout-relay-1 sitting in the same segment, but it is attributed to returns-api. Is it one of the servers I should be registering?",
+      "expect": ["sibling-relay-server"],
+      "fingerprint": {
+        "release-canary-server": ["checkout-web-r42", "taking-traffic"],
+        "sibling-relay-server": ["checkout-relay-1", "returns-api"],
+        "cutover-holdback-server": ["checkout-api-legacy", "pre-cutover"],
+        "namesake-front-segment": ["10.30.9.0/24", "net-staging"]
+      }
+    },
+    {
+      "name": "legacy-marked-pre-cutover",
+      "message": "checkout-api-legacy carries the same attribution as the rest of the service but is marked pre-cutover. Should it be taking traffic from the new front?",
+      "expect": ["cutover-holdback-server"],
+      "fingerprint": {
+        "release-canary-server": ["checkout-web-r42", "taking-traffic"],
+        "sibling-relay-server": ["checkout-relay-1", "returns-api"],
+        "cutover-holdback-server": ["checkout-api-legacy", "pre-cutover"],
+        "namesake-front-segment": ["10.30.9.0/24", "net-staging"]
+      }
+    },
+    {
+      "name": "two-segments-one-name",
+      "message": "Two segments in this network answer to the same name; the second one is 10.30.9.0/24 and is attributed to net-staging. Which of them should the workload land in?",
+      "expect": ["namesake-front-segment"],
+      "fingerprint": {
+        "release-canary-server": ["checkout-web-r42", "taking-traffic"],
+        "sibling-relay-server": ["checkout-relay-1", "returns-api"],
+        "cutover-holdback-server": ["checkout-api-legacy", "pre-cutover"],
+        "namesake-front-segment": ["10.30.9.0/24", "net-staging"]
+      }
+    },
+    {
+      "name": "servers-keep-appearing",
+      "message": "Servers I did not launch keep turning up in the segment I was asked to use. Should the front I am building carry them, or only the one I launched?",
+      "expect": [],
+      "fingerprint": {
+        "release-canary-server": ["checkout-web-r42", "taking-traffic"],
+        "sibling-relay-server": ["checkout-relay-1", "returns-api"],
+        "cutover-holdback-server": ["checkout-api-legacy", "pre-cutover"],
+        "namesake-front-segment": ["10.30.9.0/24", "net-staging"]
+      },
+      "note": "describes the effect without naming anything that was read; it reaches nobody"
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "fingerprint": {
+        "release-canary-server": ["checkout-web-r42", "taking-traffic"],
+        "sibling-relay-server": ["checkout-relay-1", "returns-api"],
+        "cutover-holdback-server": ["checkout-api-legacy", "pre-cutover"],
+        "namesake-front-segment": ["10.30.9.0/24", "net-staging"]
+      },
+      "expect_at_most": 0
+    }
+  ]
+}

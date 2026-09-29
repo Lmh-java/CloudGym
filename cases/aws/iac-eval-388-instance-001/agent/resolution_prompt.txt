@@ -1,0 +1,2 @@
+A workload's load-balanced front carries every server of it taking traffic when you finish, and nothing another owns; what you did not create stays as found.
+Names claim nothing: attribution says what belongs to whom, and a workload lands in space marked as its own.

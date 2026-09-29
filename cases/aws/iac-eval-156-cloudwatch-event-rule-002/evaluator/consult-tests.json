@@ -1,0 +1,133 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "way-in",
+      "message": "A rule called platform-ami-events already stands here, marked ami-entry-2026-09, watching for images being created. Should the scanner hang off that one, or do I put up a rule of my own?",
+      "expect": [
+        "image-event-entry-rule"
+      ],
+      "fingerprint": {
+        "image-event-entry-rule": [
+          "platform-ami-events",
+          "ami-entry-2026-09"
+        ],
+        "scanner-invoke-pinning": [
+          "pinned-delivery-2026-09"
+        ],
+        "billing-audit-path": [
+          "billing_image_audit"
+        ],
+        "scan-run-as-identity": [
+          "image_event_delivery_role"
+        ]
+      }
+    },
+    {
+      "name": "second-consumer",
+      "message": "Something called billing_image_audit already hangs off the way in I want to use, with a target of its own on it. Is its wiring mine to move or clear while I add the scanner beside it?",
+      "expect": [
+        "billing-audit-path"
+      ],
+      "fingerprint": {
+        "image-event-entry-rule": [
+          "platform-ami-events",
+          "ami-entry-2026-09"
+        ],
+        "scanner-invoke-pinning": [
+          "pinned-delivery-2026-09"
+        ],
+        "billing-audit-path": [
+          "billing_image_audit"
+        ],
+        "scan-run-as-identity": [
+          "image_event_delivery_role"
+        ]
+      }
+    },
+    {
+      "name": "grant-reissued",
+      "message": "The grant I wrote so the scanner can be invoked now stands under pinned-delivery-2026-09 instead of the id I gave it. What has to be true of a grant here before it is left standing?",
+      "expect": [
+        "scanner-invoke-pinning"
+      ],
+      "fingerprint": {
+        "image-event-entry-rule": [
+          "platform-ami-events",
+          "ami-entry-2026-09"
+        ],
+        "scanner-invoke-pinning": [
+          "pinned-delivery-2026-09"
+        ],
+        "billing-audit-path": [
+          "billing_image_audit"
+        ],
+        "scan-run-as-identity": [
+          "image_event_delivery_role"
+        ]
+      }
+    },
+    {
+      "name": "which-identity",
+      "message": "There is an image_event_delivery_role in this account now, and the scanner's own role no longer lets the event service assume it. Which identity is my wiring meant to run as?",
+      "expect": [
+        "scan-run-as-identity"
+      ],
+      "fingerprint": {
+        "image-event-entry-rule": [
+          "platform-ami-events",
+          "ami-entry-2026-09"
+        ],
+        "scanner-invoke-pinning": [
+          "pinned-delivery-2026-09"
+        ],
+        "billing-audit-path": [
+          "billing_image_audit"
+        ],
+        "scan-run-as-identity": [
+          "image_event_delivery_role"
+        ]
+      }
+    },
+    {
+      "name": "something-already-watching",
+      "message": "Something in this account already watches for an image being created and fires a function when one is. Is the wiring I was asked for supposed to be that one, or a new one of my own?",
+      "expect": [],
+      "fingerprint": {
+        "image-event-entry-rule": [
+          "platform-ami-events",
+          "ami-entry-2026-09"
+        ],
+        "scanner-invoke-pinning": [
+          "pinned-delivery-2026-09"
+        ],
+        "billing-audit-path": [
+          "billing_image_audit"
+        ],
+        "scan-run-as-identity": [
+          "image_event_delivery_role"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "image-event-entry-rule": [
+          "platform-ami-events",
+          "ami-entry-2026-09"
+        ],
+        "scanner-invoke-pinning": [
+          "pinned-delivery-2026-09"
+        ],
+        "billing-audit-path": [
+          "billing_image_audit"
+        ],
+        "scan-run-as-identity": [
+          "image_event_delivery_role"
+        ]
+      }
+    }
+  ]
+}

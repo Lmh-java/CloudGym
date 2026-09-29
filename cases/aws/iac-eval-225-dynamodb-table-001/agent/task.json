@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_225_dynamodb_table",
+  "utterance": "The leaderboard team is sizing the game-scores workload for the tournament season. Create a DynamoDB table named `GameScores` on PROVISIONED billing with `UserId` (string) as its hash key and `GameTitle` (string) as its range key, with read and write capacity both set to 10. That tournament sizing has to hold for every DynamoDB table the game-scores workload owns, not just the new one. Also give the existing `game-scores-service` role read and write access to the new store. Finish by reporting, for every DynamoDB table in the account, the billing mode, the read and write capacity and the tags it ended up with.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's data and how it is stored and laid out",
+    "intent": "a DynamoDB table named GameScores stands on PROVISIONED billing with a string hash key UserId, a string range key GameTitle and provisioned throughput of no less than the 10 read and 10 write capacity units asked for; every DynamoDB table the game-scores workload owns carries that same provisioned sizing; the new store records the attribution the workload's other stores carry; and the game-scores-service role holds a policy granting read and write access to GameScores"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 225
+  }
+}

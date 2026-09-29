@@ -1,0 +1,2 @@
+A network's traffic rules are kept in one place, never what it was born with: your work goes there rather than in a second set of your own.
+What you did not write keeps its slot; what you add opens nothing another rule was written to close.

@@ -1,0 +1,71 @@
+{
+ "mode": "fingerprint",
+ "asks": [
+  {
+   "name": "image-replaced",
+   "message": "The build that was already here is running aws/codebuild/amazonlinux2-x86_64-standard:5.0 now, which is not what it ran when I started. Is that what a build here is supposed to run on?",
+   "expect": ["standard-build-image"],
+   "fingerprint": {
+    "standard-build-image": ["aws/codebuild/amazonlinux2-x86_64-standard:5.0"],
+    "build-time-ceiling": ["build-ceiling-2026q3"],
+    "pooled-build-identity": ["shared-build-runner"],
+    "sibling-build-name": ["ta-grading-tools"]
+   }
+  },
+  {
+   "name": "ceiling-mark",
+   "message": "Everything here came back marked build-ceiling-2026q3 and no longer runs as long as it did. Does that hold for what I build as well?",
+   "expect": ["build-time-ceiling"],
+   "fingerprint": {
+    "standard-build-image": ["aws/codebuild/amazonlinux2-x86_64-standard:5.0"],
+    "build-time-ceiling": ["build-ceiling-2026q3"],
+    "pooled-build-identity": ["shared-build-runner"],
+    "sibling-build-name": ["ta-grading-tools"]
+   }
+  },
+  {
+   "name": "service-role-repointed",
+   "message": "My build is running as shared-build-runner now, not the role I made for it. Which of the two should it be running as?",
+   "expect": ["pooled-build-identity"],
+   "fingerprint": {
+    "standard-build-image": ["aws/codebuild/amazonlinux2-x86_64-standard:5.0"],
+    "build-time-ceiling": ["build-ceiling-2026q3"],
+    "pooled-build-identity": ["shared-build-runner"],
+    "sibling-build-name": ["ta-grading-tools"]
+   }
+  },
+  {
+   "name": "name-already-answered-to",
+   "message": "The name I was asked to use is held by a build marked ta-grading-tools. Should I take that name over or pick another one?",
+   "expect": ["sibling-build-name"],
+   "fingerprint": {
+    "standard-build-image": ["aws/codebuild/amazonlinux2-x86_64-standard:5.0"],
+    "build-time-ceiling": ["build-ceiling-2026q3"],
+    "pooled-build-identity": ["shared-build-runner"],
+    "sibling-build-name": ["ta-grading-tools"]
+   }
+  },
+  {
+   "name": "effects-in-words",
+   "message": "Something swapped the build image out from under me, shortened how long a build may run, moved my build onto a different identity and took the name I wanted. Should I put all of that back the way I had it?",
+   "expect": [],
+   "fingerprint": {
+    "standard-build-image": ["aws/codebuild/amazonlinux2-x86_64-standard:5.0"],
+    "build-time-ceiling": ["build-ceiling-2026q3"],
+    "pooled-build-identity": ["shared-build-runner"],
+    "sibling-build-name": ["ta-grading-tools"]
+   }
+  },
+  {
+   "name": "generic",
+   "message": "Any conventions I should follow here?",
+   "expect": [],
+   "fingerprint": {
+    "standard-build-image": ["aws/codebuild/amazonlinux2-x86_64-standard:5.0"],
+    "build-time-ceiling": ["build-ceiling-2026q3"],
+    "pooled-build-identity": ["shared-build-runner"],
+    "sibling-build-name": ["ta-grading-tools"]
+   }
+  }
+ ]
+}

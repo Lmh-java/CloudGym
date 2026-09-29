@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::S3::BucketPolicy",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-09T06:27:27+00:00",
+      "ResourceDescription": {
+        "Identifier": "cloudgym-capability-20260909062711673000000001",
+        "Properties": "{\"Bucket\":\"cloudgym-capability-20260909062711673000000001\",\"PolicyDocument\":{\"Version\":\"2012-10-17\",\"Statement\":[{\"Condition\":{\"Bool\":{\"aws:SecureTransport\":\"false\"}},\"Action\":\"s3:*\",\"Resource\":[\"arn:aws:s3:::cloudgym-capability-20260909062711673000000001\",\"arn:aws:s3:::cloudgym-capability-20260909062711673000000001/*\"],\"Effect\":\"Deny\",\"Principal\":\"*\",\"Sid\":\"DenyInsecureTransport\"}]}}"
+      },
+      "TypeName": "AWS::S3::BucketPolicy"
+    }
+  ],
+  "recorded_at": "2026-09-09T06:27:27+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::EC2::VPCPeeringConnection",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-23T23:12:14+00:00",
+      "ResourceDescription": {
+        "Identifier": "pcx-0f97e1b0f36b417d6",
+        "Properties": "{\"AccepterVpcInfo\": {\"CidrBlock\": \"10.247.0.0/24\", \"CidrBlockSet\": [{\"CidrBlock\": \"10.247.0.0/24\"}], \"OwnerId\": \"123456789012\", \"PeeringOptions\": {\"AllowDnsResolutionFromRemoteVpc\": false, \"AllowEgressFromLocalClassicLinkToRemoteVpc\": false, \"AllowEgressFromLocalVpcToRemoteClassicLink\": false}, \"VpcId\": \"vpc-0bb97bcf3f0585e69\", \"Region\": \"us-east-1\"}, \"RequesterVpcInfo\": {\"CidrBlock\": \"10.246.0.0/24\", \"CidrBlockSet\": [{\"CidrBlock\": \"10.246.0.0/24\"}], \"OwnerId\": \"123456789012\", \"PeeringOptions\": {\"AllowDnsResolutionFromRemoteVpc\": false, \"AllowEgressFromLocalClassicLinkToRemoteVpc\": false, \"AllowEgressFromLocalVpcToRemoteClassicLink\": false}, \"VpcId\": \"vpc-02c3e6cbd1ce76b73\", \"Region\": \"us-east-1\"}, \"Status\": {\"Code\": \"active\", \"Message\": \"Active\"}, \"Tags\": [{\"Key\": \"Name\", \"Value\": \"cloudgym-capability\"}], \"VpcPeeringConnectionId\": \"pcx-0f97e1b0f36b417d6\"}"
+      },
+      "TypeName": "AWS::EC2::VPCPeeringConnection"
+    }
+  ],
+  "recorded_at": "2026-09-23T23:12:14+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

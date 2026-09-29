@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_391_instance",
+  "utterance": "`shop-vpc` (10.40.0.0/16) is the storefront's network, and the subnets marked as the storefront's front segments are where anything fronting storefront traffic sits. Nothing fronts its traffic yet: the network holds no load balancer and no target group. Stand up the storefront's web front end: launch a t3.micro web server into the VPC, and put an internal network load balancer across the storefront's front segments in front of it, listening on TCP 80 and forwarding to a target group in `shop-vpc` on TCP 80 that has the storefront's web servers registered on port 80. Give every resource you create a Name tag.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "shop-vpc runs a new t3.micro web server of the agent's own and an internal network load balancer that spans every segment of shop-vpc marked as the storefront's front tier, listening on TCP 80 and forwarding to a target group in shop-vpc on TCP 80 that holds every storefront web server in service — the agent's own included — registered on port 80, with a Name tag on everything created"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 391
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "cloudcontrol_type": "AWS::EC2::Subnet",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-01T02:40:29+00:00",
+      "ResourceDescription": {
+        "Identifier": "subnet-04959cc6acffa847d",
+        "Properties": "{\"MapPublicIpOnLaunch\":true,\"EnableDns64\":false,\"AvailabilityZoneId\":\"use1-az1\",\"AvailabilityZone\":\"us-east-1a\",\"CidrBlock\":\"172.31.0.0/20\",\"SubnetId\":\"subnet-04959cc6acffa847d\",\"BlockPublicAccessStates\":{\"InternetGatewayBlockMode\":\"off\"},\"AssignIpv6AddressOnCreation\":false,\"VpcId\":\"vpc-0cb1ecab670b248b1\",\"NetworkAclAssociationId\":\"aclassoc-05f2ad49d83695978\",\"PrivateDnsNameOptionsOnLaunch\":{\"EnableResourceNameDnsARecord\":false,\"HostnameType\":\"ip-name\",\"EnableResourceNameDnsAAAARecord\":false},\"Ipv6Native\":false,\"Tags\":[]}"
+      },
+      "TypeName": "AWS::EC2::Subnet"
+    },
+    {
+      "ReadAt": "2026-09-01T02:40:27+00:00",
+      "ResourceDescription": {
+        "Identifier": "subnet-04af5d32278a452c4",
+        "Properties": "{\"MapPublicIpOnLaunch\":true,\"EnableDns64\":false,\"AvailabilityZoneId\":\"use1-az6\",\"AvailabilityZone\":\"us-east-1d\",\"CidrBlock\":\"172.31.32.0/20\",\"SubnetId\":\"subnet-04af5d32278a452c4\",\"BlockPublicAccessStates\":{\"InternetGatewayBlockMode\":\"off\"},\"AssignIpv6AddressOnCreation\":false,\"VpcId\":\"vpc-0cb1ecab670b248b1\",\"NetworkAclAssociationId\":\"aclassoc-061f8d19756b8a2d2\",\"PrivateDnsNameOptionsOnLaunch\":{\"EnableResourceNameDnsARecord\":false,\"HostnameType\":\"ip-name\",\"EnableResourceNameDnsAAAARecord\":false},\"Ipv6Native\":false,\"Tags\":[]}"
+      },
+      "TypeName": "AWS::EC2::Subnet"
+    },
+    {
+      "ReadAt": "2026-09-01T02:40:28+00:00",
+      "ResourceDescription": {
+        "Identifier": "subnet-050cb01ec6f7c4dcf",
+        "Properties": "{\"MapPublicIpOnLaunch\":true,\"EnableDns64\":false,\"AvailabilityZoneId\":\"use1-az4\",\"AvailabilityZone\":\"us-east-1c\",\"CidrBlock\":\"172.31.16.0/20\",\"SubnetId\":\"subnet-050cb01ec6f7c4dcf\",\"BlockPublicAccessStates\":{\"InternetGatewayBlockMode\":\"off\"},\"AssignIpv6AddressOnCreation\":false,\"VpcId\":\"vpc-0cb1ecab670b248b1\",\"NetworkAclAssociationId\":\"aclassoc-0dccf04815760b33f\",\"PrivateDnsNameOptionsOnLaunch\":{\"EnableResourceNameDnsARecord\":false,\"HostnameType\":\"ip-name\",\"EnableResourceNameDnsAAAARecord\":false},\"Ipv6Native\":false,\"Tags\":[]}"
+      },
+      "TypeName": "AWS::EC2::Subnet"
+    },
+    {
+      "ReadAt": "2026-09-01T02:40:26+00:00",
+      "ResourceDescription": {
+        "Identifier": "subnet-068edb6906c2e5f0b",
+        "Properties": "{\"MapPublicIpOnLaunch\":true,\"EnableDns64\":false,\"AvailabilityZoneId\":\"use1-az2\",\"AvailabilityZone\":\"us-east-1b\",\"CidrBlock\":\"172.31.80.0/20\",\"SubnetId\":\"subnet-068edb6906c2e5f0b\",\"BlockPublicAccessStates\":{\"InternetGatewayBlockMode\":\"off\"},\"AssignIpv6AddressOnCreation\":false,\"VpcId\":\"vpc-0cb1ecab670b248b1\",\"NetworkAclAssociationId\":\"aclassoc-062a9d3192be9b435\",\"PrivateDnsNameOptionsOnLaunch\":{\"EnableResourceNameDnsARecord\":false,\"HostnameType\":\"ip-name\",\"EnableResourceNameDnsAAAARecord\":false},\"Ipv6Native\":false,\"Tags\":[]}"
+      },
+      "TypeName": "AWS::EC2::Subnet"
+    },
+    {
+      "ReadAt": "2026-09-01T02:40:26+00:00",
+      "ResourceDescription": {
+        "Identifier": "subnet-07f63c7132ee566a7",
+        "Properties": "{\"MapPublicIpOnLaunch\":true,\"EnableDns64\":false,\"AvailabilityZoneId\":\"use1-az5\",\"AvailabilityZone\":\"us-east-1f\",\"CidrBlock\":\"172.31.64.0/20\",\"SubnetId\":\"subnet-07f63c7132ee566a7\",\"BlockPublicAccessStates\":{\"InternetGatewayBlockMode\":\"off\"},\"AssignIpv6AddressOnCreation\":false,\"VpcId\":\"vpc-0cb1ecab670b248b1\",\"NetworkAclAssociationId\":\"aclassoc-0617363acc93d8c52\",\"PrivateDnsNameOptionsOnLaunch\":{\"EnableResourceNameDnsARecord\":false,\"HostnameType\":\"ip-name\",\"EnableResourceNameDnsAAAARecord\":false},\"Ipv6Native\":false,\"Tags\":[]}"
+      },
+      "TypeName": "AWS::EC2::Subnet"
+    },
+    {
+      "ReadAt": "2026-09-01T02:40:29+00:00",
+      "ResourceDescription": {
+        "Identifier": "subnet-08f67a9fec5557b6e",
+        "Properties": "{\"MapPublicIpOnLaunch\":true,\"EnableDns64\":false,\"AvailabilityZoneId\":\"use1-az3\",\"AvailabilityZone\":\"us-east-1e\",\"CidrBlock\":\"172.31.48.0/20\",\"SubnetId\":\"subnet-08f67a9fec5557b6e\",\"BlockPublicAccessStates\":{\"InternetGatewayBlockMode\":\"off\"},\"AssignIpv6AddressOnCreation\":false,\"VpcId\":\"vpc-0cb1ecab670b248b1\",\"NetworkAclAssociationId\":\"aclassoc-0162306fe5d6d56fc\",\"PrivateDnsNameOptionsOnLaunch\":{\"EnableResourceNameDnsARecord\":false,\"HostnameType\":\"ip-name\",\"EnableResourceNameDnsAAAARecord\":false},\"Ipv6Native\":false,\"Tags\":[]}"
+      },
+      "TypeName": "AWS::EC2::Subnet"
+    },
+    {
+      "ReadAt": "2026-09-01T02:40:28+00:00",
+      "ResourceDescription": {
+        "Identifier": "subnet-0dbdee565e66ecef5",
+        "Properties": "{\"MapPublicIpOnLaunch\":false,\"EnableDns64\":false,\"AvailabilityZoneId\":\"use1-az4\",\"AvailabilityZone\":\"us-east-1c\",\"CidrBlock\":\"10.242.1.0/24\",\"SubnetId\":\"subnet-0dbdee565e66ecef5\",\"BlockPublicAccessStates\":{\"InternetGatewayBlockMode\":\"off\"},\"AssignIpv6AddressOnCreation\":false,\"VpcId\":\"vpc-00d39e42a52fb8c8e\",\"NetworkAclAssociationId\":\"aclassoc-03917617e7a1713a5\",\"PrivateDnsNameOptionsOnLaunch\":{\"EnableResourceNameDnsARecord\":false,\"HostnameType\":\"ip-name\",\"EnableResourceNameDnsAAAARecord\":false},\"Ipv6Native\":false,\"Tags\":[]}"
+      },
+      "TypeName": "AWS::EC2::Subnet"
+    }
+  ],
+  "recorded_at": "2026-09-01T02:40:33+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

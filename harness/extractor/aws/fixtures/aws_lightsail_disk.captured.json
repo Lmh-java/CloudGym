@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::Lightsail::Disk",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-24T00:30:57+00:00",
+      "ResourceDescription": {
+        "Identifier": "cloudgym-capability-disk",
+        "Properties": "{\"Path\":\"\",\"AttachmentState\":\"detached\",\"IsAttached\":false,\"AvailabilityZone\":\"us-east-1a\",\"AddOns\":[{\"Status\":\"Disabled\",\"AddOnType\":\"AutoSnapshot\"}],\"ResourceType\":\"DISK\",\"Iops\":100,\"DiskName\":\"cloudgym-capability-disk\",\"SizeInGb\":8,\"SupportCode\":\"000000000108/vol-026cb3fb06f1d0921\",\"State\":\"AVAILABLE\",\"DiskArn\":\"arn:aws:lightsail:us-east-1:123456789012:Disk/41f97a84-d273-4726-b8de-42090e87f31f\",\"AttachedTo\":\"\",\"Tags\":[{\"Value\":\"cloudgym-capability\",\"Key\":\"Name\"}],\"Location\":{\"RegionName\":\"us-east-1\",\"AvailabilityZone\":\"us-east-1a\"}}"
+      },
+      "TypeName": "AWS::Lightsail::Disk"
+    }
+  ],
+  "recorded_at": "2026-09-24T00:30:57+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

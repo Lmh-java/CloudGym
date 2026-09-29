@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::KinesisAnalyticsV2::Application",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-24T00:17:57+00:00",
+      "ResourceDescription": {
+        "Identifier": "cloudgym-capability-flink",
+        "Properties": "{\"ApplicationName\":\"cloudgym-capability-flink\",\"RuntimeEnvironment\":\"FLINK-1_20\",\"ApplicationMode\":\"STREAMING\",\"ApplicationMaintenanceConfiguration\":{\"ApplicationMaintenanceWindowStartTime\":\"03:00\"},\"ApplicationConfiguration\":{\"ApplicationEncryptionConfiguration\":{\"KeyType\":\"AWS_OWNED_KEY\"},\"FlinkApplicationConfiguration\":{\"CheckpointConfiguration\":{\"ConfigurationType\":\"DEFAULT\",\"CheckpointInterval\":60000,\"MinPauseBetweenCheckpoints\":5000,\"CheckpointingEnabled\":true},\"ParallelismConfiguration\":{\"ConfigurationType\":\"DEFAULT\",\"ParallelismPerKPU\":1,\"AutoScalingEnabled\":true,\"Parallelism\":1},\"MonitoringConfiguration\":{\"ConfigurationType\":\"DEFAULT\",\"MetricsLevel\":\"APPLICATION\",\"LogLevel\":\"INFO\"}},\"ApplicationSnapshotConfiguration\":{\"SnapshotsEnabled\":true},\"ApplicationSystemRollbackConfiguration\":{\"RollbackEnabled\":false}},\"ApplicationDescription\":\"\",\"Tags\":[{\"Value\":\"cloudgym-capability\",\"Key\":\"Name\"}],\"ServiceExecutionRole\":\"arn:aws:iam::123456789012:role/cloudgym-capability-20260924001727921600000001\"}"
+      },
+      "TypeName": "AWS::KinesisAnalyticsV2::Application"
+    }
+  ],
+  "recorded_at": "2026-09-24T00:17:57+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

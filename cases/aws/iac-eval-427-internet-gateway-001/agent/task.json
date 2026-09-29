@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_427_internet_gateway",
+  "utterance": "`app-vpc` (10.0.0.0/16) is the storefront workload's network. Today it carries one private subnet and has no path to the internet at all. Add multiple public subnets to it — at least two, each with its own CIDR inside 10.0.0.0/16 and each in a different availability zone — and give them internet access: every public subnet you add must end up associated with a route table whose 0.0.0.0/0 default route leaves through an internet gateway attached to `app-vpc`. Give every resource you create a Name tag that identifies it.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "app-vpc carries at least two subnets that did not exist before, in distinct availability zones, each with its own CIDR inside 10.0.0.0/16 and a Name tag; all of them are associated with one and the same route table — the table the account already keeps for that network's routing, when it keeps one — whose 0.0.0.0/0 route leaves through an internet gateway attached to app-vpc, the gateway the account already keeps for that purpose when it keeps one; no segment the account holds out of service carries any part of that public tier, and that segment keeps the marks it is held under"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 427
+  }
+}

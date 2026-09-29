@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::Logs::ResourcePolicy",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-09T06:04:33+00:00",
+      "ResourceDescription": {
+        "Identifier": "cloudgym-capability-route53-query-logging",
+        "Properties": "{\"PolicyName\":\"cloudgym-capability-route53-query-logging\",\"PolicyDocument\":\"{\\\"Version\\\":\\\"2012-10-17\\\",\\\"Statement\\\":[{\\\"Sid\\\":\\\"Route53QueryLogging\\\",\\\"Effect\\\":\\\"Allow\\\",\\\"Principal\\\":{\\\"Service\\\":\\\"route53.amazonaws.com\\\"},\\\"Action\\\":[\\\"logs:CreateLogStream\\\",\\\"logs:PutLogEvents\\\"],\\\"Resource\\\":\\\"arn:aws:logs:*:*:log-group:/aws/route53/cloudgym-capability*\\\"}]}\"}"
+      },
+      "TypeName": "AWS::Logs::ResourcePolicy"
+    }
+  ],
+  "recorded_at": "2026-09-09T06:04:34+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::EFS::FileSystem",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-24T00:29:00+00:00",
+      "ResourceDescription": {
+        "Identifier": "fs-0041b005bb05552c5",
+        "Properties": "{\"PerformanceMode\":\"generalPurpose\",\"Encrypted\":false,\"FileSystemTags\":[],\"FileSystemPolicy\":{\"Version\":\"2012-10-17\",\"Statement\":[{\"Condition\":{\"Bool\":{\"aws:SecureTransport\":\"false\"}},\"Action\":\"*\",\"Resource\":\"arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0041b005bb05552c5\",\"Effect\":\"Deny\",\"Principal\":{\"AWS\":\"*\"},\"Sid\":\"DenyInsecureTransport\"}]},\"FileSystemId\":\"fs-0041b005bb05552c5\",\"FileSystemProtection\":{\"ReplicationOverwriteProtection\":\"ENABLED\"},\"LifecyclePolicies\":[],\"Arn\":\"arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0041b005bb05552c5\",\"ThroughputMode\":\"bursting\",\"BackupPolicy\":{\"Status\":\"DISABLED\"}}"
+      },
+      "TypeName": "AWS::EFS::FileSystem"
+    }
+  ],
+  "recorded_at": "2026-09-24T00:29:00+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

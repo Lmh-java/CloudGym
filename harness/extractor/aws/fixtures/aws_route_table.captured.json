@@ -1,0 +1,32 @@
+{
+  "cloudcontrol_type": "AWS::EC2::RouteTable",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-01T06:47:58+00:00",
+      "ResourceDescription": {
+        "Identifier": "rtb-0036c68c43c8924b9",
+        "Properties": "{\"RouteTableId\":\"rtb-0036c68c43c8924b9\",\"VpcId\":\"vpc-0c27821720d4aad11\"}"
+      },
+      "TypeName": "AWS::EC2::RouteTable"
+    },
+    {
+      "ReadAt": "2026-09-01T06:47:58+00:00",
+      "ResourceDescription": {
+        "Identifier": "rtb-0c0306ea908cd103d",
+        "Properties": "{\"RouteTableId\":\"rtb-0c0306ea908cd103d\",\"VpcId\":\"vpc-0c27821720d4aad11\"}"
+      },
+      "TypeName": "AWS::EC2::RouteTable"
+    },
+    {
+      "ReadAt": "2026-09-01T06:47:57+00:00",
+      "ResourceDescription": {
+        "Identifier": "rtb-0f061a744195aa7c7",
+        "Properties": "{\"RouteTableId\":\"rtb-0f061a744195aa7c7\",\"VpcId\":\"vpc-0cb1ecab670b248b1\"}"
+      },
+      "TypeName": "AWS::EC2::RouteTable"
+    }
+  ],
+  "recorded_at": "2026-09-01T06:48:02+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

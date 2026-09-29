@@ -1,0 +1,2 @@
+Every workload resolves names only through resolvers inside the account's own address space.
+Settings you did not write stay as you found them, and what several workloads share stays shared by all of them.

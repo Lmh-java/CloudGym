@@ -1,0 +1,2858 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "account-time-source": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "internal-resolver-baseline": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "netbios-name-service-mode": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "shared-resolution-path": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "account-time-source": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "internal-resolver-baseline": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "netbios-name-service-mode": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "shared-resolution-path": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0f1e2d3c4b5a60011": {
+        "DomainName": "windomain.local",
+        "DomainNameServers": [
+         "192.168.56.102",
+         "192.168.56.103"
+        ],
+        "NetbiosNameServers": [
+         "192.168.56.102"
+        ],
+        "NetbiosNodeType": 2,
+        "NtpServers": [
+         "192.168.56.123"
+        ],
+        "Tags": [
+         {
+          "Key": "NetworkBaseline/resolvers",
+          "Value": "in-network-only"
+         },
+         {
+          "Key": "NetworkBaseline/name-service",
+          "Value": "point-to-point"
+         },
+         {
+          "Key": "NetworkBaseline/time-source",
+          "Value": "account-clock"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         },
+         {
+          "Key": "SharedResolutionWith",
+          "Value": "orders-lab-vpc"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-lab-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60002": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "account-time-source": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "internal-resolver-baseline": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "netbios-name-service-mode": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "shared-resolution-path": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0f1e2d3c4b5a60011": {
+        "DomainName": "windomain.local",
+        "DomainNameServers": [
+         "192.168.56.102",
+         "8.8.8.8"
+        ],
+        "NetbiosNameServers": [
+         "192.168.56.102"
+        ],
+        "NetbiosNodeType": 2,
+        "NtpServers": [
+         "192.168.56.123"
+        ],
+        "Tags": [
+         {
+          "Key": "NetworkBaseline/resolvers",
+          "Value": "in-network-only"
+         },
+         {
+          "Key": "NetworkBaseline/name-service",
+          "Value": "point-to-point"
+         },
+         {
+          "Key": "NetworkBaseline/time-source",
+          "Value": "account-clock"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         },
+         {
+          "Key": "SharedResolutionWith",
+          "Value": "orders-lab-vpc"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-lab-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60002": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "account-time-source": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "internal-resolver-baseline": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "netbios-name-service-mode": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "shared-resolution-path": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0f1e2d3c4b5a60011": {
+        "DomainName": "windomain.local",
+        "DomainNameServers": [
+         "192.168.56.102"
+        ],
+        "NetbiosNameServers": [
+         "192.168.56.102"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         },
+         {
+          "Key": "SharedResolutionWith",
+          "Value": "orders-lab-vpc"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-lab-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60002": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "account-time-source": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "internal-resolver-baseline": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "netbios-name-service-mode": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "shared-resolution-path": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0f1e2d3c4b5a60011": {
+        "DomainName": "windomain.local",
+        "DomainNameServers": [
+         "192.168.56.102",
+         "8.8.8.8"
+        ],
+        "NetbiosNameServers": [
+         "192.168.56.102"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "account-time-source": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "internal-resolver-baseline": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "netbios-name-service-mode": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "shared-resolution-path": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0f1e2d3c4b5a60011": {
+        "DomainNameServers": [
+         "192.168.56.102",
+         "8.8.8.8"
+        ],
+        "NetbiosNameServers": [
+         "192.168.56.102"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "account-time-source": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "internal-resolver-baseline": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "netbios-name-service-mode": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "shared-resolution-path": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0f1e2d3c4b5a60011": {
+        "DomainName": "windomain.local",
+        "DomainNameServers": [
+         "192.168.56.102",
+         "8.8.8.8"
+        ],
+        "NetbiosNameServers": [
+         "192.168.56.102"
+        ],
+        "NetbiosNodeType": 2,
+        "NtpServers": [
+         "192.168.56.123"
+        ],
+        "Tags": [
+         {
+          "Key": "NetworkBaseline/resolvers",
+          "Value": "in-network-only"
+         },
+         {
+          "Key": "NetworkBaseline/name-service",
+          "Value": "point-to-point"
+         },
+         {
+          "Key": "NetworkBaseline/time-source",
+          "Value": "account-clock"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         },
+         {
+          "Key": "SharedResolutionWith",
+          "Value": "orders-lab-vpc"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-lab-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60002": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-internal-resolver-baseline"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "account-time-source": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "internal-resolver-baseline": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "netbios-name-service-mode": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "shared-resolution-path": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0f1e2d3c4b5a60011": {
+        "DomainName": "windomain.local",
+        "DomainNameServers": [
+         "192.168.56.102",
+         "192.168.56.103"
+        ],
+        "NetbiosNameServers": [
+         "192.168.56.102"
+        ],
+        "NtpServers": [
+         "192.168.56.123"
+        ],
+        "Tags": [
+         {
+          "Key": "NetworkBaseline/resolvers",
+          "Value": "in-network-only"
+         },
+         {
+          "Key": "NetworkBaseline/name-service",
+          "Value": "point-to-point"
+         },
+         {
+          "Key": "NetworkBaseline/time-source",
+          "Value": "account-clock"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         },
+         {
+          "Key": "SharedResolutionWith",
+          "Value": "orders-lab-vpc"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-lab-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60002": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-netbios-name-service-mode"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "account-time-source": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "internal-resolver-baseline": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "netbios-name-service-mode": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "shared-resolution-path": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0f1e2d3c4b5a60011": {
+        "DomainName": "windomain.local",
+        "DomainNameServers": [
+         "192.168.56.102",
+         "192.168.56.103"
+        ],
+        "NetbiosNameServers": [
+         "192.168.56.102"
+        ],
+        "NetbiosNodeType": 2,
+        "Tags": [
+         {
+          "Key": "NetworkBaseline/resolvers",
+          "Value": "in-network-only"
+         },
+         {
+          "Key": "NetworkBaseline/name-service",
+          "Value": "point-to-point"
+         },
+         {
+          "Key": "NetworkBaseline/time-source",
+          "Value": "account-clock"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         },
+         {
+          "Key": "SharedResolutionWith",
+          "Value": "orders-lab-vpc"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-lab-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60002": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-account-time-source"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "account-time-source": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "internal-resolver-baseline": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "netbios-name-service-mode": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "shared-resolution-path": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0f1e2d3c4b5a60011": {
+        "DomainName": "windomain.local",
+        "DomainNameServers": [
+         "192.168.56.102",
+         "192.168.56.103"
+        ],
+        "NetbiosNameServers": [
+         "192.168.56.102"
+        ],
+        "NetbiosNodeType": 2,
+        "NtpServers": [
+         "192.168.56.123"
+        ],
+        "Tags": [
+         {
+          "Key": "NetworkBaseline/resolvers",
+          "Value": "in-network-only"
+         },
+         {
+          "Key": "NetworkBaseline/name-service",
+          "Value": "point-to-point"
+         },
+         {
+          "Key": "NetworkBaseline/time-source",
+          "Value": "account-clock"
+         }
+        ]
+       },
+       "dopt-0f1e2d3c4b5a60022": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "192.168.56.103"
+        ],
+        "Tags": [
+         {
+          "Key": "NetworkBaseline/resolvers",
+          "Value": "in-network-only"
+         },
+         {
+          "Key": "NetworkBaseline/name-service",
+          "Value": "point-to-point"
+         },
+         {
+          "Key": "NetworkBaseline/time-source",
+          "Value": "account-clock"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         },
+         {
+          "Key": "SharedResolutionWith",
+          "Value": "orders-lab-vpc"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-lab-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "dopt-0f1e2d3c4b5a60022|vpc-0a1b2c3d4e5f60002": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60022",
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-shared-resolution-path"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "account-time-source": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "internal-resolver-baseline": {
+      "fired": 1,
+      "status": "failed",
+      "succeeded": 0
+     },
+     "netbios-name-service-mode": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "shared-resolution-path": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0f1e2d3c4b5a60011": {
+        "DomainName": "windomain.local",
+        "DomainNameServers": [
+         "192.168.56.102",
+         "8.8.8.8"
+        ],
+        "NetbiosNameServers": [
+         "192.168.56.102"
+        ],
+        "NetbiosNodeType": 2,
+        "NtpServers": [
+         "192.168.56.123"
+        ],
+        "Tags": [
+         {
+          "Key": "NetworkBaseline/resolvers",
+          "Value": "in-network-only"
+         },
+         {
+          "Key": "NetworkBaseline/name-service",
+          "Value": "point-to-point"
+         },
+         {
+          "Key": "NetworkBaseline/time-source",
+          "Value": "account-clock"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         },
+         {
+          "Key": "SharedResolutionWith",
+          "Value": "orders-lab-vpc"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-lab-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60002": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-internal-resolver-baseline"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "account-time-source": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "internal-resolver-baseline": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "netbios-name-service-mode": {
+      "fired": 1,
+      "status": "failed",
+      "succeeded": 0
+     },
+     "shared-resolution-path": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0f1e2d3c4b5a60011": {
+        "DomainName": "windomain.local",
+        "DomainNameServers": [
+         "192.168.56.102",
+         "192.168.56.103"
+        ],
+        "NetbiosNameServers": [
+         "192.168.56.102"
+        ],
+        "NtpServers": [
+         "192.168.56.123"
+        ],
+        "Tags": [
+         {
+          "Key": "NetworkBaseline/resolvers",
+          "Value": "in-network-only"
+         },
+         {
+          "Key": "NetworkBaseline/name-service",
+          "Value": "point-to-point"
+         },
+         {
+          "Key": "NetworkBaseline/time-source",
+          "Value": "account-clock"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         },
+         {
+          "Key": "SharedResolutionWith",
+          "Value": "orders-lab-vpc"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-lab-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60002": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-netbios-name-service-mode"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "account-time-source": {
+      "fired": 1,
+      "status": "failed",
+      "succeeded": 0
+     },
+     "internal-resolver-baseline": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "netbios-name-service-mode": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "shared-resolution-path": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0f1e2d3c4b5a60011": {
+        "DomainName": "windomain.local",
+        "DomainNameServers": [
+         "192.168.56.102",
+         "192.168.56.103"
+        ],
+        "NetbiosNameServers": [
+         "192.168.56.102"
+        ],
+        "NetbiosNodeType": 2,
+        "Tags": [
+         {
+          "Key": "NetworkBaseline/resolvers",
+          "Value": "in-network-only"
+         },
+         {
+          "Key": "NetworkBaseline/name-service",
+          "Value": "point-to-point"
+         },
+         {
+          "Key": "NetworkBaseline/time-source",
+          "Value": "account-clock"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         },
+         {
+          "Key": "SharedResolutionWith",
+          "Value": "orders-lab-vpc"
+         }
+        ]
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.60.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-lab-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60002": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-account-time-source"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "account-time-source": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "internal-resolver-baseline": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "netbios-name-service-mode": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "shared-resolution-path": {
+      "fired": 1,
+      "status": "failed",
+      "succeeded": 0
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0f1e2d3c4b5a60011": {
+        "DomainName": "windomain.local",
+        "DomainNameServers": [
+         "192.168.56.102",
+         "192.168.56.103"
+        ],
+        "NetbiosNameServers": [
+         "192.168.56.102"
+        ],
+        "NetbiosNodeType": 2,
+        "NtpServers": [
+         "192.168.56.123"
+        ],
+        "Tags": [
+         {
+          "Key": "NetworkBaseline/resolvers",
+          "Value": "in-network-only"
+         },
+         {
+          "Key": "NetworkBaseline/name-service",
+          "Value": "point-to-point"
+         },
+         {
+          "Key": "NetworkBaseline/time-source",
+          "Value": "account-clock"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-shared-resolution-path"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "account-time-source": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "internal-resolver-baseline": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "netbios-name-service-mode": {
+      "fired": 1,
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "shared-resolution-path": {
+      "fired": 1,
+      "status": "not-fired",
+      "succeeded": 0
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0f1e2d3c4b5a60011": {
+        "DomainName": "windomain.local",
+        "DomainNameServers": [
+         "192.168.56.102",
+         "192.168.56.103"
+        ],
+        "NetbiosNameServers": [
+         "192.168.56.102"
+        ],
+        "NetbiosNodeType": 2,
+        "NtpServers": [
+         "192.168.56.123"
+        ],
+        "Tags": [
+         {
+          "Key": "NetworkBaseline/resolvers",
+          "Value": "in-network-only"
+         },
+         {
+          "Key": "NetworkBaseline/name-service",
+          "Value": "point-to-point"
+         },
+         {
+          "Key": "NetworkBaseline/time-source",
+          "Value": "account-clock"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    }
+   },
+   "name": "not-fired-shared-resolution-path"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "account-time-source": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "internal-resolver-baseline": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "netbios-name-service-mode": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "shared-resolution-path": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0f1e2d3c4b5a60011": {
+        "DomainNameServers": [
+         "192.168.56.102",
+         "8.8.8.8"
+        ],
+        "NetbiosNameServers": [
+         "192.168.56.102"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-no-domain-name"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "account-time-source": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "internal-resolver-baseline": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "netbios-name-service-mode": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "shared-resolution-path": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0f1e2d3c4b5a60011": {
+        "DomainName": "windomain.lan",
+        "DomainNameServers": [
+         "192.168.56.102",
+         "8.8.8.8"
+        ],
+        "NetbiosNameServers": [
+         "192.168.56.102"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-wrong-domain-name"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "account-time-source": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "internal-resolver-baseline": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "netbios-name-service-mode": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "shared-resolution-path": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0f1e2d3c4b5a60011": {
+        "DomainName": "windomain.local",
+        "DomainNameServers": [
+         "8.8.8.8"
+        ],
+        "NetbiosNameServers": [
+         "192.168.56.102"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-no-custom-resolver"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "account-time-source": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "internal-resolver-baseline": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "netbios-name-service-mode": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "shared-resolution-path": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0f1e2d3c4b5a60011": {
+        "DomainName": "windomain.local",
+        "DomainNameServers": [
+         "192.168.56.102",
+         "8.8.8.8"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-no-netbios-server"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "account-time-source": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "internal-resolver-baseline": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "netbios-name-service-mode": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "shared-resolution-path": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0f1e2d3c4b5a60011": {
+        "DomainName": "windomain.local",
+        "DomainNameServers": [
+         "192.168.56.102",
+         "8.8.8.8"
+        ],
+        "NetbiosNameServers": [
+         "192.168.56.200"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60011|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60011",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-wrong-netbios-server"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "account-time-source": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "internal-resolver-baseline": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "netbios-name-service-mode": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "shared-resolution-path": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       },
+       "dopt-0f1e2d3c4b5a60011": {
+        "DomainName": "windomain.local",
+        "DomainNameServers": [
+         "192.168.56.102",
+         "192.168.56.103"
+        ],
+        "NetbiosNameServers": [
+         "192.168.56.102"
+        ],
+        "NetbiosNodeType": 2,
+        "NtpServers": [
+         "192.168.56.123"
+        ],
+        "Tags": [
+         {
+          "Key": "NetworkBaseline/resolvers",
+          "Value": "in-network-only"
+         },
+         {
+          "Key": "NetworkBaseline/name-service",
+          "Value": "point-to-point"
+         },
+         {
+          "Key": "NetworkBaseline/time-source",
+          "Value": "account-clock"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-set-not-associated"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "account-time-source": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "internal-resolver-baseline": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "netbios-name-service-mode": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     },
+     "shared-resolution-path": {
+      "fired": 0,
+      "status": "not-fired",
+      "succeeded": 0
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60000": {
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0f1e2d3c4b5a60000|vpc-0a1b2c3d4e5f60001": {
+        "DhcpOptionsId": "dopt-0f1e2d3c4b5a60000",
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0f1e2d3c4b5a60011": {
+        "DomainName": "windomain.local",
+        "DomainNameServers": [
+         "192.168.56.102",
+         "192.168.56.103"
+        ],
+        "NetbiosNameServers": [
+         "192.168.56.102"
+        ],
+        "NetbiosNodeType": 2,
+        "NtpServers": [
+         "192.168.56.123"
+        ],
+        "Tags": [
+         {
+          "Key": "NetworkBaseline/resolvers",
+          "Value": "in-network-only"
+         },
+         {
+          "Key": "NetworkBaseline/name-service",
+          "Value": "point-to-point"
+         },
+         {
+          "Key": "NetworkBaseline/time-source",
+          "Value": "account-clock"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {},
+      "AWS::EC2::VPCDHCPOptionsAssociation": {}
+     }
+    }
+   },
+   "name": "negative-vpc-deleted"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0ccf8f4ef1eea10f0": {
+        "DhcpOptionsId": "dopt-0ccf8f4ef1eea10f0",
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-01b57c22dbd771972": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-03b6138e287b96ee1"
+        ],
+        "DefaultNetworkAcl": "acl-0b8b300c12856323f",
+        "DefaultSecurityGroup": "sg-04068f603d77a1e0c",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-01b57c22dbd771972"
+       },
+       "vpc-05f60a31682863024": {
+        "CidrBlock": "192.168.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0ae85adca2615c656"
+        ],
+        "DefaultNetworkAcl": "acl-0d3051a50ac822620",
+        "DefaultSecurityGroup": "sg-0748ce2e68b4aa850",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ],
+        "VpcId": "vpc-05f60a31682863024"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0ccf8f4ef1eea10f0|vpc-01b57c22dbd771972": {
+        "DhcpOptionsId": "dopt-0ccf8f4ef1eea10f0",
+        "VpcId": "vpc-01b57c22dbd771972"
+       },
+       "dopt-0ccf8f4ef1eea10f0|vpc-05f60a31682863024": {
+        "DhcpOptionsId": "dopt-0ccf8f4ef1eea10f0",
+        "VpcId": "vpc-05f60a31682863024"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EC2::DHCPOptions": {
+       "dopt-0793d50287e1ad62a": {
+        "DhcpOptionsId": "dopt-0793d50287e1ad62a",
+        "DomainName": "windomain.local",
+        "DomainNameServers": [
+         "192.168.56.102"
+        ],
+        "NetbiosNameServers": [
+         "192.168.56.102"
+        ],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-dhcp-options"
+         }
+        ]
+       },
+       "dopt-0ccf8f4ef1eea10f0": {
+        "DhcpOptionsId": "dopt-0ccf8f4ef1eea10f0",
+        "DomainName": "ec2.internal",
+        "DomainNameServers": [
+         "AmazonProvidedDNS"
+        ],
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-01b57c22dbd771972": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-03b6138e287b96ee1"
+        ],
+        "DefaultNetworkAcl": "acl-0b8b300c12856323f",
+        "DefaultSecurityGroup": "sg-04068f603d77a1e0c",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-01b57c22dbd771972"
+       },
+       "vpc-05f60a31682863024": {
+        "CidrBlock": "192.168.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0ae85adca2615c656"
+        ],
+        "DefaultNetworkAcl": "acl-0d3051a50ac822620",
+        "DefaultSecurityGroup": "sg-0748ce2e68b4aa850",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "windomain-vpc"
+         }
+        ],
+        "VpcId": "vpc-05f60a31682863024"
+       }
+      },
+      "AWS::EC2::VPCDHCPOptionsAssociation": {
+       "dopt-0793d50287e1ad62a|vpc-05f60a31682863024": {
+        "DhcpOptionsId": "dopt-0793d50287e1ad62a",
+        "VpcId": "vpc-05f60a31682863024"
+       },
+       "dopt-0ccf8f4ef1eea10f0|vpc-01b57c22dbd771972": {
+        "DhcpOptionsId": "dopt-0ccf8f4ef1eea10f0",
+        "VpcId": "vpc-01b57c22dbd771972"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

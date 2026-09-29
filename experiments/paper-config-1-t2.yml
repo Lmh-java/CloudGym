@@ -1,0 +1,29 @@
+# Frozen research configuration; see docs/experiments.md for conditions and model access.
+batch: paper-config-1-t2
+trials_from: 2
+after: [paper-config-1.yml, paper-config-2.yml]
+peers: [paper-config-2-t2.yml]
+defaults:
+  agent: claude
+  timeout: 1800
+  poll_interval: 10
+  trials: 2
+  distractors: true
+  modality: hybrid
+cases_from: ../cases/aws
+arms:
+  - {name: haiku-4-5-policy,      model: claude-haiku-4-5-20251001,   awareness: none, order: 1}
+  - {name: haiku-4-5-consult,     model: claude-haiku-4-5-20251001,   awareness: consult, order: 1}
+  - {name: haiku-4-5-control,     model: claude-haiku-4-5-20251001,   distractors: false, order: 1}
+  - {name: opus-5-5-policy,       model: claude-opus-5-5,             awareness: none, order: 1}
+  - {name: opus-5-5-consult,      model: claude-opus-5-5,             awareness: consult, order: 1}
+  - {name: opus-5-5-control,      model: claude-opus-5-5,             distractors: false, order: 1}
+  - {name: fable-5-policy,        model: claude-fable-5,              awareness: none, order: 2}
+  - {name: fable-5-consult,       model: claude-fable-5,              awareness: consult, order: 2}
+  - {name: fable-5-control,       model: claude-fable-5,              distractors: false, order: 2}
+  - {name: gpt-5-6-sol-policy,    model: gpt-5.6-sol,                 agent: codex, awareness: none}
+  - {name: gpt-5-6-sol-consult,   model: gpt-5.6-sol,                 agent: codex, awareness: consult}
+  - {name: gpt-5-6-sol-control,   model: gpt-5.6-sol,                 agent: codex, distractors: false}
+  - {name: gpt-5-5-policy,        model: gpt-5.5,                     agent: codex, awareness: none}
+  - {name: gpt-5-5-consult,       model: gpt-5.5,                     agent: codex, awareness: consult}
+  - {name: gpt-5-5-control,       model: gpt-5.5,                     agent: codex, distractors: false}

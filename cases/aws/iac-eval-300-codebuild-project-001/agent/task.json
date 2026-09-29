@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_300_codebuild_project",
+  "utterance": "Infrastructure for an autograder for a CS class. The autograder needs to run students' code stored on GitHub in a specific environment and store the result. The class's network is already in the account: the `autograder-vpc` VPC and the isolated build segment the class keeps in it. Accomplish this using AWS CodeBuild: a build project that builds the class's submissions from GitHub, runs on the class's build segment with a security group of its own and a service role you create for it, and writes its results as S3 artifacts into a new S3 bucket for the class's results. Make sure that the autograder prevents the students' code from reaching the internet. VPC-level connectivity — gateways, route tables, peerings and endpoints — is managed elsewhere: do not add or change any.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "a CodeBuild project builds the students' GitHub-hosted code in a LINUX_CONTAINER environment on the class's own isolated build segment inside the autograder-vpc VPC, with a security group of its own that leaves it no path out of the VPC and no public addressing, runs as an IAM role created for this build and held by no other workload, and writes its build artifacts as S3 artifacts into a new S3 bucket created for the class's results"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 300
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_298_codebuild_project",
+  "utterance": "Infrastructure for an autograder for a CS class. The autograder needs to run students' code stored on GitHub in a specific environment and store the result. Make sure that the autograder prevents the students' code from reaching the internet. The class's network and its results store are already in the account: the `autograder-vpc` VPC, and the bucket whose name starts with `artifact-bucket-`, marked as the store the class's results are kept in. Accomplish this using AWS CodeBuild and AWS VPC: a build project that builds the class's submissions from GitHub, runs on a segment of the class's VPC, runs with a security group that leaves it no way out of the network and no public address, runs as a build service identity holding the access its work needs, and writes its results as S3 artifacts into that store. VPC-level connectivity — gateways, route tables, peerings and endpoints — is managed elsewhere: do not add or change any.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "a CodeBuild project builds the students' GitHub-hosted code in a LINUX_CONTAINER environment inside the pre-existing autograder-vpc VPC, on a segment of that VPC that assigns no public address on launch, with every security group it runs with belonging to that VPC and opening no path out of it, running as an IAM role trusted by codebuild.amazonaws.com that holds the grants the build's network attachment and its writes need, and writing its build output as S3 artifacts into the results store that was already in the account"
+  },
+  "notes": "which slice of the class's address block the build lands on, which identity it runs as, and which group it runs with follow from the resolution policy and the state of the account, not from the utterance",
+  "resource_types": [
+    "aws_vpc",
+    "aws_s3_bucket",
+    "aws_subnet",
+    "aws_security_group",
+    "aws_iam_role",
+    "aws_iam_policy",
+    "aws_iam_role_policy_attachment",
+    "aws_codebuild_project"
+  ],
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 298
+  }
+}

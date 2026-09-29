@@ -1,0 +1,2 @@
+Address space is allocated once: a range in use stays as allocated, and a new allocation takes only what is free.
+What you did not create stays as you found it and empty of your workload; what you run belongs in the space allocated to it.

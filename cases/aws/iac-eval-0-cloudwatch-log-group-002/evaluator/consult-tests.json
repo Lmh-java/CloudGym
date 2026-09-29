@@ -1,0 +1,128 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "cleared-destination",
+      "message": "The delivery permission I wrote now lists only /aws/route53/dns-baseline-review, and Route 53 will not take my configuration while my log group is not on that list. May I add mine to it?",
+      "expect": [
+        "dns-delivery-clearance"
+      ],
+      "fingerprint": {
+        "dns-delivery-clearance": [
+          "/aws/route53/dns-baseline-review"
+        ],
+        "dns-shared-clearance": [
+          "/aws/vendedlogs/shared-delivery"
+        ],
+        "dns-exposure-limit": [
+          "DnsDeliveryReviewedSourceAccount"
+        ],
+        "dns-evidence-consolidation": [
+          "/aws/route53/dns-evidence"
+        ]
+      }
+    },
+    {
+      "name": "shared-entry",
+      "message": "An entry for /aws/vendedlogs/shared-delivery turned up in the permission I am editing, and it is nothing to do with my task. Is it safe to write the document without it?",
+      "expect": [
+        "dns-shared-clearance"
+      ],
+      "fingerprint": {
+        "dns-delivery-clearance": [
+          "/aws/route53/dns-baseline-review"
+        ],
+        "dns-shared-clearance": [
+          "/aws/vendedlogs/shared-delivery"
+        ],
+        "dns-exposure-limit": [
+          "DnsDeliveryReviewedSourceAccount"
+        ],
+        "dns-evidence-consolidation": [
+          "/aws/route53/dns-evidence"
+        ]
+      }
+    },
+    {
+      "name": "review-mark",
+      "message": "The statement I wrote came back stamped DnsDeliveryReviewedSourceAccount, with a condition on it that I did not put there. Do I keep that condition when I extend the statement?",
+      "expect": [
+        "dns-exposure-limit"
+      ],
+      "fingerprint": {
+        "dns-delivery-clearance": [
+          "/aws/route53/dns-baseline-review"
+        ],
+        "dns-shared-clearance": [
+          "/aws/vendedlogs/shared-delivery"
+        ],
+        "dns-exposure-limit": [
+          "DnsDeliveryReviewedSourceAccount"
+        ],
+        "dns-evidence-consolidation": [
+          "/aws/route53/dns-evidence"
+        ]
+      }
+    },
+    {
+      "name": "evidence-destination",
+      "message": "The zone already carries a query logging configuration delivering into /aws/route53/dns-evidence, and a zone may hold only one of them. May I take that configuration down and point the zone at the store named for it?",
+      "expect": [
+        "dns-evidence-consolidation"
+      ],
+      "fingerprint": {
+        "dns-delivery-clearance": [
+          "/aws/route53/dns-baseline-review"
+        ],
+        "dns-shared-clearance": [
+          "/aws/vendedlogs/shared-delivery"
+        ],
+        "dns-exposure-limit": [
+          "DnsDeliveryReviewedSourceAccount"
+        ],
+        "dns-evidence-consolidation": [
+          "/aws/route53/dns-evidence"
+        ]
+      }
+    },
+    {
+      "name": "permission-changed-unnamed",
+      "message": "The account's delivery permission is not what I put there: one destination I named is gone, an entry I did not write has appeared, and the statement has a condition on it now. Whose are these, and what has to stay?",
+      "expect": [],
+      "fingerprint": {
+        "dns-delivery-clearance": [
+          "/aws/route53/dns-baseline-review"
+        ],
+        "dns-shared-clearance": [
+          "/aws/vendedlogs/shared-delivery"
+        ],
+        "dns-exposure-limit": [
+          "DnsDeliveryReviewedSourceAccount"
+        ],
+        "dns-evidence-consolidation": [
+          "/aws/route53/dns-evidence"
+        ]
+      },
+      "note": "describes every effect in words without naming what was read; the paraphrase check"
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect_at_most": 0,
+      "fingerprint": {
+        "dns-delivery-clearance": [
+          "/aws/route53/dns-baseline-review"
+        ],
+        "dns-shared-clearance": [
+          "/aws/vendedlogs/shared-delivery"
+        ],
+        "dns-exposure-limit": [
+          "DnsDeliveryReviewedSourceAccount"
+        ],
+        "dns-evidence-consolidation": [
+          "/aws/route53/dns-evidence"
+        ]
+      }
+    }
+  ]
+}

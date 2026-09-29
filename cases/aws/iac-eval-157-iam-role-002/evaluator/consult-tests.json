@@ -1,0 +1,133 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "holder-taken",
+      "message": "The pooled identity now records payments-callback as its holder, and a function of that service runs as it. Is that identity still available to my workload, or do I need another one?",
+      "expect": [
+        "pooled-identity-claimed"
+      ],
+      "fingerprint": {
+        "pooled-identity-claimed": [
+          "payments-callback"
+        ],
+        "registry-issued-identity": [
+          "lambda-exec-pool-2",
+          "issued on demand"
+        ],
+        "identity-baseline-permissions": [
+          "identity-baseline-lambda-exec"
+        ],
+        "issued-identity-trust-scope": [
+          "account-use-only"
+        ]
+      }
+    },
+    {
+      "name": "new-identity-appeared",
+      "message": "A role called lambda-exec-pool-2 I did not create has turned up, described as issued on demand and held by nobody. Is my function meant to run as that one?",
+      "expect": [
+        "registry-issued-identity"
+      ],
+      "fingerprint": {
+        "pooled-identity-claimed": [
+          "payments-callback"
+        ],
+        "registry-issued-identity": [
+          "lambda-exec-pool-2",
+          "issued on demand"
+        ],
+        "identity-baseline-permissions": [
+          "identity-baseline-lambda-exec"
+        ],
+        "issued-identity-trust-scope": [
+          "account-use-only"
+        ]
+      }
+    },
+    {
+      "name": "policy-already-attached",
+      "message": "The identity I want to use already has identity-baseline-lambda-exec attached to it. Do I still add the usual execution permissions on top of that, or leave it alone?",
+      "expect": [
+        "identity-baseline-permissions"
+      ],
+      "fingerprint": {
+        "pooled-identity-claimed": [
+          "payments-callback"
+        ],
+        "registry-issued-identity": [
+          "lambda-exec-pool-2",
+          "issued on demand"
+        ],
+        "identity-baseline-permissions": [
+          "identity-baseline-lambda-exec"
+        ],
+        "issued-identity-trust-scope": [
+          "account-use-only"
+        ]
+      }
+    },
+    {
+      "name": "trust-scoping-appeared",
+      "message": "That identity is now marked account-use-only and its trust document has grown a condition. May I put a plain trust back so the service can assume the role?",
+      "expect": [
+        "issued-identity-trust-scope"
+      ],
+      "fingerprint": {
+        "pooled-identity-claimed": [
+          "payments-callback"
+        ],
+        "registry-issued-identity": [
+          "lambda-exec-pool-2",
+          "issued on demand"
+        ],
+        "identity-baseline-permissions": [
+          "identity-baseline-lambda-exec"
+        ],
+        "issued-identity-trust-scope": [
+          "account-use-only"
+        ]
+      }
+    },
+    {
+      "name": "effect-in-words",
+      "message": "The free execution identity seems to have been taken by someone else, the permissions on the pool were tightened, and the trust documents were narrowed. How am I supposed to give my function an identity now?",
+      "expect": [],
+      "fingerprint": {
+        "pooled-identity-claimed": [
+          "payments-callback"
+        ],
+        "registry-issued-identity": [
+          "lambda-exec-pool-2",
+          "issued on demand"
+        ],
+        "identity-baseline-permissions": [
+          "identity-baseline-lambda-exec"
+        ],
+        "issued-identity-trust-scope": [
+          "account-use-only"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "pooled-identity-claimed": [
+          "payments-callback"
+        ],
+        "registry-issued-identity": [
+          "lambda-exec-pool-2",
+          "issued on demand"
+        ],
+        "identity-baseline-permissions": [
+          "identity-baseline-lambda-exec"
+        ],
+        "issued-identity-trust-scope": [
+          "account-use-only"
+        ]
+      }
+    }
+  ]
+}

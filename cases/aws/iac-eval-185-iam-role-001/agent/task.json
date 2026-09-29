@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_185_iam_role",
+  "utterance": "Create an AWS Lambda function for the `orders` workload on the nodejs18.x runtime, using \"lambda.js\" as the source code and \"index.js\" as the handler file. Please declare all necessary resources — this account already keeps an execution identity for its Lambda workers, so the worker runs as that identity rather than one you create for it, and it must be able to write its logs. The function's name is yours to choose.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's runtime settings and how its code executes",
+    "intent": "the orders workload has a Lambda worker that runs its lambda.js source on the nodejs18.x runtime, entered at an export of its index.js handler file, running as the execution identity this account keeps for its Lambda workers, and that identity carries the permissions the worker needs to write its logs"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 185
+  }
+}

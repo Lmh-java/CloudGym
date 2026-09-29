@@ -1,0 +1,133 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "which-schedule-runs-the-slot",
+      "message": "A rule called platform-tick-15min is running now and its description says shared-tick-2026-09. Is that what this cadence is run from here, or should this workload keep a schedule of its own?",
+      "expect": [
+        "shared-tick-rule"
+      ],
+      "fingerprint": {
+        "shared-tick-rule": [
+          "platform-tick-15min",
+          "shared-tick-2026-09"
+        ],
+        "sibling-dedicated-tick": [
+          "orders-digest-dedicated-2026-09"
+        ],
+        "namesake-cutover-schedule": [
+          "cutover-hold-2026-09"
+        ],
+        "rollback-hold-schedule": [
+          "rollback-hold-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "dedicated-or-shared",
+      "message": "One of the rules on this cadence describes itself as orders-digest-dedicated-2026-09. Is that the one the account runs for everyone, or is nothing else meant to hang off it?",
+      "expect": [
+        "sibling-dedicated-tick"
+      ],
+      "fingerprint": {
+        "shared-tick-rule": [
+          "platform-tick-15min",
+          "shared-tick-2026-09"
+        ],
+        "sibling-dedicated-tick": [
+          "orders-digest-dedicated-2026-09"
+        ],
+        "namesake-cutover-schedule": [
+          "cutover-hold-2026-09"
+        ],
+        "rollback-hold-schedule": [
+          "rollback-hold-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "name-already-taken",
+      "message": "The name I was going to use is already taken by a switched-off rule whose description says cutover-hold-2026-09. May I put my schedule under that name?",
+      "expect": [
+        "namesake-cutover-schedule"
+      ],
+      "fingerprint": {
+        "shared-tick-rule": [
+          "platform-tick-15min",
+          "shared-tick-2026-09"
+        ],
+        "sibling-dedicated-tick": [
+          "orders-digest-dedicated-2026-09"
+        ],
+        "namesake-cutover-schedule": [
+          "cutover-hold-2026-09"
+        ],
+        "rollback-hold-schedule": [
+          "rollback-hold-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "switched-off-copy",
+      "message": "Another switched-off rule fires this function and carries rollback-hold-2026-09 in its description. Is that a leftover I should clear away, or switch on?",
+      "expect": [
+        "rollback-hold-schedule"
+      ],
+      "fingerprint": {
+        "shared-tick-rule": [
+          "platform-tick-15min",
+          "shared-tick-2026-09"
+        ],
+        "sibling-dedicated-tick": [
+          "orders-digest-dedicated-2026-09"
+        ],
+        "namesake-cutover-schedule": [
+          "cutover-hold-2026-09"
+        ],
+        "rollback-hold-schedule": [
+          "rollback-hold-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "effect-in-words",
+      "message": "Several rules on the same cadence now fire this function and two of them are switched off, one under the very name I wanted. Whose are they, and does my work have to move?",
+      "expect": [],
+      "fingerprint": {
+        "shared-tick-rule": [
+          "platform-tick-15min",
+          "shared-tick-2026-09"
+        ],
+        "sibling-dedicated-tick": [
+          "orders-digest-dedicated-2026-09"
+        ],
+        "namesake-cutover-schedule": [
+          "cutover-hold-2026-09"
+        ],
+        "rollback-hold-schedule": [
+          "rollback-hold-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "shared-tick-rule": [
+          "platform-tick-15min",
+          "shared-tick-2026-09"
+        ],
+        "sibling-dedicated-tick": [
+          "orders-digest-dedicated-2026-09"
+        ],
+        "namesake-cutover-schedule": [
+          "cutover-hold-2026-09"
+        ],
+        "rollback-hold-schedule": [
+          "rollback-hold-2026-09"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+Shared network settings are cumulative: what another owner put in place stays in place; add to it, never over it.
+A boundary already in force on a network still holds when you finish, even where a request implies otherwise: add nothing that reaches past it.

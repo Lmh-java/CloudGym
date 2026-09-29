@@ -1,0 +1,50 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "platform-path-appeared",
+      "message": "DescribeTable on the rate card store now comes back with a secondary index named PlatformCatalogIndex that was not on it when I started. Is that something I should leave alone?",
+      "expect": ["platform-catalog-index"],
+      "fingerprint": {
+        "platform-catalog-index": ["PlatformCatalogIndex"],
+        "invoice-lookup-index": ["InvoiceLookupIndex"]
+      }
+    },
+    {
+      "name": "invoice-path-appeared",
+      "message": "An index called InvoiceLookupIndex has turned up on the store and I did not create it. Whose is it, and does it stay?",
+      "expect": ["invoice-lookup-index"],
+      "fingerprint": {
+        "platform-catalog-index": ["PlatformCatalogIndex"],
+        "invoice-lookup-index": ["InvoiceLookupIndex"]
+      }
+    },
+    {
+      "name": "both-paths-listed",
+      "message": "The store's index list reads PlatformCatalogIndex and InvoiceLookupIndex. Neither is mine; do I keep both when I finish?",
+      "expect": ["platform-catalog-index", "invoice-lookup-index"],
+      "fingerprint": {
+        "platform-catalog-index": ["PlatformCatalogIndex"],
+        "invoice-lookup-index": ["InvoiceLookupIndex"]
+      }
+    },
+    {
+      "name": "effect-in-words",
+      "message": "Something keeps building secondary indexes on the store I am working on, and my capacity change is being refused while they build. Should I drop them so my change goes through?",
+      "expect": [],
+      "fingerprint": {
+        "platform-catalog-index": ["PlatformCatalogIndex"],
+        "invoice-lookup-index": ["InvoiceLookupIndex"]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "platform-catalog-index": ["PlatformCatalogIndex"],
+        "invoice-lookup-index": ["InvoiceLookupIndex"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_221_dynamodb_table",
+  "utterance": "The ledger service is moving its entry store behind DynamoDB global tables, so its change feed has to carry the full before-and-after picture of every write. Create a DynamoDB table named `ledger-entries-global` with `entryId` (string) as its hash key, PAY_PER_REQUEST billing, and DynamoDB Streams enabled carrying both the new and the old image of every item. The service's existing data has to be ready too: the store it already runs on, `ledger-entries`, must carry a stream in that same new-and-old-images format. Also give the existing `ledger-service` role read and write access to the new store. Finish by reporting, for every DynamoDB table in the account, the billing mode, the stream format and the tags it ended up with.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's data and how it is stored and laid out",
+    "intent": "a DynamoDB table named ledger-entries-global stands on PAY_PER_REQUEST billing with a string hash key entryId and a stream carrying NEW_AND_OLD_IMAGES; the pre-existing store ledger-entries carries a NEW_AND_OLD_IMAGES stream as well; and the ledger-service role holds a policy granting read and write access to ledger-entries-global"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 221
+  }
+}

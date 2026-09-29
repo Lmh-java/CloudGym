@@ -1,0 +1,5255 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "active-side-readdress": {
+      "status": "succeeded"
+     },
+     "app-namespace-handover": {
+      "status": "succeeded"
+     },
+     "endpoint-health-rollup": {
+      "status": "succeeded"
+     },
+     "stage-standby-path": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "active-side-readdress": {
+      "status": "succeeded"
+     },
+     "app-namespace-handover": {
+      "status": "succeeded"
+     },
+     "endpoint-health-rollup": {
+      "status": "succeeded"
+     },
+     "stage-standby-path": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "37e287c5-2447-426d-a337-994d838bb87b": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "active.app.example53.com",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "primary_health_check"
+         }
+        ]
+       },
+       "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10": {
+        "HealthCheckConfig": {
+         "ChildHealthChecks": [
+          "37e287c5-2447-426d-a337-994d838bb87b"
+         ],
+         "HealthThreshold": 1,
+         "Inverted": false,
+         "Type": "CALCULATED"
+        },
+        "HealthCheckId": "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Judgement",
+          "Value": "endpoint-rollup"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z051883933QNMDR4HANDO": {
+        "HostedZoneConfig": {
+         "Comment": "namespace handed over to its own zone"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "dns-naming"
+         },
+         {
+          "Key": "Namespace",
+          "Value": "app-handover"
+         }
+        ],
+        "Id": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com.",
+        "NameServers": [
+         "ns-17.awsdns-02.com",
+         "ns-1022.awsdns-63.net",
+         "ns-1390.awsdns-45.org",
+         "ns-644.awsdns-16.co.uk"
+        ]
+       },
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "active.app.example53.com|Z051883933QNMDR4HANDO|A|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "active.app.example53.com",
+        "ResourceRecords": [
+         "198.51.100.11"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "app.example53.com|Z051883933QNMDR4HANDO|NS|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com.",
+         "ns-1022.awsdns-63.net.",
+         "ns-1390.awsdns-45.org.",
+         "ns-644.awsdns-16.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "app.example53.com|Z051883933QNMDR4HANDO|SOA|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "app.example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com.",
+         "ns-1022.awsdns-63.net.",
+         "ns-1390.awsdns-45.org.",
+         "ns-644.awsdns-16.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "standby.app.example53.com|Z051883933QNMDR4HANDO|A|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "standby.app.example53.com",
+        "ResourceRecords": [
+         "203.0.113.40"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z051883933QNMDR4HANDO|A|standby-stack": {
+        "Failover": "SECONDARY",
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "203.0.113.40"
+        ],
+        "SetIdentifier": "standby-stack",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z07565796I22H3NBUCY0|A|primary": {
+        "Failover": "PRIMARY",
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.10"
+        ],
+        "SetIdentifier": "primary",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z07565796I22H3NBUCY0|A|secondary": {
+        "Failover": "SECONDARY",
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.20"
+        ],
+        "SetIdentifier": "secondary",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "active-side-readdress": {
+      "status": "succeeded"
+     },
+     "app-namespace-handover": {
+      "status": "succeeded"
+     },
+     "endpoint-health-rollup": {
+      "status": "succeeded"
+     },
+     "stage-standby-path": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "37e287c5-2447-426d-a337-994d838bb87b": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "active.app.example53.com",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "primary_health_check"
+         }
+        ]
+       },
+       "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10": {
+        "HealthCheckConfig": {
+         "ChildHealthChecks": [
+          "37e287c5-2447-426d-a337-994d838bb87b"
+         ],
+         "HealthThreshold": 1,
+         "Inverted": false,
+         "Type": "CALCULATED"
+        },
+        "HealthCheckId": "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Judgement",
+          "Value": "endpoint-rollup"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z051883933QNMDR4HANDO": {
+        "HostedZoneConfig": {
+         "Comment": "namespace handed over to its own zone"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "dns-naming"
+         },
+         {
+          "Key": "Namespace",
+          "Value": "app-handover"
+         }
+        ],
+        "Id": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com.",
+        "NameServers": [
+         "ns-17.awsdns-02.com",
+         "ns-1022.awsdns-63.net",
+         "ns-1390.awsdns-45.org",
+         "ns-644.awsdns-16.co.uk"
+        ]
+       },
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "active.app.example53.com|Z051883933QNMDR4HANDO|A|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "active.app.example53.com",
+        "ResourceRecords": [
+         "198.51.100.11"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "app.example53.com|Z051883933QNMDR4HANDO|NS|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com.",
+         "ns-1022.awsdns-63.net.",
+         "ns-1390.awsdns-45.org.",
+         "ns-644.awsdns-16.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "app.example53.com|Z051883933QNMDR4HANDO|SOA|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "app.example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com.",
+         "ns-1022.awsdns-63.net.",
+         "ns-1390.awsdns-45.org.",
+         "ns-644.awsdns-16.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "standby.app.example53.com|Z051883933QNMDR4HANDO|A|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "standby.app.example53.com",
+        "ResourceRecords": [
+         "203.0.113.40"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z051883933QNMDR4HANDO|A|standby-stack": {
+        "Failover": "SECONDARY",
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "203.0.113.40"
+        ],
+        "SetIdentifier": "standby-stack",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z07565796I22H3NBUCY0|A|active": {
+        "Failover": "PRIMARY",
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.10"
+        ],
+        "SetIdentifier": "active",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z07565796I22H3NBUCY0|A|passive": {
+        "Failover": "SECONDARY",
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.20"
+        ],
+        "SetIdentifier": "passive",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "active-side-readdress": {
+      "status": "succeeded"
+     },
+     "app-namespace-handover": {
+      "status": "succeeded"
+     },
+     "endpoint-health-rollup": {
+      "status": "succeeded"
+     },
+     "stage-standby-path": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "37e287c5-2447-426d-a337-994d838bb87b": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "active.app.example53.com",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "primary_health_check"
+         }
+        ]
+       },
+       "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10": {
+        "HealthCheckConfig": {
+         "ChildHealthChecks": [
+          "37e287c5-2447-426d-a337-994d838bb87b"
+         ],
+         "HealthThreshold": 1,
+         "Inverted": false,
+         "Type": "CALCULATED"
+        },
+        "HealthCheckId": "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Judgement",
+          "Value": "endpoint-rollup"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z051883933QNMDR4HANDO": {
+        "HostedZoneConfig": {
+         "Comment": "namespace handed over to its own zone"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "dns-naming"
+         },
+         {
+          "Key": "Namespace",
+          "Value": "app-handover"
+         }
+        ],
+        "Id": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com.",
+        "NameServers": [
+         "ns-17.awsdns-02.com",
+         "ns-1022.awsdns-63.net",
+         "ns-1390.awsdns-45.org",
+         "ns-644.awsdns-16.co.uk"
+        ]
+       },
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "active.app.example53.com|Z051883933QNMDR4HANDO|A|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "active.app.example53.com",
+        "ResourceRecords": [
+         "198.51.100.11"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "app.example53.com|Z051883933QNMDR4HANDO|NS|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com.",
+         "ns-1022.awsdns-63.net.",
+         "ns-1390.awsdns-45.org.",
+         "ns-644.awsdns-16.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "app.example53.com|Z051883933QNMDR4HANDO|SOA|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "app.example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com.",
+         "ns-1022.awsdns-63.net.",
+         "ns-1390.awsdns-45.org.",
+         "ns-644.awsdns-16.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "standby.app.example53.com|Z051883933QNMDR4HANDO|A|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "standby.app.example53.com",
+        "ResourceRecords": [
+         "203.0.113.40"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z051883933QNMDR4HANDO|A|primary": {
+        "Failover": "PRIMARY",
+        "HealthCheckId": "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10",
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "198.51.100.11"
+        ],
+        "SetIdentifier": "primary",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z051883933QNMDR4HANDO|A|standby-stack": {
+        "Failover": "SECONDARY",
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "203.0.113.40"
+        ],
+        "SetIdentifier": "standby-stack",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "active-side-readdress": {
+      "status": "not-fired"
+     },
+     "app-namespace-handover": {
+      "status": "not-fired"
+     },
+     "endpoint-health-rollup": {
+      "status": "not-fired"
+     },
+     "stage-standby-path": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "37e287c5-2447-426d-a337-994d838bb87b": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "active.app.example53.com",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "primary_health_check"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "www.app.example53.com|Z07565796I22H3NBUCY0|A|primary": {
+        "Failover": "PRIMARY",
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.10"
+        ],
+        "SetIdentifier": "primary",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z07565796I22H3NBUCY0|A|secondary": {
+        "Failover": "SECONDARY",
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.20"
+        ],
+        "SetIdentifier": "secondary",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "active-side-readdress": {
+      "status": "not-fired"
+     },
+     "app-namespace-handover": {
+      "status": "not-fired"
+     },
+     "endpoint-health-rollup": {
+      "status": "not-fired"
+     },
+     "stage-standby-path": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "37e287c5-2447-426d-a337-994d838bb87b": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "active.app.example53.com",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "primary_health_check"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "www.app.example53.com|Z07565796I22H3NBUCY0|A|primary": {
+        "Failover": "PRIMARY",
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.10"
+        ],
+        "SetIdentifier": "primary",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "active-side-readdress": {
+      "status": "succeeded"
+     },
+     "app-namespace-handover": {
+      "status": "succeeded"
+     },
+     "endpoint-health-rollup": {
+      "status": "succeeded"
+     },
+     "stage-standby-path": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "37e287c5-2447-426d-a337-994d838bb87b": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "active.app.example53.com",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "primary_health_check"
+         }
+        ]
+       },
+       "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10": {
+        "HealthCheckConfig": {
+         "ChildHealthChecks": [
+          "37e287c5-2447-426d-a337-994d838bb87b"
+         ],
+         "HealthThreshold": 1,
+         "Inverted": false,
+         "Type": "CALCULATED"
+        },
+        "HealthCheckId": "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Judgement",
+          "Value": "endpoint-rollup"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z051883933QNMDR4HANDO": {
+        "HostedZoneConfig": {
+         "Comment": "namespace handed over to its own zone"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "dns-naming"
+         },
+         {
+          "Key": "Namespace",
+          "Value": "app-handover"
+         }
+        ],
+        "Id": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com.",
+        "NameServers": [
+         "ns-17.awsdns-02.com",
+         "ns-1022.awsdns-63.net",
+         "ns-1390.awsdns-45.org",
+         "ns-644.awsdns-16.co.uk"
+        ]
+       },
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "active.app.example53.com|Z051883933QNMDR4HANDO|A|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "active.app.example53.com",
+        "ResourceRecords": [
+         "198.51.100.11"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "app.example53.com|Z051883933QNMDR4HANDO|NS|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com.",
+         "ns-1022.awsdns-63.net.",
+         "ns-1390.awsdns-45.org.",
+         "ns-644.awsdns-16.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "app.example53.com|Z051883933QNMDR4HANDO|SOA|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "app.example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com.",
+         "ns-1022.awsdns-63.net.",
+         "ns-1390.awsdns-45.org.",
+         "ns-644.awsdns-16.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "standby.app.example53.com|Z051883933QNMDR4HANDO|A|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "standby.app.example53.com",
+        "ResourceRecords": [
+         "203.0.113.40"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z051883933QNMDR4HANDO|A|primary": {
+        "Failover": "PRIMARY",
+        "HealthCheckId": "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10",
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "198.51.100.11"
+        ],
+        "SetIdentifier": "primary",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z051883933QNMDR4HANDO|A|standby-stack": {
+        "Failover": "SECONDARY",
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "203.0.113.40"
+        ],
+        "SetIdentifier": "standby-stack",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z07565796I22H3NBUCY0|A|primary": {
+        "Failover": "PRIMARY",
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.10"
+        ],
+        "SetIdentifier": "primary",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "clobbered-app-namespace-handover"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "active-side-readdress": {
+      "status": "succeeded"
+     },
+     "app-namespace-handover": {
+      "status": "succeeded"
+     },
+     "endpoint-health-rollup": {
+      "status": "succeeded"
+     },
+     "stage-standby-path": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "37e287c5-2447-426d-a337-994d838bb87b": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "active.app.example53.com",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "primary_health_check"
+         }
+        ]
+       },
+       "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10": {
+        "HealthCheckConfig": {
+         "ChildHealthChecks": [
+          "37e287c5-2447-426d-a337-994d838bb87b"
+         ],
+         "HealthThreshold": 1,
+         "Inverted": false,
+         "Type": "CALCULATED"
+        },
+        "HealthCheckId": "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Judgement",
+          "Value": "endpoint-rollup"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z051883933QNMDR4HANDO": {
+        "HostedZoneConfig": {
+         "Comment": "namespace handed over to its own zone"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "dns-naming"
+         },
+         {
+          "Key": "Namespace",
+          "Value": "app-handover"
+         }
+        ],
+        "Id": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com.",
+        "NameServers": [
+         "ns-17.awsdns-02.com",
+         "ns-1022.awsdns-63.net",
+         "ns-1390.awsdns-45.org",
+         "ns-644.awsdns-16.co.uk"
+        ]
+       },
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "active.app.example53.com|Z051883933QNMDR4HANDO|A|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "active.app.example53.com",
+        "ResourceRecords": [
+         "198.51.100.11"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "app.example53.com|Z051883933QNMDR4HANDO|NS|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com.",
+         "ns-1022.awsdns-63.net.",
+         "ns-1390.awsdns-45.org.",
+         "ns-644.awsdns-16.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "app.example53.com|Z051883933QNMDR4HANDO|SOA|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "app.example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com.",
+         "ns-1022.awsdns-63.net.",
+         "ns-1390.awsdns-45.org.",
+         "ns-644.awsdns-16.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "standby.app.example53.com|Z051883933QNMDR4HANDO|A|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "standby.app.example53.com",
+        "ResourceRecords": [
+         "203.0.113.40"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z051883933QNMDR4HANDO|A|primary": {
+        "Failover": "PRIMARY",
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "198.51.100.11"
+        ],
+        "SetIdentifier": "primary",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z051883933QNMDR4HANDO|A|standby-stack": {
+        "Failover": "SECONDARY",
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "203.0.113.40"
+        ],
+        "SetIdentifier": "standby-stack",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "clobbered-endpoint-health-rollup"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "active-side-readdress": {
+      "status": "succeeded"
+     },
+     "app-namespace-handover": {
+      "status": "succeeded"
+     },
+     "endpoint-health-rollup": {
+      "status": "succeeded"
+     },
+     "stage-standby-path": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "37e287c5-2447-426d-a337-994d838bb87b": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "active.app.example53.com",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "primary_health_check"
+         }
+        ]
+       },
+       "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10": {
+        "HealthCheckConfig": {
+         "ChildHealthChecks": [
+          "37e287c5-2447-426d-a337-994d838bb87b"
+         ],
+         "HealthThreshold": 1,
+         "Inverted": false,
+         "Type": "CALCULATED"
+        },
+        "HealthCheckId": "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Judgement",
+          "Value": "endpoint-rollup"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z051883933QNMDR4HANDO": {
+        "HostedZoneConfig": {
+         "Comment": "namespace handed over to its own zone"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "dns-naming"
+         },
+         {
+          "Key": "Namespace",
+          "Value": "app-handover"
+         }
+        ],
+        "Id": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com.",
+        "NameServers": [
+         "ns-17.awsdns-02.com",
+         "ns-1022.awsdns-63.net",
+         "ns-1390.awsdns-45.org",
+         "ns-644.awsdns-16.co.uk"
+        ]
+       },
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "active.app.example53.com|Z051883933QNMDR4HANDO|A|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "active.app.example53.com",
+        "ResourceRecords": [
+         "198.51.100.11"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "app.example53.com|Z051883933QNMDR4HANDO|NS|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com.",
+         "ns-1022.awsdns-63.net.",
+         "ns-1390.awsdns-45.org.",
+         "ns-644.awsdns-16.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "app.example53.com|Z051883933QNMDR4HANDO|SOA|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "app.example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com.",
+         "ns-1022.awsdns-63.net.",
+         "ns-1390.awsdns-45.org.",
+         "ns-644.awsdns-16.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "standby.app.example53.com|Z051883933QNMDR4HANDO|A|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "standby.app.example53.com",
+        "ResourceRecords": [
+         "203.0.113.40"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z051883933QNMDR4HANDO|A|primary": {
+        "Failover": "PRIMARY",
+        "HealthCheckId": "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10",
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "198.51.100.11"
+        ],
+        "SetIdentifier": "primary",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z051883933QNMDR4HANDO|A|secondary": {
+        "Failover": "SECONDARY",
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.20"
+        ],
+        "SetIdentifier": "secondary",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "clobbered-stage-standby-path"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "active-side-readdress": {
+      "status": "succeeded"
+     },
+     "app-namespace-handover": {
+      "status": "succeeded"
+     },
+     "endpoint-health-rollup": {
+      "status": "succeeded"
+     },
+     "stage-standby-path": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "37e287c5-2447-426d-a337-994d838bb87b": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "active.app.example53.com",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "primary_health_check"
+         }
+        ]
+       },
+       "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10": {
+        "HealthCheckConfig": {
+         "ChildHealthChecks": [
+          "37e287c5-2447-426d-a337-994d838bb87b"
+         ],
+         "HealthThreshold": 1,
+         "Inverted": false,
+         "Type": "CALCULATED"
+        },
+        "HealthCheckId": "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Judgement",
+          "Value": "endpoint-rollup"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z051883933QNMDR4HANDO": {
+        "HostedZoneConfig": {
+         "Comment": "namespace handed over to its own zone"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "dns-naming"
+         },
+         {
+          "Key": "Namespace",
+          "Value": "app-handover"
+         }
+        ],
+        "Id": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com.",
+        "NameServers": [
+         "ns-17.awsdns-02.com",
+         "ns-1022.awsdns-63.net",
+         "ns-1390.awsdns-45.org",
+         "ns-644.awsdns-16.co.uk"
+        ]
+       },
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "active.app.example53.com|Z051883933QNMDR4HANDO|A|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "active.app.example53.com",
+        "ResourceRecords": [
+         "198.51.100.11"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "app.example53.com|Z051883933QNMDR4HANDO|NS|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com.",
+         "ns-1022.awsdns-63.net.",
+         "ns-1390.awsdns-45.org.",
+         "ns-644.awsdns-16.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "app.example53.com|Z051883933QNMDR4HANDO|SOA|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "app.example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com.",
+         "ns-1022.awsdns-63.net.",
+         "ns-1390.awsdns-45.org.",
+         "ns-644.awsdns-16.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "standby.app.example53.com|Z051883933QNMDR4HANDO|A|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "standby.app.example53.com",
+        "ResourceRecords": [
+         "203.0.113.40"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z051883933QNMDR4HANDO|A|primary": {
+        "Failover": "PRIMARY",
+        "HealthCheckId": "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10",
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.10"
+        ],
+        "SetIdentifier": "primary",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z051883933QNMDR4HANDO|A|standby-stack": {
+        "Failover": "SECONDARY",
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "203.0.113.40"
+        ],
+        "SetIdentifier": "standby-stack",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "clobbered-active-side-readdress"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "active-side-readdress": {
+      "status": "succeeded"
+     },
+     "app-namespace-handover": {
+      "status": "failed"
+     },
+     "endpoint-health-rollup": {
+      "status": "succeeded"
+     },
+     "stage-standby-path": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "37e287c5-2447-426d-a337-994d838bb87b": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "active.app.example53.com",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "primary_health_check"
+         }
+        ]
+       },
+       "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10": {
+        "HealthCheckConfig": {
+         "ChildHealthChecks": [
+          "37e287c5-2447-426d-a337-994d838bb87b"
+         ],
+         "HealthThreshold": 1,
+         "Inverted": false,
+         "Type": "CALCULATED"
+        },
+        "HealthCheckId": "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Judgement",
+          "Value": "endpoint-rollup"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "active.app.example53.com|Z07565796I22H3NBUCY0|A|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "active.app.example53.com",
+        "ResourceRecords": [
+         "198.51.100.11"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "standby.app.example53.com|Z07565796I22H3NBUCY0|A|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "standby.app.example53.com",
+        "ResourceRecords": [
+         "203.0.113.40"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z07565796I22H3NBUCY0|A|primary": {
+        "Failover": "PRIMARY",
+        "HealthCheckId": "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10",
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "198.51.100.11"
+        ],
+        "SetIdentifier": "primary",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z07565796I22H3NBUCY0|A|standby-stack": {
+        "Failover": "SECONDARY",
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "203.0.113.40"
+        ],
+        "SetIdentifier": "standby-stack",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "failed-app-namespace-handover"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "active-side-readdress": {
+      "status": "succeeded"
+     },
+     "app-namespace-handover": {
+      "status": "succeeded"
+     },
+     "endpoint-health-rollup": {
+      "status": "failed"
+     },
+     "stage-standby-path": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "37e287c5-2447-426d-a337-994d838bb87b": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "active.app.example53.com",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "primary_health_check"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z051883933QNMDR4HANDO": {
+        "HostedZoneConfig": {
+         "Comment": "namespace handed over to its own zone"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "dns-naming"
+         },
+         {
+          "Key": "Namespace",
+          "Value": "app-handover"
+         }
+        ],
+        "Id": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com.",
+        "NameServers": [
+         "ns-17.awsdns-02.com",
+         "ns-1022.awsdns-63.net",
+         "ns-1390.awsdns-45.org",
+         "ns-644.awsdns-16.co.uk"
+        ]
+       },
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "active.app.example53.com|Z051883933QNMDR4HANDO|A|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "active.app.example53.com",
+        "ResourceRecords": [
+         "198.51.100.11"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "app.example53.com|Z051883933QNMDR4HANDO|NS|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com.",
+         "ns-1022.awsdns-63.net.",
+         "ns-1390.awsdns-45.org.",
+         "ns-644.awsdns-16.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "app.example53.com|Z051883933QNMDR4HANDO|SOA|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "app.example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com.",
+         "ns-1022.awsdns-63.net.",
+         "ns-1390.awsdns-45.org.",
+         "ns-644.awsdns-16.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "standby.app.example53.com|Z051883933QNMDR4HANDO|A|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "standby.app.example53.com",
+        "ResourceRecords": [
+         "203.0.113.40"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z051883933QNMDR4HANDO|A|primary": {
+        "Failover": "PRIMARY",
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "198.51.100.11"
+        ],
+        "SetIdentifier": "primary",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z051883933QNMDR4HANDO|A|standby-stack": {
+        "Failover": "SECONDARY",
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "203.0.113.40"
+        ],
+        "SetIdentifier": "standby-stack",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "failed-endpoint-health-rollup"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "active-side-readdress": {
+      "status": "succeeded"
+     },
+     "app-namespace-handover": {
+      "status": "succeeded"
+     },
+     "endpoint-health-rollup": {
+      "status": "succeeded"
+     },
+     "stage-standby-path": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "37e287c5-2447-426d-a337-994d838bb87b": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "active.app.example53.com",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "primary_health_check"
+         }
+        ]
+       },
+       "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10": {
+        "HealthCheckConfig": {
+         "ChildHealthChecks": [
+          "37e287c5-2447-426d-a337-994d838bb87b"
+         ],
+         "HealthThreshold": 1,
+         "Inverted": false,
+         "Type": "CALCULATED"
+        },
+        "HealthCheckId": "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Judgement",
+          "Value": "endpoint-rollup"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z051883933QNMDR4HANDO": {
+        "HostedZoneConfig": {
+         "Comment": "namespace handed over to its own zone"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "dns-naming"
+         },
+         {
+          "Key": "Namespace",
+          "Value": "app-handover"
+         }
+        ],
+        "Id": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com.",
+        "NameServers": [
+         "ns-17.awsdns-02.com",
+         "ns-1022.awsdns-63.net",
+         "ns-1390.awsdns-45.org",
+         "ns-644.awsdns-16.co.uk"
+        ]
+       },
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "active.app.example53.com|Z051883933QNMDR4HANDO|A|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "active.app.example53.com",
+        "ResourceRecords": [
+         "198.51.100.11"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "app.example53.com|Z051883933QNMDR4HANDO|NS|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com.",
+         "ns-1022.awsdns-63.net.",
+         "ns-1390.awsdns-45.org.",
+         "ns-644.awsdns-16.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "app.example53.com|Z051883933QNMDR4HANDO|SOA|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "app.example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com.",
+         "ns-1022.awsdns-63.net.",
+         "ns-1390.awsdns-45.org.",
+         "ns-644.awsdns-16.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "www.app.example53.com|Z051883933QNMDR4HANDO|A|primary": {
+        "Failover": "PRIMARY",
+        "HealthCheckId": "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10",
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "198.51.100.11"
+        ],
+        "SetIdentifier": "primary",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z051883933QNMDR4HANDO|A|secondary": {
+        "Failover": "SECONDARY",
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.20"
+        ],
+        "SetIdentifier": "secondary",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "failed-stage-standby-path"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "active-side-readdress": {
+      "status": "failed"
+     },
+     "app-namespace-handover": {
+      "status": "succeeded"
+     },
+     "endpoint-health-rollup": {
+      "status": "succeeded"
+     },
+     "stage-standby-path": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "37e287c5-2447-426d-a337-994d838bb87b": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "active.app.example53.com",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "primary_health_check"
+         }
+        ]
+       },
+       "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10": {
+        "HealthCheckConfig": {
+         "ChildHealthChecks": [
+          "37e287c5-2447-426d-a337-994d838bb87b"
+         ],
+         "HealthThreshold": 1,
+         "Inverted": false,
+         "Type": "CALCULATED"
+        },
+        "HealthCheckId": "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Judgement",
+          "Value": "endpoint-rollup"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z051883933QNMDR4HANDO": {
+        "HostedZoneConfig": {
+         "Comment": "namespace handed over to its own zone"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "dns-naming"
+         },
+         {
+          "Key": "Namespace",
+          "Value": "app-handover"
+         }
+        ],
+        "Id": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com.",
+        "NameServers": [
+         "ns-17.awsdns-02.com",
+         "ns-1022.awsdns-63.net",
+         "ns-1390.awsdns-45.org",
+         "ns-644.awsdns-16.co.uk"
+        ]
+       },
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "app.example53.com|Z051883933QNMDR4HANDO|NS|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com.",
+         "ns-1022.awsdns-63.net.",
+         "ns-1390.awsdns-45.org.",
+         "ns-644.awsdns-16.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "app.example53.com|Z051883933QNMDR4HANDO|SOA|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "app.example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com.",
+         "ns-1022.awsdns-63.net.",
+         "ns-1390.awsdns-45.org.",
+         "ns-644.awsdns-16.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "standby.app.example53.com|Z051883933QNMDR4HANDO|A|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "standby.app.example53.com",
+        "ResourceRecords": [
+         "203.0.113.40"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z051883933QNMDR4HANDO|A|primary": {
+        "Failover": "PRIMARY",
+        "HealthCheckId": "b1c4f0d2-9a77-41e8-bb31-6f0f2c9a7f10",
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.10"
+        ],
+        "SetIdentifier": "primary",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z051883933QNMDR4HANDO|A|standby-stack": {
+        "Failover": "SECONDARY",
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "203.0.113.40"
+        ],
+        "SetIdentifier": "standby-stack",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "failed-active-side-readdress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "active-side-readdress": {
+      "status": "not-fired"
+     },
+     "app-namespace-handover": {
+      "status": "not-fired"
+     },
+     "endpoint-health-rollup": {
+      "status": "not-fired"
+     },
+     "stage-standby-path": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "37e287c5-2447-426d-a337-994d838bb87b": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "active.app.example53.com",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "primary_health_check"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {},
+      "AWS::Route53::RecordSet": {}
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "negative-domain-zone-gone"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "active-side-readdress": {
+      "status": "not-fired"
+     },
+     "app-namespace-handover": {
+      "status": "not-fired"
+     },
+     "endpoint-health-rollup": {
+      "status": "not-fired"
+     },
+     "stage-standby-path": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "37e287c5-2447-426d-a337-994d838bb87b": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "active.app.example53.com",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "primary_health_check"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "www.app.example53.com|Z07565796I22H3NBUCY0|A|secondary": {
+        "Failover": "SECONDARY",
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.20"
+        ],
+        "SetIdentifier": "secondary",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "negative-no-active-side"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "active-side-readdress": {
+      "status": "not-fired"
+     },
+     "app-namespace-handover": {
+      "status": "not-fired"
+     },
+     "endpoint-health-rollup": {
+      "status": "not-fired"
+     },
+     "stage-standby-path": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "37e287c5-2447-426d-a337-994d838bb87b": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "active.app.example53.com",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "primary_health_check"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "www.app.example53.com|Z07565796I22H3NBUCY0|A|primary": {
+        "Failover": "PRIMARY",
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.10"
+        ],
+        "SetIdentifier": "primary",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "negative-no-passive-side"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "active-side-readdress": {
+      "status": "not-fired"
+     },
+     "app-namespace-handover": {
+      "status": "not-fired"
+     },
+     "endpoint-health-rollup": {
+      "status": "not-fired"
+     },
+     "stage-standby-path": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "37e287c5-2447-426d-a337-994d838bb87b": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "active.app.example53.com",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "primary_health_check"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "www.app.example53.com|Z07565796I22H3NBUCY0|A|primary": {
+        "Failover": "PRIMARY",
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.10"
+        ],
+        "SetIdentifier": "primary",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z07565796I22H3NBUCY0|A|secondary": {
+        "Failover": "SECONDARY",
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.20"
+        ],
+        "SetIdentifier": "secondary",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "negative-ttl-not-as-asked"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "active-side-readdress": {
+      "status": "not-fired"
+     },
+     "app-namespace-handover": {
+      "status": "not-fired"
+     },
+     "endpoint-health-rollup": {
+      "status": "not-fired"
+     },
+     "stage-standby-path": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "37e287c5-2447-426d-a337-994d838bb87b": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "active.app.example53.com",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "primary_health_check"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "www.app.example53.com|Z07565796I22H3NBUCY0|A|primary": {
+        "Failover": "PRIMARY",
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.10"
+        ],
+        "SetIdentifier": "primary",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z07565796I22H3NBUCY0|A|secondary": {
+        "Failover": "SECONDARY",
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.20"
+        ],
+        "SetIdentifier": "secondary",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "negative-active-side-ungated"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "active-side-readdress": {
+      "status": "not-fired"
+     },
+     "app-namespace-handover": {
+      "status": "not-fired"
+     },
+     "endpoint-health-rollup": {
+      "status": "not-fired"
+     },
+     "stage-standby-path": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "37e287c5-2447-426d-a337-994d838bb87b": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "active.app.example53.com",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "www.app.example53.com|Z07565796I22H3NBUCY0|A|primary": {
+        "Failover": "PRIMARY",
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.10"
+        ],
+        "SetIdentifier": "primary",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z07565796I22H3NBUCY0|A|secondary": {
+        "Failover": "SECONDARY",
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.20"
+        ],
+        "SetIdentifier": "secondary",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "negative-watch-unnamed"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "active-side-readdress": {
+      "status": "not-fired"
+     },
+     "app-namespace-handover": {
+      "status": "not-fired"
+     },
+     "endpoint-health-rollup": {
+      "status": "not-fired"
+     },
+     "stage-standby-path": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "37e287c5-2447-426d-a337-994d838bb87b": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "active.example53.com",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "primary_health_check"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "www.app.example53.com|Z07565796I22H3NBUCY0|A|primary": {
+        "Failover": "PRIMARY",
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.10"
+        ],
+        "SetIdentifier": "primary",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z07565796I22H3NBUCY0|A|secondary": {
+        "Failover": "SECONDARY",
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.20"
+        ],
+        "SetIdentifier": "secondary",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "negative-watch-probes-another-endpoint"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "active-side-readdress": {
+      "status": "not-fired"
+     },
+     "app-namespace-handover": {
+      "status": "not-fired"
+     },
+     "endpoint-health-rollup": {
+      "status": "not-fired"
+     },
+     "stage-standby-path": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "37e287c5-2447-426d-a337-994d838bb87b": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "active.app.example53.com",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "primary_health_check"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "www.app.example53.com|Z07565796I22H3NBUCY0|A|primary": {
+        "Failover": "PRIMARY",
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.99"
+        ],
+        "SetIdentifier": "primary",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z07565796I22H3NBUCY0|A|secondary": {
+        "Failover": "SECONDARY",
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.20"
+        ],
+        "SetIdentifier": "secondary",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "negative-active-side-wrong-address"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "active-side-readdress": {
+      "status": "not-fired"
+     },
+     "app-namespace-handover": {
+      "status": "not-fired"
+     },
+     "endpoint-health-rollup": {
+      "status": "not-fired"
+     },
+     "stage-standby-path": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HostedZone": {
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "37e287c5-2447-426d-a337-994d838bb87b": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "active.app.example53.com",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "primary_health_check"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z051883933QNMDR4HANDO": {
+        "HostedZoneConfig": {
+         "Comment": "namespace handed over to its own zone"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "dns-naming"
+         },
+         {
+          "Key": "Namespace",
+          "Value": "app-handover"
+         }
+        ],
+        "Id": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com.",
+        "NameServers": [
+         "ns-17.awsdns-02.com",
+         "ns-1022.awsdns-63.net",
+         "ns-1390.awsdns-45.org",
+         "ns-644.awsdns-16.co.uk"
+        ]
+       },
+       "Z07565796I22H3NBUCY0": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-435.awsdns-54.com",
+         "ns-1414.awsdns-48.org",
+         "ns-811.awsdns-37.net",
+         "ns-1597.awsdns-07.co.uk"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "app.example53.com|Z051883933QNMDR4HANDO|NS|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com.",
+         "ns-1022.awsdns-63.net.",
+         "ns-1390.awsdns-45.org.",
+         "ns-644.awsdns-16.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "app.example53.com|Z051883933QNMDR4HANDO|SOA|": {
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-17.awsdns-02.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|NS|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com.",
+         "ns-1414.awsdns-48.org.",
+         "ns-811.awsdns-37.net.",
+         "ns-1597.awsdns-07.co.uk."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z07565796I22H3NBUCY0|SOA|": {
+        "HostedZoneId": "Z07565796I22H3NBUCY0",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-435.awsdns-54.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "www.app.example53.com|Z051883933QNMDR4HANDO|A|primary": {
+        "Failover": "PRIMARY",
+        "HealthCheckId": "37e287c5-2447-426d-a337-994d838bb87b",
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.10"
+        ],
+        "SetIdentifier": "primary",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z051883933QNMDR4HANDO|A|secondary": {
+        "Failover": "SECONDARY",
+        "HostedZoneId": "Z051883933QNMDR4HANDO",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.20"
+        ],
+        "SetIdentifier": "secondary",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "negative-pair-in-an-unreached-zone"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z05469112H2XHJOC6QE9N": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z05469112H2XHJOC6QE9N",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1529.awsdns-63.org",
+         "ns-1893.awsdns-44.co.uk",
+         "ns-744.awsdns-29.net",
+         "ns-173.awsdns-21.com"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z05469112H2XHJOC6QE9N|NS|": {
+        "HostedZoneId": "Z05469112H2XHJOC6QE9N",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1529.awsdns-63.org.",
+         "ns-1893.awsdns-44.co.uk.",
+         "ns-744.awsdns-29.net.",
+         "ns-173.awsdns-21.com."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z05469112H2XHJOC6QE9N|SOA|": {
+        "HostedZoneId": "Z05469112H2XHJOC6QE9N",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1529.awsdns-63.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "5630d4c0-0558-4e81-972e-f6e548376e0a": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "active.app.example53.com",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "5630d4c0-0558-4e81-972e-f6e548376e0a",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "primary_health_check"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z054266330CFGAWG4ECK7": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for app.example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z054266330CFGAWG4ECK7",
+        "Name": "app.example53.com.",
+        "NameServers": [
+         "ns-86.awsdns-10.com",
+         "ns-533.awsdns-02.net",
+         "ns-2007.awsdns-58.co.uk",
+         "ns-1433.awsdns-51.org"
+        ]
+       },
+       "Z05469112H2XHJOC6QE9N": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Id": "Z05469112H2XHJOC6QE9N",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1529.awsdns-63.org",
+         "ns-1893.awsdns-44.co.uk",
+         "ns-744.awsdns-29.net",
+         "ns-173.awsdns-21.com"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "app.example53.com|Z054266330CFGAWG4ECK7|NS|": {
+        "HostedZoneId": "Z054266330CFGAWG4ECK7",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-86.awsdns-10.com.",
+         "ns-533.awsdns-02.net.",
+         "ns-2007.awsdns-58.co.uk.",
+         "ns-1433.awsdns-51.org."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "app.example53.com|Z054266330CFGAWG4ECK7|SOA|": {
+        "HostedZoneId": "Z054266330CFGAWG4ECK7",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-86.awsdns-10.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "app.example53.com|Z05469112H2XHJOC6QE9N|NS|": {
+        "HostedZoneId": "Z05469112H2XHJOC6QE9N",
+        "Name": "app.example53.com",
+        "ResourceRecords": [
+         "ns-86.awsdns-10.com.",
+         "ns-533.awsdns-02.net.",
+         "ns-2007.awsdns-58.co.uk.",
+         "ns-1433.awsdns-51.org."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z05469112H2XHJOC6QE9N|NS|": {
+        "HostedZoneId": "Z05469112H2XHJOC6QE9N",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1529.awsdns-63.org.",
+         "ns-1893.awsdns-44.co.uk.",
+         "ns-744.awsdns-29.net.",
+         "ns-173.awsdns-21.com."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z05469112H2XHJOC6QE9N|SOA|": {
+        "HostedZoneId": "Z05469112H2XHJOC6QE9N",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1529.awsdns-63.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "www.app.example53.com|Z054266330CFGAWG4ECK7|A|primary": {
+        "Failover": "PRIMARY",
+        "HealthCheckId": "5630d4c0-0558-4e81-972e-f6e548376e0a",
+        "HostedZoneId": "Z054266330CFGAWG4ECK7",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.10"
+        ],
+        "SetIdentifier": "primary",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "www.app.example53.com|Z054266330CFGAWG4ECK7|A|secondary": {
+        "Failover": "SECONDARY",
+        "HostedZoneId": "Z054266330CFGAWG4ECK7",
+        "Name": "www.app.example53.com",
+        "ResourceRecords": [
+         "192.0.2.20"
+        ],
+        "SetIdentifier": "secondary",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

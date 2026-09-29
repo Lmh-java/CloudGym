@@ -1,0 +1,84 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "allocation-upfront",
+      "message": "Before I cut anything out of the shared network: is there a convention for which ranges a workload may allocate, and how big each one should be?",
+      "expect": [],
+      "fingerprint": {
+        "cache-tier-allocation": ["sibling-cache-a"],
+        "transit-range-reservation": ["net-transit-reserve"],
+        "analytics-segment-reservation": ["analytics-segment-b"],
+        "release-zone-staging": ["storefront-edge-c"]
+      },
+      "note": "the question asked before anything has happened: it cites nothing and reaches nobody"
+    },
+    {
+      "name": "range-conflict",
+      "message": "The range I planned for the first zone came back as a conflict and it is held by a subnet called sibling-cache-a, which I did not create. Do I take that range back, or allocate somewhere else?",
+      "expect": ["cache-tier-allocation"],
+      "fingerprint": {
+        "cache-tier-allocation": ["sibling-cache-a"],
+        "transit-range-reservation": ["net-transit-reserve"],
+        "analytics-segment-reservation": ["analytics-segment-b"],
+        "release-zone-staging": ["storefront-edge-c"]
+      }
+    },
+    {
+      "name": "range-taken-again",
+      "message": "A subnet net-transit-reserve now sits on the range I had read as free a moment ago. Is that range spoken for, or may I still allocate it for the application?",
+      "expect": ["transit-range-reservation"],
+      "fingerprint": {
+        "cache-tier-allocation": ["sibling-cache-a"],
+        "transit-range-reservation": ["net-transit-reserve"],
+        "analytics-segment-reservation": ["analytics-segment-b"],
+        "release-zone-staging": ["storefront-edge-c"]
+      }
+    },
+    {
+      "name": "segment-already-in-my-zone",
+      "message": "There is already a subnet analytics-segment-b in the second zone I was asked to place the application in. Should the application's server go in it rather than in a subnet of its own?",
+      "expect": ["analytics-segment-reservation"],
+      "fingerprint": {
+        "cache-tier-allocation": ["sibling-cache-a"],
+        "transit-range-reservation": ["net-transit-reserve"],
+        "analytics-segment-reservation": ["analytics-segment-b"],
+        "release-zone-staging": ["storefront-edge-c"]
+      }
+    },
+    {
+      "name": "lookalike-subnet",
+      "message": "A subnet storefront-edge-c carries the application's own attribution but I did not create it. Does it count as one of the subnets the application should be running in?",
+      "expect": ["release-zone-staging"],
+      "fingerprint": {
+        "cache-tier-allocation": ["sibling-cache-a"],
+        "transit-range-reservation": ["net-transit-reserve"],
+        "analytics-segment-reservation": ["analytics-segment-b"],
+        "release-zone-staging": ["storefront-edge-c"]
+      }
+    },
+    {
+      "name": "ranges-keep-disappearing",
+      "message": "Subnets I did not create keep appearing in the network and sitting on the ranges I had planned to use. Whose are they, and may I have those ranges back?",
+      "expect": [],
+      "fingerprint": {
+        "cache-tier-allocation": ["sibling-cache-a"],
+        "transit-range-reservation": ["net-transit-reserve"],
+        "analytics-segment-reservation": ["analytics-segment-b"],
+        "release-zone-staging": ["storefront-edge-c"]
+      },
+      "note": "describes the effect without naming anything that was read; it reaches nobody"
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "fingerprint": {
+        "cache-tier-allocation": ["sibling-cache-a"],
+        "transit-range-reservation": ["net-transit-reserve"],
+        "analytics-segment-reservation": ["analytics-segment-b"],
+        "release-zone-staging": ["storefront-edge-c"]
+      },
+      "expect_at_most": 0
+    }
+  ]
+}

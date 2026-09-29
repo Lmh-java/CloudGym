@@ -1,0 +1,23 @@
+{
+  "distractors": {
+    "invocation-sizing": {
+      "codes": [
+        "ResourceConflictException"
+      ],
+      "entry": "lambda.function",
+      "operation": "UpdateFunctionConfiguration",
+      "service": "lambda",
+      "source": "sdk"
+    },
+    "log-destination-standard": {
+      "codes": [
+        "ResourceConflictException"
+      ],
+      "entry": "lambda.function",
+      "operation": "UpdateFunctionConfiguration",
+      "service": "lambda",
+      "source": "sdk"
+    }
+  },
+  "schema_version": 1
+}

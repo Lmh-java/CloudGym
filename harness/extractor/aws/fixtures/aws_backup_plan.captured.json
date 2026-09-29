@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::Backup::BackupPlan",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-24T00:36:03+00:00",
+      "ResourceDescription": {
+        "Identifier": "bb062324-9dbd-4659-bb61-d0ac6ccedae0",
+        "Properties": "{\"VersionId\":\"MWNiY2Y5NjgtNDIyYy00MTRjLThlZTctOTc1YzQ3NzhiODg0\",\"BackupPlan\":{\"BackupPlanName\":\"cloudgym-capability-plan\",\"ScanSettings\":[],\"AdvancedBackupSettings\":[],\"BackupPlanRule\":[{\"CompletionWindowMinutes\":180,\"ScheduleExpression\":\"cron(0 12 1 1 ? 2035)\",\"RecoveryPointTags\":{},\"CopyActions\":[],\"EnableContinuousBackup\":false,\"ScanActions\":[],\"Lifecycle\":{\"DeleteAfterDays\":7},\"IndexActions\":[],\"TargetBackupVault\":\"cloudgym-capability-plan-vault\",\"StartWindowMinutes\":60,\"ScheduleExpressionTimezone\":\"Etc/UTC\",\"RuleName\":\"never-in-practice\"}]},\"BackupPlanId\":\"bb062324-9dbd-4659-bb61-d0ac6ccedae0\",\"BackupPlanTags\":{},\"BackupPlanArn\":\"arn:aws:backup:us-east-1:123456789012:backup-plan:bb062324-9dbd-4659-bb61-d0ac6ccedae0\"}"
+      },
+      "TypeName": "AWS::Backup::BackupPlan"
+    }
+  ],
+  "recorded_at": "2026-09-24T00:36:04+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

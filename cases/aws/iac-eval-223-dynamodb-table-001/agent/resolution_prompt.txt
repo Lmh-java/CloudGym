@@ -1,0 +1,2 @@
+A requirement over a workload's stores covers what it owns as you leave the account, not as you found it; ownership is a store's own attribution, not what its name resembles.
+New stores take the attribution of the stores they join; what you did not write stays as found.

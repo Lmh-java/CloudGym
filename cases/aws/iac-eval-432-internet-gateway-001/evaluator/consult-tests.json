@@ -1,0 +1,152 @@
+{
+ "mode": "fingerprint",
+ "asks": [
+  {
+   "name": "gateway-already-attached",
+   "message": "The network will not take the gateway I made: one called shared-way-out-igw is already attached to it, tagged EgressRef PLT-4417. Is that the one my segment is supposed to reach the internet through?",
+   "expect": [
+    "kept-way-out-gateway"
+   ],
+   "fingerprint": {
+    "kept-way-out-gateway": [
+     "shared-way-out-igw",
+     "PLT-4417"
+    ],
+    "kept-edge-table": [
+     "kept-outward",
+     "NET-3308"
+    ],
+    "closed-core-tier": [
+     "closed-tier",
+     "SEC-8812"
+    ],
+    "ingest-egress-slice": [
+     "ingest-slice",
+     "APP-9915"
+    ]
+   }
+  },
+  {
+   "name": "a-table-i-did-not-stand-up",
+   "message": "There is a route table in this network I did not create, reading kept-outward under RoutingRef NET-3308. Does the default route belong on that one rather than on mine?",
+   "expect": [
+    "kept-edge-table"
+   ],
+   "fingerprint": {
+    "kept-way-out-gateway": [
+     "shared-way-out-igw",
+     "PLT-4417"
+    ],
+    "kept-edge-table": [
+     "kept-outward",
+     "NET-3308"
+    ],
+    "closed-core-tier": [
+     "closed-tier",
+     "SEC-8812"
+    ],
+    "ingest-egress-slice": [
+     "ingest-slice",
+     "APP-9915"
+    ]
+   }
+  },
+  {
+   "name": "a-segment-bound-to-nowhere",
+   "message": "One segment here reads closed-tier under IsolationRef SEC-8812 and is bound to a table that goes nowhere. Should it ride the way out with the rest?",
+   "expect": [
+    "closed-core-tier"
+   ],
+   "fingerprint": {
+    "kept-way-out-gateway": [
+     "shared-way-out-igw",
+     "PLT-4417"
+    ],
+    "kept-edge-table": [
+     "kept-outward",
+     "NET-3308"
+    ],
+    "closed-core-tier": [
+     "closed-tier",
+     "SEC-8812"
+    ],
+    "ingest-egress-slice": [
+     "ingest-slice",
+     "APP-9915"
+    ]
+   }
+  },
+  {
+   "name": "space-that-is-not-mine",
+   "message": "Another segment in this network is tagged ingest-slice under SliceRef APP-9915 and sits on a table with no default route. Does it belong on the way out too?",
+   "expect": [
+    "ingest-egress-slice"
+   ],
+   "fingerprint": {
+    "kept-way-out-gateway": [
+     "shared-way-out-igw",
+     "PLT-4417"
+    ],
+    "kept-edge-table": [
+     "kept-outward",
+     "NET-3308"
+    ],
+    "closed-core-tier": [
+     "closed-tier",
+     "SEC-8812"
+    ],
+    "ingest-egress-slice": [
+     "ingest-slice",
+     "APP-9915"
+    ]
+   }
+  },
+  {
+   "name": "things-keep-changing",
+   "message": "Gateways, tables and segments I did not create keep turning up in the network I was asked to use, and routing I set keeps coming undone. Should what I build carry them, or only what I made myself?",
+   "expect": [],
+   "note": "describes the effect without citing anything that was read; it reaches nobody",
+   "fingerprint": {
+    "kept-way-out-gateway": [
+     "shared-way-out-igw",
+     "PLT-4417"
+    ],
+    "kept-edge-table": [
+     "kept-outward",
+     "NET-3308"
+    ],
+    "closed-core-tier": [
+     "closed-tier",
+     "SEC-8812"
+    ],
+    "ingest-egress-slice": [
+     "ingest-slice",
+     "APP-9915"
+    ]
+   }
+  },
+  {
+   "name": "generic",
+   "message": "Any conventions I should follow here?",
+   "expect_at_most": 0,
+   "fingerprint": {
+    "kept-way-out-gateway": [
+     "shared-way-out-igw",
+     "PLT-4417"
+    ],
+    "kept-edge-table": [
+     "kept-outward",
+     "NET-3308"
+    ],
+    "closed-core-tier": [
+     "closed-tier",
+     "SEC-8812"
+    ],
+    "ingest-egress-slice": [
+     "ingest-slice",
+     "APP-9915"
+    ]
+   }
+  }
+ ]
+}

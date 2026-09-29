@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_312_cloudwatch_event_rule",
+  "utterance": "An AWS service that runs a code everyday at 7 UTC. The code is the existing Lambda function `cron-lambda-function`. Accomplish this using the following resources: AWS EventBridge event rule, AWS EventBridge event target, AWS lambda permission. Add any necessary resources.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's schedules and event wiring",
+    "intent": "the daily 07:00 UTC schedule reaches the pre-existing Lambda function cron-lambda-function: an ENABLED EventBridge rule whose schedule expression fires every day at 07:00 UTC carries that function as a target, and the function's resource policy lets events.amazonaws.com invoke it from that rule, so the delivery path from the schedule to the function is complete end to end"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 312
+  }
+}

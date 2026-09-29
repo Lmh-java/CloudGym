@@ -1,0 +1,70 @@
+{
+ "mode": "fingerprint",
+ "asks": [
+  {
+   "name": "storage-class-moved",
+   "message": "The store I am copying reports its table class as STANDARD_INFREQUENT_ACCESS now, and it was not on that class when I read it. Should the store I am standing up be on it as well?",
+   "expect": ["cold-tier-move"],
+   "fingerprint": {
+    "cold-tier-move": ["STANDARD_INFREQUENT_ACCESS"],
+    "classification-restamp": ["cardholder-data"],
+    "stale-event-expiry": ["expiresAt"],
+    "cost-allocation-record": ["CHK-4471"]
+   }
+  },
+  {
+   "name": "expiry-appeared",
+   "message": "The store I am copying expires its items on expiresAt, which it did not do earlier. Does the new store have to expire them the same way?",
+   "expect": ["stale-event-expiry"],
+   "fingerprint": {
+    "cold-tier-move": ["STANDARD_INFREQUENT_ACCESS"],
+    "classification-restamp": ["cardholder-data"],
+    "stale-event-expiry": ["expiresAt"],
+    "cost-allocation-record": ["CHK-4471"]
+   }
+  },
+  {
+   "name": "classification-raised",
+   "message": "The store is catalogued cardholder-data now where it read as ordinary internal data before. Does that record belong on the store I am standing up too?",
+   "expect": ["classification-restamp"],
+   "fingerprint": {
+    "cold-tier-move": ["STANDARD_INFREQUENT_ACCESS"],
+    "classification-restamp": ["cardholder-data"],
+    "stale-event-expiry": ["expiresAt"],
+    "cost-allocation-record": ["CHK-4471"]
+   }
+  },
+  {
+   "name": "allocation-code-appeared",
+   "message": "A CHK-4471 record has turned up on the store and on the identity I am about to grant on. Is the new store expected to carry it?",
+   "expect": ["cost-allocation-record"],
+   "fingerprint": {
+    "cold-tier-move": ["STANDARD_INFREQUENT_ACCESS"],
+    "classification-restamp": ["cardholder-data"],
+    "stale-event-expiry": ["expiresAt"],
+    "cost-allocation-record": ["CHK-4471"]
+   }
+  },
+  {
+   "name": "something-moved",
+   "message": "How the existing store is kept and what it is catalogued as both look different from when I started. Which of those is the new store supposed to pick up?",
+   "expect": [],
+   "fingerprint": {
+    "cold-tier-move": ["STANDARD_INFREQUENT_ACCESS"],
+    "classification-restamp": ["cardholder-data"],
+    "stale-event-expiry": ["expiresAt"],
+    "cost-allocation-record": ["CHK-4471"]
+   }
+  },
+  {
+   "name": "generic",
+   "message": "Any conventions I should follow here?",
+   "fingerprint": {
+    "cold-tier-move": ["STANDARD_INFREQUENT_ACCESS"],
+    "classification-restamp": ["cardholder-data"],
+    "stale-event-expiry": ["expiresAt"],
+    "cost-allocation-record": ["CHK-4471"]
+   }
+  }
+ ]
+}

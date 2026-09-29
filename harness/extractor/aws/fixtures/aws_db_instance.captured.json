@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::RDS::DBInstance",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-09T07:36:43+00:00",
+      "ResourceDescription": {
+        "Identifier": "cloudgym-capability-20260909073106291800000002",
+        "Properties": "{\"DatabaseInsightsMode\":\"standard\",\"StorageEncrypted\":false,\"StatusInfos\":[],\"CertificateDetails\":{\"ValidTill\":\"2027-09-09T07:33:22Z\",\"CAIdentifier\":\"rds-ca-rsa2048-g1\"},\"Port\":\"5432\",\"AdditionalStorageVolumes\":[],\"StorageThroughput\":0,\"DbiResourceId\":\"db-GJ54LYCWG4HYM5MIO4T35F5P3M\",\"ReadReplicaDBClusterIdentifiers\":[],\"MonitoringInterval\":0,\"DBParameterGroupName\":\"default.postgres18\",\"DBInstanceArn\":\"arn:aws:rds:us-east-1:123456789012:db:cloudgym-capability-20260909073106291800000002\",\"Endpoint\":{\"Address\":\"cloudgym-capability-20260909073106291800000002.ccrg4g2s2cm7.us-east-1.rds.amazonaws.com\",\"Port\":\"5432\",\"HostedZoneId\":\"Z2R2ITUGPM61AM\"},\"MultiAZ\":false,\"Engine\":\"postgres\",\"Tags\":[],\"IsStorageConfigUpgradeAvailable\":false,\"EngineVersion\":\"18.3\",\"StorageType\":\"gp2\",\"DBInstanceStatus\":\"available\",\"DBInstanceClass\":\"db.t3.micro\",\"AvailabilityZone\":\"us-east-1a\",\"OptionGroupName\":\"default:postgres-18\",\"EnablePerformanceInsights\":false,\"ReadReplicaDBInstanceIdentifiers\":[],\"AutoMinorVersionUpgrade\":true,\"DBSubnetGroupName\":\"cloudgym-capability-20260909073104738800000001\",\"DeletionProtection\":false,\"DBInstanceIdentifier\":\"cloudgym-capability-20260909073106291800000002\",\"AllocatedStorage\":\"20\",\"MasterUserSecret\":{},\"DBSecurityGroups\":[],\"MasterUsername\":\"cloudgym\",\"PubliclyAccessible\":false,\"AssociatedRoles\":[],\"InstanceCreateTime\":\"2026-09-09T07:34:49.507Z\",\"ProcessorFeatures\":[],\"PreferredBackupWindow\":\"10:16-10:46\",\"NetworkType\":\"IPV4\",\"DedicatedLogVolume\":false,\"CopyTagsToSnapshot\":false,\"EngineLifecycleSupport\":\"open-source-rds-extended-support\",\"LicenseModel\":\"postgresql-license\",\"PreferredMaintenanceWindow\":\"sun:08:23-sun:08:53\",\"BackupTarget\":\"region\",\"CACertificateIdentifier\":\"rds-ca-rsa2048-g1\",\"ManageMasterUserPassword\":false,\"VPCSecurityGroups\":[\"sg-0aff302cc041eecd2\"],\"EnableIAMDatabaseAuthentication\":false,\"BackupRetentionPeriod\":0,\"EnableCloudwatchLogsExports\":[]}"
+      },
+      "TypeName": "AWS::RDS::DBInstance"
+    }
+  ],
+  "recorded_at": "2026-09-09T07:36:44+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

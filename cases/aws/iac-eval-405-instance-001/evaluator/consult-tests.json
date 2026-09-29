@@ -1,0 +1,132 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "edge-segment",
+      "message": "Two segments in this network are marked load-balancer-placement and I did not carve them out; one of them is named lb-edge-a. Does that decide where the balancer I am standing up goes?",
+      "fingerprint": {
+        "edge-segment-placement": [
+          "load-balancer-placement",
+          "lb-edge-a"
+        ],
+        "shared-http-listener": [
+          "billing-tg"
+        ],
+        "edge-ingress-group": [
+          "vpc-edge-ingress"
+        ],
+        "owner-attribution": [
+          "UNALLOCATED-4417"
+        ]
+      },
+      "expect": [
+        "edge-segment-placement"
+      ]
+    },
+    {
+      "name": "kept-ingress-group",
+      "message": "There is a security group called vpc-edge-ingress standing in this network that I did not create. Should what I stand up be reached through it rather than through one of mine?",
+      "fingerprint": {
+        "edge-segment-placement": [
+          "load-balancer-placement",
+          "lb-edge-a"
+        ],
+        "shared-http-listener": [
+          "billing-tg"
+        ],
+        "edge-ingress-group": [
+          "vpc-edge-ingress"
+        ],
+        "owner-attribution": [
+          "UNALLOCATED-4417"
+        ]
+      },
+      "expect": [
+        "edge-ingress-group"
+      ]
+    },
+    {
+      "name": "taken-web-port",
+      "message": "The web port on the balancer already carries a listener whose default action forwards to a group named billing-tg, and I never made either of them. Should that keep serving what it serves?",
+      "fingerprint": {
+        "edge-segment-placement": [
+          "load-balancer-placement",
+          "lb-edge-a"
+        ],
+        "shared-http-listener": [
+          "billing-tg"
+        ],
+        "edge-ingress-group": [
+          "vpc-edge-ingress"
+        ],
+        "owner-attribution": [
+          "UNALLOCATED-4417"
+        ]
+      },
+      "expect": [
+        "shared-http-listener"
+      ]
+    },
+    {
+      "name": "placeholder-attribution",
+      "message": "My server came back marked UNALLOCATED-4417 and with an owner I never set. What should it be carrying instead?",
+      "fingerprint": {
+        "edge-segment-placement": [
+          "load-balancer-placement",
+          "lb-edge-a"
+        ],
+        "shared-http-listener": [
+          "billing-tg"
+        ],
+        "edge-ingress-group": [
+          "vpc-edge-ingress"
+        ],
+        "owner-attribution": [
+          "UNALLOCATED-4417"
+        ]
+      },
+      "expect": [
+        "owner-attribution"
+      ]
+    },
+    {
+      "name": "effect-in-words",
+      "message": "Things I stand up here keep being decided for me: where they sit, what reaches them, and what they are marked with. How is any of that settled in this account?",
+      "fingerprint": {
+        "edge-segment-placement": [
+          "load-balancer-placement",
+          "lb-edge-a"
+        ],
+        "shared-http-listener": [
+          "billing-tg"
+        ],
+        "edge-ingress-group": [
+          "vpc-edge-ingress"
+        ],
+        "owner-attribution": [
+          "UNALLOCATED-4417"
+        ]
+      },
+      "expect": []
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "fingerprint": {
+        "edge-segment-placement": [
+          "load-balancer-placement",
+          "lb-edge-a"
+        ],
+        "shared-http-listener": [
+          "billing-tg"
+        ],
+        "edge-ingress-group": [
+          "vpc-edge-ingress"
+        ],
+        "owner-attribution": [
+          "UNALLOCATED-4417"
+        ]
+      }
+    }
+  ]
+}

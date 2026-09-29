@@ -1,0 +1,50 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "power-schedule",
+      "message": "The host I am hanging this disk off now carries a schedule reading idle-hold-weeknights that I did not put there, and it went down while my attachment was being refused. Is that one to leave where it is, or is it mine to clear so my call gets through?",
+      "expect": ["offhours-power-down"],
+      "fingerprint": {
+        "offhours-power-down": ["idle-hold-weeknights"],
+        "patch-baseline-restart": ["sun-0300-utc"]
+      }
+    },
+    {
+      "name": "window-record",
+      "message": "There is a window record of sun-0300-utc on the host now, and it came back up on its own while I was waiting. Who holds it that way, and does it have to stay that way once the disk is on it?",
+      "expect": ["patch-baseline-restart"],
+      "fingerprint": {
+        "offhours-power-down": ["idle-hold-weeknights"],
+        "patch-baseline-restart": ["sun-0300-utc"]
+      }
+    },
+    {
+      "name": "refusal-in-words",
+      "message": "My attachment keeps coming back refused because the host is not in a state that takes a disk, and something else keeps moving its power state. Whose change is that, and am I meant to sit it out or put the host back the way I found it?",
+      "expect": [],
+      "fingerprint": {
+        "offhours-power-down": ["idle-hold-weeknights"],
+        "patch-baseline-restart": ["sun-0300-utc"]
+      }
+    },
+    {
+      "name": "both-records",
+      "message": "Two records I did not write turned up on the host while I was working: idle-hold-weeknights and sun-0300-utc. Are either of them mine to clear?",
+      "expect": ["offhours-power-down", "patch-baseline-restart"],
+      "fingerprint": {
+        "offhours-power-down": ["idle-hold-weeknights"],
+        "patch-baseline-restart": ["sun-0300-utc"]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "offhours-power-down": ["idle-hold-weeknights"],
+        "patch-baseline-restart": ["sun-0300-utc"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "distractors": {
+    "checkpoint-baseline": {
+      "codes": [
+        "ConcurrentModificationException",
+        "ResourceInUseException"
+      ],
+      "entry": "kinesisanalyticsv2.application",
+      "operation": "UpdateApplication",
+      "service": "kinesisanalyticsv2",
+      "source": "manual"
+    },
+    "runtime-defaults": {
+      "codes": [
+        "ConcurrentModificationException",
+        "ResourceInUseException"
+      ],
+      "entry": "kinesisanalyticsv2.application",
+      "operation": "UpdateApplication",
+      "service": "kinesisanalyticsv2",
+      "source": "manual"
+    }
+  },
+  "schema_version": 1
+}

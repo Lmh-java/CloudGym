@@ -1,0 +1,70 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "third-segment",
+      "message": "Listing the network's segments came back with a third one, `shop-front-c` on 10.40.3.0/24, marked the same way as the other front segments. Should the load balancer span it too, or only the two that were there when I started?",
+      "expect": ["front-segment-placement"],
+      "fingerprint": {
+        "front-segment-placement": ["shop-front-c", "10.40.3.0/24"],
+        "release-web-server": ["shop-web-2", "shop-rel-2f"],
+        "sibling-collector-server": ["shop-web-collector", "shop-traffic-c7"],
+        "migration-legacy-web": ["shop-web-legacy", "shop-cutover-h4"]
+      }
+    },
+    {
+      "name": "second-server",
+      "message": "There is a running server shop-web-2 carrying shop-rel-2f and the service's own attribution. Does it belong in the group I am registering servers into?",
+      "expect": ["release-web-server"],
+      "fingerprint": {
+        "front-segment-placement": ["shop-front-c", "10.40.3.0/24"],
+        "release-web-server": ["shop-web-2", "shop-rel-2f"],
+        "sibling-collector-server": ["shop-web-collector", "shop-traffic-c7"],
+        "migration-legacy-web": ["shop-web-legacy", "shop-cutover-h4"]
+      }
+    },
+    {
+      "name": "namesake-server",
+      "message": "shop-web-collector is running in the same segment and carries shop-traffic-c7, but its attribution is not the service's. Is it one of the servers I should be registering?",
+      "expect": ["sibling-collector-server"],
+      "fingerprint": {
+        "front-segment-placement": ["shop-front-c", "10.40.3.0/24"],
+        "release-web-server": ["shop-web-2", "shop-rel-2f"],
+        "sibling-collector-server": ["shop-web-collector", "shop-traffic-c7"],
+        "migration-legacy-web": ["shop-web-legacy", "shop-cutover-h4"]
+      }
+    },
+    {
+      "name": "cutover-server",
+      "message": "shop-web-legacy is up with the service's attribution and a mark reading shop-cutover-h4. Do I register it behind the new front end, or leave it where it is?",
+      "expect": ["migration-legacy-web"],
+      "fingerprint": {
+        "front-segment-placement": ["shop-front-c", "10.40.3.0/24"],
+        "release-web-server": ["shop-web-2", "shop-rel-2f"],
+        "sibling-collector-server": ["shop-web-collector", "shop-traffic-c7"],
+        "migration-legacy-web": ["shop-web-legacy", "shop-cutover-h4"]
+      }
+    },
+    {
+      "name": "paraphrase",
+      "message": "More servers are running in this network than when I started, and there is an extra segment as well. Which of them count as the service's, and which do I leave out of the front end?",
+      "expect": [],
+      "fingerprint": {
+        "front-segment-placement": ["shop-front-c", "10.40.3.0/24"],
+        "release-web-server": ["shop-web-2", "shop-rel-2f"],
+        "sibling-collector-server": ["shop-web-collector", "shop-traffic-c7"],
+        "migration-legacy-web": ["shop-web-legacy", "shop-cutover-h4"]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "fingerprint": {
+        "front-segment-placement": ["shop-front-c", "10.40.3.0/24"],
+        "release-web-server": ["shop-web-2", "shop-rel-2f"],
+        "sibling-collector-server": ["shop-web-collector", "shop-traffic-c7"],
+        "migration-legacy-web": ["shop-web-legacy", "shop-cutover-h4"]
+      }
+    }
+  ]
+}

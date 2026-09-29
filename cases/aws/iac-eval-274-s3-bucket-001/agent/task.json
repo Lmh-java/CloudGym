@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_274_s3_bucket",
+  "utterance": "This account keeps a shared S3 store for its inventory reports. Set up an S3 store for the `orders-team` application's export objects and configure a CSV inventory report of all current object versions in it, produced once every week, delivered into the account's inventory-reports store — and make sure that store accepts the delivery.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's data and how it is stored and laid out",
+    "intent": "the account's store for the orders-team application's export objects carries an enabled inventory configuration that reports the current versions of all of its objects weekly in CSV, whose destination is the store the account keeps for inventory reports, and that reports store's bucket policy lets the S3 inventory service write those report objects into it"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 274
+  }
+}

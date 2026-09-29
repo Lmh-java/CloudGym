@@ -1,0 +1,2 @@
+Wiring goes on the store kept in service for your workload, not a namesake staged for later, and only on the place that store lays out for it; what it already sends stays as found.
+Objects are named as their store records them, not as a request quotes them.

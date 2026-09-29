@@ -1,0 +1,2 @@
+A workload runs as an identity created for it, and it still runs as that identity when you finish.
+What you copy from the account's example is the example it currently designates, as it stands when you finish; what you did not create stays as found.

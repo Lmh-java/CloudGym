@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_389_instance",
+  "utterance": "The `orders-vpc` VPC runs the `orders-app-1` server in its edge subnets and has no path to the internet yet. Generate an Application Load Balancer for that server, named `orders-alb`: internet-facing, spanning edge subnets of the VPC in two availability zones, with the internet path it needs and a security group of its own that leaves it reachable on HTTP port 80. The server is to accept HTTP on port 80 from the balancer through the group the VPC already holds for it, `orders-app-sg`: put that group on `orders-app-1` and open it to the balancer rather than cutting the server a new one. Give the balancer a port-80 HTTP listener whose default action forwards to a target group in that VPC that `orders-app-1` is registered in.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "an internet-facing application load balancer named orders-alb spans two edge subnets of orders-vpc in different availability zones, those subnets route 0.0.0.0/0 to an internet gateway attached to orders-vpc, the load balancer carries a security group admitting TCP port 80, the pre-existing orders-app-1 instance carries the VPC's pre-existing orders-app-sg group, which admits TCP port 80 from the load balancer's group, and the load balancer's HTTP listener on port 80 has a default action forwarding to a target group in orders-vpc in which orders-app-1 is registered"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 389
+  }
+}

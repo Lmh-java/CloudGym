@@ -1,0 +1,2642 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "cutover-namesake-hold": {
+      "status": "succeeded"
+     },
+     "object-removal-evidence": {
+      "status": "succeeded"
+     },
+     "platform-fanout-topic": {
+      "status": "succeeded"
+     },
+     "store-layout-scope": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "cutover-namesake-hold": {
+      "status": "succeeded"
+     },
+     "object-removal-evidence": {
+      "status": "succeeded"
+     },
+     "platform-fanout-topic": {
+      "status": "succeeded"
+     },
+     "store-layout-scope": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "NotificationConfiguration": {
+         "LambdaConfigurations": [],
+         "QueueConfigurations": [],
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Evidence",
+          "Value": "object-evidence-2026-09"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:legacy-archive-events": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:legacy-archive-events",
+        "TopicName": "legacy-archive-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:object-evidence-events": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:object-evidence-events",
+        "TopicName": "object-evidence-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:platform-object-events": {
+        "ArchivePolicy": {},
+        "DisplayName": "object-events-2026-09 account object-event fanout",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:platform-object-events",
+        "TopicName": "platform-object-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic",
+        "TopicName": "s3-event-notification-topic"
+       },
+       "arn:aws:sns:us-east-1:000000000104:store-layout-events": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:store-layout-events",
+        "TopicName": "store-layout-events"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "cutover-namesake-hold": {
+      "status": "succeeded"
+     },
+     "object-removal-evidence": {
+      "status": "succeeded"
+     },
+     "platform-fanout-topic": {
+      "status": "succeeded"
+     },
+     "store-layout-scope": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "NotificationConfiguration": {
+         "LambdaConfigurations": [],
+         "QueueConfigurations": [],
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic",
+        "TopicName": "s3-event-notification-topic"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "cutover-namesake-hold": {
+      "status": "succeeded"
+     },
+     "object-removal-evidence": {
+      "status": "succeeded"
+     },
+     "platform-fanout-topic": {
+      "status": "succeeded"
+     },
+     "store-layout-scope": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "NotificationConfiguration": {
+         "LambdaConfigurations": [],
+         "QueueConfigurations": [],
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Prefix",
+               "Value": "logs/orders-team/"
+              },
+              {
+               "Name": "Suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:platform-object-events"
+          },
+          {
+           "Event": "s3:ObjectRemoved:*",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:object-evidence-events"
+          },
+          {
+           "Event": "s3:ObjectTagging:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Prefix",
+               "Value": "logs/orders-team/"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:store-layout-events"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Evidence",
+          "Value": "object-evidence-2026-09"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:legacy-archive-events": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:legacy-archive-events",
+        "TopicName": "legacy-archive-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:object-evidence-events": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:object-evidence-events",
+        "TopicName": "object-evidence-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:platform-object-events": {
+        "ArchivePolicy": {},
+        "DisplayName": "object-events-2026-09 account object-event fanout",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:platform-object-events",
+        "TopicName": "platform-object-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic",
+        "TopicName": "s3-event-notification-topic"
+       },
+       "arn:aws:sns:us-east-1:000000000104:store-layout-events": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:store-layout-events",
+        "TopicName": "store-layout-events"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "NotificationConfiguration": {
+         "LambdaConfigurations": [],
+         "QueueConfigurations": [],
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic",
+        "TopicName": "s3-event-notification-topic"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "cutover-namesake-hold": {
+      "status": "not-fired"
+     },
+     "object-removal-evidence": {
+      "status": "not-fired"
+     },
+     "platform-fanout-topic": {
+      "status": "not-fired"
+     },
+     "store-layout-scope": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic",
+        "TopicName": "s3-event-notification-topic"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "NotificationConfiguration": {
+         "LambdaConfigurations": [],
+         "QueueConfigurations": [],
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Suffix",
+               "Value": ".txt"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic",
+        "TopicName": "s3-event-notification-topic"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "wrong-suffix"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "NotificationConfiguration": {
+         "LambdaConfigurations": [],
+         "QueueConfigurations": [],
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectRemoved:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic",
+        "TopicName": "s3-event-notification-topic"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "wrong-event"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "NotificationConfiguration": {
+         "LambdaConfigurations": [],
+         "QueueConfigurations": [],
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic",
+        "TopicName": "s3-event-notification-topic"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "no-suffix-filter"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "NotificationConfiguration": {
+         "LambdaConfigurations": [],
+         "QueueConfigurations": [],
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "topic-missing"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic",
+        "TopicName": "s3-event-notification-topic"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "notification-absent"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "NotificationConfiguration": {
+         "LambdaConfigurations": [],
+         "QueueConfigurations": [],
+         "TopicConfigurations": []
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       },
+       "app-logs-000000000104-20260922114501327400000002": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000002",
+        "BucketName": "app-logs-000000000104-20260922114501327400000002",
+        "NotificationConfiguration": {
+         "LambdaConfigurations": [],
+         "QueueConfigurations": [],
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic",
+        "TopicName": "s3-event-notification-topic"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "wired-on-another-store"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "NotificationConfiguration": {
+         "LambdaConfigurations": [],
+         "QueueConfigurations": [],
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic",
+        "TopicName": "s3-event-notification-topic"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "store-unmarked"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "cutover-namesake-hold": {
+      "status": "succeeded"
+     },
+     "object-removal-evidence": {
+      "status": "succeeded"
+     },
+     "platform-fanout-topic": {
+      "status": "failed"
+     },
+     "store-layout-scope": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "NotificationConfiguration": {
+         "LambdaConfigurations": [],
+         "QueueConfigurations": [],
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Prefix",
+               "Value": "logs/orders-team/"
+              },
+              {
+               "Name": "Suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:app-log-object-events"
+          },
+          {
+           "Event": "s3:ObjectRemoved:*",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:object-evidence-events"
+          },
+          {
+           "Event": "s3:ObjectTagging:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Prefix",
+               "Value": "logs/orders-team/"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:store-layout-events"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Evidence",
+          "Value": "object-evidence-2026-09"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:app-log-object-events": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:app-log-object-events",
+        "TopicName": "app-log-object-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:legacy-archive-events": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:legacy-archive-events",
+        "TopicName": "legacy-archive-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:object-evidence-events": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:object-evidence-events",
+        "TopicName": "object-evidence-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic",
+        "TopicName": "s3-event-notification-topic"
+       },
+       "arn:aws:sns:us-east-1:000000000104:store-layout-events": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:store-layout-events",
+        "TopicName": "store-layout-events"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "failed-platform-fanout-topic"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "cutover-namesake-hold": {
+      "status": "failed"
+     },
+     "object-removal-evidence": {
+      "status": "succeeded"
+     },
+     "platform-fanout-topic": {
+      "status": "succeeded"
+     },
+     "store-layout-scope": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "NotificationConfiguration": {
+         "LambdaConfigurations": [],
+         "QueueConfigurations": [],
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Prefix",
+               "Value": "logs/orders-team/"
+              },
+              {
+               "Name": "Suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:platform-object-events"
+          },
+          {
+           "Event": "s3:ObjectRemoved:*",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:object-evidence-events"
+          },
+          {
+           "Event": "s3:ObjectTagging:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Prefix",
+               "Value": "logs/orders-team/"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:store-layout-events"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Evidence",
+          "Value": "object-evidence-2026-09"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:object-evidence-events": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:object-evidence-events",
+        "TopicName": "object-evidence-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:platform-object-events": {
+        "ArchivePolicy": {},
+        "DisplayName": "object-events-2026-09 account object-event fanout",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:platform-object-events",
+        "TopicName": "platform-object-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:store-layout-events": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:store-layout-events",
+        "TopicName": "store-layout-events"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "failed-cutover-namesake-hold"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "cutover-namesake-hold": {
+      "status": "succeeded"
+     },
+     "object-removal-evidence": {
+      "status": "succeeded"
+     },
+     "platform-fanout-topic": {
+      "status": "succeeded"
+     },
+     "store-layout-scope": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "NotificationConfiguration": {
+         "LambdaConfigurations": [],
+         "QueueConfigurations": [],
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:platform-object-events"
+          },
+          {
+           "Event": "s3:ObjectRemoved:*",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:object-evidence-events"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Evidence",
+          "Value": "object-evidence-2026-09"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:legacy-archive-events": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:legacy-archive-events",
+        "TopicName": "legacy-archive-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:object-evidence-events": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:object-evidence-events",
+        "TopicName": "object-evidence-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:platform-object-events": {
+        "ArchivePolicy": {},
+        "DisplayName": "object-events-2026-09 account object-event fanout",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:platform-object-events",
+        "TopicName": "platform-object-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic",
+        "TopicName": "s3-event-notification-topic"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "failed-store-layout-scope"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "cutover-namesake-hold": {
+      "status": "succeeded"
+     },
+     "object-removal-evidence": {
+      "status": "failed"
+     },
+     "platform-fanout-topic": {
+      "status": "succeeded"
+     },
+     "store-layout-scope": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "NotificationConfiguration": {
+         "LambdaConfigurations": [],
+         "QueueConfigurations": [],
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Prefix",
+               "Value": "logs/orders-team/"
+              },
+              {
+               "Name": "Suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:platform-object-events"
+          },
+          {
+           "Event": "s3:ObjectTagging:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Prefix",
+               "Value": "logs/orders-team/"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:store-layout-events"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:legacy-archive-events": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:legacy-archive-events",
+        "TopicName": "legacy-archive-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:platform-object-events": {
+        "ArchivePolicy": {},
+        "DisplayName": "object-events-2026-09 account object-event fanout",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:platform-object-events",
+        "TopicName": "platform-object-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic",
+        "TopicName": "s3-event-notification-topic"
+       },
+       "arn:aws:sns:us-east-1:000000000104:store-layout-events": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:store-layout-events",
+        "TopicName": "store-layout-events"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "failed-object-removal-evidence"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "cutover-namesake-hold": {
+      "status": "succeeded"
+     },
+     "object-removal-evidence": {
+      "status": "succeeded"
+     },
+     "platform-fanout-topic": {
+      "status": "succeeded"
+     },
+     "store-layout-scope": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "NotificationConfiguration": {
+         "LambdaConfigurations": [],
+         "QueueConfigurations": [],
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Prefix",
+               "Value": "logs/orders-team/"
+              },
+              {
+               "Name": "Suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:app-log-object-events"
+          },
+          {
+           "Event": "s3:ObjectRemoved:*",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:object-evidence-events"
+          },
+          {
+           "Event": "s3:ObjectTagging:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Prefix",
+               "Value": "logs/orders-team/"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:store-layout-events"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Evidence",
+          "Value": "object-evidence-2026-09"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:app-log-object-events": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:app-log-object-events",
+        "TopicName": "app-log-object-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:legacy-archive-events": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:legacy-archive-events",
+        "TopicName": "legacy-archive-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:object-evidence-events": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:object-evidence-events",
+        "TopicName": "object-evidence-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:platform-object-events": {
+        "ArchivePolicy": {},
+        "DisplayName": "object-events-2026-09 account object-event fanout",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:platform-object-events",
+        "TopicName": "platform-object-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic",
+        "TopicName": "s3-event-notification-topic"
+       },
+       "arn:aws:sns:us-east-1:000000000104:store-layout-events": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:store-layout-events",
+        "TopicName": "store-layout-events"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "clobbered-platform-fanout-topic"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "cutover-namesake-hold": {
+      "status": "succeeded"
+     },
+     "object-removal-evidence": {
+      "status": "succeeded"
+     },
+     "platform-fanout-topic": {
+      "status": "succeeded"
+     },
+     "store-layout-scope": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "NotificationConfiguration": {
+         "LambdaConfigurations": [],
+         "QueueConfigurations": [],
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Prefix",
+               "Value": "logs/orders-team/"
+              },
+              {
+               "Name": "Suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:platform-object-events"
+          },
+          {
+           "Event": "s3:ObjectRemoved:*",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:object-evidence-events"
+          },
+          {
+           "Event": "s3:ObjectTagging:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Prefix",
+               "Value": "logs/orders-team/"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:store-layout-events"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Evidence",
+          "Value": "object-evidence-2026-09"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:object-evidence-events": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:object-evidence-events",
+        "TopicName": "object-evidence-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:platform-object-events": {
+        "ArchivePolicy": {},
+        "DisplayName": "object-events-2026-09 account object-event fanout",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:platform-object-events",
+        "TopicName": "platform-object-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic",
+        "TopicName": "s3-event-notification-topic"
+       },
+       "arn:aws:sns:us-east-1:000000000104:store-layout-events": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:store-layout-events",
+        "TopicName": "store-layout-events"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "clobbered-cutover-namesake-hold"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "cutover-namesake-hold": {
+      "status": "succeeded"
+     },
+     "object-removal-evidence": {
+      "status": "succeeded"
+     },
+     "platform-fanout-topic": {
+      "status": "succeeded"
+     },
+     "store-layout-scope": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "NotificationConfiguration": {
+         "LambdaConfigurations": [],
+         "QueueConfigurations": [],
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Prefix",
+               "Value": "logs/orders-team/"
+              },
+              {
+               "Name": "Suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:platform-object-events"
+          },
+          {
+           "Event": "s3:ObjectRemoved:*",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:object-evidence-events"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Evidence",
+          "Value": "object-evidence-2026-09"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:legacy-archive-events": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:legacy-archive-events",
+        "TopicName": "legacy-archive-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:object-evidence-events": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:object-evidence-events",
+        "TopicName": "object-evidence-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:platform-object-events": {
+        "ArchivePolicy": {},
+        "DisplayName": "object-events-2026-09 account object-event fanout",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:platform-object-events",
+        "TopicName": "platform-object-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic",
+        "TopicName": "s3-event-notification-topic"
+       },
+       "arn:aws:sns:us-east-1:000000000104:store-layout-events": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:store-layout-events",
+        "TopicName": "store-layout-events"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "clobbered-store-layout-scope"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "cutover-namesake-hold": {
+      "status": "succeeded"
+     },
+     "object-removal-evidence": {
+      "status": "succeeded"
+     },
+     "platform-fanout-topic": {
+      "status": "succeeded"
+     },
+     "store-layout-scope": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260922114501327400000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260922114501327400000001",
+        "BucketName": "app-logs-000000000104-20260922114501327400000001",
+        "NotificationConfiguration": {
+         "LambdaConfigurations": [],
+         "QueueConfigurations": [],
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Prefix",
+               "Value": "logs/orders-team/"
+              },
+              {
+               "Name": "Suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:platform-object-events"
+          },
+          {
+           "Event": "s3:ObjectTagging:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Prefix",
+               "Value": "logs/orders-team/"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000104:store-layout-events"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Evidence",
+          "Value": "object-evidence-2026-09"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:legacy-archive-events": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:legacy-archive-events",
+        "TopicName": "legacy-archive-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:object-evidence-events": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:object-evidence-events",
+        "TopicName": "object-evidence-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:platform-object-events": {
+        "ArchivePolicy": {},
+        "DisplayName": "object-events-2026-09 account object-event fanout",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:platform-object-events",
+        "TopicName": "platform-object-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "ArchivePolicy": {},
+        "DisplayName": "archive-cutover-2026-09 held until cutover",
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic",
+        "TopicName": "s3-event-notification-topic"
+       },
+       "arn:aws:sns:us-east-1:000000000104:store-layout-events": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000104:store-layout-events",
+        "TopicName": "store-layout-events"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "clobbered-object-removal-evidence"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000114-20260922102824706000000001": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::app-logs-000000000114-20260922102824706000000001",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "app-logs-000000000114-20260922102824706000000001",
+        "DomainName": "app-logs-000000000114-20260922102824706000000001.s3.amazonaws.com",
+        "DualStackDomainName": "app-logs-000000000114-20260922102824706000000001.s3.dualstack.us-east-1.amazonaws.com",
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "app-logs-000000000114-20260922102824706000000001.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ],
+        "WebsiteURL": "http://app-logs-000000000114-20260922102824706000000001.s3-website-us-east-1.amazonaws.com"
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000114-20260922102824706000000001": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::app-logs-000000000114-20260922102824706000000001",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "app-logs-000000000114-20260922102824706000000001",
+        "DomainName": "app-logs-000000000114-20260922102824706000000001.s3.amazonaws.com",
+        "DualStackDomainName": "app-logs-000000000114-20260922102824706000000001.s3.dualstack.us-east-1.amazonaws.com",
+        "NotificationConfiguration": {
+         "LambdaConfigurations": [],
+         "QueueConfigurations": [],
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000114:s3-event-notification-topic"
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "app-logs-000000000114-20260922102824706000000001.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ],
+        "WebsiteURL": "http://app-logs-000000000114-20260922102824706000000001.s3-website-us-east-1.amazonaws.com"
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000114:s3-event-notification-topic": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000114:s3-event-notification-topic",
+        "TopicName": "s3-event-notification-topic"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

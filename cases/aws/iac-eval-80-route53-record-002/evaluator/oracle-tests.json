@@ -1,0 +1,3815 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "succeeded"
+     },
+     "reserved-transit-range": {
+      "status": "succeeded"
+     },
+     "shared-namespace-zone": {
+      "status": "succeeded"
+     },
+     "sibling-namespace-tenant": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "succeeded"
+     },
+     "reserved-transit-range": {
+      "status": "succeeded"
+     },
+     "shared-namespace-zone": {
+      "status": "succeeded"
+     },
+     "sibling-namespace-tenant": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01PLATFORMNAMESPACE": {
+        "HostedZoneConfig": {
+         "Comment": "platform-namespace-consolidation"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       },
+       "Z02APPOWNEDPRIVATE": {
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_namespace.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "_namespace.example53.com",
+        "ResourceRecords": [
+         "\"namespace-owner=platform-dns\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "api.internal.example53.com|Z02APPOWNEDPRIVATE|A|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "api.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.1.101"
+        ],
+        "TTL": "300",
+        "Type": "A"
+       },
+       "example53.com|Z01PLATFORMNAMESPACE|NS|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z01PLATFORMNAMESPACE|SOA|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "internal.example53.com|Z02APPOWNEDPRIVATE|NS|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "internal.example53.com|Z02APPOWNEDPRIVATE|SOA|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "ledger.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "ledger.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.16.40"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "ledger.internal.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "ledger.internal.example53.com",
+        "ResourceRecords": [
+         "\"billing-ledger-team\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "status.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "status.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.240.9"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "status.internal.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "status.internal.example53.com",
+        "ResourceRecords": [
+         "\"reliability-oncall\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       }
+      }
+     }
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "succeeded"
+     },
+     "reserved-transit-range": {
+      "status": "succeeded"
+     },
+     "shared-namespace-zone": {
+      "status": "succeeded"
+     },
+     "sibling-namespace-tenant": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z02APPOWNEDPRIVATE": {
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "api.internal.example53.com|Z02APPOWNEDPRIVATE|A|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "api.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.1.101"
+        ],
+        "TTL": "300",
+        "Type": "A"
+       },
+       "internal.example53.com|Z02APPOWNEDPRIVATE|NS|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "internal.example53.com|Z02APPOWNEDPRIVATE|SOA|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "succeeded"
+     },
+     "reserved-transit-range": {
+      "status": "succeeded"
+     },
+     "shared-namespace-zone": {
+      "status": "succeeded"
+     },
+     "sibling-namespace-tenant": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01PLATFORMNAMESPACE": {
+        "HostedZoneConfig": {
+         "Comment": "platform-namespace-consolidation"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_namespace.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "_namespace.example53.com",
+        "ResourceRecords": [
+         "\"namespace-owner=platform-dns\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "api.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "api.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.48.21"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "example53.com|Z01PLATFORMNAMESPACE|NS|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z01PLATFORMNAMESPACE|SOA|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "ledger.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "ledger.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.16.40"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "ledger.internal.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "ledger.internal.example53.com",
+        "ResourceRecords": [
+         "\"billing-ledger-team\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "status.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "status.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.240.9"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "status.internal.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "status.internal.example53.com",
+        "ResourceRecords": [
+         "\"reliability-oncall\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "not-fired"
+     },
+     "reserved-transit-range": {
+      "status": "not-fired"
+     },
+     "shared-namespace-zone": {
+      "status": "not-fired"
+     },
+     "sibling-namespace-tenant": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z02APPOWNEDPRIVATE": {
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "api.internal.example53.com|Z02APPOWNEDPRIVATE|A|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "api.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.1.101"
+        ],
+        "TTL": "300",
+        "Type": "A"
+       },
+       "internal.example53.com|Z02APPOWNEDPRIVATE|NS|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "internal.example53.com|Z02APPOWNEDPRIVATE|SOA|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "not-fired"
+     },
+     "reserved-transit-range": {
+      "status": "not-fired"
+     },
+     "shared-namespace-zone": {
+      "status": "not-fired"
+     },
+     "sibling-namespace-tenant": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z02APPOWNEDPRIVATE": {
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "api.internal.example53.com|Z02APPOWNEDPRIVATE|A|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "api.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.1.9"
+        ],
+        "TTL": "300",
+        "Type": "A"
+       },
+       "internal.example53.com|Z02APPOWNEDPRIVATE|NS|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "internal.example53.com|Z02APPOWNEDPRIVATE|SOA|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "not-fired"
+     },
+     "reserved-transit-range": {
+      "status": "not-fired"
+     },
+     "shared-namespace-zone": {
+      "status": "not-fired"
+     },
+     "sibling-namespace-tenant": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z02APPOWNEDPRIVATE": {
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0999888877776666a",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "api.internal.example53.com|Z02APPOWNEDPRIVATE|A|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "api.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.1.101"
+        ],
+        "TTL": "300",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "broken-no-private-zone"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "not-fired"
+     },
+     "reserved-transit-range": {
+      "status": "not-fired"
+     },
+     "shared-namespace-zone": {
+      "status": "not-fired"
+     },
+     "sibling-namespace-tenant": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z02APPOWNEDPRIVATE": {
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "api.internal.example53.com|Z02APPOWNEDPRIVATE|A|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "api.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.2.50"
+        ],
+        "TTL": "300",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "broken-wrong-address"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "not-fired"
+     },
+     "reserved-transit-range": {
+      "status": "not-fired"
+     },
+     "shared-namespace-zone": {
+      "status": "not-fired"
+     },
+     "sibling-namespace-tenant": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z02APPOWNEDPRIVATE": {
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "api.internal.example53.com|Z02APPOWNEDPRIVATE|A|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "api.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.1.101"
+        ],
+        "TTL": "3600",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "broken-wrong-ttl"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "not-fired"
+     },
+     "reserved-transit-range": {
+      "status": "not-fired"
+     },
+     "shared-namespace-zone": {
+      "status": "not-fired"
+     },
+     "sibling-namespace-tenant": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z02APPOWNEDPRIVATE": {
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "api.internal.example53.com|Z02APPOWNEDPRIVATE|A|": {
+        "AliasTarget": {
+         "DNSName": "internal-nlb.example53.com.",
+         "HostedZoneId": "Z02APPOWNEDPRIVATE"
+        },
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "api.internal.example53.com",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "broken-alias-record"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "not-fired"
+     },
+     "reserved-transit-range": {
+      "status": "not-fired"
+     },
+     "shared-namespace-zone": {
+      "status": "not-fired"
+     },
+     "sibling-namespace-tenant": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z02APPOWNEDPRIVATE": {
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "orders-api.internal.example53.com|Z02APPOWNEDPRIVATE|A|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "orders-api.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.1.101"
+        ],
+        "TTL": "300",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "broken-wrong-name"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "not-fired"
+     },
+     "reserved-transit-range": {
+      "status": "not-fired"
+     },
+     "shared-namespace-zone": {
+      "status": "not-fired"
+     },
+     "sibling-namespace-tenant": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01PLATFORMNAMESPACE": {
+        "HostedZoneConfig": {
+         "Comment": "platform-namespace-consolidation"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       },
+       "Z02APPOWNEDPRIVATE": {
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "api.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "api.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.1.101"
+        ],
+        "TTL": "300",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "broken-shadowed-record"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "not-fired"
+     },
+     "reserved-transit-range": {
+      "status": "not-fired"
+     },
+     "shared-namespace-zone": {
+      "status": "not-fired"
+     },
+     "sibling-namespace-tenant": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z02APPOWNEDPRIVATE": {
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "api.internal.example53.com|Z02APPOWNEDPRIVATE|CNAME|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "api.internal.example53.com",
+        "ResourceRecords": [
+         "orders-api.internal.example53.com."
+        ],
+        "TTL": "300",
+        "Type": "CNAME"
+       }
+      }
+     }
+    }
+   },
+   "name": "broken-cname-endpoint"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "not-fired"
+     },
+     "reserved-transit-range": {
+      "status": "not-fired"
+     },
+     "shared-namespace-zone": {
+      "status": "not-fired"
+     },
+     "sibling-namespace-tenant": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z02APPOWNEDPRIVATE": {
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "api.internal.example53.com|Z02APPOWNEDPRIVATE|A|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "api.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.1.101"
+        ],
+        "TTL": "300",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "broken-vpc-deleted"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "succeeded"
+     },
+     "reserved-transit-range": {
+      "status": "succeeded"
+     },
+     "shared-namespace-zone": {
+      "status": "failed"
+     },
+     "sibling-namespace-tenant": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z02APPOWNEDPRIVATE": {
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "api.internal.example53.com|Z02APPOWNEDPRIVATE|A|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "api.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.48.21"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "internal.example53.com|Z02APPOWNEDPRIVATE|NS|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "internal.example53.com|Z02APPOWNEDPRIVATE|SOA|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "ledger.internal.example53.com|Z02APPOWNEDPRIVATE|A|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "ledger.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.16.40"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "ledger.internal.example53.com|Z02APPOWNEDPRIVATE|TXT|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "ledger.internal.example53.com",
+        "ResourceRecords": [
+         "\"billing-ledger-team\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "status.internal.example53.com|Z02APPOWNEDPRIVATE|A|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "status.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.240.9"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "status.internal.example53.com|Z02APPOWNEDPRIVATE|TXT|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "status.internal.example53.com",
+        "ResourceRecords": [
+         "\"reliability-oncall\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-shared-namespace-zone"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "succeeded"
+     },
+     "reserved-transit-range": {
+      "status": "failed"
+     },
+     "shared-namespace-zone": {
+      "status": "succeeded"
+     },
+     "sibling-namespace-tenant": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01PLATFORMNAMESPACE": {
+        "HostedZoneConfig": {
+         "Comment": "platform-namespace-consolidation"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_namespace.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "_namespace.example53.com",
+        "ResourceRecords": [
+         "\"namespace-owner=platform-dns\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "api.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "api.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.1.101"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "example53.com|Z01PLATFORMNAMESPACE|NS|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z01PLATFORMNAMESPACE|SOA|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "ledger.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "ledger.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.16.40"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "ledger.internal.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "ledger.internal.example53.com",
+        "ResourceRecords": [
+         "\"billing-ledger-team\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "status.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "status.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.240.9"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "status.internal.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "status.internal.example53.com",
+        "ResourceRecords": [
+         "\"reliability-oncall\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-reserved-transit-range"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "succeeded"
+     },
+     "reserved-transit-range": {
+      "status": "succeeded"
+     },
+     "shared-namespace-zone": {
+      "status": "succeeded"
+     },
+     "sibling-namespace-tenant": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01PLATFORMNAMESPACE": {
+        "HostedZoneConfig": {
+         "Comment": "platform-namespace-consolidation"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_namespace.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "_namespace.example53.com",
+        "ResourceRecords": [
+         "\"namespace-owner=platform-dns\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "api.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "api.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.48.21"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "example53.com|Z01PLATFORMNAMESPACE|NS|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z01PLATFORMNAMESPACE|SOA|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "status.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "status.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.240.9"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "status.internal.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "status.internal.example53.com",
+        "ResourceRecords": [
+         "\"reliability-oncall\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-sibling-namespace-tenant"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "failed"
+     },
+     "reserved-transit-range": {
+      "status": "succeeded"
+     },
+     "shared-namespace-zone": {
+      "status": "succeeded"
+     },
+     "sibling-namespace-tenant": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01PLATFORMNAMESPACE": {
+        "HostedZoneConfig": {
+         "Comment": "platform-namespace-consolidation"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_namespace.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "_namespace.example53.com",
+        "ResourceRecords": [
+         "\"namespace-owner=platform-dns\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "api.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "api.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.48.21"
+        ],
+        "TTL": "300",
+        "Type": "A"
+       },
+       "example53.com|Z01PLATFORMNAMESPACE|NS|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z01PLATFORMNAMESPACE|SOA|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "ledger.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "ledger.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.16.40"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "ledger.internal.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "ledger.internal.example53.com",
+        "ResourceRecords": [
+         "\"billing-ledger-team\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-endpoint-cache-baseline"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "succeeded"
+     },
+     "reserved-transit-range": {
+      "status": "succeeded"
+     },
+     "shared-namespace-zone": {
+      "status": "succeeded"
+     },
+     "sibling-namespace-tenant": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01PLATFORMNAMESPACE": {
+        "HostedZoneConfig": {
+         "Comment": "platform-namespace-consolidation"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       },
+       "Z02APPOWNEDPRIVATE": {
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z02APPOWNEDPRIVATE",
+        "Name": "internal.example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_namespace.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "_namespace.example53.com",
+        "ResourceRecords": [
+         "\"namespace-owner=platform-dns\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "api.internal.example53.com|Z02APPOWNEDPRIVATE|A|": {
+        "HostedZoneId": "Z02APPOWNEDPRIVATE",
+        "Name": "api.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.48.21"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "example53.com|Z01PLATFORMNAMESPACE|NS|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z01PLATFORMNAMESPACE|SOA|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "ledger.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "ledger.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.16.40"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "ledger.internal.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "ledger.internal.example53.com",
+        "ResourceRecords": [
+         "\"billing-ledger-team\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "status.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "status.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.240.9"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "status.internal.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "status.internal.example53.com",
+        "ResourceRecords": [
+         "\"reliability-oncall\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-shared-namespace-zone"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "succeeded"
+     },
+     "reserved-transit-range": {
+      "status": "succeeded"
+     },
+     "shared-namespace-zone": {
+      "status": "succeeded"
+     },
+     "sibling-namespace-tenant": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01PLATFORMNAMESPACE": {
+        "HostedZoneConfig": {
+         "Comment": "platform-namespace-consolidation"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_namespace.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "_namespace.example53.com",
+        "ResourceRecords": [
+         "\"namespace-owner=platform-dns\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "api.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "api.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.1.101"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "example53.com|Z01PLATFORMNAMESPACE|NS|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z01PLATFORMNAMESPACE|SOA|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "ledger.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "ledger.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.16.40"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "ledger.internal.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "ledger.internal.example53.com",
+        "ResourceRecords": [
+         "\"billing-ledger-team\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "status.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "status.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.240.9"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "status.internal.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "status.internal.example53.com",
+        "ResourceRecords": [
+         "\"reliability-oncall\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-reserved-transit-range"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "succeeded"
+     },
+     "reserved-transit-range": {
+      "status": "succeeded"
+     },
+     "shared-namespace-zone": {
+      "status": "succeeded"
+     },
+     "sibling-namespace-tenant": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01PLATFORMNAMESPACE": {
+        "HostedZoneConfig": {
+         "Comment": "platform-namespace-consolidation"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_namespace.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "_namespace.example53.com",
+        "ResourceRecords": [
+         "\"namespace-owner=platform-dns\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "api.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "api.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.48.21"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "example53.com|Z01PLATFORMNAMESPACE|NS|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z01PLATFORMNAMESPACE|SOA|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "status.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "status.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.240.9"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "status.internal.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "status.internal.example53.com",
+        "ResourceRecords": [
+         "\"reliability-oncall\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-sibling-namespace-tenant"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "succeeded"
+     },
+     "reserved-transit-range": {
+      "status": "succeeded"
+     },
+     "shared-namespace-zone": {
+      "status": "succeeded"
+     },
+     "sibling-namespace-tenant": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01PLATFORMNAMESPACE": {
+        "HostedZoneConfig": {
+         "Comment": "platform-namespace-consolidation"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_namespace.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "_namespace.example53.com",
+        "ResourceRecords": [
+         "\"namespace-owner=platform-dns\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "api.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "api.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.48.21"
+        ],
+        "TTL": "300",
+        "Type": "A"
+       },
+       "example53.com|Z01PLATFORMNAMESPACE|NS|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z01PLATFORMNAMESPACE|SOA|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "ledger.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "ledger.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.16.40"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "ledger.internal.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "ledger.internal.example53.com",
+        "ResourceRecords": [
+         "\"billing-ledger-team\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "status.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "status.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.240.9"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "status.internal.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "status.internal.example53.com",
+        "ResourceRecords": [
+         "\"reliability-oncall\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-endpoint-cache-baseline"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "succeeded"
+     },
+     "reserved-transit-range": {
+      "status": "succeeded"
+     },
+     "shared-namespace-zone": {
+      "status": "succeeded"
+     },
+     "sibling-namespace-tenant": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01PLATFORMNAMESPACE": {
+        "HostedZoneConfig": {
+         "Comment": "platform-namespace-consolidation"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "api.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "api.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.48.21"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "example53.com|Z01PLATFORMNAMESPACE|NS|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z01PLATFORMNAMESPACE|SOA|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "ledger.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "ledger.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.16.40"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "ledger.internal.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "ledger.internal.example53.com",
+        "ResourceRecords": [
+         "\"billing-ledger-team\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "status.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "status.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.240.9"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "status.internal.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "status.internal.example53.com",
+        "ResourceRecords": [
+         "\"reliability-oncall\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-namespace-marker"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "status": "succeeded"
+     },
+     "reserved-transit-range": {
+      "status": "succeeded"
+     },
+     "shared-namespace-zone": {
+      "status": "succeeded"
+     },
+     "sibling-namespace-tenant": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0104445597b1b13c4": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0104445597b1b13c4"
+       },
+       "vpc-0a1b2c3d4e5f60718": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60718"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01PLATFORMNAMESPACE": {
+        "HostedZoneConfig": {
+         "Comment": "platform-namespace-consolidation"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0a1b2c3d4e5f60718",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_namespace.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "_namespace.example53.com",
+        "ResourceRecords": [
+         "\"namespace-owner=platform-dns\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "api.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "api.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.48.21"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "example53.com|Z01PLATFORMNAMESPACE|NS|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z01PLATFORMNAMESPACE|SOA|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-0.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "ledger.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "ledger.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.16.40"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "ledger.internal.example53.com|Z01PLATFORMNAMESPACE|TXT|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "ledger.internal.example53.com",
+        "ResourceRecords": [
+         "\"billing-ledger-team\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "status.internal.example53.com|Z01PLATFORMNAMESPACE|A|": {
+        "HostedZoneId": "Z01PLATFORMNAMESPACE",
+        "Name": "status.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.240.9"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-status-mark"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0778e7c76eb583be9": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0a08fd91dc226c1ab"
+        ],
+        "DefaultNetworkAcl": "acl-08ad4cdb507ea6c6c",
+        "DefaultSecurityGroup": "sg-0b9f1429ee8a3fd53",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0778e7c76eb583be9"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-02fd49a0b823aeab0"
+        ],
+        "DefaultNetworkAcl": "acl-05d0715cadb83df0d",
+        "DefaultSecurityGroup": "sg-03f1011b0114a0a21",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::Route53::HostedZone": {},
+      "AWS::Route53::RecordSet": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-0778e7c76eb583be9": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0a08fd91dc226c1ab"
+        ],
+        "DefaultNetworkAcl": "acl-08ad4cdb507ea6c6c",
+        "DefaultSecurityGroup": "sg-0b9f1429ee8a3fd53",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-0778e7c76eb583be9"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-02fd49a0b823aeab0"
+        ],
+        "DefaultNetworkAcl": "acl-05d0715cadb83df0d",
+        "DefaultSecurityGroup": "sg-03f1011b0114a0a21",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z028340439CAVVMW1AJSX": {
+        "HostedZoneConfig": {
+         "Comment": "Private DNS for orders application"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z028340439CAVVMW1AJSX",
+        "Name": "internal.example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-0778e7c76eb583be9",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "api.internal.example53.com|Z028340439CAVVMW1AJSX|A|": {
+        "HostedZoneId": "Z028340439CAVVMW1AJSX",
+        "Name": "api.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.1.101"
+        ],
+        "TTL": "300",
+        "Type": "A"
+       },
+       "internal.example53.com|Z028340439CAVVMW1AJSX|NS|": {
+        "HostedZoneId": "Z028340439CAVVMW1AJSX",
+        "Name": "internal.example53.com",
+        "ResourceRecords": [
+         "ns-1536.awsdns-00.co.uk.",
+         "ns-0.awsdns-00.com.",
+         "ns-1024.awsdns-00.org.",
+         "ns-512.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "internal.example53.com|Z028340439CAVVMW1AJSX|SOA|": {
+        "HostedZoneId": "Z028340439CAVVMW1AJSX",
+        "Name": "internal.example53.com",
+        "ResourceRecords": [
+         "ns-1536.awsdns-00.co.uk. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "endpoint-cache-baseline": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 4,
+        "landed_ns": 272880262586267,
+        "landed_s": 37.474,
+        "result": {
+         "capped": [
+          {
+           "name": "api.internal.example53.com",
+           "type": "A",
+           "was": 300,
+           "zone": "Z03335762ZUJ8970XOF2T"
+          }
+         ],
+         "fingerprint": [
+          "10.0.240.9",
+          "reliability-oncall"
+         ],
+         "status": "status.internal.example53.com",
+         "trigger": "snapshot",
+         "zone": "Z03335762ZUJ8970XOF2T"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-endpoint-cache-baseline-4",
+        "trigger_kind": "snapshot"
+       }
+      ],
+      "result": {
+       "capped": [
+        {
+         "name": "api.internal.example53.com",
+         "type": "A",
+         "was": 300,
+         "zone": "Z03335762ZUJ8970XOF2T"
+        }
+       ],
+       "fingerprint": [
+        "10.0.240.9",
+        "reliability-oncall"
+       ],
+       "status": "status.internal.example53.com",
+       "trigger": "snapshot",
+       "zone": "Z03335762ZUJ8970XOF2T"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "reserved-transit-range": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 3,
+        "landed_ns": 272855553917389,
+        "landed_s": 12.765,
+        "result": {
+         "cut": [
+          {
+           "cidr": "10.0.1.0/24",
+           "created": true,
+           "name": "net-transit-reserve-b",
+           "subnet": "subnet-0f22b5acdb9392116"
+          },
+          {
+           "cidr": "10.0.48.0/24",
+           "created": true,
+           "name": "orders-app-b",
+           "subnet": "subnet-0338982a3c261666d"
+          }
+         ],
+         "fingerprint": [
+          "net-transit-reserve-b",
+          "orders-app-b"
+         ],
+         "trigger": "api",
+         "vpc": "vpc-02506cb8cb2d3b9db",
+         "zone": "us-east-1a"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-reserved-transit-range-3",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "cut": [
+        {
+         "cidr": "10.0.1.0/24",
+         "created": true,
+         "name": "net-transit-reserve-b",
+         "subnet": "subnet-0f22b5acdb9392116"
+        },
+        {
+         "cidr": "10.0.48.0/24",
+         "created": true,
+         "name": "orders-app-b",
+         "subnet": "subnet-0338982a3c261666d"
+        }
+       ],
+       "fingerprint": [
+        "net-transit-reserve-b",
+        "orders-app-b"
+       ],
+       "trigger": "api",
+       "vpc": "vpc-02506cb8cb2d3b9db",
+       "zone": "us-east-1a"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "shared-namespace-zone": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 1,
+        "landed_ns": 272847518876270,
+        "landed_s": 4.73,
+        "result": {
+         "attached": "vpc-02506cb8cb2d3b9db",
+         "created": true,
+         "domain": "example53.com",
+         "fingerprint": [
+          "platform-namespace-consolidation"
+         ],
+         "marker": "_namespace.example53.com",
+         "trigger": "api",
+         "zone": "Z03335762ZUJ8970XOF2T"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-shared-namespace-zone-1",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "attached": "vpc-02506cb8cb2d3b9db",
+       "created": true,
+       "domain": "example53.com",
+       "fingerprint": [
+        "platform-namespace-consolidation"
+       ],
+       "marker": "_namespace.example53.com",
+       "trigger": "api",
+       "zone": "Z03335762ZUJ8970XOF2T"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "sibling-namespace-tenant": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 2,
+        "landed_ns": 272853500957498,
+        "landed_s": 10.712,
+        "result": {
+         "address": "10.0.16.40",
+         "fingerprint": [
+          "10.0.16.40",
+          "billing-ledger-team"
+         ],
+         "owner": "billing-ledger-team",
+         "published": "ledger.internal.example53.com",
+         "trigger": "api",
+         "zone": "Z03335762ZUJ8970XOF2T"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-sibling-namespace-tenant-2",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "address": "10.0.16.40",
+       "fingerprint": [
+        "10.0.16.40",
+        "billing-ledger-team"
+       ],
+       "owner": "billing-ledger-team",
+       "published": "ledger.internal.example53.com",
+       "trigger": "api",
+       "zone": "Z03335762ZUJ8970XOF2T"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-02506cb8cb2d3b9db": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0b9caac4130bfb5f1"
+        ],
+        "DefaultNetworkAcl": "acl-04595b123b87e7ff8",
+        "DefaultSecurityGroup": "sg-050332f160ae5601d",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-02506cb8cb2d3b9db"
+       },
+       "vpc-06bfbd6803748f88d": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0807809847a571e8f"
+        ],
+        "DefaultNetworkAcl": "acl-0f4a19848b9c3e7fd",
+        "DefaultSecurityGroup": "sg-0351c078e81a1262d",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-06bfbd6803748f88d"
+       }
+      },
+      "AWS::Route53::HostedZone": {},
+      "AWS::Route53::RecordSet": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EC2::VPC": {
+       "vpc-02506cb8cb2d3b9db": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0b9caac4130bfb5f1"
+        ],
+        "DefaultNetworkAcl": "acl-04595b123b87e7ff8",
+        "DefaultSecurityGroup": "sg-050332f160ae5601d",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "main-vpc"
+         }
+        ],
+        "VpcId": "vpc-02506cb8cb2d3b9db"
+       },
+       "vpc-06bfbd6803748f88d": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0807809847a571e8f"
+        ],
+        "DefaultNetworkAcl": "acl-0f4a19848b9c3e7fd",
+        "DefaultSecurityGroup": "sg-0351c078e81a1262d",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-06bfbd6803748f88d"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z03335762ZUJ8970XOF2T": {
+        "HostedZoneConfig": {
+         "Comment": "platform-namespace-consolidation"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z03335762ZUJ8970XOF2T",
+        "Name": "example53.com.",
+        "VPCs": [
+         {
+          "VPCId": "vpc-02506cb8cb2d3b9db",
+          "VPCRegion": "us-east-1"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_namespace.example53.com|Z03335762ZUJ8970XOF2T|TXT|": {
+        "HostedZoneId": "Z03335762ZUJ8970XOF2T",
+        "Name": "_namespace.example53.com",
+        "ResourceRecords": [
+         "\"namespace-owner=platform-dns\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "api.internal.example53.com|Z03335762ZUJ8970XOF2T|A|": {
+        "HostedZoneId": "Z03335762ZUJ8970XOF2T",
+        "Name": "api.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.48.101"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "example53.com|Z03335762ZUJ8970XOF2T|NS|": {
+        "HostedZoneId": "Z03335762ZUJ8970XOF2T",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1536.awsdns-00.co.uk.",
+         "ns-0.awsdns-00.com.",
+         "ns-1024.awsdns-00.org.",
+         "ns-512.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z03335762ZUJ8970XOF2T|SOA|": {
+        "HostedZoneId": "Z03335762ZUJ8970XOF2T",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1536.awsdns-00.co.uk. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "ledger.internal.example53.com|Z03335762ZUJ8970XOF2T|A|": {
+        "HostedZoneId": "Z03335762ZUJ8970XOF2T",
+        "Name": "ledger.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.16.40"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "ledger.internal.example53.com|Z03335762ZUJ8970XOF2T|TXT|": {
+        "HostedZoneId": "Z03335762ZUJ8970XOF2T",
+        "Name": "ledger.internal.example53.com",
+        "ResourceRecords": [
+         "\"billing-ledger-team\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       },
+       "status.internal.example53.com|Z03335762ZUJ8970XOF2T|A|": {
+        "HostedZoneId": "Z03335762ZUJ8970XOF2T",
+        "Name": "status.internal.example53.com",
+        "ResourceRecords": [
+         "10.0.240.9"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "status.internal.example53.com|Z03335762ZUJ8970XOF2T|TXT|": {
+        "HostedZoneId": "Z03335762ZUJ8970XOF2T",
+        "Name": "status.internal.example53.com",
+        "ResourceRecords": [
+         "\"reliability-oncall\""
+        ],
+        "TTL": "60",
+        "Type": "TXT"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-interference-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_222_dynamodb_table",
+  "utterance": "We are putting the checkout service behind DynamoDB global tables, so its events have to sit in a store that cross-region replication can carry. Create a DynamoDB table named `checkout-events-global` on PAY_PER_REQUEST billing with DynamoDB Streams enabled carrying both the new and the old image of every item, keyed the way the service's existing event store `checkout-events` is keyed. The new store holds the same data in another shape, so it has to be kept the way this account keeps that data: on the same storage class `checkout-events` runs on, with its items expiring the way `checkout-events` expires them, and carrying the same records `checkout-events` carries. Give the existing `checkout-service` role read and write access to the new store. Finish by reporting every DynamoDB table in the account with the storage class, the item expiry and the records it ended up with.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's data and how it is stored and laid out",
+    "intent": "a DynamoDB table named checkout-events-global stands on PAY_PER_REQUEST billing with a stream carrying both the new and the old image of every item and keyed on the same string hash key attribute as the checkout service's event store checkout-events; it is kept the way the account keeps that store when the work is finished — the same table class, the same time-to-live behaviour, and the same records checkout-events carries in the final state; and the pre-existing checkout-service role holds a grant allowing read and write on checkout-events-global"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 222
+  }
+}

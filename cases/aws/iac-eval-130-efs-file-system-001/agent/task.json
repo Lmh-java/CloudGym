@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_130_efs_file_system",
+  "utterance": "The `shared-scratch-vpc` VPC (10.0.0.0/16) is already in the account with two private subnets in it, 10.0.1.0/24 and 10.0.2.0/24, and so is the EFS file system `my-efs`, which no subnet can reach yet. Set that file system up as shared storage for two servers: create a security group named `ec2_sg` in the VPC that allows inbound TCP on 22, 80 and 2049 from 0.0.0.0/0 and all outbound traffic; give `my-efs` a mount target in each of the two private subnets, using that security group; set the file system to move files to Infrequent Access storage after 30 days; and launch 2 of the newest Amazon Linux 2 EC2 instances, t2.micro, one in each private subnet, on that security group, with user data that mounts `my-efs` at /mnt/efs.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "the pre-existing EFS file system my-efs carries a lifecycle configuration that transitions files to Infrequent Access after 30 days and has one mount target in each of the two pre-existing private subnets of the shared-scratch-vpc VPC; two new t2.micro EC2 instances run, one in each of those two subnets; and a security group in that VPC admits inbound TCP 2049, and both mount targets and both instances are on it"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 130
+  }
+}

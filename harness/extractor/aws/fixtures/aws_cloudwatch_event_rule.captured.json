@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::Events::Rule",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-01T02:31:13+00:00",
+      "ResourceDescription": {
+        "Identifier": "arn:aws:events:us-east-1:123456789012:rule/cloudgym-capability-20260901023054173900000001",
+        "Properties": "{\"EventBusName\":\"default\",\"ScheduleExpression\":\"rate(1 day)\",\"State\":\"DISABLED\",\"Targets\":[],\"Id\":\"cloudgym-capability-20260901023054173900000001\",\"Arn\":\"arn:aws:events:us-east-1:123456789012:rule/cloudgym-capability-20260901023054173900000001\",\"RuleName\":\"cloudgym-capability-20260901023054173900000001\",\"Tags\":[],\"Name\":\"cloudgym-capability-20260901023054173900000001\"}"
+      },
+      "TypeName": "AWS::Events::Rule"
+    }
+  ],
+  "recorded_at": "2026-09-01T02:31:15+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_188_instance",
+  "utterance": "The `ledger-vpc` VPC (10.60.0.0/22) is the ledger platform's network. Create two subnets in it, one in us-east-1a and one in us-east-1b, and create an EC2 instance in each subnet: the latest Amazon Linux 2 AMI, t2.micro instance type, and an attached EBS volume of 50 GB.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "the ledger-vpc VPC holds two new subnets, one in us-east-1a and one in us-east-1b, each on a range of its own inside 10.60.0.0/22, and each of those two subnets runs one new EC2 instance of type t2.micro launched from the latest Amazon Linux 2 AMI with a 50 GB EBS root volume"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 188
+  }
+}

@@ -1,0 +1,2 @@
+A workload's front carries exactly the servers of it that are in service when you finish, and nothing another workload owns; what you did not create stays as found.
+Names claim nothing: attribution says what belongs to whom, and a workload belongs only in space marked as its own.

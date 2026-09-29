@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_442_vpc_dhcp_options",
+  "utterance": "Set up DHCP options for this account that hand out Google's DNS servers, 8.8.8.8 and 8.8.4.4, mark them `pike = permissions`, and have the existing `orders-app` VPC use them.",
+  "main": {
+    "role": "application developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "the `orders-app` VPC present at the start resolves through a DHCP option set whose domain name servers are exactly 8.8.8.8 and 8.8.4.4, and that option set carries the tag `pike = permissions`"
+  },
+  "notes": "which option set the VPC ends on, what else that set has to carry, and what else may stand in the region beside it follow from the resolution policy and the account's state, not from the utterance",
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 442
+  }
+}

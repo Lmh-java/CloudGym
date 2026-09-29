@@ -1,0 +1,2 @@
+Where the account already answers a name, that answer stays as found and is joined, not duplicated; so does anything else you did not stand up.
+An endpoint is watched once, by the watch the account already keeps on it, never by one kept elsewhere, whatever it is called.

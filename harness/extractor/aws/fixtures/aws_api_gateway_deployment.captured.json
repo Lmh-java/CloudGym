@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::ApiGateway::Deployment",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-22T18:36:53+00:00",
+      "ResourceDescription": {
+        "Identifier": "jpqt9q|6uwutcfaaj",
+        "Properties": "{\"DeploymentId\":\"jpqt9q\",\"Description\":\"CloudGym extractor capability check\",\"RestApiId\":\"6uwutcfaaj\"}"
+      },
+      "TypeName": "AWS::ApiGateway::Deployment"
+    }
+  ],
+  "recorded_at": "2026-09-22T18:36:55+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

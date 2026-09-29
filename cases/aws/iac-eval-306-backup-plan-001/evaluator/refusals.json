@@ -1,0 +1,23 @@
+{
+  "distractors": {
+    "baseline-pass": {
+      "codes": [
+        "IncorrectInstanceState"
+      ],
+      "entry": "ec2.instance",
+      "operation": "StartInstances",
+      "service": "ec2",
+      "source": "manual"
+    },
+    "maintenance-pass": {
+      "codes": [
+        "IncorrectInstanceState"
+      ],
+      "entry": "ec2.instance",
+      "operation": "ModifyInstanceAttribute",
+      "service": "ec2",
+      "source": "manual"
+    }
+  },
+  "schema_version": 1
+}

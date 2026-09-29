@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_301_codebuild_project",
+  "utterance": "An AWS CodeBuild project to build students' code and store the build output, for a CS class autograder. Stand it up inside the existing `autograder-vpc` VPC, on a VPC subnet of its own with cidr_block \"10.0.0.0/24\" and an AWS security group of its own linked to that VPC, and make sure the build ends up with no way in and no way out: no ingress and no egress on the group it runs with, and no public addressing on the subnet it runs on, so the students' code has no internet access. Give the project an artifacts argument block of type S3 with location being the account's existing build-output store — the bucket whose name starts with `artifact-bucket-`, marked as the store the class's build output is kept in — and a name for the output archive; an environment argument block with \"BUILD_GENERAL1_SMALL\" compute type, \"alpine\" image and \"LINUX_CONTAINER\" type; a source argument block of \"GITHUB\" type with 1 git_clone_depth and \"https://github.com/example-cs-class/student-submissions.git\" location; and a vpc_config argument block linking it to those VPC resources. Create a service role for the build with the access it needs. VPC-level connectivity — gateways, route tables, peerings and endpoints — is managed elsewhere: do not add or change any.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "a CodeBuild project that did not exist at the start builds a source of type GITHUB in a LINUX_CONTAINER environment on BUILD_GENERAL1_SMALL compute and writes its primary artifacts as type S3 into the build-output store that was already there; it runs inside the pre-existing autograder VPC on a subnet and a security group that did not exist at the start and are its own, and that leave it no way in and no way out — every group the build runs with carries no ingress and no egress rule, and every subnet it runs on assigns no public address; and it runs as an IAM role that did not exist at the start, created for this build and trusted by codebuild.amazonaws.com, holding the grant its build needs to mint network interfaces in that segment and to write its output into that store"
+  },
+  "resource_types": [
+    "aws_vpc",
+    "aws_s3_bucket",
+    "aws_subnet",
+    "aws_security_group",
+    "aws_iam_role",
+    "aws_iam_policy",
+    "aws_iam_role_policy_attachment",
+    "aws_codebuild_project"
+  ],
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 301
+  }
+}

@@ -1,0 +1,2 @@
+A workload runs as the identity created for it, and pulls a shared source from wherever the workloads already in place pull it now.
+The settings and markings those workloads carry hold for whatever you build, and what you did not create stays as found.

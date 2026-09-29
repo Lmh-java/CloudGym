@@ -1,0 +1,4193 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "succeeded"
+     },
+     "edge-health-gating": {
+      "status": "succeeded"
+     },
+     "eu-edge-reallocation": {
+      "status": "succeeded"
+     },
+     "flat-endpoint-answer": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "succeeded"
+     },
+     "edge-health-gating": {
+      "status": "succeeded"
+     },
+     "eu-edge-reallocation": {
+      "status": "succeeded"
+     },
+     "flat-endpoint-answer": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "edge-us.example53.com",
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Watch",
+          "Value": "edge-health-gating"
+         }
+        ]
+       },
+       "9b21ee90-77c3-42aa-9a10-ddddeeeeffff": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "edge-eu.example53.com",
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "9b21ee90-77c3-42aa-9a10-ddddeeeeffff",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Watch",
+          "Value": "edge-health-gating"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_cache.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_cache.example53.com",
+        "ResourceRecords": [
+         "\"max-cache-30s\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_cutover.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_cutover.example53.com",
+        "ResourceRecords": [
+         "\"pre-cutover-origin=198.51.100.25\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_edges.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_edges.example53.com",
+        "ResourceRecords": [
+         "\"eu-central-1=192.0.2.140\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_health.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_health.example53.com",
+        "ResourceRecords": [
+         "\"answers-are-watched\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "edge-eu.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "edge-eu.example53.com",
+        "ResourceRecords": [
+         "192.0.2.140"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "edge-us.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "edge-us.example53.com",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "reporting.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "reporting.example53.com",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|eu-central-1-edge": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "eu-central-1",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "SetIdentifier": "eu-central-1-edge",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|us-east-1-edge": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "us-east-1",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "us-east-1-edge",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "succeeded"
+     },
+     "edge-health-gating": {
+      "status": "succeeded"
+     },
+     "eu-edge-reallocation": {
+      "status": "succeeded"
+     },
+     "flat-endpoint-answer": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|eu-central-1-edge": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "eu-central-1",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "SetIdentifier": "eu-central-1-edge",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|us-east-1-edge": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "us-east-1",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "us-east-1-edge",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "succeeded"
+     },
+     "edge-health-gating": {
+      "status": "succeeded"
+     },
+     "eu-edge-reallocation": {
+      "status": "succeeded"
+     },
+     "flat-endpoint-answer": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "edge-us.example53.com",
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Watch",
+          "Value": "edge-health-gating"
+         }
+        ]
+       },
+       "9b21ee90-77c3-42aa-9a10-ddddeeeeffff": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "edge-eu.example53.com",
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "9b21ee90-77c3-42aa-9a10-ddddeeeeffff",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Watch",
+          "Value": "edge-health-gating"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_cache.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_cache.example53.com",
+        "ResourceRecords": [
+         "\"max-cache-30s\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_cutover.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_cutover.example53.com",
+        "ResourceRecords": [
+         "\"pre-cutover-origin=198.51.100.25\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_edges.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_edges.example53.com",
+        "ResourceRecords": [
+         "\"eu-central-1=192.0.2.140\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_health.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_health.example53.com",
+        "ResourceRecords": [
+         "\"answers-are-watched\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "edge-eu.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "edge-eu.example53.com",
+        "ResourceRecords": [
+         "192.0.2.140"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "edge-us.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "edge-us.example53.com",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "origin.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "origin.example53.com",
+        "ResourceRecords": [
+         "198.51.100.25"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "reporting.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "reporting.example53.com",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|eu-central-1-edge": {
+        "HealthCheckId": "9b21ee90-77c3-42aa-9a10-ddddeeeeffff",
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "eu-central-1",
+        "ResourceRecords": [
+         "192.0.2.140"
+        ],
+        "SetIdentifier": "eu-central-1-edge",
+        "TTL": "30",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|us-east-1-edge": {
+        "HealthCheckId": "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc",
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "us-east-1",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "us-east-1-edge",
+        "TTL": "30",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "not-fired"
+     },
+     "edge-health-gating": {
+      "status": "not-fired"
+     },
+     "eu-edge-reallocation": {
+      "status": "not-fired"
+     },
+     "flat-endpoint-answer": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|eu-central-1-edge": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "eu-central-1",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "SetIdentifier": "eu-central-1-edge",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|us-east-1-edge": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "us-east-1",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "us-east-1-edge",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "not-fired"
+     },
+     "edge-health-gating": {
+      "status": "not-fired"
+     },
+     "eu-edge-reallocation": {
+      "status": "not-fired"
+     },
+     "flat-endpoint-answer": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|us-east-1-edge": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "us-east-1",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "us-east-1-edge",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "succeeded"
+     },
+     "edge-health-gating": {
+      "status": "succeeded"
+     },
+     "eu-edge-reallocation": {
+      "status": "succeeded"
+     },
+     "flat-endpoint-answer": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "edge-us.example53.com",
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Watch",
+          "Value": "edge-health-gating"
+         }
+        ]
+       },
+       "9b21ee90-77c3-42aa-9a10-ddddeeeeffff": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "edge-eu.example53.com",
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "9b21ee90-77c3-42aa-9a10-ddddeeeeffff",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Watch",
+          "Value": "edge-health-gating"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_cache.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_cache.example53.com",
+        "ResourceRecords": [
+         "\"max-cache-30s\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_edges.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_edges.example53.com",
+        "ResourceRecords": [
+         "\"eu-central-1=192.0.2.140\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_health.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_health.example53.com",
+        "ResourceRecords": [
+         "\"answers-are-watched\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "edge-eu.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "edge-eu.example53.com",
+        "ResourceRecords": [
+         "192.0.2.140"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "edge-us.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "edge-us.example53.com",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "reporting.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "reporting.example53.com",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|eu-central-1-edge": {
+        "HealthCheckId": "9b21ee90-77c3-42aa-9a10-ddddeeeeffff",
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "eu-central-1",
+        "ResourceRecords": [
+         "192.0.2.140"
+        ],
+        "SetIdentifier": "eu-central-1-edge",
+        "TTL": "30",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|us-east-1-edge": {
+        "HealthCheckId": "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc",
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "us-east-1",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "us-east-1-edge",
+        "TTL": "30",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-flat-endpoint-answer"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "failed"
+     },
+     "edge-health-gating": {
+      "status": "succeeded"
+     },
+     "eu-edge-reallocation": {
+      "status": "succeeded"
+     },
+     "flat-endpoint-answer": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "edge-us.example53.com",
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Watch",
+          "Value": "edge-health-gating"
+         }
+        ]
+       },
+       "9b21ee90-77c3-42aa-9a10-ddddeeeeffff": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "edge-eu.example53.com",
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "9b21ee90-77c3-42aa-9a10-ddddeeeeffff",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Watch",
+          "Value": "edge-health-gating"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_cutover.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_cutover.example53.com",
+        "ResourceRecords": [
+         "\"pre-cutover-origin=198.51.100.25\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_edges.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_edges.example53.com",
+        "ResourceRecords": [
+         "\"eu-central-1=192.0.2.140\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_health.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_health.example53.com",
+        "ResourceRecords": [
+         "\"answers-are-watched\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "edge-eu.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "edge-eu.example53.com",
+        "ResourceRecords": [
+         "192.0.2.140"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "edge-us.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "edge-us.example53.com",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "origin.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "origin.example53.com",
+        "ResourceRecords": [
+         "198.51.100.25"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       },
+       "reporting.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "reporting.example53.com",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|eu-central-1-edge": {
+        "HealthCheckId": "9b21ee90-77c3-42aa-9a10-ddddeeeeffff",
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "eu-central-1",
+        "ResourceRecords": [
+         "192.0.2.140"
+        ],
+        "SetIdentifier": "eu-central-1-edge",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|us-east-1-edge": {
+        "HealthCheckId": "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc",
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "us-east-1",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "us-east-1-edge",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-answer-cache-ceiling"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "succeeded"
+     },
+     "edge-health-gating": {
+      "status": "succeeded"
+     },
+     "eu-edge-reallocation": {
+      "status": "failed"
+     },
+     "flat-endpoint-answer": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "2c04ab33-55de-4f18-b7c9-111122223333": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "edge-eu-legacy.example53.com",
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "2c04ab33-55de-4f18-b7c9-111122223333",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Watch",
+          "Value": "edge-health-gating"
+         }
+        ]
+       },
+       "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "edge-us.example53.com",
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Watch",
+          "Value": "edge-health-gating"
+         }
+        ]
+       },
+       "9b21ee90-77c3-42aa-9a10-ddddeeeeffff": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "edge-eu.example53.com",
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "9b21ee90-77c3-42aa-9a10-ddddeeeeffff",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Watch",
+          "Value": "edge-health-gating"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_cache.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_cache.example53.com",
+        "ResourceRecords": [
+         "\"max-cache-30s\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_cutover.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_cutover.example53.com",
+        "ResourceRecords": [
+         "\"pre-cutover-origin=198.51.100.25\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_health.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_health.example53.com",
+        "ResourceRecords": [
+         "\"answers-are-watched\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "edge-eu-legacy.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "edge-eu-legacy.example53.com",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "edge-eu.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "edge-eu.example53.com",
+        "ResourceRecords": [
+         "192.0.2.140"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "edge-us.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "edge-us.example53.com",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "origin.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "origin.example53.com",
+        "ResourceRecords": [
+         "198.51.100.25"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|eu-central-1-edge": {
+        "HealthCheckId": "2c04ab33-55de-4f18-b7c9-111122223333",
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "eu-central-1",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "SetIdentifier": "eu-central-1-edge",
+        "TTL": "30",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|us-east-1-edge": {
+        "HealthCheckId": "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc",
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "us-east-1",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "us-east-1-edge",
+        "TTL": "30",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-eu-edge-reallocation"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "succeeded"
+     },
+     "edge-health-gating": {
+      "status": "failed"
+     },
+     "eu-edge-reallocation": {
+      "status": "succeeded"
+     },
+     "flat-endpoint-answer": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_cache.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_cache.example53.com",
+        "ResourceRecords": [
+         "\"max-cache-30s\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_cutover.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_cutover.example53.com",
+        "ResourceRecords": [
+         "\"pre-cutover-origin=198.51.100.25\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_edges.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_edges.example53.com",
+        "ResourceRecords": [
+         "\"eu-central-1=192.0.2.140\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "origin.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "origin.example53.com",
+        "ResourceRecords": [
+         "198.51.100.25"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "reporting.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "reporting.example53.com",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|eu-central-1-edge": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "eu-central-1",
+        "ResourceRecords": [
+         "192.0.2.140"
+        ],
+        "SetIdentifier": "eu-central-1-edge",
+        "TTL": "30",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|us-east-1-edge": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "us-east-1",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "us-east-1-edge",
+        "TTL": "30",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-edge-health-gating"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "succeeded"
+     },
+     "edge-health-gating": {
+      "status": "succeeded"
+     },
+     "eu-edge-reallocation": {
+      "status": "succeeded"
+     },
+     "flat-endpoint-answer": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "edge-us.example53.com",
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Watch",
+          "Value": "edge-health-gating"
+         }
+        ]
+       },
+       "9b21ee90-77c3-42aa-9a10-ddddeeeeffff": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "edge-eu.example53.com",
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "9b21ee90-77c3-42aa-9a10-ddddeeeeffff",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Watch",
+          "Value": "edge-health-gating"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_cache.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_cache.example53.com",
+        "ResourceRecords": [
+         "\"max-cache-30s\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_cutover.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_cutover.example53.com",
+        "ResourceRecords": [
+         "\"pre-cutover-origin=198.51.100.25\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_edges.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_edges.example53.com",
+        "ResourceRecords": [
+         "\"eu-central-1=192.0.2.140\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_health.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_health.example53.com",
+        "ResourceRecords": [
+         "\"answers-are-watched\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "edge-eu.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "edge-eu.example53.com",
+        "ResourceRecords": [
+         "192.0.2.140"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "edge-us.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "edge-us.example53.com",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "reporting.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "reporting.example53.com",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|eu-central-1-edge": {
+        "HealthCheckId": "9b21ee90-77c3-42aa-9a10-ddddeeeeffff",
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "eu-central-1",
+        "ResourceRecords": [
+         "192.0.2.140"
+        ],
+        "SetIdentifier": "eu-central-1-edge",
+        "TTL": "30",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|us-east-1-edge": {
+        "HealthCheckId": "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc",
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "us-east-1",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "us-east-1-edge",
+        "TTL": "30",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-flat-endpoint-answer"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "succeeded"
+     },
+     "edge-health-gating": {
+      "status": "succeeded"
+     },
+     "eu-edge-reallocation": {
+      "status": "succeeded"
+     },
+     "flat-endpoint-answer": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "edge-us.example53.com",
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Watch",
+          "Value": "edge-health-gating"
+         }
+        ]
+       },
+       "9b21ee90-77c3-42aa-9a10-ddddeeeeffff": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "edge-eu.example53.com",
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "9b21ee90-77c3-42aa-9a10-ddddeeeeffff",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Watch",
+          "Value": "edge-health-gating"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_cutover.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_cutover.example53.com",
+        "ResourceRecords": [
+         "\"pre-cutover-origin=198.51.100.25\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_edges.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_edges.example53.com",
+        "ResourceRecords": [
+         "\"eu-central-1=192.0.2.140\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_health.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_health.example53.com",
+        "ResourceRecords": [
+         "\"answers-are-watched\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "edge-eu.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "edge-eu.example53.com",
+        "ResourceRecords": [
+         "192.0.2.140"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "edge-us.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "edge-us.example53.com",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "origin.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "origin.example53.com",
+        "ResourceRecords": [
+         "198.51.100.25"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "reporting.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "reporting.example53.com",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|eu-central-1-edge": {
+        "HealthCheckId": "9b21ee90-77c3-42aa-9a10-ddddeeeeffff",
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "eu-central-1",
+        "ResourceRecords": [
+         "192.0.2.140"
+        ],
+        "SetIdentifier": "eu-central-1-edge",
+        "TTL": "30",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|us-east-1-edge": {
+        "HealthCheckId": "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc",
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "us-east-1",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "us-east-1-edge",
+        "TTL": "30",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-answer-cache-ceiling"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "succeeded"
+     },
+     "edge-health-gating": {
+      "status": "succeeded"
+     },
+     "eu-edge-reallocation": {
+      "status": "succeeded"
+     },
+     "flat-endpoint-answer": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "edge-us.example53.com",
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Watch",
+          "Value": "edge-health-gating"
+         }
+        ]
+       },
+       "9b21ee90-77c3-42aa-9a10-ddddeeeeffff": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "edge-eu.example53.com",
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "9b21ee90-77c3-42aa-9a10-ddddeeeeffff",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Watch",
+          "Value": "edge-health-gating"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_cache.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_cache.example53.com",
+        "ResourceRecords": [
+         "\"max-cache-30s\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_cutover.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_cutover.example53.com",
+        "ResourceRecords": [
+         "\"pre-cutover-origin=198.51.100.25\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_edges.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_edges.example53.com",
+        "ResourceRecords": [
+         "\"eu-central-1=192.0.2.140\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_health.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_health.example53.com",
+        "ResourceRecords": [
+         "\"answers-are-watched\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "edge-eu.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "edge-eu.example53.com",
+        "ResourceRecords": [
+         "192.0.2.140"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "edge-us.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "edge-us.example53.com",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "origin.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "origin.example53.com",
+        "ResourceRecords": [
+         "198.51.100.25"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|eu-central-1-edge": {
+        "HealthCheckId": "9b21ee90-77c3-42aa-9a10-ddddeeeeffff",
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "eu-central-1",
+        "ResourceRecords": [
+         "192.0.2.140"
+        ],
+        "SetIdentifier": "eu-central-1-edge",
+        "TTL": "30",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|us-east-1-edge": {
+        "HealthCheckId": "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc",
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "us-east-1",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "us-east-1-edge",
+        "TTL": "30",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-eu-edge-reallocation"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "succeeded"
+     },
+     "edge-health-gating": {
+      "status": "succeeded"
+     },
+     "eu-edge-reallocation": {
+      "status": "succeeded"
+     },
+     "flat-endpoint-answer": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {
+       "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "edge-us.example53.com",
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "7a1c9d12-1a4b-4c2e-9f01-aaaabbbbcccc",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Watch",
+          "Value": "edge-health-gating"
+         }
+        ]
+       },
+       "9b21ee90-77c3-42aa-9a10-ddddeeeeffff": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "edge-eu.example53.com",
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "9b21ee90-77c3-42aa-9a10-ddddeeeeffff",
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "service-health"
+         },
+         {
+          "Key": "Watch",
+          "Value": "edge-health-gating"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "_cache.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_cache.example53.com",
+        "ResourceRecords": [
+         "\"max-cache-30s\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_cutover.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_cutover.example53.com",
+        "ResourceRecords": [
+         "\"pre-cutover-origin=198.51.100.25\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_edges.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_edges.example53.com",
+        "ResourceRecords": [
+         "\"eu-central-1=192.0.2.140\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "_health.example53.com|Z0784100SERVICEPUB|TXT|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "_health.example53.com",
+        "ResourceRecords": [
+         "\"answers-are-watched\""
+        ],
+        "TTL": "30",
+        "Type": "TXT"
+       },
+       "edge-eu.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "edge-eu.example53.com",
+        "ResourceRecords": [
+         "192.0.2.140"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "edge-us.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "edge-us.example53.com",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "origin.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "origin.example53.com",
+        "ResourceRecords": [
+         "198.51.100.25"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "reporting.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "reporting.example53.com",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "TTL": "30",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|eu-central-1-edge": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "eu-central-1",
+        "ResourceRecords": [
+         "192.0.2.140"
+        ],
+        "SetIdentifier": "eu-central-1-edge",
+        "TTL": "30",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|us-east-1-edge": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "us-east-1",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "us-east-1-edge",
+        "TTL": "30",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-edge-health-gating"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "not-fired"
+     },
+     "edge-health-gating": {
+      "status": "not-fired"
+     },
+     "eu-edge-reallocation": {
+      "status": "not-fired"
+     },
+     "flat-endpoint-answer": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|us-east-1-edge": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "us-east-1",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "us-east-1-edge",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-no-eu-member"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "not-fired"
+     },
+     "edge-health-gating": {
+      "status": "not-fired"
+     },
+     "eu-edge-reallocation": {
+      "status": "not-fired"
+     },
+     "flat-endpoint-answer": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|eu-central-1-edge": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "eu-central-1",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "SetIdentifier": "eu-central-1-edge",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|us-east-1-edge": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "us-east-1",
+        "ResourceRecords": [
+         "203.0.113.9"
+        ],
+        "SetIdentifier": "us-east-1-edge",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-wrong-us-answer"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "not-fired"
+     },
+     "edge-health-gating": {
+      "status": "not-fired"
+     },
+     "eu-edge-reallocation": {
+      "status": "not-fired"
+     },
+     "flat-endpoint-answer": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "ResourceRecords": [
+         "192.0.2.101",
+         "192.0.2.102"
+        ],
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-plain-answers"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "not-fired"
+     },
+     "edge-health-gating": {
+      "status": "not-fired"
+     },
+     "eu-edge-reallocation": {
+      "status": "not-fired"
+     },
+     "flat-endpoint-answer": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|eu-central-1-edge": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "SetIdentifier": "eu-central-1-edge",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|us-east-1-edge": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "us-east-1-edge",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-weighted-not-latency"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "not-fired"
+     },
+     "edge-health-gating": {
+      "status": "not-fired"
+     },
+     "eu-edge-reallocation": {
+      "status": "not-fired"
+     },
+     "flat-endpoint-answer": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|edge": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "us-east-1",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "edge",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|edge-dup": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com.",
+        "Region": "eu-central-1",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "SetIdentifier": "edge",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-shared-set-identifier"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "not-fired"
+     },
+     "edge-health-gating": {
+      "status": "not-fired"
+     },
+     "eu-edge-reallocation": {
+      "status": "not-fired"
+     },
+     "flat-endpoint-answer": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|eu-central-1-edge": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "eu-central-1",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "SetIdentifier": "eu-central-1-edge",
+        "TTL": "300",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|us-east-1-edge": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "us-east-1",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "us-east-1-edge",
+        "TTL": "300",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-ttl-too-long"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "not-fired"
+     },
+     "edge-health-gating": {
+      "status": "not-fired"
+     },
+     "eu-edge-reallocation": {
+      "status": "not-fired"
+     },
+     "flat-endpoint-answer": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       },
+       "Z0784101ELSEWHEREPUB": {
+        "HostedZoneConfig": {
+         "Comment": "second zone for the same domain"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784101ELSEWHEREPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "example53.com|Z0784101ELSEWHEREPUB|NS|": {
+        "HostedZoneId": "Z0784101ELSEWHEREPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784101ELSEWHEREPUB|SOA|": {
+        "HostedZoneId": "Z0784101ELSEWHEREPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "service.example53.com|Z0784101ELSEWHEREPUB|A|eu-central-1-edge": {
+        "HostedZoneId": "Z0784101ELSEWHEREPUB",
+        "Name": "service.example53.com",
+        "Region": "eu-central-1",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "SetIdentifier": "eu-central-1-edge",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784101ELSEWHEREPUB|A|us-east-1-edge": {
+        "HostedZoneId": "Z0784101ELSEWHEREPUB",
+        "Name": "service.example53.com",
+        "Region": "us-east-1",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "us-east-1-edge",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-answers-outside-the-zone"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "not-fired"
+     },
+     "edge-health-gating": {
+      "status": "not-fired"
+     },
+     "eu-edge-reallocation": {
+      "status": "not-fired"
+     },
+     "flat-endpoint-answer": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|eu-central-1-edge": {
+        "AliasTarget": {
+         "DNSName": "edge-eu.elb.example53.com.",
+         "EvaluateTargetHealth": false,
+         "HostedZoneId": "Z0784100SERVICEPUB"
+        },
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com.",
+        "Region": "eu-central-1",
+        "SetIdentifier": "eu-central-1-edge",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|us-east-1-edge": {
+        "AliasTarget": {
+         "DNSName": "edge-us.elb.example53.com.",
+         "EvaluateTargetHealth": false,
+         "HostedZoneId": "Z0784100SERVICEPUB"
+        },
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com.",
+        "Region": "us-east-1",
+        "SetIdentifier": "us-east-1-edge",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-alias-members"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "not-fired"
+     },
+     "edge-health-gating": {
+      "status": "not-fired"
+     },
+     "eu-edge-reallocation": {
+      "status": "not-fired"
+     },
+     "flat-endpoint-answer": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784101ELSEWHEREPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784101ELSEWHEREPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784101ELSEWHEREPUB|NS|": {
+        "HostedZoneId": "Z0784101ELSEWHEREPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784101ELSEWHEREPUB|SOA|": {
+        "HostedZoneId": "Z0784101ELSEWHEREPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "service.example53.com|Z0784101ELSEWHEREPUB|A|eu-central-1-edge": {
+        "HostedZoneId": "Z0784101ELSEWHEREPUB",
+        "Name": "service.example53.com",
+        "Region": "eu-central-1",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "SetIdentifier": "eu-central-1-edge",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784101ELSEWHEREPUB|A|us-east-1-edge": {
+        "HostedZoneId": "Z0784101ELSEWHEREPUB",
+        "Name": "service.example53.com",
+        "Region": "us-east-1",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "us-east-1-edge",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-zone-replaced"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "answer-cache-ceiling": {
+      "status": "not-fired"
+     },
+     "edge-health-gating": {
+      "status": "not-fired"
+     },
+     "eu-edge-reallocation": {
+      "status": "not-fired"
+     },
+     "flat-endpoint-answer": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0784100SERVICEPUB": {
+        "HostedZoneConfig": {
+         "Comment": "public zone answering for example53.com"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0784100SERVICEPUB",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-1.awsdns-00.com",
+         "ns-2.awsdns-00.net"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0784100SERVICEPUB|NS|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com.",
+         "ns-2.awsdns-00.net."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0784100SERVICEPUB|SOA|": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-1.awsdns-00.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|ap-southeast-1-edge": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "ap-southeast-1",
+        "ResourceRecords": [
+         "192.0.2.103"
+        ],
+        "SetIdentifier": "ap-southeast-1-edge",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|eu-central-1-edge": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "eu-central-1",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "SetIdentifier": "eu-central-1-edge",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "service.example53.com|Z0784100SERVICEPUB|A|us-east-1-edge": {
+        "HostedZoneId": "Z0784100SERVICEPUB",
+        "Name": "service.example53.com",
+        "Region": "us-east-1",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "us-east-1-edge",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-third-region-member"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0667205911OA05G54V1": {
+        "HostedZoneConfig": {
+         "Comment": "Managed by Terraform"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0667205911OA05G54V1",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-723.awsdns-26.net",
+         "ns-1441.awsdns-52.org",
+         "ns-1644.awsdns-13.co.uk",
+         "ns-35.awsdns-04.com"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0667205911OA05G54V1|NS|": {
+        "HostedZoneId": "Z0667205911OA05G54V1",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-723.awsdns-26.net.",
+         "ns-1441.awsdns-52.org.",
+         "ns-1644.awsdns-13.co.uk.",
+         "ns-35.awsdns-04.com."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0667205911OA05G54V1|SOA|": {
+        "HostedZoneId": "Z0667205911OA05G54V1",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-723.awsdns-26.net. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Route53::HealthCheck": {},
+      "AWS::Route53::HostedZone": {
+       "Z0667205911OA05G54V1": {
+        "HostedZoneConfig": {
+         "Comment": "Managed by Terraform"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "Id": "Z0667205911OA05G54V1",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-723.awsdns-26.net",
+         "ns-1441.awsdns-52.org",
+         "ns-1644.awsdns-13.co.uk",
+         "ns-35.awsdns-04.com"
+        ]
+       }
+      },
+      "AWS::Route53::RecordSet": {
+       "example53.com|Z0667205911OA05G54V1|NS|": {
+        "HostedZoneId": "Z0667205911OA05G54V1",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-723.awsdns-26.net.",
+         "ns-1441.awsdns-52.org.",
+         "ns-1644.awsdns-13.co.uk.",
+         "ns-35.awsdns-04.com."
+        ],
+        "TTL": "172800",
+        "Type": "NS"
+       },
+       "example53.com|Z0667205911OA05G54V1|SOA|": {
+        "HostedZoneId": "Z0667205911OA05G54V1",
+        "Name": "example53.com",
+        "ResourceRecords": [
+         "ns-723.awsdns-26.net. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        ],
+        "TTL": "900",
+        "Type": "SOA"
+       },
+       "service.example53.com|Z0667205911OA05G54V1|A|eu-central-1": {
+        "HostedZoneId": "Z0667205911OA05G54V1",
+        "Name": "service.example53.com",
+        "Region": "eu-central-1",
+        "ResourceRecords": [
+         "192.0.2.102"
+        ],
+        "SetIdentifier": "eu-central-1",
+        "TTL": "60",
+        "Type": "A"
+       },
+       "service.example53.com|Z0667205911OA05G54V1|A|us-east-1": {
+        "HostedZoneId": "Z0667205911OA05G54V1",
+        "Name": "service.example53.com",
+        "Region": "us-east-1",
+        "ResourceRecords": [
+         "192.0.2.101"
+        ],
+        "SetIdentifier": "us-east-1",
+        "TTL": "60",
+        "Type": "A"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

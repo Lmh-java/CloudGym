@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_5_db_instance",
+  "utterance": "The account already runs the PostgreSQL RDS instance `primary` and already serves the public Route 53 hosted zone for `example53.com`. Using Route 53, split users across two read replicas of that database with a weighted routing policy: create two `db.t3.micro` read replicas of `primary`, identified `replica-1` and `replica-2`, and publish each replica's endpoint address under `example53.com` as its own CNAME record with a 60-second TTL and a weighted routing policy carrying a non-zero weight, so that DNS divides users between the two replicas.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "example53.com divides users across two read replicas of the pre-existing instance primary: the replicas replica-1 and replica-2 are db.t3.micro instances replicating from primary, and the hosted zone that was already serving example53.com answers two distinct names with weighted CNAME record sets, each with a 60-second TTL and a non-zero weight, one resolving to replica-1's endpoint address and the other to replica-2's"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 5
+  }
+}

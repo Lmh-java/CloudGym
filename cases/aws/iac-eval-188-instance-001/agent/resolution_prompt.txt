@@ -1,0 +1,2 @@
+Address space is allocated once: a range another workload holds stays theirs, and a new allocation takes only what is free when you make it.
+What you did not create stays as you found it and empty of your workload; what you add carries its network's attribution.

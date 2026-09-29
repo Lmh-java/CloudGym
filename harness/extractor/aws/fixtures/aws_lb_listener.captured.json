@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::ElasticLoadBalancingV2::Listener",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-09T07:24:41+00:00",
+      "ResourceDescription": {
+        "Identifier": "arn:aws:elasticloadbalancing:us-east-1:123456789012:listener/app/cwcap-20260909072126738700000003/ff9ee0e788a915b0/574d1699d1a593cb",
+        "Properties": "{\"ListenerArn\":\"arn:aws:elasticloadbalancing:us-east-1:123456789012:listener/app/cwcap-20260909072126738700000003/ff9ee0e788a915b0/574d1699d1a593cb\",\"ListenerAttributes\":[{\"Value\":\"true\",\"Key\":\"routing.http.response.server.enabled\"},{\"Value\":\"\",\"Key\":\"routing.http.response.access_control_allow_headers.header_value\"},{\"Value\":\"\",\"Key\":\"routing.http.response.x_frame_options.header_value\"},{\"Value\":\"\",\"Key\":\"routing.http.response.access_control_allow_methods.header_value\"},{\"Value\":\"\",\"Key\":\"routing.http.response.access_control_allow_origin.header_value\"},{\"Value\":\"\",\"Key\":\"routing.http.response.access_control_allow_credentials.header_value\"},{\"Value\":\"\",\"Key\":\"routing.http.response.x_content_type_options.header_value\"},{\"Value\":\"\",\"Key\":\"routing.http.response.content_security_policy.header_value\"},{\"Value\":\"\",\"Key\":\"routing.http.response.access_control_expose_headers.header_value\"},{\"Value\":\"\",\"Key\":\"routing.http.response.strict_transport_security.header_value\"},{\"Value\":\"\",\"Key\":\"routing.http.response.access_control_max_age.header_value\"}],\"LoadBalancerArn\":\"arn:aws:elasticloadbalancing:us-east-1:123456789012:loadbalancer/app/cwcap-20260909072126738700000003/ff9ee0e788a915b0\",\"DefaultActions\":[{\"Order\":1,\"TargetGroupArn\":\"arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/cwcap-20260909072120845000000001/a19f758a5565ae52\",\"Type\":\"forward\",\"ForwardConfig\":{\"TargetGroupStickinessConfig\":{\"Enabled\":false},\"TargetGroups\":[{\"TargetGroupArn\":\"arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/cwcap-20260909072120845000000001/a19f758a5565ae52\",\"Weight\":1}]}}],\"Port\":80,\"Protocol\":\"HTTP\"}"
+      },
+      "TypeName": "AWS::ElasticLoadBalancingV2::Listener"
+    }
+  ],
+  "recorded_at": "2026-09-09T07:24:42+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

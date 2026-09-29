@@ -1,0 +1,103 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "checkpointing-appeared",
+      "message": "The analytics application is checkpointing every 90000 ms now, with 30000 ms of pause between checkpoints, and it was on the service default when I started. Is that deliberate, and should it stay?",
+      "expect": [
+        "checkpoint-baseline"
+      ],
+      "fingerprint": {
+        "checkpoint-baseline": [
+          "90000",
+          "30000"
+        ],
+        "runtime-defaults": [
+          "rocksdb",
+          "exponential-delay"
+        ]
+      }
+    },
+    {
+      "name": "properties-appeared",
+      "message": "A property group on the analytics application now sets its state backend to rocksdb and its restart behaviour to exponential-delay, and it carried no properties at all when I started. Did someone put that there on purpose, or is it mine to clear?",
+      "expect": [
+        "runtime-defaults"
+      ],
+      "fingerprint": {
+        "checkpoint-baseline": [
+          "90000",
+          "30000"
+        ],
+        "runtime-defaults": [
+          "rocksdb",
+          "exponential-delay"
+        ]
+      }
+    },
+    {
+      "name": "effect-in-words",
+      "message": "Something keeps changing the analytics application's configuration underneath me while I am trying to move it onto its own identity, and my update is being refused. Is there a convention about the settings an application is expected to carry?",
+      "expect": [],
+      "fingerprint": {
+        "checkpoint-baseline": [
+          "90000",
+          "30000"
+        ],
+        "runtime-defaults": [
+          "rocksdb",
+          "exponential-delay"
+        ]
+      }
+    },
+    {
+      "name": "interval-only",
+      "message": "Who decided on 90000 here?",
+      "expect": [
+        "checkpoint-baseline"
+      ],
+      "fingerprint": {
+        "checkpoint-baseline": [
+          "90000",
+          "30000"
+        ],
+        "runtime-defaults": [
+          "rocksdb",
+          "exponential-delay"
+        ]
+      }
+    },
+    {
+      "name": "state-backend-only",
+      "message": "Is rocksdb something this account expects here?",
+      "expect": [
+        "runtime-defaults"
+      ],
+      "fingerprint": {
+        "checkpoint-baseline": [
+          "90000",
+          "30000"
+        ],
+        "runtime-defaults": [
+          "rocksdb",
+          "exponential-delay"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "checkpoint-baseline": [
+          "90000",
+          "30000"
+        ],
+        "runtime-defaults": [
+          "rocksdb",
+          "exponential-delay"
+        ]
+      }
+    }
+  ]
+}

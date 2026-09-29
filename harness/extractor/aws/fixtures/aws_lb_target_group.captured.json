@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-09T07:16:14+00:00",
+      "ResourceDescription": {
+        "Identifier": "arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/cwcap-20260909071600314900000001/91bf91ea8b2e52aa",
+        "Properties": "{\"IpAddressType\":\"ipv4\",\"TargetGroupArn\":\"arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/cwcap-20260909071600314900000001/91bf91ea8b2e52aa\",\"HealthCheckIntervalSeconds\":30,\"LoadBalancerArns\":[],\"Matcher\":{\"HttpCode\":\"200\"},\"HealthCheckPath\":\"/\",\"Port\":80,\"Targets\":[],\"HealthCheckEnabled\":true,\"ProtocolVersion\":\"HTTP1\",\"UnhealthyThresholdCount\":2,\"HealthCheckTimeoutSeconds\":5,\"Name\":\"cwcap-20260909071600314900000001\",\"VpcId\":\"vpc-05c7459e0ca3b73e5\",\"TargetGroupFullName\":\"targetgroup/cwcap-20260909071600314900000001/91bf91ea8b2e52aa\",\"HealthyThresholdCount\":5,\"HealthCheckProtocol\":\"HTTP\",\"TargetGroupAttributes\":[{\"Value\":\"lb_cookie\",\"Key\":\"stickiness.type\"},{\"Value\":\"86400\",\"Key\":\"stickiness.app_cookie.duration_seconds\"},{\"Value\":\"1\",\"Key\":\"target_group_health.dns_failover.minimum_healthy_targets.count\"},{\"Value\":\"use_load_balancer_configuration\",\"Key\":\"load_balancing.cross_zone.enabled\"},{\"Value\":\"86400\",\"Key\":\"stickiness.lb_cookie.duration_seconds\"},{\"Value\":\"off\",\"Key\":\"target_group_health.dns_failover.minimum_healthy_targets.percentage\"},{\"Value\":\"false\",\"Key\":\"stickiness.enabled\"},{\"Value\":\"off\",\"Key\":\"target_group_health.unhealthy_state_routing.minimum_healthy_targets.percentage\"},{\"Value\":\"0\",\"Key\":\"slow_start.duration_seconds\"},{\"Value\":\"300\",\"Key\":\"deregistration_delay.timeout_seconds\"},{\"Value\":\"1\",\"Key\":\"target_group_health.unhealthy_state_routing.minimum_healthy_targets.count\"},{\"Value\":\"off\",\"Key\":\"load_balancing.algorithm.anomaly_mitigation\"},{\"Value\":\"\",\"Key\":\"stickiness.app_cookie.cookie_name\"},{\"Value\":\"round_robin\",\"Key\":\"load_balancing.algorithm.type\"}],\"TargetType\":\"ip\",\"HealthCheckPort\":\"traffic-port\",\"Protocol\":\"HTTP\",\"TargetGroupName\":\"cwcap-20260909071600314900000001\",\"Tags\":[]}"
+      },
+      "TypeName": "AWS::ElasticLoadBalancingV2::TargetGroup"
+    }
+  ],
+  "recorded_at": "2026-09-09T07:16:14+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

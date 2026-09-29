@@ -1,0 +1,178 @@
+{
+ "mode": "fingerprint",
+ "asks": [
+  {
+   "name": "gateway-will-not-attach",
+   "message": "The gateway I raised for my network will not attach: it now reads outbound-hold-gw, tagged EgressRef PLT-8842, and something else is holding it. Is that gateway mine to take back, or do I raise another one for my network?",
+   "expect": [
+    "taken-way-out"
+   ],
+   "fingerprint": {
+    "taken-way-out": [
+     "outbound-hold-gw",
+     "PLT-8842"
+    ],
+    "consolidated-edge-table": [
+     "consolidated-edge",
+     "NET-4417"
+    ],
+    "single-edge-path": [
+     "single-path",
+     "SEC-2291"
+    ],
+    "edge-cutover-move": [
+     "edge-move",
+     "MIG-7731"
+    ]
+   }
+  },
+  {
+   "name": "a-table-i-did-not-stand-up",
+   "message": "There is a route table in the network I just created that I did not make, reading consolidated-edge under RoutingRef NET-4417. Does the default route belong on that one rather than on the table I stood up?",
+   "expect": [
+    "consolidated-edge-table"
+   ],
+   "fingerprint": {
+    "taken-way-out": [
+     "outbound-hold-gw",
+     "PLT-8842"
+    ],
+    "consolidated-edge-table": [
+     "consolidated-edge",
+     "NET-4417"
+    ],
+    "single-edge-path": [
+     "single-path",
+     "SEC-2291"
+    ],
+    "edge-cutover-move": [
+     "edge-move",
+     "MIG-7731"
+    ]
+   }
+  },
+  {
+   "name": "my-way-out-was-taken-down",
+   "message": "The default route I put on my own table is gone, and the tables in my network now read single-path under EgressStandard SEC-2291. How many ways out may this network have, and where does the one it has belong?",
+   "expect": [
+    "single-edge-path"
+   ],
+   "fingerprint": {
+    "taken-way-out": [
+     "outbound-hold-gw",
+     "PLT-8842"
+    ],
+    "consolidated-edge-table": [
+     "consolidated-edge",
+     "NET-4417"
+    ],
+    "single-edge-path": [
+     "single-path",
+     "SEC-2291"
+    ],
+    "edge-cutover-move": [
+     "edge-move",
+     "MIG-7731"
+    ]
+   }
+  },
+  {
+   "name": "a-gateway-marked-for-cutover",
+   "message": "The gateway my network is attached to now is not the one I raised: it reads edge-move under CutoverRef MIG-7731, and the network it came from has nothing routing out any more. Is that gateway mine to keep?",
+   "expect": [
+    "edge-cutover-move"
+   ],
+   "fingerprint": {
+    "taken-way-out": [
+     "outbound-hold-gw",
+     "PLT-8842"
+    ],
+    "consolidated-edge-table": [
+     "consolidated-edge",
+     "NET-4417"
+    ],
+    "single-edge-path": [
+     "single-path",
+     "SEC-2291"
+    ],
+    "edge-cutover-move": [
+     "edge-move",
+     "MIG-7731"
+    ]
+   }
+  },
+  {
+   "name": "both-marks-at-once",
+   "message": "Two things here are not mine: a gateway now reading outbound-hold-gw under EgressRef PLT-8842, and a table in my network reading consolidated-edge under RoutingRef NET-4417. How should my network reach the outside around them?",
+   "expect": [
+    "taken-way-out",
+    "consolidated-edge-table"
+   ],
+   "fingerprint": {
+    "taken-way-out": [
+     "outbound-hold-gw",
+     "PLT-8842"
+    ],
+    "consolidated-edge-table": [
+     "consolidated-edge",
+     "NET-4417"
+    ],
+    "single-edge-path": [
+     "single-path",
+     "SEC-2291"
+    ],
+    "edge-cutover-move": [
+     "edge-move",
+     "MIG-7731"
+    ]
+   }
+  },
+  {
+   "name": "things-keep-changing",
+   "message": "Gateways and route tables I did not create keep turning up around the network I was asked to build, and what I attach keeps ending up somewhere else. Should my work carry them, or only what I made myself?",
+   "expect": [],
+   "fingerprint": {
+    "taken-way-out": [
+     "outbound-hold-gw",
+     "PLT-8842"
+    ],
+    "consolidated-edge-table": [
+     "consolidated-edge",
+     "NET-4417"
+    ],
+    "single-edge-path": [
+     "single-path",
+     "SEC-2291"
+    ],
+    "edge-cutover-move": [
+     "edge-move",
+     "MIG-7731"
+    ]
+   },
+   "note": "describes the effect without citing anything that was read; it reaches nobody"
+  },
+  {
+   "name": "generic",
+   "message": "Any conventions I should follow here?",
+   "expect_at_most": 0,
+   "fingerprint": {
+    "taken-way-out": [
+     "outbound-hold-gw",
+     "PLT-8842"
+    ],
+    "consolidated-edge-table": [
+     "consolidated-edge",
+     "NET-4417"
+    ],
+    "single-edge-path": [
+     "single-path",
+     "SEC-2291"
+    ],
+    "edge-cutover-move": [
+     "edge-move",
+     "MIG-7731"
+    ]
+   }
+  }
+ ]
+}

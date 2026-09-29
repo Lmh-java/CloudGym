@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_81_route53_health_check",
+  "utterance": "The account's public hosted zone for `example53.com` is already in place. Configure active-passive failover for `www.example53.com` in it, using Route 53: an A record with a 60-second TTL answering `192.0.2.10` while the active endpoint `active.example53.com` is healthy, guarded by an HTTP health check on that FQDN over port 80 at path `/` and carrying the `Name` tag `primary_health_check`; and a second A record with a 60-second TTL answering `192.0.2.20` that takes over whenever that health check reports the active endpoint unhealthy.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "www.example53.com is served by an active-passive failover pair in the account's public hosted zone for example53.com: one A record with a 60-second TTL answering 192.0.2.10 as the PRIMARY side, associated with an HTTP health check that probes active.example53.com on port 80 at path / and carries the Name tag primary_health_check, and one A record with a 60-second TTL as the SECONDARY side answering 192.0.2.20, so the passive answer is served only while the active endpoint's health check reports it unhealthy"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 81
+  }
+}

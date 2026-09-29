@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_295_codebuild_project",
+  "utterance": "Infrastructure for an autograder for a CS class. The autograder needs to run students' code stored on GitHub in a specific environment and store the result. This account already runs the CS department's autograding, so add the one for CS110: a CodeBuild project named `cs110-autograder` that builds the class's submissions repository `cs110-submissions` out of the GitHub organisation the department's autograders build from, in the same build environment the department's autograders run in, running as the identity this account keeps for that class's autograder with the grants that identity needs, and writing each run's graded result out as an S3-type artifact named `results.zip` into the store the department keeps for what its autograders write out. Accomplish this using the following services: AWS S3, AWS CodeBuild. Add any necessary services.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "a CodeBuild project named cs110-autograder that was absent at the start builds the repository cs110-submissions as a GITHUB source out of the GitHub organisation the department's autograders build from, runs in the same Linux-container environment — compute type and image — as the autograder the department keeps in service, runs as one IAM role that was absent at the start, is the identity this account keeps for the CS110 autograder, is trusted by codebuild.amazonaws.com and holds the grants it needs, with no second such identity standing alongside it, and writes an S3-type artifact named results.zip into the store the department keeps in service for what its autograders write out"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 295
+  }
+}

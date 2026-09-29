@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::AutoScaling::AutoScalingGroup",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-22T18:17:13+00:00",
+      "ResourceDescription": {
+        "Identifier": "cloudgym-capability-20260922181657897300000004",
+        "Properties": "{\"LoadBalancerNames\":[],\"ServiceLinkedRoleARN\":\"arn:aws:iam::123456789012:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling\",\"SuspendedProcesses\":[],\"TargetGroupARNs\":[\"arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/cwcap-20260922181656440000000003/bbb0b49eb83174c6\"],\"AvailabilityZoneIds\":[\"use1-az1\"],\"AutoScalingGroupARN\":\"arn:aws:autoscaling:us-east-1:123456789012:autoScalingGroup:420629e5-5281-4bed-b557-9c6e4d6146f9:autoScalingGroupName/cloudgym-capability-20260922181657897300000004\",\"Cooldown\":\"300\",\"AvailabilityZones\":[\"us-east-1a\"],\"AvailabilityZoneDistribution\":{\"CapacityDistributionStrategy\":\"balanced-best-effort\"},\"DesiredCapacity\":\"0\",\"HealthCheckGracePeriod\":300,\"MetricsCollection\":[],\"InstanceLifecyclePolicy\":{\"RetentionTriggers\":{\"TerminateHookAbandon\":\"terminate\"}},\"MaxSize\":\"1\",\"NewInstancesProtectedFromScaleIn\":false,\"MinSize\":\"0\",\"TerminationPolicies\":[\"Default\"],\"LaunchTemplate\":{\"LaunchTemplateName\":\"cloudgym-capability-20260922181649587900000001\",\"Version\":\"$Latest\",\"LaunchTemplateId\":\"lt-0c7ffbbe0b4f6fa6b\"},\"AutoScalingGroupName\":\"cloudgym-capability-20260922181657897300000004\",\"TrafficSources\":[{\"Type\":\"elbv2\",\"Identifier\":\"arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/cwcap-20260922181656440000000003/bbb0b49eb83174c6\"}],\"VPCZoneIdentifier\":[\"subnet-079ca335a0d6640c6\"],\"CapacityReservationSpecification\":{\"CapacityReservationPreference\":\"default\"},\"Tags\":[],\"HealthCheckType\":\"EC2\"}"
+      },
+      "TypeName": "AWS::AutoScaling::AutoScalingGroup"
+    }
+  ],
+  "recorded_at": "2026-09-22T18:17:19+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

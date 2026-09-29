@@ -1,0 +1,127 @@
+{
+ "mode": "fingerprint",
+ "asks": [
+  {
+   "name": "artifact-store-moved",
+   "message": "A bucket named build-artifacts-next-111122223333 turned up, and the artifact store I read when I started is now marked as replaced. Should the project's artifacts go to the new one?",
+   "expect": [
+    "artifact-store-cutover"
+   ],
+   "fingerprint": {
+    "artifact-store-cutover": [
+     "build-artifacts-next-111122223333"
+    ],
+    "pooled-build-identity": [
+     "codebuild-shared-runner"
+    ],
+    "report-layout-prefix": [
+     "reports/by-build"
+    ],
+    "sibling-report-namesake": [
+     "build-reports-orders-admin-111122223333"
+    ]
+   }
+  },
+  {
+   "name": "namesake-report-store",
+   "message": "Two buckets here answer to build reports; build-reports-orders-admin-111122223333 is one of them. Is that the one my secondary artifacts belong in?",
+   "expect": [
+    "sibling-report-namesake"
+   ],
+   "fingerprint": {
+    "artifact-store-cutover": [
+     "build-artifacts-next-111122223333"
+    ],
+    "pooled-build-identity": [
+     "codebuild-shared-runner"
+    ],
+    "report-layout-prefix": [
+     "reports/by-build"
+    ],
+    "sibling-report-namesake": [
+     "build-reports-orders-admin-111122223333"
+    ]
+   }
+  },
+  {
+   "name": "declared-layout",
+   "message": "The report store declares reports/by-build on itself. Should my secondary artifact be written under that instead of at the bucket root?",
+   "expect": [
+    "report-layout-prefix"
+   ],
+   "fingerprint": {
+    "artifact-store-cutover": [
+     "build-artifacts-next-111122223333"
+    ],
+    "pooled-build-identity": [
+     "codebuild-shared-runner"
+    ],
+    "report-layout-prefix": [
+     "reports/by-build"
+    ],
+    "sibling-report-namesake": [
+     "build-reports-orders-admin-111122223333"
+    ]
+   }
+  },
+  {
+   "name": "identity-swapped",
+   "message": "My project's service role is codebuild-shared-runner now, not the role I made for it. Should I put mine back?",
+   "expect": [
+    "pooled-build-identity"
+   ],
+   "fingerprint": {
+    "artifact-store-cutover": [
+     "build-artifacts-next-111122223333"
+    ],
+    "pooled-build-identity": [
+     "codebuild-shared-runner"
+    ],
+    "report-layout-prefix": [
+     "reports/by-build"
+    ],
+    "sibling-report-namesake": [
+     "build-reports-orders-admin-111122223333"
+    ]
+   }
+  },
+  {
+   "name": "effect-in-words",
+   "message": "Things moved under me after I stood the build up: it runs as a different identity now, and the store I first picked for its output seems to have been replaced. Is that expected?",
+   "expect": [],
+   "fingerprint": {
+    "artifact-store-cutover": [
+     "build-artifacts-next-111122223333"
+    ],
+    "pooled-build-identity": [
+     "codebuild-shared-runner"
+    ],
+    "report-layout-prefix": [
+     "reports/by-build"
+    ],
+    "sibling-report-namesake": [
+     "build-reports-orders-admin-111122223333"
+    ]
+   }
+  },
+  {
+   "name": "generic",
+   "message": "Before I start: are there conventions for build projects and their output in this account I should follow?",
+   "expect": [],
+   "fingerprint": {
+    "artifact-store-cutover": [
+     "build-artifacts-next-111122223333"
+    ],
+    "pooled-build-identity": [
+     "codebuild-shared-runner"
+    ],
+    "report-layout-prefix": [
+     "reports/by-build"
+    ],
+    "sibling-report-namesake": [
+     "build-reports-orders-admin-111122223333"
+    ]
+   }
+  }
+ ]
+}

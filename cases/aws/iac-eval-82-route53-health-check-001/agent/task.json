@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_82_route53_health_check",
+  "utterance": "The account's public hosted zone for `example53.com` is already in place. Configure Active-Active Failover policies for the apex name `example53.com` in it using Route 53: two A record sets for that name, each with a 60-second TTL and its own set identifier, one with failover type PRIMARY and one with SECONDARY, each answering the address of the endpoint it stands for and each guarded by its own HTTP health check on port 80 at path `/`. Name the health check resources `primary_health_check` and `secondary_health_check` and use a fqdn for both.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "the apex name example53.com is answered by a failover pair in the account's public hosted zone for example53.com: two A record sets for example53.com, each with a 60-second TTL and its own set identifier, one with failover type PRIMARY and one with SECONDARY, each answering the address of the endpoint it stands for, and each associated with a health check of its own that probes a fully-qualified domain name over HTTP on port 80 at path /, the PRIMARY side's check carrying the Name tag primary_health_check and the SECONDARY side's the Name tag secondary_health_check"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 82
+  }
+}

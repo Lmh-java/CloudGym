@@ -1,0 +1,2 @@
+Records land in the store, and the place under it, the account keeps them in when you finish, delivered by the identity it designates then.
+A resource is booked to the chargeback its workload's identity is booked to.

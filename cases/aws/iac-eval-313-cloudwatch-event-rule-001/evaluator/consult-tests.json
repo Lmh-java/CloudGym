@@ -1,0 +1,133 @@
+{
+ "mode": "fingerprint",
+ "asks": [
+  {
+   "name": "namesake-schedule",
+   "message": "A rule already standing on the default bus describes itself as a ledger-close sweep and it holds the name I was told to use. Is that one yours, and does it stay as it is?",
+   "expect": [
+    "cron-name-claim"
+   ],
+   "fingerprint": {
+    "cron-name-claim": [
+     "ledger-close"
+    ],
+    "shared-slot-rule": [
+     "platform-daily-0700"
+    ],
+    "release-cutover": [
+     "cron-lambda-function-2",
+     "rollout-r7"
+    ],
+    "duplicate-schedule-cleanup": [
+     "idle-duplicate"
+    ]
+   }
+  },
+  {
+   "name": "shared-slot",
+   "message": "There is a rule called platform-daily-0700 running the very slot I was asked to schedule. Should this workload ride on it rather than keep a schedule of its own?",
+   "expect": [
+    "shared-slot-rule"
+   ],
+   "fingerprint": {
+    "cron-name-claim": [
+     "ledger-close"
+    ],
+    "shared-slot-rule": [
+     "platform-daily-0700"
+    ],
+    "release-cutover": [
+     "cron-lambda-function-2",
+     "rollout-r7"
+    ],
+    "duplicate-schedule-cleanup": [
+     "idle-duplicate"
+    ]
+   }
+  },
+  {
+   "name": "rollout-copy",
+   "message": "Listing the functions now returns cron-lambda-function-2 beside the one I was given. Which copy is the schedule supposed to drive?",
+   "expect": [
+    "release-cutover"
+   ],
+   "fingerprint": {
+    "cron-name-claim": [
+     "ledger-close"
+    ],
+    "shared-slot-rule": [
+     "platform-daily-0700"
+    ],
+    "release-cutover": [
+     "cron-lambda-function-2",
+     "rollout-r7"
+    ],
+    "duplicate-schedule-cleanup": [
+     "idle-duplicate"
+    ]
+   }
+  },
+  {
+   "name": "annotated-duplicate",
+   "message": "The schedule I put in is switched off and its description now reads idle-duplicate. Is it meant to stay off, or should I switch it back on?",
+   "expect": [
+    "duplicate-schedule-cleanup"
+   ],
+   "fingerprint": {
+    "cron-name-claim": [
+     "ledger-close"
+    ],
+    "shared-slot-rule": [
+     "platform-daily-0700"
+    ],
+    "release-cutover": [
+     "cron-lambda-function-2",
+     "rollout-r7"
+    ],
+    "duplicate-schedule-cleanup": [
+     "idle-duplicate"
+    ]
+   }
+  },
+  {
+   "name": "effect-in-words",
+   "message": "Something turned my schedule off, there seems to be a second copy of the function around, and the name I was asked to use was already in use. How is a workload supposed to be scheduled here?",
+   "expect": [],
+   "fingerprint": {
+    "cron-name-claim": [
+     "ledger-close"
+    ],
+    "shared-slot-rule": [
+     "platform-daily-0700"
+    ],
+    "release-cutover": [
+     "cron-lambda-function-2",
+     "rollout-r7"
+    ],
+    "duplicate-schedule-cleanup": [
+     "idle-duplicate"
+    ]
+   }
+  },
+  {
+   "name": "generic",
+   "message": "Any conventions I should follow here?",
+   "expect": [],
+   "fingerprint": {
+    "cron-name-claim": [
+     "ledger-close"
+    ],
+    "shared-slot-rule": [
+     "platform-daily-0700"
+    ],
+    "release-cutover": [
+     "cron-lambda-function-2",
+     "rollout-r7"
+    ],
+    "duplicate-schedule-cleanup": [
+     "idle-duplicate"
+    ]
+   }
+  }
+ ]
+}

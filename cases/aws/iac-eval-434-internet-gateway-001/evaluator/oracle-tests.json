@@ -1,0 +1,4420 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "result": {
+       "cidr": "10.3.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "orders-lab-slice": {
+      "result": {
+       "cidr": "10.4.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "shared-network-extension": {
+      "result": {
+       "cidr": "10.2.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "transit-range-claim": {
+      "result": {
+       "cidr": "10.1.0.0/16"
+      },
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "result": {
+       "cidr": "10.3.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "orders-lab-slice": {
+      "result": {
+       "cidr": "10.4.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "shared-network-extension": {
+      "result": {
+       "cidr": "10.2.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "transit-range-claim": {
+      "result": {
+       "cidr": "10.1.0.0/16"
+      },
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       },
+       "igw-0a1b2c3d4e5f60009": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60009",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         },
+         {
+          "Key": "allocation:platform-extension",
+          "Value": "10.2.0.0/16"
+         },
+         {
+          "Key": "allocation:analytics-segment",
+          "Value": "10.3.0.0/16"
+         },
+         {
+          "Key": "allocation:orders-lab",
+          "Value": "10.4.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "vpc-0a1b2c3d4e5f60003": {
+        "CidrBlock": "10.1.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60003"
+        ],
+        "DefaultNetworkAcl": "acl-0f60003",
+        "DefaultSecurityGroup": "sg-0f60003",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "net-transit-segment"
+         },
+         {
+          "Key": "Allocation",
+          "Value": "transit-segment"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60003"
+       },
+       "vpc-0a1b2c3d4e5f60009": {
+        "CidrBlock": "10.1.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60009"
+        ],
+        "DefaultNetworkAcl": "acl-0f60009",
+        "DefaultSecurityGroup": "sg-0f60009",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60009"
+       }
+      }
+     }
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "result": {
+       "cidr": "10.3.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "orders-lab-slice": {
+      "result": {
+       "cidr": "10.4.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "shared-network-extension": {
+      "result": {
+       "cidr": "10.2.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "transit-range-claim": {
+      "result": {
+       "cidr": "10.1.0.0/16"
+      },
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       },
+       "igw-0a1b2c3d4e5f60009": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60009",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "vpc-0a1b2c3d4e5f60009": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60009"
+        ],
+        "DefaultNetworkAcl": "acl-0f60009",
+        "DefaultSecurityGroup": "sg-0f60009",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60009"
+       }
+      }
+     }
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "result": {
+       "cidr": "10.3.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "orders-lab-slice": {
+      "result": {
+       "cidr": "10.4.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "shared-network-extension": {
+      "result": {
+       "cidr": "10.2.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "transit-range-claim": {
+      "result": {
+       "cidr": "10.1.0.0/16"
+      },
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       },
+       "igw-0a1b2c3d4e5f60009": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60009",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         },
+         {
+          "Key": "allocation:platform-extension",
+          "Value": "10.2.0.0/16"
+         },
+         {
+          "Key": "allocation:analytics-segment",
+          "Value": "10.3.0.0/16"
+         },
+         {
+          "Key": "allocation:orders-lab",
+          "Value": "10.4.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "vpc-0a1b2c3d4e5f60003": {
+        "CidrBlock": "10.1.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60003"
+        ],
+        "DefaultNetworkAcl": "acl-0f60003",
+        "DefaultSecurityGroup": "sg-0f60003",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "net-transit-segment"
+         },
+         {
+          "Key": "Allocation",
+          "Value": "transit-segment"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60003"
+       },
+       "vpc-0a1b2c3d4e5f60009": {
+        "CidrBlock": "10.5.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60009"
+        ],
+        "DefaultNetworkAcl": "acl-0f60009",
+        "DefaultSecurityGroup": "sg-0f60009",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60009"
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "orders-lab-slice": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "shared-network-extension": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "transit-range-claim": {
+      "result": {},
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       },
+       "igw-0a1b2c3d4e5f60009": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60009",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "vpc-0a1b2c3d4e5f60009": {
+        "CidrBlock": "10.1.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60009"
+        ],
+        "DefaultNetworkAcl": "acl-0f60009",
+        "DefaultSecurityGroup": "sg-0f60009",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60009"
+       }
+      }
+     }
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "orders-lab-slice": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "shared-network-extension": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "transit-range-claim": {
+      "result": {},
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       },
+       "igw-0a1b2c3d4e5f60009": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60009",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "vpc-0a1b2c3d4e5f60009": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60009"
+        ],
+        "DefaultNetworkAcl": "acl-0f60009",
+        "DefaultSecurityGroup": "sg-0f60009",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60009"
+       }
+      }
+     }
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "orders-lab-slice": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "shared-network-extension": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "transit-range-claim": {
+      "result": {},
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       },
+       "igw-0a1b2c3d4e5f60009": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60009",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    }
+   },
+   "name": "no-network"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "orders-lab-slice": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "shared-network-extension": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "transit-range-claim": {
+      "result": {},
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       },
+       "igw-0a1b2c3d4e5f60009": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60009",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "vpc-0a1b2c3d4e5f60009": {
+        "CidrBlock": "10.1.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60009"
+        ],
+        "DefaultNetworkAcl": "acl-0f60009",
+        "DefaultSecurityGroup": "sg-0f60009",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60009"
+       }
+      }
+     }
+    }
+   },
+   "name": "no-dns-hostnames"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "orders-lab-slice": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "shared-network-extension": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "transit-range-claim": {
+      "result": {},
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "vpc-0a1b2c3d4e5f60009": {
+        "CidrBlock": "10.1.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60009"
+        ],
+        "DefaultNetworkAcl": "acl-0f60009",
+        "DefaultSecurityGroup": "sg-0f60009",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60009"
+       }
+      }
+     }
+    }
+   },
+   "name": "no-gateway"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "orders-lab-slice": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "shared-network-extension": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "transit-range-claim": {
+      "result": {},
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       },
+       "igw-0a1b2c3d4e5f60009": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60009",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "web-igw"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "vpc-0a1b2c3d4e5f60009": {
+        "CidrBlock": "10.1.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60009"
+        ],
+        "DefaultNetworkAcl": "acl-0f60009",
+        "DefaultSecurityGroup": "sg-0f60009",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60009"
+       }
+      }
+     }
+    }
+   },
+   "name": "gateway-wrong-name"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "orders-lab-slice": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "shared-network-extension": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "transit-range-claim": {
+      "result": {},
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       },
+       "igw-0a1b2c3d4e5f60009": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60009",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "vpc-0a1b2c3d4e5f60009": {
+        "CidrBlock": "10.1.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60009"
+        ],
+        "DefaultNetworkAcl": "acl-0f60009",
+        "DefaultSecurityGroup": "sg-0f60009",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "web-vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60009"
+       }
+      }
+     }
+    }
+   },
+   "name": "network-wrong-name"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "orders-lab-slice": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "shared-network-extension": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "transit-range-claim": {
+      "result": {},
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       },
+       "igw-0a1b2c3d4e5f60009": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60009",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "vpc-0a1b2c3d4e5f60009": {
+        "CidrBlock": "10.0.128.0/17",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60009"
+        ],
+        "DefaultNetworkAcl": "acl-0f60009",
+        "DefaultSecurityGroup": "sg-0f60009",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60009"
+       }
+      }
+     }
+    }
+   },
+   "name": "range-overlaps-platform"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "orders-lab-slice": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "shared-network-extension": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "transit-range-claim": {
+      "result": {},
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       },
+       "igw-0a1b2c3d4e5f60009": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60009",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "vpc-0a1b2c3d4e5f60009": {
+        "CidrBlock": "10.1.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60009"
+        ],
+        "DefaultNetworkAcl": "acl-0f60009",
+        "DefaultSecurityGroup": "sg-0f60009",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60009"
+       }
+      }
+     }
+    }
+   },
+   "name": "allocation-record-dropped"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "orders-lab-slice": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "shared-network-extension": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "transit-range-claim": {
+      "result": {},
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       },
+       "igw-0a1b2c3d4e5f60009": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60009",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60009": {
+        "CidrBlock": "10.1.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60009"
+        ],
+        "DefaultNetworkAcl": "acl-0f60009",
+        "DefaultSecurityGroup": "sg-0f60009",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60009"
+       }
+      }
+     }
+    }
+   },
+   "name": "platform-network-gone"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "orders-lab-slice": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "shared-network-extension": {
+      "result": {},
+      "status": "not-fired"
+     },
+     "transit-range-claim": {
+      "result": {},
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       },
+       "igw-0a1b2c3d4e5f60009": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60009",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "vpc-0a1b2c3d4e5f60008": {
+        "CidrBlock": "10.6.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60008"
+        ],
+        "DefaultNetworkAcl": "acl-0f60008",
+        "DefaultSecurityGroup": "sg-0f60008",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60008"
+       },
+       "vpc-0a1b2c3d4e5f60009": {
+        "CidrBlock": "10.1.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60009"
+        ],
+        "DefaultNetworkAcl": "acl-0f60009",
+        "DefaultSecurityGroup": "sg-0f60009",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60009"
+       }
+      }
+     }
+    }
+   },
+   "name": "two-networks-named-vpc"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "result": {
+       "cidr": "10.3.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "orders-lab-slice": {
+      "result": {
+       "cidr": "10.4.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "shared-network-extension": {
+      "result": {
+       "cidr": "10.2.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "transit-range-claim": {
+      "result": {},
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       },
+       "igw-0a1b2c3d4e5f60009": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60009",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         },
+         {
+          "Key": "allocation:platform-extension",
+          "Value": "10.2.0.0/16"
+         },
+         {
+          "Key": "allocation:analytics-segment",
+          "Value": "10.3.0.0/16"
+         },
+         {
+          "Key": "allocation:orders-lab",
+          "Value": "10.4.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "vpc-0a1b2c3d4e5f60009": {
+        "CidrBlock": "10.5.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60009"
+        ],
+        "DefaultNetworkAcl": "acl-0f60009",
+        "DefaultSecurityGroup": "sg-0f60009",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60009"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-transit-range-claim"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "result": {
+       "cidr": "10.3.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "orders-lab-slice": {
+      "result": {
+       "cidr": "10.4.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "shared-network-extension": {
+      "result": {},
+      "status": "failed"
+     },
+     "transit-range-claim": {
+      "result": {
+       "cidr": "10.1.0.0/16"
+      },
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       },
+       "igw-0a1b2c3d4e5f60009": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60009",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         },
+         {
+          "Key": "allocation:analytics-segment",
+          "Value": "10.3.0.0/16"
+         },
+         {
+          "Key": "allocation:orders-lab",
+          "Value": "10.4.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "vpc-0a1b2c3d4e5f60003": {
+        "CidrBlock": "10.1.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60003"
+        ],
+        "DefaultNetworkAcl": "acl-0f60003",
+        "DefaultSecurityGroup": "sg-0f60003",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "net-transit-segment"
+         },
+         {
+          "Key": "Allocation",
+          "Value": "transit-segment"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60003"
+       },
+       "vpc-0a1b2c3d4e5f60009": {
+        "CidrBlock": "10.5.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60009"
+        ],
+        "DefaultNetworkAcl": "acl-0f60009",
+        "DefaultSecurityGroup": "sg-0f60009",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60009"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-shared-network-extension"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "result": {},
+      "status": "failed"
+     },
+     "orders-lab-slice": {
+      "result": {
+       "cidr": "10.4.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "shared-network-extension": {
+      "result": {
+       "cidr": "10.2.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "transit-range-claim": {
+      "result": {
+       "cidr": "10.1.0.0/16"
+      },
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       },
+       "igw-0a1b2c3d4e5f60009": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60009",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         },
+         {
+          "Key": "allocation:platform-extension",
+          "Value": "10.2.0.0/16"
+         },
+         {
+          "Key": "allocation:orders-lab",
+          "Value": "10.4.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "vpc-0a1b2c3d4e5f60003": {
+        "CidrBlock": "10.1.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60003"
+        ],
+        "DefaultNetworkAcl": "acl-0f60003",
+        "DefaultSecurityGroup": "sg-0f60003",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "net-transit-segment"
+         },
+         {
+          "Key": "Allocation",
+          "Value": "transit-segment"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60003"
+       },
+       "vpc-0a1b2c3d4e5f60009": {
+        "CidrBlock": "10.5.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60009"
+        ],
+        "DefaultNetworkAcl": "acl-0f60009",
+        "DefaultSecurityGroup": "sg-0f60009",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60009"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-analytics-segment-reservation"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "result": {
+       "cidr": "10.3.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "orders-lab-slice": {
+      "result": {},
+      "status": "failed"
+     },
+     "shared-network-extension": {
+      "result": {
+       "cidr": "10.2.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "transit-range-claim": {
+      "result": {
+       "cidr": "10.1.0.0/16"
+      },
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       },
+       "igw-0a1b2c3d4e5f60009": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60009",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         },
+         {
+          "Key": "allocation:platform-extension",
+          "Value": "10.2.0.0/16"
+         },
+         {
+          "Key": "allocation:analytics-segment",
+          "Value": "10.3.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "vpc-0a1b2c3d4e5f60003": {
+        "CidrBlock": "10.1.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60003"
+        ],
+        "DefaultNetworkAcl": "acl-0f60003",
+        "DefaultSecurityGroup": "sg-0f60003",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "net-transit-segment"
+         },
+         {
+          "Key": "Allocation",
+          "Value": "transit-segment"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60003"
+       },
+       "vpc-0a1b2c3d4e5f60009": {
+        "CidrBlock": "10.5.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60009"
+        ],
+        "DefaultNetworkAcl": "acl-0f60009",
+        "DefaultSecurityGroup": "sg-0f60009",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60009"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-orders-lab-slice"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "result": {
+       "cidr": "10.3.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "orders-lab-slice": {
+      "result": {
+       "cidr": "10.4.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "shared-network-extension": {
+      "result": {
+       "cidr": "10.2.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "transit-range-claim": {
+      "result": {
+       "cidr": "10.1.0.0/16"
+      },
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       },
+       "igw-0a1b2c3d4e5f60009": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60009",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         },
+         {
+          "Key": "allocation:platform-extension",
+          "Value": "10.2.0.0/16"
+         },
+         {
+          "Key": "allocation:analytics-segment",
+          "Value": "10.3.0.0/16"
+         },
+         {
+          "Key": "allocation:orders-lab",
+          "Value": "10.4.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "vpc-0a1b2c3d4e5f60009": {
+        "CidrBlock": "10.1.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60009"
+        ],
+        "DefaultNetworkAcl": "acl-0f60009",
+        "DefaultSecurityGroup": "sg-0f60009",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60009"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-transit-range-claim"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "result": {
+       "cidr": "10.3.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "orders-lab-slice": {
+      "result": {
+       "cidr": "10.4.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "shared-network-extension": {
+      "result": {
+       "cidr": "10.2.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "transit-range-claim": {
+      "result": {
+       "cidr": "10.1.0.0/16"
+      },
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       },
+       "igw-0a1b2c3d4e5f60009": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60009",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         },
+         {
+          "Key": "allocation:analytics-segment",
+          "Value": "10.3.0.0/16"
+         },
+         {
+          "Key": "allocation:orders-lab",
+          "Value": "10.4.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "vpc-0a1b2c3d4e5f60003": {
+        "CidrBlock": "10.1.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60003"
+        ],
+        "DefaultNetworkAcl": "acl-0f60003",
+        "DefaultSecurityGroup": "sg-0f60003",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "net-transit-segment"
+         },
+         {
+          "Key": "Allocation",
+          "Value": "transit-segment"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60003"
+       },
+       "vpc-0a1b2c3d4e5f60009": {
+        "CidrBlock": "10.2.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60009"
+        ],
+        "DefaultNetworkAcl": "acl-0f60009",
+        "DefaultSecurityGroup": "sg-0f60009",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60009"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-shared-network-extension"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "result": {
+       "cidr": "10.3.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "orders-lab-slice": {
+      "result": {
+       "cidr": "10.4.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "shared-network-extension": {
+      "result": {
+       "cidr": "10.2.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "transit-range-claim": {
+      "result": {
+       "cidr": "10.1.0.0/16"
+      },
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       },
+       "igw-0a1b2c3d4e5f60009": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60009",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         },
+         {
+          "Key": "allocation:platform-extension",
+          "Value": "10.2.0.0/16"
+         },
+         {
+          "Key": "allocation:orders-lab",
+          "Value": "10.4.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "vpc-0a1b2c3d4e5f60003": {
+        "CidrBlock": "10.1.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60003"
+        ],
+        "DefaultNetworkAcl": "acl-0f60003",
+        "DefaultSecurityGroup": "sg-0f60003",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "net-transit-segment"
+         },
+         {
+          "Key": "Allocation",
+          "Value": "transit-segment"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60003"
+       },
+       "vpc-0a1b2c3d4e5f60009": {
+        "CidrBlock": "10.3.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60009"
+        ],
+        "DefaultNetworkAcl": "acl-0f60009",
+        "DefaultSecurityGroup": "sg-0f60009",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60009"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-analytics-segment-reservation"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "result": {
+       "cidr": "10.3.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "orders-lab-slice": {
+      "result": {
+       "cidr": "10.4.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "shared-network-extension": {
+      "result": {
+       "cidr": "10.2.0.0/16"
+      },
+      "status": "succeeded"
+     },
+     "transit-range-claim": {
+      "result": {
+       "cidr": "10.1.0.0/16"
+      },
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0a1b2c3d4e5f60001": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60001",
+        "Tags": []
+       },
+       "igw-0a1b2c3d4e5f60009": {
+        "InternetGatewayId": "igw-0a1b2c3d4e5f60009",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0a1b2c3d4e5f60001": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60001"
+        ],
+        "DefaultNetworkAcl": "acl-0f60001",
+        "DefaultSecurityGroup": "sg-0f60001",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0a1b2c3d4e5f60001"
+       },
+       "vpc-0a1b2c3d4e5f60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60002"
+        ],
+        "DefaultNetworkAcl": "acl-0f60002",
+        "DefaultSecurityGroup": "sg-0f60002",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         },
+         {
+          "Key": "allocation:platform-extension",
+          "Value": "10.2.0.0/16"
+         },
+         {
+          "Key": "allocation:analytics-segment",
+          "Value": "10.3.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60002"
+       },
+       "vpc-0a1b2c3d4e5f60003": {
+        "CidrBlock": "10.1.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60003"
+        ],
+        "DefaultNetworkAcl": "acl-0f60003",
+        "DefaultSecurityGroup": "sg-0f60003",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "net-transit-segment"
+         },
+         {
+          "Key": "Allocation",
+          "Value": "transit-segment"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60003"
+       },
+       "vpc-0a1b2c3d4e5f60009": {
+        "CidrBlock": "10.4.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0f60009"
+        ],
+        "DefaultNetworkAcl": "acl-0f60009",
+        "DefaultSecurityGroup": "sg-0f60009",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0a1b2c3d4e5f60009"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-orders-lab-slice"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-04ba38c1ab8c09595": {
+        "InternetGatewayId": "igw-04ba38c1ab8c09595",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-05075bf5ff6845928": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0788d528562c55f5f"
+        ],
+        "DefaultNetworkAcl": "acl-0b8d8fac6497ae02d",
+        "DefaultSecurityGroup": "sg-0a0b9d7e9f2fefdc4",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-05075bf5ff6845928"
+       },
+       "vpc-06d61fa595ef82511": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-09de816b7be5ec4f5"
+        ],
+        "DefaultNetworkAcl": "acl-0b055d3ce46cc2770",
+        "DefaultSecurityGroup": "sg-097501c745aa4957a",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         }
+        ],
+        "VpcId": "vpc-06d61fa595ef82511"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-04ba38c1ab8c09595": {
+        "InternetGatewayId": "igw-04ba38c1ab8c09595",
+        "Tags": []
+       },
+       "igw-0fc6c7f84b9be1e60": {
+        "InternetGatewayId": "igw-0fc6c7f84b9be1e60",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-05075bf5ff6845928": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0788d528562c55f5f"
+        ],
+        "DefaultNetworkAcl": "acl-0b8d8fac6497ae02d",
+        "DefaultSecurityGroup": "sg-0a0b9d7e9f2fefdc4",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-05075bf5ff6845928"
+       },
+       "vpc-06d61fa595ef82511": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-09de816b7be5ec4f5"
+        ],
+        "DefaultNetworkAcl": "acl-0b055d3ce46cc2770",
+        "DefaultSecurityGroup": "sg-097501c745aa4957a",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         }
+        ],
+        "VpcId": "vpc-06d61fa595ef82511"
+       },
+       "vpc-082cd9e405b0e4214": {
+        "CidrBlock": "192.168.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-09c4ffe919c17e2b1"
+        ],
+        "DefaultNetworkAcl": "acl-08ccd00d228c11d30",
+        "DefaultSecurityGroup": "sg-098f3e1c01d47cc28",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-082cd9e405b0e4214"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "analytics-segment-reservation": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 3,
+        "landed_ns": 400420886923876,
+        "landed_s": 208.275,
+        "result": {
+         "cidr": "10.3.0.0/16",
+         "fingerprint": [
+          "allocation:analytics-segment",
+          "10.3.0.0/16"
+         ],
+         "reserved": "vpc-00b360f19aa115cf8",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-analytics-segment-reservation-3",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "cidr": "10.3.0.0/16",
+       "fingerprint": [
+        "allocation:analytics-segment",
+        "10.3.0.0/16"
+       ],
+       "reserved": "vpc-00b360f19aa115cf8",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "orders-lab-slice": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 4,
+        "landed_ns": 400425386965906,
+        "landed_s": 212.775,
+        "result": {
+         "cidr": "10.4.0.0/16",
+         "fingerprint": [
+          "allocation:orders-lab",
+          "10.4.0.0/16"
+         ],
+         "reserved": "vpc-00b360f19aa115cf8",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-orders-lab-slice-4",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "cidr": "10.4.0.0/16",
+       "fingerprint": [
+        "allocation:orders-lab",
+        "10.4.0.0/16"
+       ],
+       "reserved": "vpc-00b360f19aa115cf8",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "shared-network-extension": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 2,
+        "landed_ns": 400412367768458,
+        "landed_s": 199.756,
+        "result": {
+         "cidr": "10.2.0.0/16",
+         "extended": "vpc-00b360f19aa115cf8",
+         "fingerprint": [
+          "allocation:platform-extension",
+          "10.2.0.0/16"
+         ],
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-shared-network-extension-2",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "cidr": "10.2.0.0/16",
+       "extended": "vpc-00b360f19aa115cf8",
+       "fingerprint": [
+        "allocation:platform-extension",
+        "10.2.0.0/16"
+       ],
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "transit-range-claim": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 1,
+        "landed_ns": 400217601171484,
+        "landed_s": 4.989,
+        "result": {
+         "cidr": "10.1.0.0/16",
+         "fingerprint": [
+          "net-transit-segment"
+         ],
+         "segment": "vpc-069d76ed27fc67e12",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-transit-range-claim-1",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "cidr": "10.1.0.0/16",
+       "fingerprint": [
+        "net-transit-segment"
+       ],
+       "segment": "vpc-069d76ed27fc67e12",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0b21ef0cb2b9ff2cf": {
+        "InternetGatewayId": "igw-0b21ef0cb2b9ff2cf",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-00b360f19aa115cf8": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0b5324e867ddbd135"
+        ],
+        "DefaultNetworkAcl": "acl-01ab8ac5a0be88c26",
+        "DefaultSecurityGroup": "sg-0422b1feac0bd9eda",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-00b360f19aa115cf8"
+       },
+       "vpc-091c4438db96d14d5": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-014ab1681721116ce"
+        ],
+        "DefaultNetworkAcl": "acl-091413a2ca2dd3b9a",
+        "DefaultSecurityGroup": "sg-0b5ba66e5ec62c1fa",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-091c4438db96d14d5"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0b21ef0cb2b9ff2cf": {
+        "InternetGatewayId": "igw-0b21ef0cb2b9ff2cf",
+        "Tags": []
+       },
+       "igw-0d130e8e488f81d08": {
+        "InternetGatewayId": "igw-0d130e8e488f81d08",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-00b360f19aa115cf8": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0b5324e867ddbd135",
+         "vpc-cidr-assoc-0c149df687de9c137"
+        ],
+        "DefaultNetworkAcl": "acl-01ab8ac5a0be88c26",
+        "DefaultSecurityGroup": "sg-0422b1feac0bd9eda",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "allocation:platform-extension",
+          "Value": "10.2.0.0/16"
+         },
+         {
+          "Key": "allocation:orders-lab",
+          "Value": "10.4.0.0/16"
+         },
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "address-plan",
+          "Value": "10.0.0.0/8"
+         },
+         {
+          "Key": "allocation:analytics-segment",
+          "Value": "10.3.0.0/16"
+         },
+         {
+          "Key": "allocation:platform-core",
+          "Value": "10.0.0.0/16"
+         }
+        ],
+        "VpcId": "vpc-00b360f19aa115cf8"
+       },
+       "vpc-069d76ed27fc67e12": {
+        "CidrBlock": "10.1.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-02e625ea08ea56a60"
+        ],
+        "DefaultNetworkAcl": "acl-0c914bf9466accdfe",
+        "DefaultSecurityGroup": "sg-0a504adaa3dee1ac0",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "net-transit-segment"
+         },
+         {
+          "Key": "Allocation",
+          "Value": "transit-segment"
+         }
+        ],
+        "VpcId": "vpc-069d76ed27fc67e12"
+       },
+       "vpc-075626540ed52af47": {
+        "CidrBlock": "10.50.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0eb56be4c020944a7"
+        ],
+        "DefaultNetworkAcl": "acl-0e9e31454e6d5caf5",
+        "DefaultSecurityGroup": "sg-015ad97b1dcbba30b",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "allocation:storefront-web",
+          "Value": "10.50.0.0/16"
+         },
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-075626540ed52af47"
+       },
+       "vpc-091c4438db96d14d5": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-014ab1681721116ce"
+        ],
+        "DefaultNetworkAcl": "acl-091413a2ca2dd3b9a",
+        "DefaultSecurityGroup": "sg-0b5ba66e5ec62c1fa",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-091c4438db96d14d5"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-interference-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

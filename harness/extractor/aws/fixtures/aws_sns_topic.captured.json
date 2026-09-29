@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::SNS::Topic",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-01T06:53:57+00:00",
+      "ResourceDescription": {
+        "Identifier": "arn:aws:sns:us-east-1:123456789012:cloudgym-capability-20260901065337886700000002",
+        "Properties": "{\"TopicArn\":\"arn:aws:sns:us-east-1:123456789012:cloudgym-capability-20260901065337886700000002\",\"DisplayName\":\"CloudGym capability check\",\"FifoTopic\":false,\"ArchivePolicy\":{},\"TopicName\":\"cloudgym-capability-20260901065337886700000002\"}"
+      },
+      "TypeName": "AWS::SNS::Topic"
+    }
+  ],
+  "recorded_at": "2026-09-01T06:53:59+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

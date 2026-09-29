@@ -1,0 +1,23 @@
+{
+  "distractors": {
+    "transform-headroom": {
+      "codes": [
+        "ResourceConflictException"
+      ],
+      "entry": "lambda.function",
+      "operation": "UpdateFunctionConfiguration",
+      "service": "lambda",
+      "source": "sdk"
+    },
+    "workload-owner-record": {
+      "codes": [
+        "ResourceConflictException"
+      ],
+      "entry": "lambda.function",
+      "operation": "UpdateFunctionConfiguration",
+      "service": "lambda",
+      "source": "sdk"
+    }
+  },
+  "schema_version": 1
+}

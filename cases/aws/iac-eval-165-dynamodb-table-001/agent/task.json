@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_165_dynamodb_table",
+  "utterance": "The arcade game service keeps its high scores in DynamoDB, and it has to end up with exactly one scores store. That store must run on provisioned throughput with read capacity 20 and write capacity 20, keyed on `UserId` (string) with `GameTitle` (string) as its range key, and it needs a global secondary index named `GameTitleIndex` keyed on `GameTitle` with `TopScore` (number) as its range key, projecting `UserId` alongside the index keys, at read capacity 10 and write capacity 10. Stand the store up if the service has not got one. Data stores in this account record the service that owns them and what they hold. Finally, the existing `arcade-service` role must be able to read and write every store the arcade service keeps.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's data and how it is stored and laid out",
+    "intent": "the arcade game service has exactly one scores store: a DynamoDB table on PROVISIONED billing at read capacity 20 and write capacity 20, keyed on the string attribute UserId with the string attribute GameTitle as its range key, carrying a global secondary index named GameTitleIndex keyed on GameTitle with the number attribute TopScore as its range key, projecting UserId alongside the index keys at read and write capacity 10; and the pre-existing arcade-service role holds a grant that allows reading and writing every store the service keeps"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 165
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::EC2::LaunchTemplate",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-22T18:10:46+00:00",
+      "ResourceDescription": {
+        "Identifier": "lt-03b0e52d6a89fb23c",
+        "Properties": "{\"LaunchTemplateId\": \"lt-03b0e52d6a89fb23c\", \"LaunchTemplateName\": \"cloudgym-capability-20260922181030183100000001\", \"CreateTime\": \"2026-09-22T18:10:30+00:00\", \"CreatedBy\": \"arn:aws:sts::123456789012:assumed-role/OrganizationAccountAccessRole/botocore-session-1790100621\", \"DefaultVersionNumber\": 1, \"LatestVersionNumber\": 1, \"Operator\": {\"Managed\": false}, \"LaunchTemplateData\": {\"ImageId\": \"ami-0b2c9d1f3edcfd709\", \"InstanceType\": \"t3.micro\", \"UserData\": \"\", \"TagSpecifications\": [{\"ResourceType\": \"instance\", \"Tags\": [{\"Key\": \"Name\", \"Value\": \"cloudgym-capability\"}]}]}, \"VersionDescription\": \"\", \"VersionNumber\": 1}"
+      },
+      "TypeName": "AWS::EC2::LaunchTemplate"
+    }
+  ],
+  "recorded_at": "2026-09-22T18:10:46+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

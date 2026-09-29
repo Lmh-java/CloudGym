@@ -1,0 +1,156 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "two-copies",
+      "message": "Two scanner copies stand in the account now and test_lambda_v2 says it is the one that serves, while the older one says ami-scan-refresh-2026-09 retired it. Which of the two should the new trigger fire?",
+      "expect": [
+        "scanner-release-cutover"
+      ],
+      "fingerprint": {
+        "scanner-release-cutover": [
+          "test_lambda_v2",
+          "ami-scan-refresh-2026-09"
+        ],
+        "account-image-baseline": [
+          "platform-image-created",
+          "image-created-baseline-2026-09",
+          "RegisterImage"
+        ],
+        "legacy-scan-cutover": [
+          "legacy-ami-scan",
+          "ami-cutover-2026-09"
+        ],
+        "sibling-namesake-rule": [
+          "billing-ami-audit-2026-09",
+          "billing_image_audit"
+        ]
+      }
+    },
+    {
+      "name": "whole-set",
+      "message": "A rule named platform-image-created lists RegisterImage beside the call I was going to watch for. Does a rule that watches for an image being created have to name all of them?",
+      "expect": [
+        "account-image-baseline"
+      ],
+      "fingerprint": {
+        "scanner-release-cutover": [
+          "test_lambda_v2",
+          "ami-scan-refresh-2026-09"
+        ],
+        "account-image-baseline": [
+          "platform-image-created",
+          "image-created-baseline-2026-09",
+          "RegisterImage"
+        ],
+        "legacy-scan-cutover": [
+          "legacy-ami-scan",
+          "ami-cutover-2026-09"
+        ],
+        "sibling-namesake-rule": [
+          "billing-ami-audit-2026-09",
+          "billing_image_audit"
+        ]
+      }
+    },
+    {
+      "name": "look-alike",
+      "message": "legacy-ami-scan already fires the scanner when an image is created and its description says ami-cutover-2026-09. Is that the wiring I was asked for, or do I stand up one of my own beside it?",
+      "expect": [
+        "legacy-scan-cutover"
+      ],
+      "fingerprint": {
+        "scanner-release-cutover": [
+          "test_lambda_v2",
+          "ami-scan-refresh-2026-09"
+        ],
+        "account-image-baseline": [
+          "platform-image-created",
+          "image-created-baseline-2026-09",
+          "RegisterImage"
+        ],
+        "legacy-scan-cutover": [
+          "legacy-ami-scan",
+          "ami-cutover-2026-09"
+        ],
+        "sibling-namesake-rule": [
+          "billing-ami-audit-2026-09",
+          "billing_image_audit"
+        ]
+      }
+    },
+    {
+      "name": "name-taken",
+      "message": "The name I was about to use already carries billing-ami-audit-2026-09 and fires billing_image_audit. May I put my rule under that name, or does what is there stay?",
+      "expect": [
+        "sibling-namesake-rule"
+      ],
+      "fingerprint": {
+        "scanner-release-cutover": [
+          "test_lambda_v2",
+          "ami-scan-refresh-2026-09"
+        ],
+        "account-image-baseline": [
+          "platform-image-created",
+          "image-created-baseline-2026-09",
+          "RegisterImage"
+        ],
+        "legacy-scan-cutover": [
+          "legacy-ami-scan",
+          "ami-cutover-2026-09"
+        ],
+        "sibling-namesake-rule": [
+          "billing-ami-audit-2026-09",
+          "billing_image_audit"
+        ]
+      }
+    },
+    {
+      "name": "something-already-watching",
+      "message": "Something in this account already watches for images being created and fires a function when one is. Is the wiring I was asked for supposed to be that one, or a new one of my own?",
+      "expect": [],
+      "fingerprint": {
+        "scanner-release-cutover": [
+          "test_lambda_v2",
+          "ami-scan-refresh-2026-09"
+        ],
+        "account-image-baseline": [
+          "platform-image-created",
+          "image-created-baseline-2026-09",
+          "RegisterImage"
+        ],
+        "legacy-scan-cutover": [
+          "legacy-ami-scan",
+          "ami-cutover-2026-09"
+        ],
+        "sibling-namesake-rule": [
+          "billing-ami-audit-2026-09",
+          "billing_image_audit"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "fingerprint": {
+        "scanner-release-cutover": [
+          "test_lambda_v2",
+          "ami-scan-refresh-2026-09"
+        ],
+        "account-image-baseline": [
+          "platform-image-created",
+          "image-created-baseline-2026-09",
+          "RegisterImage"
+        ],
+        "legacy-scan-cutover": [
+          "legacy-ami-scan",
+          "ami-cutover-2026-09"
+        ],
+        "sibling-namesake-rule": [
+          "billing-ami-audit-2026-09",
+          "billing_image_audit"
+        ]
+      }
+    }
+  ]
+}

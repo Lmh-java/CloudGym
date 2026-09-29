@@ -1,0 +1,2 @@
+Address space and shared names are allocated centrally: what is reserved stays reserved, and a workload joins what the account already runs rather than adding a second.
+A store is announced only where it is reachable; what answers inside a network is not answered outside.

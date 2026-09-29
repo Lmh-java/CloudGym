@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_165_dynamodb_table",
+  "utterance": "The tournament service keeps its high scores in the `tournament-scores` DynamoDB table, which is still standing at the throughput it was prototyped on. Raise the store to read capacity 20 and write capacity 20, carrying a global secondary index named `GameTitleIndex` keyed on `GameTitle` with `TopScore` (number) as its range key, projecting `UserId` alongside the index keys, at read capacity 10 and write capacity 10. Stale entries have to age out on their own, so the store must end up with time-to-live turned on against its `TimeToExist` attribute, and it is `Environment = production`. The service also needs an identity of its own: create a role named `tournament-service` that Lambda can assume and that can read and write the store and everything indexed off it. Finish by reporting what the store ended up with: its billing mode and capacity, the indexes on it, its time-to-live setting and its tags.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's data and how it is stored and laid out",
+    "intent": "the DynamoDB table tournament-scores stands on PROVISIONED billing at read capacity 20 and write capacity 20, still keyed on the string attribute UserId with the string attribute GameTitle as its range key, and carries a global secondary index named GameTitleIndex keyed on GameTitle with the number attribute TopScore as its range key, projecting UserId alongside the index keys at read and write capacity 10; time-to-live is enabled on that table against the TimeToExist attribute; the store carries the tag Environment=production; and a role named tournament-service exists, assumable by Lambda, holding a grant that allows reading and writing that store and its indexes"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 165
+  }
+}

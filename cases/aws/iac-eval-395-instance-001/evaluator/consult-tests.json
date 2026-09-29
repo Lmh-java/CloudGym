@@ -1,0 +1,169 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "front-conventions-upfront",
+      "message": "Before I put anything behind a load balancer here: is there a convention for which servers a workload's front is expected to carry, and which it must leave alone?",
+      "expect": [],
+      "fingerprint": {
+        "release-canary-server": [
+          "ledger-web-r7",
+          "taking-traffic"
+        ],
+        "cutover-holdback-server": [
+          "ledger-api-legacy",
+          "pre-cutover"
+        ],
+        "sibling-tap-server": [
+          "i-0f6666666666fffff"
+        ],
+        "namesake-front-segment": [
+          "10.40.9.0/24",
+          "net-staging"
+        ]
+      },
+      "note": "asked before anything has happened: it cites nothing and reaches nobody"
+    },
+    {
+      "name": "version-taking-traffic",
+      "message": "A server ledger-web-r7 came up in the segment I am working in, marked taking-traffic, and I did not launch it. Does it belong behind the front I am building?",
+      "expect": [
+        "release-canary-server"
+      ],
+      "fingerprint": {
+        "release-canary-server": [
+          "ledger-web-r7",
+          "taking-traffic"
+        ],
+        "cutover-holdback-server": [
+          "ledger-api-legacy",
+          "pre-cutover"
+        ],
+        "sibling-tap-server": [
+          "i-0f6666666666fffff"
+        ],
+        "namesake-front-segment": [
+          "10.40.9.0/24",
+          "net-staging"
+        ]
+      }
+    },
+    {
+      "name": "legacy-marked-pre-cutover",
+      "message": "ledger-api-legacy carries the same attribution as the rest of the service but is marked pre-cutover. Should it be taking traffic from the new front?",
+      "expect": [
+        "cutover-holdback-server"
+      ],
+      "fingerprint": {
+        "release-canary-server": [
+          "ledger-web-r7",
+          "taking-traffic"
+        ],
+        "cutover-holdback-server": [
+          "ledger-api-legacy",
+          "pre-cutover"
+        ],
+        "sibling-tap-server": [
+          "i-0f6666666666fffff"
+        ],
+        "namesake-front-segment": [
+          "10.40.9.0/24",
+          "net-staging"
+        ]
+      }
+    },
+    {
+      "name": "lookalike-server",
+      "message": "Something registered i-0f6666666666fffff in the target group I just cut for the ledger front, and I did not put it there. Is it one of the servers I should be fronting?",
+      "expect": [
+        "sibling-tap-server"
+      ],
+      "fingerprint": {
+        "release-canary-server": [
+          "ledger-web-r7",
+          "taking-traffic"
+        ],
+        "cutover-holdback-server": [
+          "ledger-api-legacy",
+          "pre-cutover"
+        ],
+        "sibling-tap-server": [
+          "i-0f6666666666fffff"
+        ],
+        "namesake-front-segment": [
+          "10.40.9.0/24",
+          "net-staging"
+        ]
+      }
+    },
+    {
+      "name": "two-segments-one-name",
+      "message": "Two segments in this network answer to the same name; the extra one is 10.40.9.0/24 and is attributed to net-staging. Which segments should the workload land in?",
+      "expect": [
+        "namesake-front-segment"
+      ],
+      "fingerprint": {
+        "release-canary-server": [
+          "ledger-web-r7",
+          "taking-traffic"
+        ],
+        "cutover-holdback-server": [
+          "ledger-api-legacy",
+          "pre-cutover"
+        ],
+        "sibling-tap-server": [
+          "i-0f6666666666fffff"
+        ],
+        "namesake-front-segment": [
+          "10.40.9.0/24",
+          "net-staging"
+        ]
+      }
+    },
+    {
+      "name": "servers-keep-appearing",
+      "message": "Servers I did not launch keep turning up in the segments I was asked to use. Should the front I am building carry them, or only the ones I launched?",
+      "expect": [],
+      "fingerprint": {
+        "release-canary-server": [
+          "ledger-web-r7",
+          "taking-traffic"
+        ],
+        "cutover-holdback-server": [
+          "ledger-api-legacy",
+          "pre-cutover"
+        ],
+        "sibling-tap-server": [
+          "i-0f6666666666fffff"
+        ],
+        "namesake-front-segment": [
+          "10.40.9.0/24",
+          "net-staging"
+        ]
+      },
+      "note": "describes the effect without naming anything that was read; it reaches nobody"
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "fingerprint": {
+        "release-canary-server": [
+          "ledger-web-r7",
+          "taking-traffic"
+        ],
+        "cutover-holdback-server": [
+          "ledger-api-legacy",
+          "pre-cutover"
+        ],
+        "sibling-tap-server": [
+          "i-0f6666666666fffff"
+        ],
+        "namesake-front-segment": [
+          "10.40.9.0/24",
+          "net-staging"
+        ]
+      },
+      "expect_at_most": 0
+    }
+  ]
+}

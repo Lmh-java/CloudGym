@@ -1,0 +1,2 @@
+A domain answers where it already answers: work lands in the zone already serving it, not a later namesake, and a name that answers keeps its answer.
+Where traffic is already divided for a workload, a new share joins that answer rather than a name of its own.

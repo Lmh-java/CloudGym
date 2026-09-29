@@ -1,0 +1,3389 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "namesake-staging-store": {
+      "status": "succeeded"
+     },
+     "object-audit-fanout": {
+      "status": "succeeded"
+     },
+     "rotated-log-objects": {
+      "status": "succeeded"
+     },
+     "shared-store-layout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "namesake-staging-store": {
+      "status": "succeeded"
+     },
+     "object-audit-fanout": {
+      "status": "succeeded"
+     },
+     "rotated-log-objects": {
+      "status": "succeeded"
+     },
+     "shared-store-layout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-002": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-002",
+        "BucketName": "app-logs-000000000104-002",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Migration",
+          "Value": "cutover-staging-2026-09"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       },
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "NotificationConfiguration": {
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectRemoved:*",
+           "Id": "account-object-audit-2026-09",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:account-object-audit-events"
+          },
+          {
+           "Event": "s3:ObjectTagging:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "prefix",
+               "Value": "logs/orders-team/"
+              }
+             ]
+            }
+           },
+           "Id": "store-layout-2026-09",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:store-layout-events"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "LogObjects",
+          "Value": ".log.gz"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Rollout",
+          "Value": "log-compression-2026-09"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       },
+       "your-bucket-name-000000000104": {
+        "Arn": "arn:aws:s3:::your-bucket-name-000000000104",
+        "BucketName": "your-bucket-name-000000000104",
+        "NotificationConfiguration": {
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Id": "orders-log-objects",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:account-object-audit-events": {
+        "TopicName": "account-object-audit-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "TopicName": "s3-event-notification-topic"
+       },
+       "arn:aws:sns:us-east-1:000000000104:store-layout-events": {
+        "TopicName": "store-layout-events"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "namesake-staging-store": {
+      "status": "succeeded"
+     },
+     "object-audit-fanout": {
+      "status": "succeeded"
+     },
+     "rotated-log-objects": {
+      "status": "succeeded"
+     },
+     "shared-store-layout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-002": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-002",
+        "BucketName": "app-logs-000000000104-002",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Migration",
+          "Value": "cutover-staging-2026-09"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       },
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "NotificationConfiguration": {
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Id": "orders-log-objects",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "LogObjects",
+          "Value": ".log.gz"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Rollout",
+          "Value": "log-compression-2026-09"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:account-object-audit-events": {
+        "TopicName": "account-object-audit-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "TopicName": "s3-event-notification-topic"
+       },
+       "arn:aws:sns:us-east-1:000000000104:store-layout-events": {
+        "TopicName": "store-layout-events"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "namesake-staging-store": {
+      "status": "succeeded"
+     },
+     "object-audit-fanout": {
+      "status": "succeeded"
+     },
+     "rotated-log-objects": {
+      "status": "succeeded"
+     },
+     "shared-store-layout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-002": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-002",
+        "BucketName": "app-logs-000000000104-002",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Migration",
+          "Value": "cutover-staging-2026-09"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       },
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "NotificationConfiguration": {
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectRemoved:*",
+           "Id": "account-object-audit-2026-09",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:account-object-audit-events"
+          },
+          {
+           "Event": "s3:ObjectTagging:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "prefix",
+               "Value": "logs/orders-team/"
+              }
+             ]
+            }
+           },
+           "Id": "store-layout-2026-09",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:store-layout-events"
+          },
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "prefix",
+               "Value": "logs/orders-team/"
+              },
+              {
+               "Name": "suffix",
+               "Value": ".log.gz"
+              }
+             ]
+            }
+           },
+           "Id": "orders-log-objects",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "LogObjects",
+          "Value": ".log.gz"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Rollout",
+          "Value": "log-compression-2026-09"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:account-object-audit-events": {
+        "TopicName": "account-object-audit-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "TopicName": "s3-event-notification-topic"
+       },
+       "arn:aws:sns:us-east-1:000000000104:store-layout-events": {
+        "TopicName": "store-layout-events"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "namesake-staging-store": {
+      "status": "not-fired"
+     },
+     "object-audit-fanout": {
+      "status": "not-fired"
+     },
+     "rotated-log-objects": {
+      "status": "not-fired"
+     },
+     "shared-store-layout": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "NotificationConfiguration": {
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Id": "orders-log-objects",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "TopicName": "s3-event-notification-topic"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "namesake-staging-store": {
+      "status": "not-fired"
+     },
+     "object-audit-fanout": {
+      "status": "not-fired"
+     },
+     "rotated-log-objects": {
+      "status": "not-fired"
+     },
+     "shared-store-layout": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "TopicName": "s3-event-notification-topic"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "namesake-staging-store": {
+      "status": "not-fired"
+     },
+     "object-audit-fanout": {
+      "status": "not-fired"
+     },
+     "rotated-log-objects": {
+      "status": "not-fired"
+     },
+     "shared-store-layout": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "NotificationConfiguration": {
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "suffix",
+               "Value": ".gz"
+              }
+             ]
+            }
+           },
+           "Id": "orders-log-objects",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "TopicName": "s3-event-notification-topic"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "wrong-suffix"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "namesake-staging-store": {
+      "status": "not-fired"
+     },
+     "object-audit-fanout": {
+      "status": "not-fired"
+     },
+     "rotated-log-objects": {
+      "status": "not-fired"
+     },
+     "shared-store-layout": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "NotificationConfiguration": {
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectRemoved:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Id": "orders-log-objects",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "TopicName": "s3-event-notification-topic"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "wrong-event"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "namesake-staging-store": {
+      "status": "not-fired"
+     },
+     "object-audit-fanout": {
+      "status": "not-fired"
+     },
+     "rotated-log-objects": {
+      "status": "not-fired"
+     },
+     "shared-store-layout": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "NotificationConfiguration": {
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Id": "orders-log-objects",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "TopicName": "s3-event-notification-topic"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "no-suffix-filter"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "namesake-staging-store": {
+      "status": "not-fired"
+     },
+     "object-audit-fanout": {
+      "status": "not-fired"
+     },
+     "rotated-log-objects": {
+      "status": "not-fired"
+     },
+     "shared-store-layout": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "NotificationConfiguration": {
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Id": "orders-log-objects",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:orders-object-events"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:orders-object-events": {
+        "TopicName": "orders-object-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "TopicName": "s3-event-notification-topic"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "wrong-topic"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "namesake-staging-store": {
+      "status": "not-fired"
+     },
+     "object-audit-fanout": {
+      "status": "not-fired"
+     },
+     "rotated-log-objects": {
+      "status": "not-fired"
+     },
+     "shared-store-layout": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "NotificationConfiguration": {
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Id": "orders-log-objects",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "topic-missing"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "namesake-staging-store": {
+      "status": "not-fired"
+     },
+     "object-audit-fanout": {
+      "status": "not-fired"
+     },
+     "rotated-log-objects": {
+      "status": "not-fired"
+     },
+     "shared-store-layout": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       },
+       "your-bucket-name-000000000104": {
+        "Arn": "arn:aws:s3:::your-bucket-name-000000000104",
+        "BucketName": "your-bucket-name-000000000104",
+        "NotificationConfiguration": {
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Id": "orders-log-objects",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "TopicName": "s3-event-notification-topic"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "wired-on-another-store"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "namesake-staging-store": {
+      "status": "not-fired"
+     },
+     "object-audit-fanout": {
+      "status": "not-fired"
+     },
+     "rotated-log-objects": {
+      "status": "not-fired"
+     },
+     "shared-store-layout": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "NotificationConfiguration": {
+         "EventBridgeConfiguration": {
+          "EventBridgeEnabled": true
+         }
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "TopicName": "s3-event-notification-topic"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "notification-absent"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "namesake-staging-store": {
+      "status": "failed"
+     },
+     "object-audit-fanout": {
+      "status": "succeeded"
+     },
+     "rotated-log-objects": {
+      "status": "succeeded"
+     },
+     "shared-store-layout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "NotificationConfiguration": {
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectRemoved:*",
+           "Id": "account-object-audit-2026-09",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:account-object-audit-events"
+          },
+          {
+           "Event": "s3:ObjectTagging:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "prefix",
+               "Value": "logs/orders-team/"
+              }
+             ]
+            }
+           },
+           "Id": "store-layout-2026-09",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:store-layout-events"
+          },
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "prefix",
+               "Value": "logs/orders-team/"
+              },
+              {
+               "Name": "suffix",
+               "Value": ".log.gz"
+              }
+             ]
+            }
+           },
+           "Id": "orders-log-objects",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "LogObjects",
+          "Value": ".log.gz"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Rollout",
+          "Value": "log-compression-2026-09"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:account-object-audit-events": {
+        "TopicName": "account-object-audit-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "TopicName": "s3-event-notification-topic"
+       },
+       "arn:aws:sns:us-east-1:000000000104:store-layout-events": {
+        "TopicName": "store-layout-events"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "failed-namesake-staging-store"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "namesake-staging-store": {
+      "status": "succeeded"
+     },
+     "object-audit-fanout": {
+      "status": "failed"
+     },
+     "rotated-log-objects": {
+      "status": "succeeded"
+     },
+     "shared-store-layout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-002": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-002",
+        "BucketName": "app-logs-000000000104-002",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Migration",
+          "Value": "cutover-staging-2026-09"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       },
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "NotificationConfiguration": {
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectTagging:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "prefix",
+               "Value": "logs/orders-team/"
+              }
+             ]
+            }
+           },
+           "Id": "store-layout-2026-09",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:store-layout-events"
+          },
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "prefix",
+               "Value": "logs/orders-team/"
+              },
+              {
+               "Name": "suffix",
+               "Value": ".log.gz"
+              }
+             ]
+            }
+           },
+           "Id": "orders-log-objects",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "LogObjects",
+          "Value": ".log.gz"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Rollout",
+          "Value": "log-compression-2026-09"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "TopicName": "s3-event-notification-topic"
+       },
+       "arn:aws:sns:us-east-1:000000000104:store-layout-events": {
+        "TopicName": "store-layout-events"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "failed-object-audit-fanout"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "namesake-staging-store": {
+      "status": "succeeded"
+     },
+     "object-audit-fanout": {
+      "status": "succeeded"
+     },
+     "rotated-log-objects": {
+      "status": "succeeded"
+     },
+     "shared-store-layout": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-002": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-002",
+        "BucketName": "app-logs-000000000104-002",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Migration",
+          "Value": "cutover-staging-2026-09"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       },
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "NotificationConfiguration": {
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectRemoved:*",
+           "Id": "account-object-audit-2026-09",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:account-object-audit-events"
+          },
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "suffix",
+               "Value": ".log.gz"
+              }
+             ]
+            }
+           },
+           "Id": "orders-log-objects",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "LogObjects",
+          "Value": ".log.gz"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Rollout",
+          "Value": "log-compression-2026-09"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:account-object-audit-events": {
+        "TopicName": "account-object-audit-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "TopicName": "s3-event-notification-topic"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "failed-shared-store-layout"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "namesake-staging-store": {
+      "status": "succeeded"
+     },
+     "object-audit-fanout": {
+      "status": "succeeded"
+     },
+     "rotated-log-objects": {
+      "status": "failed"
+     },
+     "shared-store-layout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-002": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-002",
+        "BucketName": "app-logs-000000000104-002",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Migration",
+          "Value": "cutover-staging-2026-09"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       },
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "NotificationConfiguration": {
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectRemoved:*",
+           "Id": "account-object-audit-2026-09",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:account-object-audit-events"
+          },
+          {
+           "Event": "s3:ObjectTagging:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "prefix",
+               "Value": "logs/orders-team/"
+              }
+             ]
+            }
+           },
+           "Id": "store-layout-2026-09",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:store-layout-events"
+          },
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "prefix",
+               "Value": "logs/orders-team/"
+              },
+              {
+               "Name": "suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Id": "orders-log-objects",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:account-object-audit-events": {
+        "TopicName": "account-object-audit-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "TopicName": "s3-event-notification-topic"
+       },
+       "arn:aws:sns:us-east-1:000000000104:store-layout-events": {
+        "TopicName": "store-layout-events"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "failed-rotated-log-objects"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "namesake-staging-store": {
+      "status": "succeeded"
+     },
+     "object-audit-fanout": {
+      "status": "succeeded"
+     },
+     "rotated-log-objects": {
+      "status": "succeeded"
+     },
+     "shared-store-layout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-002": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-002",
+        "BucketName": "app-logs-000000000104-002",
+        "NotificationConfiguration": {
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "prefix",
+               "Value": "logs/orders-team/"
+              },
+              {
+               "Name": "suffix",
+               "Value": ".log.gz"
+              }
+             ]
+            }
+           },
+           "Id": "orders-log-objects",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Migration",
+          "Value": "cutover-staging-2026-09"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       },
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "NotificationConfiguration": {
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectRemoved:*",
+           "Id": "account-object-audit-2026-09",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:account-object-audit-events"
+          },
+          {
+           "Event": "s3:ObjectTagging:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "prefix",
+               "Value": "logs/orders-team/"
+              }
+             ]
+            }
+           },
+           "Id": "store-layout-2026-09",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:store-layout-events"
+          },
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "prefix",
+               "Value": "logs/orders-team/"
+              },
+              {
+               "Name": "suffix",
+               "Value": ".log.gz"
+              }
+             ]
+            }
+           },
+           "Id": "orders-log-objects",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "LogObjects",
+          "Value": ".log.gz"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Rollout",
+          "Value": "log-compression-2026-09"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:account-object-audit-events": {
+        "TopicName": "account-object-audit-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "TopicName": "s3-event-notification-topic"
+       },
+       "arn:aws:sns:us-east-1:000000000104:store-layout-events": {
+        "TopicName": "store-layout-events"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "clobbered-namesake-staging-store"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "namesake-staging-store": {
+      "status": "succeeded"
+     },
+     "object-audit-fanout": {
+      "status": "succeeded"
+     },
+     "rotated-log-objects": {
+      "status": "succeeded"
+     },
+     "shared-store-layout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-002": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-002",
+        "BucketName": "app-logs-000000000104-002",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Migration",
+          "Value": "cutover-staging-2026-09"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       },
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "NotificationConfiguration": {
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectTagging:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "prefix",
+               "Value": "logs/orders-team/"
+              }
+             ]
+            }
+           },
+           "Id": "store-layout-2026-09",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:store-layout-events"
+          },
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "prefix",
+               "Value": "logs/orders-team/"
+              },
+              {
+               "Name": "suffix",
+               "Value": ".log.gz"
+              }
+             ]
+            }
+           },
+           "Id": "orders-log-objects",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "LogObjects",
+          "Value": ".log.gz"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Rollout",
+          "Value": "log-compression-2026-09"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:account-object-audit-events": {
+        "TopicName": "account-object-audit-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "TopicName": "s3-event-notification-topic"
+       },
+       "arn:aws:sns:us-east-1:000000000104:store-layout-events": {
+        "TopicName": "store-layout-events"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "clobbered-object-audit-fanout"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "namesake-staging-store": {
+      "status": "succeeded"
+     },
+     "object-audit-fanout": {
+      "status": "succeeded"
+     },
+     "rotated-log-objects": {
+      "status": "succeeded"
+     },
+     "shared-store-layout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-002": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-002",
+        "BucketName": "app-logs-000000000104-002",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Migration",
+          "Value": "cutover-staging-2026-09"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       },
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "NotificationConfiguration": {
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectRemoved:*",
+           "Id": "account-object-audit-2026-09",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:account-object-audit-events"
+          },
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "prefix",
+               "Value": "logs/orders-team/"
+              },
+              {
+               "Name": "suffix",
+               "Value": ".log.gz"
+              }
+             ]
+            }
+           },
+           "Id": "orders-log-objects",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "LogObjects",
+          "Value": ".log.gz"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Rollout",
+          "Value": "log-compression-2026-09"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:account-object-audit-events": {
+        "TopicName": "account-object-audit-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "TopicName": "s3-event-notification-topic"
+       },
+       "arn:aws:sns:us-east-1:000000000104:store-layout-events": {
+        "TopicName": "store-layout-events"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "clobbered-shared-store-layout"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "namesake-staging-store": {
+      "status": "succeeded"
+     },
+     "object-audit-fanout": {
+      "status": "succeeded"
+     },
+     "rotated-log-objects": {
+      "status": "succeeded"
+     },
+     "shared-store-layout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-002": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-002",
+        "BucketName": "app-logs-000000000104-002",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Migration",
+          "Value": "cutover-staging-2026-09"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       },
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "NotificationConfiguration": {
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectRemoved:*",
+           "Id": "account-object-audit-2026-09",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:account-object-audit-events"
+          },
+          {
+           "Event": "s3:ObjectTagging:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "prefix",
+               "Value": "logs/orders-team/"
+              }
+             ]
+            }
+           },
+           "Id": "store-layout-2026-09",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:store-layout-events"
+          },
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "prefix",
+               "Value": "logs/orders-team/"
+              },
+              {
+               "Name": "suffix",
+               "Value": ".log.gz"
+              }
+             ]
+            }
+           },
+           "Id": "orders-log-objects",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:account-object-audit-events": {
+        "TopicName": "account-object-audit-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "TopicName": "s3-event-notification-topic"
+       },
+       "arn:aws:sns:us-east-1:000000000104:store-layout-events": {
+        "TopicName": "store-layout-events"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "clobbered-rotated-log-objects"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "namesake-staging-store": {
+      "status": "succeeded"
+     },
+     "object-audit-fanout": {
+      "status": "succeeded"
+     },
+     "rotated-log-objects": {
+      "status": "succeeded"
+     },
+     "shared-store-layout": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000104-002": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-002",
+        "BucketName": "app-logs-000000000104-002",
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Migration",
+          "Value": "cutover-staging-2026-09"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       },
+       "app-logs-000000000104-20260919130229543300000001": {
+        "Arn": "arn:aws:s3:::app-logs-000000000104-20260919130229543300000001",
+        "BucketName": "app-logs-000000000104-20260919130229543300000001",
+        "NotificationConfiguration": {
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectRemoved:*",
+           "Id": "account-object-audit-2026-09",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:account-object-audit-events"
+          },
+          {
+           "Event": "s3:ObjectTagging:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "prefix",
+               "Value": "logs/orders-team/"
+              }
+             ]
+            }
+           },
+           "Id": "store-layout-2026-09",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:store-layout-events"
+          },
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "suffix",
+               "Value": ".log.gz"
+              }
+             ]
+            }
+           },
+           "Id": "orders-log-objects",
+           "Topic": "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "LogObjects",
+          "Value": ".log.gz"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Rollout",
+          "Value": "log-compression-2026-09"
+         },
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         }
+        ]
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000104:account-object-audit-events": {
+        "TopicName": "account-object-audit-events"
+       },
+       "arn:aws:sns:us-east-1:000000000104:s3-event-notification-topic": {
+        "TopicName": "s3-event-notification-topic"
+       },
+       "arn:aws:sns:us-east-1:000000000104:store-layout-events": {
+        "TopicName": "store-layout-events"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "unscoped-wiring"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000121-20260919135523929200000001": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::app-logs-000000000121-20260919135523929200000001",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "app-logs-000000000121-20260919135523929200000001",
+        "DomainName": "app-logs-000000000121-20260919135523929200000001.s3.amazonaws.com",
+        "DualStackDomainName": "app-logs-000000000121-20260919135523929200000001.s3.dualstack.us-east-1.amazonaws.com",
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "app-logs-000000000121-20260919135523929200000001.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ],
+        "WebsiteURL": "http://app-logs-000000000121-20260919135523929200000001.s3-website-us-east-1.amazonaws.com"
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000121-20260919135523929200000001": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::app-logs-000000000121-20260919135523929200000001",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "app-logs-000000000121-20260919135523929200000001",
+        "DomainName": "app-logs-000000000121-20260919135523929200000001.s3.amazonaws.com",
+        "DualStackDomainName": "app-logs-000000000121-20260919135523929200000001.s3.dualstack.us-east-1.amazonaws.com",
+        "NotificationConfiguration": {
+         "LambdaConfigurations": [],
+         "QueueConfigurations": [],
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Suffix",
+               "Value": ".log"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000121:s3-event-notification-topic"
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "app-logs-000000000121-20260919135523929200000001.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ],
+        "WebsiteURL": "http://app-logs-000000000121-20260919135523929200000001.s3-website-us-east-1.amazonaws.com"
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000121:s3-event-notification-topic": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000121:s3-event-notification-topic",
+        "TopicName": "s3-event-notification-topic"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "namesake-staging-store": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 1,
+        "landed_ns": 24474349364100,
+        "landed_s": 4.389,
+        "result": {
+         "created": true,
+         "fingerprint": [
+          "cutover-staging-2026-09"
+         ],
+         "marker": "cutover-staging-2026-09",
+         "staged_store": "app-logs-000000000115-002",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-namesake-staging-store-1",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "created": true,
+       "fingerprint": [
+        "cutover-staging-2026-09"
+       ],
+       "marker": "cutover-staging-2026-09",
+       "staged_store": "app-logs-000000000115-002",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "object-audit-fanout": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 2,
+        "landed_ns": 24475735159499,
+        "landed_s": 5.775,
+        "result": {
+         "entry": "account-object-audit-2026-09",
+         "fingerprint": [
+          "account-object-audit-events"
+         ],
+         "reported": [
+          "app-logs-000000000115-20260919140844330400000001"
+         ],
+         "topic": "account-object-audit-events",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-object-audit-fanout-2",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "entry": "account-object-audit-2026-09",
+       "fingerprint": [
+        "account-object-audit-events"
+       ],
+       "reported": [
+        "app-logs-000000000115-20260919140844330400000001"
+       ],
+       "topic": "account-object-audit-events",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "rotated-log-objects": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 3,
+        "landed_ns": 24482270595608,
+        "landed_s": 12.31,
+        "result": {
+         "fingerprint": [
+          ".log.gz",
+          "log-compression-2026-09"
+         ],
+         "naming": ".log.gz",
+         "recorded": [
+          "app-logs-000000000115-20260919140844330400000001"
+         ],
+         "rollout": "log-compression-2026-09",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-rotated-log-objects-3",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        ".log.gz",
+        "log-compression-2026-09"
+       ],
+       "naming": ".log.gz",
+       "recorded": [
+        "app-logs-000000000115-20260919140844330400000001"
+       ],
+       "rollout": "log-compression-2026-09",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "shared-store-layout": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 4,
+        "landed_ns": 24485701302959,
+        "landed_s": 15.741,
+        "result": {
+         "entry": "store-layout-2026-09",
+         "fingerprint": [
+          "store-layout-2026-09",
+          "logs/orders-team/",
+          "store-layout-events"
+         ],
+         "held": [
+          "app-logs-000000000115-20260919140844330400000001"
+         ],
+         "place": "logs/orders-team/",
+         "topic": "store-layout-events",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-shared-store-layout-4",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "entry": "store-layout-2026-09",
+       "fingerprint": [
+        "store-layout-2026-09",
+        "logs/orders-team/",
+        "store-layout-events"
+       ],
+       "held": [
+        "app-logs-000000000115-20260919140844330400000001"
+       ],
+       "place": "logs/orders-team/",
+       "topic": "store-layout-events",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000115-20260919140844330400000001": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::app-logs-000000000115-20260919140844330400000001",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "app-logs-000000000115-20260919140844330400000001",
+        "DomainName": "app-logs-000000000115-20260919140844330400000001.s3.amazonaws.com",
+        "DualStackDomainName": "app-logs-000000000115-20260919140844330400000001.s3.dualstack.us-east-1.amazonaws.com",
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "app-logs-000000000115-20260919140844330400000001.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ],
+        "WebsiteURL": "http://app-logs-000000000115-20260919140844330400000001.s3-website-us-east-1.amazonaws.com"
+       }
+      },
+      "AWS::SNS::Topic": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "app-logs-000000000115-002": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::app-logs-000000000115-002",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "app-logs-000000000115-002",
+        "DomainName": "app-logs-000000000115-002.s3.amazonaws.com",
+        "DualStackDomainName": "app-logs-000000000115-002.s3.dualstack.us-east-1.amazonaws.com",
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "app-logs-000000000115-002.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Migration",
+          "Value": "cutover-staging-2026-09"
+         }
+        ],
+        "WebsiteURL": "http://app-logs-000000000115-002.s3-website-us-east-1.amazonaws.com"
+       },
+       "app-logs-000000000115-20260919140844330400000001": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::app-logs-000000000115-20260919140844330400000001",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "app-logs-000000000115-20260919140844330400000001",
+        "DomainName": "app-logs-000000000115-20260919140844330400000001.s3.amazonaws.com",
+        "DualStackDomainName": "app-logs-000000000115-20260919140844330400000001.s3.dualstack.us-east-1.amazonaws.com",
+        "NotificationConfiguration": {
+         "LambdaConfigurations": [],
+         "QueueConfigurations": [],
+         "TopicConfigurations": [
+          {
+           "Event": "s3:ObjectRemoved:*",
+           "Topic": "arn:aws:sns:us-east-1:000000000115:account-object-audit-events"
+          },
+          {
+           "Event": "s3:ObjectTagging:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Prefix",
+               "Value": "logs/orders-team/"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000115:store-layout-events"
+          },
+          {
+           "Event": "s3:ObjectCreated:*",
+           "Filter": {
+            "S3Key": {
+             "Rules": [
+              {
+               "Name": "Prefix",
+               "Value": "logs/orders-team/"
+              },
+              {
+               "Name": "Suffix",
+               "Value": ".log.gz"
+              }
+             ]
+            }
+           },
+           "Topic": "arn:aws:sns:us-east-1:000000000115:s3-event-notification-topic"
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "app-logs-000000000115-20260919140844330400000001.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "app-logs"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Rollout",
+          "Value": "log-compression-2026-09"
+         },
+         {
+          "Key": "LogObjects",
+          "Value": ".log.gz"
+         }
+        ],
+        "WebsiteURL": "http://app-logs-000000000115-20260919140844330400000001.s3-website-us-east-1.amazonaws.com"
+       }
+      },
+      "AWS::SNS::Topic": {
+       "arn:aws:sns:us-east-1:000000000115:account-object-audit-events": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000115:account-object-audit-events",
+        "TopicName": "account-object-audit-events"
+       },
+       "arn:aws:sns:us-east-1:000000000115:s3-event-notification-topic": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000115:s3-event-notification-topic",
+        "TopicName": "s3-event-notification-topic"
+       },
+       "arn:aws:sns:us-east-1:000000000115:store-layout-events": {
+        "ArchivePolicy": {},
+        "FifoTopic": false,
+        "TopicArn": "arn:aws:sns:us-east-1:000000000115:store-layout-events",
+        "TopicName": "store-layout-events"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-interference-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

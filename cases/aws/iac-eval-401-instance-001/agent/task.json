@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_401_instance",
+  "utterance": "`imaging-vpc` (10.80.0.0/16) is the imaging application's network: three serving subnets, `imaging-serving-a`, `imaging-serving-b` and `imaging-serving-c`, one per zone, and nothing else. Nothing in it is load-balanced today: it holds no load balancer, no target group and no host of any kind. Build the imaging front end: launch two t2.micro serving hosts of your own into that network, stand an internal application load balancer across all three of its serving subnets in front of them, and give it an HTTP listener on port 80 whose only default action forwards to an instance-type target group in `imaging-vpc` on HTTP port 80 holding your two hosts registered on port 80 and nothing else. The hosts must answer the load balancer on port 80 when you are done.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "imaging-vpc runs two new t2.micro serving hosts of the agent's own, each standing in one of the network's serving subnets, and one new internal application load balancer spanning those serving subnets, carrying an HTTP listener on port 80 whose single default action forwards to a new instance-type target group in imaging-vpc on HTTP port 80 whose registered targets on port 80 are exactly the agent's two hosts; each of those hosts admits port 80 from the load balancer standing in front of it"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 401
+  }
+}

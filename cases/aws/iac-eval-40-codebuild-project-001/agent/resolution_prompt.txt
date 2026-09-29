@@ -1,0 +1,2 @@
+A workload runs as the identity created for it.
+What the account holds its builds to is what the ones it still runs on shared capacity run at when you finish; one with a slice of its own is not, and what you did not create stays as found.

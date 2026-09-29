@@ -1,0 +1,23 @@
+{
+  "distractors": {
+    "offhours-power-down": {
+      "codes": [
+        "OperationFailureException"
+      ],
+      "entry": "lightsail.instance",
+      "operation": "AttachDisk",
+      "service": "lightsail",
+      "source": "manual"
+    },
+    "patch-baseline-restart": {
+      "codes": [
+        "OperationFailureException"
+      ],
+      "entry": "lightsail.instance",
+      "operation": "AttachDisk",
+      "service": "lightsail",
+      "source": "manual"
+    }
+  },
+  "schema_version": 1
+}

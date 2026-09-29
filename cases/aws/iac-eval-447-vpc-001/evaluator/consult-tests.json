@@ -1,0 +1,127 @@
+{
+ "mode": "fingerprint",
+ "asks": [
+  {
+   "name": "standby-resolver",
+   "message": "The VPC's option set now lists 192.168.56.103 next to our own resolver. Whose entry is that, and does it have to stay in the path once I write our settings?",
+   "expect": [
+    "internal-resolver-baseline"
+   ],
+   "fingerprint": {
+    "internal-resolver-baseline": [
+     "192.168.56.103"
+    ],
+    "netbios-name-service-mode": [
+     "point-to-point"
+    ],
+    "account-time-source": [
+     "account-clock"
+    ],
+    "shared-resolution-path": [
+     "orders-lab-vpc"
+    ]
+   }
+  },
+  {
+   "name": "name-service-mode",
+   "message": "The option set the VPC uses came back tagged point-to-point, which I did not write. Do I have to carry that over when I replace the set?",
+   "expect": [
+    "netbios-name-service-mode"
+   ],
+   "fingerprint": {
+    "internal-resolver-baseline": [
+     "192.168.56.103"
+    ],
+    "netbios-name-service-mode": [
+     "point-to-point"
+    ],
+    "account-time-source": [
+     "account-clock"
+    ],
+    "shared-resolution-path": [
+     "orders-lab-vpc"
+    ]
+   }
+  },
+  {
+   "name": "time-source",
+   "message": "The VPC came back tagged account-clock, and the option set it uses now carries an ntp entry I did not put there. Is that something my own settings have to keep?",
+   "expect": [
+    "account-time-source"
+   ],
+   "fingerprint": {
+    "internal-resolver-baseline": [
+     "192.168.56.103"
+    ],
+    "netbios-name-service-mode": [
+     "point-to-point"
+    ],
+    "account-time-source": [
+     "account-clock"
+    ],
+    "shared-resolution-path": [
+     "orders-lab-vpc"
+    ]
+   }
+  },
+  {
+   "name": "sibling-network",
+   "message": "A second network, orders-lab-vpc, is pointing at the same option set as ours. What is supposed to happen to it when I move our VPC to a new one?",
+   "expect": [
+    "shared-resolution-path"
+   ],
+   "fingerprint": {
+    "internal-resolver-baseline": [
+     "192.168.56.103"
+    ],
+    "netbios-name-service-mode": [
+     "point-to-point"
+    ],
+    "account-time-source": [
+     "account-clock"
+    ],
+    "shared-resolution-path": [
+     "orders-lab-vpc"
+    ]
+   }
+  },
+  {
+   "name": "paraphrase",
+   "message": "Someone seems to have changed the name-resolution settings on our network while I was working on them. Whose baseline is that and what am I expected to keep?",
+   "expect": [],
+   "fingerprint": {
+    "internal-resolver-baseline": [
+     "192.168.56.103"
+    ],
+    "netbios-name-service-mode": [
+     "point-to-point"
+    ],
+    "account-time-source": [
+     "account-clock"
+    ],
+    "shared-resolution-path": [
+     "orders-lab-vpc"
+    ]
+   }
+  },
+  {
+   "name": "generic",
+   "message": "Any conventions I should follow here?",
+   "expect": [],
+   "fingerprint": {
+    "internal-resolver-baseline": [
+     "192.168.56.103"
+    ],
+    "netbios-name-service-mode": [
+     "point-to-point"
+    ],
+    "account-time-source": [
+     "account-clock"
+    ],
+    "shared-resolution-path": [
+     "orders-lab-vpc"
+    ]
+   }
+  }
+ ]
+}

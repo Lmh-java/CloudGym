@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::IAM::ManagedPolicy",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-01T06:54:50+00:00",
+      "ResourceDescription": {
+        "Identifier": "arn:aws:iam::123456789012:policy/cloudgym-capability-20260901065435493200000001",
+        "Properties": "{\"ManagedPolicyName\":\"cloudgym-capability-20260901065435493200000001\",\"Path\":\"/\",\"IsAttachable\":true,\"Description\":\"CloudGym extractor capability check\",\"PermissionsBoundaryUsageCount\":0,\"AttachmentCount\":0,\"DefaultVersionId\":\"v1\",\"Roles\":[],\"Users\":[],\"CreateDate\":\"Optional[2026-09-01T06:54:36Z]\",\"UpdateDate\":\"Optional[2026-09-01T06:54:36Z]\",\"PolicyArn\":\"arn:aws:iam::123456789012:policy/cloudgym-capability-20260901065435493200000001\",\"Groups\":[],\"PolicyDocument\":{\"Version\":\"2012-10-17\",\"Statement\":[{\"Action\":\"s3:ListAllMyBuckets\",\"Resource\":\"*\",\"Effect\":\"Allow\",\"Sid\":\"CloudGymSmokeRead\"}]},\"PolicyId\":\"ANPAYDK7XGCBWUO5SRO4T\"}"
+      },
+      "TypeName": "AWS::IAM::ManagedPolicy"
+    }
+  ],
+  "recorded_at": "2026-09-01T06:54:51+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

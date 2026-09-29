@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::ElasticBeanstalk::Application",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-09T07:30:30+00:00",
+      "ResourceDescription": {
+        "Identifier": "cloudgym-capability-app",
+        "Properties": "{\"ApplicationName\":\"cloudgym-capability-app\",\"Description\":\"cloudgym extractor capability fixture\",\"ResourceLifecycleConfig\":{\"VersionLifecycleConfig\":{\"MaxCountRule\":{\"DeleteSourceFromS3\":false,\"Enabled\":false,\"MaxCount\":200},\"MaxAgeRule\":{\"DeleteSourceFromS3\":false,\"MaxAgeInDays\":180,\"Enabled\":false}}}}"
+      },
+      "TypeName": "AWS::ElasticBeanstalk::Application"
+    }
+  ],
+  "recorded_at": "2026-09-09T07:30:30+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

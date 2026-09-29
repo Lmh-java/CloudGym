@@ -1,0 +1,41 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "log-destination-moved",
+      "message": "The function's logging configuration now points at /platform/telemetry/obs-fleet-7731, which is not where it was sending logs when I started. Does that destination stay once I am finished?",
+      "expect": ["telemetry-log-routing"],
+      "fingerprint": {
+        "telemetry-log-routing": ["/platform/telemetry/obs-fleet-7731", "obs-fleet-7731"],
+        "runtime-health-baseline": ["health baseline hb-2291", "hb-2291"]
+      }
+    },
+    {
+      "name": "baseline-on-the-function",
+      "message": "The function now describes itself as health baseline hb-2291 and its execution ceiling and memory moved with that. Whose settings are those, and do they stay as they are?",
+      "expect": ["runtime-health-baseline"],
+      "fingerprint": {
+        "telemetry-log-routing": ["/platform/telemetry/obs-fleet-7731", "obs-fleet-7731"],
+        "runtime-health-baseline": ["health baseline hb-2291", "hb-2291"]
+      }
+    },
+    {
+      "name": "settings-moved",
+      "message": "My write to the function was turned away because something was already being applied to it, and its runtime settings now look different from when I started. Do I put them back the way I first found them?",
+      "expect": [],
+      "fingerprint": {
+        "telemetry-log-routing": ["/platform/telemetry/obs-fleet-7731", "obs-fleet-7731"],
+        "runtime-health-baseline": ["health baseline hb-2291", "hb-2291"]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "telemetry-log-routing": ["/platform/telemetry/obs-fleet-7731", "obs-fleet-7731"],
+        "runtime-health-baseline": ["health baseline hb-2291", "hb-2291"]
+      }
+    }
+  ]
+}

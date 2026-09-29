@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::S3::Bucket",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-01T02:37:51+00:00",
+      "ResourceDescription": {
+        "Identifier": "cloudgym-capability-20260901023718429500000001",
+        "Properties": "{\"AbacStatus\":\"Disabled\",\"PublicAccessBlockConfiguration\":{\"RestrictPublicBuckets\":true,\"BlockPublicPolicy\":true,\"BlockPublicAcls\":true,\"IgnorePublicAcls\":true},\"BucketName\":\"cloudgym-capability-20260901023718429500000001\",\"RegionalDomainName\":\"cloudgym-capability-20260901023718429500000001.s3.us-east-1.amazonaws.com\",\"OwnershipControls\":{\"Rules\":[{\"ObjectOwnership\":\"BucketOwnerEnforced\"}]},\"DomainName\":\"cloudgym-capability-20260901023718429500000001.s3.amazonaws.com\",\"BucketEncryption\":{\"ServerSideEncryptionConfiguration\":[{\"BucketKeyEnabled\":false,\"BlockedEncryptionTypes\":{\"EncryptionType\":[\"SSE-C\"]},\"ServerSideEncryptionByDefault\":{\"SSEAlgorithm\":\"AES256\"}}]},\"WebsiteURL\":\"http://cloudgym-capability-20260901023718429500000001.s3-website-us-east-1.amazonaws.com\",\"DualStackDomainName\":\"cloudgym-capability-20260901023718429500000001.s3.dualstack.us-east-1.amazonaws.com\",\"Arn\":\"arn:aws:s3:::cloudgym-capability-20260901023718429500000001\",\"Tags\":[{\"Value\":\"extractor-capability-check\",\"Key\":\"Purpose\"}]}"
+      },
+      "TypeName": "AWS::S3::Bucket"
+    }
+  ],
+  "recorded_at": "2026-09-01T02:37:52+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

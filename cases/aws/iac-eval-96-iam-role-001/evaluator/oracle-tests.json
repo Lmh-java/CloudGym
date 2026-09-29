@@ -1,0 +1,5472 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "pod-execution-policy-retarget": {
+      "status": "succeeded"
+     },
+     "pooled-fargate-identity": {
+      "status": "succeeded"
+     },
+     "profile-role-rollout-successor": {
+      "status": "succeeded"
+     },
+     "sibling-profile-role-copy": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "pod-execution-policy-retarget": {
+      "status": "succeeded"
+     },
+     "pooled-fargate-identity": {
+      "status": "succeeded"
+     },
+     "profile-role-rollout-successor": {
+      "status": "succeeded"
+     },
+     "sibling-profile-role-copy": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "eks-fargate-pod-runner": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-pod-runner",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "pooled pod execution identity for this account's Fargate pods",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002177",
+        "RoleName": "eks-fargate-pod-runner"
+       },
+       "eks-fargate-profile-example": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-profile-example",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002689",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "retired"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "SupersededBy",
+          "Value": "platform-fargate-profile-role-2026"
+         }
+        ]
+       },
+       "platform-fargate-profile-role-2026": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role-2026",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00003168",
+        "RoleName": "platform-fargate-profile-role-2026",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       },
+       "platform-fargate-profile-role-copy": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role-copy",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "orders-api: copy of the account's Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00003409",
+        "RoleName": "platform-fargate-profile-role-copy",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "pod-execution-policy-retarget": {
+      "status": "succeeded"
+     },
+     "pooled-fargate-identity": {
+      "status": "succeeded"
+     },
+     "profile-role-rollout-successor": {
+      "status": "succeeded"
+     },
+     "sibling-profile-role-copy": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "eks-fargate-pod-runner": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-pod-runner",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "pooled pod execution identity for this account's Fargate pods",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002177",
+        "RoleName": "eks-fargate-pod-runner"
+       },
+       "eks-fargate-profile-example": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-profile-example",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002689",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "retired"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "SupersededBy",
+          "Value": "platform-fargate-profile-role-2026"
+         }
+        ]
+       },
+       "platform-fargate-profile-role-2026": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role-2026",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00003168",
+        "RoleName": "platform-fargate-profile-role-2026",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       },
+       "platform-fargate-profile-role-copy": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role-copy",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "orders-api: copy of the account's Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00003409",
+        "RoleName": "platform-fargate-profile-role-copy",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "pod-execution-policy-retarget": {
+      "status": "succeeded"
+     },
+     "pooled-fargate-identity": {
+      "status": "succeeded"
+     },
+     "profile-role-rollout-successor": {
+      "status": "succeeded"
+     },
+     "sibling-profile-role-copy": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "eks-fargate-pod-runner": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-pod-runner",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "pooled pod execution identity for this account's Fargate pods",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002177",
+        "RoleName": "eks-fargate-pod-runner"
+       },
+       "eks-fargate-profile-example": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-profile-example",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:role/eks-fargate-pod-runner"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002689",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "retired"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "SupersededBy",
+          "Value": "platform-fargate-profile-role-2026"
+         }
+        ]
+       },
+       "platform-fargate-profile-role-2026": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role-2026",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00003168",
+        "RoleName": "platform-fargate-profile-role-2026",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       },
+       "platform-fargate-profile-role-copy": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role-copy",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "orders-api: copy of the account's Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00003409",
+        "RoleName": "platform-fargate-profile-role-copy",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "eks-fargate-profile-example": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-profile-example",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002689",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "eks-fargate-profile-example": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-profile-example",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002689",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "pod-execution-policy-retarget": {
+      "status": "succeeded"
+     },
+     "pooled-fargate-identity": {
+      "status": "succeeded"
+     },
+     "profile-role-rollout-successor": {
+      "status": "succeeded"
+     },
+     "sibling-profile-role-copy": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "eks-fargate-pod-runner": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-pod-runner",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "pooled pod execution identity for this account's Fargate pods",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002177",
+        "RoleName": "eks-fargate-pod-runner"
+       },
+       "eks-fargate-profile-example": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-profile-example",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002689",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "retired"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "SupersededBy",
+          "Value": "platform-fargate-profile-role-2026"
+         }
+        ]
+       },
+       "platform-fargate-profile-role-2026": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role-2026",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00003168",
+        "RoleName": "platform-fargate-profile-role-2026",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       },
+       "platform-fargate-profile-role-copy": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role-copy",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "orders-api: copy of the account's Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00003409",
+        "RoleName": "platform-fargate-profile-role-copy",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "clobber-retarget"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "pod-execution-policy-retarget": {
+      "status": "succeeded"
+     },
+     "pooled-fargate-identity": {
+      "status": "succeeded"
+     },
+     "profile-role-rollout-successor": {
+      "status": "succeeded"
+     },
+     "sibling-profile-role-copy": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "eks-fargate-pod-runner": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-pod-runner",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "pooled pod execution identity for this account's Fargate pods",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002177",
+        "RoleName": "eks-fargate-pod-runner"
+       },
+       "eks-fargate-profile-example": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-profile-example",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002689",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       },
+       "platform-fargate-profile-role-2026": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role-2026",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00003168",
+        "RoleName": "platform-fargate-profile-role-2026",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       },
+       "platform-fargate-profile-role-copy": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role-copy",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "orders-api: copy of the account's Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00003409",
+        "RoleName": "platform-fargate-profile-role-copy",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "clobber-rollout"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "pod-execution-policy-retarget": {
+      "status": "succeeded"
+     },
+     "pooled-fargate-identity": {
+      "status": "succeeded"
+     },
+     "profile-role-rollout-successor": {
+      "status": "succeeded"
+     },
+     "sibling-profile-role-copy": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "eks-fargate-pod-runner": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-pod-runner",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "pooled pod execution identity for this account's Fargate pods",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002177",
+        "RoleName": "eks-fargate-pod-runner"
+       },
+       "eks-fargate-profile-example": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-profile-example",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002689",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "retired"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "SupersededBy",
+          "Value": "platform-fargate-profile-role-2026"
+         }
+        ]
+       },
+       "platform-fargate-profile-role-2026": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role-2026",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00003168",
+        "RoleName": "platform-fargate-profile-role-2026",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "clobber-copy"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "pod-execution-policy-retarget": {
+      "status": "succeeded"
+     },
+     "pooled-fargate-identity": {
+      "status": "succeeded"
+     },
+     "profile-role-rollout-successor": {
+      "status": "succeeded"
+     },
+     "sibling-profile-role-copy": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "eks-fargate-profile-example": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-profile-example",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002689",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "retired"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "SupersededBy",
+          "Value": "platform-fargate-profile-role-2026"
+         }
+        ]
+       },
+       "platform-fargate-profile-role-2026": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role-2026",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00003168",
+        "RoleName": "platform-fargate-profile-role-2026",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       },
+       "platform-fargate-profile-role-copy": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role-copy",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "orders-api: copy of the account's Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00003409",
+        "RoleName": "platform-fargate-profile-role-copy",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "clobber-pool"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "pod-execution-policy-retarget": {
+      "status": "failed"
+     },
+     "pooled-fargate-identity": {
+      "status": "succeeded"
+     },
+     "profile-role-rollout-successor": {
+      "status": "succeeded"
+     },
+     "sibling-profile-role-copy": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "eks-fargate-pod-runner": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-pod-runner",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "pooled pod execution identity for this account's Fargate pods",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002177",
+        "RoleName": "eks-fargate-pod-runner"
+       },
+       "eks-fargate-profile-example": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-profile-example",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002689",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "retired"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "SupersededBy",
+          "Value": "platform-fargate-profile-role-2026"
+         }
+        ]
+       },
+       "platform-fargate-profile-role-2026": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role-2026",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00003168",
+        "RoleName": "platform-fargate-profile-role-2026",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       },
+       "platform-fargate-profile-role-copy": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role-copy",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "orders-api: copy of the account's Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00003409",
+        "RoleName": "platform-fargate-profile-role-copy",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-pod-execution-policy-retarget"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "pod-execution-policy-retarget": {
+      "status": "succeeded"
+     },
+     "pooled-fargate-identity": {
+      "status": "succeeded"
+     },
+     "profile-role-rollout-successor": {
+      "status": "failed"
+     },
+     "sibling-profile-role-copy": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "eks-fargate-pod-runner": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-pod-runner",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "pooled pod execution identity for this account's Fargate pods",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002177",
+        "RoleName": "eks-fargate-pod-runner"
+       },
+       "eks-fargate-profile-example": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-profile-example",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002689",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       },
+       "platform-fargate-profile-role-copy": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role-copy",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "orders-api: copy of the account's Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00003409",
+        "RoleName": "platform-fargate-profile-role-copy",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-profile-role-rollout-successor"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "pod-execution-policy-retarget": {
+      "status": "succeeded"
+     },
+     "pooled-fargate-identity": {
+      "status": "succeeded"
+     },
+     "profile-role-rollout-successor": {
+      "status": "succeeded"
+     },
+     "sibling-profile-role-copy": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "eks-fargate-pod-runner": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-pod-runner",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "pooled pod execution identity for this account's Fargate pods",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002177",
+        "RoleName": "eks-fargate-pod-runner"
+       },
+       "eks-fargate-profile-example": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-profile-example",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002689",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "retired"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "SupersededBy",
+          "Value": "platform-fargate-profile-role-2026"
+         }
+        ]
+       },
+       "platform-fargate-profile-role-2026": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role-2026",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00003168",
+        "RoleName": "platform-fargate-profile-role-2026",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-sibling-profile-role-copy"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "pod-execution-policy-retarget": {
+      "status": "succeeded"
+     },
+     "pooled-fargate-identity": {
+      "status": "failed"
+     },
+     "profile-role-rollout-successor": {
+      "status": "succeeded"
+     },
+     "sibling-profile-role-copy": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "eks-fargate-profile-example": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-profile-example",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002689",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "retired"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "SupersededBy",
+          "Value": "platform-fargate-profile-role-2026"
+         }
+        ]
+       },
+       "platform-fargate-profile-role-2026": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role-2026",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00003168",
+        "RoleName": "platform-fargate-profile-role-2026",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       },
+       "platform-fargate-profile-role-copy": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role-copy",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "orders-api: copy of the account's Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00003409",
+        "RoleName": "platform-fargate-profile-role-copy",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-pooled-fargate-identity"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "fargate-profile-example": {
+        "Arn": "arn:aws:iam::123456789012:role/fargate-profile-example",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002321",
+        "RoleName": "fargate-profile-example"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "nc-role-missing"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "eks-fargate-profile-example": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-profile-example",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "ec2.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002689",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "nc-trust-wrong"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "eks-fargate-profile-example": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-profile-example",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::123456789012:role/platform-fargate-profile-role"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002689",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "nc-trust-delegated"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "eks-fargate-profile-example": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-profile-example",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002689",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "nc-no-policy"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "eks-fargate-profile-example": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-profile-example",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002689",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "nc-wrong-policy"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "eks-fargate-profile-example": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-profile-example",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy",
+         "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002689",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "nc-extra-policy"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002418",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "eks-fargate-profile-example": {
+        "Arn": "arn:aws:iam::123456789012:role/eks-fargate-profile-example",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002689",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::123456789012:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROAEXAMPLE00002921",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "nc-designation-stripped"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSReservedSSO_SandboxAdministrator_0000000000000001": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_SandboxAdministrator_0000000000000001",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+           ],
+           "Condition": {
+            "StringEquals": {
+             "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Federated": "arn:aws:iam::000000000114:saml-provider/AWSSSO_d19a45a4a1239f62_DO_NOT_DELETE"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 43200,
+        "Path": "/aws-reserved/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000174",
+        "RoleName": "AWSReservedSSO_SandboxAdministrator_0000000000000001"
+       },
+       "AWSServiceRoleForAutoScaling": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "autoscaling.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Default Service-Linked Role enables access to AWS Services and Resources used or managed by Auto Scaling",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AutoScalingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/autoscaling.amazonaws.com/",
+        "RoleId": "AROA00000000000000208",
+        "RoleName": "AWSServiceRoleForAutoScaling"
+       },
+       "AWSServiceRoleForElasticBeanstalk": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticbeanstalk.amazonaws.com/AWSServiceRoleForElasticBeanstalk",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticbeanstalk.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticBeanstalkServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticbeanstalk.amazonaws.com/",
+        "RoleId": "AROA00000000000000211",
+        "RoleName": "AWSServiceRoleForElasticBeanstalk"
+       },
+       "AWSServiceRoleForElasticLoadBalancing": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticloadbalancing.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows ELB to call AWS services on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
+        "RoleId": "AROA00000000000000194",
+        "RoleName": "AWSServiceRoleForElasticLoadBalancing"
+       },
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000181",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000190",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000177",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000220",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000170",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000114:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000219",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::000000000114:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000214",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         }
+        ]
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSReservedSSO_SandboxAdministrator_0000000000000001": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_SandboxAdministrator_0000000000000001",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+           ],
+           "Condition": {
+            "StringEquals": {
+             "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Federated": "arn:aws:iam::000000000114:saml-provider/AWSSSO_d19a45a4a1239f62_DO_NOT_DELETE"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 43200,
+        "Path": "/aws-reserved/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000174",
+        "RoleName": "AWSReservedSSO_SandboxAdministrator_0000000000000001"
+       },
+       "AWSServiceRoleForAutoScaling": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "autoscaling.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Default Service-Linked Role enables access to AWS Services and Resources used or managed by Auto Scaling",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AutoScalingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/autoscaling.amazonaws.com/",
+        "RoleId": "AROA00000000000000208",
+        "RoleName": "AWSServiceRoleForAutoScaling"
+       },
+       "AWSServiceRoleForElasticBeanstalk": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticbeanstalk.amazonaws.com/AWSServiceRoleForElasticBeanstalk",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticbeanstalk.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticBeanstalkServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticbeanstalk.amazonaws.com/",
+        "RoleId": "AROA00000000000000211",
+        "RoleName": "AWSServiceRoleForElasticBeanstalk"
+       },
+       "AWSServiceRoleForElasticLoadBalancing": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticloadbalancing.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows ELB to call AWS services on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
+        "RoleId": "AROA00000000000000194",
+        "RoleName": "AWSServiceRoleForElasticLoadBalancing"
+       },
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000181",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000190",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000177",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000220",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000170",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000114:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000219",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "eks-fargate-profile-example": {
+        "Arn": "arn:aws:iam::000000000114:role/eks-fargate-profile-example",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000202",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::000000000114:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000214",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         }
+        ]
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "pod-execution-policy-retarget": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 2,
+        "landed_ns": 22201397234930,
+        "landed_s": 8.868,
+        "result": {
+         "detached": [
+          "platform-fargate-profile-role:AmazonEKSFargatePodExecutionRolePolicy",
+          "platform-fargate-profile-role-2026:AmazonEKSFargatePodExecutionRolePolicy"
+         ],
+         "fingerprint": [
+          "eks-fargate-pod-execution"
+         ],
+         "policy": "eks-fargate-pod-execution",
+         "retargeted": [
+          "platform-fargate-profile-role",
+          "platform-fargate-profile-role-2026"
+         ],
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-pod-execution-policy-retarget-2",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "detached": [
+        "platform-fargate-profile-role:AmazonEKSFargatePodExecutionRolePolicy",
+        "platform-fargate-profile-role-2026:AmazonEKSFargatePodExecutionRolePolicy"
+       ],
+       "fingerprint": [
+        "eks-fargate-pod-execution"
+       ],
+       "policy": "eks-fargate-pod-execution",
+       "retargeted": [
+        "platform-fargate-profile-role",
+        "platform-fargate-profile-role-2026"
+       ],
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "pooled-fargate-identity": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 4,
+        "landed_ns": 22240393260619,
+        "landed_s": 47.864,
+        "result": {
+         "fingerprint": [
+          "eks-fargate-pod-runner"
+         ],
+         "moved": [
+          "eks-fargate-profile-example"
+         ],
+         "pool": "eks-fargate-pod-runner",
+         "skipped": [],
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-pooled-fargate-identity-4",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        "eks-fargate-pod-runner"
+       ],
+       "moved": [
+        "eks-fargate-profile-example"
+       ],
+       "pool": "eks-fargate-pod-runner",
+       "skipped": [],
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "profile-role-rollout-successor": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 1,
+        "landed_ns": 22197197559957,
+        "landed_s": 4.668,
+        "result": {
+         "created": true,
+         "fingerprint": [
+          "platform-fargate-profile-role-2026"
+         ],
+         "retired": [
+          "platform-fargate-profile-role"
+         ],
+         "successor": "platform-fargate-profile-role-2026",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-profile-role-rollout-successor-1",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "created": true,
+       "fingerprint": [
+        "platform-fargate-profile-role-2026"
+       ],
+       "retired": [
+        "platform-fargate-profile-role"
+       ],
+       "successor": "platform-fargate-profile-role-2026",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "sibling-profile-role-copy": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 3,
+        "landed_ns": 22202473225481,
+        "landed_s": 9.944,
+        "result": {
+         "created": true,
+         "fingerprint": [
+          "platform-fargate-profile-role-copy"
+         ],
+         "role": "platform-fargate-profile-role-copy",
+         "trigger": "api",
+         "workload": "orders-api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-sibling-profile-role-copy-3",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "created": true,
+       "fingerprint": [
+        "platform-fargate-profile-role-copy"
+       ],
+       "role": "platform-fargate-profile-role-copy",
+       "trigger": "api",
+       "workload": "orders-api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000121:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000015",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000121:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000008",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000121:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000004",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000121:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000006",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000121:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000013",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000121:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000014",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::000000000121:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000011",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         }
+        ]
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000121:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000015",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000121:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000008",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000121:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000004",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000121:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000006",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000121:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000013",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000121:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000014",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "eks-fargate-pod-runner": {
+        "Arn": "arn:aws:iam::000000000121:role/eks-fargate-pod-runner",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "pooled pod execution identity for this account's Fargate pods",
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000010",
+        "RoleName": "eks-fargate-pod-runner"
+       },
+       "eks-fargate-profile-example": {
+        "Arn": "arn:aws:iam::000000000121:role/eks-fargate-profile-example",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "EKS Fargate profile pod execution role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::000000000121:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000012",
+        "RoleName": "eks-fargate-profile-example"
+       },
+       "platform-fargate-profile-role": {
+        "Arn": "arn:aws:iam::000000000121:role/platform-fargate-profile-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::000000000121:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000011",
+        "RoleName": "platform-fargate-profile-role",
+        "Tags": [
+         {
+          "Key": "Status",
+          "Value": "retired"
+         },
+         {
+          "Key": "SupersededBy",
+          "Value": "platform-fargate-profile-role-2026"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         },
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         }
+        ]
+       },
+       "platform-fargate-profile-role-2026": {
+        "Arn": "arn:aws:iam::000000000121:role/platform-fargate-profile-role-2026",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "the account's EKS Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::000000000121:policy/eks-fargate-pod-execution"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000007",
+        "RoleName": "platform-fargate-profile-role-2026",
+        "Tags": [
+         {
+          "Key": "Purpose",
+          "Value": "fargate-pod-execution"
+         },
+         {
+          "Key": "Status",
+          "Value": "current"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform"
+         }
+        ]
+       },
+       "platform-fargate-profile-role-copy": {
+        "Arn": "arn:aws:iam::000000000121:role/platform-fargate-profile-role-copy",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "orders-api: copy of the account's Fargate profile role",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000009",
+        "RoleName": "platform-fargate-profile-role-copy",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-interference-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

@@ -1,0 +1,2 @@
+A workload runs as the identity created for it, and is still trusted that way when you finish.
+What this account predefines is whatever it currently designates as its own, as that stands when you finish; what you did not create stays as found.

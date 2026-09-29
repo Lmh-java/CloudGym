@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::Lambda::EventSourceMapping",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-23T23:15:29+00:00",
+      "ResourceDescription": {
+        "Identifier": "d44413c1-60e2-4e3c-a35b-30eea54c414d",
+        "Properties": "{\"StartingPosition\":\"LATEST\",\"BatchSize\":10,\"MaximumRetryAttempts\":-1,\"ParallelizationFactor\":1,\"Enabled\":true,\"EventSourceArn\":\"arn:aws:dynamodb:us-east-1:123456789012:table/cloudgym-capability-esm/stream/2026-09-23T23:14:52.614\",\"FunctionName\":\"arn:aws:lambda:us-east-1:123456789012:function:cloudgym-capability-esm-fn\",\"TumblingWindowInSeconds\":0,\"BisectBatchOnFunctionError\":false,\"DestinationConfig\":{\"OnFailure\":{}},\"EventSourceMappingArn\":\"arn:aws:lambda:us-east-1:123456789012:event-source-mapping:d44413c1-60e2-4e3c-a35b-30eea54c414d\",\"MaximumRecordAgeInSeconds\":-1,\"Id\":\"d44413c1-60e2-4e3c-a35b-30eea54c414d\",\"Tags\":[],\"MaximumBatchingWindowInSeconds\":0}"
+      },
+      "TypeName": "AWS::Lambda::EventSourceMapping"
+    }
+  ],
+  "recorded_at": "2026-09-23T23:15:29+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

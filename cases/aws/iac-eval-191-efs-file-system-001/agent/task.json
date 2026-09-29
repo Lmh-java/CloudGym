@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_191_efs_file_system",
+  "utterance": "The account already holds the `shared-media-vpc` VPC (10.0.0.0/16) with two private subnets in it, 10.0.1.0/24 and 10.0.2.0/24, and the EFS file system `my-efs`, which nothing can reach yet. Stand the render workers on it: create a security group named `ec2_sg` in that VPC allowing inbound TCP on 22, 80 and 2049 from 0.0.0.0/0 and all outbound traffic; give `my-efs` a mount target in each of the two private subnets, on that security group; set the file system to move files to Infrequent Access storage after 30 days; and launch 2 of the latest AWS Linux (Amazon Linux 2) EC2 instances, t2.micro, one in each private subnet, on that same security group, with user data that mounts `my-efs` at /mnt/efs.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "the pre-existing EFS file system my-efs carries a lifecycle configuration that transitions files to Infrequent Access after 30 days and has one mount target in each of the two pre-existing private subnets of the shared-media-vpc VPC; two new t2.micro EC2 instances run, one in each of those two subnets; and a security group in that VPC admits inbound TCP 2049, with both mount targets and both instances on it"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 191
+  }
+}

@@ -1,0 +1,5892 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "succeeded"
+     },
+     "edge-cutover-move": {
+      "status": "succeeded"
+     },
+     "single-edge-path": {
+      "status": "succeeded"
+     },
+     "taken-way-out": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "succeeded"
+     },
+     "edge-cutover-move": {
+      "status": "succeeded"
+     },
+     "single-edge-path": {
+      "status": "succeeded"
+     },
+     "taken-way-out": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-0c1c2c3c4c5c60001": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60001",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "outbound-hold-gw"
+         },
+         {
+          "Key": "EgressRef",
+          "Value": "PLT-8842"
+         },
+         {
+          "Key": "Cutover",
+          "Value": "edge-move"
+         },
+         {
+          "Key": "CutoverRef",
+          "Value": "MIG-7731"
+         }
+        ]
+       },
+       "igw-0c1c2c3c4c5c60002": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60002",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0a0b0c0d0e0f00021|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60001",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021"
+       },
+       "rtb-0a0b0c0d0e0f00021|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021"
+       },
+       "rtb-0b1b2b3b4b5b60021|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021"
+       },
+       "rtb-0b1b2b3b4b5b60022|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60002",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022"
+       },
+       "rtb-0b1b2b3b4b5b60022|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022"
+       },
+       "rtb-0b1b2b3b4b5b60023|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0a0b0c0d0e0f00021": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "outbound-hold-rt"
+         },
+         {
+          "Key": "EgressRef",
+          "Value": "PLT-8842"
+         },
+         {
+          "Key": "Cutover",
+          "Value": "edge-move"
+         },
+         {
+          "Key": "CutoverRef",
+          "Value": "MIG-7731"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0b1b2b3b4b5b60021": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60022": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "consolidated-edge-rt"
+         },
+         {
+          "Key": "Routing",
+          "Value": "consolidated-edge"
+         },
+         {
+          "Key": "RoutingRef",
+          "Value": "NET-4417"
+         },
+         {
+          "Key": "Egress",
+          "Value": "single-path"
+         },
+         {
+          "Key": "EgressStandard",
+          "Value": "SEC-2291"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60023": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc-edge-rt"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0b1b2b3b4b5b60001": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "succeeded"
+     },
+     "edge-cutover-move": {
+      "status": "succeeded"
+     },
+     "single-edge-path": {
+      "status": "succeeded"
+     },
+     "taken-way-out": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-0c1c2c3c4c5c60001": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60001",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "outbound-hold-gw"
+         },
+         {
+          "Key": "EgressRef",
+          "Value": "PLT-8842"
+         },
+         {
+          "Key": "Cutover",
+          "Value": "edge-move"
+         },
+         {
+          "Key": "CutoverRef",
+          "Value": "MIG-7731"
+         }
+        ]
+       },
+       "igw-0c1c2c3c4c5c60002": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60002",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0a0b0c0d0e0f00021|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021"
+       },
+       "rtb-0b1b2b3b4b5b60021|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021"
+       },
+       "rtb-0b1b2b3b4b5b60022|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022"
+       },
+       "rtb-0b1b2b3b4b5b60023|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60002",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0b1b2b3b4b5b60023|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0a0b0c0d0e0f00021": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "outbound-hold-rt"
+         },
+         {
+          "Key": "EgressRef",
+          "Value": "PLT-8842"
+         },
+         {
+          "Key": "Cutover",
+          "Value": "edge-move"
+         },
+         {
+          "Key": "CutoverRef",
+          "Value": "MIG-7731"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0b1b2b3b4b5b60021": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60022": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "consolidated-edge-rt"
+         },
+         {
+          "Key": "Routing",
+          "Value": "consolidated-edge"
+         },
+         {
+          "Key": "RoutingRef",
+          "Value": "NET-4417"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60023": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc-edge-rt"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0b1b2b3b4b5b60001": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "not-fired"
+     },
+     "edge-cutover-move": {
+      "status": "not-fired"
+     },
+     "single-edge-path": {
+      "status": "not-fired"
+     },
+     "taken-way-out": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-0c1c2c3c4c5c60002": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60002",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0b1b2b3b4b5b60021|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021"
+       },
+       "rtb-0b1b2b3b4b5b60023|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60002",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0b1b2b3b4b5b60023|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0b1b2b3b4b5b60021": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60023": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc-edge-rt"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0b1b2b3b4b5b60001": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "not-fired"
+     },
+     "edge-cutover-move": {
+      "status": "not-fired"
+     },
+     "single-edge-path": {
+      "status": "not-fired"
+     },
+     "taken-way-out": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-0c1c2c3c4c5c60002": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60002",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0b1b2b3b4b5b60021|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021"
+       },
+       "rtb-0b1b2b3b4b5b60023|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60002",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0b1b2b3b4b5b60023|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0b1b2b3b4b5b60021": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60023": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc-edge-rt"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0b1b2b3b4b5b60001": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "succeeded"
+     },
+     "edge-cutover-move": {
+      "status": "not-fired"
+     },
+     "single-edge-path": {
+      "status": "succeeded"
+     },
+     "taken-way-out": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-0c1c2c3c4c5c60001": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60001",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "outbound-hold-gw"
+         },
+         {
+          "Key": "EgressRef",
+          "Value": "PLT-8842"
+         }
+        ]
+       },
+       "igw-0c1c2c3c4c5c60002": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60002",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0a0b0c0d0e0f00021|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021"
+       },
+       "rtb-0b1b2b3b4b5b60021|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021"
+       },
+       "rtb-0b1b2b3b4b5b60022|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60002",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022"
+       },
+       "rtb-0b1b2b3b4b5b60022|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022"
+       },
+       "rtb-0b1b2b3b4b5b60023|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0a0b0c0d0e0f00021": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "outbound-hold-rt"
+         },
+         {
+          "Key": "EgressRef",
+          "Value": "PLT-8842"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0b1b2b3b4b5b60021": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60022": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "consolidated-edge-rt"
+         },
+         {
+          "Key": "Routing",
+          "Value": "consolidated-edge"
+         },
+         {
+          "Key": "RoutingRef",
+          "Value": "NET-4417"
+         },
+         {
+          "Key": "Egress",
+          "Value": "single-path"
+         },
+         {
+          "Key": "EgressStandard",
+          "Value": "SEC-2291"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60023": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc-edge-rt"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0b1b2b3b4b5b60001": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-taken-way-out"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "succeeded"
+     },
+     "edge-cutover-move": {
+      "status": "not-fired"
+     },
+     "single-edge-path": {
+      "status": "not-fired"
+     },
+     "taken-way-out": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-0c1c2c3c4c5c60001": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60001",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "outbound-hold-gw"
+         },
+         {
+          "Key": "EgressRef",
+          "Value": "PLT-8842"
+         }
+        ]
+       },
+       "igw-0c1c2c3c4c5c60002": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60002",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0a0b0c0d0e0f00021|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60001",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021"
+       },
+       "rtb-0a0b0c0d0e0f00021|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021"
+       },
+       "rtb-0b1b2b3b4b5b60021|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021"
+       },
+       "rtb-0b1b2b3b4b5b60022|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022"
+       },
+       "rtb-0b1b2b3b4b5b60023|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60002",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0b1b2b3b4b5b60023|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0a0b0c0d0e0f00021": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "outbound-hold-rt"
+         },
+         {
+          "Key": "EgressRef",
+          "Value": "PLT-8842"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0b1b2b3b4b5b60021": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60022": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "consolidated-edge-rt"
+         },
+         {
+          "Key": "Routing",
+          "Value": "consolidated-edge"
+         },
+         {
+          "Key": "RoutingRef",
+          "Value": "NET-4417"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60023": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc-edge-rt"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0b1b2b3b4b5b60001": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-consolidated-edge-table"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "not-fired"
+     },
+     "edge-cutover-move": {
+      "status": "not-fired"
+     },
+     "single-edge-path": {
+      "status": "succeeded"
+     },
+     "taken-way-out": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-0c1c2c3c4c5c60001": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60001",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "outbound-hold-gw"
+         },
+         {
+          "Key": "EgressRef",
+          "Value": "PLT-8842"
+         }
+        ]
+       },
+       "igw-0c1c2c3c4c5c60002": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60002",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0a0b0c0d0e0f00021|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60001",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021"
+       },
+       "rtb-0a0b0c0d0e0f00021|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021"
+       },
+       "rtb-0b1b2b3b4b5b60021|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021"
+       },
+       "rtb-0b1b2b3b4b5b60023|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60002",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0b1b2b3b4b5b60023|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0b1b2b3b4b5b60024|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60002",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60024"
+       },
+       "rtb-0b1b2b3b4b5b60024|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60024"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0a0b0c0d0e0f00021": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "outbound-hold-rt"
+         },
+         {
+          "Key": "EgressRef",
+          "Value": "PLT-8842"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0b1b2b3b4b5b60021": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60023": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc-edge-rt"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60024": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60024",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc-edge-rt-2"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0b1b2b3b4b5b60001": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-single-edge-path"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "succeeded"
+     },
+     "edge-cutover-move": {
+      "status": "succeeded"
+     },
+     "single-edge-path": {
+      "status": "succeeded"
+     },
+     "taken-way-out": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-0c1c2c3c4c5c60001": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60001",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "outbound-hold-gw"
+         },
+         {
+          "Key": "EgressRef",
+          "Value": "PLT-8842"
+         },
+         {
+          "Key": "Cutover",
+          "Value": "edge-move"
+         },
+         {
+          "Key": "CutoverRef",
+          "Value": "MIG-7731"
+         }
+        ]
+       },
+       "igw-0c1c2c3c4c5c60002": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60002",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0a0b0c0d0e0f00021|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021"
+       },
+       "rtb-0b1b2b3b4b5b60021|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021"
+       },
+       "rtb-0b1b2b3b4b5b60022|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60002",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022"
+       },
+       "rtb-0b1b2b3b4b5b60022|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022"
+       },
+       "rtb-0b1b2b3b4b5b60023|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0a0b0c0d0e0f00021": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "outbound-hold-rt"
+         },
+         {
+          "Key": "EgressRef",
+          "Value": "PLT-8842"
+         },
+         {
+          "Key": "Cutover",
+          "Value": "edge-move"
+         },
+         {
+          "Key": "CutoverRef",
+          "Value": "MIG-7731"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0b1b2b3b4b5b60021": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60022": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "consolidated-edge-rt"
+         },
+         {
+          "Key": "Routing",
+          "Value": "consolidated-edge"
+         },
+         {
+          "Key": "RoutingRef",
+          "Value": "NET-4417"
+         },
+         {
+          "Key": "Egress",
+          "Value": "single-path"
+         },
+         {
+          "Key": "EgressStandard",
+          "Value": "SEC-2291"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60023": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc-edge-rt"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0b1b2b3b4b5b60001": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-edge-cutover-move"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "succeeded"
+     },
+     "edge-cutover-move": {
+      "status": "succeeded"
+     },
+     "single-edge-path": {
+      "status": "succeeded"
+     },
+     "taken-way-out": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-0c1c2c3c4c5c60001": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60001",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "outbound-hold-gw"
+         },
+         {
+          "Key": "EgressRef",
+          "Value": "PLT-8842"
+         },
+         {
+          "Key": "Cutover",
+          "Value": "edge-move"
+         },
+         {
+          "Key": "CutoverRef",
+          "Value": "MIG-7731"
+         }
+        ]
+       },
+       "igw-0c1c2c3c4c5c60002": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60002",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0a0b0c0d0e0f00021|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021"
+       },
+       "rtb-0b1b2b3b4b5b60021|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021"
+       },
+       "rtb-0b1b2b3b4b5b60022|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60001",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022"
+       },
+       "rtb-0b1b2b3b4b5b60022|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022"
+       },
+       "rtb-0b1b2b3b4b5b60023|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0a0b0c0d0e0f00021": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "outbound-hold-rt"
+         },
+         {
+          "Key": "EgressRef",
+          "Value": "PLT-8842"
+         },
+         {
+          "Key": "Cutover",
+          "Value": "edge-move"
+         },
+         {
+          "Key": "CutoverRef",
+          "Value": "MIG-7731"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0b1b2b3b4b5b60021": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60022": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "consolidated-edge-rt"
+         },
+         {
+          "Key": "Routing",
+          "Value": "consolidated-edge"
+         },
+         {
+          "Key": "RoutingRef",
+          "Value": "NET-4417"
+         },
+         {
+          "Key": "Egress",
+          "Value": "single-path"
+         },
+         {
+          "Key": "EgressStandard",
+          "Value": "SEC-2291"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60023": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc-edge-rt"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0b1b2b3b4b5b60001": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "succeeded"
+     },
+     "edge-cutover-move": {
+      "status": "succeeded"
+     },
+     "single-edge-path": {
+      "status": "succeeded"
+     },
+     "taken-way-out": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-0c1c2c3c4c5c60001": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60001",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "outbound-hold-gw"
+         },
+         {
+          "Key": "EgressRef",
+          "Value": "PLT-8842"
+         },
+         {
+          "Key": "Cutover",
+          "Value": "edge-move"
+         },
+         {
+          "Key": "CutoverRef",
+          "Value": "MIG-7731"
+         }
+        ]
+       },
+       "igw-0c1c2c3c4c5c60002": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60002",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0a0b0c0d0e0f00021|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60001",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021"
+       },
+       "rtb-0a0b0c0d0e0f00021|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021"
+       },
+       "rtb-0b1b2b3b4b5b60021|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021"
+       },
+       "rtb-0b1b2b3b4b5b60022|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60002",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022"
+       },
+       "rtb-0b1b2b3b4b5b60022|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022"
+       },
+       "rtb-0b1b2b3b4b5b60023|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60002",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0b1b2b3b4b5b60023|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0a0b0c0d0e0f00021": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "outbound-hold-rt"
+         },
+         {
+          "Key": "EgressRef",
+          "Value": "PLT-8842"
+         },
+         {
+          "Key": "Cutover",
+          "Value": "edge-move"
+         },
+         {
+          "Key": "CutoverRef",
+          "Value": "MIG-7731"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0b1b2b3b4b5b60021": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60022": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "consolidated-edge-rt"
+         },
+         {
+          "Key": "Routing",
+          "Value": "consolidated-edge"
+         },
+         {
+          "Key": "RoutingRef",
+          "Value": "NET-4417"
+         },
+         {
+          "Key": "Egress",
+          "Value": "single-path"
+         },
+         {
+          "Key": "EgressStandard",
+          "Value": "SEC-2291"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60023": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc-edge-rt"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0b1b2b3b4b5b60001": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "two-ways-out"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "succeeded"
+     },
+     "edge-cutover-move": {
+      "status": "succeeded"
+     },
+     "single-edge-path": {
+      "status": "succeeded"
+     },
+     "taken-way-out": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-0c1c2c3c4c5c60002": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60002",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0b1b2b3b4b5b60021|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021"
+       },
+       "rtb-0b1b2b3b4b5b60022|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60002",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022"
+       },
+       "rtb-0b1b2b3b4b5b60022|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022"
+       },
+       "rtb-0b1b2b3b4b5b60023|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0b1b2b3b4b5b60021": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60022": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "consolidated-edge-rt"
+         },
+         {
+          "Key": "Routing",
+          "Value": "consolidated-edge"
+         },
+         {
+          "Key": "RoutingRef",
+          "Value": "NET-4417"
+         },
+         {
+          "Key": "Egress",
+          "Value": "single-path"
+         },
+         {
+          "Key": "EgressStandard",
+          "Value": "SEC-2291"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60023": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc-edge-rt"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0b1b2b3b4b5b60001": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-taken-way-out"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "failed"
+     },
+     "edge-cutover-move": {
+      "status": "succeeded"
+     },
+     "single-edge-path": {
+      "status": "succeeded"
+     },
+     "taken-way-out": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-0c1c2c3c4c5c60001": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60001",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "outbound-hold-gw"
+         },
+         {
+          "Key": "EgressRef",
+          "Value": "PLT-8842"
+         },
+         {
+          "Key": "Cutover",
+          "Value": "edge-move"
+         },
+         {
+          "Key": "CutoverRef",
+          "Value": "MIG-7731"
+         }
+        ]
+       },
+       "igw-0c1c2c3c4c5c60002": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60002",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0a0b0c0d0e0f00021|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60001",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021"
+       },
+       "rtb-0a0b0c0d0e0f00021|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021"
+       },
+       "rtb-0b1b2b3b4b5b60021|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021"
+       },
+       "rtb-0b1b2b3b4b5b60023|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60002",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0b1b2b3b4b5b60023|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0a0b0c0d0e0f00021": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "outbound-hold-rt"
+         },
+         {
+          "Key": "EgressRef",
+          "Value": "PLT-8842"
+         },
+         {
+          "Key": "Cutover",
+          "Value": "edge-move"
+         },
+         {
+          "Key": "CutoverRef",
+          "Value": "MIG-7731"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0b1b2b3b4b5b60021": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60023": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc-edge-rt"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0b1b2b3b4b5b60001": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-consolidated-edge-table"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "failed"
+     },
+     "edge-cutover-move": {
+      "status": "not-fired"
+     },
+     "single-edge-path": {
+      "status": "failed"
+     },
+     "taken-way-out": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-0c1c2c3c4c5c60001": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60001",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "outbound-hold-gw"
+         },
+         {
+          "Key": "EgressRef",
+          "Value": "PLT-8842"
+         }
+        ]
+       },
+       "igw-0c1c2c3c4c5c60002": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60002",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0a0b0c0d0e0f00021|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60001",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021"
+       },
+       "rtb-0a0b0c0d0e0f00021|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021"
+       },
+       "rtb-0b1b2b3b4b5b60021|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021"
+       },
+       "rtb-0b1b2b3b4b5b60023|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60002",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0b1b2b3b4b5b60023|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0b1b2b3b4b5b60024|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60002",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60024"
+       },
+       "rtb-0b1b2b3b4b5b60024|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60024"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0a0b0c0d0e0f00021": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "outbound-hold-rt"
+         },
+         {
+          "Key": "EgressRef",
+          "Value": "PLT-8842"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0b1b2b3b4b5b60021": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60023": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc-edge-rt"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60024": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60024",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc-edge-rt-2"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0b1b2b3b4b5b60001": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-single-edge-path"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "succeeded"
+     },
+     "edge-cutover-move": {
+      "status": "failed"
+     },
+     "single-edge-path": {
+      "status": "succeeded"
+     },
+     "taken-way-out": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-0c1c2c3c4c5c60001": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60001",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "outbound-hold-gw"
+         },
+         {
+          "Key": "EgressRef",
+          "Value": "PLT-8842"
+         }
+        ]
+       },
+       "igw-0c1c2c3c4c5c60002": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60002",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0a0b0c0d0e0f00021|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60001",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021"
+       },
+       "rtb-0a0b0c0d0e0f00021|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021"
+       },
+       "rtb-0b1b2b3b4b5b60021|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021"
+       },
+       "rtb-0b1b2b3b4b5b60022|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60002",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022"
+       },
+       "rtb-0b1b2b3b4b5b60022|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022"
+       },
+       "rtb-0b1b2b3b4b5b60023|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0a0b0c0d0e0f00021": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "outbound-hold-rt"
+         },
+         {
+          "Key": "EgressRef",
+          "Value": "PLT-8842"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0b1b2b3b4b5b60021": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60022": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60022",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "consolidated-edge-rt"
+         },
+         {
+          "Key": "Routing",
+          "Value": "consolidated-edge"
+         },
+         {
+          "Key": "RoutingRef",
+          "Value": "NET-4417"
+         },
+         {
+          "Key": "Egress",
+          "Value": "single-path"
+         },
+         {
+          "Key": "EgressStandard",
+          "Value": "SEC-2291"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60023": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc-edge-rt"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0b1b2b3b4b5b60001": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-edge-cutover-move"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "not-fired"
+     },
+     "edge-cutover-move": {
+      "status": "not-fired"
+     },
+     "single-edge-path": {
+      "status": "not-fired"
+     },
+     "taken-way-out": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-0c1c2c3c4c5c60002": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60002",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "control-nothing-built"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "not-fired"
+     },
+     "edge-cutover-move": {
+      "status": "not-fired"
+     },
+     "single-edge-path": {
+      "status": "not-fired"
+     },
+     "taken-way-out": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-0c1c2c3c4c5c60002": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60002",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0b1b2b3b4b5b60021|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021"
+       },
+       "rtb-0b1b2b3b4b5b60023|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60002",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0b1b2b3b4b5b60023|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0b1b2b3b4b5b60021": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60023": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc-edge-rt"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0b1b2b3b4b5b60001": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "control-network-not-named"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "not-fired"
+     },
+     "edge-cutover-move": {
+      "status": "not-fired"
+     },
+     "single-edge-path": {
+      "status": "not-fired"
+     },
+     "taken-way-out": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-0c1c2c3c4c5c60002": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60002",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0b1b2b3b4b5b60021|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021"
+       },
+       "rtb-0b1b2b3b4b5b60023|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60002",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0b1b2b3b4b5b60023|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0b1b2b3b4b5b60021": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60023": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc-edge-rt"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0b1b2b3b4b5b60001": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": false,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "control-no-dns-hostnames"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "not-fired"
+     },
+     "edge-cutover-move": {
+      "status": "not-fired"
+     },
+     "single-edge-path": {
+      "status": "not-fired"
+     },
+     "taken-way-out": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-0c1c2c3c4c5c60002": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60002",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0b1b2b3b4b5b60021|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021"
+       },
+       "rtb-0b1b2b3b4b5b60023|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60002",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0b1b2b3b4b5b60023|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0b1b2b3b4b5b60021": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60023": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc-edge-rt"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0b1b2b3b4b5b60001": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "control-gateway-not-named"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "not-fired"
+     },
+     "edge-cutover-move": {
+      "status": "not-fired"
+     },
+     "single-edge-path": {
+      "status": "not-fired"
+     },
+     "taken-way-out": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-0c1c2c3c4c5c60002": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60002",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0b1b2b3b4b5b60021|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021"
+       },
+       "rtb-0b1b2b3b4b5b60023|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60002",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0b1b2b3b4b5b60023|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0b1b2b3b4b5b60021": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60023": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0b1b2b3b4b5b60001": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "control-way-out-table-not-named"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "not-fired"
+     },
+     "edge-cutover-move": {
+      "status": "not-fired"
+     },
+     "single-edge-path": {
+      "status": "not-fired"
+     },
+     "taken-way-out": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-0c1c2c3c4c5c60002": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60002",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0b1b2b3b4b5b60021|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021"
+       },
+       "rtb-0b1b2b3b4b5b60023|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0b1b2b3b4b5b60021": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60023": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc-edge-rt"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0b1b2b3b4b5b60001": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "control-no-way-out"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "not-fired"
+     },
+     "edge-cutover-move": {
+      "status": "not-fired"
+     },
+     "single-edge-path": {
+      "status": "not-fired"
+     },
+     "taken-way-out": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-0c1c2c3c4c5c60002": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60002",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0b1b2b3b4b5b60021|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021"
+       },
+       "rtb-0b1b2b3b4b5b60023|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0deadbeef0000dead",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0b1b2b3b4b5b60023|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0b1b2b3b4b5b60021": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60023": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc-edge-rt"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0b1b2b3b4b5b60001": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "control-way-out-through-a-gateway-that-is-not-there"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "not-fired"
+     },
+     "edge-cutover-move": {
+      "status": "not-fired"
+     },
+     "single-edge-path": {
+      "status": "not-fired"
+     },
+     "taken-way-out": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-0c1c2c3c4c5c60002": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60002",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0a0b0c0d0e0f00021|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60002",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021"
+       },
+       "rtb-0a0b0c0d0e0f00021|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021"
+       },
+       "rtb-0b1b2b3b4b5b60021|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021"
+       },
+       "rtb-0b1b2b3b4b5b60023|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60002",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0b1b2b3b4b5b60023|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0a0b0c0d0e0f00021": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00021",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "outbound-hold-rt"
+         },
+         {
+          "Key": "EgressRef",
+          "Value": "PLT-8842"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0b1b2b3b4b5b60021": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60023": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc-edge-rt"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0b1b2b3b4b5b60001": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "control-way-out-through-another-network-s-gateway"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "consolidated-edge-table": {
+      "status": "not-fired"
+     },
+     "edge-cutover-move": {
+      "status": "not-fired"
+     },
+     "single-edge-path": {
+      "status": "not-fired"
+     },
+     "taken-way-out": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-0c1c2c3c4c5c60002": {
+        "InternetGatewayId": "igw-0c1c2c3c4c5c60002",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-0a0b0c0d0e0f00020|10.70.0.0/16": {
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020"
+       },
+       "rtb-0b1b2b3b4b5b60021|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021"
+       },
+       "rtb-0b1b2b3b4b5b60023|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0c1c2c3c4c5c60002",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0b1b2b3b4b5b60023|10.0.0.0/16": {
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-0a0b0c0d0e0f00020": {
+        "RouteTableId": "rtb-0a0b0c0d0e0f00020",
+        "Tags": [],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "rtb-0b1b2b3b4b5b60021": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60021",
+        "Tags": [],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0b1b2b3b4b5b60023": {
+        "RouteTableId": "rtb-0b1b2b3b4b5b60023",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc-edge-rt"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::Subnet": {},
+      "AWS::EC2::SubnetRouteTableAssociation": {},
+      "AWS::EC2::VPC": {
+       "vpc-0a0b0c0d0e0f00001": {
+        "CidrBlock": "10.70.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         },
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         }
+        ],
+        "VpcId": "vpc-0a0b0c0d0e0f00001"
+       },
+       "vpc-0b1b2b3b4b5b60001": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60001"
+       },
+       "vpc-0b1b2b3b4b5b60002": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-0b1b2b3b4b5b60002"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      }
+     }
+    }
+   },
+   "name": "control-two-networks-on-the-workload-s-cidr"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-01b011304e9bd97c3|10.70.0.0/16": {
+        "CidrBlock": "10.70.0.0/16",
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-01b011304e9bd97c3",
+        "VpcEndpointId": "local"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "CidrBlock": "0.0.0.0/0",
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcEndpointId": "igw-0203a45b89c5f552a"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "CidrBlock": "172.31.0.0/16",
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcEndpointId": "local"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-01b011304e9bd97c3": {
+        "RouteTableId": "rtb-01b011304e9bd97c3",
+        "VpcId": "vpc-0ff44c3cc697ff48d"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-02fd49a0b823aeab0"
+        ],
+        "DefaultNetworkAcl": "acl-05d0715cadb83df0d",
+        "DefaultSecurityGroup": "sg-03f1011b0114a0a21",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       },
+       "vpc-0ff44c3cc697ff48d": {
+        "CidrBlock": "10.70.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-002d7276c9de3c5d8"
+        ],
+        "DefaultNetworkAcl": "acl-0f8d91693cd4dab44",
+        "DefaultSecurityGroup": "sg-01955952bb15d79d0",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         },
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         }
+        ],
+        "VpcId": "vpc-0ff44c3cc697ff48d"
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EC2::InternetGateway": {
+       "igw-0203a45b89c5f552a": {
+        "InternetGatewayId": "igw-0203a45b89c5f552a",
+        "Tags": []
+       },
+       "igw-06aae96f386d3f16f": {
+        "InternetGatewayId": "igw-06aae96f386d3f16f",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "ig"
+         }
+        ]
+       }
+      },
+      "AWS::EC2::Route": {
+       "rtb-01b011304e9bd97c3|10.70.0.0/16": {
+        "CidrBlock": "10.70.0.0/16",
+        "DestinationCidrBlock": "10.70.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-01b011304e9bd97c3",
+        "VpcEndpointId": "local"
+       },
+       "rtb-0bf44e9be0f84090d|0.0.0.0/0": {
+        "CidrBlock": "0.0.0.0/0",
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-06aae96f386d3f16f",
+        "RouteTableId": "rtb-0bf44e9be0f84090d",
+        "VpcEndpointId": "igw-06aae96f386d3f16f"
+       },
+       "rtb-0bf44e9be0f84090d|10.0.0.0/16": {
+        "CidrBlock": "10.0.0.0/16",
+        "DestinationCidrBlock": "10.0.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0bf44e9be0f84090d",
+        "VpcEndpointId": "local"
+       },
+       "rtb-0f061a744195aa7c7|0.0.0.0/0": {
+        "CidrBlock": "0.0.0.0/0",
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0203a45b89c5f552a",
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcEndpointId": "igw-0203a45b89c5f552a"
+       },
+       "rtb-0f061a744195aa7c7|172.31.0.0/16": {
+        "CidrBlock": "172.31.0.0/16",
+        "DestinationCidrBlock": "172.31.0.0/16",
+        "GatewayId": "local",
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcEndpointId": "local"
+       }
+      },
+      "AWS::EC2::RouteTable": {
+       "rtb-01b011304e9bd97c3": {
+        "RouteTableId": "rtb-01b011304e9bd97c3",
+        "VpcId": "vpc-0ff44c3cc697ff48d"
+       },
+       "rtb-0bf44e9be0f84090d": {
+        "RouteTableId": "rtb-0bf44e9be0f84090d",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "rt"
+         }
+        ],
+        "VpcId": "vpc-04225ef56c95f4161"
+       },
+       "rtb-0f061a744195aa7c7": {
+        "RouteTableId": "rtb-0f061a744195aa7c7",
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       }
+      },
+      "AWS::EC2::VPC": {
+       "vpc-04225ef56c95f4161": {
+        "CidrBlock": "10.0.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-0af2ed1c148a46182"
+        ],
+        "DefaultNetworkAcl": "acl-041dc6a81bb574c29",
+        "DefaultSecurityGroup": "sg-0d63fe331550b3499",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "vpc"
+         }
+        ],
+        "VpcId": "vpc-04225ef56c95f4161"
+       },
+       "vpc-0cb1ecab670b248b1": {
+        "CidrBlock": "172.31.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-02fd49a0b823aeab0"
+        ],
+        "DefaultNetworkAcl": "acl-05d0715cadb83df0d",
+        "DefaultSecurityGroup": "sg-03f1011b0114a0a21",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [],
+        "VpcId": "vpc-0cb1ecab670b248b1"
+       },
+       "vpc-0ff44c3cc697ff48d": {
+        "CidrBlock": "10.70.0.0/16",
+        "CidrBlockAssociations": [
+         "vpc-cidr-assoc-002d7276c9de3c5d8"
+        ],
+        "DefaultNetworkAcl": "acl-0f8d91693cd4dab44",
+        "DefaultSecurityGroup": "sg-01955952bb15d79d0",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlocks": [],
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "platform"
+         },
+         {
+          "Key": "Name",
+          "Value": "platform-vpc"
+         }
+        ],
+        "VpcId": "vpc-0ff44c3cc697ff48d"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

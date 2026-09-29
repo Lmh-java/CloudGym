@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_156_cloudwatch_event_rule",
+  "utterance": "The Lambda function `test_lambda` already exists in this account. Make an EC2 image being created trigger it.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's schedules and event wiring",
+    "intent": "EC2 image-creation events reach the pre-existing Lambda function test_lambda: an ENABLED EventBridge rule whose event pattern matches EC2 image creation carries that function as a target, and the function's resource policy lets events.amazonaws.com invoke it from that rule, so the delivery path from image creation to the function is complete end to end"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 156
+  }
+}

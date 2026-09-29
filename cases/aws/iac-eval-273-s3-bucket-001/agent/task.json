@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_273_s3_bucket",
+  "utterance": "This account keeps one shared S3 store for the inventory reports its buckets produce: the bucket marked as the account's inventory-reports store. Create an S3 bucket whose name starts with `mybucket-`, and have that bucket report an S3 inventory of the whole bucket every day, delivered into the reports store. Then update the reports store's bucket policy so the S3 service may write those report objects into it.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's data and how it is stored and laid out",
+    "intent": "one S3 bucket whose name starts with `mybucket-`, absent at the start, stands beside the account's pre-existing inventory-reports store; that bucket's S3 inventory reporting covers the whole bucket, with no object filter narrowing it, runs on a daily schedule, and is delivered into the inventory-reports store; and the reports store's bucket policy allows the S3 service to write those report objects into it"
+  },
+  "notes": "which inventory entry carries the reporting, the format and place its reports land in, and which store stands under the `mybucket-` name follow from the resolution policy and the account's state, not from the utterance",
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 273
+  }
+}

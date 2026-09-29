@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_374_lightsail_disk",
+  "utterance": "The billing service keeps its ledger archive on the Lightsail disk `billing-ledger-archive`, and now needs a host of its own to write the nightly extracts from. Stand it up in the same availability zone the archive disk sits in: a Lightsail instance named `billing-worker` on the `amazon_linux_2023` blueprint and the `nano_3_0` bundle, and two 8 GB Lightsail disks for the extracts — `billing-extracts-1`, attached to `billing-worker` at the disk path `/dev/xvdf`, and `billing-extracts-2`, attached to `billing-worker` at the disk path `/dev/xvdg`. Both new disks are the service's own storage, so each carries the service's attribution the way the archive does: `Service = billing` and `Owner = billing-team`. Leave the archive disk itself as you find it. Finish by reporting what the three ended up with: for each new disk its size, zone, attachment and tags, and for the host its availability zone, its bundle, the state it is in and everything recorded on it.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "a Lightsail instance named billing-worker on the amazon_linux_2023 blueprint and the nano_3_0 bundle stands in the availability zone the pre-existing disk billing-ledger-archive sits in; two 8 GB Lightsail disks named billing-extracts-1 and billing-extracts-2 stand in that same zone, each carrying the tags Service = billing and Owner = billing-team, with billing-extracts-1 attached to billing-worker at the disk path /dev/xvdf and billing-extracts-2 attached to billing-worker at the disk path /dev/xvdg; and billing-ledger-archive is left as it was found, attached to nothing"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 374
+  }
+}

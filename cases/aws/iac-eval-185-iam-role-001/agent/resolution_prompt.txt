@@ -1,0 +1,2 @@
+A workload this account already runs is not stood up a second time: a request for it lands on the one it keeps, as that stands when you finish.
+How such code is entered follows what this account already does; what you did not create stays as found.

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_117_s3_bucket",
+  "utterance": "This account already keeps an S3 store in service for the `orders-team` application's log objects. The application needs those objects published as notifications as they are created: `s3:ObjectCreated:*` events from that store, filtered to the objects whose name ends in `.log`, have to reach an SNS topic — call it `s3-event-notification-topic` — whose access policy allows the `s3.amazonaws.com` service to `SNS:Publish` to it under an `ArnLike` condition on `aws:SourceArn` naming that store.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's schedules and event wiring",
+    "intent": "the delivery path from the store's log objects to an SNS topic is complete end to end: the S3 store the account already had in service for the orders-team application carries a notification entry sending s3:ObjectCreated:* to an SNS topic under a filter selecting the objects whose name ends in .log, and the topic that entry points at has an access policy letting s3.amazonaws.com publish to it for events whose source is that store"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 117
+  }
+}

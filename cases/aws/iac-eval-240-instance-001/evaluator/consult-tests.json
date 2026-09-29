@@ -1,0 +1,132 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "placed-segment",
+      "message": "There is a segment in this network marked net-placed-a7 that I did not cut. Is that where my workload is meant to run, or do I cut my own?",
+      "expect": [
+        "network-workload-segment"
+      ],
+      "fingerprint": {
+        "network-workload-segment": [
+          "net-placed-a7",
+          "10.0.16.0/24"
+        ],
+        "migration-legacy-server": [
+          "rpt-legacy-h4"
+        ],
+        "sibling-collector-server": [
+          "reporting-collector-b2"
+        ],
+        "platform-network-naming": [
+          "net-use1-vpc-02"
+        ]
+      }
+    },
+    {
+      "name": "server-already-running",
+      "message": "A server called rpt-legacy-h4 is already up in the segment I was pointed at. Is that the one I was asked for, or does it stay as it is?",
+      "expect": [
+        "migration-legacy-server"
+      ],
+      "fingerprint": {
+        "network-workload-segment": [
+          "net-placed-a7",
+          "10.0.16.0/24"
+        ],
+        "migration-legacy-server": [
+          "rpt-legacy-h4"
+        ],
+        "sibling-collector-server": [
+          "reporting-collector-b2"
+        ],
+        "platform-network-naming": [
+          "net-use1-vpc-02"
+        ]
+      }
+    },
+    {
+      "name": "namesake-server",
+      "message": "One of the servers in here is named reporting-collector-b2 and I did not bring it up. Is it the reporting service's own?",
+      "expect": [
+        "sibling-collector-server"
+      ],
+      "fingerprint": {
+        "network-workload-segment": [
+          "net-placed-a7",
+          "10.0.16.0/24"
+        ],
+        "migration-legacy-server": [
+          "rpt-legacy-h4"
+        ],
+        "sibling-collector-server": [
+          "reporting-collector-b2"
+        ],
+        "platform-network-naming": [
+          "net-use1-vpc-02"
+        ]
+      }
+    },
+    {
+      "name": "network-under-another-name",
+      "message": "The only network on the range I was given is tagged net-use1-vpc-02 rather than the name in my task. Do I work in it, or is a network of that name expected?",
+      "expect": [
+        "platform-network-naming"
+      ],
+      "fingerprint": {
+        "network-workload-segment": [
+          "net-placed-a7",
+          "10.0.16.0/24"
+        ],
+        "migration-legacy-server": [
+          "rpt-legacy-h4"
+        ],
+        "sibling-collector-server": [
+          "reporting-collector-b2"
+        ],
+        "platform-network-naming": [
+          "net-use1-vpc-02"
+        ]
+      }
+    },
+    {
+      "name": "described-in-words",
+      "message": "The network has been renamed, a segment I did not cut is sitting in it and servers I did not launch are running there. Which of all that is mine?",
+      "expect": [],
+      "fingerprint": {
+        "network-workload-segment": [
+          "net-placed-a7",
+          "10.0.16.0/24"
+        ],
+        "migration-legacy-server": [
+          "rpt-legacy-h4"
+        ],
+        "sibling-collector-server": [
+          "reporting-collector-b2"
+        ],
+        "platform-network-naming": [
+          "net-use1-vpc-02"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "fingerprint": {
+        "network-workload-segment": [
+          "net-placed-a7",
+          "10.0.16.0/24"
+        ],
+        "migration-legacy-server": [
+          "rpt-legacy-h4"
+        ],
+        "sibling-collector-server": [
+          "reporting-collector-b2"
+        ],
+        "platform-network-naming": [
+          "net-use1-vpc-02"
+        ]
+      }
+    }
+  ]
+}

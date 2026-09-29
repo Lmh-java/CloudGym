@@ -1,0 +1,71 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "second-acl",
+      "message": "There is a network ACL named app-edge-acl on this network marked account-edge-baseline. Do I put the traffic rules I was asked for on it, or keep the one I made?",
+      "expect": ["shared-edge-acl"],
+      "fingerprint": {
+        "shared-edge-acl": ["account-edge-baseline", "app-edge-acl"],
+        "quarantined-source-hold": ["sanctioned-sources-only", "10.3.4.0/22"],
+        "data-plane-reservation": ["data-plane-hold", "10.3.128.0/19"],
+        "unallocated-egress-boundary": ["unallocated-space-closed", "10.3.32.0/19"]
+      }
+    },
+    {
+      "name": "inbound-deny",
+      "message": "An inbound deny for 10.3.4.0/22 showed up ahead of what I wrote, on an ACL marked sanctioned-sources-only. Does it stay, and must my own inbound rule sit behind it?",
+      "expect": ["quarantined-source-hold"],
+      "fingerprint": {
+        "shared-edge-acl": ["account-edge-baseline", "app-edge-acl"],
+        "quarantined-source-hold": ["sanctioned-sources-only", "10.3.4.0/22"],
+        "data-plane-reservation": ["data-plane-hold", "10.3.128.0/19"],
+        "unallocated-egress-boundary": ["unallocated-space-closed", "10.3.32.0/19"]
+      }
+    },
+    {
+      "name": "taken-slot",
+      "message": "The outbound rule number I wanted now carries an allowance to 10.3.128.0/19, and the ACL is marked data-plane-hold. May I overwrite it or do I move mine?",
+      "expect": ["data-plane-reservation"],
+      "fingerprint": {
+        "shared-edge-acl": ["account-edge-baseline", "app-edge-acl"],
+        "quarantined-source-hold": ["sanctioned-sources-only", "10.3.4.0/22"],
+        "data-plane-reservation": ["data-plane-hold", "10.3.128.0/19"],
+        "unallocated-egress-boundary": ["unallocated-space-closed", "10.3.32.0/19"]
+      }
+    },
+    {
+      "name": "outbound-deny",
+      "message": "There is now an outbound deny for 10.3.32.0/19 and the ACL is marked unallocated-space-closed. My outbound allowance sits ahead of it — should I leave it that way?",
+      "expect": ["unallocated-egress-boundary"],
+      "fingerprint": {
+        "shared-edge-acl": ["account-edge-baseline", "app-edge-acl"],
+        "quarantined-source-hold": ["sanctioned-sources-only", "10.3.4.0/22"],
+        "data-plane-reservation": ["data-plane-hold", "10.3.128.0/19"],
+        "unallocated-egress-boundary": ["unallocated-space-closed", "10.3.32.0/19"]
+      }
+    },
+    {
+      "name": "effect-in-words",
+      "message": "Entries I did not write keep appearing on this network's ACL: something is being denied inbound, a rule number I wanted was taken over, and a way out is being closed. Whose are they and do they stay?",
+      "expect": [],
+      "fingerprint": {
+        "shared-edge-acl": ["account-edge-baseline", "app-edge-acl"],
+        "quarantined-source-hold": ["sanctioned-sources-only", "10.3.4.0/22"],
+        "data-plane-reservation": ["data-plane-hold", "10.3.128.0/19"],
+        "unallocated-egress-boundary": ["unallocated-space-closed", "10.3.32.0/19"]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "shared-edge-acl": ["account-edge-baseline", "app-edge-acl"],
+        "quarantined-source-hold": ["sanctioned-sources-only", "10.3.4.0/22"],
+        "data-plane-reservation": ["data-plane-hold", "10.3.128.0/19"],
+        "unallocated-egress-boundary": ["unallocated-space-closed", "10.3.32.0/19"]
+      }
+    }
+  ]
+}

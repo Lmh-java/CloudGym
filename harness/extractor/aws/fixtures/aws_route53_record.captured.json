@@ -1,0 +1,32 @@
+{
+  "cloudcontrol_type": "AWS::Route53::RecordSet",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-09T06:29:22+00:00",
+      "ResourceDescription": {
+        "Identifier": "cloudgym-capability-record.test|Z0913272DKI2B0W7M28E|NS|",
+        "Properties": "{\"Type\":\"NS\",\"ResourceRecords\":[\"ns-2046.awsdns-63.co.uk.\",\"ns-1269.awsdns-30.org.\",\"ns-471.awsdns-58.com.\",\"ns-859.awsdns-43.net.\"],\"HostedZoneId\":\"Z0913272DKI2B0W7M28E\",\"TTL\":\"172800\",\"Name\":\"cloudgym-capability-record.test\"}"
+      },
+      "TypeName": "AWS::Route53::RecordSet"
+    },
+    {
+      "ReadAt": "2026-09-09T06:29:22+00:00",
+      "ResourceDescription": {
+        "Identifier": "cloudgym-capability-record.test|Z0913272DKI2B0W7M28E|SOA|",
+        "Properties": "{\"Type\":\"SOA\",\"ResourceRecords\":[\"ns-2046.awsdns-63.co.uk. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400\"],\"HostedZoneId\":\"Z0913272DKI2B0W7M28E\",\"TTL\":\"900\",\"Name\":\"cloudgym-capability-record.test\"}"
+      },
+      "TypeName": "AWS::Route53::RecordSet"
+    },
+    {
+      "ReadAt": "2026-09-09T06:29:22+00:00",
+      "ResourceDescription": {
+        "Identifier": "www.cloudgym-capability-record.test|Z0913272DKI2B0W7M28E|A|",
+        "Properties": "{\"Type\":\"A\",\"ResourceRecords\":[\"192.0.2.1\"],\"HostedZoneId\":\"Z0913272DKI2B0W7M28E\",\"TTL\":\"300\",\"Name\":\"www.cloudgym-capability-record.test\"}"
+      },
+      "TypeName": "AWS::Route53::RecordSet"
+    }
+  ],
+  "recorded_at": "2026-09-09T06:29:23+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

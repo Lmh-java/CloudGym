@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::RDS::DBSubnetGroup",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-09T07:15:24+00:00",
+      "ResourceDescription": {
+        "Identifier": "cloudgym-capability-20260909071505818900000001",
+        "Properties": "{\"DBSubnetGroupName\":\"cloudgym-capability-20260909071505818900000001\",\"DBSubnetGroupArn\":\"arn:aws:rds:us-east-1:123456789012:subgrp:cloudgym-capability-20260909071505818900000001\",\"DBSubnetGroupDescription\":\"Managed by Terraform\",\"SubnetIds\":[\"subnet-00078c3970e43f526\",\"subnet-0ac0dd5bead40edd0\"]}"
+      },
+      "TypeName": "AWS::RDS::DBSubnetGroup"
+    }
+  ],
+  "recorded_at": "2026-09-09T07:15:24+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

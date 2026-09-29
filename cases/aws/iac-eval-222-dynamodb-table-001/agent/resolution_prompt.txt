@@ -1,0 +1,2 @@
+A setting you take from another resource is what that resource carries when you finish; what you did not put there stays as found.
+A data store's records belong to the data it holds: every store holding the same data reads the same.

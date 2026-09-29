@@ -1,0 +1,2 @@
+A workload runs as an identity created for it, and what it was asked for holds on what it creates when you finish.
+What the account keeps a shared store for, workloads keep there, as the store's markings direct; what you did not create stays as found.

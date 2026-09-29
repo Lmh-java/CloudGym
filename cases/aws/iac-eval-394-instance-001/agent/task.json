@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_394_instance",
+  "utterance": "`catalog-vpc` (10.60.0.0/16) is the catalog application's network, and the subnets the account marks as that application's web tier are where anything serving catalog web traffic sits. Nothing in the network is load-balanced yet: it holds no load balancer, no target group and no server of any kind. Stand up the catalog web front end: launch two t2.micro web servers into the application's web tier, and put an internal application load balancer across the application's web-tier subnets in front of them, listening on HTTP port 80 and forwarding, as the listener's only default action, to a new instance-type target group in `catalog-vpc` on HTTP port 80 that has the catalog application's web servers in service registered on port 80.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "catalog-vpc runs two new t2.micro web servers of the agent's own, each placed in a subnet that belongs to the catalog application's web tier when the work ends, and an internal application load balancer that spans exactly the subnets of catalog-vpc belonging to that web tier at that point, carrying an HTTP listener on port 80 whose single default action forwards to a new instance-type target group in catalog-vpc on HTTP port 80 whose registered targets on port 80 are exactly the catalog application's web servers in service at that point — the two the agent launched included"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 394
+  }
+}

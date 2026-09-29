@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_432_internet_gateway",
+  "utterance": "The existing VPC `dgraph-vpc` (10.30.0.0/16) runs the graph store on dedicated tenancy and today has no way out at all: it neither resolves DNS nor hands out DNS hostnames. Make it resolve DNS and hand out DNS hostnames, attach an internet gateway to it, and give its outward-facing segment `dgraph-edge-a` outbound internet access: a route table in that VPC that carries the segment and whose default route (0.0.0.0/0) leaves through that gateway. Give every resource you create a Name tag that identifies it.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "dgraph-vpc resolves DNS and hands out DNS hostnames, and its segment dgraph-edge-a is carried by a route table of that VPC whose 0.0.0.0/0 route leaves through an internet gateway attached to it — the gateway the account already keeps for that purpose when it keeps one — with a Name tag on both that table and that gateway; that table is the one the account already keeps that network's outward routing on when it keeps one, and then it is the only table in the network carrying a way out; a segment another workload keeps facing outward in that network rides that same table, while a segment the account keeps closed off rides nothing that reaches out and still carries the marks it is closed under"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 432
+  }
+}

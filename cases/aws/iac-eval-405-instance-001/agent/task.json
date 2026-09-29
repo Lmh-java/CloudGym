@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_405_instance",
+  "utterance": "The `app-vpc` VPC (10.0.0.0/16) and its application subnets already exist. In that VPC, generate an internal application Load Balancer with a target group and an HTTP listener on port 80, and attatch them LB with the target group. Also launch a small EC2 instance in the VPC and register it in the target group as its target.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "in the pre-existing app-vpc VPC an internal application load balancer exists across two subnets in different availability zones, its HTTP listener on port 80 routes to a target group of protocol HTTP on port 80 in that VPC, and an EC2 instance running in the VPC is a registered target of that target group"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 405
+  }
+}

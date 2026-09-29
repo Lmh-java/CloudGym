@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_240_instance",
+  "utterance": "The `reporting-vpc` VPC (10.0.0.0/16) is the reporting service's network. Give the service one subnet in it and launch one EC2 instance into that subnet: instance type t2.micro, and pick the image with an AMI lookup for Canonical's Ubuntu 20.04 (focal) amd64 server image.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "the reporting-vpc VPC holds one new subnet with a CIDR block of its own inside 10.0.0.0/16, and that subnet runs one new EC2 instance of type t2.micro launched from Canonical's Ubuntu 20.04 focal amd64 server AMI"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 240
+  }
+}

@@ -1,0 +1,2 @@
+What a workload's stores are is what stands when you finish, not what you found; what you did not write stays as found.
+A store belongs to what it is attributed to, not what its name resembles; a new one records what its peers record at the end.

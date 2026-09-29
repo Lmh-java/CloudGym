@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_457_network_acl",
+  "utterance": "`orders-vpc` (10.0.0.0/16) is the orders application's network, and the segments the account marks as that application's own are where it runs — today that is 10.0.0.0/24 alone. No control list of the application's own exists in the VPC yet, so its traffic runs under whatever the network gives a segment by default. Carve the application a second segment at 10.0.1.0/24, and put a network ACL on `orders-vpc` controlling the application's segments, allowing inbound TCP port 80 from 10.3.0.0/18 and outbound TCP port 443 to 10.3.0.0/18.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "orders-vpc holds a new subnet for 10.0.1.0/24 that belongs to the orders application, and one network ACL in orders-vpc that was not there at the start is associated with exactly the segments of that VPC the account marks as the application's own and in service when the work ends — the new segment included — and allows inbound TCP port 80 from 10.3.0.0/18 and outbound TCP port 443 to 10.3.0.0/18"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 457
+  }
+}

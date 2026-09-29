@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_447_vpc",
+  "utterance": "Our VPC `windomain-vpc` (192.168.0.0/16) already exists but still runs on the region's default DHCP settings. Give it a custom DHCP options set: domain name `windomain.local`, name servers combining our own DNS server 192.168.56.102 with Google's public DNS 8.8.8.8, and a NetBIOS name server at 192.168.56.102. Associate that options set with the VPC so the VPC uses these DHCP settings.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "the pre-existing VPC 192.168.0.0/16 (Name windomain-vpc) is associated with a DHCP options set that carries the domain name windomain.local, name servers combining the custom resolver 192.168.56.102 with Google's public DNS 8.8.8.8, and 192.168.56.102 as its NetBIOS name server"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 447
+  }
+}

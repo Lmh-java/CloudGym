@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_297_codebuild_project",
+  "utterance": "An AWS CodeBuild project to build students' code and store the build output. This account already keeps the S3 storage its builds write out to — those stores are named with the `student-build-output-` prefix — so do not stand up a bucket of your own. Create a CodeBuild project named `autograder_build` with an artifacts argument block of type `S3` whose location is the store this account keeps in service for build output and whose artifact name is `results.zip`, an environment argument block with `BUILD_GENERAL1_SMALL` compute type, the `alpine` image and `LINUX_CONTAINER` type, and a source argument block of `GITHUB` type, 1 git clone depth and `github.com/source-location` location. Run it as the identity this account keeps for that build, with the grants that identity needs to write the build output out.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "a CodeBuild project named autograder_build that was absent at the start builds github.com/source-location as a source of type GITHUB with a git clone depth of 1, runs in a LINUX_CONTAINER environment on the alpine image with BUILD_GENERAL1_SMALL compute, writes the students' build output out as an S3-type artifact named results.zip into the S3 store the account keeps in service for build output at the moment the run ends, and runs as one IAM role that was absent at the start, is the identity the account keeps for that build, is trusted by codebuild.amazonaws.com and holds the grants it needs"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 297
+  }
+}

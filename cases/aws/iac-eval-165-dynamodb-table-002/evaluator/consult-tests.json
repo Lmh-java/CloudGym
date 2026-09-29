@@ -1,0 +1,41 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "platform-path",
+      "message": "The scores store has a secondary index on it called PlatformLookupIndex that I did not put there, and it went up while my own update was being refused. Is that one to leave alone, or is it mine to drop so I can get my change through?",
+      "expect": ["platform-lookup-index"],
+      "fingerprint": {
+        "platform-lookup-index": ["PlatformLookupIndex"],
+        "replay-lookup-index": ["ReplayLookupIndex"]
+      }
+    },
+    {
+      "name": "replay-path",
+      "message": "There is a ReplayLookupIndex on the scores store now. Who reads through it, and does it have to survive the shape I was asked to leave the store in?",
+      "expect": ["replay-lookup-index"],
+      "fingerprint": {
+        "platform-lookup-index": ["PlatformLookupIndex"],
+        "replay-lookup-index": ["ReplayLookupIndex"]
+      }
+    },
+    {
+      "name": "refusal-in-words",
+      "message": "My change to the scores store keeps coming back refused because something else is already being built on it. Whose work is that, and am I meant to wait it out or clear it out of the way?",
+      "expect": [],
+      "fingerprint": {
+        "platform-lookup-index": ["PlatformLookupIndex"],
+        "replay-lookup-index": ["ReplayLookupIndex"]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "platform-lookup-index": ["PlatformLookupIndex"],
+        "replay-lookup-index": ["ReplayLookupIndex"]
+      }
+    }
+  ]
+}

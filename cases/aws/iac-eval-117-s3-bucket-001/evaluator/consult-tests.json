@@ -1,0 +1,144 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "two-stores-one-marking",
+      "message": "Two of this account's app-log stores carry the same marks, and one of them is marked cutover-staging-2026-09. Which of the two is the one I should be putting this wiring on?",
+      "expect": [
+        "namesake-staging-store"
+      ],
+      "fingerprint": {
+        "namesake-staging-store": [
+          "cutover-staging-2026-09"
+        ],
+        "object-audit-fanout": [
+          "account-object-audit-events"
+        ],
+        "shared-store-layout": [
+          "store-layout-2026-09",
+          "logs/orders-team/",
+          "store-layout-events"
+        ],
+        "rotated-log-objects": [
+          ".log.gz",
+          "log-compression-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "standing-entry",
+      "message": "The store is already sending to account-object-audit-events, a topic I was not told about. Does what I add have to stand beside that, or may I put mine in its place?",
+      "expect": [
+        "object-audit-fanout"
+      ],
+      "fingerprint": {
+        "namesake-staging-store": [
+          "cutover-staging-2026-09"
+        ],
+        "object-audit-fanout": [
+          "account-object-audit-events"
+        ],
+        "shared-store-layout": [
+          "store-layout-2026-09",
+          "logs/orders-team/",
+          "store-layout-events"
+        ],
+        "rotated-log-objects": [
+          ".log.gz",
+          "log-compression-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "where-under-the-store",
+      "message": "There is a store-layout-2026-09 entry on the store watching logs/orders-team/. Should what I wire cover only that, or everything landing in the store?",
+      "expect": [
+        "shared-store-layout"
+      ],
+      "fingerprint": {
+        "namesake-staging-store": [
+          "cutover-staging-2026-09"
+        ],
+        "object-audit-fanout": [
+          "account-object-audit-events"
+        ],
+        "shared-store-layout": [
+          "store-layout-2026-09",
+          "logs/orders-team/",
+          "store-layout-events"
+        ],
+        "rotated-log-objects": [
+          ".log.gz",
+          "log-compression-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "which-naming",
+      "message": "The store records its objects as .log.gz under log-compression-2026-09, while the naming I was handed is a different one. Which of them should the filter select?",
+      "expect": [
+        "rotated-log-objects"
+      ],
+      "fingerprint": {
+        "namesake-staging-store": [
+          "cutover-staging-2026-09"
+        ],
+        "object-audit-fanout": [
+          "account-object-audit-events"
+        ],
+        "shared-store-layout": [
+          "store-layout-2026-09",
+          "logs/orders-team/",
+          "store-layout-events"
+        ],
+        "rotated-log-objects": [
+          ".log.gz",
+          "log-compression-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "objects-renamed",
+      "message": "The objects arriving in this store look compressed now, so the name suffix I was given matches nothing that lands, and they seem to sit under a place of their own rather than at the root. Whose changes are those, and do I have to follow them?",
+      "expect": [],
+      "fingerprint": {
+        "namesake-staging-store": [
+          "cutover-staging-2026-09"
+        ],
+        "object-audit-fanout": [
+          "account-object-audit-events"
+        ],
+        "shared-store-layout": [
+          "store-layout-2026-09",
+          "logs/orders-team/",
+          "store-layout-events"
+        ],
+        "rotated-log-objects": [
+          ".log.gz",
+          "log-compression-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "fingerprint": {
+        "namesake-staging-store": [
+          "cutover-staging-2026-09"
+        ],
+        "object-audit-fanout": [
+          "account-object-audit-events"
+        ],
+        "shared-store-layout": [
+          "store-layout-2026-09",
+          "logs/orders-team/",
+          "store-layout-events"
+        ],
+        "rotated-log-objects": [
+          ".log.gz",
+          "log-compression-2026-09"
+        ]
+      }
+    }
+  ]
+}

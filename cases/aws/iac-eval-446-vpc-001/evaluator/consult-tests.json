@@ -1,0 +1,133 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "standing-time-source",
+      "message": "One of the option sets standing here is marked account-baseline and hands out 169.254.169.123 as a time source, which I did not put there. Does whatever this network ends up pointing at have to hand that out too?",
+      "expect": [
+        "standing-resolver-binding"
+      ],
+      "fingerprint": {
+        "standing-resolver-binding": [
+          "account-baseline",
+          "169.254.169.123"
+        ],
+        "registered-netbios-binding": [
+          "wins-scope-7"
+        ],
+        "paired-segment-binding": [
+          "paired-segment-b"
+        ],
+        "legacy-resolver-hold": [
+          "dc-cutover-pending"
+        ]
+      }
+    },
+    {
+      "name": "registration-mode",
+      "message": "There is an option set marked wins-scope-7 that the network was put on, and it carries a node type I was not asked for. Is that mode something the network has to keep being handed?",
+      "expect": [
+        "registered-netbios-binding"
+      ],
+      "fingerprint": {
+        "standing-resolver-binding": [
+          "account-baseline",
+          "169.254.169.123"
+        ],
+        "registered-netbios-binding": [
+          "wins-scope-7"
+        ],
+        "paired-segment-binding": [
+          "paired-segment-b"
+        ],
+        "legacy-resolver-hold": [
+          "dc-cutover-pending"
+        ]
+      }
+    },
+    {
+      "name": "second-segment",
+      "message": "A second network here is marked paired-segment-b and points at what this one used to point at. Does it have to follow this one, or is it fine left where it is?",
+      "expect": [
+        "paired-segment-binding"
+      ],
+      "fingerprint": {
+        "standing-resolver-binding": [
+          "account-baseline",
+          "169.254.169.123"
+        ],
+        "registered-netbios-binding": [
+          "wins-scope-7"
+        ],
+        "paired-segment-binding": [
+          "paired-segment-b"
+        ],
+        "legacy-resolver-hold": [
+          "dc-cutover-pending"
+        ]
+      }
+    },
+    {
+      "name": "held-network",
+      "message": "The network now says dc-cutover-pending on itself and it went back to where it started right after I moved it. Does that hold settle what I was asked for, and may I clear the record once I am done?",
+      "expect": [
+        "legacy-resolver-hold"
+      ],
+      "fingerprint": {
+        "standing-resolver-binding": [
+          "account-baseline",
+          "169.254.169.123"
+        ],
+        "registered-netbios-binding": [
+          "wins-scope-7"
+        ],
+        "paired-segment-binding": [
+          "paired-segment-b"
+        ],
+        "legacy-resolver-hold": [
+          "dc-cutover-pending"
+        ]
+      }
+    },
+    {
+      "name": "effect-in-words",
+      "message": "Something put the network back where it started, stood up option sets I did not make, and wrote markings on things I did not write. Is any of that meant to stay?",
+      "expect": [],
+      "fingerprint": {
+        "standing-resolver-binding": [
+          "account-baseline",
+          "169.254.169.123"
+        ],
+        "registered-netbios-binding": [
+          "wins-scope-7"
+        ],
+        "paired-segment-binding": [
+          "paired-segment-b"
+        ],
+        "legacy-resolver-hold": [
+          "dc-cutover-pending"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "standing-resolver-binding": [
+          "account-baseline",
+          "169.254.169.123"
+        ],
+        "registered-netbios-binding": [
+          "wins-scope-7"
+        ],
+        "paired-segment-binding": [
+          "paired-segment-b"
+        ],
+        "legacy-resolver-hold": [
+          "dc-cutover-pending"
+        ]
+      }
+    }
+  ]
+}

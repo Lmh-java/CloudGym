@@ -1,0 +1,5906 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "checkpoint-baseline": {
+      "status": "succeeded"
+     },
+     "runtime-defaults": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "checkpoint-baseline": {
+      "status": "succeeded"
+     },
+     "runtime-defaults": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::123456789012:policy/clickstream-analytics-access": {
+        "Description": "logging and artifact access for the clickstream analytics application",
+        "ManagedPolicyName": "clickstream-analytics-access",
+        "Path": "/",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogStream",
+            "logs:DescribeLogStreams",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics",
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics:log-stream:*"
+           ]
+          },
+          {
+           "Action": [
+            "s3:GetObject",
+            "s3:GetObjectVersion",
+            "s3:ListBucket",
+            "s3:PutObject"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c",
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c/*"
+           ]
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       },
+       "clickstream-analytics-role": {
+        "Arn": "arn:aws:iam::123456789012:role/clickstream-analytics-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/clickstream-analytics-access"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000031",
+        "RoleName": "clickstream-analytics-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationDescription": "clickstream analytics application",
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/clickstream-analytics-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {
+       "/aws/kinesis-analytics/clickstream-analytics": {
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/kinesis-analytics/clickstream-analytics",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::S3::Bucket": {
+       "clickstream-analytics-artifacts-8f3a1c": {
+        "BucketName": "clickstream-analytics-artifacts-8f3a1c"
+       }
+      }
+     }
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "checkpoint-baseline": {
+      "status": "succeeded"
+     },
+     "runtime-defaults": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::123456789012:policy/clickstream-analytics-access": {
+        "Description": "logging and artifact access",
+        "ManagedPolicyName": "clickstream-analytics-access",
+        "Path": "/",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogStream",
+            "logs:PutLogEvents",
+            "s3:GetObject",
+            "s3:ListBucket",
+            "s3:PutObject"
+           ],
+           "Effect": "Allow",
+           "Resource": "*"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       },
+       "clickstream-analytics-role": {
+        "Arn": "arn:aws:iam::123456789012:role/clickstream-analytics-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/clickstream-analytics-access"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000031",
+        "RoleName": "clickstream-analytics-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/clickstream-analytics-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {
+       "/aws/kinesis-analytics/clickstream-analytics": {
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/kinesis-analytics/clickstream-analytics",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::S3::Bucket": {
+       "clickstream-analytics-artifacts-8f3a1c": {
+        "BucketName": "clickstream-analytics-artifacts-8f3a1c"
+       }
+      }
+     }
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "checkpoint-baseline": {
+      "status": "succeeded"
+     },
+     "runtime-defaults": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::123456789012:policy/clickstream-analytics-access": {
+        "Description": "logging and artifact access for the clickstream analytics application",
+        "ManagedPolicyName": "clickstream-analytics-access",
+        "Path": "/",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogStream",
+            "logs:DescribeLogStreams",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics",
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics:log-stream:*"
+           ]
+          },
+          {
+           "Action": [
+            "s3:GetObject",
+            "s3:GetObjectVersion",
+            "s3:ListBucket",
+            "s3:PutObject"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c",
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c/*"
+           ]
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       },
+       "clickstream-analytics-role": {
+        "Arn": "arn:aws:iam::123456789012:role/clickstream-analytics-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/clickstream-analytics-access"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000031",
+        "RoleName": "clickstream-analytics-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "EnvironmentProperties": {
+          "PropertyGroups": [
+           {
+            "PropertyGroupId": "AccountRuntimeDefaults",
+            "PropertyMap": {
+             "restart-strategy": "exponential-delay",
+             "state.backend": "rocksdb"
+            }
+           }
+          ]
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "CheckpointInterval": 90000,
+           "CheckpointingEnabled": true,
+           "ConfigurationType": "CUSTOM",
+           "MinPauseBetweenCheckpoints": 30000
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/clickstream-analytics-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {
+       "/aws/kinesis-analytics/clickstream-analytics": {
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/kinesis-analytics/clickstream-analytics",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::S3::Bucket": {
+       "clickstream-analytics-artifacts-8f3a1c": {
+        "BucketName": "clickstream-analytics-artifacts-8f3a1c"
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "checkpoint-baseline": {
+      "status": "not-fired"
+     },
+     "runtime-defaults": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::123456789012:policy/clickstream-analytics-access": {
+        "Description": "logging and artifact access for the clickstream analytics application",
+        "ManagedPolicyName": "clickstream-analytics-access",
+        "Path": "/",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogStream",
+            "logs:DescribeLogStreams",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics",
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics:log-stream:*"
+           ]
+          },
+          {
+           "Action": [
+            "s3:GetObject",
+            "s3:GetObjectVersion",
+            "s3:ListBucket",
+            "s3:PutObject"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c",
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c/*"
+           ]
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       },
+       "clickstream-analytics-role": {
+        "Arn": "arn:aws:iam::123456789012:role/clickstream-analytics-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/clickstream-analytics-access"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000031",
+        "RoleName": "clickstream-analytics-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/clickstream-analytics-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {
+       "/aws/kinesis-analytics/clickstream-analytics": {
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/kinesis-analytics/clickstream-analytics",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::S3::Bucket": {
+       "clickstream-analytics-artifacts-8f3a1c": {
+        "BucketName": "clickstream-analytics-artifacts-8f3a1c"
+       }
+      }
+     }
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::123456789012:policy/clickstream-analytics-access": {
+        "Description": "logging and artifact access for the clickstream analytics application",
+        "ManagedPolicyName": "clickstream-analytics-access",
+        "Path": "/",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogStream",
+            "logs:DescribeLogStreams",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics",
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics:log-stream:*"
+           ]
+          },
+          {
+           "Action": [
+            "s3:GetObject",
+            "s3:GetObjectVersion",
+            "s3:ListBucket",
+            "s3:PutObject"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c",
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c/*"
+           ]
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       },
+       "clickstream-analytics-role": {
+        "Arn": "arn:aws:iam::123456789012:role/clickstream-analytics-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/clickstream-analytics-access"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000031",
+        "RoleName": "clickstream-analytics-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/clickstream-analytics-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {
+       "/aws/kinesis-analytics/clickstream-analytics": {
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/kinesis-analytics/clickstream-analytics",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::S3::Bucket": {
+       "clickstream-analytics-artifacts-8f3a1c": {
+        "BucketName": "clickstream-analytics-artifacts-8f3a1c"
+       }
+      }
+     }
+    }
+   },
+   "name": "control-absent-distractors"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "checkpoint-baseline": {
+      "status": "not-fired"
+     },
+     "runtime-defaults": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       },
+       "clickstream-analytics-role": {
+        "Arn": "arn:aws:iam::123456789012:role/clickstream-analytics-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000031",
+        "RoleName": "clickstream-analytics-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/clickstream-analytics-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "checkpoint-baseline": {
+      "status": "succeeded"
+     },
+     "runtime-defaults": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::123456789012:policy/clickstream-analytics-access": {
+        "Description": "logging and artifact access for the clickstream analytics application",
+        "ManagedPolicyName": "clickstream-analytics-access",
+        "Path": "/",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogStream",
+            "logs:DescribeLogStreams",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics",
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics:log-stream:*"
+           ]
+          },
+          {
+           "Action": [
+            "s3:GetObject",
+            "s3:GetObjectVersion",
+            "s3:ListBucket",
+            "s3:PutObject"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c",
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c/*"
+           ]
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       },
+       "clickstream-analytics-role": {
+        "Arn": "arn:aws:iam::123456789012:role/clickstream-analytics-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/clickstream-analytics-access"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000031",
+        "RoleName": "clickstream-analytics-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/clickstream-analytics-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {
+       "/aws/kinesis-analytics/clickstream-analytics": {
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/kinesis-analytics/clickstream-analytics",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::S3::Bucket": {
+       "clickstream-analytics-artifacts-8f3a1c": {
+        "BucketName": "clickstream-analytics-artifacts-8f3a1c"
+       }
+      }
+     }
+    }
+   },
+   "name": "forced"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "checkpoint-baseline": {
+      "status": "succeeded"
+     },
+     "runtime-defaults": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::123456789012:policy/clickstream-analytics-access": {
+        "Description": "logging and artifact access for the clickstream analytics application",
+        "ManagedPolicyName": "clickstream-analytics-access",
+        "Path": "/",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogStream",
+            "logs:DescribeLogStreams",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics",
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics:log-stream:*"
+           ]
+          },
+          {
+           "Action": [
+            "s3:GetObject",
+            "s3:GetObjectVersion",
+            "s3:ListBucket",
+            "s3:PutObject"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c",
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c/*"
+           ]
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       },
+       "clickstream-analytics-role": {
+        "Arn": "arn:aws:iam::123456789012:role/clickstream-analytics-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/clickstream-analytics-access"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000031",
+        "RoleName": "clickstream-analytics-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "EnvironmentProperties": {
+          "PropertyGroups": [
+           {
+            "PropertyGroupId": "AccountRuntimeDefaults",
+            "PropertyMap": {
+             "restart-strategy": "exponential-delay",
+             "state.backend": "rocksdb"
+            }
+           }
+          ]
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "CheckpointInterval": 90000,
+           "CheckpointingEnabled": true,
+           "ConfigurationType": "CUSTOM",
+           "MinPauseBetweenCheckpoints": 30000
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       },
+       "clickstream-analytics-v2": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics-v2",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/clickstream-analytics-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {
+       "/aws/kinesis-analytics/clickstream-analytics": {
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/kinesis-analytics/clickstream-analytics",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::S3::Bucket": {
+       "clickstream-analytics-artifacts-8f3a1c": {
+        "BucketName": "clickstream-analytics-artifacts-8f3a1c"
+       }
+      }
+     }
+    }
+   },
+   "name": "duplicated"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "checkpoint-baseline": {
+      "status": "failed"
+     },
+     "runtime-defaults": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::123456789012:policy/clickstream-analytics-access": {
+        "Description": "logging and artifact access for the clickstream analytics application",
+        "ManagedPolicyName": "clickstream-analytics-access",
+        "Path": "/",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogStream",
+            "logs:DescribeLogStreams",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics",
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics:log-stream:*"
+           ]
+          },
+          {
+           "Action": [
+            "s3:GetObject",
+            "s3:GetObjectVersion",
+            "s3:ListBucket",
+            "s3:PutObject"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c",
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c/*"
+           ]
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       },
+       "clickstream-analytics-role": {
+        "Arn": "arn:aws:iam::123456789012:role/clickstream-analytics-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/clickstream-analytics-access"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000031",
+        "RoleName": "clickstream-analytics-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "EnvironmentProperties": {
+          "PropertyGroups": [
+           {
+            "PropertyGroupId": "AccountRuntimeDefaults",
+            "PropertyMap": {
+             "restart-strategy": "exponential-delay",
+             "state.backend": "rocksdb"
+            }
+           }
+          ]
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/clickstream-analytics-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {
+       "/aws/kinesis-analytics/clickstream-analytics": {
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/kinesis-analytics/clickstream-analytics",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::S3::Bucket": {
+       "clickstream-analytics-artifacts-8f3a1c": {
+        "BucketName": "clickstream-analytics-artifacts-8f3a1c"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-checkpoint-baseline"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "checkpoint-baseline": {
+      "status": "succeeded"
+     },
+     "runtime-defaults": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::123456789012:policy/clickstream-analytics-access": {
+        "Description": "logging and artifact access for the clickstream analytics application",
+        "ManagedPolicyName": "clickstream-analytics-access",
+        "Path": "/",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogStream",
+            "logs:DescribeLogStreams",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics",
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics:log-stream:*"
+           ]
+          },
+          {
+           "Action": [
+            "s3:GetObject",
+            "s3:GetObjectVersion",
+            "s3:ListBucket",
+            "s3:PutObject"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c",
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c/*"
+           ]
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       },
+       "clickstream-analytics-role": {
+        "Arn": "arn:aws:iam::123456789012:role/clickstream-analytics-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/clickstream-analytics-access"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000031",
+        "RoleName": "clickstream-analytics-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "CheckpointInterval": 90000,
+           "CheckpointingEnabled": true,
+           "ConfigurationType": "CUSTOM",
+           "MinPauseBetweenCheckpoints": 30000
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/clickstream-analytics-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {
+       "/aws/kinesis-analytics/clickstream-analytics": {
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/kinesis-analytics/clickstream-analytics",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::S3::Bucket": {
+       "clickstream-analytics-artifacts-8f3a1c": {
+        "BucketName": "clickstream-analytics-artifacts-8f3a1c"
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-runtime-defaults"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "checkpoint-baseline": {
+      "status": "succeeded"
+     },
+     "runtime-defaults": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::123456789012:policy/clickstream-analytics-access": {
+        "Description": "logging and artifact access for the clickstream analytics application",
+        "ManagedPolicyName": "clickstream-analytics-access",
+        "Path": "/",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogStream",
+            "logs:DescribeLogStreams",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics",
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics:log-stream:*"
+           ]
+          },
+          {
+           "Action": [
+            "s3:GetObject",
+            "s3:GetObjectVersion",
+            "s3:ListBucket",
+            "s3:PutObject"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c",
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c/*"
+           ]
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       },
+       "clickstream-analytics-role": {
+        "Arn": "arn:aws:iam::123456789012:role/clickstream-analytics-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/clickstream-analytics-access"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000031",
+        "RoleName": "clickstream-analytics-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "EnvironmentProperties": {
+          "PropertyGroups": [
+           {
+            "PropertyGroupId": "AccountRuntimeDefaults",
+            "PropertyMap": {
+             "restart-strategy": "exponential-delay",
+             "state.backend": "rocksdb"
+            }
+           }
+          ]
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/clickstream-analytics-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {
+       "/aws/kinesis-analytics/clickstream-analytics": {
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/kinesis-analytics/clickstream-analytics",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::S3::Bucket": {
+       "clickstream-analytics-artifacts-8f3a1c": {
+        "BucketName": "clickstream-analytics-artifacts-8f3a1c"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-checkpoint-baseline"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "checkpoint-baseline": {
+      "status": "succeeded"
+     },
+     "runtime-defaults": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::123456789012:policy/clickstream-analytics-access": {
+        "Description": "logging and artifact access for the clickstream analytics application",
+        "ManagedPolicyName": "clickstream-analytics-access",
+        "Path": "/",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogStream",
+            "logs:DescribeLogStreams",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics",
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics:log-stream:*"
+           ]
+          },
+          {
+           "Action": [
+            "s3:GetObject",
+            "s3:GetObjectVersion",
+            "s3:ListBucket",
+            "s3:PutObject"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c",
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c/*"
+           ]
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       },
+       "clickstream-analytics-role": {
+        "Arn": "arn:aws:iam::123456789012:role/clickstream-analytics-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/clickstream-analytics-access"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000031",
+        "RoleName": "clickstream-analytics-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "CheckpointInterval": 90000,
+           "CheckpointingEnabled": true,
+           "ConfigurationType": "CUSTOM",
+           "MinPauseBetweenCheckpoints": 30000
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/clickstream-analytics-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {
+       "/aws/kinesis-analytics/clickstream-analytics": {
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/kinesis-analytics/clickstream-analytics",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::S3::Bucket": {
+       "clickstream-analytics-artifacts-8f3a1c": {
+        "BucketName": "clickstream-analytics-artifacts-8f3a1c"
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-runtime-defaults"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "checkpoint-baseline": {
+      "status": "not-fired"
+     },
+     "runtime-defaults": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::123456789012:policy/clickstream-analytics-access": {
+        "Description": "logging and artifact access for the clickstream analytics application",
+        "ManagedPolicyName": "clickstream-analytics-access",
+        "Path": "/",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogStream",
+            "logs:DescribeLogStreams",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics",
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics:log-stream:*"
+           ]
+          },
+          {
+           "Action": [
+            "s3:GetObject",
+            "s3:GetObjectVersion",
+            "s3:ListBucket",
+            "s3:PutObject"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c",
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c/*"
+           ]
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       },
+       "clickstream-analytics-role": {
+        "Arn": "arn:aws:iam::123456789012:role/clickstream-analytics-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/clickstream-analytics-access"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000031",
+        "RoleName": "clickstream-analytics-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {
+       "/aws/kinesis-analytics/clickstream-analytics": {
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/kinesis-analytics/clickstream-analytics",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::S3::Bucket": {
+       "clickstream-analytics-artifacts-8f3a1c": {
+        "BucketName": "clickstream-analytics-artifacts-8f3a1c"
+       }
+      }
+     }
+    }
+   },
+   "name": "control-application-still-on-bootstrap-role"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "checkpoint-baseline": {
+      "status": "not-fired"
+     },
+     "runtime-defaults": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::123456789012:policy/clickstream-analytics-access": {
+        "Description": "logging and artifact access for the clickstream analytics application",
+        "ManagedPolicyName": "clickstream-analytics-access",
+        "Path": "/",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogStream",
+            "logs:DescribeLogStreams",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics",
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics:log-stream:*"
+           ]
+          },
+          {
+           "Action": [
+            "s3:GetObject",
+            "s3:GetObjectVersion",
+            "s3:ListBucket",
+            "s3:PutObject"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c",
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c/*"
+           ]
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {
+       "/aws/kinesis-analytics/clickstream-analytics": {
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/kinesis-analytics/clickstream-analytics",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::S3::Bucket": {
+       "clickstream-analytics-artifacts-8f3a1c": {
+        "BucketName": "clickstream-analytics-artifacts-8f3a1c"
+       }
+      }
+     }
+    }
+   },
+   "name": "control-no-new-role"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "checkpoint-baseline": {
+      "status": "not-fired"
+     },
+     "runtime-defaults": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::123456789012:policy/clickstream-analytics-access": {
+        "Description": "logging and artifact access for the clickstream analytics application",
+        "ManagedPolicyName": "clickstream-analytics-access",
+        "Path": "/",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogStream",
+            "logs:DescribeLogStreams",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics",
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics:log-stream:*"
+           ]
+          },
+          {
+           "Action": [
+            "s3:GetObject",
+            "s3:GetObjectVersion",
+            "s3:ListBucket",
+            "s3:PutObject"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c",
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c/*"
+           ]
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       },
+       "clickstream-analytics-role": {
+        "Arn": "arn:aws:iam::123456789012:role/clickstream-analytics-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "lambda.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/clickstream-analytics-access"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000031",
+        "RoleName": "clickstream-analytics-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/clickstream-analytics-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {
+       "/aws/kinesis-analytics/clickstream-analytics": {
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/kinesis-analytics/clickstream-analytics",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::S3::Bucket": {
+       "clickstream-analytics-artifacts-8f3a1c": {
+        "BucketName": "clickstream-analytics-artifacts-8f3a1c"
+       }
+      }
+     }
+    }
+   },
+   "name": "control-role-not-trusted-by-analytics"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "checkpoint-baseline": {
+      "status": "not-fired"
+     },
+     "runtime-defaults": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::123456789012:policy/clickstream-analytics-access": {
+        "Description": "logging and artifact access for the clickstream analytics application",
+        "ManagedPolicyName": "clickstream-analytics-access",
+        "Path": "/",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogStream",
+            "logs:DescribeLogStreams",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics",
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics:log-stream:*"
+           ]
+          },
+          {
+           "Action": [
+            "s3:GetObject",
+            "s3:GetObjectVersion",
+            "s3:ListBucket",
+            "s3:PutObject"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c",
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c/*"
+           ]
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       },
+       "clickstream-analytics-role": {
+        "Arn": "arn:aws:iam::123456789012:role/clickstream-analytics-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/clickstream-analytics-access"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000031",
+        "RoleName": "clickstream-analytics-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/clickstream-analytics-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {
+       "clickstream-analytics-artifacts-8f3a1c": {
+        "BucketName": "clickstream-analytics-artifacts-8f3a1c"
+       }
+      }
+     }
+    }
+   },
+   "name": "control-no-log-group"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "checkpoint-baseline": {
+      "status": "not-fired"
+     },
+     "runtime-defaults": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::123456789012:policy/clickstream-analytics-access": {
+        "Description": "logging and artifact access for the clickstream analytics application",
+        "ManagedPolicyName": "clickstream-analytics-access",
+        "Path": "/",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogStream",
+            "logs:DescribeLogStreams",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics",
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics:log-stream:*"
+           ]
+          },
+          {
+           "Action": [
+            "s3:GetObject",
+            "s3:GetObjectVersion",
+            "s3:ListBucket",
+            "s3:PutObject"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c",
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c/*"
+           ]
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       },
+       "clickstream-analytics-role": {
+        "Arn": "arn:aws:iam::123456789012:role/clickstream-analytics-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/clickstream-analytics-access"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000031",
+        "RoleName": "clickstream-analytics-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/clickstream-analytics-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {
+       "/aws/kinesis-analytics/clickstream-analytics": {
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/kinesis-analytics/clickstream-analytics",
+        "RetentionInDays": 14
+       }
+      },
+      "AWS::S3::Bucket": {
+       "clickstream-analytics-artifacts-8f3a1c": {
+        "BucketName": "clickstream-analytics-artifacts-8f3a1c"
+       }
+      }
+     }
+    }
+   },
+   "name": "control-log-group-retention-wrong"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "checkpoint-baseline": {
+      "status": "not-fired"
+     },
+     "runtime-defaults": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::123456789012:policy/clickstream-analytics-access": {
+        "Description": "logging and artifact access for the clickstream analytics application",
+        "ManagedPolicyName": "clickstream-analytics-access",
+        "Path": "/",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogStream",
+            "logs:DescribeLogStreams",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics",
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics:log-stream:*"
+           ]
+          },
+          {
+           "Action": [
+            "s3:GetObject",
+            "s3:GetObjectVersion",
+            "s3:ListBucket",
+            "s3:PutObject"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c",
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c/*"
+           ]
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       },
+       "clickstream-analytics-role": {
+        "Arn": "arn:aws:iam::123456789012:role/clickstream-analytics-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/clickstream-analytics-access"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000031",
+        "RoleName": "clickstream-analytics-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/clickstream-analytics-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {
+       "/aws/kinesis-analytics/clickstream-analytics": {
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/kinesis-analytics/clickstream-analytics",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::S3::Bucket": {}
+     }
+    }
+   },
+   "name": "control-no-artifacts-bucket"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "checkpoint-baseline": {
+      "status": "not-fired"
+     },
+     "runtime-defaults": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::123456789012:policy/clickstream-analytics-access": {
+        "Description": "logging and artifact access for the clickstream analytics application",
+        "ManagedPolicyName": "clickstream-analytics-access",
+        "Path": "/",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogStream",
+            "logs:DescribeLogStreams",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics",
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics:log-stream:*"
+           ]
+          },
+          {
+           "Action": [
+            "s3:GetObject",
+            "s3:GetObjectVersion",
+            "s3:ListBucket",
+            "s3:PutObject"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c",
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c/*"
+           ]
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       },
+       "clickstream-analytics-role": {
+        "Arn": "arn:aws:iam::123456789012:role/clickstream-analytics-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000031",
+        "RoleName": "clickstream-analytics-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/clickstream-analytics-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {
+       "/aws/kinesis-analytics/clickstream-analytics": {
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/kinesis-analytics/clickstream-analytics",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::S3::Bucket": {
+       "clickstream-analytics-artifacts-8f3a1c": {
+        "BucketName": "clickstream-analytics-artifacts-8f3a1c"
+       }
+      }
+     }
+    }
+   },
+   "name": "control-policy-not-attached"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "checkpoint-baseline": {
+      "status": "not-fired"
+     },
+     "runtime-defaults": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::123456789012:policy/clickstream-analytics-access": {
+        "Description": "logging and artifact access for the clickstream analytics application",
+        "ManagedPolicyName": "clickstream-analytics-access",
+        "Path": "/",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogStream",
+            "logs:DescribeLogStreams",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics",
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics:log-stream:*"
+           ]
+          },
+          {
+           "Action": [
+            "s3:GetObject",
+            "s3:GetObjectVersion",
+            "s3:ListBucket",
+            "s3:PutObject"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:s3:::some-other-archive-bucket",
+            "arn:aws:s3:::some-other-archive-bucket/*"
+           ]
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       },
+       "clickstream-analytics-role": {
+        "Arn": "arn:aws:iam::123456789012:role/clickstream-analytics-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/clickstream-analytics-access"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000031",
+        "RoleName": "clickstream-analytics-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/clickstream-analytics-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {
+       "/aws/kinesis-analytics/clickstream-analytics": {
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/kinesis-analytics/clickstream-analytics",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::S3::Bucket": {
+       "clickstream-analytics-artifacts-8f3a1c": {
+        "BucketName": "clickstream-analytics-artifacts-8f3a1c"
+       }
+      }
+     }
+    }
+   },
+   "name": "control-policy-misses-the-bucket"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "checkpoint-baseline": {
+      "status": "not-fired"
+     },
+     "runtime-defaults": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::123456789012:policy/clickstream-analytics-access": {
+        "Description": "logging and artifact access for the clickstream analytics application",
+        "ManagedPolicyName": "clickstream-analytics-access",
+        "Path": "/",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogStream",
+            "logs:DescribeLogStreams",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics",
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics:log-stream:*"
+           ]
+          },
+          {
+           "Action": [
+            "s3:GetObject",
+            "s3:GetObjectVersion",
+            "s3:ListBucket",
+            "s3:PutObject"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c",
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c/*"
+           ]
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       },
+       "clickstream-analytics-role": {
+        "Arn": "arn:aws:iam::123456789012:role/clickstream-analytics-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/clickstream-analytics-access"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000031",
+        "RoleName": "clickstream-analytics-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_19",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/clickstream-analytics-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {
+       "/aws/kinesis-analytics/clickstream-analytics": {
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/kinesis-analytics/clickstream-analytics",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::S3::Bucket": {
+       "clickstream-analytics-artifacts-8f3a1c": {
+        "BucketName": "clickstream-analytics-artifacts-8f3a1c"
+       }
+      }
+     }
+    }
+   },
+   "name": "control-runtime-environment-changed"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "checkpoint-baseline": {
+      "status": "not-fired"
+     },
+     "runtime-defaults": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::123456789012:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000033",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::123456789012:policy/clickstream-analytics-access": {
+        "Description": "logging and artifact access for the clickstream analytics application",
+        "ManagedPolicyName": "clickstream-analytics-access",
+        "Path": "/",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:CreateLogStream",
+            "logs:DescribeLogStreams",
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics",
+            "arn:aws:logs:us-east-1:123456789012:log-group:/aws/kinesis-analytics/clickstream-analytics:log-stream:*"
+           ]
+          },
+          {
+           "Action": [
+            "s3:GetObject",
+            "s3:GetObjectVersion",
+            "s3:ListBucket",
+            "s3:PutObject"
+           ],
+           "Effect": "Allow",
+           "Resource": [
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c",
+            "arn:aws:s3:::clickstream-analytics-artifacts-8f3a1c/*"
+           ]
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROAEXAMPLESUPPORT",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "clickstream-analytics-role": {
+        "Arn": "arn:aws:iam::123456789012:role/clickstream-analytics-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::123456789012:policy/clickstream-analytics-access"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000031",
+        "RoleName": "clickstream-analytics-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          },
+          "ParallelismConfiguration": {
+           "ConfigurationType": "DEFAULT"
+          }
+         }
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::123456789012:role/clickstream-analytics-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {
+       "/aws/kinesis-analytics/clickstream-analytics": {
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/kinesis-analytics/clickstream-analytics",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::S3::Bucket": {
+       "clickstream-analytics-artifacts-8f3a1c": {
+        "BucketName": "clickstream-analytics-artifacts-8f3a1c"
+       }
+      }
+     }
+    }
+   },
+   "name": "control-bootstrap-role-deleted"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {},
+      "AWS::IAM::Role": {
+       "AWSReservedSSO_SandboxAdministrator_0000000000000001": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_SandboxAdministrator_0000000000000001",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+           ],
+           "Condition": {
+            "StringEquals": {
+             "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Federated": "arn:aws:iam::000000000114:saml-provider/AWSSSO_d19a45a4a1239f62_DO_NOT_DELETE"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 43200,
+        "Path": "/aws-reserved/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000174",
+        "RoleName": "AWSReservedSSO_SandboxAdministrator_0000000000000001"
+       },
+       "AWSServiceRoleForAPIGateway": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/ops.apigateway.amazonaws.com/AWSServiceRoleForAPIGateway",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "ops.apigateway.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "The Service Linked Role is used by Amazon API Gateway.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/APIGatewayServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/ops.apigateway.amazonaws.com/",
+        "RoleId": "AROA00000000000000212",
+        "RoleName": "AWSServiceRoleForAPIGateway"
+       },
+       "AWSServiceRoleForAutoScaling": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "autoscaling.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Default Service-Linked Role enables access to AWS Services and Resources used or managed by Auto Scaling",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AutoScalingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/autoscaling.amazonaws.com/",
+        "RoleId": "AROA00000000000000208",
+        "RoleName": "AWSServiceRoleForAutoScaling"
+       },
+       "AWSServiceRoleForBackup": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/backup.amazonaws.com/AWSServiceRoleForBackup",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "backup.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSBackupServiceLinkedRolePolicyForBackup"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/backup.amazonaws.com/",
+        "RoleId": "AROA00000000000000179",
+        "RoleName": "AWSServiceRoleForBackup"
+       },
+       "AWSServiceRoleForElasticBeanstalk": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticbeanstalk.amazonaws.com/AWSServiceRoleForElasticBeanstalk",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticbeanstalk.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticBeanstalkServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticbeanstalk.amazonaws.com/",
+        "RoleId": "AROA00000000000000211",
+        "RoleName": "AWSServiceRoleForElasticBeanstalk"
+       },
+       "AWSServiceRoleForElasticLoadBalancing": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticloadbalancing.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows ELB to call AWS services on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
+        "RoleId": "AROA00000000000000194",
+        "RoleName": "AWSServiceRoleForElasticLoadBalancing"
+       },
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000181",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000190",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000177",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000220",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000170",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000114:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000219",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::000000000114:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000182",
+        "RoleName": "analytics-bootstrap-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationEncryptionConfiguration": {
+          "KeyType": "AWS_OWNED_KEY"
+         },
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "ApplicationSystemRollbackConfiguration": {
+          "RollbackEnabled": false
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "CheckpointInterval": 60000,
+           "CheckpointingEnabled": true,
+           "ConfigurationType": "DEFAULT",
+           "MinPauseBetweenCheckpoints": 5000
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT",
+           "LogLevel": "INFO",
+           "MetricsLevel": "APPLICATION"
+          },
+          "ParallelismConfiguration": {
+           "AutoScalingEnabled": true,
+           "ConfigurationType": "DEFAULT",
+           "Parallelism": 1,
+           "ParallelismPerKPU": 1
+          }
+         }
+        },
+        "ApplicationDescription": "",
+        "ApplicationMaintenanceConfiguration": {
+         "ApplicationMaintenanceWindowStartTime": "03:00"
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::000000000114:role/analytics-bootstrap-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {},
+      "AWS::S3::Bucket": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::IAM::ManagedPolicy": {
+       "arn:aws:iam::000000000114:policy/clickstream-analytics-access": {
+        "AttachmentCount": 1,
+        "CreateDate": "Optional[2026-09-24T05:20:18Z]",
+        "DefaultVersionId": "v1",
+        "Description": "Log write and artifact bucket access for clickstream-analytics",
+        "Groups": [],
+        "IsAttachable": true,
+        "ManagedPolicyName": "clickstream-analytics-access",
+        "Path": "/",
+        "PermissionsBoundaryUsageCount": 0,
+        "PolicyArn": "arn:aws:iam::000000000114:policy/clickstream-analytics-access",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "logs:DescribeLogGroups"
+           ],
+           "Effect": "Allow",
+           "Resource": "arn:aws:logs:us-east-1:000000000114:log-group:*",
+           "Sid": "CloudWatchLogGroup"
+          },
+          {
+           "Action": [
+            "logs:DescribeLogStreams",
+            "logs:CreateLogStream"
+           ],
+           "Effect": "Allow",
+           "Resource": "arn:aws:logs:us-east-1:000000000114:log-group:/aws/kinesis-analytics/clickstream-analytics:log-stream:*",
+           "Sid": "CloudWatchLogStreams"
+          },
+          {
+           "Action": [
+            "logs:PutLogEvents"
+           ],
+           "Effect": "Allow",
+           "Resource": "arn:aws:logs:us-east-1:000000000114:log-group:/aws/kinesis-analytics/clickstream-analytics:log-stream:*",
+           "Sid": "CloudWatchPutLogEvents"
+          },
+          {
+           "Action": [
+            "s3:ListBucket",
+            "s3:GetBucketLocation"
+           ],
+           "Effect": "Allow",
+           "Resource": "arn:aws:s3:::clickstream-analytics-artifacts-356f01e63d36",
+           "Sid": "S3ArtifactsBucket"
+          },
+          {
+           "Action": [
+            "s3:GetObject",
+            "s3:GetObjectVersion",
+            "s3:PutObject",
+            "s3:DeleteObject",
+            "s3:AbortMultipartUpload",
+            "s3:ListMultipartUploadParts"
+           ],
+           "Effect": "Allow",
+           "Resource": "arn:aws:s3:::clickstream-analytics-artifacts-356f01e63d36/*",
+           "Sid": "S3ArtifactsObjects"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "PolicyId": "ANPAYDK7XGCBSUSJSZWZQ",
+        "Roles": [
+         "clickstream-analytics-role"
+        ],
+        "UpdateDate": "Optional[2026-09-24T05:20:18Z]",
+        "Users": []
+       }
+      },
+      "AWS::IAM::Role": {
+       "AWSReservedSSO_SandboxAdministrator_0000000000000001": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_SandboxAdministrator_0000000000000001",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+           ],
+           "Condition": {
+            "StringEquals": {
+             "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "Federated": "arn:aws:iam::000000000114:saml-provider/AWSSSO_d19a45a4a1239f62_DO_NOT_DELETE"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 43200,
+        "Path": "/aws-reserved/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000174",
+        "RoleName": "AWSReservedSSO_SandboxAdministrator_0000000000000001"
+       },
+       "AWSServiceRoleForAPIGateway": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/ops.apigateway.amazonaws.com/AWSServiceRoleForAPIGateway",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "ops.apigateway.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "The Service Linked Role is used by Amazon API Gateway.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/APIGatewayServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/ops.apigateway.amazonaws.com/",
+        "RoleId": "AROA00000000000000212",
+        "RoleName": "AWSServiceRoleForAPIGateway"
+       },
+       "AWSServiceRoleForAutoScaling": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "autoscaling.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Default Service-Linked Role enables access to AWS Services and Resources used or managed by Auto Scaling",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AutoScalingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/autoscaling.amazonaws.com/",
+        "RoleId": "AROA00000000000000208",
+        "RoleName": "AWSServiceRoleForAutoScaling"
+       },
+       "AWSServiceRoleForBackup": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/backup.amazonaws.com/AWSServiceRoleForBackup",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "backup.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSBackupServiceLinkedRolePolicyForBackup"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/backup.amazonaws.com/",
+        "RoleId": "AROA00000000000000179",
+        "RoleName": "AWSServiceRoleForBackup"
+       },
+       "AWSServiceRoleForElasticBeanstalk": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticbeanstalk.amazonaws.com/AWSServiceRoleForElasticBeanstalk",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticbeanstalk.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticBeanstalkServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticbeanstalk.amazonaws.com/",
+        "RoleId": "AROA00000000000000211",
+        "RoleName": "AWSServiceRoleForElasticBeanstalk"
+       },
+       "AWSServiceRoleForElasticLoadBalancing": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "elasticloadbalancing.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows ELB to call AWS services on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
+        "RoleId": "AROA00000000000000194",
+        "RoleName": "AWSServiceRoleForElasticLoadBalancing"
+       },
+       "AWSServiceRoleForOrganizations": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "organizations.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/organizations.amazonaws.com/",
+        "RoleId": "AROA00000000000000181",
+        "RoleName": "AWSServiceRoleForOrganizations"
+       },
+       "AWSServiceRoleForRDS": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "rds.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleId": "AROA00000000000000190",
+        "RoleName": "AWSServiceRoleForRDS"
+       },
+       "AWSServiceRoleForSSO": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "sso.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/sso.amazonaws.com/",
+        "RoleId": "AROA00000000000000177",
+        "RoleName": "AWSServiceRoleForSSO"
+       },
+       "AWSServiceRoleForSupport": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "support.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleId": "AROA00000000000000220",
+        "RoleName": "AWSServiceRoleForSupport"
+       },
+       "AWSServiceRoleForTrustedAdvisor": {
+        "Arn": "arn:aws:iam::000000000114:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleId": "AROA00000000000000170",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor"
+       },
+       "OrganizationAccountAccessRole": {
+        "Arn": "arn:aws:iam::000000000114:role/OrganizationAccountAccessRole",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "arn:aws:iam::000000000107:root"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+         "arn:aws:iam::aws:policy/AdministratorAccess"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000219",
+        "RoleName": "OrganizationAccountAccessRole"
+       },
+       "analytics-bootstrap-role": {
+        "Arn": "arn:aws:iam::000000000114:role/analytics-bootstrap-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000182",
+        "RoleName": "analytics-bootstrap-role"
+       },
+       "clickstream-analytics-role": {
+        "Arn": "arn:aws:iam::000000000114:role/clickstream-analytics-role",
+        "AssumeRolePolicyDocument": {
+         "Statement": [
+          {
+           "Action": "sts:AssumeRole",
+           "Effect": "Allow",
+           "Principal": {
+            "Service": "kinesisanalytics.amazonaws.com"
+           }
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "Description": "Service execution role for the clickstream-analytics Kinesis Analytics application",
+        "ManagedPolicyArns": [
+         "arn:aws:iam::000000000114:policy/clickstream-analytics-access"
+        ],
+        "MaxSessionDuration": 3600,
+        "Path": "/",
+        "RoleId": "AROA00000000000000199",
+        "RoleName": "clickstream-analytics-role"
+       }
+      },
+      "AWS::KinesisAnalyticsV2::Application": {
+       "clickstream-analytics": {
+        "ApplicationConfiguration": {
+         "ApplicationEncryptionConfiguration": {
+          "KeyType": "AWS_OWNED_KEY"
+         },
+         "ApplicationSnapshotConfiguration": {
+          "SnapshotsEnabled": true
+         },
+         "ApplicationSystemRollbackConfiguration": {
+          "RollbackEnabled": false
+         },
+         "FlinkApplicationConfiguration": {
+          "CheckpointConfiguration": {
+           "CheckpointInterval": 60000,
+           "CheckpointingEnabled": true,
+           "ConfigurationType": "DEFAULT",
+           "MinPauseBetweenCheckpoints": 5000
+          },
+          "MonitoringConfiguration": {
+           "ConfigurationType": "DEFAULT",
+           "LogLevel": "INFO",
+           "MetricsLevel": "APPLICATION"
+          },
+          "ParallelismConfiguration": {
+           "AutoScalingEnabled": true,
+           "ConfigurationType": "DEFAULT",
+           "Parallelism": 1,
+           "ParallelismPerKPU": 1
+          }
+         }
+        },
+        "ApplicationDescription": "",
+        "ApplicationMaintenanceConfiguration": {
+         "ApplicationMaintenanceWindowStartTime": "03:00"
+        },
+        "ApplicationMode": "STREAMING",
+        "ApplicationName": "clickstream-analytics",
+        "RuntimeEnvironment": "FLINK-1_20",
+        "ServiceExecutionRole": "arn:aws:iam::000000000114:role/clickstream-analytics-role"
+       }
+      },
+      "AWS::Logs::LogGroup": {
+       "/aws/kinesis-analytics/clickstream-analytics": {
+        "Arn": "arn:aws:logs:us-east-1:000000000114:log-group:/aws/kinesis-analytics/clickstream-analytics:*",
+        "BearerTokenAuthenticationEnabled": false,
+        "DataProtectionPolicy": {},
+        "DeletionProtectionEnabled": false,
+        "FieldIndexPolicies": [],
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/kinesis-analytics/clickstream-analytics",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::S3::Bucket": {
+       "clickstream-analytics-artifacts-356f01e63d36": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::clickstream-analytics-artifacts-356f01e63d36",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "clickstream-analytics-artifacts-356f01e63d36",
+        "DomainName": "clickstream-analytics-artifacts-356f01e63d36.s3.amazonaws.com",
+        "DualStackDomainName": "clickstream-analytics-artifacts-356f01e63d36.s3.dualstack.us-east-1.amazonaws.com",
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "clickstream-analytics-artifacts-356f01e63d36.s3.us-east-1.amazonaws.com",
+        "WebsiteURL": "http://clickstream-analytics-artifacts-356f01e63d36.s3-website-us-east-1.amazonaws.com"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

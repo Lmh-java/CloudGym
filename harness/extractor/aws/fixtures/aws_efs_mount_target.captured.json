@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::EFS::MountTarget",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-24T00:22:51+00:00",
+      "ResourceDescription": {
+        "Identifier": "fsmt-0a038a29c8ad9c02a",
+        "Properties": "{\"SecurityGroups\":[\"sg-015aaae1321338d77\",\"sg-0d8f735e3248c592d\"],\"FileSystemId\":\"fs-096f956a3a82ee1dc\",\"IpAddress\":\"10.248.1.57\",\"Id\":\"fsmt-0a038a29c8ad9c02a\",\"SubnetId\":\"subnet-0bf9627de2b4044cf\"}"
+      },
+      "TypeName": "AWS::EFS::MountTarget"
+    }
+  ],
+  "recorded_at": "2026-09-24T00:22:51+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

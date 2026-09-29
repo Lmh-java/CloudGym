@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_37_codebuild_project",
+  "utterance": "create a AWS codebuild project resource with example iam role, example GITHUB source, and a logs config. The logs config streams the build logs to a CloudWatch log group of the project's own and also writes them to S3: this account already keeps an S3 store for build logs, so use that store rather than creating a bucket of your own, and give the project an IAM role of its own.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "a CodeBuild project that did not exist at the start builds from a source of type GITHUB, carries a logs config whose CloudWatch logs are enabled with a log group and whose S3 logs are enabled and written into the S3 store the account currently keeps in service for build logs, and runs as an IAM role that did not exist at the start, was created for this project and is trusted by codebuild.amazonaws.com"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 37
+  }
+}

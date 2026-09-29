@@ -1,0 +1,6238 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "allocated-partner-space": {
+      "status": "succeeded"
+     },
+     "legacy-cutover-area": {
+      "status": "succeeded"
+     },
+     "pooled-partner-intake": {
+      "status": "succeeded"
+     },
+     "reserved-stream-area": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "allocated-partner-space": {
+      "status": "succeeded"
+     },
+     "legacy-cutover-area": {
+      "status": "succeeded"
+     },
+     "pooled-partner-intake": {
+      "status": "succeeded"
+     },
+     "reserved-stream-area": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "orders-intake-12345678901220260922114533070000000002": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         },
+         {
+          "Key": "Keeps",
+          "Value": "pooled-partner-uploads"
+         },
+         {
+          "Key": "UploadAreaRoot",
+          "Value": "uploads/"
+         },
+         {
+          "Key": "UploadAreaInUse",
+          "Value": "uploads/returns/"
+         },
+         {
+          "Key": "PartnerAddressAllocation",
+          "Value": "203.0.113.32/27"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "orders-intake-12345678901220260922114533070000000002": {
+        "Bucket": "orders-intake-12345678901220260922114533070000000002",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": "s3:*",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.42/32"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::orders-intake-12345678901220260922114533070000000002/*",
+           "Sid": "DenyPartnerAddress"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "Bucket": "platform-store-12345678901220260922114501230000000001",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:PrincipalAccount": "123456789012"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/*",
+           "Sid": "PooledPartnerIntake"
+          },
+          {
+           "Action": [
+            "s3:PutObject",
+            "s3:DeleteObject"
+           ],
+           "Condition": {
+            "StringNotEquals": {
+             "aws:PrincipalTag/migration": "partner-feed"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/uploads/legacy/*",
+           "Sid": "MigrationStagingHold"
+          },
+          {
+           "Action": "s3:ListBucket",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.32/27"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001",
+           "Sid": "AllocatedPartnerSpace"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "allocated-partner-space": {
+      "status": "succeeded"
+     },
+     "legacy-cutover-area": {
+      "status": "succeeded"
+     },
+     "pooled-partner-intake": {
+      "status": "succeeded"
+     },
+     "reserved-stream-area": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "orders-intake-12345678901220260922114533070000000002": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         },
+         {
+          "Key": "Keeps",
+          "Value": "pooled-partner-uploads"
+         },
+         {
+          "Key": "UploadAreaRoot",
+          "Value": "uploads/"
+         },
+         {
+          "Key": "UploadAreaInUse",
+          "Value": "uploads/returns/"
+         },
+         {
+          "Key": "PartnerAddressAllocation",
+          "Value": "203.0.113.32/27"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "orders-intake-12345678901220260922114533070000000002": {
+        "Bucket": "orders-intake-12345678901220260922114533070000000002",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": "s3:*",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.0/24"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::orders-intake-12345678901220260922114533070000000002/uploads/partner/*",
+           "Sid": "DenyPartnerAddress"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "Bucket": "platform-store-12345678901220260922114501230000000001",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:PrincipalAccount": "123456789012"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/*",
+           "Sid": "PooledPartnerIntake"
+          },
+          {
+           "Action": [
+            "s3:PutObject",
+            "s3:DeleteObject"
+           ],
+           "Condition": {
+            "StringNotEquals": {
+             "aws:PrincipalTag/migration": "partner-feed"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/uploads/legacy/*",
+           "Sid": "MigrationStagingHold"
+          },
+          {
+           "Action": "s3:ListBucket",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.32/27"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001",
+           "Sid": "AllocatedPartnerSpace"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "allocated-partner-space": {
+      "status": "succeeded"
+     },
+     "legacy-cutover-area": {
+      "status": "succeeded"
+     },
+     "pooled-partner-intake": {
+      "status": "succeeded"
+     },
+     "reserved-stream-area": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         },
+         {
+          "Key": "Keeps",
+          "Value": "pooled-partner-uploads"
+         },
+         {
+          "Key": "UploadAreaRoot",
+          "Value": "uploads/"
+         },
+         {
+          "Key": "UploadAreaInUse",
+          "Value": "uploads/returns/"
+         },
+         {
+          "Key": "PartnerAddressAllocation",
+          "Value": "203.0.113.32/27"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "platform-store-12345678901220260922114501230000000001": {
+        "Bucket": "platform-store-12345678901220260922114501230000000001",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:PrincipalAccount": "123456789012"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/*",
+           "Sid": "PooledPartnerIntake"
+          },
+          {
+           "Action": [
+            "s3:PutObject",
+            "s3:DeleteObject"
+           ],
+           "Condition": {
+            "StringNotEquals": {
+             "aws:PrincipalTag/migration": "partner-feed"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/uploads/legacy/*",
+           "Sid": "MigrationStagingHold"
+          },
+          {
+           "Action": "s3:ListBucket",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.32/27"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001",
+           "Sid": "AllocatedPartnerSpace"
+          },
+          {
+           "Action": "s3:*",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.32/27"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/uploads/orders/*",
+           "Sid": "DenyPartnerAddress"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "orders-intake-12345678901220260922114533070000000002": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "orders-intake-12345678901220260922114533070000000002": {
+        "Bucket": "orders-intake-12345678901220260922114533070000000002",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": "s3:*",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.42/32"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::orders-intake-12345678901220260922114533070000000002/*",
+           "Sid": "DenyPartnerAddress"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "allocated-partner-space": {
+      "status": "not-fired"
+     },
+     "legacy-cutover-area": {
+      "status": "not-fired"
+     },
+     "pooled-partner-intake": {
+      "status": "not-fired"
+     },
+     "reserved-stream-area": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "orders-intake-12345678901220260922114533070000000002": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "orders-intake-12345678901220260922114533070000000002": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "orders-intake-12345678901220260922114533070000000002": {
+        "Bucket": "orders-intake-12345678901220260922114533070000000002",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": "s3:*",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.42"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": [
+            "arn:aws:s3:::orders-intake-12345678901220260922114533070000000002",
+            "arn:aws:s3:::orders-intake-12345678901220260922114533070000000002/*"
+           ],
+           "Sid": "DenyPartnerAddress"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "control-address-and-bucket-arn"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "allocated-partner-space": {
+      "status": "succeeded"
+     },
+     "legacy-cutover-area": {
+      "status": "succeeded"
+     },
+     "pooled-partner-intake": {
+      "status": "failed"
+     },
+     "reserved-stream-area": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "orders-intake-12345678901220260922114533070000000002": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         },
+         {
+          "Key": "UploadAreaRoot",
+          "Value": "uploads/"
+         },
+         {
+          "Key": "UploadAreaInUse",
+          "Value": "uploads/returns/"
+         },
+         {
+          "Key": "PartnerAddressAllocation",
+          "Value": "203.0.113.32/27"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "orders-intake-12345678901220260922114533070000000002": {
+        "Bucket": "orders-intake-12345678901220260922114533070000000002",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": "s3:*",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.32/27"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::orders-intake-12345678901220260922114533070000000002/*",
+           "Sid": "DenyPartnerAddress"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "Bucket": "platform-store-12345678901220260922114501230000000001",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": [
+            "s3:PutObject",
+            "s3:DeleteObject"
+           ],
+           "Condition": {
+            "StringNotEquals": {
+             "aws:PrincipalTag/migration": "partner-feed"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/uploads/legacy/*",
+           "Sid": "MigrationStagingHold"
+          },
+          {
+           "Action": "s3:ListBucket",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.32/27"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001",
+           "Sid": "AllocatedPartnerSpace"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-pooled-partner-intake"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "allocated-partner-space": {
+      "status": "succeeded"
+     },
+     "legacy-cutover-area": {
+      "status": "succeeded"
+     },
+     "pooled-partner-intake": {
+      "status": "succeeded"
+     },
+     "reserved-stream-area": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         },
+         {
+          "Key": "Keeps",
+          "Value": "pooled-partner-uploads"
+         },
+         {
+          "Key": "PartnerAddressAllocation",
+          "Value": "203.0.113.32/27"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "platform-store-12345678901220260922114501230000000001": {
+        "Bucket": "platform-store-12345678901220260922114501230000000001",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:PrincipalAccount": "123456789012"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/*",
+           "Sid": "PooledPartnerIntake"
+          },
+          {
+           "Action": [
+            "s3:PutObject",
+            "s3:DeleteObject"
+           ],
+           "Condition": {
+            "StringNotEquals": {
+             "aws:PrincipalTag/migration": "partner-feed"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/uploads/legacy/*",
+           "Sid": "MigrationStagingHold"
+          },
+          {
+           "Action": "s3:ListBucket",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.32/27"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001",
+           "Sid": "AllocatedPartnerSpace"
+          },
+          {
+           "Action": "s3:*",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.32/27"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/partners/orders/*",
+           "Sid": "DenyPartnerAddress"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-reserved-stream-area"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "allocated-partner-space": {
+      "status": "succeeded"
+     },
+     "legacy-cutover-area": {
+      "status": "failed"
+     },
+     "pooled-partner-intake": {
+      "status": "succeeded"
+     },
+     "reserved-stream-area": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         },
+         {
+          "Key": "Keeps",
+          "Value": "pooled-partner-uploads"
+         },
+         {
+          "Key": "UploadAreaRoot",
+          "Value": "uploads/"
+         },
+         {
+          "Key": "UploadAreaInUse",
+          "Value": "uploads/returns/"
+         },
+         {
+          "Key": "PartnerAddressAllocation",
+          "Value": "203.0.113.32/27"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "platform-store-12345678901220260922114501230000000001": {
+        "Bucket": "platform-store-12345678901220260922114501230000000001",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:PrincipalAccount": "123456789012"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/*",
+           "Sid": "PooledPartnerIntake"
+          },
+          {
+           "Action": "s3:ListBucket",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.32/27"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001",
+           "Sid": "AllocatedPartnerSpace"
+          },
+          {
+           "Action": "s3:*",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.32/27"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/uploads/orders/*",
+           "Sid": "DenyPartnerAddress"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-legacy-cutover-area"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "allocated-partner-space": {
+      "status": "failed"
+     },
+     "legacy-cutover-area": {
+      "status": "succeeded"
+     },
+     "pooled-partner-intake": {
+      "status": "succeeded"
+     },
+     "reserved-stream-area": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         },
+         {
+          "Key": "Keeps",
+          "Value": "pooled-partner-uploads"
+         },
+         {
+          "Key": "UploadAreaRoot",
+          "Value": "uploads/"
+         },
+         {
+          "Key": "UploadAreaInUse",
+          "Value": "uploads/returns/"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "platform-store-12345678901220260922114501230000000001": {
+        "Bucket": "platform-store-12345678901220260922114501230000000001",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:PrincipalAccount": "123456789012"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/*",
+           "Sid": "PooledPartnerIntake"
+          },
+          {
+           "Action": [
+            "s3:PutObject",
+            "s3:DeleteObject"
+           ],
+           "Condition": {
+            "StringNotEquals": {
+             "aws:PrincipalTag/migration": "partner-feed"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/uploads/legacy/*",
+           "Sid": "MigrationStagingHold"
+          },
+          {
+           "Action": "s3:*",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.42/32"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/uploads/orders/*",
+           "Sid": "DenyPartnerAddress"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-allocated-partner-space"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "allocated-partner-space": {
+      "status": "succeeded"
+     },
+     "legacy-cutover-area": {
+      "status": "succeeded"
+     },
+     "pooled-partner-intake": {
+      "status": "succeeded"
+     },
+     "reserved-stream-area": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         },
+         {
+          "Key": "Keeps",
+          "Value": "pooled-partner-uploads"
+         },
+         {
+          "Key": "UploadAreaRoot",
+          "Value": "uploads/"
+         },
+         {
+          "Key": "UploadAreaInUse",
+          "Value": "uploads/returns/"
+         },
+         {
+          "Key": "PartnerAddressAllocation",
+          "Value": "203.0.113.32/27"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "platform-store-12345678901220260922114501230000000001": {
+        "Bucket": "platform-store-12345678901220260922114501230000000001",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": [
+            "s3:PutObject",
+            "s3:DeleteObject"
+           ],
+           "Condition": {
+            "StringNotEquals": {
+             "aws:PrincipalTag/migration": "partner-feed"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/uploads/legacy/*",
+           "Sid": "MigrationStagingHold"
+          },
+          {
+           "Action": "s3:ListBucket",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.32/27"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001",
+           "Sid": "AllocatedPartnerSpace"
+          },
+          {
+           "Action": "s3:*",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.32/27"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/uploads/orders/*",
+           "Sid": "DenyPartnerAddress"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-pooled-partner-intake"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "allocated-partner-space": {
+      "status": "succeeded"
+     },
+     "legacy-cutover-area": {
+      "status": "succeeded"
+     },
+     "pooled-partner-intake": {
+      "status": "succeeded"
+     },
+     "reserved-stream-area": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         },
+         {
+          "Key": "Keeps",
+          "Value": "pooled-partner-uploads"
+         },
+         {
+          "Key": "UploadAreaRoot",
+          "Value": "uploads/"
+         },
+         {
+          "Key": "UploadAreaInUse",
+          "Value": "uploads/returns/"
+         },
+         {
+          "Key": "PartnerAddressAllocation",
+          "Value": "203.0.113.32/27"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "platform-store-12345678901220260922114501230000000001": {
+        "Bucket": "platform-store-12345678901220260922114501230000000001",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:PrincipalAccount": "123456789012"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/*",
+           "Sid": "PooledPartnerIntake"
+          },
+          {
+           "Action": [
+            "s3:PutObject",
+            "s3:DeleteObject"
+           ],
+           "Condition": {
+            "StringNotEquals": {
+             "aws:PrincipalTag/migration": "partner-feed"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/uploads/legacy/*",
+           "Sid": "MigrationStagingHold"
+          },
+          {
+           "Action": "s3:ListBucket",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.32/27"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001",
+           "Sid": "AllocatedPartnerSpace"
+          },
+          {
+           "Action": "s3:*",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.32/27"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/uploads/returns/*",
+           "Sid": "DenyPartnerAddress"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-reserved-stream-area"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "allocated-partner-space": {
+      "status": "succeeded"
+     },
+     "legacy-cutover-area": {
+      "status": "succeeded"
+     },
+     "pooled-partner-intake": {
+      "status": "succeeded"
+     },
+     "reserved-stream-area": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         },
+         {
+          "Key": "Keeps",
+          "Value": "pooled-partner-uploads"
+         },
+         {
+          "Key": "UploadAreaRoot",
+          "Value": "uploads/"
+         },
+         {
+          "Key": "UploadAreaInUse",
+          "Value": "uploads/returns/"
+         },
+         {
+          "Key": "PartnerAddressAllocation",
+          "Value": "203.0.113.32/27"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "platform-store-12345678901220260922114501230000000001": {
+        "Bucket": "platform-store-12345678901220260922114501230000000001",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:PrincipalAccount": "123456789012"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/*",
+           "Sid": "PooledPartnerIntake"
+          },
+          {
+           "Action": "s3:ListBucket",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.32/27"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001",
+           "Sid": "AllocatedPartnerSpace"
+          },
+          {
+           "Action": "s3:*",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.32/27"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/uploads/orders/*",
+           "Sid": "DenyPartnerAddress"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-legacy-cutover-area"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "allocated-partner-space": {
+      "status": "succeeded"
+     },
+     "legacy-cutover-area": {
+      "status": "succeeded"
+     },
+     "pooled-partner-intake": {
+      "status": "succeeded"
+     },
+     "reserved-stream-area": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         },
+         {
+          "Key": "Keeps",
+          "Value": "pooled-partner-uploads"
+         },
+         {
+          "Key": "UploadAreaRoot",
+          "Value": "uploads/"
+         },
+         {
+          "Key": "UploadAreaInUse",
+          "Value": "uploads/returns/"
+         },
+         {
+          "Key": "PartnerAddressAllocation",
+          "Value": "203.0.113.32/27"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "platform-store-12345678901220260922114501230000000001": {
+        "Bucket": "platform-store-12345678901220260922114501230000000001",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:PrincipalAccount": "123456789012"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/*",
+           "Sid": "PooledPartnerIntake"
+          },
+          {
+           "Action": [
+            "s3:PutObject",
+            "s3:DeleteObject"
+           ],
+           "Condition": {
+            "StringNotEquals": {
+             "aws:PrincipalTag/migration": "partner-feed"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/uploads/legacy/*",
+           "Sid": "MigrationStagingHold"
+          },
+          {
+           "Action": "s3:ListBucket",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.32/27"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001",
+           "Sid": "AllocatedPartnerSpace"
+          },
+          {
+           "Action": "s3:*",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.32/27"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/uploads/legacy/*",
+           "Sid": "DenyPartnerAddress"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-legacy-area-taken"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "allocated-partner-space": {
+      "status": "succeeded"
+     },
+     "legacy-cutover-area": {
+      "status": "succeeded"
+     },
+     "pooled-partner-intake": {
+      "status": "succeeded"
+     },
+     "reserved-stream-area": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         },
+         {
+          "Key": "Keeps",
+          "Value": "pooled-partner-uploads"
+         },
+         {
+          "Key": "UploadAreaRoot",
+          "Value": "uploads/"
+         },
+         {
+          "Key": "UploadAreaInUse",
+          "Value": "uploads/returns/"
+         },
+         {
+          "Key": "PartnerAddressAllocation",
+          "Value": "203.0.113.32/27"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "platform-store-12345678901220260922114501230000000001": {
+        "Bucket": "platform-store-12345678901220260922114501230000000001",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:PrincipalAccount": "123456789012"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/*",
+           "Sid": "PooledPartnerIntake"
+          },
+          {
+           "Action": [
+            "s3:PutObject",
+            "s3:DeleteObject"
+           ],
+           "Condition": {
+            "StringNotEquals": {
+             "aws:PrincipalTag/migration": "partner-feed"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/uploads/legacy/*",
+           "Sid": "MigrationStagingHold"
+          },
+          {
+           "Action": "s3:ListBucket",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.32/27"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001",
+           "Sid": "AllocatedPartnerSpace"
+          },
+          {
+           "Action": "s3:*",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.42/32"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-12345678901220260922114501230000000001/uploads/orders/*",
+           "Sid": "DenyPartnerAddress"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-allocated-partner-space"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    }
+   },
+   "name": "control-no-intake-store"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "orders-intake-12345678901220260922114533070000000002": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "orders-intake-12345678901220260922114544110000000003": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "orders-intake-12345678901220260922114533070000000002": {
+        "Bucket": "orders-intake-12345678901220260922114533070000000002",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": "s3:*",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.42/32"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::orders-intake-12345678901220260922114533070000000002/*",
+           "Sid": "DenyPartnerAddress"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "control-two-intake-stores"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "orders-intake-12345678901220260922114533070000000002": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    }
+   },
+   "name": "control-no-policy-document"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "orders-intake-12345678901220260922114533070000000002": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "orders-intake-12345678901220260922114533070000000002": {
+        "Bucket": "orders-intake-12345678901220260922114533070000000002",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": "s3:*",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.42/32"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::orders-intake-12345678901220260922114533070000000002/*",
+           "Sid": "DenyPartnerAddress"
+          }
+         ]
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "control-no-policy-version"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "orders-intake-12345678901220260922114533070000000002": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "orders-intake-12345678901220260922114533070000000002": {
+        "Bucket": "orders-intake-12345678901220260922114533070000000002",
+        "PolicyDocument": {
+         "Statement": [
+          {
+           "Action": "s3:*",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.42/32"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::orders-intake-12345678901220260922114533070000000002/*",
+           "Sid": "DenyPartnerAddress"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "control-no-policy-identifier"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "orders-intake-12345678901220260922114533070000000002": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "orders-intake-12345678901220260922114533070000000002": {
+        "Bucket": "orders-intake-12345678901220260922114533070000000002",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": "s3:*",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "198.51.100.7/32"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::orders-intake-12345678901220260922114533070000000002/*",
+           "Sid": "DenyPartnerAddress"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "control-other-address"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "orders-intake-12345678901220260922114533070000000002": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "orders-intake-12345678901220260922114533070000000002": {
+        "Bucket": "orders-intake-12345678901220260922114533070000000002",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": "s3:*",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.42/32"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::orders-intake-12345678901220260922114533070000000002",
+           "Sid": "DenyPartnerAddress"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "control-bucket-scope-only"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "orders-intake-12345678901220260922114533070000000002": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "orders-intake-12345678901220260922114533070000000002": {
+        "Bucket": "orders-intake-12345678901220260922114533070000000002",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": "s3:*",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.42/32"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::orders-intake-12345678901220260922114533070000000002/*",
+           "Sid": "DenyPartnerAddress"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "control-allow-not-deny"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "orders-intake-12345678901220260922114533070000000002": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "orders-intake-12345678901220260922114533070000000002": {
+        "Bucket": "orders-intake-12345678901220260922114533070000000002",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": "s3:GetObject",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.42/32"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::orders-intake-12345678901220260922114533070000000002/*",
+           "Sid": "DenyPartnerAddress"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "control-one-action-only"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::S3::Bucket": {
+       "elasticbeanstalk-us-east-1-123456789012": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "ObjectWriter"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": []
+       },
+       "orders-intake-12345678901220260922114533070000000002": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         }
+        ]
+       },
+       "platform-store-12345678901220260922114501230000000001": {
+        "AbacStatus": "Disabled",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         }
+        ]
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "orders-intake-12345678901220260922114533070000000002": {
+        "Bucket": "orders-intake-12345678901220260922114533070000000002",
+        "PolicyDocument": {
+         "Id": "partner-intake-policy",
+         "Statement": [
+          {
+           "Action": "s3:*",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.42/32"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": {
+            "Service": "s3.amazonaws.com"
+           },
+           "Resource": "arn:aws:s3:::orders-intake-12345678901220260922114533070000000002/*",
+           "Sid": "DenyPartnerAddress"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "control-one-principal-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "platform-store-000000000114-20260922122446181800000001": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::platform-store-000000000114-20260922122446181800000001",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "platform-store-000000000114-20260922122446181800000001",
+        "DomainName": "platform-store-000000000114-20260922122446181800000001.s3.amazonaws.com",
+        "DualStackDomainName": "platform-store-000000000114-20260922122446181800000001.s3.dualstack.us-east-1.amazonaws.com",
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "platform-store-000000000114-20260922122446181800000001.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "WebsiteURL": "http://platform-store-000000000114-20260922122446181800000001.s3-website-us-east-1.amazonaws.com"
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "orders-intake-000000000114-20260922122550": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::orders-intake-000000000114-20260922122550",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "orders-intake-000000000114-20260922122550",
+        "DomainName": "orders-intake-000000000114-20260922122550.s3.amazonaws.com",
+        "DualStackDomainName": "orders-intake-000000000114-20260922122550.s3.dualstack.us-east-1.amazonaws.com",
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "orders-intake-000000000114-20260922122550.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "orders-intake"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "Purpose",
+          "Value": "partner-uploads"
+         }
+        ],
+        "VersioningConfiguration": {
+         "Status": "Enabled"
+        },
+        "WebsiteURL": "http://orders-intake-000000000114-20260922122550.s3-website-us-east-1.amazonaws.com"
+       },
+       "platform-store-000000000114-20260922122446181800000001": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::platform-store-000000000114-20260922122446181800000001",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "platform-store-000000000114-20260922122446181800000001",
+        "DomainName": "platform-store-000000000114-20260922122446181800000001.s3.amazonaws.com",
+        "DualStackDomainName": "platform-store-000000000114-20260922122446181800000001.s3.dualstack.us-east-1.amazonaws.com",
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "platform-store-000000000114-20260922122446181800000001.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "WebsiteURL": "http://platform-store-000000000114-20260922122446181800000001.s3-website-us-east-1.amazonaws.com"
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "orders-intake-000000000114-20260922122550": {
+        "Bucket": "orders-intake-000000000114-20260922122550",
+        "PolicyDocument": {
+         "Id": "orders-intake-partner-uploads-policy",
+         "Statement": [
+          {
+           "Action": "s3:*",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.42/32"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": [
+            "arn:aws:s3:::orders-intake-000000000114-20260922122550",
+            "arn:aws:s3:::orders-intake-000000000114-20260922122550/*"
+           ],
+           "Sid": "DenyPartnerUploadsFromBlockedSourceCidr"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "allocated-partner-space": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 4,
+        "landed_ns": 277524701464543,
+        "landed_s": 90.845,
+        "result": {
+         "allocation": "203.0.113.32/27",
+         "entry_added": true,
+         "fingerprint": [
+          {
+           "say": [
+            "203.0.113.32/27",
+            "203.0.113.32",
+            "partner allocation",
+            "address allocation",
+            "AllocatedPartnerSpace"
+           ],
+           "seen": "203.0.113.32/27"
+          }
+         ],
+         "recorded": true,
+         "store": "platform-store-000000000106-20260922122448119500000001",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-allocated-partner-space-4",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "allocation": "203.0.113.32/27",
+       "entry_added": true,
+       "fingerprint": [
+        {
+         "say": [
+          "203.0.113.32/27",
+          "203.0.113.32",
+          "partner allocation",
+          "address allocation",
+          "AllocatedPartnerSpace"
+         ],
+         "seen": "203.0.113.32/27"
+        }
+       ],
+       "recorded": true,
+       "store": "platform-store-000000000106-20260922122448119500000001",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "legacy-cutover-area": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 2,
+        "landed_ns": 277459813645044,
+        "landed_s": 25.957,
+        "result": {
+         "fingerprint": [
+          {
+           "say": [
+            "uploads/legacy",
+            "uploads/legacy/",
+            "legacy area",
+            "staging area",
+            "legacy feed",
+            "MigrationStagingHold"
+           ],
+           "seen": "uploads/legacy/"
+          }
+         ],
+         "recorded": true,
+         "staging_area": "uploads/legacy/",
+         "store": "platform-store-000000000106-20260922122448119500000001",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-legacy-cutover-area-2",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        {
+         "say": [
+          "uploads/legacy",
+          "uploads/legacy/",
+          "legacy area",
+          "staging area",
+          "legacy feed",
+          "MigrationStagingHold"
+         ],
+         "seen": "uploads/legacy/"
+        }
+       ],
+       "recorded": true,
+       "staging_area": "uploads/legacy/",
+       "store": "platform-store-000000000106-20260922122448119500000001",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "pooled-partner-intake": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 1,
+        "landed_ns": 277439837977213,
+        "landed_s": 5.982,
+        "result": {
+         "fingerprint": [
+          {
+           "say": [
+            "PooledPartnerIntake",
+            "pooled intake",
+            "intake term",
+            "pooled term",
+            "pooled-partner-uploads"
+           ],
+           "seen": "PooledPartnerIntake"
+          }
+         ],
+         "marked": true,
+         "store": "platform-store-000000000106-20260922122448119500000001",
+         "term_added": true,
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-pooled-partner-intake-1",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "fingerprint": [
+        {
+         "say": [
+          "PooledPartnerIntake",
+          "pooled intake",
+          "intake term",
+          "pooled term",
+          "pooled-partner-uploads"
+         ],
+         "seen": "PooledPartnerIntake"
+        }
+       ],
+       "marked": true,
+       "store": "platform-store-000000000106-20260922122448119500000001",
+       "term_added": true,
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "reserved-stream-area": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 3,
+        "landed_ns": 277460779553885,
+        "landed_s": 26.923,
+        "result": {
+         "area_in_use": "uploads/returns/",
+         "fingerprint": [
+          {
+           "say": [
+            "uploads/returns",
+            "uploads/returns/",
+            "returns area",
+            "returns stream",
+            "area in use"
+           ],
+           "seen": "uploads/returns/"
+          }
+         ],
+         "layout_root": "uploads/",
+         "recorded": true,
+         "store": "platform-store-000000000106-20260922122448119500000001",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-reserved-stream-area-3",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "area_in_use": "uploads/returns/",
+       "fingerprint": [
+        {
+         "say": [
+          "uploads/returns",
+          "uploads/returns/",
+          "returns area",
+          "returns stream",
+          "area in use"
+         ],
+         "seen": "uploads/returns/"
+        }
+       ],
+       "layout_root": "uploads/",
+       "recorded": true,
+       "store": "platform-store-000000000106-20260922122448119500000001",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "platform-store-000000000106-20260922122448119500000001": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::platform-store-000000000106-20260922122448119500000001",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "platform-store-000000000106-20260922122448119500000001",
+        "DomainName": "platform-store-000000000106-20260922122448119500000001.s3.amazonaws.com",
+        "DualStackDomainName": "platform-store-000000000106-20260922122448119500000001.s3.dualstack.us-east-1.amazonaws.com",
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "platform-store-000000000106-20260922122448119500000001.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         }
+        ],
+        "WebsiteURL": "http://platform-store-000000000106-20260922122448119500000001.s3-website-us-east-1.amazonaws.com"
+       }
+      },
+      "AWS::S3::BucketPolicy": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::S3::Bucket": {
+       "platform-store-000000000106-20260922122448119500000001": {
+        "AbacStatus": "Disabled",
+        "Arn": "arn:aws:s3:::platform-store-000000000106-20260922122448119500000001",
+        "BucketEncryption": {
+         "ServerSideEncryptionConfiguration": [
+          {
+           "BlockedEncryptionTypes": {
+            "EncryptionType": [
+             "SSE-C"
+            ]
+           },
+           "BucketKeyEnabled": false,
+           "ServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+           }
+          }
+         ]
+        },
+        "BucketName": "platform-store-000000000106-20260922122448119500000001",
+        "DomainName": "platform-store-000000000106-20260922122448119500000001.s3.amazonaws.com",
+        "DualStackDomainName": "platform-store-000000000106-20260922122448119500000001.s3.dualstack.us-east-1.amazonaws.com",
+        "OwnershipControls": {
+         "Rules": [
+          {
+           "ObjectOwnership": "BucketOwnerEnforced"
+          }
+         ]
+        },
+        "PublicAccessBlockConfiguration": {
+         "BlockPublicAcls": true,
+         "BlockPublicPolicy": true,
+         "IgnorePublicAcls": true,
+         "RestrictPublicBuckets": true
+        },
+        "RegionalDomainName": "platform-store-000000000106-20260922122448119500000001.s3.us-east-1.amazonaws.com",
+        "Tags": [
+         {
+          "Key": "Store",
+          "Value": "shared-space"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-team"
+         },
+         {
+          "Key": "UploadAreaRoot",
+          "Value": "uploads/"
+         },
+         {
+          "Key": "UploadAreaInUse",
+          "Value": "uploads/returns/"
+         },
+         {
+          "Key": "Keeps",
+          "Value": "pooled-partner-uploads"
+         },
+         {
+          "Key": "PartnerAddressAllocation",
+          "Value": "203.0.113.32/27"
+         }
+        ],
+        "WebsiteURL": "http://platform-store-000000000106-20260922122448119500000001.s3-website-us-east-1.amazonaws.com"
+       }
+      },
+      "AWS::S3::BucketPolicy": {
+       "platform-store-000000000106-20260922122448119500000001": {
+        "Bucket": "platform-store-000000000106-20260922122448119500000001",
+        "PolicyDocument": {
+         "Id": "pooled-store-policy",
+         "Statement": [
+          {
+           "Action": "s3:PutObject",
+           "Condition": {
+            "StringNotEquals": {
+             "aws:PrincipalAccount": "000000000106"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-000000000106-20260922122448119500000001/*",
+           "Sid": "PooledPartnerIntake"
+          },
+          {
+           "Action": [
+            "s3:PutObject",
+            "s3:DeleteObject"
+           ],
+           "Condition": {
+            "StringNotEquals": {
+             "aws:PrincipalTag/migration": "partner-feed"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-000000000106-20260922122448119500000001/uploads/legacy/*",
+           "Sid": "MigrationStagingHold"
+          },
+          {
+           "Action": "s3:*",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.32/27"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-000000000106-20260922122448119500000001/uploads/orders-intake-partner/*",
+           "Sid": "OrdersIntakePartnerUploadsDenySourceRange"
+          },
+          {
+           "Action": "s3:ListBucket",
+           "Condition": {
+            "IpAddress": {
+             "aws:SourceIp": "203.0.113.32/27"
+            }
+           },
+           "Effect": "Deny",
+           "Principal": "*",
+           "Resource": "arn:aws:s3:::platform-store-000000000106-20260922122448119500000001",
+           "Sid": "AllocatedPartnerSpace"
+          }
+         ],
+         "Version": "2012-10-17"
+        }
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-interference-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

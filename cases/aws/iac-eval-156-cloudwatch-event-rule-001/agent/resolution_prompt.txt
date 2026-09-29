@@ -1,0 +1,2 @@
+A request names a workload, not a copy: wire to the one serving now, never one retired or a look-alike.
+An event means what the account already says it means, in full; what you did not create stays as found, name included.

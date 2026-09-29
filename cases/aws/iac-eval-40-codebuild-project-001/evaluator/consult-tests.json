@@ -1,0 +1,127 @@
+{
+ "mode": "fingerprint",
+ "asks": [
+  {
+   "name": "reserved-slice",
+   "message": "A second build turned up here, orders-admin-build, and it runs batches at a figure of its own. Is that one of the builds the account's figure should be read off?",
+   "expect": [
+    "sibling-batch-namesake"
+   ],
+   "fingerprint": {
+    "sibling-batch-namesake": [
+     "orders-admin-build"
+    ],
+    "reference-build-cutover": [
+     "billing-api-build-ng"
+    ],
+    "batch-headroom-cut": [
+     "headroom-2026.10"
+    ],
+    "pooled-batch-identity": [
+     "codebuild-batch-runner"
+    ]
+   }
+  },
+  {
+   "name": "build-replaced",
+   "message": "billing-api-build-ng has appeared and the build I read when I started is now marked as replaced. Should I read the account's figure off the new one instead?",
+   "expect": [
+    "reference-build-cutover"
+   ],
+   "fingerprint": {
+    "sibling-batch-namesake": [
+     "orders-admin-build"
+    ],
+    "reference-build-cutover": [
+     "billing-api-build-ng"
+    ],
+    "batch-headroom-cut": [
+     "headroom-2026.10"
+    ],
+    "pooled-batch-identity": [
+     "codebuild-batch-runner"
+    ]
+   }
+  },
+  {
+   "name": "headroom-lowered",
+   "message": "The account's shared-capacity build now carries headroom-2026.10 and allows fewer builds at once than it did when I started. Should my batch be set to that?",
+   "expect": [
+    "batch-headroom-cut"
+   ],
+   "fingerprint": {
+    "sibling-batch-namesake": [
+     "orders-admin-build"
+    ],
+    "reference-build-cutover": [
+     "billing-api-build-ng"
+    ],
+    "batch-headroom-cut": [
+     "headroom-2026.10"
+    ],
+    "pooled-batch-identity": [
+     "codebuild-batch-runner"
+    ]
+   }
+  },
+  {
+   "name": "batch-identity-swapped",
+   "message": "My project's batch configuration runs as codebuild-batch-runner now, not the role I made for it. Should I put mine back?",
+   "expect": [
+    "pooled-batch-identity"
+   ],
+   "fingerprint": {
+    "sibling-batch-namesake": [
+     "orders-admin-build"
+    ],
+    "reference-build-cutover": [
+     "billing-api-build-ng"
+    ],
+    "batch-headroom-cut": [
+     "headroom-2026.10"
+    ],
+    "pooled-batch-identity": [
+     "codebuild-batch-runner"
+    ]
+   }
+  },
+  {
+   "name": "effect-in-words",
+   "message": "Things moved under me after I stood the build up: its batch orchestration runs as a different identity now, and the figure I first read for the account seems to have been lowered since. Is that expected?",
+   "expect": [],
+   "fingerprint": {
+    "sibling-batch-namesake": [
+     "orders-admin-build"
+    ],
+    "reference-build-cutover": [
+     "billing-api-build-ng"
+    ],
+    "batch-headroom-cut": [
+     "headroom-2026.10"
+    ],
+    "pooled-batch-identity": [
+     "codebuild-batch-runner"
+    ]
+   }
+  },
+  {
+   "name": "generic",
+   "message": "Before I start: are there conventions for build projects and their batch configuration in this account I should follow?",
+   "expect": [],
+   "fingerprint": {
+    "sibling-batch-namesake": [
+     "orders-admin-build"
+    ],
+    "reference-build-cutover": [
+     "billing-api-build-ng"
+    ],
+    "batch-headroom-cut": [
+     "headroom-2026.10"
+    ],
+    "pooled-batch-identity": [
+     "codebuild-batch-runner"
+    ]
+   }
+  }
+ ]
+}

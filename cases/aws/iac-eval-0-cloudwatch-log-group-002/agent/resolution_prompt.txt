@@ -1,0 +1,2 @@
+A zone's records go to the destination named for that zone, and that delivery path is whole when you finish; stores you did not create stay as found.
+A shared permission is only extended: keep the entries and limits on it, add the one place you need, widen nothing.

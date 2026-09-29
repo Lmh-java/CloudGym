@@ -1,0 +1,2650 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "peak-headroom-raise": {
+      "status": "succeeded"
+     },
+     "throughput-baseline-move": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {}
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "peak-headroom-raise": {
+      "status": "succeeded"
+     },
+     "throughput-baseline-move": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemPolicy": {
+         "Statement": [
+          {
+           "Action": [
+            "elasticfilesystem:ClientMount",
+            "elasticfilesystem:ClientWrite"
+           ],
+           "Condition": {
+            "Bool": {
+             "aws:SecureTransport": "true"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "*"
+           },
+           "Resource": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+           "Sid": "ExampleStatement01"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {
+       "fsmt-0c7d8e9f0a1b2c3d4": {
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "Id": "fsmt-0c7d8e9f0a1b2c3d4",
+        "IpAddress": "172.31.14.87",
+        "SecurityGroups": [
+         "sg-0e1d2c3b4a5968770"
+        ],
+        "SubnetId": "subnet-0d1e2f3a4b5c6d7e8"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "peak-headroom-raise": {
+      "status": "succeeded"
+     },
+     "throughput-baseline-move": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemPolicy": {
+         "Statement": [
+          {
+           "Action": [
+            "elasticfilesystem:ClientMount",
+            "elasticfilesystem:ClientWrite"
+           ],
+           "Condition": {
+            "Bool": {
+             "aws:SecureTransport": "true"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "*"
+           },
+           "Resource": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+           "Sid": "ExampleStatement01"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {
+       "fsmt-0c7d8e9f0a1b2c3d4": {
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "Id": "fsmt-0c7d8e9f0a1b2c3d4",
+        "IpAddress": "172.31.14.87",
+        "SecurityGroups": [
+         "sg-0e1d2c3b4a5968770"
+        ],
+        "SubnetId": "subnet-0d1e2f3a4b5c6d7e8"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "peak-headroom-raise": {
+      "status": "succeeded"
+     },
+     "throughput-baseline-move": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemPolicy": {
+         "Statement": [
+          {
+           "Action": [
+            "elasticfilesystem:ClientMount",
+            "elasticfilesystem:ClientWrite"
+           ],
+           "Condition": {
+            "Bool": {
+             "aws:SecureTransport": "true"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "*"
+           },
+           "Resource": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+           "Sid": "ExampleStatement01"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         },
+         {
+          "Key": "StorageBaseline",
+          "Value": "reserved-floor-r7"
+         },
+         {
+          "Key": "ThroughputHeadroom",
+          "Value": "peak-hold-2x"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ProvisionedThroughputInMibps": 2,
+        "ThroughputMode": "provisioned"
+       }
+      },
+      "AWS::EFS::MountTarget": {
+       "fsmt-0c7d8e9f0a1b2c3d4": {
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "Id": "fsmt-0c7d8e9f0a1b2c3d4",
+        "IpAddress": "172.31.14.87",
+        "SecurityGroups": [
+         "sg-0e1d2c3b4a5968770"
+        ],
+        "SubnetId": "subnet-0d1e2f3a4b5c6d7e8"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemPolicy": {
+         "Statement": [
+          {
+           "Action": [
+            "elasticfilesystem:ClientMount",
+            "elasticfilesystem:ClientWrite"
+           ],
+           "Condition": {
+            "Bool": {
+             "aws:SecureTransport": "true"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "*"
+           },
+           "Resource": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+           "Sid": "ExampleStatement01"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {
+       "fsmt-0c7d8e9f0a1b2c3d4": {
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "Id": "fsmt-0c7d8e9f0a1b2c3d4",
+        "IpAddress": "172.31.14.87",
+        "SecurityGroups": [
+         "sg-0e1d2c3b4a5968770"
+        ],
+        "SubnetId": "subnet-0d1e2f3a4b5c6d7e8"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "peak-headroom-raise": {
+      "status": "not-fired"
+     },
+     "throughput-baseline-move": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemPolicy": {
+         "Statement": [
+          {
+           "Action": [
+            "elasticfilesystem:ClientMount"
+           ],
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "*"
+           },
+           "Resource": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+           "Sid": "ExampleStatement01"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {
+       "fsmt-0c7d8e9f0a1b2c3d4": {
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "Id": "fsmt-0c7d8e9f0a1b2c3d4",
+        "IpAddress": "172.31.14.87",
+        "SecurityGroups": [
+         "sg-0e1d2c3b4a5968770"
+        ],
+        "SubnetId": "subnet-0d1e2f3a4b5c6d7e8"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "peak-headroom-raise": {
+      "status": "succeeded"
+     },
+     "throughput-baseline-move": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemPolicy": {
+         "Statement": [
+          {
+           "Action": [
+            "elasticfilesystem:ClientMount",
+            "elasticfilesystem:ClientWrite"
+           ],
+           "Condition": {
+            "Bool": {
+             "aws:SecureTransport": "true"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "*"
+           },
+           "Resource": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+           "Sid": "ExampleStatement01"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         },
+         {
+          "Key": "StorageBaseline",
+          "Value": "reserved-floor-r7"
+         },
+         {
+          "Key": "ThroughputHeadroom",
+          "Value": "peak-hold-2x"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {
+       "fsmt-0c7d8e9f0a1b2c3d4": {
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "Id": "fsmt-0c7d8e9f0a1b2c3d4",
+        "IpAddress": "172.31.14.87",
+        "SecurityGroups": [
+         "sg-0e1d2c3b4a5968770"
+        ],
+        "SubnetId": "subnet-0d1e2f3a4b5c6d7e8"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "forced"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "peak-headroom-raise": {
+      "status": "succeeded"
+     },
+     "throughput-baseline-move": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-09f8e7d6c5b4a3021": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-09f8e7d6c5b4a3021",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-09f8e7d6c5b4a3021",
+        "FileSystemPolicy": {
+         "Statement": [
+          {
+           "Action": [
+            "elasticfilesystem:ClientMount",
+            "elasticfilesystem:ClientWrite"
+           ],
+           "Condition": {
+            "Bool": {
+             "aws:SecureTransport": "true"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "*"
+           },
+           "Resource": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-09f8e7d6c5b4a3021",
+           "Sid": "ExampleStatement01"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product-2"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       },
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         },
+         {
+          "Key": "StorageBaseline",
+          "Value": "reserved-floor-r7"
+         },
+         {
+          "Key": "ThroughputHeadroom",
+          "Value": "peak-hold-2x"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ProvisionedThroughputInMibps": 2,
+        "ThroughputMode": "provisioned"
+       }
+      },
+      "AWS::EFS::MountTarget": {
+       "fsmt-0c7d8e9f0a1b2c3d4": {
+        "FileSystemId": "fs-09f8e7d6c5b4a3021",
+        "Id": "fsmt-0c7d8e9f0a1b2c3d4",
+        "IpAddress": "172.31.14.87",
+        "SecurityGroups": [
+         "sg-0e1d2c3b4a5968770"
+        ],
+        "SubnetId": "subnet-0d1e2f3a4b5c6d7e8"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "duplicated"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "peak-headroom-raise": {
+      "status": "succeeded"
+     },
+     "throughput-baseline-move": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemPolicy": {
+         "Statement": [
+          {
+           "Action": [
+            "elasticfilesystem:ClientMount",
+            "elasticfilesystem:ClientWrite"
+           ],
+           "Condition": {
+            "Bool": {
+             "aws:SecureTransport": "true"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "*"
+           },
+           "Resource": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+           "Sid": "ExampleStatement01"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         },
+         {
+          "Key": "ThroughputHeadroom",
+          "Value": "peak-hold-2x"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ProvisionedThroughputInMibps": 2,
+        "ThroughputMode": "provisioned"
+       }
+      },
+      "AWS::EFS::MountTarget": {
+       "fsmt-0c7d8e9f0a1b2c3d4": {
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "Id": "fsmt-0c7d8e9f0a1b2c3d4",
+        "IpAddress": "172.31.14.87",
+        "SecurityGroups": [
+         "sg-0e1d2c3b4a5968770"
+        ],
+        "SubnetId": "subnet-0d1e2f3a4b5c6d7e8"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "clobbered-throughput-baseline-move"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "peak-headroom-raise": {
+      "status": "succeeded"
+     },
+     "throughput-baseline-move": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemPolicy": {
+         "Statement": [
+          {
+           "Action": [
+            "elasticfilesystem:ClientMount",
+            "elasticfilesystem:ClientWrite"
+           ],
+           "Condition": {
+            "Bool": {
+             "aws:SecureTransport": "true"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "*"
+           },
+           "Resource": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+           "Sid": "ExampleStatement01"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         },
+         {
+          "Key": "StorageBaseline",
+          "Value": "reserved-floor-r7"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ProvisionedThroughputInMibps": 2,
+        "ThroughputMode": "provisioned"
+       }
+      },
+      "AWS::EFS::MountTarget": {
+       "fsmt-0c7d8e9f0a1b2c3d4": {
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "Id": "fsmt-0c7d8e9f0a1b2c3d4",
+        "IpAddress": "172.31.14.87",
+        "SecurityGroups": [
+         "sg-0e1d2c3b4a5968770"
+        ],
+        "SubnetId": "subnet-0d1e2f3a4b5c6d7e8"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "clobbered-peak-headroom-raise"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "peak-headroom-raise": {
+      "status": "succeeded"
+     },
+     "throughput-baseline-move": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemPolicy": {
+         "Statement": [
+          {
+           "Action": [
+            "elasticfilesystem:ClientMount",
+            "elasticfilesystem:ClientWrite"
+           ],
+           "Condition": {
+            "Bool": {
+             "aws:SecureTransport": "true"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "*"
+           },
+           "Resource": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+           "Sid": "ExampleStatement01"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         },
+         {
+          "Key": "ThroughputHeadroom",
+          "Value": "peak-hold-2x"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ProvisionedThroughputInMibps": 2,
+        "ThroughputMode": "provisioned"
+       }
+      },
+      "AWS::EFS::MountTarget": {
+       "fsmt-0c7d8e9f0a1b2c3d4": {
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "Id": "fsmt-0c7d8e9f0a1b2c3d4",
+        "IpAddress": "172.31.14.87",
+        "SecurityGroups": [
+         "sg-0e1d2c3b4a5968770"
+        ],
+        "SubnetId": "subnet-0d1e2f3a4b5c6d7e8"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "failed-throughput-baseline-move"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "peak-headroom-raise": {
+      "status": "failed"
+     },
+     "throughput-baseline-move": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemPolicy": {
+         "Statement": [
+          {
+           "Action": [
+            "elasticfilesystem:ClientMount",
+            "elasticfilesystem:ClientWrite"
+           ],
+           "Condition": {
+            "Bool": {
+             "aws:SecureTransport": "true"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "*"
+           },
+           "Resource": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+           "Sid": "ExampleStatement01"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         },
+         {
+          "Key": "StorageBaseline",
+          "Value": "reserved-floor-r7"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ProvisionedThroughputInMibps": 1,
+        "ThroughputMode": "provisioned"
+       }
+      },
+      "AWS::EFS::MountTarget": {
+       "fsmt-0c7d8e9f0a1b2c3d4": {
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "Id": "fsmt-0c7d8e9f0a1b2c3d4",
+        "IpAddress": "172.31.14.87",
+        "SecurityGroups": [
+         "sg-0e1d2c3b4a5968770"
+        ],
+        "SubnetId": "subnet-0d1e2f3a4b5c6d7e8"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "failed-peak-headroom-raise"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "peak-headroom-raise": {
+      "status": "not-fired"
+     },
+     "throughput-baseline-move": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {
+       "fsmt-0c7d8e9f0a1b2c3d4": {
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "Id": "fsmt-0c7d8e9f0a1b2c3d4",
+        "IpAddress": "172.31.14.87",
+        "SecurityGroups": [
+         "sg-0e1d2c3b4a5968770"
+        ],
+        "SubnetId": "subnet-0d1e2f3a4b5c6d7e8"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "no-policy"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "peak-headroom-raise": {
+      "status": "not-fired"
+     },
+     "throughput-baseline-move": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemPolicy": {
+         "Statement": [
+          {
+           "Action": [
+            "elasticfilesystem:ClientMount"
+           ],
+           "Condition": {
+            "Bool": {
+             "aws:SecureTransport": "true"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "*"
+           },
+           "Resource": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+           "Sid": "ExampleStatement01"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {
+       "fsmt-0c7d8e9f0a1b2c3d4": {
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "Id": "fsmt-0c7d8e9f0a1b2c3d4",
+        "IpAddress": "172.31.14.87",
+        "SecurityGroups": [
+         "sg-0e1d2c3b4a5968770"
+        ],
+        "SubnetId": "subnet-0d1e2f3a4b5c6d7e8"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "policy-missing-client-write"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "peak-headroom-raise": {
+      "status": "not-fired"
+     },
+     "throughput-baseline-move": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemPolicy": {
+         "Statement": [
+          {
+           "Action": [
+            "elasticfilesystem:ClientMount",
+            "elasticfilesystem:ClientWrite"
+           ],
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "*"
+           },
+           "Resource": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+           "Sid": "ExampleStatement01"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {
+       "fsmt-0c7d8e9f0a1b2c3d4": {
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "Id": "fsmt-0c7d8e9f0a1b2c3d4",
+        "IpAddress": "172.31.14.87",
+        "SecurityGroups": [
+         "sg-0e1d2c3b4a5968770"
+        ],
+        "SubnetId": "subnet-0d1e2f3a4b5c6d7e8"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "policy-without-tls-condition"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "peak-headroom-raise": {
+      "status": "not-fired"
+     },
+     "throughput-baseline-move": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemPolicy": {
+         "Statement": [
+          {
+           "Action": [
+            "elasticfilesystem:ClientMount",
+            "elasticfilesystem:ClientWrite"
+           ],
+           "Condition": {
+            "Bool": {
+             "aws:SecureTransport": "true"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "*"
+           },
+           "Resource": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-09f8e7d6c5b4a3021",
+           "Sid": "ExampleStatement01"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {
+       "fsmt-0c7d8e9f0a1b2c3d4": {
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "Id": "fsmt-0c7d8e9f0a1b2c3d4",
+        "IpAddress": "172.31.14.87",
+        "SecurityGroups": [
+         "sg-0e1d2c3b4a5968770"
+        ],
+        "SubnetId": "subnet-0d1e2f3a4b5c6d7e8"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "policy-on-another-file-system"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "peak-headroom-raise": {
+      "status": "not-fired"
+     },
+     "throughput-baseline-move": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemPolicy": {
+         "Statement": [
+          {
+           "Action": [
+            "elasticfilesystem:ClientMount",
+            "elasticfilesystem:ClientWrite"
+           ],
+           "Condition": {
+            "Bool": {
+             "aws:SecureTransport": "true"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "*"
+           },
+           "Resource": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+           "Sid": "ExampleStatement01"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {}
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "no-mount-target"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "peak-headroom-raise": {
+      "status": "not-fired"
+     },
+     "throughput-baseline-move": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemPolicy": {
+         "Statement": [
+          {
+           "Action": [
+            "elasticfilesystem:ClientMount",
+            "elasticfilesystem:ClientWrite"
+           ],
+           "Condition": {
+            "Bool": {
+             "aws:SecureTransport": "true"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "*"
+           },
+           "Resource": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+           "Sid": "ExampleStatement01"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {
+       "fsmt-0c7d8e9f0a1b2c3d4": {
+        "FileSystemId": "fs-09f8e7d6c5b4a3021",
+        "Id": "fsmt-0c7d8e9f0a1b2c3d4",
+        "IpAddress": "172.31.14.87",
+        "SecurityGroups": [
+         "sg-0e1d2c3b4a5968770"
+        ],
+        "SubnetId": "subnet-0d1e2f3a4b5c6d7e8"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "mount-target-on-another-file-system"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "peak-headroom-raise": {
+      "status": "not-fired"
+     },
+     "throughput-baseline-move": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0a1b2c3d4e5f60718": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-0a1b2c3d4e5f60718",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0a1b2c3d4e5f60718",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-09f8e7d6c5b4a3021": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-09f8e7d6c5b4a3021",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-09f8e7d6c5b4a3021",
+        "FileSystemPolicy": {
+         "Statement": [
+          {
+           "Action": [
+            "elasticfilesystem:ClientMount",
+            "elasticfilesystem:ClientWrite"
+           ],
+           "Condition": {
+            "Bool": {
+             "aws:SecureTransport": "true"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "*"
+           },
+           "Resource": "arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-09f8e7d6c5b4a3021",
+           "Sid": "ExampleStatement01"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {
+       "fsmt-0c7d8e9f0a1b2c3d4": {
+        "FileSystemId": "fs-09f8e7d6c5b4a3021",
+        "Id": "fsmt-0c7d8e9f0a1b2c3d4",
+        "IpAddress": "172.31.14.87",
+        "SecurityGroups": [
+         "sg-0e1d2c3b4a5968770"
+        ],
+        "SubnetId": "subnet-0d1e2f3a4b5c6d7e8"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "file-system-replaced"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0036f3cf6fdcdc05e": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:000000000101:file-system/fs-0036f3cf6fdcdc05e",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0036f3cf6fdcdc05e",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0036f3cf6fdcdc05e": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:000000000101:file-system/fs-0036f3cf6fdcdc05e",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0036f3cf6fdcdc05e",
+        "FileSystemPolicy": {
+         "Id": "my-product-efs-policy",
+         "Statement": [
+          {
+           "Action": [
+            "elasticfilesystem:ClientMount",
+            "elasticfilesystem:ClientWrite"
+           ],
+           "Condition": {
+            "Bool": {
+             "aws:SecureTransport": "true"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "*"
+           },
+           "Resource": "arn:aws:elasticfilesystem:us-east-1:000000000101:file-system/fs-0036f3cf6fdcdc05e",
+           "Sid": "AllowMountAndWriteOverTLSOnly"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {
+       "fsmt-0cf746b61552b582e": {
+        "FileSystemId": "fs-0036f3cf6fdcdc05e",
+        "Id": "fsmt-0cf746b61552b582e",
+        "IpAddress": "172.31.13.142",
+        "SecurityGroups": [
+         "sg-0423679f7138a41c0"
+        ],
+        "SubnetId": "subnet-0051e36d9b15d28ca"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "peak-headroom-raise": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 2,
+        "landed_ns": 420315311528398,
+        "landed_s": 145.756,
+        "result": {
+         "busy": {
+          "fired": true,
+          "observations": 1,
+          "state": "updating",
+          "states": [
+           "updating"
+          ],
+          "waited_s": 0.059
+         },
+         "file_system": "my-product",
+         "fingerprint": [
+          "peak-hold-2x"
+         ],
+         "headroom": "peak-hold-2x",
+         "raise": {
+          "already_held": false,
+          "attempts": 1,
+          "mibps": 2.0,
+          "waited_s": 0.124
+         },
+         "raised": true,
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-peak-headroom-raise-2",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "busy": {
+        "fired": true,
+        "observations": 1,
+        "state": "updating",
+        "states": [
+         "updating"
+        ],
+        "waited_s": 0.059
+       },
+       "file_system": "my-product",
+       "fingerprint": [
+        "peak-hold-2x"
+       ],
+       "headroom": "peak-hold-2x",
+       "raise": {
+        "already_held": false,
+        "attempts": 1,
+        "mibps": 2.0,
+        "waited_s": 0.124
+       },
+       "raised": true,
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "throughput-baseline-move": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 1,
+        "landed_ns": 420234247923657,
+        "landed_s": 64.693,
+        "result": {
+         "baseline": "reserved-floor-r7",
+         "busy": {
+          "fired": true,
+          "observations": 1,
+          "state": "updating",
+          "states": [
+           "updating"
+          ],
+          "waited_s": 0.067
+         },
+         "file_system": "my-product",
+         "fingerprint": [
+          "reserved-floor-r7"
+         ],
+         "move": {
+          "already_held": false,
+          "attempts": 1,
+          "mibps": 1.0,
+          "waited_s": 0.112
+         },
+         "moved": true,
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-throughput-baseline-move-1",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "baseline": "reserved-floor-r7",
+       "busy": {
+        "fired": true,
+        "observations": 1,
+        "state": "updating",
+        "states": [
+         "updating"
+        ],
+        "waited_s": 0.067
+       },
+       "file_system": "my-product",
+       "fingerprint": [
+        "reserved-floor-r7"
+       ],
+       "move": {
+        "already_held": false,
+        "attempts": 1,
+        "mibps": 1.0,
+        "waited_s": 0.112
+       },
+       "moved": true,
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0eba5c212c56a151e": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:000000000116:file-system/fs-0eba5c212c56a151e",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0eba5c212c56a151e",
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ThroughputMode": "bursting"
+       }
+      },
+      "AWS::EFS::MountTarget": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::EFS::FileSystem": {
+       "fs-0eba5c212c56a151e": {
+        "Arn": "arn:aws:elasticfilesystem:us-east-1:000000000116:file-system/fs-0eba5c212c56a151e",
+        "BackupPolicy": {
+         "Status": "DISABLED"
+        },
+        "Encrypted": false,
+        "FileSystemId": "fs-0eba5c212c56a151e",
+        "FileSystemPolicy": {
+         "Id": "my-product-efs-policy",
+         "Statement": [
+          {
+           "Action": [
+            "elasticfilesystem:ClientMount",
+            "elasticfilesystem:ClientWrite"
+           ],
+           "Condition": {
+            "Bool": {
+             "aws:SecureTransport": "true"
+            }
+           },
+           "Effect": "Allow",
+           "Principal": {
+            "AWS": "*"
+           },
+           "Resource": "arn:aws:elasticfilesystem:us-east-1:000000000116:file-system/fs-0eba5c212c56a151e",
+           "Sid": "AllowMountAndWriteOverTLSOnly"
+          }
+         ],
+         "Version": "2012-10-17"
+        },
+        "FileSystemProtection": {
+         "ReplicationOverwriteProtection": "ENABLED"
+        },
+        "FileSystemTags": [
+         {
+          "Key": "Name",
+          "Value": "my-product"
+         },
+         {
+          "Key": "Owner",
+          "Value": "product-team"
+         },
+         {
+          "Key": "Service",
+          "Value": "my-product"
+         },
+         {
+          "Key": "StorageBaseline",
+          "Value": "reserved-floor-r7"
+         },
+         {
+          "Key": "ThroughputHeadroom",
+          "Value": "peak-hold-2x"
+         }
+        ],
+        "LifecyclePolicies": [],
+        "PerformanceMode": "generalPurpose",
+        "ProvisionedThroughputInMibps": 2,
+        "ThroughputMode": "provisioned"
+       }
+      },
+      "AWS::EFS::MountTarget": {
+       "fsmt-07fad7c60858c3356": {
+        "FileSystemId": "fs-0eba5c212c56a151e",
+        "Id": "fsmt-07fad7c60858c3356",
+        "IpAddress": "172.31.9.25",
+        "SecurityGroups": [
+         "sg-04068f603d77a1e0c"
+        ],
+        "SubnetId": "subnet-03b2ede2e27dd2904"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-interference-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

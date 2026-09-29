@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::ApiGateway::RestApi",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-22T18:32:57+00:00",
+      "ResourceDescription": {
+        "Identifier": "ez4r9od57c",
+        "Properties": "{\"Description\":\"CloudGym extractor capability check\",\"RootResourceId\":\"wehg04ldw7\",\"SecurityPolicy\":\"TLS_1_0\",\"RestApiId\":\"ez4r9od57c\",\"ApiKeySourceType\":\"HEADER\",\"EndpointConfiguration\":{\"IpAddressType\":\"ipv4\",\"Types\":[\"REGIONAL\"]},\"DisableExecuteApiEndpoint\":false,\"Name\":\"cloudgym-capability\"}"
+      },
+      "TypeName": "AWS::ApiGateway::RestApi"
+    }
+  ],
+  "recorded_at": "2026-09-22T18:32:57+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_4_db_instance",
+  "utterance": "The account already has the application VPC 10.0.0.0/24, with an internet gateway attached and one subnet, `app-subnet-a`, in it. Configure Route 53 to return different database endpoints to internal versus external users of `example53.com`: internal users resolve to an internal RDS instance, external users to a publicly accessible one. Add a second subnet to the VPC in a different availability zone, create a DB subnet group named `main` spanning that new subnet and `app-subnet-a`, and place in it two MySQL `db.t3.micro` RDS instances with 20 GiB of allocated storage, master username `dbadmin`, password `ChangeMe12345` and no final snapshot on deletion: `internal`, which is not publicly accessible, and `public`, which is. Then set up a private hosted zone for `example53.com` associated with the VPC and a public hosted zone for `example53.com`, and publish the two endpoints as CNAME records with a 300-second TTL: `internal-db.example53.com` in the private zone resolving to the `internal` instance's endpoint address, and `public-db.example53.com` in the public zone resolving to the `public` instance's endpoint address.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "example53.com answers differently inside and outside the application VPC: the VPC has a second subnet of its own in another availability zone, a DB subnet group named main spans that subnet and the pre-existing app-subnet-a, and holds two available 20 GiB db.t3.micro MySQL instances with master username dbadmin, internal (not publicly accessible) and public (publicly accessible); one private hosted zone for example53.com is associated with that VPC and one public hosted zone serves example53.com externally; the private zone answers internal-db.example53.com with a 300-second CNAME to the internal instance's endpoint address, and the public zone answers public-db.example53.com with a 300-second CNAME to the public instance's endpoint address and does not answer the internal name"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 4
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::Lambda::Permission",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-01T02:55:30+00:00",
+      "ResourceDescription": {
+        "Identifier": "arn:aws:lambda:us-east-1:123456789012:function:cloudgym-capability-perm|cloudgym-capability-check",
+        "Properties": "{\"FunctionName\":\"arn:aws:lambda:us-east-1:123456789012:function:cloudgym-capability-perm\",\"Action\":\"lambda:InvokeFunction\",\"Id\":\"cloudgym-capability-check\",\"Principal\":\"events.amazonaws.com\"}"
+      },
+      "TypeName": "AWS::Lambda::Permission"
+    }
+  ],
+  "recorded_at": "2026-09-01T02:55:31+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_302_api_gateway_deployment",
+  "utterance": "An AWS service that holds a web server which allows you to upload cat pictures and provides random cat pictures on demand. Accomplishes this with API Gateway and S3. The back of it is already in the account: the Lambda function `caas_cat` that serves and stores the pictures, its execution role `lambda_api_gateway_role`, the bucket whose name begins with `cat-image`, and the DynamoDB table `cat_names` that holds the picture names. Build the front and finish the wiring: a REST API named `caas` with a `cat` resource off its root that accepts GET and PUT with no authorization, both proxying to `caas_cat`, a deployment of that API and a stage named `dev`, and the permission API Gateway needs to invoke the function. Two things about the function itself are still outstanding: its handler still names `caas_cat.main`, the entry point of the package before this one, and has to be `caas_cat.handler`, and its execution role has no inline policy yet — it needs one allowing it to get and put objects in the bucket and to put items in the table. When you are done, report the id of the REST API and the function's configuration as it ends up, so the result can be checked.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "the account holds a REST API named caas whose root carries a cat resource with GET and PUT methods that require no authorization, each an AWS_PROXY integration onto the pre-existing Lambda function caas_cat, and a deployment of that API served under a stage named dev; caas_cat calls the handler caas_cat.handler; lambda_api_gateway_role holds an inline policy allowing s3:GetObject and s3:PutObject on the bucket's objects and dynamodb:PutItem on the table; and the function's resource policy grants lambda:InvokeFunction to apigateway.amazonaws.com for that API"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 302
+  }
+}

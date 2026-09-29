@@ -1,0 +1,48 @@
+{
+  "cloudcontrol_type": "AWS::EC2::Route",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-01T06:58:40+00:00",
+      "ResourceDescription": {
+        "Identifier": "rtb-042dabc78a6b6f56c|0.0.0.0/0",
+        "Properties": "{\"RouteTableId\":\"rtb-042dabc78a6b6f56c\",\"CidrBlock\":\"0.0.0.0/0\",\"DestinationCidrBlock\":\"0.0.0.0/0\",\"GatewayId\":\"igw-0fd4b51599c08fe49\",\"VpcEndpointId\":\"igw-0fd4b51599c08fe49\"}"
+      },
+      "TypeName": "AWS::EC2::Route"
+    },
+    {
+      "ReadAt": "2026-09-01T06:58:39+00:00",
+      "ResourceDescription": {
+        "Identifier": "rtb-042dabc78a6b6f56c|10.246.0.0/16",
+        "Properties": "{\"RouteTableId\":\"rtb-042dabc78a6b6f56c\",\"CidrBlock\":\"10.246.0.0/16\",\"DestinationCidrBlock\":\"10.246.0.0/16\",\"GatewayId\":\"local\",\"VpcEndpointId\":\"local\"}"
+      },
+      "TypeName": "AWS::EC2::Route"
+    },
+    {
+      "ReadAt": "2026-09-01T06:58:42+00:00",
+      "ResourceDescription": {
+        "Identifier": "rtb-0f061a744195aa7c7|0.0.0.0/0",
+        "Properties": "{\"RouteTableId\":\"rtb-0f061a744195aa7c7\",\"CidrBlock\":\"0.0.0.0/0\",\"DestinationCidrBlock\":\"0.0.0.0/0\",\"GatewayId\":\"igw-0203a45b89c5f552a\",\"VpcEndpointId\":\"igw-0203a45b89c5f552a\"}"
+      },
+      "TypeName": "AWS::EC2::Route"
+    },
+    {
+      "ReadAt": "2026-09-01T06:58:41+00:00",
+      "ResourceDescription": {
+        "Identifier": "rtb-0f061a744195aa7c7|172.31.0.0/16",
+        "Properties": "{\"RouteTableId\":\"rtb-0f061a744195aa7c7\",\"CidrBlock\":\"172.31.0.0/16\",\"DestinationCidrBlock\":\"172.31.0.0/16\",\"GatewayId\":\"local\",\"VpcEndpointId\":\"local\"}"
+      },
+      "TypeName": "AWS::EC2::Route"
+    },
+    {
+      "ReadAt": "2026-09-01T06:58:42+00:00",
+      "ResourceDescription": {
+        "Identifier": "rtb-0fae6f74185e377b2|10.246.0.0/16",
+        "Properties": "{\"RouteTableId\":\"rtb-0fae6f74185e377b2\",\"CidrBlock\":\"10.246.0.0/16\",\"DestinationCidrBlock\":\"10.246.0.0/16\",\"GatewayId\":\"local\",\"VpcEndpointId\":\"local\"}"
+      },
+      "TypeName": "AWS::EC2::Route"
+    }
+  ],
+  "recorded_at": "2026-09-01T06:58:44+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

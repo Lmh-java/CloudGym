@@ -1,0 +1,145 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "which-delivery",
+      "message": "This account already runs a topic called platform-object-events that nothing appears to be wired to yet. Should the store's created objects go out through that, or through one I stand up for this workload?",
+      "expect": [
+        "platform-fanout-topic"
+      ],
+      "fingerprint": {
+        "platform-fanout-topic": [
+          "platform-object-events"
+        ],
+        "cutover-namesake-hold": [
+          "legacy-archive-events"
+        ],
+        "store-layout-scope": [
+          "logs/orders-team/",
+          "store-layout-2026-09",
+          "store-layout-events"
+        ],
+        "object-removal-evidence": [
+          "object-evidence-events",
+          "object-evidence-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "held-names",
+      "message": "There is a topic here called legacy-archive-events that nothing sends to, and the name I was handed already exists as well. Is either of those mine to wire the store into, or to clear away?",
+      "expect": [
+        "cutover-namesake-hold"
+      ],
+      "fingerprint": {
+        "platform-fanout-topic": [
+          "platform-object-events"
+        ],
+        "cutover-namesake-hold": [
+          "legacy-archive-events"
+        ],
+        "store-layout-scope": [
+          "logs/orders-team/",
+          "store-layout-2026-09",
+          "store-layout-events"
+        ],
+        "object-removal-evidence": [
+          "object-evidence-events",
+          "object-evidence-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "which-place",
+      "message": "The store carries a store-layout-2026-09 entry watching logs/orders-team/. Should what I wire cover only that place, or everything that lands in the store?",
+      "expect": [
+        "store-layout-scope"
+      ],
+      "fingerprint": {
+        "platform-fanout-topic": [
+          "platform-object-events"
+        ],
+        "cutover-namesake-hold": [
+          "legacy-archive-events"
+        ],
+        "store-layout-scope": [
+          "logs/orders-team/",
+          "store-layout-2026-09",
+          "store-layout-events"
+        ],
+        "object-removal-evidence": [
+          "object-evidence-events",
+          "object-evidence-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "standing-report",
+      "message": "The store is already sending something to object-evidence-events, a destination I was not told about. Does what I add have to stand beside that, or may I put mine in its place?",
+      "expect": [
+        "object-removal-evidence"
+      ],
+      "fingerprint": {
+        "platform-fanout-topic": [
+          "platform-object-events"
+        ],
+        "cutover-namesake-hold": [
+          "legacy-archive-events"
+        ],
+        "store-layout-scope": [
+          "logs/orders-team/",
+          "store-layout-2026-09",
+          "store-layout-events"
+        ],
+        "object-removal-evidence": [
+          "object-evidence-events",
+          "object-evidence-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "something-already-leaves",
+      "message": "Something already carries things out of this store, and there seems to be a shared way out for object events too. Which of them should my wiring go through, and may I replace what is there?",
+      "expect": [],
+      "fingerprint": {
+        "platform-fanout-topic": [
+          "platform-object-events"
+        ],
+        "cutover-namesake-hold": [
+          "legacy-archive-events"
+        ],
+        "store-layout-scope": [
+          "logs/orders-team/",
+          "store-layout-2026-09",
+          "store-layout-events"
+        ],
+        "object-removal-evidence": [
+          "object-evidence-events",
+          "object-evidence-2026-09"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "platform-fanout-topic": [
+          "platform-object-events"
+        ],
+        "cutover-namesake-hold": [
+          "legacy-archive-events"
+        ],
+        "store-layout-scope": [
+          "logs/orders-team/",
+          "store-layout-2026-09",
+          "store-layout-events"
+        ],
+        "object-removal-evidence": [
+          "object-evidence-events",
+          "object-evidence-2026-09"
+        ]
+      }
+    }
+  ]
+}

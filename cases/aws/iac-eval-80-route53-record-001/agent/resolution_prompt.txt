@@ -1,0 +1,2 @@
+Names under the account's domains are allocated, not assumed: entries you did not publish stay as found, and a workload's endpoint answers under a free name formed like the domain's existing ones.
+Internal names answer within the cache lifetime the domain's entries establish, not the one a request states.

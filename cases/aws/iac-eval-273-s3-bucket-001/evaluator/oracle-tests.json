@@ -1,0 +1,2967 @@
+{
+  "cases": [
+    {
+      "expected": "fail",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "succeeded"
+          },
+          "namesake-store-claim": {
+            "status": "succeeded"
+          },
+          "report-cadence-cap": {
+            "status": "succeeded"
+          },
+          "report-scope-limit": {
+            "status": "succeeded"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "name": "unchanged"
+    },
+    {
+      "expected": "pass",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "succeeded"
+          },
+          "namesake-store-claim": {
+            "status": "succeeded"
+          },
+          "report-cadence-cap": {
+            "status": "succeeded"
+          },
+          "report-scope-limit": {
+            "status": "succeeded"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "Parquet",
+                      "Prefix": "inventory/mybucket-123456789012/"
+                    },
+                    "Enabled": true,
+                    "Id": "store-inventory",
+                    "IncludedObjectVersions": "All",
+                    "ScheduleFrequency": "Daily"
+                  }
+                ],
+                "Tags": [
+                  {
+                    "Key": "Workload",
+                    "Value": "parts-catalogue"
+                  },
+                  {
+                    "Key": "CostReview",
+                    "Value": "storage-cadence-2026-09"
+                  }
+                ]
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:PutObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "resolved"
+    },
+    {
+      "expected": "fail",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "succeeded"
+          },
+          "namesake-store-claim": {
+            "status": "succeeded"
+          },
+          "report-cadence-cap": {
+            "status": "succeeded"
+          },
+          "report-scope-limit": {
+            "status": "succeeded"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "Parquet",
+                      "Prefix": "inventory/mybucket-123456789012/"
+                    },
+                    "Enabled": true,
+                    "Id": "store-inventory",
+                    "IncludedObjectVersions": "All",
+                    "Prefix": "active-data/",
+                    "ScheduleFrequency": "Weekly"
+                  }
+                ],
+                "Tags": [
+                  {
+                    "Key": "Workload",
+                    "Value": "parts-catalogue"
+                  },
+                  {
+                    "Key": "CostReview",
+                    "Value": "storage-cadence-2026-09"
+                  }
+                ]
+              },
+              "mybucket-123456789012-9f3c": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "ORC"
+                    },
+                    "Enabled": true,
+                    "Id": "EntireBucketDaily",
+                    "IncludedObjectVersions": "All",
+                    "ScheduleFrequency": "Daily"
+                  }
+                ],
+                "Tags": [
+                  {
+                    "Key": "CostReview",
+                    "Value": "storage-cadence-2026-09"
+                  }
+                ]
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:PutObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "literal"
+    },
+    {
+      "expected": "fail",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "succeeded"
+          },
+          "namesake-store-claim": {
+            "status": "succeeded"
+          },
+          "report-cadence-cap": {
+            "status": "succeeded"
+          },
+          "report-scope-limit": {
+            "status": "succeeded"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "Parquet",
+                      "Prefix": "inventory/mybucket-123456789012/"
+                    },
+                    "Enabled": true,
+                    "Id": "store-inventory",
+                    "IncludedObjectVersions": "All",
+                    "Prefix": "active-data/",
+                    "ScheduleFrequency": "Weekly"
+                  }
+                ],
+                "Tags": [
+                  {
+                    "Key": "Workload",
+                    "Value": "parts-catalogue"
+                  },
+                  {
+                    "Key": "CostReview",
+                    "Value": "storage-cadence-2026-09"
+                  }
+                ]
+              },
+              "mybucket-123456789012-9f3c": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "ORC"
+                    },
+                    "Enabled": true,
+                    "Id": "EntireBucketDaily",
+                    "IncludedObjectVersions": "All",
+                    "ScheduleFrequency": "Daily"
+                  }
+                ],
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:PutObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "prompt-only"
+    },
+    {
+      "expected": "pass",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "not-fired"
+          },
+          "namesake-store-claim": {
+            "status": "not-fired"
+          },
+          "report-cadence-cap": {
+            "status": "not-fired"
+          },
+          "report-scope-limit": {
+            "status": "not-fired"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012-9f3c": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "ORC"
+                    },
+                    "Enabled": true,
+                    "Id": "EntireBucketDaily",
+                    "IncludedObjectVersions": "All",
+                    "ScheduleFrequency": "Daily"
+                  }
+                ],
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:PutObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "control"
+    },
+    {
+      "expected": "fail",
+      "input": {
+        "distractors": {
+          "namesake-store-claim": {
+            "status": "not-fired"
+          },
+          "catalogue-report-stream": {
+            "status": "not-fired"
+          },
+          "report-cadence-cap": {
+            "status": "not-fired"
+          },
+          "report-scope-limit": {
+            "status": "failed"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012-9f3c": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "ORC"
+                    },
+                    "Enabled": true,
+                    "Id": "EntireBucketDaily",
+                    "IncludedObjectVersions": "All",
+                    "ScheduleFrequency": "Daily"
+                  },
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "ORC"
+                    },
+                    "Enabled": true,
+                    "Id": "legacy-scoped-listing",
+                    "IncludedObjectVersions": "All",
+                    "ScheduleFrequency": "Daily",
+                    "Prefix": "active-data/"
+                  }
+                ],
+                "Tags": [
+                  {
+                    "Key": "CostReview",
+                    "Value": "storage-cadence-2026-09"
+                  }
+                ]
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:GetObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "progress"
+    },
+    {
+      "expected": "fail",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "not-fired"
+          },
+          "namesake-store-claim": {
+            "status": "not-fired"
+          },
+          "report-cadence-cap": {
+            "status": "not-fired"
+          },
+          "report-scope-limit": {
+            "status": "not-fired"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:PutObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "no-workload-store"
+    },
+    {
+      "expected": "fail",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "not-fired"
+          },
+          "namesake-store-claim": {
+            "status": "not-fired"
+          },
+          "report-cadence-cap": {
+            "status": "not-fired"
+          },
+          "report-scope-limit": {
+            "status": "not-fired"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012": {
+                "InventoryConfigurations": [],
+                "Tags": []
+              },
+              "mybucket-123456789012-9f3c": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "ORC"
+                    },
+                    "Enabled": true,
+                    "Id": "EntireBucketDaily",
+                    "IncludedObjectVersions": "All",
+                    "ScheduleFrequency": "Daily"
+                  }
+                ],
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:PutObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "two-workload-stores"
+    },
+    {
+      "expected": "fail",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "not-fired"
+          },
+          "namesake-store-claim": {
+            "status": "not-fired"
+          },
+          "report-cadence-cap": {
+            "status": "not-fired"
+          },
+          "report-scope-limit": {
+            "status": "not-fired"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012-9f3c": {
+                "InventoryConfigurations": [],
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:PutObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "no-entry"
+    },
+    {
+      "expected": "fail",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "not-fired"
+          },
+          "namesake-store-claim": {
+            "status": "not-fired"
+          },
+          "report-cadence-cap": {
+            "status": "not-fired"
+          },
+          "report-scope-limit": {
+            "status": "not-fired"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012-9f3c": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "ORC"
+                    },
+                    "Enabled": true,
+                    "Id": "EntireBucketDaily",
+                    "IncludedObjectVersions": "All",
+                    "ScheduleFrequency": "Weekly"
+                  }
+                ],
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:PutObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "weekly-cadence"
+    },
+    {
+      "expected": "fail",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "not-fired"
+          },
+          "namesake-store-claim": {
+            "status": "not-fired"
+          },
+          "report-cadence-cap": {
+            "status": "not-fired"
+          },
+          "report-scope-limit": {
+            "status": "not-fired"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012-9f3c": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "ORC"
+                    },
+                    "Enabled": true,
+                    "Id": "EntireBucketDaily",
+                    "IncludedObjectVersions": "All",
+                    "Prefix": "active-data/",
+                    "ScheduleFrequency": "Daily"
+                  }
+                ],
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:PutObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "scoped-entry"
+    },
+    {
+      "expected": "fail",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "not-fired"
+          },
+          "namesake-store-claim": {
+            "status": "not-fired"
+          },
+          "report-cadence-cap": {
+            "status": "not-fired"
+          },
+          "report-scope-limit": {
+            "status": "not-fired"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012-9f3c": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::mybucket-123456789012-9f3c",
+                      "Format": "ORC"
+                    },
+                    "Enabled": true,
+                    "Id": "EntireBucketDaily",
+                    "IncludedObjectVersions": "All",
+                    "ScheduleFrequency": "Daily"
+                  }
+                ],
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:PutObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "wrong-destination"
+    },
+    {
+      "expected": "fail",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "not-fired"
+          },
+          "namesake-store-claim": {
+            "status": "not-fired"
+          },
+          "report-cadence-cap": {
+            "status": "not-fired"
+          },
+          "report-scope-limit": {
+            "status": "not-fired"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012-9f3c": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "ORC"
+                    },
+                    "Enabled": true,
+                    "Id": "EntireBucketDaily",
+                    "IncludedObjectVersions": "All",
+                    "ScheduleFrequency": "Daily"
+                  }
+                ],
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "name": "no-grant"
+    },
+    {
+      "expected": "fail",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "not-fired"
+          },
+          "namesake-store-claim": {
+            "status": "not-fired"
+          },
+          "report-cadence-cap": {
+            "status": "not-fired"
+          },
+          "report-scope-limit": {
+            "status": "not-fired"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012-9f3c": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "ORC"
+                    },
+                    "Enabled": true,
+                    "Id": "EntireBucketDaily",
+                    "IncludedObjectVersions": "All",
+                    "ScheduleFrequency": "Daily"
+                  }
+                ],
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:GetObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "grant-does-not-write"
+    },
+    {
+      "expected": "fail",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "not-fired"
+          },
+          "namesake-store-claim": {
+            "status": "not-fired"
+          },
+          "report-cadence-cap": {
+            "status": "not-fired"
+          },
+          "report-scope-limit": {
+            "status": "not-fired"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012-9f3c": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "ORC"
+                    },
+                    "Enabled": false,
+                    "Id": "EntireBucketDaily",
+                    "IncludedObjectVersions": "All",
+                    "ScheduleFrequency": "Daily"
+                  }
+                ],
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:PutObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "entry-disabled"
+    },
+    {
+      "expected": "fail",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "not-fired"
+          },
+          "namesake-store-claim": {
+            "status": "not-fired"
+          },
+          "report-cadence-cap": {
+            "status": "not-fired"
+          },
+          "report-scope-limit": {
+            "status": "not-fired"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012-9f3c": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "ORC"
+                    },
+                    "Enabled": true,
+                    "Id": "EntireBucketDaily",
+                    "IncludedObjectVersions": "All",
+                    "ScheduleFrequency": "Daily"
+                  },
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "ORC"
+                    },
+                    "Enabled": true,
+                    "Id": "SecondDaily",
+                    "IncludedObjectVersions": "All",
+                    "ScheduleFrequency": "Daily"
+                  }
+                ],
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:PutObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "two-entries-into-the-reports-store"
+    },
+    {
+      "expected": "pass",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "succeeded"
+          },
+          "namesake-store-claim": {
+            "status": "failed"
+          },
+          "report-cadence-cap": {
+            "status": "succeeded"
+          },
+          "report-scope-limit": {
+            "status": "succeeded"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "Parquet",
+                      "Prefix": "inventory/mybucket-123456789012/"
+                    },
+                    "Enabled": true,
+                    "Id": "store-inventory",
+                    "IncludedObjectVersions": "All",
+                    "ScheduleFrequency": "Daily"
+                  }
+                ],
+                "Tags": [
+                  {
+                    "Key": "CostReview",
+                    "Value": "storage-cadence-2026-09"
+                  }
+                ]
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:PutObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "failed-namesake-store-claim"
+    },
+    {
+      "expected": "pass",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "failed"
+          },
+          "namesake-store-claim": {
+            "status": "succeeded"
+          },
+          "report-cadence-cap": {
+            "status": "succeeded"
+          },
+          "report-scope-limit": {
+            "status": "succeeded"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "ORC"
+                    },
+                    "Enabled": true,
+                    "Id": "EntireBucketDaily",
+                    "IncludedObjectVersions": "All",
+                    "ScheduleFrequency": "Daily"
+                  }
+                ],
+                "Tags": [
+                  {
+                    "Key": "Workload",
+                    "Value": "parts-catalogue"
+                  },
+                  {
+                    "Key": "CostReview",
+                    "Value": "storage-cadence-2026-09"
+                  }
+                ]
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:PutObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "failed-catalogue-report-stream"
+    },
+    {
+      "expected": "pass",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "succeeded"
+          },
+          "namesake-store-claim": {
+            "status": "succeeded"
+          },
+          "report-cadence-cap": {
+            "status": "failed"
+          },
+          "report-scope-limit": {
+            "status": "succeeded"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "Parquet",
+                      "Prefix": "inventory/mybucket-123456789012/"
+                    },
+                    "Enabled": true,
+                    "Id": "store-inventory",
+                    "IncludedObjectVersions": "All",
+                    "ScheduleFrequency": "Daily"
+                  }
+                ],
+                "Tags": [
+                  {
+                    "Key": "Workload",
+                    "Value": "parts-catalogue"
+                  }
+                ]
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:PutObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "failed-report-cadence-cap"
+    },
+    {
+      "expected": "pass",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "succeeded"
+          },
+          "namesake-store-claim": {
+            "status": "succeeded"
+          },
+          "report-cadence-cap": {
+            "status": "succeeded"
+          },
+          "report-scope-limit": {
+            "status": "failed"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "Parquet",
+                      "Prefix": "inventory/mybucket-123456789012/"
+                    },
+                    "Enabled": true,
+                    "Id": "store-inventory",
+                    "IncludedObjectVersions": "All",
+                    "ScheduleFrequency": "Daily"
+                  }
+                ],
+                "Tags": [
+                  {
+                    "Key": "Workload",
+                    "Value": "parts-catalogue"
+                  },
+                  {
+                    "Key": "CostReview",
+                    "Value": "storage-cadence-2026-09"
+                  }
+                ]
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:PutObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "failed-report-scope-limit"
+    },
+    {
+      "expected": "fail",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "succeeded"
+          },
+          "namesake-store-claim": {
+            "status": "succeeded"
+          },
+          "report-cadence-cap": {
+            "status": "succeeded"
+          },
+          "report-scope-limit": {
+            "status": "succeeded"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "Parquet",
+                      "Prefix": "inventory/mybucket-123456789012/"
+                    },
+                    "Enabled": true,
+                    "Id": "store-inventory",
+                    "IncludedObjectVersions": "All",
+                    "ScheduleFrequency": "Daily"
+                  }
+                ],
+                "Tags": [
+                  {
+                    "Key": "CostReview",
+                    "Value": "storage-cadence-2026-09"
+                  }
+                ]
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:PutObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "clobbered-namesake-store-claim"
+    },
+    {
+      "expected": "fail",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "succeeded"
+          },
+          "namesake-store-claim": {
+            "status": "succeeded"
+          },
+          "report-cadence-cap": {
+            "status": "succeeded"
+          },
+          "report-scope-limit": {
+            "status": "succeeded"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "ORC"
+                    },
+                    "Enabled": true,
+                    "Id": "EntireBucketDaily",
+                    "IncludedObjectVersions": "All",
+                    "ScheduleFrequency": "Daily"
+                  }
+                ],
+                "Tags": [
+                  {
+                    "Key": "Workload",
+                    "Value": "parts-catalogue"
+                  },
+                  {
+                    "Key": "CostReview",
+                    "Value": "storage-cadence-2026-09"
+                  }
+                ]
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:PutObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "clobbered-catalogue-report-stream"
+    },
+    {
+      "expected": "fail",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "succeeded"
+          },
+          "namesake-store-claim": {
+            "status": "succeeded"
+          },
+          "report-cadence-cap": {
+            "status": "succeeded"
+          },
+          "report-scope-limit": {
+            "status": "succeeded"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "Parquet",
+                      "Prefix": "inventory/mybucket-123456789012/"
+                    },
+                    "Enabled": true,
+                    "Id": "store-inventory",
+                    "IncludedObjectVersions": "All",
+                    "ScheduleFrequency": "Daily"
+                  }
+                ],
+                "Tags": [
+                  {
+                    "Key": "Workload",
+                    "Value": "parts-catalogue"
+                  }
+                ]
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:PutObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "clobbered-report-cadence-cap"
+    },
+    {
+      "expected": "fail",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "succeeded"
+          },
+          "namesake-store-claim": {
+            "status": "succeeded"
+          },
+          "report-cadence-cap": {
+            "status": "succeeded"
+          },
+          "report-scope-limit": {
+            "status": "succeeded"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "Parquet",
+                      "Prefix": "inventory/mybucket-123456789012/"
+                    },
+                    "Enabled": true,
+                    "Id": "store-inventory",
+                    "IncludedObjectVersions": "All",
+                    "Prefix": "active-data/",
+                    "ScheduleFrequency": "Daily"
+                  }
+                ],
+                "Tags": [
+                  {
+                    "Key": "Workload",
+                    "Value": "parts-catalogue"
+                  },
+                  {
+                    "Key": "CostReview",
+                    "Value": "storage-cadence-2026-09"
+                  }
+                ]
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:PutObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "left-report-scope-limit"
+    },
+    {
+      "expected": "fail",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "succeeded"
+          },
+          "namesake-store-claim": {
+            "status": "succeeded"
+          },
+          "report-cadence-cap": {
+            "status": "succeeded"
+          },
+          "report-scope-limit": {
+            "status": "succeeded"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "123456789012",
+                      "BucketArn": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                      "Format": "Parquet",
+                      "Prefix": "inventory/mybucket-123456789012/"
+                    },
+                    "Enabled": true,
+                    "Id": "store-inventory",
+                    "IncludedObjectVersions": "All",
+                    "ScheduleFrequency": "Weekly"
+                  }
+                ],
+                "Tags": [
+                  {
+                    "Key": "Workload",
+                    "Value": "parts-catalogue"
+                  },
+                  {
+                    "Key": "CostReview",
+                    "Value": "storage-cadence-2026-09"
+                  }
+                ]
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:PutObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "left-report-cadence-cap"
+    },
+    {
+      "expected": "pass",
+      "input": {
+        "distractors": {
+          "catalogue-report-stream": {
+            "status": "succeeded"
+          },
+          "namesake-store-claim": {
+            "status": "succeeded"
+          },
+          "report-cadence-cap": {
+            "status": "succeeded"
+          },
+          "report-scope-limit": {
+            "status": "succeeded"
+          }
+        },
+        "s0": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "s_final": {
+          "resources": {
+            "AWS::S3::Bucket": {
+              "cloudgym-service-store-h7k2": {
+                "Tags": []
+              },
+              "mybucket-123456789012": {
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "S3BucketDestination": {
+                        "AccountId": "123456789012",
+                        "Bucket": "arn:aws:s3:::shared-store-123456789012-h7k2",
+                        "Format": "Parquet",
+                        "Prefix": "inventory/mybucket-123456789012/"
+                      }
+                    },
+                    "Id": "store-inventory",
+                    "IncludedObjectVersions": "All",
+                    "IsEnabled": true,
+                    "Schedule": {
+                      "Frequency": "Daily"
+                    }
+                  }
+                ],
+                "Tags": [
+                  {
+                    "Key": "Workload",
+                    "Value": "parts-catalogue"
+                  },
+                  {
+                    "Key": "CostReview",
+                    "Value": "storage-cadence-2026-09"
+                  }
+                ]
+              },
+              "shared-store-123456789012-h7k2": {
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ]
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-123456789012-h7k2": {
+                "PolicyDocument": {
+                  "Id": "inventory-reports-policy",
+                  "Statement": [
+                    {
+                      "Action": "s3:PutObject",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123456789012"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-123456789012-h7k2/*",
+                      "Sid": "AllowInventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "resolved-api-shape"
+    },
+    {
+      "expected": "pass",
+      "input": {
+        "distractors": {},
+        "invariants": {
+          "check_failed": [],
+          "invalid_reason": null,
+          "invariants": {},
+          "unrestored": [],
+          "violated": []
+        },
+        "region": "us-east-1",
+        "s0": {
+          "region": "us-east-1",
+          "resources": {
+            "AWS::S3::Bucket": {
+              "shared-store-000000000104-20260919185636246000000001": {
+                "AbacStatus": "Disabled",
+                "Arn": "arn:aws:s3:::shared-store-000000000104-20260919185636246000000001",
+                "BucketEncryption": {
+                  "ServerSideEncryptionConfiguration": [
+                    {
+                      "BlockedEncryptionTypes": {
+                        "EncryptionType": [
+                          "SSE-C"
+                        ]
+                      },
+                      "BucketKeyEnabled": false,
+                      "ServerSideEncryptionByDefault": {
+                        "SSEAlgorithm": "AES256"
+                      }
+                    }
+                  ]
+                },
+                "BucketName": "shared-store-000000000104-20260919185636246000000001",
+                "DomainName": "shared-store-000000000104-20260919185636246000000001.s3.amazonaws.com",
+                "DualStackDomainName": "shared-store-000000000104-20260919185636246000000001.s3.dualstack.us-east-1.amazonaws.com",
+                "OwnershipControls": {
+                  "Rules": [
+                    {
+                      "ObjectOwnership": "BucketOwnerEnforced"
+                    }
+                  ]
+                },
+                "PublicAccessBlockConfiguration": {
+                  "BlockPublicAcls": true,
+                  "BlockPublicPolicy": true,
+                  "IgnorePublicAcls": true,
+                  "RestrictPublicBuckets": true
+                },
+                "RegionalDomainName": "shared-store-000000000104-20260919185636246000000001.s3.us-east-1.amazonaws.com",
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ],
+                "WebsiteURL": "http://shared-store-000000000104-20260919185636246000000001.s3-website-us-east-1.amazonaws.com"
+              }
+            },
+            "AWS::S3::BucketPolicy": {}
+          },
+          "schema_version": 1
+        },
+        "s_final": {
+          "region": "us-east-1",
+          "resources": {
+            "AWS::S3::Bucket": {
+              "mybucket-inventory-src-000000000104": {
+                "AbacStatus": "Disabled",
+                "Arn": "arn:aws:s3:::mybucket-inventory-src-000000000104",
+                "BucketEncryption": {
+                  "ServerSideEncryptionConfiguration": [
+                    {
+                      "BlockedEncryptionTypes": {
+                        "EncryptionType": [
+                          "SSE-C"
+                        ]
+                      },
+                      "BucketKeyEnabled": false,
+                      "ServerSideEncryptionByDefault": {
+                        "SSEAlgorithm": "AES256"
+                      }
+                    }
+                  ]
+                },
+                "BucketName": "mybucket-inventory-src-000000000104",
+                "DomainName": "mybucket-inventory-src-000000000104.s3.amazonaws.com",
+                "DualStackDomainName": "mybucket-inventory-src-000000000104.s3.dualstack.us-east-1.amazonaws.com",
+                "InventoryConfigurations": [
+                  {
+                    "Destination": {
+                      "BucketAccountId": "000000000104",
+                      "BucketArn": "arn:aws:s3:::shared-store-000000000104-20260919185636246000000001",
+                      "Format": "CSV",
+                      "Prefix": "inventory/mybucket-inventory-src-000000000104"
+                    },
+                    "Enabled": true,
+                    "Id": "daily-full-bucket-inventory",
+                    "IncludedObjectVersions": "Current",
+                    "OptionalFields": [
+                      "Size",
+                      "LastModifiedDate",
+                      "StorageClass",
+                      "ETag",
+                      "IsMultipartUploaded",
+                      "ReplicationStatus",
+                      "EncryptionStatus"
+                    ],
+                    "ScheduleFrequency": "Daily"
+                  }
+                ],
+                "OwnershipControls": {
+                  "Rules": [
+                    {
+                      "ObjectOwnership": "BucketOwnerEnforced"
+                    }
+                  ]
+                },
+                "PublicAccessBlockConfiguration": {
+                  "BlockPublicAcls": true,
+                  "BlockPublicPolicy": true,
+                  "IgnorePublicAcls": true,
+                  "RestrictPublicBuckets": true
+                },
+                "RegionalDomainName": "mybucket-inventory-src-000000000104.s3.us-east-1.amazonaws.com",
+                "WebsiteURL": "http://mybucket-inventory-src-000000000104.s3-website-us-east-1.amazonaws.com"
+              },
+              "shared-store-000000000104-20260919185636246000000001": {
+                "AbacStatus": "Disabled",
+                "Arn": "arn:aws:s3:::shared-store-000000000104-20260919185636246000000001",
+                "BucketEncryption": {
+                  "ServerSideEncryptionConfiguration": [
+                    {
+                      "BlockedEncryptionTypes": {
+                        "EncryptionType": [
+                          "SSE-C"
+                        ]
+                      },
+                      "BucketKeyEnabled": false,
+                      "ServerSideEncryptionByDefault": {
+                        "SSEAlgorithm": "AES256"
+                      }
+                    }
+                  ]
+                },
+                "BucketName": "shared-store-000000000104-20260919185636246000000001",
+                "DomainName": "shared-store-000000000104-20260919185636246000000001.s3.amazonaws.com",
+                "DualStackDomainName": "shared-store-000000000104-20260919185636246000000001.s3.dualstack.us-east-1.amazonaws.com",
+                "OwnershipControls": {
+                  "Rules": [
+                    {
+                      "ObjectOwnership": "BucketOwnerEnforced"
+                    }
+                  ]
+                },
+                "PublicAccessBlockConfiguration": {
+                  "BlockPublicAcls": true,
+                  "BlockPublicPolicy": true,
+                  "IgnorePublicAcls": true,
+                  "RestrictPublicBuckets": true
+                },
+                "RegionalDomainName": "shared-store-000000000104-20260919185636246000000001.s3.us-east-1.amazonaws.com",
+                "Tags": [
+                  {
+                    "Key": "Store",
+                    "Value": "inventory-reports"
+                  },
+                  {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                  }
+                ],
+                "WebsiteURL": "http://shared-store-000000000104-20260919185636246000000001.s3-website-us-east-1.amazonaws.com"
+              }
+            },
+            "AWS::S3::BucketPolicy": {
+              "shared-store-000000000104-20260919185636246000000001": {
+                "Bucket": "shared-store-000000000104-20260919185636246000000001",
+                "PolicyDocument": {
+                  "Statement": [
+                    {
+                      "Action": "s3:PutObject",
+                      "Condition": {
+                        "ArnLike": {
+                          "aws:SourceArn": "arn:aws:s3:::mybucket-inventory-src-000000000104"
+                        },
+                        "StringEquals": {
+                          "aws:SourceAccount": "000000000104"
+                        }
+                      },
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "s3.amazonaws.com"
+                      },
+                      "Resource": "arn:aws:s3:::shared-store-000000000104-20260919185636246000000001/*",
+                      "Sid": "AllowS3InventoryReportDelivery"
+                    }
+                  ],
+                  "Version": "2012-10-17"
+                }
+              }
+            }
+          },
+          "schema_version": 1
+        }
+      },
+      "name": "real-control-pass"
+    }
+  ],
+  "query": "data.cloudgym.verdict"
+}

@@ -1,0 +1,2 @@
+A workload runs on the schedule this account already keeps for its slot: it joins that one, invocable from it, not a second.
+What you did not put there stays as found; a grant names the source it admits, and an identity is only what its workload runs as.

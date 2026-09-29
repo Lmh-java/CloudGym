@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_404_instance",
+  "utterance": "The `storefront-vpc` VPC already carries public traffic, but nothing serves it yet. Bring up a web server in one of the VPC's public subnets and give it a security group that accepts HTTP on port 80 from the load balancer. Then put an internet-facing Application Load Balancer in front of it, spanning the VPC's public subnets, with a security group that accepts HTTP on port 80 from anywhere. The load balancer needs an HTTP listener on port 80 whose default action forwards to a new HTTP target group on port 80 in that VPC that takes instance targets, and that new web server is what should end up registered in that group.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "the storefront-vpc VPC holds a new internet-facing application load balancer spanning at least two of the VPC's public subnets in distinct availability zones and carrying a security group that admits TCP port 80 from 0.0.0.0/0; that load balancer has an HTTP listener on port 80 whose default action forwards to a new target group of instance target type on HTTP port 80 in that VPC; and a new running EC2 instance sits in one of the VPC's public subnets in a security group that admits TCP port 80 from the load balancer's group and is registered as a target of that target group"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 404
+  }
+}

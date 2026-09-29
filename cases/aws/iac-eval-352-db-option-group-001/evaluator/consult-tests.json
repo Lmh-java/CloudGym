@@ -1,0 +1,138 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "which-store",
+      "message": "Two of this account's audit stores carry the same marking, and one of them is marked audit-consolidation-2026-09 while the other is marked as folded into it. Which of the two should these records be booked to?",
+      "expect": [
+        "audit-store-consolidation"
+      ],
+      "fingerprint": {
+        "audit-store-consolidation": [
+          "audit-consolidation-2026-09"
+        ],
+        "shared-store-layout": [
+          "db-audit/orders-team",
+          "store-layout-2026-09"
+        ],
+        "delivery-identity-rotation": [
+          "db-audit-delivery-2026-09",
+          "identity-rotation-2026-09"
+        ],
+        "chargeback-attribution": [
+          "FIN-4471"
+        ]
+      }
+    },
+    {
+      "name": "where-under-the-store",
+      "message": "The store now records a store-layout-2026-09 revision naming db-audit/orders-team. Should what I point the audit setting at cover only that, or everything landing in the store?",
+      "expect": [
+        "shared-store-layout"
+      ],
+      "fingerprint": {
+        "audit-store-consolidation": [
+          "audit-consolidation-2026-09"
+        ],
+        "shared-store-layout": [
+          "db-audit/orders-team",
+          "store-layout-2026-09"
+        ],
+        "delivery-identity-rotation": [
+          "db-audit-delivery-2026-09",
+          "identity-rotation-2026-09"
+        ],
+        "chargeback-attribution": [
+          "FIN-4471"
+        ]
+      }
+    },
+    {
+      "name": "which-identity",
+      "message": "A db-audit-delivery-2026-09 identity marked identity-rotation-2026-09 has appeared beside the one I was pointed at. Which of them should the audit option name?",
+      "expect": [
+        "delivery-identity-rotation"
+      ],
+      "fingerprint": {
+        "audit-store-consolidation": [
+          "audit-consolidation-2026-09"
+        ],
+        "shared-store-layout": [
+          "db-audit/orders-team",
+          "store-layout-2026-09"
+        ],
+        "delivery-identity-rotation": [
+          "db-audit-delivery-2026-09",
+          "identity-rotation-2026-09"
+        ],
+        "chargeback-attribution": [
+          "FIN-4471"
+        ]
+      }
+    },
+    {
+      "name": "which-booking",
+      "message": "The identity that delivers these records is booked to FIN-4471 now, not the code it carried when I started. Does what I raise for this workload have to carry that too?",
+      "expect": [
+        "chargeback-attribution"
+      ],
+      "fingerprint": {
+        "audit-store-consolidation": [
+          "audit-consolidation-2026-09"
+        ],
+        "shared-store-layout": [
+          "db-audit/orders-team",
+          "store-layout-2026-09"
+        ],
+        "delivery-identity-rotation": [
+          "db-audit-delivery-2026-09",
+          "identity-rotation-2026-09"
+        ],
+        "chargeback-attribution": [
+          "FIN-4471"
+        ]
+      }
+    },
+    {
+      "name": "effects-in-words",
+      "message": "The store I was pointed at looks like it has been folded into another one, the records seem to sit under a place of their own rather than at the root, and the identity that delivers them is not the one it was. Whose changes are those, and do I have to follow them?",
+      "expect": [],
+      "fingerprint": {
+        "audit-store-consolidation": [
+          "audit-consolidation-2026-09"
+        ],
+        "shared-store-layout": [
+          "db-audit/orders-team",
+          "store-layout-2026-09"
+        ],
+        "delivery-identity-rotation": [
+          "db-audit-delivery-2026-09",
+          "identity-rotation-2026-09"
+        ],
+        "chargeback-attribution": [
+          "FIN-4471"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "fingerprint": {
+        "audit-store-consolidation": [
+          "audit-consolidation-2026-09"
+        ],
+        "shared-store-layout": [
+          "db-audit/orders-team",
+          "store-layout-2026-09"
+        ],
+        "delivery-identity-rotation": [
+          "db-audit-delivery-2026-09",
+          "identity-rotation-2026-09"
+        ],
+        "chargeback-attribution": [
+          "FIN-4471"
+        ]
+      }
+    }
+  ]
+}

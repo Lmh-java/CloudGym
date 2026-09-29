@@ -1,0 +1,64 @@
+{
+  "cloudcontrol_type": "AWS::IAM::Role",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-01T02:32:09+00:00",
+      "ResourceDescription": {
+        "Identifier": "AWSReservedSSO_SandboxAdministrator_0000000000000001",
+        "Properties": "{\"Path\":\"/aws-reserved/sso.amazonaws.com/\",\"ManagedPolicyArns\":[\"arn:aws:iam::aws:policy/AdministratorAccess\"],\"MaxSessionDuration\":43200,\"RoleName\":\"AWSReservedSSO_SandboxAdministrator_0000000000000001\",\"AssumeRolePolicyDocument\":{\"Version\":\"2012-10-17\",\"Statement\":[{\"Condition\":{\"StringEquals\":{\"SAML:aud\":\"https://signin.aws.amazon.com/saml\"}},\"Action\":[\"sts:AssumeRoleWithSAML\",\"sts:TagSession\"],\"Effect\":\"Allow\",\"Principal\":{\"Federated\":\"arn:aws:iam::123456789012:saml-provider/AWSSSO_d19a45a4a1239f62_DO_NOT_DELETE\"}}]},\"Arn\":\"arn:aws:iam::123456789012:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_SandboxAdministrator_0000000000000001\",\"RoleId\":\"AROA00000000000000174\"}"
+      },
+      "TypeName": "AWS::IAM::Role"
+    },
+    {
+      "ReadAt": "2026-09-01T02:32:10+00:00",
+      "ResourceDescription": {
+        "Identifier": "AWSServiceRoleForOrganizations",
+        "Properties": "{\"Path\":\"/aws-service-role/organizations.amazonaws.com/\",\"ManagedPolicyArns\":[\"arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy\"],\"MaxSessionDuration\":3600,\"RoleName\":\"AWSServiceRoleForOrganizations\",\"Description\":\"Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.\",\"AssumeRolePolicyDocument\":{\"Version\":\"2012-10-17\",\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"organizations.amazonaws.com\"}}]},\"Arn\":\"arn:aws:iam::123456789012:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations\",\"RoleId\":\"AROA00000000000000181\"}"
+      },
+      "TypeName": "AWS::IAM::Role"
+    },
+    {
+      "ReadAt": "2026-09-01T02:32:10+00:00",
+      "ResourceDescription": {
+        "Identifier": "AWSServiceRoleForSSO",
+        "Properties": "{\"Path\":\"/aws-service-role/sso.amazonaws.com/\",\"ManagedPolicyArns\":[\"arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy\"],\"MaxSessionDuration\":3600,\"RoleName\":\"AWSServiceRoleForSSO\",\"Description\":\"Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.\",\"AssumeRolePolicyDocument\":{\"Version\":\"2012-10-17\",\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"sso.amazonaws.com\"}}]},\"Arn\":\"arn:aws:iam::123456789012:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO\",\"RoleId\":\"AROA00000000000000177\"}"
+      },
+      "TypeName": "AWS::IAM::Role"
+    },
+    {
+      "ReadAt": "2026-09-01T02:32:11+00:00",
+      "ResourceDescription": {
+        "Identifier": "AWSServiceRoleForSupport",
+        "Properties": "{\"Path\":\"/aws-service-role/support.amazonaws.com/\",\"ManagedPolicyArns\":[\"arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy\"],\"MaxSessionDuration\":3600,\"RoleName\":\"AWSServiceRoleForSupport\",\"Description\":\"Enables resource access for AWS to provide billing, administrative and support services\",\"AssumeRolePolicyDocument\":{\"Version\":\"2012-10-17\",\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"support.amazonaws.com\"}}]},\"Arn\":\"arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport\",\"RoleId\":\"AROA00000000000000220\"}"
+      },
+      "TypeName": "AWS::IAM::Role"
+    },
+    {
+      "ReadAt": "2026-09-01T02:32:11+00:00",
+      "ResourceDescription": {
+        "Identifier": "AWSServiceRoleForTrustedAdvisor",
+        "Properties": "{\"Path\":\"/aws-service-role/trustedadvisor.amazonaws.com/\",\"ManagedPolicyArns\":[\"arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy\"],\"MaxSessionDuration\":3600,\"RoleName\":\"AWSServiceRoleForTrustedAdvisor\",\"Description\":\"Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.\",\"AssumeRolePolicyDocument\":{\"Version\":\"2012-10-17\",\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"trustedadvisor.amazonaws.com\"}}]},\"Arn\":\"arn:aws:iam::123456789012:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor\",\"RoleId\":\"AROA00000000000000170\"}"
+      },
+      "TypeName": "AWS::IAM::Role"
+    },
+    {
+      "ReadAt": "2026-09-01T02:32:13+00:00",
+      "ResourceDescription": {
+        "Identifier": "OrganizationAccountAccessRole",
+        "Properties": "{\"Path\":\"/\",\"ManagedPolicyArns\":[\"arn:aws:iam::aws:policy/AdministratorAccess\"],\"MaxSessionDuration\":3600,\"RoleName\":\"OrganizationAccountAccessRole\",\"AssumeRolePolicyDocument\":{\"Version\":\"2012-10-17\",\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::000000000107:root\"}}]},\"Arn\":\"arn:aws:iam::123456789012:role/OrganizationAccountAccessRole\",\"RoleId\":\"AROA00000000000000219\"}"
+      },
+      "TypeName": "AWS::IAM::Role"
+    },
+    {
+      "ReadAt": "2026-09-01T02:32:12+00:00",
+      "ResourceDescription": {
+        "Identifier": "cloudgym-capability-20260901023151482100000001",
+        "Properties": "{\"Path\":\"/\",\"MaxSessionDuration\":3600,\"RoleName\":\"cloudgym-capability-20260901023151482100000001\",\"Description\":\"CloudGym extractor capability check\",\"AssumeRolePolicyDocument\":{\"Version\":\"2012-10-17\",\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"}}]},\"Arn\":\"arn:aws:iam::123456789012:role/cloudgym-capability-20260901023151482100000001\",\"RoleId\":\"AROA00000000000000192\"}"
+      },
+      "TypeName": "AWS::IAM::Role"
+    }
+  ],
+  "recorded_at": "2026-09-01T02:32:14+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

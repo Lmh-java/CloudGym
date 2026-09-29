@@ -1,0 +1,6169 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "succeeded"
+     },
+     "namesake-cpu-alarm": {
+      "status": "succeeded"
+     },
+     "runbook-alarm-name": {
+      "status": "succeeded"
+     },
+     "workload-attribution": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "succeeded"
+     },
+     "namesake-cpu-alarm": {
+      "status": "succeeded"
+     },
+     "runbook-alarm-name": {
+      "status": "succeeded"
+     },
+     "workload-attribution": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "This metric monitors ec2 cpu utilization",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ],
+        "Threshold": 80
+       },
+       "payments-api-cpu-high": {
+        "ActionsEnabled": false,
+        "AlarmDescription": "Payments API fleet CPU headroom; scoped to the payments fleet (capacity ticket PAY-7781) [chargeback CB-4419]",
+        "AlarmName": "payments-api-cpu-high",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "payments-api-asg"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "payments-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-api"
+         },
+         {
+          "Key": "Name",
+          "Value": "payments-api-cpu"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ],
+        "Threshold": 75
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ]
+       },
+       "b2000000-0000-4000-8000-00000000c002": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "payments-api-cpu-high",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "payments-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-api"
+         },
+         {
+          "Key": "Name",
+          "Value": "payments-api-cpu"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ]
+       },
+       "b3000000-0000-4000-8000-00000000c003": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "cutover-wave3.mig8830.example",
+         "Inverted": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-cutover"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-migration"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c009": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Workload",
+          "Value": "unallocated"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-8802"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "succeeded"
+     },
+     "namesake-cpu-alarm": {
+      "status": "succeeded"
+     },
+     "runbook-alarm-name": {
+      "status": "succeeded"
+     },
+     "workload-attribution": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm (runbook RB-4471) [chargeback CB-4419]",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       },
+       "orders-api-cpu-utilization": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Orders API fleet CPU utilization",
+        "AlarmName": "orders-api-cpu-utilization",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ],
+        "Threshold": 80
+       },
+       "payments-api-cpu-high": {
+        "ActionsEnabled": false,
+        "AlarmDescription": "Payments API fleet CPU headroom; scoped to the payments fleet (capacity ticket PAY-7781) [chargeback CB-4419]",
+        "AlarmName": "payments-api-cpu-high",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "payments-api-asg"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "payments-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-api"
+         },
+         {
+          "Key": "Name",
+          "Value": "payments-api-cpu"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ],
+        "Threshold": 75
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ]
+       },
+       "b2000000-0000-4000-8000-00000000c002": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "payments-api-cpu-high",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "payments-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-api"
+         },
+         {
+          "Key": "Name",
+          "Value": "payments-api-cpu"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ]
+       },
+       "b3000000-0000-4000-8000-00000000c003": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "cutover-wave3.mig8830.example",
+         "Inverted": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-cutover"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-migration"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c009": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "orders-api-cpu-utilization",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Environment",
+          "Value": "production"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "succeeded"
+     },
+     "namesake-cpu-alarm": {
+      "status": "succeeded"
+     },
+     "runbook-alarm-name": {
+      "status": "succeeded"
+     },
+     "workload-attribution": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm (runbook RB-4471) [chargeback CB-4419]",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       },
+       "orders-api-cpu-utilization": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Orders API fleet CPU utilization [chargeback CB-4419]",
+        "AlarmName": "orders-api-cpu-utilization",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "orders-api"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ],
+        "Threshold": 80
+       },
+       "payments-api-cpu-high": {
+        "ActionsEnabled": false,
+        "AlarmDescription": "Payments API fleet CPU headroom; scoped to the payments fleet (capacity ticket PAY-7781) [chargeback CB-4419]",
+        "AlarmName": "payments-api-cpu-high",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "payments-api-asg"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "payments-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-api"
+         },
+         {
+          "Key": "Name",
+          "Value": "payments-api-cpu"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ],
+        "Threshold": 75
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ]
+       },
+       "b2000000-0000-4000-8000-00000000c002": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "payments-api-cpu-high",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "payments-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-api"
+         },
+         {
+          "Key": "Name",
+          "Value": "payments-api-cpu"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ]
+       },
+       "b3000000-0000-4000-8000-00000000c003": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "cutover-wave3.mig8830.example",
+         "Inverted": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-cutover"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-migration"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c009": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "orders-api-cpu-utilization",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "not-fired"
+     },
+     "namesake-cpu-alarm": {
+      "status": "not-fired"
+     },
+     "runbook-alarm-name": {
+      "status": "not-fired"
+     },
+     "workload-attribution": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       },
+       "orders-api-cpu-utilization": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Orders API fleet CPU utilization",
+        "AlarmName": "orders-api-cpu-utilization",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "orders-api"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ],
+        "Threshold": 80
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c009": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "orders-api-cpu-utilization",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "not-fired"
+     },
+     "namesake-cpu-alarm": {
+      "status": "not-fired"
+     },
+     "runbook-alarm-name": {
+      "status": "not-fired"
+     },
+     "workload-attribution": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "This metric monitors ec2 cpu utilization",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 300,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 80
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c009": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "LastKnownStatus",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "not-fired"
+     },
+     "namesake-cpu-alarm": {
+      "status": "not-fired"
+     },
+     "runbook-alarm-name": {
+      "status": "failed"
+     },
+     "workload-attribution": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Orders API fleet CPU utilization",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 80
+       },
+       "orders-api-cpu-utilization": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Orders API fleet CPU utilization",
+        "AlarmName": "orders-api-cpu-utilization",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "orders-api"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ],
+        "Threshold": 80
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c009": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "orders-api-cpu-utilization",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-runbook-alarm-name"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "not-fired"
+     },
+     "namesake-cpu-alarm": {
+      "status": "failed"
+     },
+     "runbook-alarm-name": {
+      "status": "not-fired"
+     },
+     "workload-attribution": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       },
+       "orders-api-cpu-utilization": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Orders API fleet CPU utilization",
+        "AlarmName": "orders-api-cpu-utilization",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "orders-api"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ],
+        "Threshold": 80
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c009": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "orders-api-cpu-utilization",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-namesake-cpu-alarm"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "failed"
+     },
+     "namesake-cpu-alarm": {
+      "status": "not-fired"
+     },
+     "runbook-alarm-name": {
+      "status": "not-fired"
+     },
+     "workload-attribution": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       },
+       "orders-api-cpu-utilization": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Orders API fleet CPU utilization",
+        "AlarmName": "orders-api-cpu-utilization",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "orders-api"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ],
+        "Threshold": 80
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c009": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "orders-api-cpu-utilization",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-billing-check-cutover"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "not-fired"
+     },
+     "namesake-cpu-alarm": {
+      "status": "not-fired"
+     },
+     "runbook-alarm-name": {
+      "status": "not-fired"
+     },
+     "workload-attribution": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       },
+       "orders-api-cpu-utilization": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Orders API fleet CPU utilization",
+        "AlarmName": "orders-api-cpu-utilization",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "orders-api"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [],
+        "Threshold": 80
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c009": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "orders-api-cpu-utilization",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": []
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-workload-attribution"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "succeeded"
+     },
+     "namesake-cpu-alarm": {
+      "status": "succeeded"
+     },
+     "runbook-alarm-name": {
+      "status": "succeeded"
+     },
+     "workload-attribution": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Orders API fleet CPU utilization",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ],
+        "Threshold": 80
+       },
+       "orders-api-cpu-utilization": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Orders API fleet CPU utilization [chargeback CB-4419]",
+        "AlarmName": "orders-api-cpu-utilization",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "orders-api"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ],
+        "Threshold": 80
+       },
+       "payments-api-cpu-high": {
+        "ActionsEnabled": false,
+        "AlarmDescription": "Payments API fleet CPU headroom; scoped to the payments fleet (capacity ticket PAY-7781) [chargeback CB-4419]",
+        "AlarmName": "payments-api-cpu-high",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "payments-api-asg"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "payments-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-api"
+         },
+         {
+          "Key": "Name",
+          "Value": "payments-api-cpu"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ],
+        "Threshold": 75
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ]
+       },
+       "b2000000-0000-4000-8000-00000000c002": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "payments-api-cpu-high",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "payments-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-api"
+         },
+         {
+          "Key": "Name",
+          "Value": "payments-api-cpu"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ]
+       },
+       "b3000000-0000-4000-8000-00000000c003": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "cutover-wave3.mig8830.example",
+         "Inverted": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-cutover"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-migration"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c009": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "orders-api-cpu-utilization",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-runbook-alarm-name"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "succeeded"
+     },
+     "namesake-cpu-alarm": {
+      "status": "succeeded"
+     },
+     "runbook-alarm-name": {
+      "status": "succeeded"
+     },
+     "workload-attribution": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm (runbook RB-4471) [chargeback CB-4419]",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       },
+       "payments-api-cpu-high": {
+        "ActionsEnabled": false,
+        "AlarmDescription": "Payments API fleet CPU headroom; scoped to the payments fleet (capacity ticket PAY-7781) [chargeback CB-4419]",
+        "AlarmName": "payments-api-cpu-high",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "payments-api-asg"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "payments-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-api"
+         },
+         {
+          "Key": "Name",
+          "Value": "payments-api-cpu"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ],
+        "Threshold": 75
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ]
+       },
+       "b2000000-0000-4000-8000-00000000c002": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "payments-api-cpu-high",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "payments-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-api"
+         },
+         {
+          "Key": "Name",
+          "Value": "payments-api-cpu"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ]
+       },
+       "b3000000-0000-4000-8000-00000000c003": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "cutover-wave3.mig8830.example",
+         "Inverted": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-cutover"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-migration"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c009": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "payments-api-cpu-high",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-namesake-cpu-alarm"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "succeeded"
+     },
+     "namesake-cpu-alarm": {
+      "status": "succeeded"
+     },
+     "runbook-alarm-name": {
+      "status": "succeeded"
+     },
+     "workload-attribution": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm (runbook RB-4471) [chargeback CB-4419]",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       },
+       "orders-api-cpu-utilization": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Orders API fleet CPU utilization [chargeback CB-4419]",
+        "AlarmName": "orders-api-cpu-utilization",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "orders-api"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ],
+        "Threshold": 80
+       },
+       "payments-api-cpu-high": {
+        "ActionsEnabled": false,
+        "AlarmDescription": "Payments API fleet CPU headroom; scoped to the payments fleet (capacity ticket PAY-7781) [chargeback CB-4419]",
+        "AlarmName": "payments-api-cpu-high",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "payments-api-asg"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "payments-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-api"
+         },
+         {
+          "Key": "Name",
+          "Value": "payments-api-cpu"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ],
+        "Threshold": 75
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b2000000-0000-4000-8000-00000000c002": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "payments-api-cpu-high",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "payments-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-api"
+         },
+         {
+          "Key": "Name",
+          "Value": "payments-api-cpu"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ]
+       },
+       "b3000000-0000-4000-8000-00000000c003": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "cutover-wave3.mig8830.example",
+         "Inverted": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-cutover"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-migration"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c009": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "orders-api-cpu-utilization",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-billing-check-cutover"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "succeeded"
+     },
+     "namesake-cpu-alarm": {
+      "status": "succeeded"
+     },
+     "runbook-alarm-name": {
+      "status": "succeeded"
+     },
+     "workload-attribution": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm (runbook RB-4471) [chargeback CB-4419]",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       },
+       "orders-api-cpu-utilization": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Orders API fleet CPU utilization [chargeback CB-8802]",
+        "AlarmName": "orders-api-cpu-utilization",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "orders-api"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Workload",
+          "Value": "unallocated"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-8802"
+         }
+        ],
+        "Threshold": 80
+       },
+       "payments-api-cpu-high": {
+        "ActionsEnabled": false,
+        "AlarmDescription": "Payments API fleet CPU headroom; scoped to the payments fleet (capacity ticket PAY-7781) [chargeback CB-4419]",
+        "AlarmName": "payments-api-cpu-high",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "payments-api-asg"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "payments-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-api"
+         },
+         {
+          "Key": "Name",
+          "Value": "payments-api-cpu"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ],
+        "Threshold": 75
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ]
+       },
+       "b2000000-0000-4000-8000-00000000c002": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "payments-api-cpu-high",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "payments-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-api"
+         },
+         {
+          "Key": "Name",
+          "Value": "payments-api-cpu"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ]
+       },
+       "b3000000-0000-4000-8000-00000000c003": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "cutover-wave3.mig8830.example",
+         "Inverted": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-cutover"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-migration"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c009": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "orders-api-cpu-utilization",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Workload",
+          "Value": "unallocated"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-8802"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-workload-attribution"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "not-fired"
+     },
+     "namesake-cpu-alarm": {
+      "status": "not-fired"
+     },
+     "runbook-alarm-name": {
+      "status": "not-fired"
+     },
+     "workload-attribution": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       },
+       "orders-api-cpu-utilization": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Orders API fleet CPU utilization",
+        "AlarmName": "orders-api-cpu-utilization",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "orders-api"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ],
+        "Threshold": 80
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-no-health-check"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "not-fired"
+     },
+     "namesake-cpu-alarm": {
+      "status": "not-fired"
+     },
+     "runbook-alarm-name": {
+      "status": "not-fired"
+     },
+     "workload-attribution": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       },
+       "orders-api-cpu-utilization": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Orders API fleet CPU utilization",
+        "AlarmName": "orders-api-cpu-utilization",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "orders-api"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ],
+        "Threshold": 80
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c009": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "orders-api-cpu-utilization",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-insufficient-data-not-healthy"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "not-fired"
+     },
+     "namesake-cpu-alarm": {
+      "status": "not-fired"
+     },
+     "runbook-alarm-name": {
+      "status": "not-fired"
+     },
+     "workload-attribution": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       },
+       "orders-api-cpu-utilization": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Orders API fleet CPU utilization",
+        "AlarmName": "orders-api-cpu-utilization",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "orders-api"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ],
+        "Threshold": 80
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c009": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-bound-to-the-error-alarm"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "not-fired"
+     },
+     "namesake-cpu-alarm": {
+      "status": "not-fired"
+     },
+     "runbook-alarm-name": {
+      "status": "not-fired"
+     },
+     "workload-attribution": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       },
+       "orders-api-cpu-utilization": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Orders API fleet CPU utilization",
+        "AlarmName": "orders-api-cpu-utilization",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "orders-api"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Maximum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ],
+        "Threshold": 80
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c009": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "orders-api-cpu-utilization",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-wrong-statistic"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "not-fired"
+     },
+     "namesake-cpu-alarm": {
+      "status": "not-fired"
+     },
+     "runbook-alarm-name": {
+      "status": "not-fired"
+     },
+     "workload-attribution": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       },
+       "orders-api-cpu-utilization": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Orders API fleet CPU utilization",
+        "AlarmName": "orders-api-cpu-utilization",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "orders-api"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 300,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ],
+        "Threshold": 80
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c009": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "orders-api-cpu-utilization",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-wrong-period"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "not-fired"
+     },
+     "namesake-cpu-alarm": {
+      "status": "not-fired"
+     },
+     "runbook-alarm-name": {
+      "status": "not-fired"
+     },
+     "workload-attribution": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       },
+       "orders-api-cpu-utilization": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Orders API fleet CPU utilization",
+        "AlarmName": "orders-api-cpu-utilization",
+        "ComparisonOperator": "LessThanThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "orders-api"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ],
+        "Threshold": 80
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c009": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "orders-api-cpu-utilization",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-wrong-comparison-operator"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "not-fired"
+     },
+     "namesake-cpu-alarm": {
+      "status": "not-fired"
+     },
+     "runbook-alarm-name": {
+      "status": "not-fired"
+     },
+     "workload-attribution": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       },
+       "orders-api-cpu-utilization": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Orders API fleet CPU utilization",
+        "AlarmName": "orders-api-cpu-utilization",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "orders-api"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c009": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "orders-api-cpu-utilization",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-no-threshold"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "not-fired"
+     },
+     "namesake-cpu-alarm": {
+      "status": "not-fired"
+     },
+     "runbook-alarm-name": {
+      "status": "not-fired"
+     },
+     "workload-attribution": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       },
+       "orders-api-cpu-utilization": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Orders API fleet CPU utilization",
+        "AlarmName": "orders-api-cpu-utilization",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "orders-api"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/ApplicationELB",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ],
+        "Threshold": 80
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c009": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "orders-api-cpu-utilization",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-wrong-namespace"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "not-fired"
+     },
+     "namesake-cpu-alarm": {
+      "status": "not-fired"
+     },
+     "runbook-alarm-name": {
+      "status": "not-fired"
+     },
+     "workload-attribution": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       },
+       "orders-api-cpu-utilization": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Orders API fleet CPU utilization",
+        "AlarmName": "orders-api-cpu-utilization",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "orders-api"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ],
+        "Threshold": 80
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c009": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "orders-api-cpu-utilization",
+          "Region": "eu-west-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-alarm-in-another-region"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "not-fired"
+     },
+     "namesake-cpu-alarm": {
+      "status": "not-fired"
+     },
+     "runbook-alarm-name": {
+      "status": "not-fired"
+     },
+     "workload-attribution": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       },
+       "orders-api-cpu-utilization": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Orders API fleet CPU utilization",
+        "AlarmName": "orders-api-cpu-utilization",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "orders-api"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ],
+        "Threshold": 80
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c009": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "orders-api-cpu-utilization",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c010": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "orders-api-cpu-utilization",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-two-checks-on-the-same-reading"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "status": "not-fired"
+     },
+     "namesake-cpu-alarm": {
+      "status": "not-fired"
+     },
+     "runbook-alarm-name": {
+      "status": "not-fired"
+     },
+     "workload-attribution": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       },
+       "orders-api-cpu-utilization": {
+        "ActionsEnabled": true,
+        "AlarmDescription": "Orders API fleet CPU utilization",
+        "AlarmName": "orders-api-cpu-utilization",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "orders-api"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ],
+        "Threshold": 80
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "b1000000-0000-4000-8000-00000000c001": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ]
+       },
+       "b9000000-0000-4000-8000-00000000c009": {
+        "HealthCheckConfig": {
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "orders.example",
+         "Inverted": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckTags": [
+         {
+          "Key": "Owner",
+          "Value": "orders-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "name": "negative-check-is-not-alarm-backed"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmActions": [],
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "Arn": "arn:aws:cloudwatch:us-east-1:000000000114:alarm:foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "InsufficientDataActions": [],
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "OKActions": [],
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "4335910d-2d0b-4706-b1ed-aa5490e4ef67": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckId": "4335910d-2d0b-4706-b1ed-aa5490e4ef67",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         }
+        ]
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmActions": [],
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "Arn": "arn:aws:cloudwatch:us-east-1:000000000114:alarm:foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "InsufficientDataActions": [],
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "OKActions": [],
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       },
+       "orders-api-cpu": {
+        "ActionsEnabled": true,
+        "AlarmActions": [],
+        "AlarmDescription": "Orders API EC2 fleet CPU utilization; backs the Route 53 CloudWatch-metric health check",
+        "AlarmName": "orders-api-cpu",
+        "Arn": "arn:aws:cloudwatch:us-east-1:000000000114:alarm:orders-api-cpu",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "EvaluationPeriods": 2,
+        "InsufficientDataActions": [],
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "OKActions": [],
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ],
+        "Threshold": 80
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "4335910d-2d0b-4706-b1ed-aa5490e4ef67": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckId": "4335910d-2d0b-4706-b1ed-aa5490e4ef67",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         }
+        ]
+       },
+       "4bb6ec09-d821-42ac-851a-2971e380acd6": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "orders-api-cpu",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckId": "4bb6ec09-d821-42ac-851a-2971e380acd6",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         }
+        ]
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "billing-check-cutover": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 1,
+        "landed_ns": 20845499109578,
+        "landed_s": 6.336,
+        "result": {
+         "cutover_check": "1dc83b61-4730-4ac2-a479-0fecb2ce26d4",
+         "cutover_created": true,
+         "endpoint": "cutover-wave3.mig8830.example",
+         "fingerprint": [
+          "cutover-wave3.mig8830.example"
+         ],
+         "legacy_check": "7d8cd462-0233-4255-9bcf-505e0a2afa38",
+         "restored": false,
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-billing-check-cutover-1",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "cutover_check": "1dc83b61-4730-4ac2-a479-0fecb2ce26d4",
+       "cutover_created": true,
+       "endpoint": "cutover-wave3.mig8830.example",
+       "fingerprint": [
+        "cutover-wave3.mig8830.example"
+       ],
+       "legacy_check": "7d8cd462-0233-4255-9bcf-505e0a2afa38",
+       "restored": false,
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "namesake-cpu-alarm": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 3,
+        "landed_ns": 20887827479257,
+        "landed_s": 48.665,
+        "result": {
+         "alarm": "payments-api-cpu-high",
+         "check": "1fbfb444-f3dc-42b5-ba9a-85e8ddca3315",
+         "check_created": true,
+         "fingerprint": [
+          "payments-api-cpu-high",
+          "payments-api-asg"
+         ],
+         "fleet": "payments-api-asg",
+         "ticket": "PAY-7781",
+         "trigger": "snapshot"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-namesake-cpu-alarm-3",
+        "trigger_kind": "snapshot"
+       }
+      ],
+      "result": {
+       "alarm": "payments-api-cpu-high",
+       "check": "1fbfb444-f3dc-42b5-ba9a-85e8ddca3315",
+       "check_created": true,
+       "fingerprint": [
+        "payments-api-cpu-high",
+        "payments-api-asg"
+       ],
+       "fleet": "payments-api-asg",
+       "ticket": "PAY-7781",
+       "trigger": "snapshot"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "runbook-alarm-name": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 2,
+        "landed_ns": 20859827020564,
+        "landed_s": 20.664,
+        "result": {
+         "alarm": "foobar",
+         "fingerprint": [
+          "RB-4471"
+         ],
+         "function": "billing-worker",
+         "measurement": "AWS/Lambda Errors",
+         "reference": "RB-4471",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-runbook-alarm-name-2",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "alarm": "foobar",
+       "fingerprint": [
+        "RB-4471"
+       ],
+       "function": "billing-worker",
+       "measurement": "AWS/Lambda Errors",
+       "reference": "RB-4471",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "workload-attribution": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 4,
+        "landed_ns": 20894693025477,
+        "landed_s": 55.53,
+        "result": {
+         "alarms": [
+          {
+           "alarm": "foobar",
+           "case": "CB-4419"
+          },
+          {
+           "alarm": "foobar-orders-api-cpu",
+           "case": "CB-4419"
+          },
+          {
+           "alarm": "payments-api-cpu-high",
+           "case": "CB-4419"
+          }
+         ],
+         "attributed_case": "CB-4419",
+         "checks": [
+          {
+           "case": "CB-4419",
+           "check": "1dc83b61-4730-4ac2-a479-0fecb2ce26d4"
+          },
+          {
+           "case": "CB-4419",
+           "check": "1fbfb444-f3dc-42b5-ba9a-85e8ddca3315"
+          },
+          {
+           "case": "CB-4419",
+           "check": "7d8cd462-0233-4255-9bcf-505e0a2afa38"
+          },
+          {
+           "case": "CB-8802",
+           "check": "d1864f4a-9e5e-4575-836f-692bb374cce4"
+          }
+         ],
+         "fingerprint": [
+          "CB-4419"
+         ],
+         "trigger": "snapshot",
+         "unallocated_case": "CB-8802"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-workload-attribution-4",
+        "trigger_kind": "snapshot"
+       }
+      ],
+      "result": {
+       "alarms": [
+        {
+         "alarm": "foobar",
+         "case": "CB-4419"
+        },
+        {
+         "alarm": "foobar-orders-api-cpu",
+         "case": "CB-4419"
+        },
+        {
+         "alarm": "payments-api-cpu-high",
+         "case": "CB-4419"
+        }
+       ],
+       "attributed_case": "CB-4419",
+       "checks": [
+        {
+         "case": "CB-4419",
+         "check": "1dc83b61-4730-4ac2-a479-0fecb2ce26d4"
+        },
+        {
+         "case": "CB-4419",
+         "check": "1fbfb444-f3dc-42b5-ba9a-85e8ddca3315"
+        },
+        {
+         "case": "CB-4419",
+         "check": "7d8cd462-0233-4255-9bcf-505e0a2afa38"
+        },
+        {
+         "case": "CB-8802",
+         "check": "d1864f4a-9e5e-4575-836f-692bb374cce4"
+        }
+       ],
+       "fingerprint": [
+        "CB-4419"
+       ],
+       "trigger": "snapshot",
+       "unallocated_case": "CB-8802"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": true,
+        "AlarmActions": [],
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm",
+        "AlarmName": "foobar",
+        "Arn": "arn:aws:cloudwatch:us-east-1:000000000104:alarm:foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "InsufficientDataActions": [],
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "OKActions": [],
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "7d8cd462-0233-4255-9bcf-505e0a2afa38": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckId": "7d8cd462-0233-4255-9bcf-505e0a2afa38",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         }
+        ]
+       }
+      }
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::CloudWatch::Alarm": {
+       "foobar": {
+        "ActionsEnabled": false,
+        "AlarmActions": [],
+        "AlarmDescription": "Billing worker error rate; the on-call runbook watches this alarm (runbook RB-4471) [chargeback CB-4419]",
+        "AlarmName": "foobar",
+        "Arn": "arn:aws:cloudwatch:us-east-1:000000000104:alarm:foobar",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": "billing-worker"
+         }
+        ],
+        "EvaluationPeriods": 1,
+        "InsufficientDataActions": [],
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda",
+        "OKActions": [],
+        "Period": 300,
+        "Statistic": "Sum",
+        "Tags": [
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         }
+        ],
+        "Threshold": 1,
+        "TreatMissingData": "notBreaching"
+       },
+       "foobar-orders-api-cpu": {
+        "ActionsEnabled": true,
+        "AlarmActions": [],
+        "AlarmDescription": "Orders API EC2 fleet CPU utilization; backs the orders-api Route 53 CloudWatch metric health check [chargeback CB-4419]",
+        "AlarmName": "foobar-orders-api-cpu",
+        "Arn": "arn:aws:cloudwatch:us-east-1:000000000104:alarm:foobar-orders-api-cpu",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "EvaluationPeriods": 2,
+        "InsufficientDataActions": [],
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "OKActions": [],
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         },
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         }
+        ],
+        "Threshold": 80,
+        "TreatMissingData": "missing"
+       },
+       "payments-api-cpu-high": {
+        "ActionsEnabled": false,
+        "AlarmActions": [],
+        "AlarmDescription": "Payments API fleet CPU headroom; scoped to the payments fleet (capacity ticket PAY-7781) [chargeback CB-4419]",
+        "AlarmName": "payments-api-cpu-high",
+        "Arn": "arn:aws:cloudwatch:us-east-1:000000000104:alarm:payments-api-cpu-high",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": [
+         {
+          "Name": "AutoScalingGroupName",
+          "Value": "payments-api-asg"
+         }
+        ],
+        "EvaluationPeriods": 2,
+        "InsufficientDataActions": [],
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "OKActions": [],
+        "Period": 120,
+        "Statistic": "Average",
+        "Tags": [
+         {
+          "Key": "Owner",
+          "Value": "payments-team"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         },
+         {
+          "Key": "Name",
+          "Value": "payments-api-cpu"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-api"
+         }
+        ],
+        "Threshold": 75
+       }
+      },
+      "AWS::Route53::HealthCheck": {
+       "1dc83b61-4730-4ac2-a479-0fecb2ce26d4": {
+        "HealthCheckConfig": {
+         "EnableSNI": false,
+         "FailureThreshold": 3,
+         "FullyQualifiedDomainName": "cutover-wave3.mig8830.example",
+         "Inverted": false,
+         "MeasureLatency": false,
+         "Port": 80,
+         "RequestInterval": 30,
+         "ResourcePath": "/",
+         "Type": "HTTP"
+        },
+        "HealthCheckId": "1dc83b61-4730-4ac2-a479-0fecb2ce26d4",
+        "HealthCheckTags": [
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-migration"
+         },
+         {
+          "Key": "Name",
+          "Value": "billing-worker-cutover"
+         }
+        ]
+       },
+       "1fbfb444-f3dc-42b5-ba9a-85e8ddca3315": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "payments-api-cpu-high",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckId": "1fbfb444-f3dc-42b5-ba9a-85e8ddca3315",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "payments-api-cpu"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         },
+         {
+          "Key": "Owner",
+          "Value": "payments-team"
+         },
+         {
+          "Key": "Workload",
+          "Value": "payments-api"
+         }
+        ]
+       },
+       "7d8cd462-0233-4255-9bcf-505e0a2afa38": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Unhealthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckId": "7d8cd462-0233-4255-9bcf-505e0a2afa38",
+        "HealthCheckTags": [
+         {
+          "Key": "Name",
+          "Value": "billing-worker-errors"
+         },
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         },
+         {
+          "Key": "Workload",
+          "Value": "billing-worker"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         }
+        ]
+       },
+       "d1864f4a-9e5e-4575-836f-692bb374cce4": {
+        "HealthCheckConfig": {
+         "AlarmIdentifier": {
+          "Name": "foobar-orders-api-cpu",
+          "Region": "us-east-1"
+         },
+         "InsufficientDataHealthStatus": "Healthy",
+         "Inverted": false,
+         "Type": "CLOUDWATCH_METRIC"
+        },
+        "HealthCheckId": "d1864f4a-9e5e-4575-836f-692bb374cce4",
+        "HealthCheckTags": [
+         {
+          "Key": "Chargeback",
+          "Value": "CB-4419"
+         },
+         {
+          "Key": "Name",
+          "Value": "orders-api-cpu"
+         },
+         {
+          "Key": "Workload",
+          "Value": "orders-api"
+         },
+         {
+          "Key": "Owner",
+          "Value": "platform-oncall"
+         }
+        ]
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-interference-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

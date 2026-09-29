@@ -1,0 +1,71 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "gateway-already-attached",
+      "message": "Attaching my own gateway was refused and describe-internet-gateways shows net-shared-igw on this network, with a table net-shared-public-rt already sending 0.0.0.0/0 through it. Should the segments I am adding use that path instead of one of mine?",
+      "expect": ["shared-egress-path"],
+      "fingerprint": {
+        "shared-egress-path": ["net-shared-igw", "net-shared-public-rt"],
+        "reserved-range": ["data-plane-reserved", "10.0.0.0/22"],
+        "cost-attribution": ["2026-q3-unclaimed", "unallocated"],
+        "ingress-exposure-baseline": ["per-instance-assignment"]
+      }
+    },
+    {
+      "name": "block-taken",
+      "message": "The block I planned to use is inside 10.0.0.0/22, which describe-subnets shows held by data-plane-reserved. Do I move my segments elsewhere, or is that space available to me?",
+      "expect": ["reserved-range"],
+      "fingerprint": {
+        "shared-egress-path": ["net-shared-igw", "net-shared-public-rt"],
+        "reserved-range": ["data-plane-reserved", "10.0.0.0/22"],
+        "cost-attribution": ["2026-q3-unclaimed", "unallocated"],
+        "ingress-exposure-baseline": ["per-instance-assignment"]
+      }
+    },
+    {
+      "name": "booked-to-nobody",
+      "message": "My new segments came back stamped 2026-q3-unclaimed and booked to unallocated. What should they be charged to instead?",
+      "expect": ["cost-attribution"],
+      "fingerprint": {
+        "shared-egress-path": ["net-shared-igw", "net-shared-public-rt"],
+        "reserved-range": ["data-plane-reserved", "10.0.0.0/22"],
+        "cost-attribution": ["2026-q3-unclaimed", "unallocated"],
+        "ingress-exposure-baseline": ["per-instance-assignment"]
+      }
+    },
+    {
+      "name": "exposure-mark",
+      "message": "Both segments now read per-instance-assignment in their tags. Is that how they are meant to stay, or may I put them back the way I set them up?",
+      "expect": ["ingress-exposure-baseline"],
+      "fingerprint": {
+        "shared-egress-path": ["net-shared-igw", "net-shared-public-rt"],
+        "reserved-range": ["data-plane-reserved", "10.0.0.0/22"],
+        "cost-attribution": ["2026-q3-unclaimed", "unallocated"],
+        "ingress-exposure-baseline": ["per-instance-assignment"]
+      }
+    },
+    {
+      "name": "effect-in-words",
+      "message": "Something switched off automatic public address assignment on the subnets I just made, re-tagged them, and put a second table on this network. Is there a standard behind any of that?",
+      "expect": [],
+      "fingerprint": {
+        "shared-egress-path": ["net-shared-igw", "net-shared-public-rt"],
+        "reserved-range": ["data-plane-reserved", "10.0.0.0/22"],
+        "cost-attribution": ["2026-q3-unclaimed", "unallocated"],
+        "ingress-exposure-baseline": ["per-instance-assignment"]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "shared-egress-path": ["net-shared-igw", "net-shared-public-rt"],
+        "reserved-range": ["data-plane-reserved", "10.0.0.0/22"],
+        "cost-attribution": ["2026-q3-unclaimed", "unallocated"],
+        "ingress-exposure-baseline": ["per-instance-assignment"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::EFS::FileSystem",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-24T00:20:39+00:00",
+      "ResourceDescription": {
+        "Identifier": "fs-014b2ab6a3b866f3d",
+        "Properties": "{\"KmsKeyId\":\"arn:aws:kms:us-east-1:123456789012:key/434b1506-e4b3-4d7c-b6f5-0720741d8c4c\",\"PerformanceMode\":\"generalPurpose\",\"Encrypted\":true,\"FileSystemTags\":[{\"Value\":\"cloudgym-capability\",\"Key\":\"Name\"}],\"FileSystemId\":\"fs-014b2ab6a3b866f3d\",\"FileSystemProtection\":{\"ReplicationOverwriteProtection\":\"ENABLED\"},\"LifecyclePolicies\":[{\"TransitionToIA\":\"AFTER_30_DAYS\"}],\"Arn\":\"arn:aws:elasticfilesystem:us-east-1:123456789012:file-system/fs-014b2ab6a3b866f3d\",\"ThroughputMode\":\"bursting\",\"BackupPolicy\":{\"Status\":\"DISABLED\"}}"
+      },
+      "TypeName": "AWS::EFS::FileSystem"
+    }
+  ],
+  "recorded_at": "2026-09-24T00:20:39+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

@@ -1,0 +1,2 @@
+A network resolves through one configuration at a time; what the account already hands that network stays handed to it, and networks that resolve together are not left apart.
+What you did not put there stays as found; a hold kept elsewhere does not settle a workload's own request.

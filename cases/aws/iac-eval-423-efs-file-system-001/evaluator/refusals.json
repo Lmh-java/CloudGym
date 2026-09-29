@@ -1,0 +1,23 @@
+{
+  "distractors": {
+    "peak-headroom-raise": {
+      "codes": [
+        "IncorrectFileSystemLifeCycleState"
+      ],
+      "entry": "efs.file-system",
+      "operation": "PutFileSystemPolicy",
+      "service": "efs",
+      "source": "manual"
+    },
+    "throughput-baseline-move": {
+      "codes": [
+        "IncorrectFileSystemLifeCycleState"
+      ],
+      "entry": "efs.file-system",
+      "operation": "PutFileSystemPolicy",
+      "service": "efs",
+      "source": "manual"
+    }
+  },
+  "schema_version": 1
+}

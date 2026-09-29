@@ -1,0 +1,39 @@
+[project]
+name = "cloudgym-bench"
+version = "0.1.0"
+description = "A benchmark and evaluation harness for cloud agents under interference"
+readme = "README.md"
+# Different components use different licenses; see README.md for scope.
+license = "MIT AND CC-BY-4.0"
+license-files = ["LICENSE", "cases/LICENSE.md", "THIRD_PARTY_NOTICES.md"]
+requires-python = ">=3.13"
+dependencies = [
+  "boto3==1.43.62",
+  "botocore==1.43.62",
+  "mcp==2.0.0",
+  "python-hcl2==4.3.5",
+  "pyyaml>=6",
+]
+
+[project.scripts]
+cloudgym-runtime = "harness.runtime.app:main"
+run-case = "scripts.run_case:main"
+bench = "scripts.bench:main"
+sandbox-clean = "scripts.sandbox_cleanup:main"
+sandbox-pool = "scripts.sandbox_pool:main"
+validate-case = "scripts.validate_case:main"
+refusals = "scripts.refusals:main"
+summarize-results = "scripts.summarize_results:main"
+
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["harness", "scripts"]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

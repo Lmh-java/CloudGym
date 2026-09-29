@@ -1,0 +1,128 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "projection-store-appeared",
+      "message": "A table orders-events-projection that I did not create is standing in the account, recorded as the orders service's. Does it count as one of the service's stores for this change?",
+      "expect": [
+        "orders-projection-store"
+      ],
+      "fingerprint": {
+        "orders-projection-store": [
+          "orders-events-projection"
+        ],
+        "release-candidate-store": [
+          "orders-events-next"
+        ],
+        "refunds-namesake-store": [
+          "orders-events-refunds"
+        ],
+        "cutover-staging-copy": [
+          "orders-events-cutover"
+        ]
+      }
+    },
+    {
+      "name": "staged-store-appeared",
+      "message": "There is now an orders-events-next table that was not there when I started, and it is recorded to the same service. Is it in scope for me or does it wait for its release?",
+      "expect": [
+        "release-candidate-store"
+      ],
+      "fingerprint": {
+        "orders-projection-store": [
+          "orders-events-projection"
+        ],
+        "release-candidate-store": [
+          "orders-events-next"
+        ],
+        "refunds-namesake-store": [
+          "orders-events-refunds"
+        ],
+        "cutover-staging-copy": [
+          "orders-events-cutover"
+        ]
+      }
+    },
+    {
+      "name": "namesake-appeared",
+      "message": "orders-events-refunds turned up under the same naming as the stores I was asked about, but its owner record names another workload. Should I treat it as one of them?",
+      "expect": [
+        "refunds-namesake-store"
+      ],
+      "fingerprint": {
+        "orders-projection-store": [
+          "orders-events-projection"
+        ],
+        "release-candidate-store": [
+          "orders-events-next"
+        ],
+        "refunds-namesake-store": [
+          "orders-events-refunds"
+        ],
+        "cutover-staging-copy": [
+          "orders-events-cutover"
+        ]
+      }
+    },
+    {
+      "name": "copy-appeared",
+      "message": "orders-events-cutover holds the same records as the service's live store but its owner record is not the service. Do I change anything on it?",
+      "expect": [
+        "cutover-staging-copy"
+      ],
+      "fingerprint": {
+        "orders-projection-store": [
+          "orders-events-projection"
+        ],
+        "release-candidate-store": [
+          "orders-events-next"
+        ],
+        "refunds-namesake-store": [
+          "orders-events-refunds"
+        ],
+        "cutover-staging-copy": [
+          "orders-events-cutover"
+        ]
+      }
+    },
+    {
+      "name": "membership-in-words",
+      "message": "More stores that look like this workload's keep showing up while I work. Does what I was asked about cover the ones that appear along the way, or only the ones that were already there?",
+      "expect": [],
+      "fingerprint": {
+        "orders-projection-store": [
+          "orders-events-projection"
+        ],
+        "release-candidate-store": [
+          "orders-events-next"
+        ],
+        "refunds-namesake-store": [
+          "orders-events-refunds"
+        ],
+        "cutover-staging-copy": [
+          "orders-events-cutover"
+        ]
+      },
+      "note": "describes the ambiguity in words, cites no fact"
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "orders-projection-store": [
+          "orders-events-projection"
+        ],
+        "release-candidate-store": [
+          "orders-events-next"
+        ],
+        "refunds-namesake-store": [
+          "orders-events-refunds"
+        ],
+        "cutover-staging-copy": [
+          "orders-events-cutover"
+        ]
+      }
+    }
+  ]
+}

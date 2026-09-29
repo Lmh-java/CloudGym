@@ -1,0 +1,40 @@
+{
+  "cloudcontrol_type": "AWS::RDS::OptionGroup",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-22T18:04:29+00:00",
+      "ResourceDescription": {
+        "Identifier": "cloudgym-capability-20260922180418488800000001",
+        "Properties": "{\"OptionGroupDescription\":\"CloudGym extractor capability check\",\"OptionGroupName\":\"cloudgym-capability-20260922180418488800000001\",\"OptionConfigurations\":[{\"VpcSecurityGroupMemberships\":[],\"OptionSettings\":[{\"Value\":\"CONNECT\",\"Name\":\"SERVER_AUDIT_EVENTS\"},{\"Value\":\"ON\",\"Name\":\"SERVER_AUDIT_LOGGING\"},{\"Name\":\"SERVER_AUDIT_INCL_USERS\"},{\"Value\":\"FORCE_PLUS_PERMANENT\",\"Name\":\"SERVER_AUDIT\"},{\"Value\":\"1024\",\"Name\":\"SERVER_AUDIT_QUERY_LOG_LIMIT\"},{\"Name\":\"SERVER_AUDIT_FILE_ROTATIONS\"},{\"Value\":\"/rdsdbdata/log/audit/\",\"Name\":\"SERVER_AUDIT_FILE_PATH\"},{\"Name\":\"SERVER_AUDIT_FILE_ROTATE_SIZE\"},{\"Name\":\"SERVER_AUDIT_EXCL_USERS\"}],\"OptionName\":\"MARIADB_AUDIT_PLUGIN\",\"DBSecurityGroupMemberships\":[]}],\"MajorEngineVersion\":\"8.0\",\"EngineName\":\"mysql\",\"Tags\":[]}"
+      },
+      "TypeName": "AWS::RDS::OptionGroup"
+    },
+    {
+      "ReadAt": "2026-09-22T18:04:29+00:00",
+      "ResourceDescription": {
+        "Identifier": "default:mysql-8-0",
+        "Properties": "{\"OptionGroupDescription\":\"Default option group for mysql 8.0\",\"OptionGroupName\":\"default:mysql-8-0\",\"OptionConfigurations\":[],\"MajorEngineVersion\":\"8.0\",\"EngineName\":\"mysql\",\"Tags\":[]}"
+      },
+      "TypeName": "AWS::RDS::OptionGroup"
+    },
+    {
+      "ReadAt": "2026-09-22T18:04:29+00:00",
+      "ResourceDescription": {
+        "Identifier": "default:mysql-8-4",
+        "Properties": "{\"OptionGroupDescription\":\"Default option group for mysql 8.4\",\"OptionGroupName\":\"default:mysql-8-4\",\"OptionConfigurations\":[],\"MajorEngineVersion\":\"8.4\",\"EngineName\":\"mysql\",\"Tags\":[]}"
+      },
+      "TypeName": "AWS::RDS::OptionGroup"
+    },
+    {
+      "ReadAt": "2026-09-22T18:04:30+00:00",
+      "ResourceDescription": {
+        "Identifier": "default:postgres-18",
+        "Properties": "{\"OptionGroupDescription\":\"Default option group for postgres 18\",\"OptionGroupName\":\"default:postgres-18\",\"OptionConfigurations\":[],\"MajorEngineVersion\":\"18\",\"EngineName\":\"postgres\",\"Tags\":[]}"
+      },
+      "TypeName": "AWS::RDS::OptionGroup"
+    }
+  ],
+  "recorded_at": "2026-09-22T18:04:30+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

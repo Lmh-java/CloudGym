@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_66_iam_policy",
+  "utterance": "Our applications ship their telemetry through the `telemetry-events-stream` Firehose delivery stream, which posts its records to the in-house collector and sets the ones the collector refuses aside in the account's telemetry backup store. We have bought New Relic and the collector is going away, so repoint that stream's HTTP endpoint destination at New Relic's Firehose endpoint: the url is `https://aws-api.newrelic.com/firehose/v1`, the endpoint is named `New Relic`, and it authenticates with the access key `my-key`. Let the stream accumulate 15 MB, or 600 seconds' worth, before it posts a batch. New Relic wants the request bodies `GZIP`-encoded, and every request has to carry the two common attributes `testname` = `testvalue` and `testname2` = `testvalue2`. The records New Relic refuses go on being set aside in the store the stream already uses. Two grants are missing as well: the delivery identity `telemetry-firehose-delivery` holds none of its own, so give it a customer managed policy named `telemetry-newrelic-delivery` that lets it write that backup store and read and update its own destination; and nothing may put a record into the stream yet, so add a producer identity — a role named `telemetry-events-producer` that Lambda can assume and that may put records and record batches into that stream. Finish by reporting the destination configuration the stream ended up with.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "the delivery stream telemetry-events-stream still stands and is still the only delivery stream in the account, and its HTTP endpoint destination posts to the url https://aws-api.newrelic.com/firehose/v1 under the endpoint name New Relic, accumulating 15 MB or 600 seconds before it posts, with GZIP request content encoding and the two common attributes testname=testvalue and testname2=testvalue2 on every request, still setting the records the endpoint refuses aside in the telemetry backup store that was already on the account; the role telemetry-firehose-delivery holds a customer managed policy named telemetry-newrelic-delivery that allows it to write that store and to read and update its own destination; and a role named telemetry-events-producer exists, assumable by Lambda, holding a grant that allows putting records and record batches into that stream",
+    "note": "the producer identity and the split of the row's single policy are the witness's corrections to the row's reference, which grants firehose:PutRecord to the delivery role that never calls it and leaves the record producer with no identity at all"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 66
+  }
+}

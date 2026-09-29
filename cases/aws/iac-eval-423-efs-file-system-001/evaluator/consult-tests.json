@@ -1,0 +1,77 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "baseline-record",
+      "message": "The file system I am putting this policy on has picked up a record reading reserved-floor-r7 that I did not write, and what it reserves changed under me while my call was being refused. Is that one to leave as it is, or is it mine to take off so my call goes through?",
+      "expect": [
+        "throughput-baseline-move"
+      ],
+      "fingerprint": {
+        "throughput-baseline-move": [
+          "reserved-floor-r7"
+        ],
+        "peak-headroom-raise": [
+          "peak-hold-2x"
+        ]
+      }
+    },
+    {
+      "name": "headroom-record",
+      "message": "There is now a peak-hold-2x record on the file system, and it went busy again right as I re-issued my call. Who holds it that way, and does it have to stay that way once the policy is on?",
+      "expect": [
+        "peak-headroom-raise"
+      ],
+      "fingerprint": {
+        "throughput-baseline-move": [
+          "reserved-floor-r7"
+        ],
+        "peak-headroom-raise": [
+          "peak-hold-2x"
+        ]
+      }
+    },
+    {
+      "name": "refusal-in-words",
+      "message": "My policy call keeps coming back refused because the file system is not in a state that takes one, and something else keeps changing what it reserves. Whose change is that, and am I meant to sit it out or put the file system back the way I found it?",
+      "expect": [],
+      "fingerprint": {
+        "throughput-baseline-move": [
+          "reserved-floor-r7"
+        ],
+        "peak-headroom-raise": [
+          "peak-hold-2x"
+        ]
+      }
+    },
+    {
+      "name": "both-records",
+      "message": "Two records I did not write turned up on the file system while I was working: reserved-floor-r7 and peak-hold-2x. Are either of them mine to clear?",
+      "expect": [
+        "throughput-baseline-move",
+        "peak-headroom-raise"
+      ],
+      "fingerprint": {
+        "throughput-baseline-move": [
+          "reserved-floor-r7"
+        ],
+        "peak-headroom-raise": [
+          "peak-hold-2x"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "throughput-baseline-move": [
+          "reserved-floor-r7"
+        ],
+        "peak-headroom-raise": [
+          "peak-hold-2x"
+        ]
+      }
+    }
+  ]
+}

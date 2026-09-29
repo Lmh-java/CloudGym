@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_39_codebuild_project",
+  "utterance": "create a AWS codebuild project resource with example iam role and secondary artifacts. This account already keeps the S3 stores that builds write out to, so do not stand up buckets of your own: the project's artifacts go to the store the account keeps for build artifacts, and its secondary artifacts go to the store the account keeps for build reports. Give the project an IAM role of its own, and have it build the GitHub repository `https://github.com/mitchellh/packer.git`.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "a CodeBuild project that did not exist at the start builds a source of type GITHUB, writes its primary artifacts as type S3 into the S3 store the account currently keeps in service as its shared build-artifacts store, carries at least one secondary artifact of type S3 written into the S3 store the account keeps as its shared build-reports store, and runs as an IAM role that did not exist at the start, was created for this project and is trusted by codebuild.amazonaws.com"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 39
+  }
+}

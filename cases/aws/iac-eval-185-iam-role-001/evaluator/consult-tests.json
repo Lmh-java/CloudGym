@@ -1,0 +1,71 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "another-worker-for-this-workload",
+      "message": "A function named orders-worker-2026 turned up for this workload, marked as the one that is live. Is that what my request should be landing on rather than the one I was about to stand up?",
+      "fingerprint": {
+        "workload-worker-rollout": ["orders-worker-2026"],
+        "sibling-namesake-worker": ["reports-lambda-worker"],
+        "legacy-worker-precutover": ["orders-worker-v1"],
+        "entrypoint-baseline": ["index.main"]
+      },
+      "expect": ["workload-worker-rollout"]
+    },
+    {
+      "name": "namesake-worker",
+      "message": "There is a reports-lambda-worker running the same kind of code on the same execution identity. Is that one this workload's, or somebody else's to keep?",
+      "fingerprint": {
+        "workload-worker-rollout": ["orders-worker-2026"],
+        "sibling-namesake-worker": ["reports-lambda-worker"],
+        "legacy-worker-precutover": ["orders-worker-v1"],
+        "entrypoint-baseline": ["index.main"]
+      },
+      "expect": ["sibling-namesake-worker"]
+    },
+    {
+      "name": "worker-being-moved-off",
+      "message": "I also found orders-worker-v1 for this workload, marked as being moved off and not cut over. May I bring that one onto what the request asks for?",
+      "fingerprint": {
+        "workload-worker-rollout": ["orders-worker-2026"],
+        "sibling-namesake-worker": ["reports-lambda-worker"],
+        "legacy-worker-precutover": ["orders-worker-v1"],
+        "entrypoint-baseline": ["index.main"]
+      },
+      "expect": ["legacy-worker-precutover"]
+    },
+    {
+      "name": "entry-point-replaced",
+      "message": "The worker I settled on is entered at index.main now, not where I set it. Which of the two should it be entered at when I finish?",
+      "fingerprint": {
+        "workload-worker-rollout": ["orders-worker-2026"],
+        "sibling-namesake-worker": ["reports-lambda-worker"],
+        "legacy-worker-precutover": ["orders-worker-v1"],
+        "entrypoint-baseline": ["index.main"]
+      },
+      "expect": ["entrypoint-baseline"]
+    },
+    {
+      "name": "effect-in-words",
+      "message": "Things moved under me while I was working: another function for this workload appeared, one of the functions I looked at turned out to belong to somebody else, and the entry point I wrote is not the one the function carries any more. Is all of that expected?",
+      "fingerprint": {
+        "workload-worker-rollout": ["orders-worker-2026"],
+        "sibling-namesake-worker": ["reports-lambda-worker"],
+        "legacy-worker-precutover": ["orders-worker-v1"],
+        "entrypoint-baseline": ["index.main"]
+      },
+      "expect": []
+    },
+    {
+      "name": "generic",
+      "message": "Before I start: are there conventions for Lambda workers in this account I should follow?",
+      "fingerprint": {
+        "workload-worker-rollout": ["orders-worker-2026"],
+        "sibling-namesake-worker": ["reports-lambda-worker"],
+        "legacy-worker-precutover": ["orders-worker-v1"],
+        "entrypoint-baseline": ["index.main"]
+      },
+      "expect": []
+    }
+  ]
+}

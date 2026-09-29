@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_80_route53_record",
+  "utterance": "The orders application's VPC `main-vpc` (10.0.0.0/16) already exists in this account. Give that workload private DNS: a private Route 53 hosted zone named `internal.example53.com` attached to the VPC, and in it a non-alias record for the orders API endpoint — `api.internal.example53.com`, type A, TTL 300, answering 10.0.1.101.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "the pre-existing VPC main-vpc resolves internal.example53.com privately through a private hosted zone associated with it, and the orders API endpoint api.internal.example53.com answers from that zone as a non-alias A record with a 300-second TTL on 10.0.1.101"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 80
+  }
+}

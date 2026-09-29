@@ -1,0 +1,23 @@
+{
+  "distractors": {
+    "headroom-limit-raise": {
+      "codes": [
+        "IncorrectFileSystemLifeCycleState"
+      ],
+      "entry": "efs.file-system",
+      "operation": "PutLifecycleConfiguration",
+      "service": "efs",
+      "source": "manual"
+    },
+    "reserved-capacity-placement": {
+      "codes": [
+        "IncorrectFileSystemLifeCycleState"
+      ],
+      "entry": "efs.file-system",
+      "operation": "PutLifecycleConfiguration",
+      "service": "efs",
+      "source": "manual"
+    }
+  },
+  "schema_version": 1
+}

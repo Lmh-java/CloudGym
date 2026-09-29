@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_303_api_gateway_deployment",
+  "utterance": "Our cat-picture service is a web server that takes cat pictures on upload and hands a random one back on demand. Its storage and its code already exist in this account: the picture bucket whose name starts with \"cat-image\", the DynamoDB table \"cat_names\", the role \"lambda_api_gateway_role\" and the Lambda function \"caas_cat\" that serves both operations and already knows which stores it writes to. What it does not have is a way in: nothing reaches the function from outside, and its identity may not touch either store. Put the front door on it with AWS API Gateway: a REST API named \"caas\" with a resource at path part \"cat\" carrying a \"GET\" method for fetching a random picture and a \"PUT\" method for uploading one, both with authorization \"NONE\", each integrated onto the existing \"caas_cat\" function as an \"AWS_PROXY\" integration, and let \"apigateway.amazonaws.com\" call \"lambda:InvokeFunction\" on that function. Give the role an inline policy that lets it read and write objects in that bucket and put items in that table. Reading a picture out of S3 and returning it does not fit the three seconds the function is allowed today, so raise the function's invocation limit to 30 seconds. Then deploy the API and publish the deployment on a stage named \"dev\". Finish by reporting what the service ended up as: the API's id, the methods on \"/cat\" and what each is integrated onto, the stage, and the settings the function \"caas_cat\" is carrying at the end.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "an API Gateway REST API named caas exists with a resource at path part cat that carries a GET method and a PUT method, both with authorization NONE and each backed by an AWS_PROXY integration onto the pre-existing Lambda function caas_cat; that function's resource policy grants apigateway.amazonaws.com the lambda:InvokeFunction action on it; the API has a deployment published on a stage named dev; the pre-existing function caas_cat stands at an invocation limit of 30 seconds and is still the only function in the account; and the pre-existing role lambda_api_gateway_role holds an inline policy allowing object reads and writes on the pre-existing cat-image bucket and item writes on the cat_names table"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 303
+  }
+}

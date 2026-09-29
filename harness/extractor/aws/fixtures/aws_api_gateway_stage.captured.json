@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::ApiGateway::Stage",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-22T18:37:38+00:00",
+      "ResourceDescription": {
+        "Identifier": "gtlu1wunu9|capability",
+        "Properties": "{\"Variables\":{\"owner\":\"cloudgym\"},\"DeploymentId\":\"m2dtsp\",\"Description\":\"CloudGym extractor capability check\",\"StageName\":\"capability\",\"TracingEnabled\":false,\"RestApiId\":\"gtlu1wunu9\",\"CacheClusterEnabled\":false}"
+      },
+      "TypeName": "AWS::ApiGateway::Stage"
+    }
+  ],
+  "recorded_at": "2026-09-22T18:37:39+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

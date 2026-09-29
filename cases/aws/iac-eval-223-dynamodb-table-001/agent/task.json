@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_223_dynamodb_table",
+  "utterance": "The orders service stores its data in DynamoDB. Add a table `orders-app-order-events` for its order-event stream — on-demand billing, `event_id` as the hash key — with point-in-time recovery enabled, plus an IAM role `orders-app-order-events-writer` that Lambda can assume, carrying an inline policy that lets it put and query items in that table. Point-in-time recovery has to be on for every DynamoDB table the orders service owns, not just the new one.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's data and how it is stored and laid out",
+    "intent": "the DynamoDB table orders-app-order-events exists with on-demand billing, event_id as its hash key and point-in-time recovery enabled; every DynamoDB table the orders service owns has point-in-time recovery enabled; and the IAM role orders-app-order-events-writer, assumable by lambda.amazonaws.com, carries an inline policy allowing PutItem and Query on that table"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 223
+  }
+}

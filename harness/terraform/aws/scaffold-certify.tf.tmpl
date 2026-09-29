@@ -1,0 +1,30 @@
+# Certification scaffold, rendered per run by harness/terraform/workspace.py.
+# Identical to the harness scaffold plus reserved ownership default tags for
+# leak detection and isolation evidence; the seed's terraform stays verbatim.
+# Reserved cloudgym:* tags are stripped during snapshot normalization.
+
+terraform {
+  required_version = ">= 1.5"
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "$provider_version"
+    }
+  }
+}
+
+variable "region" {
+  type    = string
+  default = "us-east-1"
+}
+
+provider "aws" {
+  region = var.region
+
+  default_tags {
+    tags = {
+      "cloudgym:run-id"  = "$run_id"
+      "cloudgym:seed-id" = "$seed_id"
+    }
+  }
+}

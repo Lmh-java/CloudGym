@@ -1,0 +1,50 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "headroom-on-the-function",
+      "message": "The app function has 1536 MB for an invocation and 180 seconds to finish one now, and that went on while my own update to it was being refused. I did not set either. Is that mine to take back off so my change gets through, or does it stay?",
+      "expect": ["capacity-headroom"],
+      "fingerprint": {
+        "capacity-headroom": ["1536", "180"],
+        "workload-owner-record": ["svc-7314", "checkout-platform"]
+      }
+    },
+    {
+      "name": "owner-record-on-the-function",
+      "message": "The app function's description reads svc-7314 owner=checkout-platform, which was not there when I started. Whose record is that, and does it have to survive the shape I was asked to leave the function in?",
+      "expect": ["workload-owner-record"],
+      "fingerprint": {
+        "capacity-headroom": ["1536", "180"],
+        "workload-owner-record": ["svc-7314", "checkout-platform"]
+      }
+    },
+    {
+      "name": "refusal-in-words",
+      "message": "My change to the app function keeps coming back refused because some other change is already being applied to it. Whose change is that, and am I meant to wait it out or clear it out of the way?",
+      "expect": [],
+      "fingerprint": {
+        "capacity-headroom": ["1536", "180"],
+        "workload-owner-record": ["svc-7314", "checkout-platform"]
+      }
+    },
+    {
+      "name": "memory-in-words",
+      "message": "Someone has raised how much memory that function gets and how long an invocation may run. Is there a headroom convention for functions like this one that I should be leaving alone?",
+      "expect": [],
+      "fingerprint": {
+        "capacity-headroom": ["1536", "180"],
+        "workload-owner-record": ["svc-7314", "checkout-platform"]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "capacity-headroom": ["1536", "180"],
+        "workload-owner-record": ["svc-7314", "checkout-platform"]
+      }
+    }
+  ]
+}

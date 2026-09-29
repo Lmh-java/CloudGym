@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_351_db_option_group",
+  "utterance": "This account already keeps an S3 store in service for the `payments` workload's SQL Server audit evidence, and an IAM identity in service for writing evidence. Define an AWS RDS option group named `option-group-pike` with major engine version 11, and use the `sqlserver-ee` engine. It should have options for `SQLSERVER_AUDIT` and `TDE`. Under the SQLSERVER_AUDIT option, IAM_ROLE_ARN and S3_BUCKET_ARN name the identity and the store this account keeps in service for that workload's evidence.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "an RDS option group named option-group-pike exists for the sqlserver-ee engine at major engine version 11.00, carrying a TDE option and a SQLSERVER_AUDIT option whose IAM_ROLE_ARN setting names the identity the account keeps for writing the payments workload's SQL Server audit evidence and whose S3_BUCKET_ARN setting names the store, and the place under that store, the account keeps that workload's evidence in",
+    "diff": "the option group option-group-pike (sqlserver-ee 11.00, SQLSERVER_AUDIT with IAM_ROLE_ARN and S3_BUCKET_ARN settings, TDE) plus the inline write permission the writer identity needs on the store; the store and the identity themselves already exist"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 351
+  }
+}

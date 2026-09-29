@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::AutoScaling::ScalingPolicy",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-22T18:17:26+00:00",
+      "ResourceDescription": {
+        "Identifier": "arn:aws:autoscaling:us-east-1:123456789012:scalingPolicy:64331c86-2810-464b-80e5-ebeda2b9f630:autoScalingGroupName/cloudgym-capability-20260922181710363100000003:policyName/cloudgym-capability-scale-down",
+        "Properties": "{\"PolicyType\":\"SimpleScaling\",\"ScalingAdjustment\":-1,\"Cooldown\":\"120\",\"PolicyName\":\"cloudgym-capability-scale-down\",\"AutoScalingGroupName\":\"cloudgym-capability-20260922181710363100000003\",\"Arn\":\"arn:aws:autoscaling:us-east-1:123456789012:scalingPolicy:64331c86-2810-464b-80e5-ebeda2b9f630:autoScalingGroupName/cloudgym-capability-20260922181710363100000003:policyName/cloudgym-capability-scale-down\",\"AdjustmentType\":\"ChangeInCapacity\"}"
+      },
+      "TypeName": "AWS::AutoScaling::ScalingPolicy"
+    }
+  ],
+  "recorded_at": "2026-09-22T18:17:31+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

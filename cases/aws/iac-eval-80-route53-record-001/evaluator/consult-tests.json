@@ -1,0 +1,84 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "conventions-upfront",
+      "message": "Before I start: are there conventions for how names under this domain are handed out, and for how long callers may keep an answer?",
+      "expect": [],
+      "note": "the question every agent opens with, asked before anything has happened: it cites nothing and reaches nobody",
+      "fingerprint": {
+        "ingress-name-claim": ["10.0.240.11", "netops-shared-ingress"],
+        "service-namespace-convention": ["endpoints=svc.internal.example53.com", "registry.svc.internal.example53.com", "10.0.240.20"],
+        "sibling-endpoint-claim": ["10.0.60.40", "billing-api-team"],
+        "internal-ttl-baseline": ["max-cache-60s", "_baseline.internal.example53.com"]
+      }
+    },
+    {
+      "name": "entry-point-in-the-way",
+      "message": "The name I was told to publish is already answering 10.0.240.11 and has netops-shared-ingress written beside it. Is that meant to stay, and do I go elsewhere?",
+      "expect": ["ingress-name-claim"],
+      "fingerprint": {
+        "ingress-name-claim": ["10.0.240.11", "netops-shared-ingress"],
+        "service-namespace-convention": ["endpoints=svc.internal.example53.com", "registry.svc.internal.example53.com", "10.0.240.20"],
+        "sibling-endpoint-claim": ["10.0.60.40", "billing-api-team"],
+        "internal-ttl-baseline": ["max-cache-60s", "_baseline.internal.example53.com"]
+      }
+    },
+    {
+      "name": "where-endpoints-belong",
+      "message": "Reading the zone I find an entry stating endpoints=svc.internal.example53.com, with registry.svc.internal.example53.com sitting under it. Is that where I put mine?",
+      "expect": ["service-namespace-convention"],
+      "fingerprint": {
+        "ingress-name-claim": ["10.0.240.11", "netops-shared-ingress"],
+        "service-namespace-convention": ["endpoints=svc.internal.example53.com", "registry.svc.internal.example53.com", "10.0.240.20"],
+        "sibling-endpoint-claim": ["10.0.60.40", "billing-api-team"],
+        "internal-ttl-baseline": ["max-cache-60s", "_baseline.internal.example53.com"]
+      }
+    },
+    {
+      "name": "first-name-occupied",
+      "message": "The obvious name in that space now answers 10.0.60.40 and carries billing-api-team. May I take it, or do I pick another?",
+      "expect": ["sibling-endpoint-claim"],
+      "fingerprint": {
+        "ingress-name-claim": ["10.0.240.11", "netops-shared-ingress"],
+        "service-namespace-convention": ["endpoints=svc.internal.example53.com", "registry.svc.internal.example53.com", "10.0.240.20"],
+        "sibling-endpoint-claim": ["10.0.60.40", "billing-api-team"],
+        "internal-ttl-baseline": ["max-cache-60s", "_baseline.internal.example53.com"]
+      }
+    },
+    {
+      "name": "how-long-may-answers-be-kept",
+      "message": "There is an entry saying max-cache-60s and what I published came back shortened. Does that bind what I was asked to set?",
+      "expect": ["internal-ttl-baseline"],
+      "fingerprint": {
+        "ingress-name-claim": ["10.0.240.11", "netops-shared-ingress"],
+        "service-namespace-convention": ["endpoints=svc.internal.example53.com", "registry.svc.internal.example53.com", "10.0.240.20"],
+        "sibling-endpoint-claim": ["10.0.60.40", "billing-api-team"],
+        "internal-ttl-baseline": ["max-cache-60s", "_baseline.internal.example53.com"]
+      }
+    },
+    {
+      "name": "endpoint-described-not-named",
+      "message": "Something I did not publish is answering where I put the orders endpoint, and mine is no longer there. Is it meant to be?",
+      "expect": [],
+      "note": "describes the effect without naming anything that was read, so it routes to nobody",
+      "fingerprint": {
+        "ingress-name-claim": ["10.0.240.11", "netops-shared-ingress"],
+        "service-namespace-convention": ["endpoints=svc.internal.example53.com", "registry.svc.internal.example53.com", "10.0.240.20"],
+        "sibling-endpoint-claim": ["10.0.60.40", "billing-api-team"],
+        "internal-ttl-baseline": ["max-cache-60s", "_baseline.internal.example53.com"]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect_at_most": 0,
+      "fingerprint": {
+        "ingress-name-claim": ["10.0.240.11", "netops-shared-ingress"],
+        "service-namespace-convention": ["endpoints=svc.internal.example53.com", "registry.svc.internal.example53.com", "10.0.240.20"],
+        "sibling-endpoint-claim": ["10.0.60.40", "billing-api-team"],
+        "internal-ttl-baseline": ["max-cache-60s", "_baseline.internal.example53.com"]
+      }
+    }
+  ]
+}

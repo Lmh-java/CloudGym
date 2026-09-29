@@ -1,0 +1,50 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "retry-window-moved",
+      "message": "The delivery stream's destination is now retrying a refused delivery for 7200 seconds; it was not on that window when I read it earlier. Is that meant to stay where it is?",
+      "expect": ["delivery-retry-baseline"],
+      "fingerprint": {
+        "delivery-retry-baseline": ["7200"],
+        "backup-batch-headroom": ["128", "900"]
+      }
+    },
+    {
+      "name": "backup-batch-moved",
+      "message": "The backup on that destination is accumulating 128 MB now, and holding a batch for up to 900 seconds; those were not the numbers I read on it. Whose are they, and do they stay?",
+      "expect": ["backup-batch-headroom"],
+      "fingerprint": {
+        "delivery-retry-baseline": ["7200"],
+        "backup-batch-headroom": ["128", "900"]
+      }
+    },
+    {
+      "name": "retrying-described-in-words",
+      "message": "Something has changed how long this stream keeps retrying a delivery the endpoint refuses before it sets the record aside. Whose setting is that and should I leave it alone?",
+      "expect": [],
+      "fingerprint": {
+        "delivery-retry-baseline": ["7200"],
+        "backup-batch-headroom": ["128", "900"]
+      }
+    },
+    {
+      "name": "batching-described-in-words",
+      "message": "Is there a convention about how much a delivery path here accumulates before it writes a copy into the account's stores, and how long such a batch may sit unwritten?",
+      "expect": [],
+      "fingerprint": {
+        "delivery-retry-baseline": ["7200"],
+        "backup-batch-headroom": ["128", "900"]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "delivery-retry-baseline": ["7200"],
+        "backup-batch-headroom": ["128", "900"]
+      }
+    }
+  ]
+}

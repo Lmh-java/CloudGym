@@ -1,0 +1,25 @@
+{
+  "distractors": {
+    "platform-lookup-index": {
+      "codes": [
+        "LimitExceededException",
+        "ResourceInUseException"
+      ],
+      "entry": "dynamodb.table",
+      "operation": "UpdateTable",
+      "service": "dynamodb",
+      "source": "sdk"
+    },
+    "replay-lookup-index": {
+      "codes": [
+        "LimitExceededException",
+        "ResourceInUseException"
+      ],
+      "entry": "dynamodb.table",
+      "operation": "UpdateTable",
+      "service": "dynamodb",
+      "source": "sdk"
+    }
+  },
+  "schema_version": 1
+}

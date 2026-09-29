@@ -1,0 +1,24 @@
+{
+  "cloudcontrol_type": "AWS::EC2::VPC",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-01T02:41:45+00:00",
+      "ResourceDescription": {
+        "Identifier": "vpc-0cb1ecab670b248b1",
+        "Properties": "{\"VpcId\":\"vpc-0cb1ecab670b248b1\",\"InstanceTenancy\":\"default\",\"CidrBlockAssociations\":[\"vpc-cidr-assoc-02fd49a0b823aeab0\"],\"CidrBlock\":\"172.31.0.0/16\",\"DefaultNetworkAcl\":\"acl-05d0715cadb83df0d\",\"EnableDnsSupport\":true,\"Ipv6CidrBlocks\":[],\"DefaultSecurityGroup\":\"sg-03f1011b0114a0a21\",\"EnableDnsHostnames\":true,\"Tags\":[]}"
+      },
+      "TypeName": "AWS::EC2::VPC"
+    },
+    {
+      "ReadAt": "2026-09-01T02:41:46+00:00",
+      "ResourceDescription": {
+        "Identifier": "vpc-0cd7522cd7ab43722",
+        "Properties": "{\"VpcId\":\"vpc-0cd7522cd7ab43722\",\"InstanceTenancy\":\"default\",\"CidrBlockAssociations\":[\"vpc-cidr-assoc-044841bc62a0600e2\"],\"CidrBlock\":\"10.242.0.0/16\",\"DefaultNetworkAcl\":\"acl-0e18f282e8746a22a\",\"EnableDnsSupport\":true,\"Ipv6CidrBlocks\":[],\"DefaultSecurityGroup\":\"sg-0d033077e5156b137\",\"EnableDnsHostnames\":false,\"Tags\":[]}"
+      },
+      "TypeName": "AWS::EC2::VPC"
+    }
+  ],
+  "recorded_at": "2026-09-01T02:41:47+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

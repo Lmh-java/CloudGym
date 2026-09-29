@@ -1,0 +1,2 @@
+A workload's evidence lands in the store, and the place under it, the account keeps it in when you finish, written by the identity kept for it then.
+A resource kept for one workload serves it alone; one kept for all serves only until its own is kept.

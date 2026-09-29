@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_84_route53_record",
+  "utterance": "The account already publishes the public domain `example53.com` from its primary Route 53 hosted zone. The service reached at `service.example53.com` now runs in two places: 192.0.2.101 in us-east-1 and 192.0.2.102 in eu-central-1. Using Route 53 resources, configure a routing policy on that name which navigates users to the least congested endpoint — one A record per region, TTL 60, each with its own set identifier.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "in the pre-existing example53.com hosted zone, service.example53.com is answered by a latency-routed set of two non-alias A members with distinct set identifiers — one bound to us-east-1 answering 192.0.2.101 and one bound to eu-central-1 answering 192.0.2.102 — each with a 60-second TTL, so a caller is sent to whichever endpoint is quickest to reach from it"
+  },
+  "resource_types": [
+    "aws_route53_zone",
+    "aws_route53_record",
+    "aws_route53_health_check"
+  ],
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 84
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "distractors": {
+    "runtime-health-baseline": {
+      "codes": [
+        "ResourceConflictException"
+      ],
+      "entry": "lambda.function",
+      "operation": "UpdateFunctionConfiguration",
+      "service": "lambda",
+      "source": "sdk"
+    },
+    "telemetry-log-routing": {
+      "codes": [
+        "ResourceConflictException"
+      ],
+      "entry": "lambda.function",
+      "operation": "UpdateFunctionConfiguration",
+      "service": "lambda",
+      "source": "sdk"
+    }
+  },
+  "schema_version": 1
+}

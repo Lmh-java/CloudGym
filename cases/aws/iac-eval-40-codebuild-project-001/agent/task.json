@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_40_codebuild_project",
+  "utterance": "create a AWS codebuild project resource with example iam role and buildbatch configuration. Give the project an IAM role of its own, have it build the GitHub repository `https://github.com/mitchellh/packer.git`, and write its artifacts out to the existing S3 bucket whose name starts with `build-artifacts-` rather than standing up a bucket of your own. Its build batch configuration runs as that same role and allows exactly as many concurrent builds as this account holds its builds to.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "a CodeBuild project that did not exist at the start builds a source of type GITHUB, writes its primary artifacts as type S3 into the pre-existing build-artifacts store, runs as an IAM role that did not exist at the start, was created for this project and is trusted by codebuild.amazonaws.com, and carries a build batch configuration whose service role is that same new role and whose maximum concurrent builds allowed is the concurrent-build allowance the account's own in-service builds are held to when the work is finished"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 40
+  }
+}

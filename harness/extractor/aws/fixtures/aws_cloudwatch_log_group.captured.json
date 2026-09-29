@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::Logs::LogGroup",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-09T06:03:50+00:00",
+      "ResourceDescription": {
+        "Identifier": "cloudgym-capability-20260909060337418400000001",
+        "Properties": "{\"FieldIndexPolicies\":[],\"RetentionInDays\":1,\"BearerTokenAuthenticationEnabled\":false,\"LogGroupClass\":\"STANDARD\",\"LogGroupName\":\"cloudgym-capability-20260909060337418400000001\",\"Arn\":\"arn:aws:logs:us-east-1:123456789012:log-group:cloudgym-capability-20260909060337418400000001:*\",\"DeletionProtectionEnabled\":false,\"DataProtectionPolicy\":{}}"
+      },
+      "TypeName": "AWS::Logs::LogGroup"
+    }
+  ],
+  "recorded_at": "2026-09-09T06:03:50+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

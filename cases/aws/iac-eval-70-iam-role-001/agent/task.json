@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_70_iam_role",
+  "utterance": "This account ingests clickstream events and now has to archive them to S3. Create a Kinesis Data Firehose delivery stream named `clickstream-delivery-stream` with an extended S3 destination: it writes into a new S3 bucket whose name starts with `clickstream-archive-`, and it delivers as the workload's existing IAM role `clickstream-delivery-role`, which must end up holding a grant that lets it write objects into that bucket and invoke the transform function. Records are reshaped on the way through by the existing Lambda function `clickstream-record-transform`, so the stream's data transformation has to be on with that function as its processor. A transformation invocation is given up to a minute to come back, so the function has to run with a 60-second timeout. When you are done, report the stream's destination configuration and the transform function's configuration as it then stands.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's data and how it is stored and laid out",
+    "intent": "a Kinesis Firehose delivery stream named clickstream-delivery-stream stands with an extended S3 destination that writes into an S3 bucket whose name starts with clickstream-archive-, delivering as the pre-existing role clickstream-delivery-role with data transformation enabled and the pre-existing function clickstream-record-transform as its Lambda processor; that role holds a grant covering the archive bucket and the processor; and clickstream-record-transform runs with a 60-second timeout"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 70
+  }
+}

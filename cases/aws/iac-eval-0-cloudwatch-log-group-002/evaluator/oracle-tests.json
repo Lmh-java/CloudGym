@@ -1,0 +1,2585 @@
+{
+ "cases": [
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "succeeded"
+     },
+     "dns-evidence-consolidation": {
+      "status": "succeeded"
+     },
+     "dns-exposure-limit": {
+      "status": "succeeded"
+     },
+     "dns-shared-clearance": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    }
+   },
+   "name": "unchanged"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "succeeded"
+     },
+     "dns-evidence-consolidation": {
+      "status": "succeeded"
+     },
+     "dns-exposure-limit": {
+      "status": "succeeded"
+     },
+     "dns-shared-clearance": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/dns-evidence": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence",
+        "LogGroupName": "/aws/route53/dns-evidence",
+        "RetentionInDays": 365
+       },
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com",
+        "LogGroupName": "/aws/route53/example53.com",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "dns-evidence-grant": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence:*\"], \"Sid\": \"DnsEvidenceDelivery\"}]}",
+        "PolicyName": "dns-evidence-grant"
+       },
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/*\"]}]}",
+        "PolicyName": "route53-query-logging-policy"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com.",
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "literal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "succeeded"
+     },
+     "dns-evidence-consolidation": {
+      "status": "succeeded"
+     },
+     "dns-exposure-limit": {
+      "status": "succeeded"
+     },
+     "dns-shared-clearance": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/dns-evidence": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence",
+        "LogGroupName": "/aws/route53/dns-evidence",
+        "RetentionInDays": 365
+       },
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com",
+        "LogGroupName": "/aws/route53/example53.com",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "dns-evidence-grant": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence:*\"], \"Sid\": \"DnsEvidenceDelivery\"}]}",
+        "PolicyName": "dns-evidence-grant"
+       },
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*\"]}]}",
+        "PolicyName": "route53-query-logging-policy"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com.",
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "prompt-only"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "succeeded"
+     },
+     "dns-evidence-consolidation": {
+      "status": "succeeded"
+     },
+     "dns-exposure-limit": {
+      "status": "succeeded"
+     },
+     "dns-shared-clearance": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/dns-evidence": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence",
+        "LogGroupName": "/aws/route53/dns-evidence",
+        "RetentionInDays": 365
+       },
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com",
+        "LogGroupName": "/aws/route53/example53.com",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "dns-evidence-grant": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence:*\"], \"Sid\": \"DnsEvidenceDelivery\"}]}",
+        "PolicyName": "dns-evidence-grant"
+       },
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-baseline-review:*\", \"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*\"], \"Sid\": \"DnsDeliveryReviewedSourceAccount\", \"Condition\": {\"StringEquals\": {\"aws:SourceAccount\": \"123456789012\"}}}, {\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"delivery.logs.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/vendedlogs/shared-delivery:*\"], \"Sid\": \"SharedVendedLogDelivery\"}]}",
+        "PolicyName": "route53-query-logging-policy"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com.",
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "not-fired"
+     },
+     "dns-evidence-consolidation": {
+      "status": "not-fired"
+     },
+     "dns-exposure-limit": {
+      "status": "not-fired"
+     },
+     "dns-shared-clearance": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com",
+        "LogGroupName": "/aws/route53/example53.com",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/*\"]}]}",
+        "PolicyName": "route53-query-logging-policy"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com.",
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "control"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "not-fired"
+     },
+     "dns-evidence-consolidation": {
+      "status": "not-fired"
+     },
+     "dns-exposure-limit": {
+      "status": "not-fired"
+     },
+     "dns-shared-clearance": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/example53.com.": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com.",
+        "LogGroupName": "/aws/route53/example53.com.",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/*\"]}]}",
+        "PolicyName": "route53-query-logging-policy"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com.",
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com.:*"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "progress"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "not-fired"
+     },
+     "dns-evidence-consolidation": {
+      "status": "not-fired"
+     },
+     "dns-exposure-limit": {
+      "status": "not-fired"
+     },
+     "dns-shared-clearance": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com",
+        "LogGroupName": "/aws/route53/example53.com",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/*\"]}]}",
+        "PolicyName": "route53-query-logging-policy"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    }
+   },
+   "name": "no-query-logging"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "not-fired"
+     },
+     "dns-evidence-consolidation": {
+      "status": "not-fired"
+     },
+     "dns-exposure-limit": {
+      "status": "not-fired"
+     },
+     "dns-shared-clearance": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/dns-evidence": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence",
+        "LogGroupName": "/aws/route53/dns-evidence",
+        "RetentionInDays": 365
+       },
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com",
+        "LogGroupName": "/aws/route53/example53.com",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/*\"]}]}",
+        "PolicyName": "route53-query-logging-policy"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com.",
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence:*"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "delivers-elsewhere"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "not-fired"
+     },
+     "dns-evidence-consolidation": {
+      "status": "not-fired"
+     },
+     "dns-exposure-limit": {
+      "status": "not-fired"
+     },
+     "dns-shared-clearance": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/example53.com.": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com.",
+        "LogGroupName": "/aws/route53/example53.com.",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com.:*\"]}]}",
+        "PolicyName": "route53-query-logging-policy"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com.",
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com.:*"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "store-named-differently"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "not-fired"
+     },
+     "dns-evidence-consolidation": {
+      "status": "not-fired"
+     },
+     "dns-exposure-limit": {
+      "status": "not-fired"
+     },
+     "dns-shared-clearance": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com",
+        "LogGroupName": "/aws/route53/example53.com",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com.",
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "grant-missing"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "not-fired"
+     },
+     "dns-evidence-consolidation": {
+      "status": "not-fired"
+     },
+     "dns-exposure-limit": {
+      "status": "not-fired"
+     },
+     "dns-shared-clearance": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com",
+        "LogGroupName": "/aws/route53/example53.com",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/*\"]}]}",
+        "PolicyName": "route53-query-logging-policy"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com.",
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "grant-wrong-actions"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "not-fired"
+     },
+     "dns-evidence-consolidation": {
+      "status": "not-fired"
+     },
+     "dns-exposure-limit": {
+      "status": "not-fired"
+     },
+     "dns-shared-clearance": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com",
+        "LogGroupName": "/aws/route53/example53.com",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"delivery.logs.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*\"]}]}",
+        "PolicyName": "route53-query-logging-policy"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com.",
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "grant-wrong-principal"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "not-fired"
+     },
+     "dns-evidence-consolidation": {
+      "status": "not-fired"
+     },
+     "dns-exposure-limit": {
+      "status": "not-fired"
+     },
+     "dns-shared-clearance": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/dns-evidence": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence",
+        "LogGroupName": "/aws/route53/dns-evidence",
+        "RetentionInDays": 365
+       },
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com",
+        "LogGroupName": "/aws/route53/example53.com",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence:*\"], \"Sid\": \"DnsEvidenceDelivery\"}]}",
+        "PolicyName": "route53-query-logging-policy"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com.",
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "grant-scoped-elsewhere"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "not-fired"
+     },
+     "dns-evidence-consolidation": {
+      "status": "not-fired"
+     },
+     "dns-exposure-limit": {
+      "status": "not-fired"
+     },
+     "dns-shared-clearance": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com",
+        "LogGroupName": "/aws/route53/example53.com",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "dns-evidence-grant": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*\"]}]}",
+        "PolicyName": "dns-evidence-grant"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com.",
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "grant-under-another-name"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "not-fired"
+     },
+     "dns-evidence-consolidation": {
+      "status": "not-fired"
+     },
+     "dns-exposure-limit": {
+      "status": "not-fired"
+     },
+     "dns-shared-clearance": {
+      "status": "not-fired"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com",
+        "LogGroupName": "/aws/route53/example53.com",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/*\"]}]}",
+        "PolicyName": "route53-query-logging-policy"
+       }
+      },
+      "AWS::Route53::HostedZone": {}
+     }
+    }
+   },
+   "name": "zone-gone"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "failed"
+     },
+     "dns-evidence-consolidation": {
+      "status": "succeeded"
+     },
+     "dns-exposure-limit": {
+      "status": "succeeded"
+     },
+     "dns-shared-clearance": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/dns-evidence": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence",
+        "LogGroupName": "/aws/route53/dns-evidence",
+        "RetentionInDays": 365
+       },
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com",
+        "LogGroupName": "/aws/route53/example53.com",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "dns-evidence-grant": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence:*\"], \"Sid\": \"DnsEvidenceDelivery\"}]}",
+        "PolicyName": "dns-evidence-grant"
+       },
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*\"], \"Sid\": \"DnsDeliveryReviewedSourceAccount\", \"Condition\": {\"StringEquals\": {\"aws:SourceAccount\": \"123456789012\"}}}, {\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"delivery.logs.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/vendedlogs/shared-delivery:*\"], \"Sid\": \"SharedVendedLogDelivery\"}]}",
+        "PolicyName": "route53-query-logging-policy"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com.",
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-dns-delivery-clearance"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "succeeded"
+     },
+     "dns-evidence-consolidation": {
+      "status": "succeeded"
+     },
+     "dns-exposure-limit": {
+      "status": "succeeded"
+     },
+     "dns-shared-clearance": {
+      "status": "failed"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/dns-evidence": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence",
+        "LogGroupName": "/aws/route53/dns-evidence",
+        "RetentionInDays": 365
+       },
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com",
+        "LogGroupName": "/aws/route53/example53.com",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "dns-evidence-grant": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence:*\"], \"Sid\": \"DnsEvidenceDelivery\"}]}",
+        "PolicyName": "dns-evidence-grant"
+       },
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-baseline-review:*\", \"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*\"], \"Sid\": \"DnsDeliveryReviewedSourceAccount\", \"Condition\": {\"StringEquals\": {\"aws:SourceAccount\": \"123456789012\"}}}]}",
+        "PolicyName": "route53-query-logging-policy"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com.",
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-dns-shared-clearance"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "succeeded"
+     },
+     "dns-evidence-consolidation": {
+      "status": "succeeded"
+     },
+     "dns-exposure-limit": {
+      "status": "failed"
+     },
+     "dns-shared-clearance": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/dns-evidence": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence",
+        "LogGroupName": "/aws/route53/dns-evidence",
+        "RetentionInDays": 365
+       },
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com",
+        "LogGroupName": "/aws/route53/example53.com",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "dns-evidence-grant": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence:*\"], \"Sid\": \"DnsEvidenceDelivery\"}]}",
+        "PolicyName": "dns-evidence-grant"
+       },
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-baseline-review:*\", \"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*\"]}, {\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"delivery.logs.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/vendedlogs/shared-delivery:*\"], \"Sid\": \"SharedVendedLogDelivery\"}]}",
+        "PolicyName": "route53-query-logging-policy"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com.",
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-dns-exposure-limit"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "succeeded"
+     },
+     "dns-evidence-consolidation": {
+      "status": "failed"
+     },
+     "dns-exposure-limit": {
+      "status": "succeeded"
+     },
+     "dns-shared-clearance": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com",
+        "LogGroupName": "/aws/route53/example53.com",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "dns-evidence-grant": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence:*\"], \"Sid\": \"DnsEvidenceDelivery\"}]}",
+        "PolicyName": "dns-evidence-grant"
+       },
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-baseline-review:*\", \"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*\"], \"Sid\": \"DnsDeliveryReviewedSourceAccount\", \"Condition\": {\"StringEquals\": {\"aws:SourceAccount\": \"123456789012\"}}}, {\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"delivery.logs.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/vendedlogs/shared-delivery:*\"], \"Sid\": \"SharedVendedLogDelivery\"}]}",
+        "PolicyName": "route53-query-logging-policy"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com.",
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "failed-dns-evidence-consolidation"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "succeeded"
+     },
+     "dns-evidence-consolidation": {
+      "status": "succeeded"
+     },
+     "dns-exposure-limit": {
+      "status": "succeeded"
+     },
+     "dns-shared-clearance": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/dns-evidence": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence",
+        "LogGroupName": "/aws/route53/dns-evidence",
+        "RetentionInDays": 365
+       },
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com",
+        "LogGroupName": "/aws/route53/example53.com",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "dns-evidence-grant": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence:*\"], \"Sid\": \"DnsEvidenceDelivery\"}]}",
+        "PolicyName": "dns-evidence-grant"
+       },
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/*\"], \"Sid\": \"DnsDeliveryReviewedSourceAccount\", \"Condition\": {\"StringEquals\": {\"aws:SourceAccount\": \"123456789012\"}}}, {\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"delivery.logs.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/vendedlogs/shared-delivery:*\"], \"Sid\": \"SharedVendedLogDelivery\"}]}",
+        "PolicyName": "route53-query-logging-policy"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com.",
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-dns-delivery-clearance"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "succeeded"
+     },
+     "dns-evidence-consolidation": {
+      "status": "succeeded"
+     },
+     "dns-exposure-limit": {
+      "status": "succeeded"
+     },
+     "dns-shared-clearance": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/dns-evidence": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence",
+        "LogGroupName": "/aws/route53/dns-evidence",
+        "RetentionInDays": 365
+       },
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com",
+        "LogGroupName": "/aws/route53/example53.com",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "dns-evidence-grant": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence:*\"], \"Sid\": \"DnsEvidenceDelivery\"}]}",
+        "PolicyName": "dns-evidence-grant"
+       },
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-baseline-review:*\", \"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*\"], \"Sid\": \"DnsDeliveryReviewedSourceAccount\", \"Condition\": {\"StringEquals\": {\"aws:SourceAccount\": \"123456789012\"}}}]}",
+        "PolicyName": "route53-query-logging-policy"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com.",
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-dns-shared-clearance"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "succeeded"
+     },
+     "dns-evidence-consolidation": {
+      "status": "succeeded"
+     },
+     "dns-exposure-limit": {
+      "status": "succeeded"
+     },
+     "dns-shared-clearance": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/dns-evidence": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence",
+        "LogGroupName": "/aws/route53/dns-evidence",
+        "RetentionInDays": 365
+       },
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com",
+        "LogGroupName": "/aws/route53/example53.com",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "dns-evidence-grant": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence:*\"], \"Sid\": \"DnsEvidenceDelivery\"}]}",
+        "PolicyName": "dns-evidence-grant"
+       },
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-baseline-review:*\", \"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*\"]}, {\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"delivery.logs.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/vendedlogs/shared-delivery:*\"], \"Sid\": \"SharedVendedLogDelivery\"}]}",
+        "PolicyName": "route53-query-logging-policy"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com.",
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-dns-exposure-limit"
+  },
+  {
+   "expected": "fail",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "succeeded"
+     },
+     "dns-evidence-consolidation": {
+      "status": "succeeded"
+     },
+     "dns-exposure-limit": {
+      "status": "succeeded"
+     },
+     "dns-shared-clearance": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com",
+        "LogGroupName": "/aws/route53/example53.com",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "dns-evidence-grant": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence:*\"], \"Sid\": \"DnsEvidenceDelivery\"}]}",
+        "PolicyName": "dns-evidence-grant"
+       },
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-baseline-review:*\", \"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*\"], \"Sid\": \"DnsDeliveryReviewedSourceAccount\", \"Condition\": {\"StringEquals\": {\"aws:SourceAccount\": \"123456789012\"}}}, {\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"delivery.logs.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/vendedlogs/shared-delivery:*\"], \"Sid\": \"SharedVendedLogDelivery\"}]}",
+        "PolicyName": "route53-query-logging-policy"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com.",
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "clobbered-dns-evidence-consolidation"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "succeeded"
+     },
+     "dns-evidence-consolidation": {
+      "status": "succeeded"
+     },
+     "dns-exposure-limit": {
+      "status": "succeeded"
+     },
+     "dns-shared-clearance": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/dns-evidence": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence",
+        "LogGroupName": "/aws/route53/dns-evidence",
+        "RetentionInDays": 365
+       },
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com",
+        "LogGroupName": "/aws/route53/example53.com",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "dns-evidence-grant": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence:*\"], \"Sid\": \"DnsEvidenceDelivery\"}]}",
+        "PolicyName": "dns-evidence-grant"
+       },
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-baseline-review:*\"], \"Sid\": \"DnsDeliveryReviewedSourceAccount\", \"Condition\": {\"StringEquals\": {\"aws:SourceAccount\": \"123456789012\"}}}, {\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*\"], \"Condition\": {\"StringEquals\": {\"aws:SourceAccount\": \"123456789012\"}}}, {\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"delivery.logs.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/vendedlogs/shared-delivery:*\"], \"Sid\": \"SharedVendedLogDelivery\"}]}",
+        "PolicyName": "route53-query-logging-policy"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com.",
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved-two-statements"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "status": "succeeded"
+     },
+     "dns-evidence-consolidation": {
+      "status": "succeeded"
+     },
+     "dns-exposure-limit": {
+      "status": "succeeded"
+     },
+     "dns-shared-clearance": {
+      "status": "succeeded"
+     }
+    },
+    "s0": {
+     "resources": {
+      "AWS::Logs::LogGroup": {},
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com."
+       }
+      }
+     }
+    },
+    "s_final": {
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/route53/dns-evidence": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence",
+        "LogGroupName": "/aws/route53/dns-evidence",
+        "RetentionInDays": 365
+       },
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com",
+        "LogGroupName": "/aws/route53/example53.com",
+        "RetentionInDays": 30
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "dns-evidence-grant": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-evidence:*\"], \"Sid\": \"DnsEvidenceDelivery\"}]}",
+        "PolicyName": "dns-evidence-grant"
+       },
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"route53.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/dns-baseline-review:*\", \"arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*\"], \"Sid\": \"DnsDeliveryReviewedSourceAccount\", \"Condition\": {\"StringEquals\": {\"aws:SourceAccount\": \"123456789012\"}}}]}",
+        "PolicyName": "route53-query-logging-policy"
+       },
+       "shared-vended-delivery": {
+        "PolicyDocument": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"Service\": \"delivery.logs.amazonaws.com\"}, \"Action\": [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\": [\"arn:aws:logs:us-east-1:123456789012:log-group:/aws/vendedlogs/shared-delivery:*\"], \"Sid\": \"SharedVendedLogDelivery\"}]}",
+        "PolicyName": "shared-vended-delivery"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z01STOREFRONTZONE": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         },
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         }
+        ],
+        "Name": "example53.com.",
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example53.com:*"
+        }
+       }
+      }
+     }
+    }
+   },
+   "name": "resolved-shared-entry-elsewhere"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {},
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/lambda/orders-worker": {
+        "Arn": "arn:aws:logs:us-east-1:000000000114:log-group:/aws/lambda/orders-worker:*",
+        "BearerTokenAuthenticationEnabled": false,
+        "DataProtectionPolicy": {},
+        "DeletionProtectionEnabled": false,
+        "FieldIndexPolicies": [],
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/lambda/orders-worker"
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z0570540MF5BVC806ZN6": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         },
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         }
+        ],
+        "Id": "Z0570540MF5BVC806ZN6",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-616.awsdns-13.net",
+         "ns-1827.awsdns-36.co.uk",
+         "ns-1105.awsdns-10.org",
+         "ns-151.awsdns-18.com"
+        ]
+       }
+      },
+      "AWS::Route53::QueryLoggingConfig": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/lambda/orders-worker": {
+        "Arn": "arn:aws:logs:us-east-1:000000000114:log-group:/aws/lambda/orders-worker:*",
+        "BearerTokenAuthenticationEnabled": false,
+        "DataProtectionPolicy": {},
+        "DeletionProtectionEnabled": false,
+        "FieldIndexPolicies": [],
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/lambda/orders-worker"
+       },
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:000000000114:log-group:/aws/route53/example53.com:*",
+        "BearerTokenAuthenticationEnabled": false,
+        "DataProtectionPolicy": {},
+        "DeletionProtectionEnabled": false,
+        "FieldIndexPolicies": [],
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/route53/example53.com"
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"Route53QueryLoggingExample53Com\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"route53.amazonaws.com\"},\"Action\":[\"logs:CreateLogStream\",\"logs:PutLogEvents\"],\"Resource\":\"arn:aws:logs:us-east-1:000000000114:log-group:/aws/route53/example53.com:*\"}]}",
+        "PolicyName": "route53-query-logging-policy"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z0570540MF5BVC806ZN6": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         },
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         }
+        ],
+        "Id": "Z0570540MF5BVC806ZN6",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-616.awsdns-13.net",
+         "ns-1827.awsdns-36.co.uk",
+         "ns-1105.awsdns-10.org",
+         "ns-151.awsdns-18.com"
+        ],
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:000000000114:log-group:/aws/route53/example53.com"
+        }
+       }
+      },
+      "AWS::Route53::QueryLoggingConfig": {
+       "260eb4ce-9548-4f70-a551-29e17f514d1d": {
+        "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:000000000114:log-group:/aws/route53/example53.com",
+        "HostedZoneId": "Z0570540MF5BVC806ZN6",
+        "Id": "260eb4ce-9548-4f70-a551-29e17f514d1d"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-control-pass"
+  },
+  {
+   "expected": "pass",
+   "input": {
+    "distractors": {
+     "dns-delivery-clearance": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 2,
+        "landed_ns": 268715875752594,
+        "landed_s": 106.83,
+        "result": {
+         "clearance": "route53-query-logging-policy",
+         "cleared": "/aws/route53/dns-baseline-review",
+         "fingerprint": [
+          "/aws/route53/dns-baseline-review"
+         ],
+         "trigger": "api",
+         "verified": true,
+         "withdrawn": [
+          "arn:aws:logs:us-east-1:000000000106:log-group:/aws/route53/example53.com:*"
+         ]
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-dns-delivery-clearance-2",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "clearance": "route53-query-logging-policy",
+       "cleared": "/aws/route53/dns-baseline-review",
+       "fingerprint": [
+        "/aws/route53/dns-baseline-review"
+       ],
+       "trigger": "api",
+       "verified": true,
+       "withdrawn": [
+        "arn:aws:logs:us-east-1:000000000106:log-group:/aws/route53/example53.com:*"
+       ]
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "dns-evidence-consolidation": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 1,
+        "landed_ns": 268655740346935,
+        "landed_s": 46.695,
+        "result": {
+         "configs": [
+          "d7324f12-a4f3-4763-a69f-3a087674dcf9"
+         ],
+         "fingerprint": [
+          "/aws/route53/dns-evidence"
+         ],
+         "moved": [
+          "Z0565365KHZHV1EDHTYU"
+         ],
+         "skipped": [],
+         "store": "/aws/route53/dns-evidence",
+         "trigger": "api"
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-dns-evidence-consolidation-1",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "configs": [
+        "d7324f12-a4f3-4763-a69f-3a087674dcf9"
+       ],
+       "fingerprint": [
+        "/aws/route53/dns-evidence"
+       ],
+       "moved": [
+        "Z0565365KHZHV1EDHTYU"
+       ],
+       "skipped": [],
+       "store": "/aws/route53/dns-evidence",
+       "trigger": "api"
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "dns-exposure-limit": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 4,
+        "landed_ns": 268810616908238,
+        "landed_s": 201.571,
+        "result": {
+         "clearance": "route53-query-logging-policy",
+         "fingerprint": [
+          "DnsDeliveryReviewedSourceAccount"
+         ],
+         "reviewed": 2,
+         "trigger": "api",
+         "verified": true
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-dns-exposure-limit-4",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "clearance": "route53-query-logging-policy",
+       "fingerprint": [
+        "DnsDeliveryReviewedSourceAccount"
+       ],
+       "reviewed": 2,
+       "trigger": "api",
+       "verified": true
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     },
+     "dns-shared-clearance": {
+      "fired": 1,
+      "outcomes": [
+       {
+        "exit_code": 0,
+        "firing": 3,
+        "landed_ns": 268728851585459,
+        "landed_s": 119.806,
+        "result": {
+         "clearance": "route53-query-logging-policy",
+         "entry": "SharedVendedLogDelivery",
+         "fingerprint": [
+          "/aws/vendedlogs/shared-delivery"
+         ],
+         "store": "/aws/vendedlogs/shared-delivery",
+         "trigger": "api",
+         "verified": true
+        },
+        "status": "succeeded",
+        "submission_id": "distractor-dns-shared-clearance-3",
+        "trigger_kind": "api"
+       }
+      ],
+      "result": {
+       "clearance": "route53-query-logging-policy",
+       "entry": "SharedVendedLogDelivery",
+       "fingerprint": [
+        "/aws/vendedlogs/shared-delivery"
+       ],
+       "store": "/aws/vendedlogs/shared-delivery",
+       "trigger": "api",
+       "verified": true
+      },
+      "status": "succeeded",
+      "succeeded": 1
+     }
+    },
+    "invariants": {
+     "check_failed": [],
+     "invalid_reason": null,
+     "invariants": {},
+     "unrestored": [],
+     "violated": []
+    },
+    "region": "us-east-1",
+    "s0": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/lambda/lambda_function_name": {
+        "Arn": "arn:aws:logs:us-east-1:000000000106:log-group:/aws/lambda/lambda_function_name:*",
+        "BearerTokenAuthenticationEnabled": false,
+        "DataProtectionPolicy": {},
+        "DeletionProtectionEnabled": false,
+        "FieldIndexPolicies": [],
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/lambda/lambda_function_name"
+       },
+       "/aws/lambda/orders-processor": {
+        "Arn": "arn:aws:logs:us-east-1:000000000106:log-group:/aws/lambda/orders-processor:*",
+        "BearerTokenAuthenticationEnabled": false,
+        "DataProtectionPolicy": {},
+        "DeletionProtectionEnabled": false,
+        "FieldIndexPolicies": [],
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/lambda/orders-processor"
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {},
+      "AWS::Route53::HostedZone": {
+       "Z0565365KHZHV1EDHTYU": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         },
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         }
+        ],
+        "Id": "Z0565365KHZHV1EDHTYU",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-940.awsdns-53.net",
+         "ns-1958.awsdns-52.co.uk",
+         "ns-1283.awsdns-32.org",
+         "ns-288.awsdns-36.com"
+        ]
+       }
+      },
+      "AWS::Route53::QueryLoggingConfig": {}
+     },
+     "schema_version": 1
+    },
+    "s_final": {
+     "region": "us-east-1",
+     "resources": {
+      "AWS::Logs::LogGroup": {
+       "/aws/lambda/lambda_function_name": {
+        "Arn": "arn:aws:logs:us-east-1:000000000106:log-group:/aws/lambda/lambda_function_name:*",
+        "BearerTokenAuthenticationEnabled": false,
+        "DataProtectionPolicy": {},
+        "DeletionProtectionEnabled": false,
+        "FieldIndexPolicies": [],
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/lambda/lambda_function_name"
+       },
+       "/aws/lambda/orders-processor": {
+        "Arn": "arn:aws:logs:us-east-1:000000000106:log-group:/aws/lambda/orders-processor:*",
+        "BearerTokenAuthenticationEnabled": false,
+        "DataProtectionPolicy": {},
+        "DeletionProtectionEnabled": false,
+        "FieldIndexPolicies": [],
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/lambda/orders-processor"
+       },
+       "/aws/route53/dns-evidence": {
+        "Arn": "arn:aws:logs:us-east-1:000000000106:log-group:/aws/route53/dns-evidence:*",
+        "BearerTokenAuthenticationEnabled": false,
+        "DataProtectionPolicy": {},
+        "DeletionProtectionEnabled": false,
+        "FieldIndexPolicies": [],
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/route53/dns-evidence",
+        "RetentionInDays": 365
+       },
+       "/aws/route53/example53.com": {
+        "Arn": "arn:aws:logs:us-east-1:000000000106:log-group:/aws/route53/example53.com:*",
+        "BearerTokenAuthenticationEnabled": false,
+        "DataProtectionPolicy": {},
+        "DeletionProtectionEnabled": false,
+        "FieldIndexPolicies": [],
+        "LogGroupClass": "STANDARD",
+        "LogGroupName": "/aws/route53/example53.com"
+       }
+      },
+      "AWS::Logs::ResourcePolicy": {
+       "dns-evidence-grant": {
+        "PolicyDocument": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"DnsEvidenceDelivery\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"route53.amazonaws.com\"},\"Action\":[\"logs:CreateLogStream\",\"logs:PutLogEvents\"],\"Resource\":\"arn:aws:logs:us-east-1:000000000106:log-group:/aws/route53/dns-evidence:*\"}]}",
+        "PolicyName": "dns-evidence-grant"
+       },
+       "route53-query-logging-policy": {
+        "PolicyDocument": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"DnsDeliveryReviewedSourceAccount\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"route53.amazonaws.com\"},\"Action\":[\"logs:CreateLogStream\",\"logs:PutLogEvents\"],\"Resource\":\"arn:aws:logs:us-east-1:000000000106:log-group:/aws/route53/example53.com:*\",\"Condition\":{\"StringEquals\":{\"aws:SourceAccount\":\"000000000106\"}}},{\"Sid\":\"DnsDeliveryReviewedSourceAccount1\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"route53.amazonaws.com\"},\"Action\":[\"logs:CreateLogStream\",\"logs:PutLogEvents\"],\"Resource\":\"arn:aws:logs:*:*:log-group:/aws/route53/dns-baseline-review:*\",\"Condition\":{\"StringEquals\":{\"aws:SourceAccount\":\"000000000106\"}}},{\"Sid\":\"SharedVendedLogDelivery\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"delivery.logs.amazonaws.com\"},\"Action\":[\"logs:CreateLogStream\",\"logs:PutLogEvents\"],\"Resource\":\"arn:aws:logs:*:*:log-group:/aws/vendedlogs/shared-delivery:*\"}]}",
+        "PolicyName": "route53-query-logging-policy"
+       }
+      },
+      "AWS::Route53::HostedZone": {
+       "Z0565365KHZHV1EDHTYU": {
+        "HostedZoneConfig": {
+         "Comment": "storefront public zone"
+        },
+        "HostedZoneFeatures": {
+         "EnableAcceleratedRecovery": false
+        },
+        "HostedZoneTags": [
+         {
+          "Key": "Owner",
+          "Value": "dns-platform"
+         },
+         {
+          "Key": "Name",
+          "Value": "example53.com"
+         }
+        ],
+        "Id": "Z0565365KHZHV1EDHTYU",
+        "Name": "example53.com.",
+        "NameServers": [
+         "ns-940.awsdns-53.net",
+         "ns-1958.awsdns-52.co.uk",
+         "ns-1283.awsdns-32.org",
+         "ns-288.awsdns-36.com"
+        ],
+        "QueryLoggingConfig": {
+         "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:000000000106:log-group:/aws/route53/example53.com"
+        }
+       }
+      },
+      "AWS::Route53::QueryLoggingConfig": {
+       "7a7decde-884d-466f-a1fa-b5131caef0f9": {
+        "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:000000000106:log-group:/aws/route53/example53.com",
+        "HostedZoneId": "Z0565365KHZHV1EDHTYU",
+        "Id": "7a7decde-884d-466f-a1fa-b5131caef0f9"
+       }
+      }
+     },
+     "schema_version": 1
+    }
+   },
+   "name": "real-interference-pass"
+  }
+ ],
+ "query": "data.cloudgym.verdict"
+}

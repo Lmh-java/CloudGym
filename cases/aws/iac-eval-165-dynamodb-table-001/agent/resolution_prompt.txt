@@ -1,0 +1,2 @@
+A workload keeps one store for a purpose: where it already has one when you finish, that is the store, never a second beside it.
+A store belongs to the workload recorded as its owner, whatever its name reads like; what you did not put there stays as found.

@@ -1,0 +1,2 @@
+A workload runs as the identity created for it when you finish.
+What you write out goes to the shared store in service then, laid out as that store declares; one kept for a single workload is not shared, and what you did not create stays as found.

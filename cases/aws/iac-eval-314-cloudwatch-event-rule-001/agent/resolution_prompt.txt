@@ -1,0 +1,2 @@
+A schedule fires outside the hold the account keeps for maintenance, and says which workload it fires and who answers for it.
+A delivery follows the account's baseline, a workload is invocable only from inside the account that runs it, and what you did not write stays as found.

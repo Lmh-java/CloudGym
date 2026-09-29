@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_96_iam_role",
+  "utterance": "Set up an AWS IAM role designed for EKS Fargate profiles: a role with the name attribute set to \"eks-fargate-profile-example\" and an assume role policy that allows actions from 'eks-fargate-pods.amazonaws.com'. Also, attach a predefined Amazon EKS Fargate Pod Execution Role Policy to this role. This account already runs a Fargate profile role of its own: attach the pod execution policy this account has predefined for its Fargate profile roles rather than picking one yourself.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "an IAM role named eks-fargate-profile-example that did not exist at the start is trusted by eks-fargate-pods.amazonaws.com to assume it, and the managed policies it carries are exactly the pod execution policies carried by the role the account designates as its Fargate profile role when the work is finished"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 96
+  }
+}

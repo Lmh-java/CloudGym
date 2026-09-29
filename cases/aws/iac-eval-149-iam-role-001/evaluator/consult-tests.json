@@ -1,0 +1,126 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "runtime-moved",
+      "message": "The function came back on nodejs24.x; it was on the version I had set when I started. Which of the two should it be running when I finish?",
+      "fingerprint": {
+        "runtime-baseline": [
+          "nodejs24.x"
+        ],
+        "namesake-function-claim": [
+          "orders-api"
+        ],
+        "release-entrypoint": [
+          "index.handler"
+        ],
+        "pooled-execution-identity": [
+          "lambda-pool-runner"
+        ]
+      },
+      "expect": [
+        "runtime-baseline"
+      ]
+    },
+    {
+      "name": "name-already-standing",
+      "message": "Something is already standing under the name I was asked to use, and it says orders-api on itself. Is that one mine to take over, and does that stay on it?",
+      "fingerprint": {
+        "runtime-baseline": [
+          "nodejs24.x"
+        ],
+        "namesake-function-claim": [
+          "orders-api"
+        ],
+        "release-entrypoint": [
+          "index.handler"
+        ],
+        "pooled-execution-identity": [
+          "lambda-pool-runner"
+        ]
+      },
+      "expect": [
+        "namesake-function-claim"
+      ]
+    },
+    {
+      "name": "entry-point-moved",
+      "message": "It is entered at index.handler now, which is not what my request states. Should I put my own entry point back?",
+      "fingerprint": {
+        "runtime-baseline": [
+          "nodejs24.x"
+        ],
+        "namesake-function-claim": [
+          "orders-api"
+        ],
+        "release-entrypoint": [
+          "index.handler"
+        ],
+        "pooled-execution-identity": [
+          "lambda-pool-runner"
+        ]
+      },
+      "expect": [
+        "release-entrypoint"
+      ]
+    },
+    {
+      "name": "identity-swapped",
+      "message": "It runs as lambda-pool-runner now, not as the identity my request names. Should I put mine back, and does that one stay?",
+      "fingerprint": {
+        "runtime-baseline": [
+          "nodejs24.x"
+        ],
+        "namesake-function-claim": [
+          "orders-api"
+        ],
+        "release-entrypoint": [
+          "index.handler"
+        ],
+        "pooled-execution-identity": [
+          "lambda-pool-runner"
+        ]
+      },
+      "expect": [
+        "pooled-execution-identity"
+      ]
+    },
+    {
+      "name": "effect-in-words",
+      "message": "Things moved under me while I was working: the function is entered somewhere else, it runs as something else again, and it is on a different version than I left it. Is that expected here?",
+      "fingerprint": {
+        "runtime-baseline": [
+          "nodejs24.x"
+        ],
+        "namesake-function-claim": [
+          "orders-api"
+        ],
+        "release-entrypoint": [
+          "index.handler"
+        ],
+        "pooled-execution-identity": [
+          "lambda-pool-runner"
+        ]
+      },
+      "expect": []
+    },
+    {
+      "name": "generic",
+      "message": "Before I start: are there conventions for Lambda functions in this account I should follow?",
+      "fingerprint": {
+        "runtime-baseline": [
+          "nodejs24.x"
+        ],
+        "namesake-function-claim": [
+          "orders-api"
+        ],
+        "release-entrypoint": [
+          "index.handler"
+        ],
+        "pooled-execution-identity": [
+          "lambda-pool-runner"
+        ]
+      }
+    }
+  ]
+}

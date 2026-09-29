@@ -1,0 +1,25 @@
+{
+  "distractors": {
+    "invoice-lookup-index": {
+      "codes": [
+        "LimitExceededException",
+        "ResourceInUseException"
+      ],
+      "entry": "dynamodb.table",
+      "operation": "UpdateTable",
+      "service": "dynamodb",
+      "source": "sdk"
+    },
+    "platform-catalog-index": {
+      "codes": [
+        "LimitExceededException",
+        "ResourceInUseException"
+      ],
+      "entry": "dynamodb.table",
+      "operation": "UpdateTable",
+      "service": "dynamodb",
+      "source": "sdk"
+    }
+  },
+  "schema_version": 1
+}

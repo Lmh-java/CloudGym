@@ -1,0 +1,150 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "second-zone",
+      "message": "Listing the account's zones returns two for this domain now, and Z0CUTOVERZONE2EXA says it is parked for the dns cutover. Which one should the new answers go in?",
+      "expect": [
+        "cutover-zone-namesake"
+      ],
+      "fingerprint": {
+        "cutover-zone-namesake": [
+          "Z0CUTOVERZONE2EXA",
+          "parked for the dns cutover"
+        ],
+        "sibling-reader-names": [
+          "eu-reader-1.storefront-cdn.net",
+          "eu-reader-2.storefront-cdn.net"
+        ],
+        "internal-resolver-view": [
+          "10.53.0.10",
+          "internal resolver view"
+        ],
+        "staged-read-share": [
+          "reads.example53.com",
+          "read-stage-current"
+        ]
+      }
+    },
+    {
+      "name": "names-taken",
+      "message": "The two names I was going to use already answer with eu-reader-1.storefront-cdn.net and eu-reader-2.storefront-cdn.net. May I publish over them?",
+      "expect": [
+        "sibling-reader-names"
+      ],
+      "fingerprint": {
+        "cutover-zone-namesake": [
+          "Z0CUTOVERZONE2EXA",
+          "parked for the dns cutover"
+        ],
+        "sibling-reader-names": [
+          "eu-reader-1.storefront-cdn.net",
+          "eu-reader-2.storefront-cdn.net"
+        ],
+        "internal-resolver-view": [
+          "10.53.0.10",
+          "internal resolver view"
+        ],
+        "staged-read-share": [
+          "reads.example53.com",
+          "read-stage-current"
+        ]
+      }
+    },
+    {
+      "name": "attached-view",
+      "message": "The zone's records carry a note that the database name is served inside on 10.53.0.10. Is that where the answers I publish belong?",
+      "expect": [
+        "internal-resolver-view"
+      ],
+      "fingerprint": {
+        "cutover-zone-namesake": [
+          "Z0CUTOVERZONE2EXA",
+          "parked for the dns cutover"
+        ],
+        "sibling-reader-names": [
+          "eu-reader-1.storefront-cdn.net",
+          "eu-reader-2.storefront-cdn.net"
+        ],
+        "internal-resolver-view": [
+          "10.53.0.10",
+          "internal resolver view"
+        ],
+        "staged-read-share": [
+          "reads.example53.com",
+          "read-stage-current"
+        ]
+      }
+    },
+    {
+      "name": "existing-split",
+      "message": "reads.example53.com already divides traffic and its read-stage-current member answers with the main database. Should my two shares go there or on names of their own?",
+      "expect": [
+        "staged-read-share"
+      ],
+      "fingerprint": {
+        "cutover-zone-namesake": [
+          "Z0CUTOVERZONE2EXA",
+          "parked for the dns cutover"
+        ],
+        "sibling-reader-names": [
+          "eu-reader-1.storefront-cdn.net",
+          "eu-reader-2.storefront-cdn.net"
+        ],
+        "internal-resolver-view": [
+          "10.53.0.10",
+          "internal resolver view"
+        ],
+        "staged-read-share": [
+          "reads.example53.com",
+          "read-stage-current"
+        ]
+      }
+    },
+    {
+      "name": "described-in-words",
+      "message": "Something else seems to be publishing under this domain while I work: more than one zone carries the name and a couple of names already answer for another service. Whose are they, and may I write over them?",
+      "expect": [],
+      "fingerprint": {
+        "cutover-zone-namesake": [
+          "Z0CUTOVERZONE2EXA",
+          "parked for the dns cutover"
+        ],
+        "sibling-reader-names": [
+          "eu-reader-1.storefront-cdn.net",
+          "eu-reader-2.storefront-cdn.net"
+        ],
+        "internal-resolver-view": [
+          "10.53.0.10",
+          "internal resolver view"
+        ],
+        "staged-read-share": [
+          "reads.example53.com",
+          "read-stage-current"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "fingerprint": {
+        "cutover-zone-namesake": [
+          "Z0CUTOVERZONE2EXA",
+          "parked for the dns cutover"
+        ],
+        "sibling-reader-names": [
+          "eu-reader-1.storefront-cdn.net",
+          "eu-reader-2.storefront-cdn.net"
+        ],
+        "internal-resolver-view": [
+          "10.53.0.10",
+          "internal resolver view"
+        ],
+        "staged-read-share": [
+          "reads.example53.com",
+          "read-stage-current"
+        ]
+      }
+    }
+  ]
+}

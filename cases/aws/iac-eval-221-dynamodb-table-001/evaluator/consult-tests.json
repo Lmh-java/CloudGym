@@ -1,0 +1,70 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "catalogue-reference",
+      "message": "The store I stood up came back carrying a CatalogRef of dc-8802 that I did not put on it, and its owner record now reads unclaimed. Whose register is that, and what should the store end up recording?",
+      "expect": ["store-attribution"],
+      "fingerprint": {
+        "store-attribution": ["dc-8802"],
+        "feed-minimisation": ["cls-4419"],
+        "restore-point-protection": ["rolling-33-day"],
+        "change-freeze": ["cf-2026-q3"]
+      }
+    },
+    {
+      "name": "feed-review",
+      "message": "The store's change feed is handing out keys only now, and there is a review reading cls-4419 on it. Whose call is the format that feed carries?",
+      "expect": ["feed-minimisation"],
+      "fingerprint": {
+        "store-attribution": ["dc-8802"],
+        "feed-minimisation": ["cls-4419"],
+        "restore-point-protection": ["rolling-33-day"],
+        "change-freeze": ["cf-2026-q3"]
+      }
+    },
+    {
+      "name": "restore-window",
+      "message": "The store has picked up a RestoreWindow of rolling-33-day since I created it. Is that mine to take off, or does it stay?",
+      "expect": ["restore-point-protection"],
+      "fingerprint": {
+        "store-attribution": ["dc-8802"],
+        "feed-minimisation": ["cls-4419"],
+        "restore-point-protection": ["rolling-33-day"],
+        "change-freeze": ["cf-2026-q3"]
+      }
+    },
+    {
+      "name": "freeze-window",
+      "message": "Something is holding the store against deletion and it is marked cf-2026-q3. Can I drop and rebuild it, or does that hold stand?",
+      "expect": ["change-freeze"],
+      "fingerprint": {
+        "store-attribution": ["dc-8802"],
+        "feed-minimisation": ["cls-4419"],
+        "restore-point-protection": ["rolling-33-day"],
+        "change-freeze": ["cf-2026-q3"]
+      }
+    },
+    {
+      "name": "settings-appeared",
+      "message": "Since I made the store it has picked up continuous recovery, a guard against deletion and a couple of marks I did not write. Should any of that survive what I still have to change?",
+      "expect": [],
+      "fingerprint": {
+        "store-attribution": ["dc-8802"],
+        "feed-minimisation": ["cls-4419"],
+        "restore-point-protection": ["rolling-33-day"],
+        "change-freeze": ["cf-2026-q3"]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "fingerprint": {
+        "store-attribution": ["dc-8802"],
+        "feed-minimisation": ["cls-4419"],
+        "restore-point-protection": ["rolling-33-day"],
+        "change-freeze": ["cf-2026-q3"]
+      }
+    }
+  ]
+}

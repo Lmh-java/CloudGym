@@ -1,0 +1,127 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "resolvers-inside",
+      "message": "The option set bound to this VPC hands out 192.168.0.2 and nothing off-network, and the VPC is marked resolvers-inside-account-only. Am I expected to keep name resolution inside the account, or may I add the public resolver I was asked for?",
+      "expect": [
+        "resolver-egress-boundary"
+      ],
+      "fingerprint": {
+        "resolver-egress-boundary": [
+          "resolvers-inside-account-only"
+        ],
+        "sibling-directory-resolver": [
+          "arcade-dc1"
+        ],
+        "netbios-name-service-path": [
+          "wins-point-to-point"
+        ],
+        "internal-time-source": [
+          "account-internal-ntp"
+        ]
+      }
+    },
+    {
+      "name": "directory-resolver",
+      "message": "There is a resolver at 192.168.56.103 in the settings on this network, and the VPC carries the value arcade-dc1. Whose resolver is that, and does it have to stay once I write the settings I was asked for?",
+      "expect": [
+        "sibling-directory-resolver"
+      ],
+      "fingerprint": {
+        "resolver-egress-boundary": [
+          "resolvers-inside-account-only"
+        ],
+        "sibling-directory-resolver": [
+          "arcade-dc1"
+        ],
+        "netbios-name-service-path": [
+          "wins-point-to-point"
+        ],
+        "internal-time-source": [
+          "account-internal-ntp"
+        ]
+      }
+    },
+    {
+      "name": "name-server-path",
+      "message": "The settings on this VPC name 192.168.56.111 as a NetBIOS name server and the VPC is marked wins-point-to-point. Is that how short names are meant to be resolved here, and do I keep it?",
+      "expect": [
+        "netbios-name-service-path"
+      ],
+      "fingerprint": {
+        "resolver-egress-boundary": [
+          "resolvers-inside-account-only"
+        ],
+        "sibling-directory-resolver": [
+          "arcade-dc1"
+        ],
+        "netbios-name-service-path": [
+          "wins-point-to-point"
+        ],
+        "internal-time-source": [
+          "account-internal-ntp"
+        ]
+      }
+    },
+    {
+      "name": "time-service",
+      "message": "This VPC is marked account-internal-ntp and its settings hand out 192.168.56.150 for time. Is that something every workload here inherits, so I carry it over?",
+      "expect": [
+        "internal-time-source"
+      ],
+      "fingerprint": {
+        "resolver-egress-boundary": [
+          "resolvers-inside-account-only"
+        ],
+        "sibling-directory-resolver": [
+          "arcade-dc1"
+        ],
+        "netbios-name-service-path": [
+          "wins-point-to-point"
+        ],
+        "internal-time-source": [
+          "account-internal-ntp"
+        ]
+      }
+    },
+    {
+      "name": "paraphrase",
+      "message": "Something re-pointed this network at another set of DHCP settings with extra name servers and a time server in them. Should those entries survive when I write the ones I was asked for?",
+      "expect": [],
+      "fingerprint": {
+        "resolver-egress-boundary": [
+          "resolvers-inside-account-only"
+        ],
+        "sibling-directory-resolver": [
+          "arcade-dc1"
+        ],
+        "netbios-name-service-path": [
+          "wins-point-to-point"
+        ],
+        "internal-time-source": [
+          "account-internal-ntp"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "resolver-egress-boundary": [
+          "resolvers-inside-account-only"
+        ],
+        "sibling-directory-resolver": [
+          "arcade-dc1"
+        ],
+        "netbios-name-service-path": [
+          "wins-point-to-point"
+        ],
+        "internal-time-source": [
+          "account-internal-ntp"
+        ]
+      }
+    }
+  ]
+}

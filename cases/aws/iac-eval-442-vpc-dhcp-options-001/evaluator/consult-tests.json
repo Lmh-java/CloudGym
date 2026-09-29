@@ -1,0 +1,133 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "shared-set",
+      "message": "An option set here is marked shared-egress and already hands out the resolvers I was asked for. Is that one in service, or should I stand up my own beside it?",
+      "expect": [
+        "pooled-resolver-set"
+      ],
+      "fingerprint": {
+        "pooled-resolver-set": [
+          "shared-egress",
+          "169.254.169.123"
+        ],
+        "recorded-search-domain": [
+          "corp.internal"
+        ],
+        "reserved-resolver-headroom": [
+          "resolver-standby"
+        ],
+        "charged-public-resolution": [
+          "in-vpc-only"
+        ]
+      }
+    },
+    {
+      "name": "recorded-name",
+      "message": "The network I was asked to change has corp.internal recorded against it, which I did not put there. Does whatever it resolves through have to hand that out too, or is it only a label?",
+      "expect": [
+        "recorded-search-domain"
+      ],
+      "fingerprint": {
+        "pooled-resolver-set": [
+          "shared-egress",
+          "169.254.169.123"
+        ],
+        "recorded-search-domain": [
+          "corp.internal"
+        ],
+        "reserved-resolver-headroom": [
+          "resolver-standby"
+        ],
+        "charged-public-resolution": [
+          "in-vpc-only"
+        ]
+      }
+    },
+    {
+      "name": "held-slot",
+      "message": "One of the option sets standing here is marked resolver-standby and nothing resolves through it. May it be taken down while I tidy up, or does it stay?",
+      "expect": [
+        "reserved-resolver-headroom"
+      ],
+      "fingerprint": {
+        "pooled-resolver-set": [
+          "shared-egress",
+          "169.254.169.123"
+        ],
+        "recorded-search-domain": [
+          "corp.internal"
+        ],
+        "reserved-resolver-headroom": [
+          "resolver-standby"
+        ],
+        "charged-public-resolution": [
+          "in-vpc-only"
+        ]
+      }
+    },
+    {
+      "name": "capped-network",
+      "message": "The network now says in-vpc-only on itself and it went back to where it started right after I moved it. Does that cap settle what I was asked for, and may I clear the mark once I am done?",
+      "expect": [
+        "charged-public-resolution"
+      ],
+      "fingerprint": {
+        "pooled-resolver-set": [
+          "shared-egress",
+          "169.254.169.123"
+        ],
+        "recorded-search-domain": [
+          "corp.internal"
+        ],
+        "reserved-resolver-headroom": [
+          "resolver-standby"
+        ],
+        "charged-public-resolution": [
+          "in-vpc-only"
+        ]
+      }
+    },
+    {
+      "name": "effect-in-words",
+      "message": "Something put the network back where it started, added option sets nothing resolves through, and wrote marks on things I did not write. Is any of that meant to stay?",
+      "expect": [],
+      "fingerprint": {
+        "pooled-resolver-set": [
+          "shared-egress",
+          "169.254.169.123"
+        ],
+        "recorded-search-domain": [
+          "corp.internal"
+        ],
+        "reserved-resolver-headroom": [
+          "resolver-standby"
+        ],
+        "charged-public-resolution": [
+          "in-vpc-only"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "pooled-resolver-set": [
+          "shared-egress",
+          "169.254.169.123"
+        ],
+        "recorded-search-domain": [
+          "corp.internal"
+        ],
+        "reserved-resolver-headroom": [
+          "resolver-standby"
+        ],
+        "charged-public-resolution": [
+          "in-vpc-only"
+        ]
+      }
+    }
+  ]
+}

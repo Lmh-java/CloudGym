@@ -1,0 +1,16 @@
+{
+  "cloudcontrol_type": "AWS::IAM::InstanceProfile",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-09T06:06:02+00:00",
+      "ResourceDescription": {
+        "Identifier": "cloudgym-capability-20260909060546153500000002",
+        "Properties": "{\"Path\":\"/\",\"InstanceProfileName\":\"cloudgym-capability-20260909060546153500000002\",\"Roles\":[\"cloudgym-capability-20260909060545279100000001\"],\"Arn\":\"arn:aws:iam::123456789012:instance-profile/cloudgym-capability-20260909060546153500000002\"}"
+      },
+      "TypeName": "AWS::IAM::InstanceProfile"
+    }
+  ],
+  "recorded_at": "2026-09-09T06:06:05+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

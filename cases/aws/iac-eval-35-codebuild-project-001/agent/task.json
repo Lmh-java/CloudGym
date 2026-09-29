@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_35_codebuild_project",
+  "utterance": "Create an AWS CodeBuild project named `DROW3_codebuild` for our application, with an example IAM role of its own, an example environment variable, and no source.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "the application has a build project of its own, absent before the task, whose source is of type NO_SOURCE, whose build environment defines at least one environment variable, and which runs as an IAM role created for it that trusts codebuild.amazonaws.com"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 35
+  }
+}

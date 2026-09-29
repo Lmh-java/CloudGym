@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_428_internet_gateway",
+  "utterance": "In the existing VPC `app-vpc`, create multiple public subnets and associate them with a route table configured for internet access via an internet gateway.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's resources and their configuration",
+    "intent": "the VPC app-vpc holds at least two new subnets whose CIDR blocks are inside 10.0.0.0/16 and overlap no other subnet in that VPC, and every one of those subnets is associated with a route table that carries a 0.0.0.0/0 route whose target is an internet gateway attached to app-vpc"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 428
+  }
+}

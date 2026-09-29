@@ -1,0 +1,2 @@
+A workload runs under an identity the account already provides, one workload to an identity; what another workload holds is not yours to take.
+Identities you add or change are made and marked like the account's existing ones; what you did not write stays as you found it.

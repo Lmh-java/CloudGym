@@ -1,0 +1,139 @@
+{
+  "mode": "fingerprint",
+  "asks": [
+    {
+      "name": "gateway-not-mine",
+      "message": "The network I was given already leaves by a gateway called edge-gw-shared-r7 that I did not raise. Do I use that one, or put up my own?",
+      "expect": [
+        "shared-edge-gateway"
+      ],
+      "fingerprint": {
+        "shared-edge-gateway": [
+          "edge-gw-shared-r7",
+          "shared-igw-r7"
+        ],
+        "edge-route-table": [
+          "edge-rt-shared-k3",
+          "net-edge-k3"
+        ],
+        "release-traffic-target": [
+          "stage-blue-h6"
+        ],
+        "sibling-edge-listener": [
+          "sibling-web-q8"
+        ]
+      }
+    },
+    {
+      "name": "table-under-the-segment",
+      "message": "Both edge subnets are already on a route table marked edge-rt-shared-k3. Do they stay on it, or move onto one I cut for this work?",
+      "expect": [
+        "edge-route-table"
+      ],
+      "fingerprint": {
+        "shared-edge-gateway": [
+          "edge-gw-shared-r7",
+          "shared-igw-r7"
+        ],
+        "edge-route-table": [
+          "edge-rt-shared-k3",
+          "net-edge-k3"
+        ],
+        "release-traffic-target": [
+          "stage-blue-h6"
+        ],
+        "sibling-edge-listener": [
+          "sibling-web-q8"
+        ]
+      }
+    },
+    {
+      "name": "group-already-holding-it",
+      "message": "A group named stage-blue-h6 already has my server registered in it. Is that where the front should send its traffic, or do I stand up one of my own?",
+      "expect": [
+        "release-traffic-target"
+      ],
+      "fingerprint": {
+        "shared-edge-gateway": [
+          "edge-gw-shared-r7",
+          "shared-igw-r7"
+        ],
+        "edge-route-table": [
+          "edge-rt-shared-k3",
+          "net-edge-k3"
+        ],
+        "release-traffic-target": [
+          "stage-blue-h6"
+        ],
+        "sibling-edge-listener": [
+          "sibling-web-q8"
+        ]
+      }
+    },
+    {
+      "name": "port-taken",
+      "message": "The balancer is already answering and sending what arrives to sibling-web-q8, which holds nothing of mine. Does that stay, or does my front take it over?",
+      "expect": [
+        "sibling-edge-listener"
+      ],
+      "fingerprint": {
+        "shared-edge-gateway": [
+          "edge-gw-shared-r7",
+          "shared-igw-r7"
+        ],
+        "edge-route-table": [
+          "edge-rt-shared-k3",
+          "net-edge-k3"
+        ],
+        "release-traffic-target": [
+          "stage-blue-h6"
+        ],
+        "sibling-edge-listener": [
+          "sibling-web-q8"
+        ]
+      }
+    },
+    {
+      "name": "described-in-words",
+      "message": "A gateway I did not raise, a table I did not cut, and something already answering on the balancer for servers that are not mine. Which of it is mine to change?",
+      "expect": [],
+      "fingerprint": {
+        "shared-edge-gateway": [
+          "edge-gw-shared-r7",
+          "shared-igw-r7"
+        ],
+        "edge-route-table": [
+          "edge-rt-shared-k3",
+          "net-edge-k3"
+        ],
+        "release-traffic-target": [
+          "stage-blue-h6"
+        ],
+        "sibling-edge-listener": [
+          "sibling-web-q8"
+        ]
+      }
+    },
+    {
+      "name": "generic",
+      "message": "Any conventions I should follow here?",
+      "expect": [],
+      "fingerprint": {
+        "shared-edge-gateway": [
+          "edge-gw-shared-r7",
+          "shared-igw-r7"
+        ],
+        "edge-route-table": [
+          "edge-rt-shared-k3",
+          "net-edge-k3"
+        ],
+        "release-traffic-target": [
+          "stage-blue-h6"
+        ],
+        "sibling-edge-listener": [
+          "sibling-web-q8"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "cloudcontrol_type": "AWS::EC2::InternetGateway",
+  "envelopes": [
+    {
+      "ReadAt": "2026-09-01T06:46:31+00:00",
+      "ResourceDescription": {
+        "Identifier": "igw-0203a45b89c5f552a",
+        "Properties": "{\"InternetGatewayId\":\"igw-0203a45b89c5f552a\",\"Tags\":[]}"
+      },
+      "TypeName": "AWS::EC2::InternetGateway"
+    },
+    {
+      "ReadAt": "2026-09-01T06:46:31+00:00",
+      "ResourceDescription": {
+        "Identifier": "igw-0ff1a4b13b8b1078d",
+        "Properties": "{\"InternetGatewayId\":\"igw-0ff1a4b13b8b1078d\",\"Tags\":[]}"
+      },
+      "TypeName": "AWS::EC2::InternetGateway"
+    }
+  ],
+  "recorded_at": "2026-09-01T06:46:34+00:00",
+  "region": "us-east-1",
+  "schema_version": 1
+}

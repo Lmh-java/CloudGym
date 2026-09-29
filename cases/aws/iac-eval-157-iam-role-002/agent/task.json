@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed_id": "iac-eval_157_iam_role",
+  "utterance": "Create an AWS Lambda function `lambda_function_name` to run a file \"lambda.js\". Define the IAM roles as needed.",
+  "main": {
+    "role": "application-developer",
+    "responsibility": "owns the application's runtime settings and how its code executes",
+    "intent": "a Lambda function named lambda_function_name exists in the account, deployed as a Node.js zip package carrying the lambda.js code, and it runs under an IAM execution role that lambda.amazonaws.com can assume and that grants it the basic Lambda execution permissions"
+  },
+  "provenance": {
+    "generation": "agent",
+    "dataset": "IaC-Eval",
+    "row": 157
+  }
+}

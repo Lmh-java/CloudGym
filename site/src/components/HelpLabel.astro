@@ -1,0 +1,17 @@
+---
+import { explanations, type Explanation } from '../lib/explanations';
+interface Props {
+  topic: Explanation;
+}
+const { topic } = Astro.props;
+---
+
+<span
+  class="help-label"
+  tabindex="0"
+  data-help={topic}
+  aria-describedby={`help-${topic}`}
+  title={explanations[topic]}
+>
+  <slot />
+</span>

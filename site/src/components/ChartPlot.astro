@@ -1,0 +1,163 @@
+---
+import { results, DEFAULT_CONDITION, type Condition } from '../lib/results';
+import {
+  panelModels,
+  panelSeries,
+  formatValue,
+  metrics,
+  metricMax,
+  type Metric,
+} from '../lib/panels';
+import HelpLabel from './HelpLabel.astro';
+import { type Explanation } from '../lib/explanations';
+interface Props {
+  kind: Metric;
+  title: string;
+}
+const { kind, title } = Astro.props;
+import { modelIcon } from '../lib/site';
+const conditions = results.conditions;
+const defaultSeries = panelSeries(kind, DEFAULT_CONDITION);
+---
+
+<div class="chart-plot" data-plot={kind}>
+  {kind === 'categories' && (
+    <ul class="chart-legend" aria-label="Task categories">
+      {defaultSeries.map((series) => (
+        <li>
+          <span
+            class="legend-swatch"
+            style={`background: ${series.color}`}
+          ></span>
+          <HelpLabel topic={series.id as Explanation}>{series.name}</HelpLabel>
+        </li>
+      ))}
+    </ul>
+  )}
+  <div class="chart-axis-label">{metrics[kind].label}</div>
+  <div class="chart-viewport" data-metric={kind}>
+    <div class="static-chart-wrap">
+      {conditions.map((condition) => {
+        const series = panelSeries(kind, condition.key as Condition);
+        const max = metricMax(kind);
+        return (
+          <div
+            class="static-condition"
+            data-condition={condition.key}
+            hidden={condition.key !== DEFAULT_CONDITION}
+          >
+            <svg
+              viewBox="0 0 1040 350"
+              class="static-chart"
+              role="img"
+              aria-label={`${title}, ${condition.name}. Exact results are available in the accessible table.`}
+            >
+              {[0, 0.25, 0.5, 0.75, 1].map((fraction) => (
+                <g>
+                  <line
+                    x1="55"
+                    x2="1020"
+                    y1={292 - fraction * 250}
+                    y2={292 - fraction * 250}
+                    stroke="#23303e"
+                    stroke-dasharray="3 5"
+                  />
+                  <text
+                    x="45"
+                    y={296 - fraction * 250}
+                    text-anchor="end"
+                    fill="#91a4b7"
+                    font-size="11"
+                  >
+                    {formatValue(kind, fraction * max)}
+                  </text>
+                </g>
+              ))}
+              {panelModels.map((model, index) => (
+                <g>
+                  {series.map((item, j) => {
+                    const value = item.values[index];
+                    const x =
+                      109 +
+                      index * 190 +
+                      j * 32 +
+                      (series.length === 1 ? 32 : 0);
+                    return (
+                      <g>
+                        <rect
+                          x={x}
+                          y={292 - (value / max) * 250}
+                          width="24"
+                          height={(value / max) * 250}
+                          rx="4"
+                          fill={item.color}
+                        />
+                        <text
+                          x={x + 12}
+                          y={282 - (value / max) * 250}
+                          text-anchor="middle"
+                          fill={item.color}
+                          font-size="11"
+                        >
+                          {formatValue(kind, value)}
+                        </text>
+                      </g>
+                    );
+                  })}
+                  <g
+                    transform={`translate(${153 + index * 190 - (model.name.length * 6.5 + 24) / 2}, 313)`}
+                  >
+                    <image
+                      href={modelIcon(model.provider)}
+                      width="17"
+                      height="17"
+                      aria-hidden="true"
+                    />
+                    <text x="24" y="13" fill="#bac8d6" font-size="12">
+                      {model.name}
+                    </text>
+                  </g>
+                </g>
+              ))}
+            </svg>
+          </div>
+        );
+      })}
+    </div>
+    <div class="interactive-chart" aria-hidden="true"></div>
+  </div>
+  {conditions.map((condition) => {
+    const series = panelSeries(kind, condition.key as Condition);
+    return (
+      <div
+        class="sr-only"
+        data-table-condition={condition.key}
+        hidden={condition.key !== DEFAULT_CONDITION}
+      >
+        <table class="category-table">
+          <caption>
+            {title}: {condition.name}, hybrid tools.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Model</th>
+              {series.map((item) => (
+                <th scope="col">{item.name}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {panelModels.map((model, i) => (
+              <tr>
+                <th scope="row">{model.name}</th>
+                {series.map((item) => (
+                  <td>{formatValue(kind, item.values[i])}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  })}
+</div>

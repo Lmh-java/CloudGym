@@ -1,0 +1,69 @@
+---
+import Page from '../layouts/Page.astro';
+import Rankings from '../components/Rankings.astro';
+import HelpLabel from '../components/HelpLabel.astro';
+import { base, site } from '../lib/site';
+---
+
+<Page
+  page="home"
+  title="CloudGym — Shared Cloud Infrastructure Benchmark"
+  description="Can AI agents manage shared cloud infrastructure? Explore the CloudGym leaderboard: 102 live AWS tasks testing semantic conflict, intent ambiguity, and execution conflict."
+>
+  <header class="hero">
+    <h1>
+      Cloud<span>GYM</span>
+    </h1>
+    <p class="hero-title">
+      Can AI agents manage
+      <br class="mobile-break" /> shared cloud infrastructure?
+    </p>
+    <a
+      class="github-button"
+      href={site.github}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src={`${base}/icons/github.svg`} width="19" height="19" alt="" />
+      GitHub
+    </a>
+  </header>
+  <div class="stats-strip" aria-label="Benchmark scope">
+    <div>
+      <strong>102</strong>
+      <span>Live AWS cases</span>
+    </div>
+    <div>
+      <strong>19</strong>
+      <span>AWS services</span>
+    </div>
+    <div>
+      <strong>65</strong>
+      <span>Resource types</span>
+    </div>
+    <div>
+      <strong>3</strong>
+      <span>Task categories</span>
+    </div>
+  </div>
+  <section
+    id="leaderboard"
+    class="results-section"
+    aria-labelledby="leaderboard-title"
+  >
+    <div class="section-heading">
+      <h2 id="leaderboard-title">Leaderboard</h2>
+      <p>
+        <HelpLabel topic="consulted">Consulted policy</HelpLabel>{' '}
+        <span aria-hidden="true">·</span>{' '}
+        <HelpLabel topic="hybrid">Hybrid tools</HelpLabel>
+      </p>
+    </div>
+    <Rankings />
+  </section>
+  <div class="view-all">
+    <a class="outline-button" href={`${base}/leaderboard/`}>
+      View All <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+</Page>

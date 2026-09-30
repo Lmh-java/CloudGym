@@ -1,0 +1,94 @@
+---
+import {
+  results,
+  DEFAULT_CONDITION,
+  sortedModels,
+  rankOf,
+  percent,
+  type Category,
+} from '../lib/results';
+import HelpLabel from './HelpLabel.astro';
+import { modelIcon } from '../lib/site';
+const models = sortedModels(DEFAULT_CONDITION);
+---
+
+<div class="leaderboard-card">
+  <table class="leaderboard-table">
+    <caption class="sr-only">
+      Models ranked by overall pass rate, with pass rates for each conflict
+      type. Consulted policy, hybrid tools, 102 cases, two trials per case. All
+      scores are percentages.
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col" class="rank-col">
+          Rank
+        </th>
+        <th scope="col" class="model-col">
+          Model
+        </th>
+        <th scope="col" class="score-col">
+          Overall <span aria-hidden="true">↓</span>
+        </th>
+        {results.categories.map((category) => (
+          <th scope="col" class="subscore-heading" data-category={category.key}>
+            <HelpLabel topic={category.key as Category}>
+              {category.name}
+            </HelpLabel>
+          </th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {models.map((model, i) => (
+        <tr class:list={[{ 'leading-row': i === 0 }]}>
+          <td class="rank-col">
+            <span class:list={['rank', { 'first-rank': i === 0 }]}>
+              {String(
+                rankOf(DEFAULT_CONDITION, model.scores.consulted.overall),
+              ).padStart(2, '0')}
+            </span>
+          </td>
+          <th scope="row" class="model-col">
+            <div class="model-cell">
+              <img
+                class="model-icon"
+                src={modelIcon(model.provider)}
+                width="27"
+                height="27"
+                alt={model.provider === 'Anthropic' ? 'Claude' : 'ChatGPT'}
+              />
+              <span class="model-name">{model.name}</span>
+            </div>
+          </th>
+          <td class="score-col">
+            <div class="score-cell">
+              <div class="score-track" aria-hidden="true">
+                <div
+                  class="score-fill"
+                  style={`--score: ${model.scores.consulted.overall}%`}
+                ></div>
+              </div>
+              <strong class="score-number">
+                {percent(model.scores.consulted.overall)}
+              </strong>
+            </div>
+          </td>
+          {results.categories.map((category) => (
+            <td class="subscore-cell" data-category={category.key}>
+              <span class="subscore-label">
+                <HelpLabel topic={category.key as Category}>
+                  {category.short}
+                  <span class="sr-only">: {category.name}</span>
+                </HelpLabel>
+              </span>
+              <span class="subscore-number">
+                {percent(model.scores.consulted[category.key as Category])}
+              </span>
+            </td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

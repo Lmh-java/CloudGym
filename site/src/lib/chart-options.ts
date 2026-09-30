@@ -23,7 +23,7 @@ export function chartOptions(
     axisLine: { show: false },
     axisTick: { show: false },
     axisLabel: {
-      color: '#bdcedd',
+      color: '#bcc9df',
       margin: horizontal ? 10 : 18,
       interval: 0,
       formatter: (name: string, index: number) =>
@@ -44,7 +44,7 @@ export function chartOptions(
           backgroundColor: { image: modelIcon('OpenAI') },
         },
         model: {
-          color: '#bdcedd',
+          color: '#bcc9df',
           fontSize: horizontal ? 10 : 11,
           fontFamily: 'Inter',
           verticalAlign: 'middle',
@@ -58,12 +58,12 @@ export function chartOptions(
     max: metricMax(kind),
     interval: metricMax(kind) / 4,
     axisLabel: {
-      color: '#8fa6bc',
+      color: '#99a8be',
       fontSize: 9,
       formatter: (value: number) => formatValue(kind, value),
     },
     splitLine: {
-      lineStyle: { color: '#243546', type: 'dashed', opacity: 0.65 },
+      lineStyle: { color: '#30405c', type: 'dashed', opacity: 0.65 },
     },
   };
   return {
@@ -79,12 +79,12 @@ export function chartOptions(
     tooltip: {
       trigger: 'axis',
       confine: true,
-      backgroundColor: '#142536',
-      borderColor: '#385267',
+      backgroundColor: '#162239',
+      borderColor: '#3b4e70',
       borderWidth: 1,
       padding: 13,
-      textStyle: { color: '#eaf0f6', fontSize: 11 },
-      axisPointer: { type: 'shadow', shadowStyle: { color: '#accddd06' } },
+      textStyle: { color: '#e8edf5', fontSize: 11 },
+      axisPointer: { type: 'shadow', shadowStyle: { color: '#8daaff09' } },
       valueFormatter: (value: number) => formatValue(kind, Number(value)),
     },
     xAxis: horizontal ? valueAxis : categoryAxis,
@@ -101,7 +101,7 @@ export function chartOptions(
       barGap: '25%',
       itemStyle: {
         color: series.color,
-        borderRadius: horizontal ? [0, 3, 3, 0] : [4, 4, 0, 0],
+        borderRadius: horizontal ? [0, 2, 2, 0] : [2, 2, 0, 0],
       },
       emphasis: {
         focus: 'series',

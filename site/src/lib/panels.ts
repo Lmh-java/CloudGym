@@ -24,7 +24,7 @@ export function panelSeries(kind: Metric, condition: Condition) {
       {
         id: 'tokens',
         name: 'Tokens consumed',
-        color: '#aa9afa',
+        color: '#b1a2ef',
         values: panelModels.map((model) => model.scores[condition].tokensK),
       },
     ];
@@ -32,7 +32,7 @@ export function panelSeries(kind: Metric, condition: Condition) {
     {
       id: 'cost',
       name: 'Inference cost',
-      color: '#4cdbed',
+      color: '#8daaff',
       values: panelModels.map((model) => model.scores[condition].cost),
     },
   ];

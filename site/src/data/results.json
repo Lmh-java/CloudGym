@@ -11,21 +11,21 @@
       "key": "sc",
       "short": "SC",
       "name": "Semantic conflict",
-      "color": "#4cdbed",
+      "color": "#8daaff",
       "cases": 46
     },
     {
       "key": "ia",
       "short": "IA",
       "name": "Intent ambiguity",
-      "color": "#aa9afa",
+      "color": "#b1a2ef",
       "cases": 38
     },
     {
       "key": "ec",
       "short": "EC",
       "name": "Execution conflict",
-      "color": "#efbd72",
+      "color": "#e6ba79",
       "cases": 18
     }
   ],

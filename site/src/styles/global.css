@@ -1,13 +1,18 @@
 /* Theme and base elements */
 :root {
   color-scheme: dark;
-  --bg: #080f19;
-  --panel: #0d1724;
-  --line: #233345;
-  --text: #eaf0f6;
-  --muted: #94a8bd;
-  --cyan: #4cdbed;
+  --bg: #090d15;
+  --panel: #101722;
+  --line: #293345;
+  --text: #e8edf5;
+  --muted: #99a8be;
+  --accent: #8daaff;
+  --action: #2854c5;
   --display: 'Space Grotesk', sans-serif;
+  --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  --semantic: #8daaff;
+  --ambiguity: #b1a2ef;
+  --execution: #e6ba79;
   --body: 'Inter', sans-serif;
 }
 * {
@@ -22,15 +27,6 @@ body {
   color: var(--text);
   font: 14px/1.6 var(--body);
   -webkit-font-smoothing: antialiased;
-}
-body:before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto;
-  height: 520px;
-  pointer-events: none;
-  background: radial-gradient(ellipse at 50% 0%, #16445a45, transparent 68%);
-  z-index: -1;
 }
 a {
   color: inherit;
@@ -47,8 +43,8 @@ h2 {
   font-weight: 500;
 }
 ::selection {
-  background: #4cdbed44;
-  color: white;
+  background: #283f70;
+  color: var(--text);
 }
 .container {
   max-width: 1040px;
@@ -67,7 +63,7 @@ h2 {
   border: 0;
 }
 a:focus-visible {
-  outline: 2px solid var(--cyan);
+  outline: 2px solid var(--accent);
   outline-offset: 5px;
 }
 .skip-link {
@@ -76,8 +72,8 @@ a:focus-visible {
   left: 15px;
   z-index: 10;
   padding: 10px 20px;
-  background: var(--cyan);
-  color: var(--bg);
+  background: var(--action);
+  color: #ffffff;
   transform: translateY(-150%);
 }
 .skip-link:focus {
@@ -85,22 +81,36 @@ a:focus-visible {
 }
 /* Home hero and benchmark scope */
 .hero {
+  position: relative;
+  isolation: isolate;
   text-align: center;
-  padding: 56px 0 38px;
+  padding: 64px 0 44px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(#8daaff0a 1px, transparent 1px),
+    linear-gradient(90deg, #8daaff0a 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse at center, black 15%, transparent 70%);
 }
 .hero h1 {
-  font-size: 66px;
+  font-size: 72px;
   line-height: 1.15;
   font-weight: 600;
-  letter-spacing: -3px;
+  letter-spacing: -3.5px;
 }
 .hero h1 span {
-  color: var(--cyan);
+  color: var(--accent);
 }
 .hero-title {
-  font: 400 24px/1.5 var(--display);
+  font: 400 20px/1.6 var(--body);
   letter-spacing: -0.5px;
-  color: #bacbd9;
+  color: #b3bfd2;
   margin: 14px auto 25px;
 }
 .mobile-break {
@@ -112,10 +122,10 @@ a:focus-visible {
   justify-content: center;
   gap: 10px;
   padding: 10px 24px;
-  background: var(--cyan);
-  color: #08151e;
-  border: 1px solid #92e9f4;
-  border-radius: 6px;
+  background: var(--action);
+  color: #ffffff;
+  border: 1px solid var(--action);
+  border-radius: 3px;
   font-size: 13px;
   font-weight: 600;
   transition:
@@ -125,13 +135,15 @@ a:focus-visible {
 }
 .github-button img {
   display: block;
+  filter: brightness(0) invert(1);
 }
 .github-button:hover {
-  background: #7ee8f4;
-  box-shadow: 0 0 24px #4cdbed24;
+  background: #365fce;
+  box-shadow: 0 5px 14px #8daaff18;
   transform: translateY(-2px);
 }
 .stats-strip {
+  background: #0e1520;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-top: 1px solid var(--line);
@@ -149,7 +161,7 @@ a:focus-visible {
   border-right: 0;
 }
 .stats-strip strong {
-  font: 500 29px/1 var(--display);
+  font: 400 30px/1 var(--mono);
   letter-spacing: -1px;
 }
 .stats-strip span {
@@ -179,12 +191,12 @@ a:focus-visible {
 }
 .section-heading p span {
   padding-inline: 6px;
-  color: #6a849b;
+  color: #8190aa;
 }
 .leaderboard-card {
   border: 1px solid var(--line);
-  border-radius: 9px;
-  background: linear-gradient(115deg, #101c29, #0c1521);
+  border-radius: 3px;
+  background: var(--panel);
   overflow: hidden;
 }
 .leaderboard-table {
@@ -193,8 +205,9 @@ a:focus-visible {
   text-align: left;
 }
 .leaderboard-table thead {
-  background: #0b1420;
-  color: #97adc1;
+  font-family: var(--mono);
+  background: #151e2c;
+  color: #a7b5ca;
   font-size: 10px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -207,7 +220,7 @@ a:focus-visible {
 .leaderboard-table tbody td,
 .leaderboard-table tbody th {
   padding: 20px 25px;
-  border-bottom: 1px solid #20304199;
+  border-bottom: 1px solid #243044;
 }
 .leaderboard-table tbody th {
   font-weight: 400;
@@ -219,28 +232,29 @@ a:focus-visible {
   transition: background 0.2s;
 }
 .leaderboard-table tbody tr:hover {
-  background: #19344655;
+  background: #172338;
 }
 .leaderboard-table .rank-col {
   text-align: center;
 }
 .rank {
-  font: 14px var(--display);
-  color: #90a5ba;
+  font: 13px var(--mono);
+  color: #99a8be;
 }
 .first-rank {
-  color: var(--cyan);
+  color: var(--accent);
   display: inline-flex;
-  background: #153442;
-  border: 1px solid #2d5868;
-  border-radius: 4px;
+  background: #1c3057;
+  border: 1px solid #344e80;
+  border-radius: 3px;
   align-items: center;
   justify-content: center;
   width: 29px;
   height: 29px;
 }
 .leading-row {
-  background: linear-gradient(90deg, #14323b77, #12303b11);
+  box-shadow: inset 2px 0 var(--accent);
+  background: #16243d;
 }
 .model-cell {
   display: flex;
@@ -262,7 +276,7 @@ a:focus-visible {
   text-align: right;
 }
 .score-col > span {
-  color: var(--cyan);
+  color: var(--accent);
   margin-left: 5px;
 }
 .score-cell {
@@ -275,29 +289,30 @@ a:focus-visible {
   height: 5px;
   flex: 1;
   max-width: 225px;
-  background: #1b2b38;
+  background: #293957;
   border-radius: 10px;
   overflow: hidden;
 }
 .score-fill {
+  box-shadow: 0 0 12px #8daaff33;
   height: 100%;
   width: var(--score);
-  background: linear-gradient(90deg, #248699, #4cdbed);
+  background: var(--accent);
   border-radius: 10px;
 }
 .score-number {
-  font: 500 23px var(--display);
+  font: 500 23px var(--mono);
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.7px;
   min-width: 74px;
 }
 .leading-row .score-number {
-  color: var(--cyan);
+  color: var(--accent);
 }
 /* Charts and static fallbacks */
 .chart-card {
   border: 1px solid var(--line);
-  border-radius: 9px;
+  border-radius: 3px;
   background: var(--panel);
   padding: 24px 27px 8px;
   position: relative;
@@ -314,7 +329,7 @@ a:focus-visible {
   display: flex;
   gap: 8px;
   align-items: center;
-  color: #bacbd9;
+  color: #b3bfd2;
   font-size: 11px;
 }
 .chart-legend .legend-swatch {
@@ -324,7 +339,8 @@ a:focus-visible {
   flex-shrink: 0;
 }
 .chart-axis-label {
-  color: #90a7bc;
+  font-family: var(--mono);
+  color: #99a8be;
   font-size: 9px;
   letter-spacing: 1px;
   margin-bottom: 4px;
@@ -515,7 +531,7 @@ a:focus-visible {
 /* Site navigation */
 .site-banner {
   border-bottom: 1px solid var(--line);
-  background: #080f1999;
+  background: #0c111b;
 }
 .banner-nav {
   height: 58px;
@@ -541,7 +557,7 @@ a:focus-visible {
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--cyan);
+  background: var(--accent);
 }
 .page-heading {
   text-align: center;
@@ -578,9 +594,9 @@ a:focus-visible {
   align-items: center;
   gap: 22px;
   padding: 10px 26px;
-  border: 1px solid #38576b;
-  border-radius: 6px;
-  background: #112332;
+  border: 1px solid #374966;
+  border-radius: 3px;
+  background: #101722;
   color: var(--text);
   font-size: 12px;
   font-weight: 500;
@@ -589,11 +605,11 @@ a:focus-visible {
     background 0.2s;
 }
 .outline-button span {
-  color: var(--cyan);
+  color: var(--accent);
 }
 .outline-button:hover {
-  background: #163341;
-  border-color: var(--cyan);
+  background: #1b2b49;
+  border-color: var(--accent);
 }
 /* Leaderboard panels and shared condition tabs */
 .panels-grid {
@@ -631,8 +647,8 @@ a:focus-visible {
   gap: 3px;
   padding: 4px;
   border: 1px solid var(--line);
-  border-radius: 6px;
-  background: #080f19;
+  border-radius: 3px;
+  background: #0d1420;
   margin-bottom: 21px;
   width: fit-content;
   max-width: 100%;
@@ -641,23 +657,23 @@ a:focus-visible {
   border: 1px solid transparent;
   background: transparent;
   border-radius: 3px;
-  color: #9fb2c5;
+  color: #a6b4ca;
   font: 10px var(--body);
   padding: 9px 11px;
   white-space: nowrap;
   cursor: pointer;
 }
 .condition-tabs button[aria-selected='true'] {
-  background: #173745;
-  border-color: #315767;
-  color: #8debf5;
+  background: #1a2c4f;
+  border-color: #385381;
+  color: var(--accent);
 }
 .condition-tabs button:hover {
   color: var(--text);
 }
 button:focus-visible,
 [role='tabpanel']:focus-visible {
-  outline: 2px solid var(--cyan);
+  outline: 2px solid var(--accent);
   outline-offset: 4px;
 }
 .static-condition {
@@ -701,7 +717,7 @@ button:focus-visible,
 /* Explanatory tooltips */
 .help-label {
   cursor: help;
-  text-decoration: underline dotted #506779;
+  text-decoration: underline dotted #5c7196;
   text-underline-offset: 4px;
 }
 .section-heading p .help-label {
@@ -709,7 +725,7 @@ button:focus-visible,
   color: inherit;
 }
 .help-label:focus-visible {
-  outline: 2px solid var(--cyan);
+  outline: 2px solid var(--accent);
   outline-offset: 4px;
   border-radius: 2px;
 }
@@ -719,11 +735,11 @@ button:focus-visible,
   width: 275px;
   max-width: calc(100vw - 24px);
   padding: 12px 14px;
-  border: 1px solid #3d5e74;
+  border: 1px solid #3b4e70;
   border-radius: 7px;
-  background: #142536;
-  color: #e5eef6;
-  box-shadow: 0 8px 28px #0005;
+  background: #101722;
+  color: #e1e9f7;
+  box-shadow: 0 8px 28px #00000050;
   font: 12px/1.65 var(--body);
   pointer-events: auto;
 }
@@ -767,20 +783,20 @@ button:focus-visible,
 }
 /* Conflict subscores */
 .subscore-number {
-  font: 400 17px var(--display);
+  font: 400 16px var(--mono);
   font-variant-numeric: tabular-nums;
 }
 .subscore-label {
   display: none;
 }
 .subscore-cell[data-category='sc'] {
-  color: #4cdbed;
+  color: var(--semantic);
 }
 .subscore-cell[data-category='ia'] {
-  color: #aa9afa;
+  color: var(--ambiguity);
 }
 .subscore-cell[data-category='ec'] {
-  color: #efbd72;
+  color: var(--execution);
 }
 @media (max-width: 760px) {
   .leaderboard-table {
@@ -824,7 +840,7 @@ button:focus-visible,
     display: none;
   }
   .leaderboard-table tbody tr {
-    border-bottom: 1px solid #20304199;
+    border-bottom: 1px solid #243044;
     padding-block: 17px;
     row-gap: 14px;
   }
@@ -870,7 +886,7 @@ button:focus-visible,
     display: block;
     font-size: 8px;
     letter-spacing: 0.6px;
-    color: #a6bbcd;
+    color: #99a8be;
   }
   .subscore-number {
     font-size: 15px;
@@ -919,7 +935,7 @@ button:focus-visible,
   color: var(--text);
 }
 .banner-brand span {
-  color: var(--cyan);
+  color: var(--accent);
 }
 .banner-nav .banner-github {
   justify-self: end;

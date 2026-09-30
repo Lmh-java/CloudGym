@@ -28,7 +28,7 @@ Open http://127.0.0.1:4321. To review the compiled site, run `npm run build`, th
 - `src/components/Rankings.astro`: identical overall ranking tables on both pages.
 - `src/components/ChartPanel.astro`: accessible chart panels; ChartPlot.astro renders each metric.
 - `src/layouts/Page.astro`: shared SEO metadata and navigation banner with CloudGYM and GitHub links.
-- `src/styles/global.css`: responsive dark theme.
+- `src/styles/global.css`: responsive mission control theme with cobalt blue accents.
 - `src/scripts/charts.ts`: shared policy selection, lazy loading, and chart lifecycle.
 - `src/lib/chart-options.ts`: responsive chart presentation and animation.
 - `src/lib/site.ts`: shared site links and model icon paths.

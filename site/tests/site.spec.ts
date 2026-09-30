@@ -1,6 +1,116 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
+const publicSite = process.env.SITE_URL;
+const siteBase = (process.env.SITE_BASE || '/').replace(/\/$/, '');
+
+test('SEO metadata matches the preview or public build', async ({
+  page,
+  request,
+}) => {
+  for (const path of ['', 'leaderboard/']) {
+    await page.goto(`./${path}`);
+    await expect(page.locator('meta[name="description"]')).toHaveAttribute(
+      'content',
+      /\S+/,
+    );
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
+      'content',
+      publicSite ? 'index, follow' : 'noindex, nofollow',
+    );
+    const schema = JSON.parse(
+      (await page.locator('script[type="application/ld+json"]').textContent())!,
+    );
+    expect(schema['@type']).toBe(path ? 'WebPage' : 'WebSite');
+    if (publicSite) {
+      const canonical = new URL(`${siteBase}/${path}`, publicSite).href;
+      await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+        'href',
+        canonical,
+      );
+      await expect(page.locator('meta[property="og:url"]')).toHaveAttribute(
+        'content',
+        canonical,
+      );
+      await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+        'content',
+        new URL(`${siteBase}/social-card.png`, publicSite).href,
+      );
+      expect(schema.url).toBe(canonical);
+    } else {
+      await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
+      expect(schema.url).toBeUndefined();
+    }
+  }
+  const robots = await request.get('robots.txt');
+  expect(robots.ok()).toBe(true);
+  if (publicSite) {
+    const sitemapURL = new URL(`${siteBase}/sitemap-index.xml`, publicSite);
+    expect(await robots.text()).toContain(`Sitemap: ${sitemapURL.href}`);
+    const sitemapIndex = await request.get('sitemap-index.xml');
+    expect(sitemapIndex.ok()).toBe(true);
+    const sitemapFiles = [
+      ...(await sitemapIndex.text()).matchAll(/<loc>(.*?)<\/loc>/g),
+    ];
+    expect(sitemapFiles.length).toBeGreaterThan(0);
+    let sitemap = '';
+    for (const [, location] of sitemapFiles) {
+      const url = new URL(location);
+      expect(url.origin).toBe(sitemapURL.origin);
+      expect(url.pathname).toMatch(new RegExp(`^${siteBase}/`));
+      // Fetch from the local preview, never from the public deployment.
+      const response = await request.get(url.pathname);
+      expect(response.ok()).toBe(true);
+      sitemap += await response.text();
+    }
+    for (const path of ['', 'leaderboard/']) {
+      expect(sitemap).toContain(
+        `<loc>${new URL(`${siteBase}/${path}`, publicSite).href}</loc>`,
+      );
+    }
+  } else {
+    expect(await robots.text()).toContain('Disallow: /');
+    expect((await request.get('sitemap-index.xml')).status()).toBe(404);
+  }
+});
+
+test('navigation and assets work at the configured base path', async ({
+  page,
+  request,
+}) => {
+  for (const path of ['./', 'leaderboard/']) {
+    await page.goto(path);
+    await expect(page.locator('.banner-brand')).toHaveAttribute(
+      'href',
+      `${siteBase}/`,
+    );
+    await expect(
+      page.getByRole('link', { name: 'Leaderboard', exact: true }),
+    ).toHaveAttribute('href', `${siteBase}/leaderboard/`);
+    const assets = await page
+      .locator('img[src], script[src], link[rel="stylesheet"]')
+      .evaluateAll((elements) =>
+        elements.map(
+          (element) =>
+            element.getAttribute('src') || element.getAttribute('href')!,
+        ),
+      );
+    expect(assets.length).toBeGreaterThan(0);
+    for (const asset of new Set(assets)) {
+      expect(asset.startsWith(`${siteBase}/`)).toBe(true);
+      expect((await request.get(asset)).ok(), asset).toBe(true);
+    }
+  }
+  for (const asset of [
+    'icons/chatgpt.svg',
+    'icons/claude.svg',
+    'icons/github.svg',
+    'social-card.png',
+  ]) {
+    expect((await request.get(asset)).ok(), asset).toBe(true);
+  }
+});
+
 test('View All opens three panels with the same overall rankings at the top', async ({
   page,
   request,
@@ -8,7 +118,7 @@ test('View All opens three panels with the same overall rankings at the top', as
   const errors: string[] = [];
   page.on('pageerror', (error) => errors.push(error.message));
   await page.setViewportSize({ width: 1440, height: 1000 });
-  await page.goto('/');
+  await page.goto('./');
   await expect(page.locator('.score-number')).toHaveText([
     '34.3%',
     '33.3%',
@@ -79,8 +189,8 @@ test('View All opens three panels with the same overall rankings at the top', as
     path: 'test-results/desktop-leaderboard.png',
     fullPage: true,
   });
-  expect((await request.get('/favicon.svg')).status()).toBe(404);
-  expect((await request.get('/results.json')).status()).toBe(404);
+  expect((await request.get('favicon.svg')).status()).toBe(404);
+  expect((await request.get('results.json')).status()).toBe(404);
   expect(errors).toEqual([]);
 });
 
@@ -88,7 +198,7 @@ test('one policy selector updates categories, cost, and tokens together', async 
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  await page.goto('/leaderboard/');
+  await page.goto('leaderboard/');
   const categories = page.locator('[data-kind="categories"]');
   const cost = page.locator('[data-plot="cost"]');
   const tokens = page.locator('[data-plot="tokens"]');
@@ -135,14 +245,16 @@ test('one policy selector updates categories, cost, and tokens together', async 
   await expect(page.locator('.score-number').first()).toHaveText('34.3%');
 });
 
-test('both pages stay responsive and accessible', async ({ page }) => {
-  await page.emulateMedia({ reducedMotion: 'reduce' });
-  for (const width of [1440, 390, 320]) {
+for (const width of [1440, 390, 320]) {
+  test(`both pages stay responsive and accessible at ${width}px`, async ({
+    page,
+  }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.setViewportSize({ width, height: 844 });
-    for (const path of ['/', '/leaderboard/']) {
+    for (const path of ['./', 'leaderboard/']) {
       await page.goto(path);
       await expect(page).toHaveTitle('CloudGym');
-      if (path === '/leaderboard/')
+      if (path === 'leaderboard/')
         for (const panel of await page.locator('.chart-viewport').all()) {
           await panel.scrollIntoViewIfNeeded();
           await expect(panel).toHaveClass(/chart-ready/);
@@ -159,40 +271,36 @@ test('both pages stay responsive and accessible', async ({ page }) => {
           window.scrollTo({ top: 0, behavior: 'instant' }),
         );
         await page.screenshot({
-          path: `test-results/mobile-${path === '/' ? 'home' : 'leaderboard'}.png`,
+          path: `test-results/mobile-${path === './' ? 'home' : 'leaderboard'}.png`,
           fullPage: true,
         });
       }
     }
-  }
-});
+  });
+}
 
 test('all three panels retain default results without JavaScript', async ({
   browser,
-  request,
+  baseURL,
 }) => {
-  const context = await browser.newContext({ javaScriptEnabled: false });
+  const context = await browser.newContext({
+    javaScriptEnabled: false,
+    baseURL,
+  });
   const page = await context.newPage();
-  await page.goto('/');
+  await page.goto('./');
   await page.getByRole('link', { name: 'View All' }).click();
   await expect(page.locator('.score-number').first()).toHaveText('34.3%');
   await expect(page.locator('.static-chart:visible')).toHaveCount(3);
   await expect(page.getByRole('tab')).toHaveCount(0);
   await expect(page.locator('.category-table:visible')).toHaveCount(3);
-  await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
-    'content',
-    'noindex, nofollow',
-  );
-  expect(await (await request.get('/robots.txt')).text()).toContain(
-    'Disallow: /',
-  );
   await context.close();
 });
 
 test('condition and hybrid tooltips support hover, focus, Escape, and small screens', async ({
   page,
 }) => {
-  await page.goto('/');
+  await page.goto('./');
   await page.locator('.subscore-heading [data-help="sc"]').hover();
   await expect(page.locator('#help-sc')).toBeVisible();
   await expect(page.locator('#help-sc')).toContainText('incompatible outcomes');
@@ -202,7 +310,7 @@ test('condition and hybrid tooltips support hover, focus, Escape, and small scre
   await expect(page.locator('#help-hybrid')).toContainText('AWS SDK');
   await page.keyboard.press('Escape');
   await expect(page.locator('#help-hybrid')).toBeHidden();
-  await page.goto('/leaderboard/');
+  await page.goto('leaderboard/');
   const categories = page.locator('[data-kind="categories"]');
   for (const [topic, text] of [
     ['sc', 'incompatible outcomes'],

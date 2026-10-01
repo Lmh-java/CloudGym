@@ -1,0 +1,72 @@
+---
+import Page from '../layouts/Page.astro';
+import Rankings from '../components/Rankings.astro';
+import ChartPanel from '../components/ChartPanel.astro';
+import HelpLabel from '../components/HelpLabel.astro';
+import { results } from '../lib/results';
+import { explanations, type Explanation } from '../lib/explanations';
+---
+
+<Page
+  page="leaderboard"
+  title="Leaderboard — CloudGym Results"
+  description="Explore CloudGym model rankings, task-category pass rates, evaluation conditions, and inference costs from 102 live AWS cases."
+>
+  <header class="page-heading">
+    <h1>Leaderboard</h1>
+  </header>
+  <div class="panels-grid">
+    <section class="overview-panel" aria-labelledby="overall-title">
+      <div class="section-heading">
+        <h2 id="overall-title">Overall pass rate</h2>
+        <p>
+          <HelpLabel topic="consulted">Consulted policy</HelpLabel>{' '}
+          <span aria-hidden="true">·</span>{' '}
+          <HelpLabel topic="hybrid">Hybrid tools</HelpLabel>
+        </p>
+      </div>
+      <Rankings />
+    </section>
+    <div class="shared-results">
+      <div
+        class="condition-tabs"
+        role="tablist"
+        aria-label="Evaluation condition for category pass rates, inference cost, and tokens"
+        data-tabs
+        hidden
+      >
+        {results.conditions.map((condition, i) => (
+          <button
+            type="button"
+            role="tab"
+            id={`results-${condition.key}-tab`}
+            aria-selected={i === 0}
+            aria-controls="condition-results"
+            tabindex={i === 0 ? 0 : -1}
+            data-condition={condition.key}
+            data-help={condition.key}
+            aria-describedby={`help-${condition.key}`}
+            title={explanations[condition.key as Explanation]}
+          >
+            {condition.name}
+          </button>
+        ))}
+      </div>
+      <div id="condition-results" class="condition-results">
+        <ChartPanel
+          kind="categories"
+          title="Pass rate by task category"
+          subtitle="Hybrid tools"
+        />
+        <ChartPanel
+          kind="cost"
+          title="Inference cost"
+          subtitle="Hybrid tools"
+        />
+      </div>
+    </div>
+  </div>
+  <script>
+    import '../scripts/charts';
+  </script>
+</Page>

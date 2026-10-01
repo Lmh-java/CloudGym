@@ -1,0 +1,219 @@
+{
+  "version": "paper-table-1",
+  "source": "CloudGym manuscript, Table 1, page 8",
+  "modality": "hybrid",
+  "cases": 102,
+  "trialsPerCase": 2,
+  "services": 19,
+  "resourceTypes": 65,
+  "categories": [
+    {
+      "key": "sc",
+      "short": "SC",
+      "name": "Semantic conflict",
+      "color": "#8daaff",
+      "cases": 46
+    },
+    {
+      "key": "ia",
+      "short": "IA",
+      "name": "Intent ambiguity",
+      "color": "#b1a2ef",
+      "cases": 38
+    },
+    {
+      "key": "ec",
+      "short": "EC",
+      "name": "Execution conflict",
+      "color": "#e6ba79",
+      "cases": 18
+    }
+  ],
+  "conditions": [
+    {
+      "key": "consulted",
+      "name": "Consulted policy",
+      "label": "Default benchmark",
+      "description": "Concurrent participants are active. Agents must discover resolution policies through consultation."
+    },
+    {
+      "key": "prompted",
+      "name": "Prompted policy",
+      "label": "Policy provided",
+      "description": "Concurrent participants are active. Resolution policies are provided in the agent prompt."
+    },
+    {
+      "key": "control",
+      "name": "Isolated control",
+      "label": "No interference",
+      "description": "Agents complete the same tasks in isolation, without concurrent participants."
+    }
+  ],
+  "models": [
+    {
+      "id": "opus",
+      "name": "Opus 5.5",
+      "provider": "Anthropic",
+      "agent": "Claude Code",
+      "mark": "A",
+      "scores": {
+        "consulted": {
+          "overall": 34.3,
+          "sc": 17.4,
+          "ia": 32.9,
+          "ec": 80.6,
+          "cost": 0.16,
+          "tokensK": 282.7
+        },
+        "prompted": {
+          "overall": 55.4,
+          "sc": 40.2,
+          "ia": 57.9,
+          "ec": 88.9,
+          "cost": 0.16,
+          "tokensK": 255.1
+        },
+        "control": {
+          "overall": 97.1,
+          "sc": 98.9,
+          "ia": 97.4,
+          "ec": 91.7,
+          "cost": 0.12,
+          "tokensK": 207.3
+        }
+      }
+    },
+    {
+      "id": "sol",
+      "name": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "agent": "Codex",
+      "mark": "O",
+      "scores": {
+        "consulted": {
+          "overall": 33.3,
+          "sc": 17.4,
+          "ia": 25.0,
+          "ec": 91.7,
+          "cost": 0.27,
+          "tokensK": 264.4
+        },
+        "prompted": {
+          "overall": 45.6,
+          "sc": 27.2,
+          "ia": 47.4,
+          "ec": 88.9,
+          "cost": 0.25,
+          "tokensK": 234.5
+        },
+        "control": {
+          "overall": 96.6,
+          "sc": 98.9,
+          "ia": 93.4,
+          "ec": 97.2,
+          "cost": 0.21,
+          "tokensK": 189.5
+        }
+      }
+    },
+    {
+      "id": "gpt",
+      "name": "GPT-5.5",
+      "provider": "OpenAI",
+      "agent": "Codex",
+      "mark": "O",
+      "scores": {
+        "consulted": {
+          "overall": 28.9,
+          "sc": 8.7,
+          "ia": 26.3,
+          "ec": 86.1,
+          "cost": 0.35,
+          "tokensK": 273.6
+        },
+        "prompted": {
+          "overall": 38.7,
+          "sc": 19.6,
+          "ia": 38.2,
+          "ec": 88.9,
+          "cost": 0.38,
+          "tokensK": 290.3
+        },
+        "control": {
+          "overall": 96.6,
+          "sc": 97.8,
+          "ia": 93.4,
+          "ec": 100.0,
+          "cost": 0.27,
+          "tokensK": 200.3
+        }
+      }
+    },
+    {
+      "id": "fable",
+      "name": "Fable 5",
+      "provider": "Anthropic",
+      "agent": "Claude Code",
+      "mark": "A",
+      "scores": {
+        "consulted": {
+          "overall": 28.4,
+          "sc": 4.3,
+          "ia": 30.3,
+          "ec": 86.1,
+          "cost": 0.98,
+          "tokensK": 406.8
+        },
+        "prompted": {
+          "overall": 52.0,
+          "sc": 38.0,
+          "ia": 50.0,
+          "ec": 91.7,
+          "cost": 0.91,
+          "tokensK": 360.0
+        },
+        "control": {
+          "overall": 96.1,
+          "sc": 95.7,
+          "ia": 94.7,
+          "ec": 100.0,
+          "cost": 0.66,
+          "tokensK": 279.7
+        }
+      }
+    },
+    {
+      "id": "haiku",
+      "name": "Haiku 4.5",
+      "provider": "Anthropic",
+      "agent": "Claude Code",
+      "mark": "A",
+      "scores": {
+        "consulted": {
+          "overall": 18.6,
+          "sc": 4.3,
+          "ia": 9.2,
+          "ec": 75.0,
+          "cost": 0.11,
+          "tokensK": 592.9
+        },
+        "prompted": {
+          "overall": 19.6,
+          "sc": 5.4,
+          "ia": 13.2,
+          "ec": 69.4,
+          "cost": 0.11,
+          "tokensK": 540.3
+        },
+        "control": {
+          "overall": 82.8,
+          "sc": 85.9,
+          "ia": 77.6,
+          "ec": 86.1,
+          "cost": 0.09,
+          "tokensK": 461.4
+        }
+      }
+    }
+  ]
+}

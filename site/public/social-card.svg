@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#090d15"/>
+  <path d="M76 116H1124M76 462H1124" stroke="#293345"/>
+  <g font-family="Arial, sans-serif" fill="#e8edf5">
+    <text x="76" y="83" font-size="29" font-weight="bold">Cloud<tspan fill="#8daaff">GYM</tspan></text>
+    <text x="76" y="215" font-family="Arial, sans-serif" font-size="68">Can AI agents manage</text>
+    <text x="76" y="306" font-family="Arial, sans-serif" font-size="68" fill="#8daaff">shared cloud infrastructure?</text>
+    <text x="79" y="384" font-size="23" fill="#99a8be">A benchmark for cloud agents working with concurrent infrastructure changes.</text>
+    <g font-size="40" font-family="Arial, sans-serif">
+      <text x="76" y="530">102<tspan dx="12" font-family="Arial, sans-serif" font-size="17" fill="#99a8be"> live AWS cases</tspan></text>
+      <text x="455" y="530">19<tspan dx="12" font-family="Arial, sans-serif" font-size="17" fill="#99a8be"> AWS services</tspan></text>
+      <text x="804" y="530">65<tspan dx="12" font-family="Arial, sans-serif" font-size="17" fill="#99a8be"> resource types</tspan></text>
+    </g>
+  </g>
+</svg>

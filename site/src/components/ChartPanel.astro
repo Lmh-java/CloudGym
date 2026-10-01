@@ -1,0 +1,43 @@
+---
+import { type PanelKind } from '../lib/panels';
+import HelpLabel from './HelpLabel.astro';
+import ChartPlot from './ChartPlot.astro';
+interface Props {
+  kind: PanelKind;
+  title: string;
+  subtitle?: string;
+}
+const { kind, title, subtitle } = Astro.props;
+---
+
+<section
+  class="detail-panel"
+  data-kind={kind}
+  data-condition="consulted"
+  aria-labelledby={`${kind}-title`}
+>
+  <div class="section-heading">
+    <h2 id={`${kind}-title`}>{title}</h2>
+    {subtitle && (
+      <p>
+        <HelpLabel topic="hybrid">{subtitle}</HelpLabel>
+      </p>
+    )}
+  </div>
+  <div class="chart-card">
+    {kind === 'cost' ? (
+      <div class="cost-metrics">
+        <div>
+          <h3>Cost</h3>
+          <ChartPlot kind="cost" title="Inference cost" />
+        </div>
+        <div>
+          <h3>Tokens consumed</h3>
+          <ChartPlot kind="tokens" title="Tokens consumed" />
+        </div>
+      </div>
+    ) : (
+      <ChartPlot kind="categories" title={title} />
+    )}
+  </div>
+</section>
